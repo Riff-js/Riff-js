@@ -1,0 +1,983 @@
+
+<?xml version="1.0" encoding="UTF-8"?> 
+ 
+ 
+ 
+ 
+ 
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"> 
+<atom:link href="http://dallas.example.com/rss.xml" rel="self" type="application/rss+xml" /> 
+ 
+	<channel> 
+	
+	
+		<title>Support</title> 
+		<link>http://www.samsung.com/us</link> 
+		<description>Support</description> 
+	
+ 
+	
+		<item> 
+			<title>News &amp; Alert : E-mail Scam Warning</title> 
+			<link>http://www.samsung.com/us/support/news/supportNewsAlerts.do?site_cd=us=285</link> 
+			<description>			
+				
+				<![CDATA[
+					A number of people have received an e-mail claiming they have won a large cash prize in a lottery, drawing, or contest run by Samsung Electronics.<br /><br />These e-mails are fakes and part of a scam. They have no association with Samsung Electronics. The promotions and prizes referred to in them do not exist. <br /><br />If you receive one of these e-mails, do not respond. We are currently investigating this matter.
+				]]>
+			</description> 
+			<author>webmaster@samsung.com</author> 
+			
+				<pubDate>Mon, 08 Nov 2010 18:20:50 GMT</pubDate> 
+			
+			<category>SUPPORT NEWS</category> 
+		</item> 
+	
+		<item> 
+			<title>News &amp; Alert : SPH-m620 FAQ List</title> 
+			<link>http://www.samsung.com/us/support/news/supportNewsAlerts.do?site_cd=us=10</link> 
+			<description>			
+				
+				<![CDATA[
+					For more information please click the FAQs link in the right hand navigation next to the phone image.
+				]]> 
+			</description> 
+			<author>webmaster@samsung.com</author> 
+			
+				<pubDate>Thu, 05 Aug 2010 03:25:42 GMT</pubDate> 
+			
+			<category>SUPPORT NEWS</category> 
+		</item> 
+	
+		<item> 
+			<title>News &amp; Alert : SPH-i830 FAQ List</title> 
+			<link>http://www.samsung.com/us/support/news/supportNewsAlerts.do?site_cd=us=11</link> 
+			<description>			
+				
+				<![CDATA[
+					For more information please click the FAQs link in the right hand navigation next to the phone image.
+				]]> 
+			</description> 
+			<author>webmaster@samsung.com</author> 
+			
+				<pubDate>Thu, 05 Aug 2010 03:25:42 GMT</pubDate> 
+			
+			<category>SUPPORT NEWS</category> 
+		</item> 
+	
+		<item> 
+			<title>News &amp; Alert : SCH-i730 FAQ List</title> 
+			<link>http://www.samsung.com/us/support/news/supportNewsAlerts.do?site_cd=us=12</link> 
+			<description>			
+				
+				<![CDATA[
+					For more information please click the FAQs link in the right hand navigation next to the phone image.
+				]]> 
+			</description> 
+			<author>webmaster@samsung.com</author> 
+			
+				<pubDate>Thu, 05 Aug 2010 03:25:42 GMT</pubDate> 
+			
+			<category>SUPPORT NEWS</category> 
+		</item> 
+	
+		<item> 
+			<title>News &amp; Alert : SCH-u740 FAQ List</title> 
+			<link>http://www.samsung.com/us/support/news/supportNewsAlerts.do?site_cd=us=13</link> 
+			<description>			
+				
+				<![CDATA[
+					For more information please click the FAQs link in the right hand navigation next to the phone image.
+				]]> 
+			</description> 
+			<author>webmaster@samsung.com</author> 
+			
+				<pubDate>Thu, 05 Aug 2010 03:25:42 GMT</pubDate> 
+			
+			<category>SUPPORT NEWS</category> 
+		</item> 
+	
+		<item> 
+			<title>News &amp; Alert : SGH-i607 FAQ List</title> 
+			<link>http://www.samsung.com/us/support/news/supportNewsAlerts.do?site_cd=us=18</link> 
+			<description>			
+				
+				<![CDATA[
+					For more information please click the FAQs link in the right hand navigation next to the phone image.
+				]]> 
+			</description> 
+			<author>webmaster@samsung.com</author> 
+			
+				<pubDate>Thu, 05 Aug 2010 03:25:42 GMT</pubDate> 
+			
+			<category>SUPPORT NEWS</category> 
+		</item> 
+	
+		<item> 
+			<title>News &amp; Alert : SGH-a707 FAQ List</title> 
+			<link>http://www.samsung.com/us/support/news/supportNewsAlerts.do?site_cd=us=19</link> 
+			<description>			
+				
+				<![CDATA[
+					For more information please click the FAQs link in the right hand navigation next to the phone image.
+				]]> 
+			</description> 
+			<author>webmaster@samsung.com</author> 
+			
+				<pubDate>Thu, 05 Aug 2010 03:25:42 GMT</pubDate> 
+			
+			<category>SUPPORT NEWS</category> 
+		</item> 
+	
+		<item> 
+			<title>News &amp; Alert : SGH-c417 FAQ List</title> 
+			<link>http://www.samsung.com/us/support/news/supportNewsAlerts.do?site_cd=us=20</link> 
+			<description>			
+				
+				<![CDATA[
+					For more information please click the FAQs link in the right hand navigation next to the phone image.
+				]]> 
+			</description> 
+			<author>webmaster@samsung.com</author> 
+			
+				<pubDate>Thu, 05 Aug 2010 03:25:42 GMT</pubDate> 
+			
+			<category>SUPPORT NEWS</category> 
+		</item> 
+	
+		<item> 
+			<title>News &amp; Alert : SGH-zx20 FAQ List</title> 
+			<link>http://www.samsung.com/us/support/news/supportNewsAlerts.do?site_cd=us=21</link> 
+			<description>			
+				
+				<![CDATA[
+					For more information please click the FAQs link in the right hand navigation next to the phone image.
+				]]> 
+			</description> 
+			<author>webmaster@samsung.com</author> 
+			
+				<pubDate>Thu, 05 Aug 2010 03:25:42 GMT</pubDate> 
+			
+			<category>SUPPORT NEWS</category> 
+		</item> 
+	
+		<item> 
+			<title>News &amp; Alert : SGH-d347 FAQ List</title> 
+			<link>http://www.samsung.com/us/support/news/supportNewsAlerts.do?site_cd=us=22</link> 
+			<description>			
+				
+				<![CDATA[
+					For more information please click the FAQs link in the right hand navigation next to the phone image.
+				]]> 
+			</description> 
+			<author>webmaster@samsung.com</author> 
+			
+				<pubDate>Thu, 05 Aug 2010 03:25:42 GMT</pubDate> 
+			
+			<category>SUPPORT NEWS</category> 
+		</item> 
+	
+		<item> 
+			<title>News &amp; Alert : SPH-m610 FAQ List</title> 
+			<link>http://www.samsung.com/us/support/news/supportNewsAlerts.do?site_cd=us=23</link> 
+			<description>			
+				
+				<![CDATA[
+					For more information please click the FAQs link in the right hand navigation next to the phone image.
+				]]> 
+			</description> 
+			<author>webmaster@samsung.com</author> 
+			
+				<pubDate>Thu, 05 Aug 2010 03:25:42 GMT</pubDate> 
+			
+			<category>SUPPORT NEWS</category> 
+		</item> 
+	
+		<item> 
+			<title>News &amp; Alert : SPH-m500 FAQ List</title> 
+			<link>http://www.samsung.com/us/support/news/supportNewsAlerts.do?site_cd=us=24</link> 
+			<description>			
+				
+				<![CDATA[
+					For more information please click the FAQs link in the right hand navigation next to the phone image.
+				]]> 
+			</description> 
+			<author>webmaster@samsung.com</author> 
+			
+				<pubDate>Thu, 05 Aug 2010 03:25:42 GMT</pubDate> 
+			
+			<category>SUPPORT NEWS</category> 
+		</item> 
+	
+		<item> 
+			<title>News &amp; Alert : SPH-a420 FAQ List</title> 
+			<link>http://www.samsung.com/us/support/news/supportNewsAlerts.do?site_cd=us=25</link> 
+			<description>			
+				
+				<![CDATA[
+					For more information please click the FAQs link in the right hand navigation next to the phone image.
+				]]> 
+			</description> 
+			<author>webmaster@samsung.com</author> 
+			
+				<pubDate>Thu, 05 Aug 2010 03:25:42 GMT</pubDate> 
+			
+			<category>SUPPORT NEWS</category> 
+		</item> 
+	
+		<item> 
+			<title>News &amp; Alert : SCH-u620 FAQ List</title> 
+			<link>http://www.samsung.com/us/support/news/supportNewsAlerts.do?site_cd=us=26</link> 
+			<description>			
+				
+				<![CDATA[
+					For more information please click the FAQs link in the right hand navigation next to the phone image.
+				]]> 
+			</description> 
+			<author>webmaster@samsung.com</author> 
+			
+				<pubDate>Thu, 05 Aug 2010 03:25:42 GMT</pubDate> 
+			
+			<category>SUPPORT NEWS</category> 
+		</item> 
+	
+		<item> 
+			<title>News &amp; Alert : SCH-u340 FAQ List</title> 
+			<link>http://www.samsung.com/us/support/news/supportNewsAlerts.do?site_cd=us=27</link> 
+			<description>			
+				
+				<![CDATA[
+					For more information please click the FAQs link in the right hand navigation next to the phone image.
+				]]> 
+			</description> 
+			<author>webmaster@samsung.com</author> 
+			
+				<pubDate>Thu, 05 Aug 2010 03:25:42 GMT</pubDate> 
+			
+			<category>SUPPORT NEWS</category> 
+		</item> 
+	
+		<item> 
+			<title>News &amp; Alert : SCH-a870 FAQ List</title> 
+			<link>http://www.samsung.com/us/support/news/supportNewsAlerts.do?site_cd=us=28</link> 
+			<description>			
+				
+				<![CDATA[
+					For more information please click the FAQs link in the right hand navigation next to the phone image.
+				]]> 
+			</description> 
+			<author>webmaster@samsung.com</author> 
+			
+				<pubDate>Thu, 05 Aug 2010 03:25:42 GMT</pubDate> 
+			
+			<category>SUPPORT NEWS</category> 
+		</item> 
+	
+		<item> 
+			<title>News &amp; Alert : SGH-t329 FAQ List</title> 
+			<link>http://www.samsung.com/us/support/news/supportNewsAlerts.do?site_cd=us=29</link> 
+			<description>			
+				
+				<![CDATA[
+					For more information please click the FAQs link in the right hand navigation next to the phone image.
+				]]> 
+			</description> 
+			<author>webmaster@samsung.com</author> 
+			
+				<pubDate>Thu, 05 Aug 2010 03:25:42 GMT</pubDate> 
+			
+			<category>SUPPORT NEWS</category> 
+		</item> 
+	
+		<item> 
+			<title>News &amp; Alert : SGH-t619 FAQ List</title> 
+			<link>http://www.samsung.com/us/support/news/supportNewsAlerts.do?site_cd=us=30</link> 
+			<description>			
+				
+				<![CDATA[
+					For more information please click the FAQs link in the right hand navigation next to the phone image.
+				]]> 
+			</description> 
+			<author>webmaster@samsung.com</author> 
+			
+				<pubDate>Thu, 05 Aug 2010 03:25:42 GMT</pubDate> 
+			
+			<category>SUPPORT NEWS</category> 
+		</item> 
+	
+		<item> 
+			<title>News &amp; Alert : Error Registering GPS on Navteq.com</title> 
+			<link>http://www.samsung.com/us/support/news/supportNewsAlerts.do?site_cd=us=305</link> 
+			<description>			
+				
+				<![CDATA[
+					Recently, we received reports of customers not being able to register the Samsung GPS unit AA-PK1UNA/US on Navteq.com. We have confirmed this issue and are actively working with Navteq on a solution. This error does not indicate that there is a problem with your GPS unit or Q1.
+				]]> 
+			</description> 
+			<author>webmaster@samsung.com</author> 
+			
+				<pubDate>Thu, 05 Aug 2010 03:25:42 GMT</pubDate> 
+			
+			<category>SUPPORT NEWS</category> 
+		</item> 
+	
+		<item> 
+			<title>News &amp; Alert : SGH-t219 FAQ List</title> 
+			<link>http://www.samsung.com/us/support/news/supportNewsAlerts.do?site_cd=us=31</link> 
+			<description>			
+				
+				<![CDATA[
+					For more information please click the FAQs link in the right hand navigation next to the phone image.
+				]]> 
+			</description> 
+			<author>webmaster@samsung.com</author> 
+			
+				<pubDate>Thu, 05 Aug 2010 03:25:42 GMT</pubDate> 
+			
+			<category>SUPPORT NEWS</category> 
+		</item> 
+	
+		<item> 
+			<title>News &amp; Alert : SGH-t529 FAQ List</title> 
+			<link>http://www.samsung.com/us/support/news/supportNewsAlerts.do?site_cd=us=32</link> 
+			<description>			
+				
+				<![CDATA[
+					For more information please click the FAQs link in the right hand navigation next to the phone image.
+				]]> 
+			</description> 
+			<author>webmaster@samsung.com</author> 
+			
+				<pubDate>Thu, 05 Aug 2010 03:25:42 GMT</pubDate> 
+			
+			<category>SUPPORT NEWS</category> 
+		</item> 
+	
+		<item> 
+			<title>News &amp; Alert : America’s Choice: SAMSUNG Emerges As 2006 Market Leader, Selling The Most Digital TVs Of Any Manufacturer In The U.S.</title> 
+			<link>http://www.samsung.com/us/support/news/supportNewsAlerts.do?site_cd=us=58</link> 
+			<description>			
+				
+				<![CDATA[
+					RIDGEFIELD PARK, N.J., Jan. 25, 2007 - Samsung captured the number one market share position for digital televisions in the United States in 2006, according to The NPD Group's retail tracking service.<br /> <br />"The industry's overall DTV unit sales have grown 54 percent and three million more digital TVs were sold in 2006 than 2005; and within 2006, Samsung sold more digital televisions than anyone else in the industry," said Stephen Baker, vice president of industry analysis for NPD. "Samsung is the only television manufacturer that demonstrates market strength in all four digital TV categories, which includes LCD, plasma, Microdisplay and Flat Tube. According to NPD's monthly sales data Samsung's share position improved throughout the year with Samsung leading the market in units and dollars within the second half of the year." <br /><br />Samsung became America's choice for digital TVs in 2006 with total Digital TV unit share of 20.0 percent, which is a significant lead on the competition. In addition, Samsung demonstrated strong category leadership in Flat Panel TVs with number one unit share of 21.5 percent and number one dollar share of 25.1 percent; Samsung grew its LCD market share (10" and larger) to the number one position in 2006 (from the number four position in 2005) with a market share of 15.1 percent; and its SlimFit™ line of flat tube CRT TVs claimed an overwhelming 46.1 percent unit share and a 43.7 percent dollar share in 2006, according to NPD data. <br /><br />Samsung is the only manufacturer that produces, and is committed to leading, in all four major digital television technologies: LCD, Microdisplay, Plasma, and Flat Tube. Strong 2006 sales across each category catapulted Samsung to the number one position.
+				]]>
+			</description> 
+			<author>webmaster@samsung.com</author> 
+			
+				<pubDate>Thu, 05 Aug 2010 03:25:42 GMT</pubDate> 
+			
+			<category>SUPPORT NEWS</category> 
+		</item> 
+	
+		<item> 
+			<title>News &amp; Alert : SAMSUNG Announces Advanced Multi-standard, Multi-band Mobile TV Chipset</title> 
+			<link>http://www.samsung.com/us/support/news/supportNewsAlerts.do?site_cd=us=61</link> 
+			<description>			
+				
+				<![CDATA[
+					Seoul, Korea - June 27, 2007: Samsung Electronics Co., Ltd., a leader in advanced semiconductor technology, announced the industry's first 65 nanometer (nm) multi-standard channel decoder (S3C4F31) and multi-band radio frequency (RF) tuner (S5M8602) chipset which supports multi digital mobile TV standards including DVB-H/T, DAB-IP, ISDB-T, and terrestrial DMB for the multiple standards in the different countries around the world.<br /><br />"Although a new market, we see high growth potential in mobile TV applications," said Yiwan Wong, vice president, System LSI Division, Semiconductor Business, Samsung Electronics. "With initial product launch targets for the Europe and Asia markets, we are introducing our high performance mobile TV chipset technology with added feature support to serve the needs of the entire mobile TV industry."<br /><br />Samsung's new multi-standard, multi-band mobile TV chipset integrates a broad range of segment standards. As countries worldwide introduce their mobile TV service standards, this chipset allows end users to choose which broadcasting services they want to use without changing their mobile application. <br /><br />The multi-standard channel decoder, which transforms the analog signal into digital signal in order to restore the image and audio source, is fully compliant to DVB-H/T, T-DMB, DAB, DAB-IP, and ISDB-T 1 segment standards. Samsung applies its advanced 65nm technology for higher performance and cost effectiveness. The high signal reception rate is a core characteristic, which realizes a smooth mobile TV experience even on high-speed trains.<br /><br />The multi-band RF tuner, which receives the analog broadcast signal, has a simplified circuit structure by applying a low IF to compliment the conventional zero IF. It is also a general purpose tuner that supports UHF, VHF and L-band commonly used in Europe and the United States. The wide use of the RF tuner compliments the advanced performance of the multi-standard channel decoder.<br /><br />This new chipset is offered either as two standalone ICs or as a system-in-chip package (SiP) which places together the RF tuner and the channel chip on a single module package.<br /><br />Samsung provides extensive customer support in terms of software, reference platforms, test solutions and extended component line up such as the application processor. The multi level of support decreases the development time needed for the handset and mobile applications designers to create new mobile TV functionalities.<br /><br />This new mobile TV chipset requires no external low noise amplifier (LNA) and additional memory ICs, significantly reducing the bill-of-materials (BOM) cost of the total system. The chipset supports Link Layer processing to output fully error-corrected IP datagrams or MPEG2 transport streams. <br /><br />According to market research firm Strategic Analytics the mobile TV market is expected to reach 12 million units in 2007 and 130 million units by 2011 at a compounded annual growth rate of 67 percent<br /><br />Samsung's new multi-standard channel decoder (S3C4F31) and multi-band RF tuner (S5M8602) chipset is now sampling with mass production slated for the fourth quarter of 2007.<br /><br />About Samsung Electronics<br />Samsung Electronics Co., Ltd. is a global leader in semiconductor, telecommunication, digital media and digital convergence technologies with 2006 parent company sales of US$63.4 billion and net income of US$8.5 billion. Employing approximately 138,000 people in 124 offices in 56 countries, the company consists of five main business units: Digital Media Business, LCD Business, Semiconductor Business, Telecommunication Network Business, and Digital Appliance Business. Recognized as one of the fastest growing global brands, Samsung Electronics is a leading producer of digital TVs, memory chips, mobile phones, and TFT-LCDs. For more information, please visit www.samsung.com
+				]]>
+			</description> 
+			<author>webmaster@samsung.com</author> 
+			
+				<pubDate>Thu, 05 Aug 2010 03:25:42 GMT</pubDate> 
+			
+			<category>SUPPORT NEWS</category> 
+		</item> 
+	
+		<item> 
+			<title>News &amp; Alert : SAMSUNG Adds Filterbright Technology To New Line Of Plasma HDTVS</title> 
+			<link>http://www.samsung.com/us/support/news/supportNewsAlerts.do?site_cd=us=63</link> 
+			<description>			
+				
+				<![CDATA[
+					New York, NY - Offering sharper image details and drastically-reduced reflection, Samsung's new family of plasma TVs sets the pace for explosive growth in the high definition plasma market by delivering to consumers an aesthetically-pleasing, high-performance solution for every home. Samsung's patented FilterBright technology has allowed the world's fastest-growing consumer electronics brand to offer the ultimate in screen quality and technological innovation while satisfying consumer demand for large screens.<br /> <br />FilterBright is a powerful anti-reflective film that absorbs external light and transmits internal light, thereby increasing the contrast levels and preventing unwanted reflection. In bright daylight, FilterBright creates high contrast with pure black to show clearer image details and generate superb industry-leading dark area representation. <br /><br />"Samsung is in a unique position to leverage its exclusive FilterBright technology with industry-leading color, contrast and brightness, placing us at the cutting edge of HDTV research and development," said Bill Dickey, Senior Marketing Manager for Plasma Display Panels for Samsung Electronics America. "Samsung's plasma screens represent the pinnacle of manufacturing and design expertise. This technology advantage puts Samsung plasmas at the forefront of the flat-panel revolution with superior picture and style in high demand screen sizes to accommodate almost any home environment."
+				]]>
+			</description> 
+			<author>webmaster@samsung.com</author> 
+			
+				<pubDate>Thu, 05 Aug 2010 03:25:42 GMT</pubDate> 
+			
+			<category>SUPPORT NEWS</category> 
+		</item> 
+	
+		<item> 
+			<title>News &amp; Alert : SAMSUNG’S New Slim DLP Provides A Thinner Solution For The Rear Projection TV Category</title> 
+			<link>http://www.samsung.com/us/support/news/supportNewsAlerts.do?site_cd=us=64</link> 
+			<description>			
+				
+				<![CDATA[
+					New York, NY - Samsung Electronics has raised the bar in delivering the most quality for the consumer dollar with its new 46" Slim DLP 720p model. Featuring a cabinet only 10.6 inches deep and weighing less than 50 pounds, this innovative DLP offers consumers added versatility and convenience in their home. Thanks to its slim cabinet, the TV can be easily placed in an armoire or shelf mount with a width opening dimension of under 42". In addition, the vibrant color display, crisp resolution, enhanced features and affordable pricing make this set a new and exciting innovation in the Samsung 2006 DLP line.<br /> <br />"Consumers put a premium on superior image quality and sleek design, and Samsung delivers just that in our Slim DLP model," said Dan Schinasi, Senior Marketing Manager for Projection TV for Samsung Electronics America. "We offer our customers the high resolution, large screen sizes and clean, modern styling they are looking for, as well as easy connections with game consoles, cameras and other digital technologies at a price that maximizes value." <br /><br />Samsung's breakthrough HLS4676S 46" Slim DLP-720p offers 1280 x 720p HD resolution and SRS TruSurround XT sound system that recreates the theatre experience at home. The built-in HDTV tuner (ATSC) lets users access digital broadcasts while enjoying digital sound and picture from the dual HDMI (High-Definition Multimedia Interface) connections, which also connects with other digital devices, such as DVD players, creating an optimal sound and picture experience. <br /><br />Gamers will become totally immersed in the optimized Game Mode, which delivers graphic optimization, dark area enhancements, increased response time, and improved sound capacity for the latest video games on the market. Connect your digital camera and other storage devices through a USB 1.1 to easily display your digital photos in crystal clear resolution on screen. And a PC-input provides an easy connection to a notebook or computer.
+				]]>
+			</description> 
+			<author>webmaster@samsung.com</author> 
+			
+				<pubDate>Thu, 05 Aug 2010 03:25:42 GMT</pubDate> 
+			
+			<category>SUPPORT NEWS</category> 
+		</item> 
+	
+		<item> 
+			<title>News &amp; Alert : SAMSUNG Unveils the U3</title> 
+			<link>http://www.samsung.com/us/support/news/supportNewsAlerts.do?site_cd=us=66</link> 
+			<description>			
+				
+				<![CDATA[
+					Seoul, Korea, June 18, 2007 - Samsung Electronics Co., Ltd. a market leader in consumer electronics, today announced its newest digital creation; the U3, a USB direct music player with 5 fun colors.<br /><br />The Samsung U3 MP3 player is a super-compact device that works right out of the box with a Slim-USB connection. Available in 5 brilliant colors (white/green/pink/blue/black), the U3 requires no wires or programs to work; simply plug it in a USB port, then drag and drop your music files.<br /><br />The U3 player features up to 15 hours of battery life and comes in models with 1GB, 2GB and 4GB (enough room for up to 1000 songs).<br /><br />The multi-talented U3 is decked out with extra features including FM Radio and Voice Recording, not to mention portable file storage. It also supports RDS* (Europe only) and Music Subscription Service**.<br /><br />Samsung will launch the U3 to the global market in June 2007 at the price of 79 USD(1GB), 99 USD(2GB) and 149 USD (4GB).<br /> 
+				]]>
+			</description> 
+			<author>webmaster@samsung.com</author> 
+			
+				<pubDate>Thu, 05 Aug 2010 03:25:42 GMT</pubDate> 
+			
+			<category>SUPPORT NEWS</category> 
+		</item> 
+	
+		<item> 
+			<title>News &amp; Alert : SAMSUNG Introduces 70” Full-HD LCD TV with Local Dimming Technology</title> 
+			<link>http://www.samsung.com/us/support/news/supportNewsAlerts.do?site_cd=us=67</link> 
+			<description>			
+				
+				<![CDATA[
+					Seoul, Korea , J une 14 , 2007 – Samsung Electronics Co., Ltd. has introduced the largest (70 inch) commercially available full high-definition LCD TV in Korea. The new TV boasts Samsung's very best image enhancement technologies and employs a light-emitting diode (LED) backlight instead of the conventional cold cathode fluorescent lamp (CCFL) version. Moreover, Samsung's unique local dimming technology enables the LED backlight to be turned off in dark image areas, delivering a dynamic contrast ratio of 500,000:1. At the same time, power consumption is lowered by as much as fifty percent.<br /> <br />Meanwhile, Samsung's LED scanning eliminates the flicker and ghosting problems associated with large-screen LCD TVs. <br /><br />“I am pleased to introduce the 70” Full-HD LCD TV with innovative Local Dimming Technology,” said JongWoo Park, President of the Digital Media Business, Samsung Electronics. “Samsung will continue to strengthen its LCD TV leadership, enhancing Full-HD and large screen LCD TV line-up.” <br /><br />A high-gloss, “piano black” bezel and titanium chrome trim accentuate the elegance and sophistication of Samsung's new 70” full-HD LCD TV. The dual hidden speakers and rear woofer deliver the rich sound quality to match the larger-than-life on-screen images. <br /><br />Samsung plans to put the product on sale worldwide in the second half of this year. Samsung is the largest LCD TV supplier in January-March this year with 17.4 percent share by revenue, according to Display Search. <br /><br /><br />Terminology<br />Local dimming backlighting : The conventional, bar-shaped CCFL backlight is replaced by an LED backlight consisting of hundreds of light source. The lit parts of the on-screen image can brightened to the maximum while all light is shut off in the dark areas of the screen. The result is the ultimate contrast ratio. Moreover, the reduction of brightness in the dark areas also cuts power consumption by as much as half.<br /><br />LED scanning : The LEDs are rapidly shut off in sequence, artificially eliminating the ghosting of the moving images.
+				]]>
+			</description> 
+			<author>webmaster@samsung.com</author> 
+			
+				<pubDate>Thu, 05 Aug 2010 03:25:42 GMT</pubDate> 
+			
+			<category>SUPPORT NEWS</category> 
+		</item> 
+	
+		<item> 
+			<title>News &amp; Alert : Netflix &amp; Blockbuster On 2010 Model Televisions</title> 
+			<link>http://www.samsung.com/us/support/news/supportNewsAlerts.do?site_cd=us=1889</link> 
+			<description>			
+				
+				<![CDATA[
+					A firmware fix has been released for 2010 Plasma, LCD, and LED TVs with Internet@TV for the Netflix and Blockbuster applications. The firmware fix resolves an issue where when running the Netflix or Blockbuster applications, a message appears stating that the software must be upgraded. To do so go to MENU, SUPPORT, SOFTWARE upgrade.<br /><br />To obtain the firmware, press the Menu button on your TV. Go to the Support section, and then select Software Upgrade. Upgrade to firmware version 1019 or later.<br /><br />Alternatively, you can <a href="http://www.samsung.com/us/support/download/supportDownloadMain.do">click here</a> to visit the Samsung Download Center and enter the model number of your TV to obtain the firmware.
+				]]>
+			</description> 
+			<author>webmaster@samsung.com</author> 
+			
+				<pubDate>Thu, 05 Aug 2010 03:25:42 GMT</pubDate> 
+			
+			<category>SUPPORT NEWS</category> 
+		</item> 
+	
+		<item> 
+			<title>News &amp; Alert : Installing Windows 7 On A Samsung Notebook Or Netbook</title> 
+			<link>http://www.samsung.com/us/support/news/supportNewsAlerts.do?site_cd=us=1509</link> 
+			<description>			
+				
+				<![CDATA[
+					<br><b><font color="FF0000">Warning:</font></b> The RECOVERY OEM (Reserved) partition must not be deleted!<br><br />When installing Windows 7 on a notebook or netbook computer, you are given the option of which drive to install Windows on. During this step, you can optionally delete and recreate partitions. If the RECOVERY partition is deleted, Samsung Recovery Solution will no longer function. Once deleted, there is no way to recreate the RECOVERY partition.<br><br /><center><img src="http://erms.samsungelectronics.com/customer/common/images/namo/2009/12/10/install2.jpg"></center> 
+				]]>
+			</description> 
+			<author>webmaster@samsung.com</author> 
+			
+				<pubDate>Thu, 05 Aug 2010 03:25:42 GMT</pubDate> 
+			
+			<category>SUPPORT NEWS</category> 
+		</item> 
+	
+		<item> 
+			<title>News &amp; Alert : Refrigerator and Washer/Dryer Live Streaming Web Chat Thursday 12/17and Friday 12/18</title> 
+			<link>http://www.samsung.com/us/support/news/supportNewsAlerts.do?site_cd=us=1449</link> 
+			<description>			
+				
+				<![CDATA[
+					Live Thursday, 12/17 and Friday, 12/18 at 3:00 PM EST, we will be hosting a live streaming video web chat featuring Samsung home appliances.  Thursday will cover basic operating of refrigerators, and Friday will go over operation of our washers and dryers.  Any customer that has any questions regarding these cameras is welcomed to join the webchat by visiting the link below.<br /><br /><a href="http://www.samsungsupport.com/spstv">www.samsungsupport.com/spstv</a> 
+				]]>
+			</description> 
+			<author>webmaster@samsung.com</author> 
+			
+				<pubDate>Thu, 05 Aug 2010 03:25:42 GMT</pubDate> 
+			
+			<category>SUPPORT NEWS</category> 
+		</item> 
+	
+		<item> 
+			<title>News &amp; Alert : Samsung launches new widgets for Internet@TV</title> 
+			<link>http://www.samsung.com/us/support/news/supportNewsAlerts.do?site_cd=us=1250</link> 
+			<description>			
+				
+				<![CDATA[
+					Coming soon for your Samsung Internet@TV enabled television, are a host of new Widgets including Blockbuster on Demand, RallyCast, Ebay, and many more. <a href="http://www.samsung.com/us/internetTV/", target="_blank">Click here</a> to visit the main Internet@TV page to learn more about current and upcoming widgets, getting started with your new widgets, and updating your software to enjoy these features.
+				]]>
+			</description> 
+			<author>webmaster@samsung.com</author> 
+			
+				<pubDate>Thu, 05 Aug 2010 03:25:42 GMT</pubDate> 
+			
+			<category>SUPPORT NEWS</category> 
+		</item> 
+	
+		<item> 
+			<title>News &amp; Alert : Follow us on Twitter!</title> 
+			<link>http://www.samsung.com/us/support/news/supportNewsAlerts.do?site_cd=us=1190</link> 
+			<description>			
+				
+				<![CDATA[
+					Samsung is proud to announce that you can now follow us on Twitter.  <a href="http://twitter.com/Samsungservice", target="_blank">Click here</a>, to check us out , add yourself to our followers list, and let us know what you think about your Samsung products.
+				]]>
+			</description> 
+			<author>webmaster@samsung.com</author> 
+			
+				<pubDate>Thu, 05 Aug 2010 03:25:42 GMT</pubDate> 
+			
+			<category>SUPPORT NEWS</category> 
+		</item> 
+	
+		<item> 
+			<title>News &amp; Alert : Check us out on Facebook!</title> 
+			<link>http://www.samsung.com/us/support/news/supportNewsAlerts.do?site_cd=us=1189</link> 
+			<description>			
+				
+				<![CDATA[
+					Samsung is proud to announce our new Facebook page.  We hope you will enjoy this new way to stay up-to-date on Samsung products via your own Facebook account, cell phone, or other internet-enabled device. <a href="http://www.facebook.com/pages/Samsung-Service/118830116212?ref=search&sid=1664135744.2918195325..1", target="_blank">Click here</a> after logging into your Facebook account and take a look at the page below and leave a comment for us with your thoughts.
+				]]>
+			</description> 
+			<author>webmaster@samsung.com</author> 
+			
+				<pubDate>Thu, 05 Aug 2010 03:25:42 GMT</pubDate> 
+			
+			<category>SUPPORT NEWS</category> 
+		</item> 
+	
+		<item> 
+			<title>News &amp; Alert : Samsung Windows® 7 Upgrade Program</title> 
+			<link>http://www.samsung.com/us/support/news/supportNewsAlerts.do?site_cd=us=1111</link> 
+			<description>			
+				
+				<![CDATA[
+					<b>To participate in this program <a href="http://support-us.samsung.com/windows7" target="_blank"> click here</b></a>.<br /><br />In participating with the Windows® 7 upgrade program, any Samsung notebook PCs purchased from<br />June 26th 2009 thru January 31st, 2010 will be eligible for a Windows 7 upgrade. A proof of purchase<br />during the eligible period must be submitted in the form of a purchase receipt. Any notebook PCs<br />purchased outside the period is not eligible for the program. Please keep the Windows Vista Certificate<br />of Authenticity label located on the bottom of the notebook PC, as you will need to input the product key<br />on the label when registering for the upgrade program. Samsung Notebook PCs with Windows Vista®<br />Home Premium are eligible for Windows7 Home Premium edition and Windows Vista Business models<br />are eligible for Windows 7 Professional. The maximum number of upgrades per household is 25 as this<br />program is not tailored to support large businesses looking for volume licensing. Upgrades will start<br />shipping to those participants that have eligible notebook PC with submitted requests by April 30, 2010.<br /><br />The customer PC’s Windows 7 product functionality and graphics performance may vary based on your<br />system configuration. Some product features of Windows 7, such as the ability to watch and record live<br />TV or navigation through the use of “touch”, may require advanced or additional hardware. If you<br />qualify for the upgrade media, you will receive an upgrade of the same language version and edition as<br />the prior version of the product. For example, if you have an English language version of Microsoft<br />Windows Vista Home Premium, you will receive an English language version of Microsoft Windows 7<br />Home Premium. The terms of this upgrade offer are subject to change at any time without notice. The<br />upgrade request must be submitted no later than January 31, 2010. This offer is subject to product<br />availability and product supplies. Important: The upgrade does not include any new PC drivers for<br />Windows 7. The drivers will be available for download and installation at the download center of<br />Samsung Computer website (www.samsungcomputer.com). Technical issues and product support will<br />continue to be provided by Samsung. Installation Notes: Installation for some of the Windows 7 products<br />may require the customer to format their hard drive. Customers should back up their files and settings<br />prior to the installation, or they will be erased. Samsung and Microsoft are not liable for any loss of data<br />because of this installation. If the customer upgraded their operating system to Windows 7 but want to<br />return (if permitted by their license terms) to the Windows Vista, the customer may un-install the<br />Windows 7 and re-install the Windows Vista using a recovery solution. Certain upgrades may not allow<br />the customer to retain applications, files and settings as they were in the previous installed edition of<br />Windows. The Windows 7 upgrade media and its product key bundled cannot be used for clean<br />installation. For purposes of the End User License Agreement, your installation of this software will be<br />considered an upgrade. The upgrade media will be undelivered or delayed if the given address or phone<br />number is incorrect. Please contact 1-800-SAMSUNG if the upgrade media has not arrived as expected.<br /><br /><br />Thank you for choosing this solution to upgrade your operating system to Windows 7. Please note that<br />some features and functions may be changed or unavailable if you upgrade from Windows Vista to<br />Windows 7.<br /><br />For further support, please contact 1-800-SAMSUNG.
+				]]>
+			</description> 
+			<author>webmaster@samsung.com</author> 
+			
+				<pubDate>Thu, 05 Aug 2010 03:25:42 GMT</pubDate> 
+			
+			<category>SUPPORT NEWS</category> 
+		</item> 
+	
+		<item> 
+			<title>News &amp; Alert : Samsung&#039;s new LED TV manuals available for download</title> 
+			<link>http://www.samsung.com/us/support/news/supportNewsAlerts.do?site_cd=us=970</link> 
+			<description>			
+				
+				<![CDATA[
+					Samsung is pleased to announce that in addition to its new-for-2009 E-manual, which allows you to view the user manual directly on your TV screen, that a traditional "paper" manual is available as well from our download center.  Please click the link at the top left of your screen labled Download Center to search for your new Samsung LED TV in PDF format.  Once downloaded, you can view it on your computer or print it out for easy reference.
+				]]> 
+			</description> 
+			<author>webmaster@samsung.com</author> 
+			
+				<pubDate>Thu, 05 Aug 2010 03:25:42 GMT</pubDate> 
+			
+			<category>SUPPORT NEWS</category> 
+		</item> 
+	
+		<item> 
+			<title>News &amp; Alert : YP-Q1 Firmware Update Version 1.23</title> 
+			<link>http://www.samsung.com/us/support/news/supportNewsAlerts.do?site_cd=us=785</link> 
+			<description>			
+				
+				<![CDATA[
+					1.  Improve system stability<br />2.  Add color icon on main menu(matrix)<br />3.  Fix the horizontal line error on some LCD’s<br />4.  Fix the display error after playing games on specific music play screen (Cheerful mode).<br />5.  Apply the time and date of recordings<br />6.  Fix the display noise of FLAC playback (V1.22 bug)<br />7.  Fix the noise when the player powers off (V1.22 bug)
+				]]>
+			</description> 
+			<author>webmaster@samsung.com</author> 
+			
+				<pubDate>Thu, 05 Aug 2010 03:25:42 GMT</pubDate> 
+			
+			<category>SUPPORT NEWS</category> 
+		</item> 
+	
+		<item> 
+			<title>News &amp; Alert : DLP TV Settlement Notice</title> 
+			<link>http://www.samsung.com/us/support/news/supportNewsAlerts.do?site_cd=us=1996</link> 
+			<description>			
+				
+				<![CDATA[
+					If you bought or received as a gift one of the Samsung DLP televisions listed below, and the television has developed a shadow along the edge of the display, you may be entitled to a free repair to eliminate the shadow, under a class action settlement concerning this issue. <br /><br />Affected models: HL-P series, HL-R series, HL-S series and select HL-T series.<br /><br />For more information, please go to <a href= "http://www.samsung.com/dlptvsettlement">www.samsung.com/dlptvsettlement</a> 
+				]]>
+			</description> 
+			<author>webmaster@samsung.com</author> 
+			
+				<pubDate>Thu, 05 Aug 2010 03:25:42 GMT</pubDate> 
+			
+			<category>SUPPORT NEWS</category> 
+		</item> 
+	
+		<item> 
+			<title>News &amp; Alert : W32.Sality.AE Worm Detected in Samsung Frame Manager 1.08</title> 
+			<link>http://www.samsung.com/us/support/news/supportNewsAlerts.do?site_cd=us=761</link> 
+			<description>			
+				
+				<![CDATA[
+					Important: This problem only affects Samsung Frame Manager XP Version 1.08. If you are using Vista or a different version of Frame Manager, this is not an issue.<br /><br />If Norton Internet Security displays a Virus Alert when you install Samsung Frame Manger 1.08 using the installation CD, please perform the following procedure:<br /> <br />1. Quarantine or delete the W32.Sality.AE worm using Norton Internet Security 2009.<br /><br />    Note: You can use the trial version of Internet Security 2009 to quarantine or remove the virus from your computer.<br /><br />2. Uninstall the current version of Frame Manager 1.08 you installed from the install CD. (Click Start > Settings > Control Panel > Add or Remove Programs. Find and then click Frame Manager in the Add or Remove Programs dialog, and then click Remove.)<br /><br />3. Download and install the updated version of Frame Manager XP 1.082 available from the Download Center at Samsung.com.<br /><br />4. After you install Samsung Frame Manager 1.082, reboot your computer to complete the process.
+				]]>
+			</description> 
+			<author>webmaster@samsung.com</author> 
+			
+				<pubDate>Thu, 05 Aug 2010 03:25:42 GMT</pubDate> 
+			
+			<category>SUPPORT NEWS</category> 
+		</item> 
+	
+		<item> 
+			<title>News &amp; Alert : Blu-ray Firmware Updates</title> 
+			<link>http://www.samsung.com/us/support/news/supportNewsAlerts.do?site_cd=us=742</link> 
+			<description>			
+				
+				<![CDATA[
+					Firmware upgrades are designed for model specific use.  Installing firmware designed for a different model will affect the performance and playback capabilities of your player and may result in permanent damage.  Please use caution when performing a firmware upgrade and ensure the model of the firmware matches that of your player.
+				]]> 
+			</description> 
+			<author>webmaster@samsung.com</author> 
+			
+				<pubDate>Thu, 05 Aug 2010 03:25:42 GMT</pubDate> 
+			
+			<category>SUPPORT NEWS</category> 
+		</item> 
+	
+		<item> 
+			<title>News &amp; Alert : Important Rebate Information</title> 
+			<link>http://www.samsung.com/us/support/news/supportNewsAlerts.do?site_cd=us=741</link> 
+			<description>			
+				
+				<![CDATA[
+					Dear Valued Samsung Printer Customer,<br /><br /> <br /><br />Please be advised that CPG, the third-party mail-in rebate processing company that Samsung has traditionally partnered with has recently filed a petition for Chapter 11 bankruptcy protection.  As a result of this action, Samsung is now in the process of working through the details to ensure that all customers who currently have a mail-in rebate claim for a printer will be paid in full.  We are attempting to resolve and address this issue in the quickest most efficient manner possible.  In the meantime, please be assured that we are committed to ensuring you receive your rebates as soon as possible.  If you have any questions, please contact us via email at claims@samsung.com. We apologize for any inconvenience this may have caused you.  We thank you for your understanding and your continued support.<br /><br /> <br /><br />Sincerely,<br /><br /> <br /><br />Samsung Electronics America, Inc.
+				]]>
+			</description> 
+			<author>webmaster@samsung.com</author> 
+			
+				<pubDate>Thu, 05 Aug 2010 03:25:42 GMT</pubDate> 
+			
+			<category>SUPPORT NEWS</category> 
+		</item> 
+	
+		<item> 
+			<title>News &amp; Alert : Color Laser Printer Program File Upgrade</title> 
+			<link>http://www.samsung.com/us/support/news/supportNewsAlerts.do?site_cd=us=700</link> 
+			<description>			
+				
+				<![CDATA[
+					Samsung has released a new SW upgrade file for print quality, automatic error recovery, and toner save mode on color laser printers.<br /><br />The SW upgrade file is for the following models:<br /><br />CLP-300<br />CLP-350<br />CLX-2160<br />CLX-3160<br /><br />Check the model number of your printer, and then <a href="http://www.samsung.com/us/support/notice/clpnotice.do" class="pointlink2">click here</a> for SW printer update instructions.
+				]]>
+			</description> 
+			<author>webmaster@samsung.com</author> 
+			
+				<pubDate>Thu, 05 Aug 2010 03:25:42 GMT</pubDate> 
+			
+			<category>SUPPORT NEWS</category> 
+		</item> 
+	
+		<item> 
+			<title>News &amp; Alert : Instructions for Setting Up Your French Door Refrigerator Ice Maker</title> 
+			<link>http://www.samsung.com/us/support/news/supportNewsAlerts.do?site_cd=us=620</link> 
+			<description>			
+				
+				<![CDATA[
+					To assure your ice maker is working as efficiently as expected, please <a href='/us/pdf/Instruction_Sheet4.pdf'>CLICK HERE</a>, and then follow the steps in the instruction sheet that appears.
+				]]>
+			</description> 
+			<author>webmaster@samsung.com</author> 
+			
+				<pubDate>Thu, 05 Aug 2010 03:25:42 GMT</pubDate> 
+			
+			<category>SUPPORT NEWS</category> 
+		</item> 
+	
+		<item> 
+			<title>News &amp; Alert : A750 Series DLP TV Auto Power Reset Firmware Update</title> 
+			<link>http://www.samsung.com/us/support/news/supportNewsAlerts.do?site_cd=us=480</link> 
+			<description>			
+				
+				<![CDATA[
+					A small number of Samsung A750 series DLP TVs turn off and then back on automatically. The following models are affected:<br /><br />•	HL61A750A1F<br />•	HL67A750A1F<br /><br /><br />Samsung has released a firmware update that corrects this problem. We recommend that you install this firmware update on your TV only if you are experiencing this particualr issue.<br /><br />If you have a USB memory drive, you can download the firmware from our website. For complete instructions on downloading and installing the firmware update, <a href="http://www.samsungsupport.com/750">click here</a>.<br /><br />If you do not have a USB memory drive, Samsung can send you  a drive containing the firmware. To have a copy of the firmware sent to you, call Samsung Customer Care at 1-800-Samsung (1-800-726-7864). Have your model and serial numbers on hand when you call.
+				]]>
+			</description> 
+			<author>webmaster@samsung.com</author> 
+			
+				<pubDate>Thu, 05 Aug 2010 03:25:42 GMT</pubDate> 
+			
+			<category>SUPPORT NEWS</category> 
+		</item> 
+	
+		<item> 
+			<title>News &amp; Alert : A650 Series LCD TV Auto Off Firmware Update</title> 
+			<link>http://www.samsung.com/us/support/news/supportNewsAlerts.do?site_cd=us=380</link> 
+			<description>			
+				
+				<![CDATA[
+					A small number of Samsung A650 series LCD TVs turn off automatically. The following models are affected:<br /><br />•	LN40A650A1F<br />•	LN46A650A1F<br />•	LN52A650A1F<br /><br />Samsung has released a firmware update that corrects this problem. We recommend that you install this firmware update on your TV only if you are experiencing this particualr issue.<br /><br />If you have a USB memory drive, you can download the firmware from our website. For complete instructions on downloading and installing the firmware update, <a href="http://www.samsungsupport.com/650">click here</a>.<br /><br />If you do not have a USB memory drive, Samsung can send you  a drive containing the firmware. To have a copy of the firmware sent to you, call Samsung Customer Care at 1-800-Samsung (1-800-726-7864). Have your model and serial numbers on hand when you call.<br /> 
+				]]>
+			</description> 
+			<author>webmaster@samsung.com</author> 
+			
+				<pubDate>Thu, 05 Aug 2010 03:25:42 GMT</pubDate> 
+			
+			<category>SUPPORT NEWS</category> 
+		</item> 
+	
+		<item> 
+			<title>News &amp; Alert : Firmware Update for BD-P1200</title> 
+			<link>http://www.samsung.com/us/support/news/supportNewsAlerts.do?site_cd=us=360</link> 
+			<description>			
+				
+				<![CDATA[
+					<br />BD-P1200 firmware update Version 2.3, released on March 14, 2008, improves the BD-P1200's ability to play movies correctly. This update is available on line at Samsung's Download Center.<br /><br />Important: This current update includes all previous updates.<br /><br />To download the firmware update, follow these steps:<br /><br />1. Click Download Center under Support on the upper left side of this page.<br /><br />2. After the Download Center page appears, click Search by Model Number on the left side.<br /><br />3. In the field that appears, enter BD-P1200, and then click the Search button.<br /><br />4. After the download page for the BD-P1200 appears, click the Firmware tab near the bottom of the page.<br /><br />5. After the Firmware tab opens, click the small ZIP icon on the right for Version 2.3. The download dialog appears.<br /><br />6. Click Save to Disk, and then OK.<br /> 
+				]]>
+			</description> 
+			<author>webmaster@samsung.com</author> 
+			
+				<pubDate>Thu, 05 Aug 2010 03:25:42 GMT</pubDate> 
+			
+			<category>SUPPORT NEWS</category> 
+		</item> 
+	
+		<item> 
+			<title>News &amp; Alert : Firmware release for BD-P1200</title> 
+			<link>http://www.samsung.com/us/support/news/supportNewsAlerts.do?site_cd=us=68</link> 
+			<description>			
+				
+				<![CDATA[
+					• Enhanced compatibility with BD movie titles such as Pirates of the Caribbean and Ghost Rider <br />• Enhanced in-movie gaming performance  <br />• Quicker boot time<br /><br />View step by step instructions for installing the firmware by clicking <a href="http://erms.samsungusa.com/customer/sea/jsp/faqs/faqs_view.jsp?SITE_ID=1&PG_ID=3&PROD_SUB_ID=48&PROD_ID=762&AT_ID=86950" target="_blank">here</a>.<br /> 
+				]]>
+			</description> 
+			<author>webmaster@samsung.com</author> 
+			
+				<pubDate>Thu, 05 Aug 2010 03:25:42 GMT</pubDate> 
+			
+			<category>SUPPORT NEWS</category> 
+		</item> 
+	
+		<item> 
+			<title>News &amp; Alert : YP-U2J Displays License Expired When Attempting To Play Subscription Music From Rhapsody To Go Or Napster To Go.</title> 
+			<link>http://www.samsung.com/us/support/news/supportNewsAlerts.do?site_cd=us=69</link> 
+			<description>			
+				
+				<![CDATA[
+					Some users have reported that when attempting to transfer subscription music from Rhapsody To Go or Napster To Go onto the YP-U2J, the error message "License Expired" appears on the device and the music will not play.  This appears to have been a compatibility issue with Windows Media Player 11 and has been resolved through a firmware update.<br /> <br />1. Connect the YP-U2 to your computer.   <br />2. Visit the Samsung Download Center and download the latest f/w (currently ver.1.156) <br />3. Save the zip file to your desktop. <br />4. Double click the zip file and then double click the setup.exe file. <br />5. You'll see a pop-up indicating  "WinZip will extract all files to a temporary folder and run the setup.exe program".  Click OK. <br />6. Follow the on screen instructions for updating the firmware.<br /><br />IMPORTANT:  If the software (f/w updater) is already installed on your PC, running setup.exe may remove <br />the program.  If this occurs, just double click setup.exe once again for installation.<br /><br />IMPORTANT:  If you continue to receive an error while transferring subscription music, disconnect the U2 and reconnect.  Visit Security Component Update Page. Run the update and attempt to transfer music again.
+				]]>
+			</description> 
+			<author>webmaster@samsung.com</author> 
+			
+				<pubDate>Thu, 05 Aug 2010 03:25:42 GMT</pubDate> 
+			
+			<category>SUPPORT NEWS</category> 
+		</item> 
+	
+		<item> 
+			<title>News &amp; Alert : **RECALL NOTICE** Samsung Washing Machines</title> 
+			<link>http://www.samsung.com/us/support/news/supportNewsAlerts.do?site_cd=us=70</link> 
+			<description>			
+				
+				<![CDATA[
+					In cooperation with the U.S. Consumer Product Safety Commission, Samsung Electronics America is voluntarily recalling WF306BHW and WF316 Samsung brand front-loading washing machines manufactured through August 2006.<br /><br />Consumers can find out if their washer is covered by this recall by visiting our site at  www.Samsung.com/washerrecall or call our toll-free recall hotline anytime between 9:00 am and 9:00 pm EDT Monday through Friday at 1-800-515-7902.<br /><br />Samsung was  happy to cooperate with the CPSC and will continue to cooperate with any and all regulatory agencies to provide the safest and best products because what is most important to Samsung is happy, repeat consumers.
+				]]>
+			</description> 
+			<author>webmaster@samsung.com</author> 
+			
+				<pubDate>Thu, 05 Aug 2010 03:25:42 GMT</pubDate> 
+			
+			<category>SUPPORT NEWS</category> 
+		</item> 
+	
+		<item> 
+			<title>News &amp; Alert : Delayed Responses With Harmony Remotes</title> 
+			<link>http://www.samsung.com/us/support/news/supportNewsAlerts.do?site_cd=us=74</link> 
+			<description>			
+				
+				<![CDATA[
+					When you press a button, or series of buttons on some Harmony remotes, it takes ten to fifteen seconds before the remote transmits the command signals and your TV performs the requested functions.  After thirty seconds, the remote works normally. This problem is most common when you first turn on the remote and the TV.<br /><br />In nearly all cases, the delay problem is not caused by the Samsung TV. To confirm the problem is not caused by your TV, test your TV with your Samsung TV remote. If the TV responds normally to the remote, and there are no delays in the response, your TV is not the source of the problem.<br /> 
+				]]>
+			</description> 
+			<author>webmaster@samsung.com</author> 
+			
+				<pubDate>Thu, 05 Aug 2010 03:25:42 GMT</pubDate> 
+			
+			<category>SUPPORT NEWS</category> 
+		</item> 
+	
+		<item> 
+			<title>News &amp; Alert : SGH-i607 Patch</title> 
+			<link>http://www.samsung.com/us/support/news/supportNewsAlerts.do?site_cd=us=76</link> 
+			<description>			
+				
+				<![CDATA[
+					There is a patch availble for download for the BlackJack.  To download this file and for available FAQs, click on the FAQs link in the right hand navigation next to the phone image.
+				]]> 
+			</description> 
+			<author>webmaster@samsung.com</author> 
+			
+				<pubDate>Thu, 05 Aug 2010 03:25:42 GMT</pubDate> 
+			
+			<category>SUPPORT NEWS</category> 
+		</item> 
+	
+		<item> 
+			<title>News &amp; Alert : Blu-Ray Players and Pirates of the Caribbean 3</title> 
+			<link>http://www.samsung.com/us/support/news/supportNewsAlerts.do?site_cd=us=187</link> 
+			<description>			
+				
+				<![CDATA[
+					A few weeks ago, we discovered that the Blu-Ray version of Pirates of the Caribbean 3 was not playing correctly on many manufacturer's Blu-Ray players including Samsung's BD-P1000, BD-P1200, and BD-P1400. We are currently working to resolve the problem. <br /><br />We should have a resolution within the next 30 days. When it is ready, we will post a notice on this web page.
+				]]>
+			</description> 
+			<author>webmaster@samsung.com</author> 
+			
+				<pubDate>Thu, 05 Aug 2010 03:25:42 GMT</pubDate> 
+			
+			<category>SUPPORT NEWS</category> 
+		</item> 
+	
+		<item> 
+			<title>News &amp; Alert : Blu-Ray Players and Live Free Or Die Hard</title> 
+			<link>http://www.samsung.com/us/support/news/supportNewsAlerts.do?site_cd=us=191</link> 
+			<description>			
+				
+				<![CDATA[
+					<br />A few weeks ago, we discovered that the Blu-Ray version of Live Free Or Die Hard was not playing on many manufacturer's Blu-Ray players including, unfortunately, Samsung's BD-P1000, BD-P1200, and some BD-P1400s. We are currently working to resolve the problem. <br /><br />We should have a resolution within the next 30 days. When it is ready, we will post a notice on this web page.
+				]]>
+			</description> 
+			<author>webmaster@samsung.com</author> 
+			
+				<pubDate>Thu, 05 Aug 2010 03:25:42 GMT</pubDate> 
+			
+			<category>SUPPORT NEWS</category> 
+		</item> 
+	
+		<item> 
+			<title>News &amp; Alert : The Triple Ball Effect and LNT 71 Series LCD TVs</title> 
+			<link>http://www.samsung.com/us/support/news/supportNewsAlerts.do?site_cd=us=192</link> 
+			<description>			
+				
+				<![CDATA[
+					The Triple Ball Effect Problem<br /><br />The triple ball effect (TBE) - in which fast moving objects such as thrown footballs appear in triplicate or have trails - occurs on Samsung LNT 71 series LCD TVs (LN-T4671, LN-T5271, etc.) when you turn on the Motion Plus function.<br /><br />Samsung has a firmware update for LNT 71 series TVs that eliminates TBE when the Motion Plus function is set to low and mostly eliminates TBE when Motion Plus is set to medium. It does not, however, eliminate TBE when Motion Plus is set to high. We are working on an update that eliminates TBE when Motion Plus is set to high, and hope to have this available soon.<br /><br />Note: After the firmware update is installed, some sets may still display TBE when Motion Plus is set to medium.<br /><br />To get the current firmware update, please call Samsung Customer Care at 1-800-Samsung (1-800-726-7864). Please have the model number and serial number of your TV on hand when you call.<br /><br />Recommendations for Using Motion Plus<br /><br />After you install the firmware update, please follow these recommendations:<br /><br />•  Set  Motion Plus to low or medium only. Do not set it to high. <br /><br />•  If you see the TBE when you set Motion Plus to medium, reset Motion Plus to low. <br /><br />•  Only use Motion Plus when you are watching sporting events and other events or programs where there is fast motion. <br /><br />•  Turn off Motion Plus when watching programs that do not have fast motion. Leaving Motion Plus on for programs that do not have fast motion can cause the picture to stutter<br /> 
+				]]>
+			</description> 
+			<author>webmaster@samsung.com</author> 
+			
+				<pubDate>Thu, 05 Aug 2010 03:25:42 GMT</pubDate> 
+			
+			<category>SUPPORT NEWS</category> 
+		</item> 
+	
+		<item> 
+			<title>News &amp; Alert : Firmware Update (Version 1.72) Released For YPT9J</title> 
+			<link>http://www.samsung.com/us/support/news/supportNewsAlerts.do?site_cd=us=193</link> 
+			<description>			
+				
+				<![CDATA[
+					A firmware update has been released for the YP-T9J that fixes a few small bugs and opimizes system performance.<br /><br />Bugs:<br />-T9 sometimes resets when magnifying photos in white-love theme.<br />-Some DRM music files containing noise during playback<br /><br />Updating The T9 Firmware <br /><br />Before you begin the firmware upgrade, please make sure your battery is fully charged. <br /><br />1.  Go to the Samsung Download Center and download the latest f/w for your T9.<br />2.  Extract the zip files to your desktop and connect the T9 to your PC.<br />3.  Copy the 'SYSDATA.bin' and 'MUON.rom' files into the 'DATA' or 'Root' directory of the YP-T9. <br />4.  Disconnect the YP-T9 from the USB port of the computer. <br />5.  When you turn the player on, firmware updates are automatically performed. <br /><br />To confirm that the update was successful, Select MENU > SETTING > SYSTEM INFO to view the firmware version. <br /><br />For more help, check out the FAQ's in the Support section.
+				]]>
+			</description> 
+			<author>webmaster@samsung.com</author> 
+			
+				<pubDate>Thu, 05 Aug 2010 03:25:42 GMT</pubDate> 
+			
+			<category>SUPPORT NEWS</category> 
+		</item> 
+	
+		<item> 
+			<title>News &amp; Alert : YP-T10 Firmware Update</title> 
+			<link>http://www.samsung.com/us/support/news/supportNewsAlerts.do?site_cd=us=218</link> 
+			<description>			
+				
+				<![CDATA[
+					YP-T10 firmware has been updated to include Bluetooth functionality and GUI personalization. Firmware version 1.55 contains the following improvements: <br /><br />-Bluetooth functionality for cell phone: send and receive calls<br /><br />-Bluetooth Object Push Profile (OPP): Sync or transfer mobile telephone directory, pictures, files, etc with other Bluetooth devices<br /><br />-GUI Personalization: User Profile feature added that displays user’s name or tag upon booting up and also provides a birthday greeting on user’s birthday. (Settings > System > My Profile)<br /><br />For instructions on downloading and upgrading the firmware, follow these steps:<br /><br />1. Roll over support at the top of this page, and then click faqs when it appears.<br /><br />2. When the FAQ page appears, click search by model number on the left side of the page.<br /><br />3. Enter yp-t10 in the entry field, and then select your model from the list that appears. The FAQ page for that model appears.<br /><br />4. Enter YP-T10J Firmware Update Instructions in the faq search field and then click the search button.
+				]]>
+			</description> 
+			<author>webmaster@samsung.com</author> 
+			
+				<pubDate>Thu, 05 Aug 2010 03:25:42 GMT</pubDate> 
+			
+			<category>SUPPORT NEWS</category> 
+		</item> 
+	
+		<item> 
+			<title>News &amp; Alert : YP-P2 Firmware Update</title> 
+			<link>http://www.samsung.com/us/support/news/supportNewsAlerts.do?site_cd=us=219</link> 
+			<description>			
+				
+				<![CDATA[
+					The new firmware, Version 2.08, contains the following improvements: <br /><br />-Bluetooth functionality for cell phone: send and receive calls<br /><br />-Bluetooth Object Push Profile (OPP): Sync or transfer mobile telephone directory, pictures, files, etc. with other Bluetooth devices<br /><br />- .AAC (Advanced Audio Coding) Support<br /><br />- Text Viewer effects added<br /><br />- Album Art options added<br /><br />- LCD gamma / brightness adjusted<br /><br />For instructions on downloading and upgrading the firmware, follow these steps:<br /><br />1. Roll over support at the top of this page, and then click faqs when it appears.<br /><br />2. When the FAQ page appears, click search by model number on the left side of the page.<br /><br />3. Enter YP-P2 in the entry field, and then select your model from the list that appears. The FAQ page for that model appears.<br /><br />4. Enter YP-P2 Firmware Update Instructions in the faq search field and then click the search button.<br /> 
+				]]>
+			</description> 
+			<author>webmaster@samsung.com</author> 
+			
+				<pubDate>Thu, 05 Aug 2010 03:25:42 GMT</pubDate> 
+			
+			<category>SUPPORT NEWS</category> 
+		</item> 
+	
+		<item> 
+			<title>News &amp; Alert : Magic Net Pro Patch for 2008</title> 
+			<link>http://www.samsung.com/us/support/news/supportNewsAlerts.do?site_cd=us=222</link> 
+			<description>			
+				
+				<![CDATA[
+					Please  download the patch (see link below)  in order to operate Magic Net Pro software in 2008. Or<br />visit samsung.com/magicnet.<br /><br />http://product.samsung.com/magicnet/magicnetpatchfor2008.exe
+				]]>
+			</description> 
+			<author>webmaster@samsung.com</author> 
+			
+				<pubDate>Thu, 05 Aug 2010 03:25:42 GMT</pubDate> 
+			
+			<category>SUPPORT NEWS</category> 
+		</item> 
+	
+		<item> 
+			<title>News &amp; Alert : BD-P1200, and 3:10 to Yuma</title> 
+			<link>http://www.samsung.com/us/support/news/supportNewsAlerts.do?site_cd=us=241</link> 
+			<description>			
+				
+				<![CDATA[
+					Recently, we have gotten reports that 3:10 to Yuma does not play properly on some BD-P1200s. We have confirmed the problem in our laboratories and are currently working on a solution.
+				]]> 
+			</description> 
+			<author>webmaster@samsung.com</author> 
+			
+				<pubDate>Thu, 05 Aug 2010 03:25:42 GMT</pubDate> 
+			
+			<category>SUPPORT NEWS</category> 
+		</item> 
+	
+		<item> 
+			<title>News &amp; Alert : BD-UP5000 and 3:10 to Yuma</title> 
+			<link>http://www.samsung.com/us/support/news/supportNewsAlerts.do?site_cd=us=242</link> 
+			<description>			
+				
+				<![CDATA[
+					Recently, we have gotten reports that 3:10 to Yuma does not play properly on some BD-UP5000s. We have confirmed the problem in our laboratories and are currently working on a solution.
+				]]> 
+			</description> 
+			<author>webmaster@samsung.com</author> 
+			
+				<pubDate>Thu, 05 Aug 2010 03:25:42 GMT</pubDate> 
+			
+			<category>SUPPORT NEWS</category> 
+		</item> 
+	
+		<item> 
+			<title>News &amp; Alert : Firmware Update for BD-P1000</title> 
+			<link>http://www.samsung.com/us/support/news/supportNewsAlerts.do?site_cd=us=279</link> 
+			<description>			
+				
+				<![CDATA[
+					<br />BD-P1000 firmware update Version 1.4, released on January 25, 2008, improves the BD-P1000's ability to play movies correctly. This update is available on line at Samsung's Download Center.<br /><br />Important: This update contains all previous updates.<br /><br />To download the firmware update, follow these steps:<br /><br />1. Click download center under support on the upper left side of this page.<br /><br />2. After the Download Center page appears, click search by model number on the left side.<br /><br />3. In the field that appears, enter BD-P1000, and then click the search button.<br /><br />4. After the download page for the BD-P1000 appears, click the firmware tab near the bottom of the page.<br /><br />5. After the firmware tab opens, click the small ZIP icon on the right for Version 1.4. The download dialog appears.<br /><br />6. Click Save to Disk, and then OK.<br /> 
+				]]>
+			</description> 
+			<author>webmaster@samsung.com</author> 
+			
+				<pubDate>Thu, 05 Aug 2010 03:25:42 GMT</pubDate> 
+			
+			<category>SUPPORT NEWS</category> 
+		</item> 
+	
+	
+	</channel> 
+</rss> 
+ 

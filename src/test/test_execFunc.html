@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>Cheese Factory</title>
+	<link rel="stylesheet" href="framework.css" type="text/css">
+	<script type="text/javascript" src="framework.js"></script>
+	<script language="javascript">
+	$( function(){
+ 
+		$.globalSetting(
+		{
+			"softkeyData" : {
+				"execFunc" : function() { 
+					//현재 선택된 list에 등록되어있는 callback 함수를 설정한다.
+					$("#listTest").execFunc(); 
+				}
+			}
+		}
+		);
+
+		$("#indexTest").data([
+			["text", "setList", function(){ $.go("list"); }]
+		]);
+
+		$("#listTest").data(	[{
+			"r1" : ["radio", "title", "sub" ],
+			"r2" : ["radio", "title", "sub" ],
+			"c1" : ["check", "title", "sub" ],
+			"o1" : ["onoff", "title", "sub" ]
+		},
+		function( selected ) {
+			for(var k in selected )
+				alert(selected[k]);
+		}]);
+
+		$.go("index");
+	});
+	</script>
+</head>
+<body>
+
+<!-- Idle -->
+<div id="idle" class="idle">
+	<div id="idlego">
+	V0.97
+	</div>
+</div>
+<!-- //idle -->
+
+<!-- Title -->
+<div class="title">
+	Mobile Widget
+</div>
+<!-- //Title -->
+
+
+<div class="scene" id="index">
+	<div class="list" id="indexTest">
+	</div>
+</div>
+
+
+<div class="scene" id="list">
+	<div class="setList" id="listTest">
+	</div>
+</div>
+
+</body>
+</html>
+
+
+

@@ -1,0 +1,288 @@
+/*															*/
+/* Theme : Green									*/
+/*															*/
+/* Copyright 2010, Licensed under the MIT license.			*/
+/* http://innovator.samsungmobile.com/						*/
+/*															*/
+/*															*/
+
+
+
+.sceneBackground {
+	background-image: url("img/bg.png");
+	opacity: 1;
+}
+
+
+.title {
+	background: url("img/bg_title.png") 0 0 no-repeat;;
+
+}
+
+.title, /* Default Radius Setting */
+.title > img,
+.title > div {
+	-webkit-border-radius : 0
+}
+
+
+.setTitle {
+	background: #000
+
+}
+
+
+.setTitle, /* Default Radius Setting */
+.setTitle > img,
+.setTitle > div {
+	-webkit-border-radius : 0
+}
+
+
+.list > ul > li {
+	color: #fff;
+}
+
+.list > ul > li .subTxt {
+	color: #9baf2b;
+}
+
+
+.list > ul > li .listLineTop {
+	border-top: 1px solid #ffffff;
+	opacity: 0.2;
+	display: block;
+}
+
+.list > ul > li .listLineBottom {
+	border-bottom: 1px solid #202d14;
+}
+
+.list > ul > li.focus {
+	background: #9baf24;
+}
+
+
+
+.list > ul > li.accordion > div.accCon {
+	background: url('img/bg_acc.png') 0 0 repeat;
+
+}
+
+.list > ul > li.accordion .list li {
+	color: #fff;
+	}
+
+
+
+.list > ul > li.accordion .ico_accordion {
+	background: url('img/green_acco_down.png') center center no-repeat; 
+}
+
+
+.list > ul > li.accordion .ico_accordion.on {
+	background-image: url('img/green_acco_up.png');
+}
+
+
+
+/* Radio */
+
+.symRadio {
+	background: url('img/green_radio_dim.png') 50% 50%  no-repeat;
+	
+}
+
+.symRadio.on {
+	background-image: url('img/green_radio_on.png');
+}
+
+.symRadio.on .comRadioObj,
+.symRadio.on .comRadioOnShadow {
+	display: none !important;;
+}
+
+
+/* Onoff */
+.symOnoff{
+	background: url('img/green_onoff_off.png') center center no-repeat;
+}
+
+.symOnoff.on{
+	background-image: url('img/green_onoff_on.png');
+
+}
+
+.symOnoff.on .symOnoffOnBg{
+	display: none; 
+}
+
+
+
+/* Checkbox */
+
+.symCheck{
+	background: url('img/green_check_dim.png') center 20% no-repeat;
+}
+
+.symCheck.on{
+	background-image: url('img/green_check_on.png');
+}
+
+.symCheck.on > div{
+	display: none !important;
+}
+
+
+.busyIndicator.type1{
+	background-image: url('img/green_busy.png');
+}
+
+
+
+.list > ul > li .ico1{
+	width: 80px;
+	height: 80px;
+	background: url("img/green_icon01.png") center center no-repeat;
+}
+
+.list > ul > li .ico2{
+	width: 80px;
+	height: 80px;
+	background: url("img/green_icon02.png") center center no-repeat;
+}
+
+.list > ul > li .ico3{
+	width: 80px;
+	height: 80px;
+	background: url("img/green_icon03.png") center center no-repeat;
+}
+
+.list > ul > li .ico4{
+	width: 80px;
+	height: 80px;
+	background: url("img/green_icon04.png") center center no-repeat;
+}
+
+.list > ul > li .ico5{
+	width: 80px;
+	height: 80px;
+	background: url("img/green_icon05.png") center center no-repeat;
+}
+
+.list > ul > li .ico6{
+	width: 80px;
+	height: 80px;
+	background: url("img/green_icon06.png") center center no-repeat;
+}
+
+.list > ul > li .ico7{
+	width: 80px;
+	height: 80px;
+	background: url("img/green_icon07.png") center center no-repeat;
+}
+
+.list > ul > li .ico8{
+	width: 80px;
+	height: 80px;
+	background: url("img/green_icon08.png") center center no-repeat;
+}
+
+
+.list .subTit{
+	background: url("img/bg_subtit.png") 0 0 no-repeat;
+
+}
+
+
+/* Popup */
+.popCon {
+	border: none;
+	background: #ebf2da;
+	font-size: 24px;
+	color: #374e21;
+}
+
+.popCon .popConTxt {
+	padding: 35px;
+}
+
+
+.popCon .btnArea {
+	background: #3b5222;
+}
+
+
+/* Button */
+.btn {
+	-webkit-border-image: url('img/green_btn_green_nor.png') 10 stretch stretch;
+	font-size: 22px;
+}
+
+.btn.focus {
+	-webkit-border-image: url('img/green_btn_green_press.png') 10 stretch stretch;
+	font-size: 22px;
+}
+
+
+/* TextPage */
+
+.textPage .tit{ 
+	color: #9baf2b;
+	padding: 0 20px;
+
+}
+
+.textPage .desc{ 
+	color: #fff;	
+	border-top: none;;
+	border-bottom: none;
+	-webkit-border-radius: 10px;
+	background: url('img/bg_tbox.png') 0 0 repeat;
+	padding: 10px 20px;
+	
+}
+
+
+.textPage { 
+	padding: 7px;
+}
+
+.softkey.type1 .normalList {
+	background: #ebf1b5;
+}
+
+.softkey.type1 ul.keyList li {
+	border-right: 1px solid #75785a;
+	border-left: 1px solid #f5f8da;
+	color: #374e21;
+}
+
+.softkey.type1 .back{
+	background: url('img/green_softkey_back.png	') 50% 50% no-repeat;	
+	border-left: 1px solid #f5f8da;
+}
+
+
+.pageControl {
+	background: url("img/bg_page.png") 0 0 no-repeat;
+	border: none;
+	border-bottom: 1px solid #5c7247;
+}
+
+
+.pageControl .arrLeft {
+	background: url('img/green_pagecontrol_left.png') center center no-repeat;
+}
+
+.pageControl .arrRight {
+	background: url('img/green_pagecontrol_right.png') center center no-repeat;
+}
+
+
+
+.pageControl li {
+	
+	color: #9baf2b;
+	
+}

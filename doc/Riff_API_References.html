@@ -1,0 +1,7000 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Riff API References</title>
+</head>
+<style>
+td,th,tr,thead,tfoot,tbody,caption,table,legend,label,form,fieldset,dd,dt,dl,var,tt,sup,sub,strong,strike,small,samp,s,q,kbd,ins,img,font,em,dfn,del,code,cite,big,address,acronym,abbr,a,pre,blockquote,p,h6,h5,h4,h3,h2,h1,iframe,object,applet,span,div,body{font:100% inherit inherit inherit;margin:0;padding:0;border:0;vertical-align:baseline}td,th,tr,thead,tfoot,tbody,caption,table,legend,label,form,fieldset,dd,dt,dl,var,tt,sup,sub,strong,strike,small,samp,s,q,kbd,ins,img,font,em,dfn,del,code,cite,big,address,acronym,abbr,a,pre,blockquote,p,h6,h5,h4,h3,h2,h1,iframe,object,applet,span,div,body,:focus{outline:0}html,body,body{height:100%}table{border-collapse:collapse;border-spacing:0}body{font:12px arial,dotum;color:#333;padding:15px}.dpn{display:none}a{text-decoration:none}a,dt{color:#666}.wrapper{max-width:1100px}.header,iframe,table,.codeBox{width:100%}.header{padding:15px 0;border-bottom:2px solid #0c84ff}.header,ul li,.detailPart{margin-bottom:20px}h1{font-size:35px}h1,h2,h3,h4,ul li,dt,caption,th,.detailPart em{font-weight:bold}h2{font-size:30px;margin-bottom:15px;padding-bottom:5px}h3{font-size:20px;margin-bottom:40px}h4{font-size:14px;margin-bottom:5px;background:#e4f0f5}ol li{margin-bottom:0;font-weight:normal}.sideBar{background:#ececec;float:left;width:20%;margin-right:15px;padding:10px 0}.content{float:right;width:77%}dd,.detailSection p{margin-bottom:10px}iframe{height:800px}caption{text-align:right}td,th{padding:5px}th{background:#eaeaea;text-align:left}td{border-bottom:1px solid #ccc}.detailPart,pre{padding:10px}.detailPart{border:1px solid #ccc}.detailPart em{color:red}.detailSection{margin-bottom:25px}.codeBox{background:#333;margin:10px 0 15px;overflow-y:scroll}pre{font:12px verdana normal /1.2em;word-wrap:break-word;color:#fff}
+</style>
+<body>
+
+<div class="wrapper">
+<div class="header">
+	<h1>Riff API References</h1>
+	Trial 1.0.11
+</div>
+
+<!-- ******************  Side Menu ****************** -->
+<div class="sideBar" id="linkWrap">
+	<ul>
+		<li>DOM Traversal
+			<ol>
+				<li><a href="#" id="each">each</a></li>
+				<li><a href="#" id="filter">filter</a></li>
+				<li><a href="#" id="not">not</a></li>
+				<li><a href="#" id="clone">clone</a></li>
+				<li><a href="#" id="buffer">buffer</a></li>
+				<li><a href="#" id="prev">prev</a></li>
+				<li><a href="#" id="next">next</a></li>
+				<li><a href="#" id="parent">parent</a></li>
+				<li><a href="#" id="contents">contents</a></li>
+				<li><a href="#" id="children">children</a></li>
+				<li><a href="#" id="siblings">siblings</a></li>
+				<li><a href="#" id="eq">eq</a></li>
+				<li><a href="#" id="find">find</a></li>
+				<li><a href="#" id="index">index</a></li>
+			</ol>
+		</li>
+		<li>DOM Menupulation
+			<ol>
+				<li><a href="#" id="hasClass">hasClass</a></li>
+				<li><a href="#" id="addClass">addClass</a></li>
+				<li><a href="#" id="removeClass">removeClass</a></li>
+				<li><a href="#" id="toggleClass">toggleClass</a></li>
+				<li><a href="#" id="remove">remove</a></li>
+				<li><a href="#" id="html">html</a></li>
+				<li><a href="#" id="text">text</a></li>
+				<li><a href="#" id="append">append</a></li>
+				<li><a href="#" id="prepend">prepend</a></li>
+				<li><a href="#" id="wrap">wrap</a></li>
+				<li><a href="#" id="wrapAll">wrapAll</a></li>
+				<li><a href="#" id="after">after</a></li>
+				<li><a href="#" id="before">before</a></li>
+
+				
+				
+				<li><a href="#" id="add">add</a></li>
+				<li><a href="#" id="attr">attr</a></li>
+				<li><a href="#" id="dom">dom</a></li>
+			</ol>
+		</li>
+		<li>CSS
+			<ol>
+				<li><a href="#" id="css">css</a></li>
+				<li><a href="#" id="top">top</a></li>
+				<li><a href="#" id="left">left</a></li>
+				<li><a href="#" id="width">width</a></li>
+				<li><a href="#" id="height">height</a></li>
+			</ol>
+		</li>
+		<li>Effect
+			<ol>
+				<li><a href="#" id="animate">animate</a></li>
+				<li><a href="#" id="clearQueue">clearQueue</a></li>
+				<li><a href="#" id="stop">stop</a></li>
+				<li><a href="#" id="show">show</a></li>
+				<li><a href="#" id="hide">hide</a></li>
+			</ol>
+		</li>
+		<li>Event
+			<ol>
+				<li><a href="#" id="toggle">toggle</a></li>
+				<li><a href="#" id="trigger">trigger</a></li>
+				<li><a href="#" id="enableEvent">enableEvent</a></li>
+				<li><a href="#" id="disableEvent">disableEvent</a></li>
+				<li><a href="#" id="drag">drag</a></li>
+				<li><a href="#" id="flickLeft">flickLeft</a></li>
+				<li><a href="#" id="flickRight">flickRight</a></li>
+				<li><a href="#" id="flickUp">flickUp</a></li>
+				<li><a href="#" id="flickDown">flickDown</a></li>
+				<li><a href="#" id="tap">tap</a></li>
+				<li><a href="#" id="longTap">longTap</a></li>
+				<li><a href="#" id="doubleTap">doubleTap</a></li>
+				<li><a href="#" id="touchStart">touchStart</a></li>
+				<li><a href="#" id="touchMove">touchMove</a></li>
+				<li><a href="#" id="touchEnd">touchEnd</a></li>
+				<li><a href="#" id="swipe">swipe</a></li>
+			</ol>
+		</li>
+		<li>Data Processing
+			<ol>
+				<li><a href="#" id="ajax">ajax</a></li>
+				<li><a href="#" id="xml">xml</a></li>
+				<li><a href="#" id="xmlSelector">xmlSelector</a></li>
+				<li><a href="#" id="rss">rss</a></li>
+			</ol>
+		</li>
+		<li>Widget
+			<ol>
+				<li><a href="#" id="storage">storage</a></li>
+				<li><a href="#" id="storagePreference">storage.preference</a></li>
+				<li><a href="#" id="storageLocalStorage">storage.localStorage</a></li>
+				<li><a href="#" id="isWidget">isWidget</a></li>
+				<li><a href="#" id="isEmulator">isEmulator</a></li>
+				<li><a href="#" id="resize">resize</a></li>
+				<li><a href="#" id="openURL">openURL</a></li>
+			</ol>
+		</li>
+		<li>Component
+			<ol>
+				<li><a href="#" id="trim">trim</a></li>
+				<li><a href="#" id="camelize">camelize</a></li>
+				<li><a href="#" id="toID">toID</a></li>
+				<li><a href="#" id="queue">queue</a></li>
+				<li><a href="#" id="move">move</a></li>
+				<li><a href="#" id="back">back</a></li>
+				<li><a href="#" id="scene">scene</a></li>
+				<li><a href="#" id="sceneMove">scene.move</a></li>
+				<li><a href="#" id="sceneBack">scene.back</a></li>
+				<li><a href="#" id="popup">popup</a></li>
+				<li><a href="#" id="popupMove">popup.move</a></li>
+				<li><a href="#" id="popupBack">popup.back</a></li>
+				<li><a href="#" id="transition">transition</a></li>
+				<li><a href="#" id="globalSetting">globalSetting</a></li>
+				<li><a href="#" id="softKey">softKey</a></li>
+				<li><a href="#" id="softKeySoftKeyMoreHide">softkey.softKeyMoreHide</a></li>
+				<li><a href="#" id="load">load</a></li>
+				<li><a href="#" id="noConflict">noConflict</a></li>
+				<li><a href="#" id="now">now</a></li>
+				<li><a href="#" id="feedReceiveTime">feedReceiveTime</a></li>
+				<li><a href="#" id="adjustSceneSize">adjustSceneSize</a></li>
+				<li><a href="#" id="ellipsisString">ellipsisString</a></li>
+				<li><a href="#" id="extend">extend</a></li>
+				<li><a href="#" id="alert">alert</a></li>
+				<li><a href="#" id="timer">timer</a></li>
+				<li><a href="#" id="changeSubsceneFlag">changeSubsceneFlag</a></li>
+				<li><a href="#" id="isArray">isArray</a></li>
+			</ol>
+		</li>
+		<li>ETC
+			<ol>
+				<li><a href="#" id="size">size</a></li>
+				<li><a href="#" id="getTextByRecursive">getTextByRecursive</a></li>
+				<li><a href="#" id="component">component</a></li>
+				<li><a href="#" id="triggerExistEvent">triggerExistEvent</a></li>
+				<li><a href="#" id="triggerCustomEvent">triggerCustomEvent</a></li>
+				<li><a href="#" id="addEventByType">addEventByType</a></li>
+				<li><a href="#" id="primaryEventRegist">primaryEventRegist</a></li>
+			</ol>
+		</li>
+		<li>Component Function 
+			<ol>
+				<li><a href="#" id="makeStructs">makeStructs</a></li>
+				<li><a href="#" id="makeContents">makeContents</a></li>
+				<li><a href="#" id="count">count</a></li>
+				<li><a href="#" id="componentMove">move</a></li>
+				<li><a href="#" id="subSceneLoad">subSceneLoad</a></li>
+				<li><a href="#" id="subSceneLoadFlag">subSceneLoadFlag</a></li>
+				<li><a href="#" id="subSceneSelect">subSceneSelect</a></li>
+				<li><a href="#" id="refresh">refresh</a></li>
+				<li><a href="#" id="autoRefresh">autoRefresh</a></li>
+				<li><a href="#" id="option">option</a></li>
+				<li><a href="#" id="removeListItem">removeListItem</a></li>
+				<li><a href="#" id="okFunc">okFunc</a></li>
+				<li><a href="#" id="getSettingValue">getSettingValue</a></li>
+				<li><a href="#" id="moveRSSArticle">moveRSSArticle</a></li>
+				<li><a href="#" id="setRSSComponent">setRSSComponent</a></li>
+			</ol>
+		</li>
+	</ul>
+</div>
+<!-- ******************  //Side Menu ****************** -->
+
+
+
+<div class="content" id="contentDetail">
+
+
+	<!-- ******************  API Detail ****************** -->
+	<div id="eachView">
+		<h2>each()</h2>
+		<div class="detailPart">
+			<h3>each(<em> function </em>)</h3>
+			<div class="detailSection">
+				<h4>Argument</h4>
+				<dl>
+					<dt> function </dt>
+					<dd> 선택된 DOM Element를 순회하며 실행될 함수. 이 함수는 실행시 첫번째 인자로 DOM
+Element의 순서(index)가 전달된다. </dd>
+				</dl>
+			</div>
+			<div class="detailSection">
+				<h4>Return</h4>
+				<p>riff Object</p>
+			</div>
+			<div class="detailSection">
+				<h4>Description</h4>
+				<p>선택된 DOM Element를 순회하며 실행될 function을 실행한다 첫번째 인자 index로 DOM Element의
+순서가 전달되며 함수 내에서의 this는 해당 DOM Element가 된다.</p>
+			</div>
+
+			<div class="detailSection">
+				<h4>Example</h4>
+				<p>다음은 리스트형식의 마크업이다.</p>
+				<div class="codeBox">
+<pre>&lt;ul&gt;
+	&lt;li&gt;foo&lt;/li&gt;
+	&lt;li&gt;bar&lt;/li&gt;
+&lt;/ul&gt;</pre>
+				</div>
+				<p>리스트 아이템을 순회하여 각각의 인덱스와 텍스트를 출력한다.</p>
+				<div class="codeBox">
+<pre>$('li').each(function(index) {
+    alert(index + ': ' + $(this).text());
+  });
+</pre>
+				</div>
+			</div>
+		</div>
+
+
+		<table>
+			<caption>Version History</caption>
+			<colgroup>
+				<col width="30%">
+				<col width="70%">
+			</colgroup>
+			<thead>
+				<tr>
+					<th scope="col">
+						Version
+					</th>
+					<th scope="col">
+						Description
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						Trial 1.0.10
+					</td>
+					<td>
+						-
+					</td>
+				</tr>
+			</tbody>
+		</table>
+
+	</div>
+	<!-- ******************  //API Detail ****************** -->
+	<!-- ******************  API Detail ****************** -->
+	<div id="filterView">
+		<h2>filter()</h2>
+		<div class="detailPart">
+			<h3>filter(<em> [selector] </em>)</h3>
+			<div class="detailSection">
+				<h4>Argument</h4>
+				<dl>
+					<dt> selector( optional) </dt>
+					<dd> 선택된 DOM Element 중 대응되는 DOM Element만 선택하기 위한 String, tagName, Class, ID 의 사용이 가능. (optional) </dd>
+				</dl>
+			</div>
+			<div class="detailSection">
+				<h4>Return</h4>
+				<p>riff Object</p>
+			</div>
+			<div class="detailSection">
+				<h4>Description</h4>
+				<p>선택된 DOM Element에 대해 selector에 해당하는 DOM Element를 선택하여 반환한다. 인자값이 입력되지 않았거나 String이 아니라면 기존 선택된 riff Object를 반환한다.</p>
+			</div>
+			<div class="detailSection">
+				<h4>Example</h4>
+				<div class="codeBox">
+<pre>$('li').filter(".foo").hide();
+</pre>
+				</div>
+				<p>"LI" Tag Element를 선택하고 그중 클래스명이 "foo"인 Element에 hide() 를 실행한다.</p>
+			</div>
+			<div class="detailSection">
+				<h4>Issue</h4>
+				<p> id, class, tagName 으로 선택하게 되어 있는 걸 CSS Selector 규칙 모두로 확장 적용할 필요가 있다.</p>
+			</div>
+
+		</div>
+
+
+		<table>
+			<caption>Version History</caption>
+			<colgroup>
+				<col width="30%">
+				<col width="70%">
+			</colgroup>
+			<thead>
+				<tr>
+					<th scope="col">
+						Version
+					</th>
+					<th scope="col">
+						Description
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						Trial 1.0.10
+					</td>
+					<td>
+						Refactoring
+					</td>
+				</tr>
+			</tbody>
+		</table>
+
+	</div>
+	<!-- ******************  //API Detail ****************** -->
+
+
+	<!-- ******************  API Detail ****************** -->
+	<div id="notView">
+		<h2>not()</h2>
+		<div class="detailPart">
+			<h3>not(<em> index </em>)</h3>
+			<div class="detailSection">
+				<h4>Argument</h4>
+				<dl>
+					<dt> index </dt>
+					<dd> 숫자. 선택된 DOM Element 중 제외할 DOM Element의 순서. </dd>
+				</dl>
+			</div>
+			<div class="detailSection">
+				<h4>Return</h4>
+				<p>riff Object</p>
+			</div>
+			<div class="detailSection">
+				<h4>Description</h4>
+				<p> 선택된 DOM Element에 대하여 입력된 인자값에 대응되는 것들을 제외한 집합을 선택하여 반환한다. 인자값이 index인 경우,선택된 DOM Element 중 number 번째에 해당되는 DOM Element를 제외시켜 반환한다.</p>
+			</div>
+		</div>
+		<div class="detailPart">
+			<h3>not(<em> DOMElement </em>)</h3>
+			<div class="detailSection">
+				<h4>Argument</h4>
+				<dl>
+					<dt> DOMElement </dt>
+					<dd> 선택된 DOM Element 중 제외할 DOM Element. </dd>
+				</dl>
+			</div>
+			<div class="detailSection">
+				<h4>Return</h4>
+				<p>riff Object</p>
+			</div>
+			<div class="detailSection">
+				<h4>Description</h4>
+				<p> 선택된 DOM Element에 대하여 입력된 인자값에 대응되는 것들을 제외한 집합을 선택하여 반환한다. 인자값이 DOMElement가 입력되면,선택된 DOM Element 중 DOMElement를 제외시켜 반환한다.</p>
+			</div>
+		</div>
+		<div class="detailPart">
+			<h3>not(<em> selector </em>)</h3>
+			<div class="detailSection">
+				<h4>Argument</h4>
+				<dl>
+					<dt> selector </dt>
+					<dd> 선택된 DOM Element 중 대응되는 DOM Element를 제외하기 위한 문자열.
+tagName, Class, ID 의 사용이 가능. </dd>
+				</dl>
+			</div>
+			<div class="detailSection">
+				<h4>Return</h4>
+				<p>riff Object</p>
+			</div>
+			<div class="detailSection">
+				<h4>Description</h4>
+				<p> 선택된 DOM Element에 대하여 입력된 인자값에 대응되는 것들을 제외한 집합을 선택하여 반환한다.인자값으로 selector가 입력되면, 선택된 DOM Element 중 selector에 대응되는 DOM Element를 제외시켜 반환한다. </p>
+			</div>
+
+			<div class="detailSection">
+				<h4>Issue</h4>
+				<p> id, class, tagName 으로 선택하게 되어 있는 걸 CSS Selector 규칙 모두로 확장 적용할 필요가 있다.</p>
+			</div>
+		</div>
+
+
+		<table>
+			<caption>Version History</caption>
+			<colgroup>
+				<col width="30%">
+				<col width="70%">
+			</colgroup>
+			<thead>
+				<tr>
+					<th scope="col">
+						Version
+					</th>
+					<th scope="col">
+						Description
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						Trial 1.0.10
+					</td>
+					<td>
+						Refactoring
+					</td>
+				</tr>
+			</tbody>
+		</table>
+
+	</div>
+	<!-- ******************  //API Detail ****************** -->
+	<!-- ******************  API Detail ****************** -->
+	<div id="cloneView">
+		<h2>clone()</h2>
+		<div class="detailPart">
+			<h3>clone(<em> [ deep ] </em>)</h3>
+			<div class="detailSection">
+				<h4>Argument</h4>
+				<dl>
+					<dt> deep (Optional)</dt>
+					<dd> boolean값. 만일 true면 자식( chile ) Node 도 복사. </dd>
+				</dl>
+			</div>
+			<div class="detailSection">
+				<h4>Return</h4>
+				<p>riff Object</p>
+			</div>
+			<div class="detailSection">
+				<h4>Description</h4>
+				<p> 질의된 DOM Element 를 복사한다. 인자값 deep가 true면 자식(child) node를 같이 복사한다. </p>
+			</div>
+		</div>
+
+		<table>
+			<caption>Version History</caption>
+			<colgroup>
+				<col width="30%">
+				<col width="70%">
+			</colgroup>
+			<thead>
+				<tr>
+					<th scope="col">
+						Version
+					</th>
+					<th scope="col">
+						Description
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						Trial 1.0.10
+					</td>
+					<td>
+						Refactoring
+					</td>
+				</tr>
+			</tbody>
+		</table>
+
+	</div>
+	<!-- ******************  //API Detail ****************** -->
+	<!-- ******************  API Detail ****************** -->
+	<div id="hasClassView">
+		<h2>hasClass()</h2>
+		<div class="detailPart">
+			<h3>hasClass(<em> classNames </em>)</h3>
+			<div class="detailSection">
+				<h4>Argument</h4>
+				<dl>
+					<dt> classNames </dt>
+					<dd> 선택된 DOM Element의 Class와 비교할 Class 이름들을 가진 String.Class는 공백으로 구분 </dd>
+				</dl>
+			</div>
+			<div class="detailSection">
+				<h4>Return</h4>
+				<p> boolean </p>
+			</div>
+			<div class="detailSection">
+				<h4>Description</h4>
+				<p> 선택된 DOM Element들이 classNames으로 입력된 Class들를 모두 가지고 있는지 비교한다. 모두 존
+재한다면 true를 반환하고, 그렇지 없다면 false를 반환한다. </p>
+			</div>
+		</div>
+
+		<table>
+			<caption>Version History</caption>
+			<colgroup>
+				<col width="30%">
+				<col width="70%">
+			</colgroup>
+			<thead>
+				<tr>
+					<th scope="col">
+						Version
+					</th>
+					<th scope="col">
+						Description
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						Trial 1.0.10
+					</td>
+					<td>
+						Refactoring
+					</td>
+				</tr>
+			</tbody>
+		</table>
+
+	</div>
+	<!-- ******************  //API Detail ****************** -->
+	<!-- ******************  API Detail ****************** -->
+	<div id="addClassView">
+		<h2>addClass()</h2>
+		<div class="detailPart">
+			<h3>addClass(<em> classNames </em>)</h3>
+			<div class="detailSection">
+				<h4>Argument</h4>
+				<dl>
+					<dt> classNames </dt>
+					<dd>선택된 DOM Element의 Class에 추가할 Class 이름들을 가진 String. Class는 공백으로 구분.</dd>
+				</dl>
+			</div>
+			<div class="detailSection">
+				<h4>Return</h4>
+				<p>riff Object</p>
+			</div>
+			<div class="detailSection">
+				<h4>Description</h4>
+				<p> 선택된 DOM Element들에 대해 classNames으로 입력된 Class들을 추가한다. 이미 DOM Element에
+추가할 Class가 적용되어 있다면 해당 Class는 추가하지 않는다. </p>
+			</div>
+		</div>
+		<table>
+			<caption>Version History</caption>
+			<colgroup>
+				<col width="30%">
+				<col width="70%">
+			</colgroup>
+			<thead>
+				<tr>
+					<th scope="col">
+						Version
+					</th>
+					<th scope="col">
+						Description
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						Trial 1.0.10
+					</td>
+					<td>
+						Refactoring
+					</td>
+				</tr>
+			</tbody>
+		</table>
+
+	</div>
+	<!-- ******************  //API Detail ****************** -->
+	<!-- ******************  API Detail ****************** -->
+	<div id="removeClassView">
+		<h2>removeClass()</h2>
+		<div class="detailPart">
+			<h3>removeClass(<em> classNames </em>)</h3>
+			<div class="detailSection">
+				<h4>Argument</h4>
+				<dl>
+					<dt> classNames </dt>
+					<dd> 선택된 DOM Element의 Class에 삭제할 Class 이름들을 가진 String. Class는 공백으로 구분. </dd>
+				</dl>
+			</div>
+			<div class="detailSection">
+				<h4>Return</h4>
+				<p>riff Object</p>
+			</div>
+			<div class="detailSection">
+				<h4>Description</h4>
+				<p>선택된 DOM Element들에 대해 classNames으로 입력된 Class들을 제거한다. 인자값이 입력되지 않
+았을 경우, DOM Element에 적용되어있던 모든 Class를 제거한다. </p>
+			</div>
+		</div>
+		<table>
+			<caption>Version History</caption>
+			<colgroup>
+				<col width="30%">
+				<col width="70%">
+			</colgroup>
+			<thead>
+				<tr>
+					<th scope="col">
+						Version
+					</th>
+					<th scope="col">
+						Description
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						Trial 1.0.10
+					</td>
+					<td>
+						Refactoring
+					</td>
+				</tr>
+			</tbody>
+		</table>
+
+	</div>
+	<!-- ******************  //API Detail ****************** -->
+	<!-- ******************  API Detail ****************** -->
+	<div id="toggleClassView">
+		<h2>toggleClass()</h2>
+		<div class="detailPart">
+			<h3>toggleClass(<em> classNames </em>)</h3>
+			<div class="detailSection">
+				<h4>Argument</h4>
+				<dl>
+					<dt> classNames </dt>
+					<dd> 선택된 DOM Element의 Class에 추가 또는 삭제할 Class 이름들을 가진 String. Class는 공백으로 구분.</dd>
+				</dl>
+			</div>
+			<div class="detailSection">
+				<h4>Return</h4>
+				<p>riff Object</p>
+			</div>
+			<div class="detailSection">
+				<h4>Description</h4>
+				<p> classNames으로 입력된 Class들에 대하여 해당 Class가 DOM Element에 적용되어 있으면 해당
+Class를 제거하고 적용되어 있지 않으면 해당 Class를 추가한다. </p>
+			</div>
+		</div>
+		<table>
+			<caption>Version History</caption>
+			<colgroup>
+				<col width="30%">
+				<col width="70%">
+			</colgroup>
+			<thead>
+				<tr>
+					<th scope="col">
+						Version
+					</th>
+					<th scope="col">
+						Description
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						Trial 1.0.10
+					</td>
+					<td>
+						Refactoring
+					</td>
+				</tr>
+			</tbody>
+		</table>
+
+	</div>
+	<!-- ******************  //API Detail ****************** -->
+	<!-- ******************  API Detail ****************** -->
+	<div id="bufferView">
+		<h2>buffer()</h2>
+		<div class="detailPart">
+			<h3>buffer(<em> key </em>)</h3>
+			<div class="detailSection">
+				<h4>Argument</h4>
+				<dl>
+					<dt> key </dt>
+					<dd> 선택된 DOM Element에서 얻을 value 값에 대응하는 String( = 데이터 value 에 대해 key 값으로 지정한 문자열 ). </dd>
+				</dl>
+			</div>
+			<div class="detailSection">
+				<h4>Return</h4>
+				<p> 저장한 값( 숫자, 문자, 객체, 함수 등 )</p>
+			</div>
+			<div class="detailSection">
+				<h4>Description</h4>
+				<p> 전역배열인 riffGlobal.buffer 배열에 값을 저장하거나, key 값에 해당하는 값을 불러와 반환한다.
+				전역 배열의 index값으로는, class마다 고유하게 할당된 riffGlobal.prefixBufferID 값을 이용한다. ( prefix + 숫자( 증가값 ) )
+				즉, buffer() 함수가 실행되는 각각의 DOM Element마다 저장공간을 확보하고, 거기에 key - value로 value 값을 저장하거나, 불러온다.
+				<br>
+				선택된 DOM Element 중 첫번째 DOM Element의 key 값에 대응하는 value를 반환한다.
+				선택된 DOM Element가 복수개이고 key 값이 설정되면, 선택된 DOM Element 중 맨 첫번째 DOM Element에 대해 key 값으로 value를 반환한다.
+				</p>
+			</div>
+		</div>
+
+		<div class="detailPart">
+			<h3>buffer(<em> key, value </em>)</h3>
+			<div class="detailSection">
+				<h4>Argument</h4>
+				<dl>
+					<dt>selector (Optional)</dt>
+					<dd>선택된 DOM Element 중 대응되는 DOM Element만 선택하기 위한 String.tagName, Class, ID 의 사용이 가능. </dd>
+					<dt>option</dt>
+					<dd>선택된 DOM Element 중 대응되는 DOM Element만 선택하기 위한 String.tagName, Class, ID 의 사용이 가능. (optional)</dd>
+				</dl>
+			</div>
+			<div class="detailSection">
+				<h4>Return</h4>
+				<p>riff Object</p>
+			</div>
+			<div class="detailSection">
+				<h4>Description</h4>
+				<p> 전역배열인 riffGlobal.buffer 배열에 값을 저장하거나, key 값에 해당하는 값을 불러와 반환한다.
+				전역 배열의 index값으로는, class마다 고유하게 할당된 riffGlobal.prefixBufferID 값을 이용한다. ( prefix + 숫자( 증가값 ) )
+				즉, buffer() 함수가 실행되는 각각의 DOM Element마다 저장공간을 확보하고, 거기에 key - value로 value 값을 저장하거나, 불러온다.
+				<br>
+				선택된 DOM Element의 key 값에 대해 value을 설정한다.
+				선택된 DOM Element가 복수개이고 key 값이 설정되면, 선택된 DOM Element 모두에 대해 buffer() 를 적용하여 key 값에 대한 value 를 저장한다.
+				</p>
+			</div>
+		</div>
+
+		<table>
+			<caption>Version History</caption>
+			<colgroup>
+				<col width="30%">
+				<col width="70%">
+			</colgroup>
+			<thead>
+				<tr>
+					<th scope="col">
+						Version
+					</th>
+					<th scope="col">
+						Description
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						Trial 1.0.10
+					</td>
+					<td>
+						Refactoring
+					</td>
+				</tr>
+			</tbody>
+		</table>
+
+	</div>
+	<!-- ******************  //API Detail ****************** -->
+	<!-- ******************  API Detail ****************** -->
+	<div id="prevView">
+		<h2>prev()</h2>
+		<div class="detailPart">
+			<h3>prev(<em> [selector] </em>)</h3>
+			<div class="detailSection">
+				<h4>Argument</h4>
+				<dl>
+					<dt>selector (Optional)</dt>
+					<dd> 선택된 DOM Element 중 대응되는 DOM Element만 선택하기 위한 String. tagName, Class, ID 의 사용이 가능하다. (optional) </dd>
+				</dl>
+			</div>
+			<div class="detailSection">
+				<h4>Return</h4>
+				<p>riff Object</p>
+			</div>
+			<div class="detailSection">
+				<h4>Description</h4>
+				<p> 선택된 DOM Element의 형제 DOM Element 중 Node Type이 ELEMENT_NODE인 이전 DOM Element를
+				선택한다. 인자값이 입력되었을 경우, 선택된 DOM Element중 selector 에 대응되는 DOM Element만 선택하여 반환한다. </p>
+			</div>
+		</div>
+		<table>
+			<caption>Version History</caption>
+			<colgroup>
+				<col width="30%">
+				<col width="70%">
+			</colgroup>
+			<thead>
+				<tr>
+					<th scope="col">
+						Version
+					</th>
+					<th scope="col">
+						Description
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						Trial 1.0.10
+					</td>
+					<td>
+						Refactoring
+					</td>
+				</tr>
+			</tbody>
+		</table>
+
+	</div>
+	<!-- ******************  //API Detail ****************** -->
+	<!-- ******************  API Detail ****************** -->
+	<div id="nextView">
+		<h2>next()</h2>
+		<div class="detailPart">
+			<h3>next(<em> [selector] </em>)</h3>
+			<div class="detailSection">
+				<h4>Argument</h4>
+				<dl>
+					<dt>selector (Optional)</dt>
+					<dd> 선택된 DOM Element 중 대응되는 DOM Element만 선택하기 위한 String.
+tagName, Class, ID 의 사용이 가능. (optional) </dd>
+				</dl>
+			</div>
+			<div class="detailSection">
+				<h4>Return</h4>
+				<p>riff Object</p>
+			</div>
+			<div class="detailSection">
+				<h4>Description</h4>
+				<p> 선택된 DOM Element의 형제 DOM Element 중 Node Type이 ELEMENT_NODE인 다음 DOM Element를
+선택한다. 인자값이 입력되었을 경우, 선택된 DOM Element중 selector 에 대응되는 DOM
+Element만 선택하여 반환한다. </p>
+			</div>
+		</div>
+		<table>
+			<caption>Version History</caption>
+			<colgroup>
+				<col width="30%">
+				<col width="70%">
+			</colgroup>
+			<thead>
+				<tr>
+					<th scope="col">
+						Version
+					</th>
+					<th scope="col">
+						Description
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						Trial 1.0.10
+					</td>
+					<td>
+						Refactoring
+					</td>
+				</tr>
+			</tbody>
+		</table>
+
+	</div>
+	<!-- ******************  //API Detail ****************** -->
+	<!-- ******************  API Detail ****************** -->
+	<div id="parentView">
+		<h2>parent()</h2>
+		<div class="detailPart">
+			<h3>parent(<em> [selector] </em>)</h3>
+			<div class="detailSection">
+				<h4>Argument</h4>
+				<dl>
+					<dt> selector (Optional)</dt>
+					<dd> 선택된 DOM Element 중 대응되는 DOM Element만 선택하기 위한 String.
+tagName, Class, ID 의 사용이 가능. (optional) </dd>
+				</dl>
+			</div>
+			<div class="detailSection">
+				<h4>Return</h4>
+				<p>riff Object</p>
+			</div>
+			<div class="detailSection">
+				<h4>Description</h4>
+				<p> 선택된 DOM Element의 부모 DOM Element를 선택하여 반환한다.
+				선택된 DOM Element가 복수 개일 때, 선택된 DOM Element 각각의 부모 DOM Element를 모두 선택하여 반환한다.
+				인자값이 입력되었을 경우, 선택된 DOM Element중 selector 에 대응되는 DOM Element만 선택하여 반환한다.</p>
+			</div>
+		</div>
+		<table>
+			<caption>Version History</caption>
+			<colgroup>
+				<col width="30%">
+				<col width="70%">
+			</colgroup>
+			<thead>
+				<tr>
+					<th scope="col">
+						Version
+					</th>
+					<th scope="col">
+						Description
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						Trial 1.0.10
+					</td>
+					<td>
+						Refactoring
+					</td>
+				</tr>
+			</tbody>
+		</table>
+
+	</div>
+	<!-- ******************  //API Detail ****************** -->
+	<!-- ******************  API Detail ****************** -->
+	<div id="contentsView">
+		<h2>contents()</h2>
+		<div class="detailPart">
+			<h3>contents(<em> [selector] </em>)</h3>
+			<div class="detailSection">
+				<h4>Argument</h4>
+				<dl>
+					<dt>selector (Optional)</dt>
+					<dd> 선택된 DOM Element 중 대응되는 DOM Element만 선택하기 위한 String.
+tagName, Class, ID 의 사용이 가능. (optional) </dd>
+				</dl>
+			</div>
+			<div class="detailSection">
+				<h4>Return</h4>
+				<p>riff Object</p>
+			</div>
+			<div class="detailSection">
+				<h4>Description</h4>
+				<p> 질의된 DOM Element의 자식 DOM Element를 모두 선택한다.( ChildNodes의 NodeType을 구별하지 않는다. )<br>
+				인자값이 입력되었을 경우, 선택된 DOM Element중 selector 에 대응하는 DOM Element만 선택하여 반
+환한다. </p>
+			</div>
+		</div>
+		<table>
+			<caption>Version History</caption>
+			<colgroup>
+				<col width="30%">
+				<col width="70%">
+			</colgroup>
+			<thead>
+				<tr>
+					<th scope="col">
+						Version
+					</th>
+					<th scope="col">
+						Description
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						Trial 1.0.10
+					</td>
+					<td>
+						Refactoring
+					</td>
+				</tr>
+			</tbody>
+		</table>
+
+	</div>
+	<!-- ******************  //API Detail ****************** -->
+	<!-- ******************  API Detail ****************** -->
+	<div id="childrenView">
+		<h2>children()</h2>
+		<div class="detailPart">
+			<h3>children(<em> [selector] </em>)</h3>
+			<div class="detailSection">
+				<h4>Argument</h4>
+				<dl>
+					<dt>selector (Optional)</dt>
+					<dd> 선택된 DOM Element 중 대응되는 DOM Element만 선택하기 위한 String.
+tagName, Class, ID 의 사용이 가능. (optional) </dd>
+				</dl>
+			</div>
+			<div class="detailSection">
+				<h4>Return</h4>
+				<p>riff Object</p>
+			</div>
+			<div class="detailSection">
+				<h4>Description</h4>
+				<p> 질의된 DOM Element의 자식 DOM Element 중 Node Type이 ELEMENT_NODE인 것만 선택한다.<br>
+				인자값이 입력되었을 경우, 선택된 DOM Element중 selector 에 대응하는 DOM Element만 선택하여 반
+환한다. </p>
+			</div>
+		</div>
+		<table>
+			<caption>Version History</caption>
+			<colgroup>
+				<col width="30%">
+				<col width="70%">
+			</colgroup>
+			<thead>
+				<tr>
+					<th scope="col">
+						Version
+					</th>
+					<th scope="col">
+						Description
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						Trial 1.0.10
+					</td>
+					<td>
+						Refactoring
+					</td>
+				</tr>
+			</tbody>
+		</table>
+
+	</div>
+	<!-- ******************  //API Detail ****************** -->
+	<!-- ******************  API Detail ****************** -->
+	<div id="siblingsView">
+		<h2>siblings()</h2>
+		<div class="detailPart">
+			<h3>siblings(<em> [selector] </em>)</h3>
+			<div class="detailSection">
+				<h4>Argument</h4>
+				<dl>
+					<dt>selector (Optional)</dt>
+					<dd>선택된 DOM Element 중 대응되는 DOM Element만 선택하기 위한 String.
+tagName, Class, ID 의 사용이 가능. (optional)</dd>
+				</dl>
+			</div>
+			<div class="detailSection">
+				<h4>Return</h4>
+				<p>riff Object</p>
+			</div>
+			<div class="detailSection">
+				<h4>Description</h4>
+				<p>선택된 DOM Element의 형제 DOM Element 중 Node Type이 ELEMENT_NODE인 것들을 선택한다.
+인자값이 입력되었을 경우, 선택된 DOM Element중 selector 에 대응되는 DOM Element만 선택하여
+반환한다.</p>
+			</div>
+		</div>
+		<table>
+			<caption>Version History</caption>
+			<colgroup>
+				<col width="30%">
+				<col width="70%">
+			</colgroup>
+			<thead>
+				<tr>
+					<th scope="col">
+						Version
+					</th>
+					<th scope="col">
+						Description
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						Trial 1.0.10
+					</td>
+					<td>
+						Refactoring
+					</td>
+				</tr>
+			</tbody>
+		</table>
+
+	</div>
+	<!-- ******************  //API Detail ****************** -->
+	<!-- ******************  API Detail ****************** -->
+	<div id="eqView">
+		<h2>eq()</h2>
+		<div class="detailPart">
+			<h3>eq(<em> [index] </em>)</h3>
+			<div class="detailSection">
+				<h4>Argument</h4>
+				<dl>
+					<dt> index (Optional)</dt>
+					<dd> 선택할 DOM Element의 순서 (zero-based). (optional) </dd>
+
+				</dl>
+			</div>
+			<div class="detailSection">
+				<h4>Return</h4>
+				<p>riff Object</p>
+			</div>
+			<div class="detailSection">
+				<h4>Description</h4>
+				<p>선택된 DOM Element에 대해, index 번째의 DOM Element를 선택하여 반환한다. 만약 index가 범위
+를 벗어난 경우, 빈 riff Object를 반환한다. 인자값이 입력되지 않으면, 첫번째 DOM Element
+를 선택하여 반환한다.</p>
+			</div>
+		</div>
+		<table>
+			<caption>Version History</caption>
+			<colgroup>
+				<col width="30%">
+				<col width="70%">
+			</colgroup>
+			<thead>
+				<tr>
+					<th scope="col">
+						Version
+					</th>
+					<th scope="col">
+						Description
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						Trial 1.0.10
+					</td>
+					<td>
+						Refactoring
+					</td>
+				</tr>
+			</tbody>
+		</table>
+
+	</div>
+	<!-- ******************  //API Detail ****************** -->
+	<!-- ******************  API Detail ****************** -->
+	<div id="addView">
+		<h2>add()</h2>
+		<div class="detailPart">
+			<h3>add(<em> selector </em>)</h3>
+			<div class="detailSection">
+				<h4>Argument</h4>
+				<dl>
+					<dt> selector </dt>
+					<dd> DOM Element를 선택하기 위한 CSS Selector Syntax String. </dd>
+				</dl>
+			</div>
+			<div class="detailSection">
+				<h4>Return</h4>
+				<p>riff Object</p>
+			</div>
+			<div class="detailSection">
+				<h4>Description</h4>
+				<p> 선택된 DOM Element들에 인자값으로 입력된 내용들에 해당하는 DOM Element를 추가로 선택한다.
+인자값이 DOM Element를 선택하기 위한 CSS Selector Syntax String이라면, selector로 검색한 결과를 추가한다.
+</p>
+			</div>
+		</div>
+		<div class="detailPart">
+			<h3>add(<em> riff Object </em>)</h3>
+			<div class="detailSection">
+				<h4>Argument</h4>
+				<dl>
+					<dt>  riff Object </dt>
+					<dd> 선택된 DOM Element 집합에 추가할 DOM Element를 선택한 riff Object. </dd>
+				</dl>
+			</div>
+			<div class="detailSection">
+				<h4>Return</h4>
+				<p>riff Object</p>
+			</div>
+			<div class="detailSection">
+				<h4>Description</h4>
+				<p> 선택된 DOM Element들에 인자값으로 입력된 내용들에 해당하는 DOM Element를 추가로 선택한다.
+					인자값으로 riff Object가 입력되면, 선택된 DOM Element 집합에 riff Object에 선택된 DOM Element를 합쳐서 반환한다.
+				</p>
+			</div>
+		</div>
+		<table>
+			<caption>Version History</caption>
+			<colgroup>
+				<col width="30%">
+				<col width="70%">
+			</colgroup>
+			<thead>
+				<tr>
+					<th scope="col">
+						Version
+					</th>
+					<th scope="col">
+						Description
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						Trial 1.0.10
+					</td>
+					<td>
+						Refactoring
+					</td>
+				</tr>
+			</tbody>
+		</table>
+
+	</div>
+	<!-- ******************  //API Detail ****************** -->
+
+	<!-- ******************  API Detail ****************** -->
+	<div id="attrView">
+		<h2>attr()</h2>
+		<div class="detailPart">
+			<h3>attr(<em> name </em>)</h3>
+			<div class="detailSection">
+				<h4>Argument</h4>
+				<dl>
+					<dt> name </dt>
+					<dd>DOM Element의 Attribute Name String. </dd>
+				</dl>
+			</div>
+			<div class="detailSection">
+				<h4>Return</h4>
+				<p> DOM Element의 Attribute 속성 문자열 </p>
+			</div>
+			<div class="detailSection">
+				<h4>Description</h4>
+				<p> 선택된 DOM Element의 Attribute을 가져올 수 있다.
+				인자 값으로 name만 입력되었을 경우, 선택된 DOM Element 중 첫번째 DOM Element의 name 에 해당하는 Attribute를 반환한다.</p>
+			</div>
+		</div>
+		<div class="detailPart">
+			<h3>attr(<em> name, value </em>)</h3>
+			<div class="detailSection">
+				<h4>Argument</h4>
+				<dl>
+					<dt> name </dt>
+					<dd>DOM Element의 Attribute Name String. </dd>
+					<dt> attribute </dt>
+					<dd> DOM Element의 Attribute에 설정할 String. </dd>
+				</dl>
+			</div>
+			<div class="detailSection">
+				<h4>Return</h4>
+				<p>riff Object</p>
+			</div>
+			<div class="detailSection">
+				<h4>Description</h4>
+				<p> 선택된 DOM Element의 Attribute을 설정할 수 있다. 인자 값으로 name과 value가 모두 입력되었을 경우, 선택된 DOM Element들에 name에 해당하는 Attrubte를 value로 설정한다.</p>
+			</div>
+		</div>
+		<table>
+			<caption>Version History</caption>
+			<colgroup>
+				<col width="30%">
+				<col width="70%">
+			</colgroup>
+			<thead>
+				<tr>
+					<th scope="col">
+						Version
+					</th>
+					<th scope="col">
+						Description
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						Trial 1.0.10
+					</td>
+					<td>
+						Refactoring
+					</td>
+				</tr>
+			</tbody>
+		</table>
+
+	</div>
+	<!-- ******************  //API Detail ****************** -->
+	<!-- ******************  API Detail ****************** -->
+	<div id="domView">
+		<h2>dom()</h2>
+		<div class="detailPart">
+			<h3>dom(<em> [ index ] </em>)</h3>
+			<div class="detailSection">
+				<h4>Argument</h4>
+				<dl>
+					<dt> index (Optional)</dt>
+					<dd> 반환 받을 DOM Element의 순서. (optional) </dd>
+				</dl>
+			</div>
+			<div class="detailSection">
+				<h4>Return</h4>
+				<p>DOM Element</p>
+			</div>
+			<div class="detailSection">
+				<h4>Description</h4>
+				<p> riff 객체가 가진 DOM Element 를 반환한다.
+				인자값이 입력된 경우, 선택된 DOM Element 중 index 번째 DOM Element를 반환한다. 인자값이 입력되지 않았을 경우, 선택된 DOM Element 중 첫 번째 DOM Element를 반환한다. </p>
+			</div>
+		</div>
+		<table>
+			<caption>Version History</caption>
+			<colgroup>
+				<col width="30%">
+				<col width="70%">
+			</colgroup>
+			<thead>
+				<tr>
+					<th scope="col">
+						Version
+					</th>
+					<th scope="col">
+						Description
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						Trial 1.0.10
+					</td>
+					<td>
+						Refactoring
+					</td>
+				</tr>
+			</tbody>
+		</table>
+
+	</div>
+	<!-- ******************  //API Detail ****************** -->
+	<!-- ******************  API Detail ****************** -->
+	<div id="componentView">
+		<h2>component()</h2>
+		<div class="detailPart">
+			<h3>component(<em> [ index ] </em>)</h3>
+			<div class="detailSection">
+				<h4>Argument</h4>
+				<dl>
+					<dt> index (Optional)</dt>
+					<dd> 반환 받을 Component Object의 순서. (optional) </dd>
+
+				</dl>
+			</div>
+			<div class="detailSection">
+				<h4>Return</h4>
+				<p>riff Component Object</p>
+			</div>
+			<div class="detailSection">
+				<h4>Description</h4>
+				<p> riff 객체가 가진 Component Object 를 반환한다.
+				인자값이 입력된 경우, 선택된 DOM Element를 가지는 Component Object 중 index 번째 Component Object를 반환한다. 인자값이 입력되지 않았을 경우, 선택된 DOM Element를 가지는 Component Object 중 첫 번째 Component Object를 반환한다.</p>
+			</div>
+		</div>
+		<table>
+			<caption>Version History</caption>
+			<colgroup>
+				<col width="30%">
+				<col width="70%">
+			</colgroup>
+			<thead>
+				<tr>
+					<th scope="col">
+						Version
+					</th>
+					<th scope="col">
+						Description
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						Trial 1.0.10
+					</td>
+					<td>
+						Refactoring
+					</td>
+				</tr>
+			</tbody>
+		</table>
+
+	</div>
+	<!-- ******************  //API Detail ****************** -->
+	<!-- ******************  API Detail ****************** -->
+	<div id="indexView">
+		<h2>index()</h2>
+		<div class="detailPart">
+			<h3>index()</h3>
+			<div class="detailSection">
+				<h4>Argument</h4>
+				<dl>
+					<dt> none </dt>
+					<dd></dd>
+				</dl>
+			</div>
+			<div class="detailSection">
+				<h4>Return</h4>
+				<p> 몇번째( 숫자 ) </p>
+			</div>
+			<div class="detailSection">
+				<h4>Description</h4>
+				<p>선택된 DOM Element 중 첫번째 DOM Element가 형제 DOM Element 중 몇번째 순서
+				( index: zero-based ) 인지 반환한다.</p>
+			</div>
+		</div>
+		<table>
+			<caption>Version History</caption>
+			<colgroup>
+				<col width="30%">
+				<col width="70%">
+			</colgroup>
+			<thead>
+				<tr>
+					<th scope="col">
+						Version
+					</th>
+					<th scope="col">
+						Description
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						Trial 1.0.10
+					</td>
+					<td>
+						Refactoring
+					</td>
+				</tr>
+			</tbody>
+		</table>
+
+	</div>
+	<!-- ******************  //API Detail ****************** -->
+	<!-- ******************  API Detail ****************** -->
+	<div id="removeView">
+		<h2>remove()</h2>
+		<div class="detailPart">
+			<h3>remove()</h3>
+			<div class="detailSection">
+				<h4>Argument</h4>
+				<dl>
+					<dt> none </dt>
+					<dd> </dd>
+				</dl>
+			</div>
+			<div class="detailSection">
+				<h4>Return</h4>
+				<p>riff Object</p>
+			</div>
+			<div class="detailSection">
+				<h4>Description</h4>
+				<p>선택된 DOM Element 중 인자 값에 대응하는 DOM Element를 제거한다.
+				인자 값이 입력되지 않았을 경우, 선택된 DOM Element 전체를 제거한다.</p>
+			</div>
+		</div>
+		<div class="detailPart">
+			<h3>remove(<em> index </em>)</h3>
+			<div class="detailSection">
+				<h4>Argument</h4>
+				<dl>
+					<dt> index </dt>
+					<dd>선택된 DOM Element 중에서 제거할 index의 순서.</dd>
+				</dl>
+			</div>
+			<div class="detailSection">
+				<h4>Return</h4>
+				<p>riff Object</p>
+			</div>
+			<div class="detailSection">
+				<h4>Description</h4>
+				<p>선택된 DOM Element 중 인자 값에 대응하는 DOM Element를 제거한다.
+				인자 값으로 index가 입력되었을 경우,선택된 DOM Element 중 index 번째의 DOM Element를 제거한다.</p>
+			</div>
+		</div>
+		<div class="detailPart">
+			<h3>remove(<em> DOMElement </em>)</h3>
+			<div class="detailSection">
+				<h4>Argument</h4>
+				<dl>
+					<dt> DOMElement </dt>
+					<dd>선택된 DOM Element 중 제거할 DOM Element.</dd>
+				</dl>
+			</div>
+			<div class="detailSection">
+				<h4>Return</h4>
+				<p>riff Object</p>
+			</div>
+			<div class="detailSection">
+				<h4>Description</h4>
+				<p> 선택된 DOM Element 중 인자 값에 대응하는 DOM Element를 제거한다.
+				인자 값으로 DOMElement가 입력되었을 경우, 선택된 DOM Element 중 DOMElement를 제거한다.</p>
+			</div>
+		</div>
+		<table>
+			<caption>Version History</caption>
+			<colgroup>
+				<col width="30%">
+				<col width="70%">
+			</colgroup>
+			<thead>
+				<tr>
+					<th scope="col">
+						Version
+					</th>
+					<th scope="col">
+						Description
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						Trial 1.0.10
+					</td>
+					<td>
+						Refactoring
+					</td>
+				</tr>
+			</tbody>
+		</table>
+
+	</div>
+	<!-- ******************  //API Detail ****************** -->
+		<!-- ******************  API Detail ****************** -->
+	<div id="cssView">
+		<h2>css()</h2>
+		<div class="detailPart">
+			<h3>css(<em> name </em>)</h3>
+			<div class="detailSection">
+				<h4>Argument</h4>
+				<dl>
+					<dt> name </dt>
+					<dd> DOM Element의 CSS Property Name String. </dd>
+				</dl>
+			</div>
+			<div class="detailSection">
+				<h4>Return</h4>
+				<p> DOM Element의 name에 해당하는 CSS 값의 String.</p>
+			</div>
+			<div class="detailSection">
+				<h4>Description</h4>
+				<p> 선택된 DOM Element의 CSS Property을 설정하거나 가져올 수 있다. 인자 값으로 name만 입력되었을 경우, 선택된 DOM Element 중 첫번째 DOM Element의 name 값에 해당하는 CSS Property를 반환한다. </p>
+			</div>
+		</div>
+		<div class="detailPart">
+			<h3>css(<em> name, value </em>)</h3>
+			<div class="detailSection">
+				<h4>Argument</h4>
+				<dl>
+					<dt> name </dt>
+					<dd> DOM Element의 CSS Property Name String. </dd>
+					<dt> value </dt>
+					<dd> DOM Element에 설정할 CSS Style String. </dd>
+				</dl>
+			</div>
+			<div class="detailSection">
+				<h4>Return</h4>
+				<p>riff Object</p>
+			</div>
+			<div class="detailSection">
+				<h4>Description</h4>
+ 				<p> 선택된 DOM Element의 CSS Property을 설정하거나 가져올 수 있다. 인자 값으로 name만 입력되었을 경우, 선택된 DOM Element 중 첫번째 DOM Element의 name 값에 해당하는 CSS Property를 반환한다. </p>
+			</div>
+		</div>
+		<table>
+			<caption>Version History</caption>
+			<colgroup>
+				<col width="30%">
+				<col width="70%">
+			</colgroup>
+			<thead>
+				<tr>
+					<th scope="col">
+						Version
+					</th>
+					<th scope="col">
+						Description
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						Trial 1.0.10
+					</td>
+					<td>
+						Refactoring
+					</td>
+				</tr>
+			</tbody>
+		</table>
+
+	</div>
+	<!-- ******************  //API Detail ****************** -->
+	<!-- ******************  API Detail ****************** -->
+	<div id="topView">
+		<h2>top()</h2>
+		<div class="detailPart">
+			<h3>top( )</h3>
+			<div class="detailSection">
+				<h4>Argument</h4>
+				<dl>
+					<dt> none </dt>
+					<dd> DOM Element에 설정할 CSS top Style String.</dd>
+				</dl>
+			</div>
+			<div class="detailSection">
+				<h4>Return</h4>
+				<p> CSS top 속성에 해당하는 문자열 반환 </p>
+			</div>
+			<div class="detailSection">
+				<h4>Description</h4>
+				<p>	선택된 DOM Element의 Top값을 설정하거나 가져올 수 있다.
+					인자값이 없는 경우, 선택된 DOM Element의 실제 그려진 스타일(Computed Style)의 Top 값을 반환한다.
+				</p>
+			</div>
+		</div>
+		<div class="detailPart">
+			<h3>top(<em> value </em>)</h3>
+			<div class="detailSection">
+				<h4>Argument</h4>
+				<dl>
+					<dt> value </dt>
+					<dd> 선택된 DOM Element들의 CSS Property 중 Top으로 설정할 값.</dd>
+				</dl>
+			</div>
+			<div class="detailSection">
+				<h4>Return</h4>
+				<p> riff Object </p>
+			</div>
+			<div class="detailSection">
+				<h4>Description</h4>
+				<p>	선택된 DOM Element의 Top값을 설정하거나 가져올 수 있다.
+					인자값이 value 인 경우, 선택된 DOM Element의 CSS Property 중 Top를 value로 설정한다.
+				</p>
+			</div>
+		</div>
+		<table>
+			<caption>Version History</caption>
+			<colgroup>
+				<col width="30%">
+				<col width="70%">
+			</colgroup>
+			<thead>
+				<tr>
+					<th scope="col">
+						Version
+					</th>
+					<th scope="col">
+						Description
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						Trial 1.0.10
+					</td>
+					<td>
+						Refactoring
+					</td>
+				</tr>
+			</tbody>
+		</table>
+
+	</div>
+	<!-- ******************  //API Detail ****************** -->
+	<!-- ******************  API Detail ****************** -->
+	<div id="leftView">
+		<h2>left()</h2>
+		<div class="detailPart">
+			<h3>left( )</h3>
+			<div class="detailSection">
+				<h4>Argument</h4>
+				<dl>
+					<dt> none </dt>
+					<dd> DOM Element에 설정할 CSS left Style String.</dd>
+				</dl>
+			</div>
+			<div class="detailSection">
+				<h4>Return</h4>
+				<p> CSS left 속성에 해당하는 문자열 반환 </p>
+			</div>
+			<div class="detailSection">
+				<h4>Description</h4>
+				<p>	선택된 DOM Element의 left값을 설정하거나 가져올 수 있다.
+					인자값이 없는 경우, 선택된 DOM Element의 실제 그려진 스타일(Computed Style)의 left 값을 반환한다.
+				</p>
+			</div>
+		</div>
+		<div class="detailPart">
+			<h3>left(<em> value </em>)</h3>
+			<div class="detailSection">
+				<h4>Argument</h4>
+				<dl>
+					<dt> value </dt>
+					<dd> 선택된 DOM Element들의 CSS Property 중 left으로 설정할 값.</dd>
+				</dl>
+			</div>
+			<div class="detailSection">
+				<h4>Return</h4>
+				<p> riff Object </p>
+			</div>
+			<div class="detailSection">
+				<h4>Description</h4>
+				<p>	선택된 DOM Element의 left값을 설정하거나 가져올 수 있다.
+					인자값이 value 인 경우, 선택된 DOM Element의 CSS Property 중 left를 value로 설정한다.
+				</p>
+			</div>
+		</div>
+		<table>
+			<caption>Version History</caption>
+			<colgroup>
+				<col width="30%">
+				<col width="70%">
+			</colgroup>
+			<thead>
+				<tr>
+					<th scope="col">
+						Version
+					</th>
+					<th scope="col">
+						Description
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						Trial 1.0.10
+					</td>
+					<td>
+						Refactoring
+					</td>
+				</tr>
+			</tbody>
+		</table>
+
+	</div>
+	<!-- ******************  //API Detail ****************** -->
+	<!-- ******************  API Detail ****************** -->
+	<div id="widthView">
+		<h2>width()</h2>
+		<div class="detailPart">
+			<h3>width( )</h3>
+			<div class="detailSection">
+				<h4>Argument</h4>
+				<dl>
+					<dt> none </dt>
+					<dd> DOM Element에 설정할 CSS width Style String.</dd>
+				</dl>
+			</div>
+			<div class="detailSection">
+				<h4>Return</h4>
+				<p> CSS width 속성에 해당하는 문자열 반환 </p>
+			</div>
+			<div class="detailSection">
+				<h4>Description</h4>
+				<p>	선택된 DOM Element의 width값을 설정하거나 가져올 수 있다.
+					인자값이 없는 경우, 선택된 DOM Element의 실제 그려진 스타일(Computed Style)의 width 값을 반환한다.
+				</p>
+			</div>
+		</div>
+		<div class="detailPart">
+			<h3>width(<em> value </em>)</h3>
+			<div class="detailSection">
+				<h4>Argument</h4>
+				<dl>
+					<dt> value </dt>
+					<dd> 선택된 DOM Element들의 CSS Property 중 width으로 설정할 값.</dd>
+				</dl>
+			</div>
+			<div class="detailSection">
+				<h4>Return</h4>
+				<p> riff Object </p>
+			</div>
+			<div class="detailSection">
+				<h4>Description</h4>
+				<p>	선택된 DOM Element의 width값을 설정하거나 가져올 수 있다.
+					인자값이 value 인 경우, 선택된 DOM Element의 CSS Property 중 width를 value로 설정한다.
+				</p>
+			</div>
+		</div>
+		<table>
+			<caption>Version History</caption>
+			<colgroup>
+				<col width="30%">
+				<col width="70%">
+			</colgroup>
+			<thead>
+				<tr>
+					<th scope="col">
+						Version
+					</th>
+					<th scope="col">
+						Description
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						Trial 1.0.10
+					</td>
+					<td>
+						Refactoring
+					</td>
+				</tr>
+			</tbody>
+		</table>
+
+	</div>
+	<!-- ******************  //API Detail ****************** -->
+	<!-- ******************  API Detail ****************** -->
+	<div id="heightView">
+		<h2>height()</h2>
+		<div class="detailPart">
+			<h3>height( )</h3>
+			<div class="detailSection">
+				<h4>Argument</h4>
+				<dl>
+					<dt> none </dt>
+					<dd> DOM Element에 설정할 CSS height Style String.</dd>
+				</dl>
+			</div>
+			<div class="detailSection">
+				<h4>Return</h4>
+				<p> CSS height 속성에 해당하는 문자열 반환 </p>
+			</div>
+			<div class="detailSection">
+				<h4>Description</h4>
+				<p>	선택된 DOM Element의 height값을 설정하거나 가져올 수 있다.
+					인자값이 없는 경우, 선택된 DOM Element의 실제 그려진 스타일(Computed Style)의 height 값을 반환한다.
+				</p>
+			</div>
+		</div>
+		<div class="detailPart">
+			<h3>height(<em> value </em>)</h3>
+			<div class="detailSection">
+				<h4>Argument</h4>
+				<dl>
+					<dt> value </dt>
+					<dd> 선택된 DOM Element들의 CSS Property 중 height으로 설정할 값.</dd>
+				</dl>
+			</div>
+			<div class="detailSection">
+				<h4>Return</h4>
+				<p> riff Object </p>
+			</div>
+			<div class="detailSection">
+				<h4>Description</h4>
+				<p>	선택된 DOM Element의 height값을 설정하거나 가져올 수 있다.
+					인자값이 value 인 경우, 선택된 DOM Element의 CSS Property 중 height를 value로 설정한다.
+				</p>
+			</div>
+		</div>
+		<table>
+			<caption>Version History</caption>
+			<colgroup>
+				<col width="30%">
+				<col width="70%">
+			</colgroup>
+			<thead>
+				<tr>
+					<th scope="col">
+						Version
+					</th>
+					<th scope="col">
+						Description
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						Trial 1.0.10
+					</td>
+					<td>
+						Refactoring
+					</td>
+				</tr>
+			</tbody>
+		</table>
+
+	</div>
+	<!-- ******************  //API Detail ****************** -->
+	<!-- ******************  API Detail ****************** -->
+	<div id="htmlView">
+		<h2>html()</h2>
+		<div class="detailPart">
+			<h3>html( )</h3>
+			<div class="detailSection">
+				<h4>Argument</h4>
+				<dl>
+					<dt> none </dt>
+					<dd> DOM Element에 설정할 CSS height Style String.</dd>
+				</dl>
+			</div>
+			<div class="detailSection">
+				<h4>Return</h4>
+				<p> innerHTML에 해당하는 문자열 </p>
+			</div>
+			<div class="detailSection">
+				<h4>Description</h4>
+				<p> 선택된 DOM Element 의 innerHTML 을 반환하거나, 설정한다.
+				인자값이 입력되지 않으면, 선택된 DOM Element 중 첫번째 DOM Element의 innerHTML String를 반환한다.</p>
+			</div>
+		</div>
+		<div class="detailPart">
+			<h3>html(<em> htmlCode </em>)</h3>
+			<div class="detailSection">
+				<h4>Argument</h4>
+				<dl>
+					<dt> htmlCode </dt>
+					<dd> 선택된 DOM Element의 innerHTML에 대입될 HTML Code을 의미하는 문자열. </dd>
+				</dl>
+			</div>
+			<div class="detailSection">
+				<h4>Return</h4>
+				<p>riff Object</p>
+			</div>
+			<div class="detailSection">
+				<h4>Description</h4>
+				<p> 선택된 DOM Element 의 innerHTML 을 반환하거나, 설정한다.
+				인자값이 입력되면, 선택된 모든 DOM Element의 innerHTML을 htmlCode로 변경한다.</p>
+			</div>
+		</div>
+		<table>
+			<caption>Version History</caption>
+			<colgroup>
+				<col width="30%">
+				<col width="70%">
+			</colgroup>
+			<thead>
+				<tr>
+					<th scope="col">
+						Version
+					</th>
+					<th scope="col">
+						Description
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						Trial 1.0.10
+					</td>
+					<td>
+						Refactoring
+					</td>
+				</tr>
+			</tbody>
+		</table>
+
+	</div>
+	<!-- ******************  //API Detail ****************** -->
+	<!-- ******************  API Detail ****************** -->
+	<div id="textView">
+		<h2>text()</h2>
+		<div class="detailPart">
+			<h3>text( )</h3>
+			<div class="detailSection">
+				<h4>Argument</h4>
+				<dl>
+					<dt> none </dt>
+					<dd> </dd>
+				</dl>
+			</div>
+			<div class="detailSection">
+				<h4>Return</h4>
+				<p> 선택된 DOM Element 중 첫번째 DOM Element의 Text Node들의 String를 반환. </p>
+			</div>
+			<div class="detailSection">
+				<h4>Description</h4>
+				<p>선택된 DOM Element의 Text Node 값을 설정하거나 반환한다.
+				인자값이 없을 경우, 선택된 DOM Element 중 첫번째 DOM Element의 Text Node들의 String를 반환.</p>
+			</div>
+		</div>
+		<div class="detailPart">
+			<h3>text(<em> textString </em>)</h3>
+			<div class="detailSection">
+				<h4>Argument</h4>
+				<dl>
+					<dt> textString </dt>
+					<dd> 선택된 모든 DOM Element의 자식들을 삭제하고 textString 값을 가지는 Text Node를 자식으로 추가. </dd>
+				</dl>
+			</div>
+			<div class="detailSection">
+				<h4>Return</h4>
+				<p> riff Object </p>
+			</div>
+			<div class="detailSection">
+				<h4>Description</h4>
+				<p>선택된 DOM Element의 Text Node 값을 설정하거나 반환한다.
+				인자값이 있을 경우,선택된 모든 DOM Element의 자식들을 삭제하고 textString 값을 가지는 Text Node를 자식으로 추가.</p>
+			</div>
+		</div>
+		<table>
+			<caption>Version History</caption>
+			<colgroup>
+				<col width="30%">
+				<col width="70%">
+			</colgroup>
+			<thead>
+				<tr>
+					<th scope="col">
+						Version
+					</th>
+					<th scope="col">
+						Description
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						Trial 1.0.10
+					</td>
+					<td>
+						Refactoring
+					</td>
+				</tr>
+			</tbody>
+		</table>
+
+	</div>
+	<!-- ******************  //API Detail ****************** -->
+	<!-- ******************  API Detail ****************** -->
+	<div id="getTextByRecursiveView">
+		<h2>getTextByRecursive()</h2>
+		<div class="detailPart">
+			<h3>getTextByRecursive(<em> SelectedDomElementArray </em>)</h3>
+			<div class="detailSection">
+				<h4>Argument</h4>
+				<dl>
+					<dt> SelectedDomElementArray </dt>
+					<dd> text() 함수를 적용하기 위해 선택된 모든 DOM Element. </dd>
+				</dl>
+			</div>
+			<div class="detailSection">
+				<h4>Return</h4>
+				<p> 인자값인 SelectedDomElementArray ( DOM Element ) 가 가진 모든 Text를 취합해 반환. </p>
+			</div>
+			<div class="detailSection">
+				<h4>Description</h4>
+				<p> Dom Element 의 텍스트 노드들을 얻기 위한 재귀호출 함수.
+				text() 함수를 실행하면 내부적으로 자식 노드(childNode) 를 처리하기 위해 재귀로 사용</p>
+			</div>
+		</div>
+		<table>
+			<caption>Version History</caption>
+			<colgroup>
+				<col width="30%">
+				<col width="70%">
+			</colgroup>
+			<thead>
+				<tr>
+					<th scope="col">
+						Version
+					</th>
+					<th scope="col">
+						Description
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						Trial 1.0.10
+					</td>
+					<td>
+						Refactoring
+					</td>
+				</tr>
+			</tbody>
+		</table>
+
+	</div>
+	<!-- ******************  //API Detail ****************** -->
+	<!-- ******************  API Detail ****************** -->
+	<div id="appendView">
+		<h2>append()</h2>
+		<div class="detailPart">
+			<h3>append(<em> htmlCode </em>)</h3>
+			<div class="detailSection">
+				<h4>Argument</h4>
+				<dl>
+					<dt> htmlCode </dt>
+					<dd>문자열. 마지막에 삽입할 htmlCode </dd>
+				</dl>
+			</div>
+			<div class="detailSection">
+				<h4>Return</h4>
+				<p>riff Object</p>
+			</div>
+			<div class="detailSection">
+				<h4>Description</h4>
+				<p> 선택된 DOM Element들의 마지막 자식( ChildNode )으로 htmlCode에 해당하는 DOM Element를 삽입한다. </p>
+			</div>
+		</div>
+		<table>
+			<caption>Version History</caption>
+			<colgroup>
+				<col width="30%">
+				<col width="70%">
+			</colgroup>
+			<thead>
+				<tr>
+					<th scope="col">
+						Version
+					</th>
+					<th scope="col">
+						Description
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						Trial 1.0.10
+					</td>
+					<td>
+						Refactoring
+					</td>
+				</tr>
+			</tbody>
+		</table>
+
+	</div>
+	<!-- ******************  //API Detail ****************** -->
+	<!-- ******************  API Detail ****************** -->
+	<div id="prependView">
+		<h2>prepend()</h2>
+		<div class="detailPart">
+			<h3>prepend(<em> htmlCode </em>)</h3>
+			<div class="detailSection">
+				<h4>Argument</h4>
+				<dl>
+					<dt> htmlCode </dt>
+					<dd>문자열. 처음 자리에 삽입할 htmlCode </dd>
+				</dl>
+			</div>
+			<div class="detailSection">
+				<h4>Return</h4>
+				<p>riff Object</p>
+			</div>
+			<div class="detailSection">
+				<h4>Description</h4>
+				<p> 선택된 DOM Element들의 첫 자식( ChildNode )으로 htmlCode에 해당하는 DOM Element를 삽입한다. </p>
+			</div>
+		</div>
+		<table>
+			<caption>Version History</caption>
+			<colgroup>
+				<col width="30%">
+				<col width="70%">
+			</colgroup>
+			<thead>
+				<tr>
+					<th scope="col">
+						Version
+					</th>
+					<th scope="col">
+						Description
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						Trial 1.0.10
+					</td>
+					<td>
+						Refactoring
+					</td>
+				</tr>
+			</tbody>
+		</table>
+
+	</div>
+	<!-- ******************  //API Detail ****************** -->
+	<!-- ******************  API Detail ****************** -->
+	<div id="wrapView">
+		<h2>wrap()</h2>
+		<div class="detailPart">
+			<h3>wrap(<em> htmlCode </em>)</h3>
+			<div class="detailSection">
+				<h4>Argument</h4>
+				<dl>
+					<dt> htmlCode </dt>
+					<dd>문자열. 선택된 DOM Element 각각을 감쌀 Node를 만들기 위한 htmlCode. </dd>
+				</dl>
+			</div>
+			<div class="detailSection">
+				<h4>Return</h4>
+				<p>riff Object</p>
+			</div>
+			<div class="detailSection">
+				<h4>Description</h4>
+				<p>선택된 DOM Element 각각을 입력받은 htmlCode 로 감싼다. 즉, 선택된 DOM Element 각각이 htmlCode에 해당되는 DOM Element의 자식 노드가 된다.</p>
+			</div>
+		</div>
+		<table>
+			<caption>Version History</caption>
+			<colgroup>
+				<col width="30%">
+				<col width="70%">
+			</colgroup>
+			<thead>
+				<tr>
+					<th scope="col">
+						Version
+					</th>
+					<th scope="col">
+						Description
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						Trial 1.0.10
+					</td>
+					<td>
+						Refactoring
+					</td>
+				</tr>
+			</tbody>
+		</table>
+
+	</div>
+	<!-- ******************  //API Detail ****************** -->
+	<!-- ******************  API Detail ****************** -->
+	<div id="wrapAllView">
+		<h2>wrapAll()</h2>
+		<div class="detailPart">
+			<h3>wrapAll(<em> htmlCode </em>)</h3>
+			<div class="detailSection">
+				<h4>Argument</h4>
+				<dl>
+					<dt> htmlCode </dt>
+					<dd>문자열. 선택된 DOM Element 전부를 감쌀 Node를 만들기 위한 htmlCode. </dd>
+				</dl>
+			</div>
+			<div class="detailSection">
+				<h4>Return</h4>
+				<p>riff Object</p>
+			</div>
+			<div class="detailSection">
+				<h4>Description</h4>
+				<p>	입력받은 htmlCode 으로, 선택된 DOM Element 모두를 감싸는 DOM Element 를 생성한다.
+				선택된 DOM Element 모두가, htmlCode로 생성된 DOM Element의 자식 노드가 된다.</p>
+			</div>
+		</div>
+		<table>
+			<caption>Version History</caption>
+			<colgroup>
+				<col width="30%">
+				<col width="70%">
+			</colgroup>
+			<thead>
+				<tr>
+					<th scope="col">
+						Version
+					</th>
+					<th scope="col">
+						Description
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						Trial 1.0.10
+					</td>
+					<td>
+						Refactoring
+					</td>
+				</tr>
+			</tbody>
+		</table>
+
+	</div>
+	<!-- ******************  //API Detail ****************** -->
+	<!-- ******************  API Detail ****************** -->
+	<div id="afterView">
+		<h2>after()</h2>
+		<div class="detailPart">
+			<h3>after(<em> htmlCode </em>)</h3>
+			<div class="detailSection">
+				<h4>Argument</h4>
+				<dl>
+					<dt> htmlCode </dt>
+					<dd>문자열. 선택된 DOM Element의 다음에 삽입 될 DOM Element에 해당하는 HTMLCode.</dd>
+				</dl>
+			</div>
+			<div class="detailSection">
+				<h4>Return</h4>
+				<p>riff Object</p>
+			</div>
+			<div class="detailSection">
+				<h4>Description</h4>
+				<p> 선택된 DOM Element 뒤에 HtmlCode를 추가한다.
+				즉, 선택된 DOM Element들의 다음에, htmlCode에 해당하는 DOM Element를 삽입한다.</p>
+			</div>
+		</div>
+		<table>
+			<caption>Version History</caption>
+			<colgroup>
+				<col width="30%">
+				<col width="70%">
+			</colgroup>
+			<thead>
+				<tr>
+					<th scope="col">
+						Version
+					</th>
+					<th scope="col">
+						Description
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						Trial 1.0.10
+					</td>
+					<td>
+						Refactoring
+					</td>
+				</tr>
+			</tbody>
+		</table>
+
+	</div>
+	<!-- ******************  //API Detail ****************** -->
+	<!-- ******************  API Detail ****************** -->
+	<div id="beforeView">
+		<h2>before()</h2>
+		<div class="detailPart">
+			<h3>before(<em> htmlCode </em>)</h3>
+			<div class="detailSection">
+				<h4>Argument</h4>
+				<dl>
+					<dt> htmlCode </dt>
+					<dd>문자열. 선택된 DOM Element의 이전에 삽입 될 DOM Element에 해당하는 HTMLCode.</dd>
+				</dl>
+			</div>
+			<div class="detailSection">
+				<h4>Return</h4>
+				<p>riff Object</p>
+			</div>
+			<div class="detailSection">
+				<h4>Description</h4>
+				<p> 선택된 DOM Element 이전에 HtmlCode를 추가한다.
+				즉, 선택된 DOM Element들의 이전에, htmlCode에 해당하는 DOM Element를 삽입한다.</p>
+			</div>
+		</div>
+		<table>
+			<caption>Version History</caption>
+			<colgroup>
+				<col width="30%">
+				<col width="70%">
+			</colgroup>
+			<thead>
+				<tr>
+					<th scope="col">
+						Version
+					</th>
+					<th scope="col">
+						Description
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						Trial 1.0.10
+					</td>
+					<td>
+						Refactoring
+					</td>
+				</tr>
+			</tbody>
+		</table>
+
+	</div>
+	<!-- ******************  //API Detail ****************** -->
+	<!-- ******************  API Detail ****************** -->
+	<div id="findView">
+		<h2>find()</h2>
+		<div class="detailPart">
+			<h3>find(<em> [selector] </em>)</h3>
+			<div class="detailSection">
+				<h4>Argument</h4>
+				<dl>
+					<dt> selector (option)</dt>
+					<dd> 찿으려는 DOM Element를 검색하기 위한 CSS Selector Syntax String. (optional)</dd>
+				</dl>
+			</div>
+			<div class="detailSection">
+				<h4>Return</h4>
+				<p>riff Object</p>
+			</div>
+			<div class="detailSection">
+				<h4>Description</h4>
+				<p> 선택된 DOM Element의 자손 DOM Element 중, selector에 대응되는 DOM Element를 선택하여 반환
+한다. 인자값으로 문자열 이외의 값을 입력하면, 빈 객체를 반환한다. </p>
+			</div>
+		</div>
+		<table>
+			<caption>Version History</caption>
+			<colgroup>
+				<col width="30%">
+				<col width="70%">
+			</colgroup>
+			<thead>
+				<tr>
+					<th scope="col">
+						Version
+					</th>
+					<th scope="col">
+						Description
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						Trial 1.0.10
+					</td>
+					<td>
+						Refactoring
+					</td>
+				</tr>
+			</tbody>
+		</table>
+
+	</div>
+	<!-- ******************  //API Detail ****************** -->
+	<!-- ******************  API Detail ****************** -->
+	<div id="animateView">
+		<h2>animate()</h2>
+		<div class="detailPart">
+			<h3>animate(<em> endCssStatus, speed, [callbackFunction], [precallbackFunction] </em>)</h3>
+			<div class="detailSection">
+				<h4>Argument</h4>
+				<dl>
+					<dt> endCssStatus </dt>
+					<dd> 애니메이션의 원하는 css속성 목표치를 설정해주는 부분. </dd>
+					<dt> speed </dt>
+					<dd> 애니메이션이 속도(목표치까지의 이동시간). “slow”, “normal”, “fast”혹은 ms 단위의 시간.</dd>
+					<dt> callbackFunction (option) </dt>
+					<dd> 애니메이션이 끝나고 실행되는 함수. (optional)</dd>
+					<dt> precallbackFunction (option) </dt>
+					<dd> 애니메이션 시작 전에 실행되는 함수. (optional) </dd>
+				</dl>
+			</div>
+			<div class="detailSection">
+				<h4>Return</h4>
+				<p>riff Object</p>
+			</div>
+			<div class="detailSection">
+				<h4>Description</h4>
+				<p> 선택된 DOM Element에 대하여 CSS 속성을 이용하여 에니메이션을 적용할 수있다.
+CSS Property 의 변화 할 값과 변화할 시간을 정한다.
+callback이 인자값으로 입력되면 애니메이션이 끝나고 실행된다.
+preCallback가 인자값으로 입력되면 애니메이션이 시작될 때 실행된다.
+애니메이션은 애니메이션Queue를 이용하여 관리된다.</p>
+			</div>
+		</div>
+		<table>
+			<caption>Version History</caption>
+			<colgroup>
+				<col width="30%">
+				<col width="70%">
+			</colgroup>
+			<thead>
+				<tr>
+					<th scope="col">
+						Version
+					</th>
+					<th scope="col">
+						Description
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						Trial 1.0.10
+					</td>
+					<td>
+						Refactoring
+					</td>
+				</tr>
+			</tbody>
+		</table>
+
+	</div>
+	<!-- ******************  //API Detail ****************** -->
+	<!-- ******************  API Detail ****************** -->
+	<div id="clearQueueView">
+		<h2>clearQueue()</h2>
+		<div class="detailPart">
+			<h3>clearQueue( )</h3>
+			<div class="detailSection">
+				<h4>Argument</h4>
+				<dl>
+					<dt> none </dt>
+					<dd> </dd>
+				</dl>
+			</div>
+			<div class="detailSection">
+				<h4>Return</h4>
+				<p>riff Object</p>
+			</div>
+			<div class="detailSection">
+				<h4>Description</h4>
+				<p> animation queue를 비우고 현재 실행중인 animation까지 실행시킨다.
+즉, 애니메이션 Queue에 저장되어 있는 에니메이션들을 제거한다.
+이 때 만약 현재 애니메이션이 실행되고 있다면, 해당 애니메이션 까지는 실행이 진행되어 완료되고
+그 다음 애니메이션 부터는 실행이 시작되지 않는다.</p>
+			</div>
+		</div>
+		<table>
+			<caption>Version History</caption>
+			<colgroup>
+				<col width="30%">
+				<col width="70%">
+			</colgroup>
+			<thead>
+				<tr>
+					<th scope="col">
+						Version
+					</th>
+					<th scope="col">
+						Description
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						Trial 1.0.10
+					</td>
+					<td>
+						Refactoring
+					</td>
+				</tr>
+			</tbody>
+		</table>
+
+	</div>
+	<!-- ******************  //API Detail ****************** -->
+	<!-- ******************  API Detail ****************** -->
+	<div id="stopView">
+		<h2>stop()</h2>
+		<div class="detailPart">
+			<h3>stop( )</h3>
+			<div class="detailSection">
+				<h4>Argument</h4>
+				<dl>
+					<dt> none </dt>
+					<dd> </dd>
+				</dl>
+			</div>
+			<div class="detailSection">
+				<h4>Return</h4>
+				<p>riff Object</p>
+			</div>
+			<div class="detailSection">
+				<h4>Description</h4>
+				<p> animation queue 를 비우고, 현재 실행중인 animation을 멈춘다.</p>
+			</div>
+		</div>
+		<table>
+			<caption>Version History</caption>
+			<colgroup>
+				<col width="30%">
+				<col width="70%">
+			</colgroup>
+			<thead>
+				<tr>
+					<th scope="col">
+						Version
+					</th>
+					<th scope="col">
+						Description
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						Trial 1.0.10
+					</td>
+					<td>
+						Refactoring
+					</td>
+				</tr>
+			</tbody>
+		</table>
+
+	</div>
+	<!-- ******************  //API Detail ****************** -->
+	<!-- ******************  API Detail ****************** -->
+	<div id="showView">
+		<h2>show()</h2>
+		<div class="detailPart">
+			<h3>show( )</h3>
+			<div class="detailSection">
+				<h4>Argument</h4>
+				<dl>
+					<dt> none </dt>
+					<dd> </dd>
+				</dl>
+			</div>
+			<div class="detailSection">
+				<h4>Return</h4>
+				<p>riff Object</p>
+			</div>
+			<div class="detailSection">
+				<h4>Description</h4>
+				<p>	지정한 객체를 화면에 나타낸다.
+					인자값이 입력되지 않으면, 선택한 DOM Element를 화면상에 표시하기 위해 display 속성을 block로 변경한다.</p>
+			</div>
+		</div>
+		<div class="detailPart">
+			<h3>show(<em> speed, [callbackFunction] </em>)</h3>
+			<div class="detailSection">
+				<h4>Argument</h4>
+				<dl>
+					<dt> speed </dt>
+					<dd> 애니메이션의 속도(CSS 속성 상태 변화 목표치까지의 이동시간). “slow”, “normal”, “fast”혹은 ms 단위의 시간. </dd>
+					<dt> callbackFunction (option)</dt>
+					<dd> 애니메이션이 끝나고 실행되는 함수. (optional)</dd>
+				</dl>
+			</div>
+			<div class="detailSection">
+				<h4>Return</h4>
+				<p>riff Object</p>
+			</div>
+			<div class="detailSection">
+				<h4>Description</h4>
+				<p> 지정한 객체를 화면에 나타낸다.
+				인자값이 입력되는 경우, 선택된 DOM Element를 나타나게 하는 애니메이션을 실행하기 위해 width, height, opacity값을 0에서 기존 값까지 동시에 변화시킨다.
+				이로 인해 객체의 투명도와 width, height 가 바뀌며 나타난다.
+				기존의 display속성이 있을 경우는 메소드 호출 후 display속성이 기존의 값으로 변화되고, 기존에 없었을 경우 “block”로 설정된다.</p>
+			</div>
+		</div>
+		<table>
+			<caption>Version History</caption>
+			<colgroup>
+				<col width="30%">
+				<col width="70%">
+			</colgroup>
+			<thead>
+				<tr>
+					<th scope="col">
+						Version
+					</th>
+					<th scope="col">
+						Description
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						Trial 1.0.10
+					</td>
+					<td>
+						Refactoring
+					</td>
+				</tr>
+			</tbody>
+		</table>
+
+	</div>
+	<!-- ******************  //API Detail ****************** -->
+	<!-- ******************  API Detail ****************** -->
+	<div id="hideView">
+		<h2>hide()</h2>
+		<div class="detailPart">
+			<h3>hide( )</h3>
+			<div class="detailSection">
+				<h4>Argument</h4>
+				<dl>
+					<dt> none </dt>
+					<dd> </dd>
+				</dl>
+			</div>
+			<div class="detailSection">
+				<h4>Return</h4>
+				<p>riff Object</p>
+			</div>
+			<div class="detailSection">
+				<h4>Description</h4>
+				<p>	지정한 객체를 화면에서 사라지게 한다. 인자값이 입력되지 않으면, 선택한 DOM Element를 화면상에서 가리기 위해 display 속성을 none으로 변경한다.</p>
+			</div>
+		</div>
+		<div class="detailPart">
+			<h3>hide(<em> speed, [callbackFunction] </em>)</h3>
+			<div class="detailSection">
+				<h4>Argument</h4>
+				<dl>
+					<dt> speed </dt>
+					<dd> 애니메이션의 속도(CSS 속성 상태 변화 목표치까지의 이동시간). “slow”, “normal”, “fast”혹은 ms 단위의 시간. </dd>
+					<dt> callbackFunction (option)</dt>
+					<dd> 애니메이션이 끝나고 실행되는 함수. (optional)</dd>
+				</dl>
+			</div>
+			<div class="detailSection">
+				<h4>Return</h4>
+				<p>riff Object</p>
+			</div>
+			<div class="detailSection">
+				<h4>Description</h4>
+				<p> 지정한 객체를 화면에서 사라지게 한다. 인자값이 입력되는 경우, 선택된 DOM Element를 가리는
+				애니메이션을 실행하기 위해 width, height, opacity값을 기존 값에서 0까지 동시에 변화시킨다.
+				메소드 호출 후 display속성은 “none”으로 설정된다. </p>
+			</div>
+		</div>
+		<table>
+			<caption>Version History</caption>
+			<colgroup>
+				<col width="30%">
+				<col width="70%">
+			</colgroup>
+			<thead>
+				<tr>
+					<th scope="col">
+						Version
+					</th>
+					<th scope="col">
+						Description
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						Trial 1.0.10
+					</td>
+					<td>
+						Refactoring
+					</td>
+				</tr>
+			</tbody>
+		</table>
+
+	</div>
+	<!-- ******************  //API Detail ****************** -->
+	<!-- ******************  API Detail ****************** -->
+	<div id="toggleView">
+		<h2>toggle()</h2>
+		<div class="detailPart">
+			<h3>toggle(<em> callBackFunction1, callBackFunction2 </em>)</h3>
+			<div class="detailSection">
+				<h4>Argument</h4>
+				<dl>
+					<dt> callBackFunction1 </dt>
+					<dd> 번갈아 실행할 함수 1 </dd>
+					<dt> callBackFunction2 </dt>
+					<dd> 번갈아 실행할 함수 2 </dd>
+				</dl>
+			</div>
+			<div class="detailSection">
+				<h4>Return</h4>
+				<p>riff Object</p>
+			</div>
+			<div class="detailSection">
+				<h4>Description</h4>
+				<p>toggle() 함수가 실행될때마다, _func1, _func2 callback 함수가 번갈아 실행된다.</p>
+			</div>
+		</div>
+		<table>
+			<caption>Version History</caption>
+			<colgroup>
+				<col width="30%">
+				<col width="70%">
+			</colgroup>
+			<thead>
+				<tr>
+					<th scope="col">
+						Version
+					</th>
+					<th scope="col">
+						Description
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						Trial 1.0.10
+					</td>
+					<td>
+						Refactoring
+					</td>
+				</tr>
+			</tbody>
+		</table>
+
+	</div>
+	<!-- ******************  //API Detail ****************** -->
+	<!-- ******************  API Detail ****************** -->
+	<div id="triggerExistEventView">
+		<h2>triggerExistEvent()</h2>
+		<div class="detailPart">
+			<h3>triggerExistEvent(<em> existEventName </em>)</h3>
+			<div class="detailSection">
+				<h4>Argument</h4>
+				<dl>
+					<dt> existEventName </dt>
+					<dd> 기존에 존재하는 이벤트 이름 문자열( ex: "onfocus" ) </dd>
+				</dl>
+			</div>
+			<div class="detailSection">
+				<h4>Return</h4>
+				<p>riff Object</p>
+			</div>
+			<div class="detailSection">
+				<h4>Description</h4>
+				<p> 배열.trigger( 이벤트 종류 )  배열 객체에 대해 순차적으로 [이벤트 종류] 를 실행한다.
+				"이벤트 종류"는 반드시 기존 존재 이벤트. Framework에서 정의한 artificial event 는 쓰면 안된다.</p>
+			</div>
+		</div>
+		<table>
+			<caption>Version History</caption>
+			<colgroup>
+				<col width="30%">
+				<col width="70%">
+			</colgroup>
+			<thead>
+				<tr>
+					<th scope="col">
+						Version
+					</th>
+					<th scope="col">
+						Description
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						Trial 1.0.10
+					</td>
+					<td>
+						Refactoring
+					</td>
+				</tr>
+			</tbody>
+		</table>
+
+	</div>
+	<!-- ******************  //API Detail ****************** -->
+	<!-- ******************  API Detail ****************** -->
+	<div id="triggerCustomEventView">
+		<h2>triggerCustomEvent()</h2>
+		<div class="detailPart">
+			<h3>triggerCustomEvent(<em> customEventName </em>)</h3>
+			<div class="detailSection">
+				<h4>Argument</h4>
+				<dl>
+					<dt> customEventName </dt>
+					<dd> Framework에서 정의한 Artificial Event 문자열( ex: "tap" ) </dd>
+				</dl>
+			</div>
+			<div class="detailSection">
+				<h4>Return</h4>
+				<p>riff Object</p>
+			</div>
+			<div class="detailSection">
+				<h4>Description</h4>
+				<p> 배열.trigger( 이벤트 종류 )  배열 객체에 대해 순차적으로 [이벤트 종류] 를 실행한다.
+				"이벤트 종류"는 반드시 Framework에서 정의한 Artificial Event이여야 한다.</p>
+			</div>
+		</div>
+		<table>
+			<caption>Version History</caption>
+			<colgroup>
+				<col width="30%">
+				<col width="70%">
+			</colgroup>
+			<thead>
+				<tr>
+					<th scope="col">
+						Version
+					</th>
+					<th scope="col">
+						Description
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						Trial 1.0.10
+					</td>
+					<td>
+						Refactoring
+					</td>
+				</tr>
+			</tbody>
+		</table>
+
+	</div>
+	<!-- ******************  //API Detail ****************** -->
+	<!-- ******************  API Detail ****************** -->
+	<div id="triggerView">
+		<h2>trigger()</h2>
+		<div class="detailPart">
+			<h3>trigger(<em> eventName </em>)</h3>
+			<div class="detailSection">
+				<h4>Argument</h4>
+				<dl>
+					<dt> eventName </dt>
+					<dd> toggle을 설정할  Event 종류 문자열( ex: "tap" ) </dd>
+				</dl>
+			</div>
+			<div class="detailSection">
+				<h4>Return</h4>
+				<p>riff Object</p>
+			</div>
+			<div class="detailSection">
+				<h4>Description</h4>
+				<p> 배열.trigger( 이벤트 종류 )  배열 객체에 대해 순차적으로 [이벤트 종류] 를 실행.
+	만일 배열 객체 중 [이벤트 종류]에 대해 이벤트 핸들러가 설정되어 있지 않으면, 아무 일도 일어나지 않는다.</p>
+			</div>
+		</div>
+		<table>
+			<caption>Version History</caption>
+			<colgroup>
+				<col width="30%">
+				<col width="70%">
+			</colgroup>
+			<thead>
+				<tr>
+					<th scope="col">
+						Version
+					</th>
+					<th scope="col">
+						Description
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						Trial 1.0.10
+					</td>
+					<td>
+						Refactoring
+					</td>
+				</tr>
+			</tbody>
+		</table>
+
+	</div>
+	<!-- ******************  //API Detail ****************** -->
+	<!-- ******************  API Detail ****************** -->
+	<div id="primaryEventRegistView">
+		<h2>primaryEventRegist()</h2>
+		<div class="detailPart">
+			<h3>primaryEventRegist(<em> DOM Element </em>)</h3>
+			<div class="detailSection">
+				<h4>Argument</h4>
+				<dl>
+					<dt> DOM Element </dt>
+					<dd> 이벤트를 추가할 DOM Element </dd>
+				</dl>
+			</div>
+			<div class="detailSection">
+				<h4>Return</h4>
+				<p>riff Object</p>
+			</div>
+			<div class="detailSection">
+				<h4>Description</h4>
+				<p> 이벤트 추가 공통 함수. 전역변수설정에 있는 "touch"( widget ) / "mouse"( PC or SDK ) 값으로, 등록해야 할 이벤트를 판단한다. </p>
+			</div>
+		</div>
+		<table>
+			<caption>Version History</caption>
+			<colgroup>
+				<col width="30%">
+				<col width="70%">
+			</colgroup>
+			<thead>
+				<tr>
+					<th scope="col">
+						Version
+					</th>
+					<th scope="col">
+						Description
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						Trial 1.0.10
+					</td>
+					<td>
+						Refactoring
+					</td>
+				</tr>
+			</tbody>
+		</table>
+
+	</div>
+	<!-- ******************  //API Detail ****************** -->
+	<!-- ******************  API Detail ****************** -->
+	<div id="enableEventView">
+		<h2>enableEvent()</h2>
+		<div class="detailPart">
+			<h3>enableEvent(<em> Event </em>)</h3>
+			<div class="detailSection">
+				<h4>Argument</h4>
+				<dl>
+					<dt> Event </dt>
+					<dd> DOM 객체에 대해, 이벤트 가능을 설정할 이벤트 문자열. ( "flickLeft" , "flickRight" , "flickUp" , "flickDown" , "drag" , "swipe" ,  "tap" , "longTap" , "doubleTap" , "touchStart" , "touchMove" , "touchEnd" ) </dd>
+				</dl>
+			</div>
+			<div class="detailSection">
+				<h4>Return</h4>
+				<p>riff Object</p>
+			</div>
+			<div class="detailSection">
+				<h4>Description</h4>
+				<p> 객체의 event가 disable되었을때 사용되는 함수로, event를 enable 시켜주어 이벤트에 등록된 event handler 를 실행할 수 있도록 한다. </p>
+			</div>
+		</div>
+		<table>
+			<caption>Version History</caption>
+			<colgroup>
+				<col width="30%">
+				<col width="70%">
+			</colgroup>
+			<thead>
+				<tr>
+					<th scope="col">
+						Version
+					</th>
+					<th scope="col">
+						Description
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						Trial 1.0.10
+					</td>
+					<td>
+						Refactoring
+					</td>
+				</tr>
+			</tbody>
+		</table>
+
+	</div>
+	<!-- ******************  //API Detail ****************** -->
+	<!-- ******************  API Detail ****************** -->
+	<div id="disableEventView">
+		<h2>disableEvent()</h2>
+		<div class="detailPart">
+			<h3>disableEvent(<em> Event </em>)</h3>
+			<div class="detailSection">
+				<h4>Argument</h4>
+				<dl>
+					<dt> Event </dt>
+					<dd> DOM 객체에 대해, 이벤트 불가능을 설정할 이벤트 문자열. ( "flickLeft" , "flickRight" , "flickUp" , "flickDown" , "drag" , "swipe" ,  "tap" , "longTap" , "doubleTap" , "touchStart" , "touchMove" , "touchEnd" ) </dd>
+				</dl>
+			</div>
+			<div class="detailSection">
+				<h4>Return</h4>
+				<p>riff Object</p>
+			</div>
+			<div class="detailSection">
+				<h4>Description</h4>
+				<p> event를 disable 시켜주어, 이벤트에 등록된 event handler 를 실행할 수 없도록 한다.  </p>
+			</div>
+		</div>
+		<table>
+			<caption>Version History</caption>
+			<colgroup>
+				<col width="30%">
+				<col width="70%">
+			</colgroup>
+			<thead>
+				<tr>
+					<th scope="col">
+						Version
+					</th>
+					<th scope="col">
+						Description
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						Trial 1.0.10
+					</td>
+					<td>
+						Refactoring
+					</td>
+				</tr>
+			</tbody>
+		</table>
+
+	</div>
+	<!-- ******************  //API Detail ****************** -->
+	<!-- ******************  API Detail ****************** -->
+	<div id="dragView">
+		<h2>drag()</h2>
+		<div class="detailPart">
+			<h3>drag(<em> fnEventHandle  </em>)</h3>
+			<div class="detailSection">
+				<h4>Argument</h4>
+				<dl>
+					<dt> fnEventHandle </dt>
+					<dd> 이벤트가 발생하면 실행할 이벤트 핸들러 함수 </dd>
+				</dl>
+			</div>
+			<div class="detailSection">
+				<h4>Return</h4>
+				<p>riff Object</p>
+			</div>
+			<div class="detailSection">
+				<h4>Description</h4>
+				<p> drag 이벤트 등록 함수. 해당 이벤트에 대해 event hander 함수를 실행한다. </p>
+			</div>
+		</div>
+		<table>
+			<caption>Version History</caption>
+			<colgroup>
+				<col width="30%">
+				<col width="70%">
+			</colgroup>
+			<thead>
+				<tr>
+					<th scope="col">
+						Version
+					</th>
+					<th scope="col">
+						Description
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						Trial 1.0.10
+					</td>
+					<td>
+						Refactoring
+					</td>
+				</tr>
+			</tbody>
+		</table>
+
+	</div>
+	<!-- ******************  //API Detail ****************** -->
+	<!-- ******************  API Detail ****************** -->
+	<div id="flickLeftView">
+		<h2>flickLeft()</h2>
+		<div class="detailPart">
+			<h3>flickLeft(<em> fnEventHandle  </em>)</h3>
+			<div class="detailSection">
+				<h4>Argument</h4>
+				<dl>
+					<dt> fnEventHandle </dt>
+					<dd> 이벤트가 발생하면 실행할 이벤트 핸들러 함수 </dd>
+				</dl>
+			</div>
+			<div class="detailSection">
+				<h4>Return</h4>
+				<p>riff Object</p>
+			</div>
+			<div class="detailSection">
+				<h4>Description</h4>
+				<p> flickLeft 이벤트 등록 함수. 해당 이벤트에 대해 event hander 함수를 실행한다. </p>
+			</div>
+		</div>
+		<table>
+			<caption>Version History</caption>
+			<colgroup>
+				<col width="30%">
+				<col width="70%">
+			</colgroup>
+			<thead>
+				<tr>
+					<th scope="col">
+						Version
+					</th>
+					<th scope="col">
+						Description
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						Trial 1.0.10
+					</td>
+					<td>
+						Refactoring
+					</td>
+				</tr>
+			</tbody>
+		</table>
+
+	</div>
+	<!-- ******************  //API Detail ****************** -->
+	<!-- ******************  API Detail ****************** -->
+	<div id="flickRightView">
+		<h2>flickRight()</h2>
+		<div class="detailPart">
+			<h3>flickRight(<em> fnEventHandle  </em>)</h3>
+			<div class="detailSection">
+				<h4>Argument</h4>
+				<dl>
+					<dt> fnEventHandle </dt>
+					<dd> 이벤트가 발생하면 실행할 이벤트 핸들러 함수 </dd>
+				</dl>
+			</div>
+			<div class="detailSection">
+				<h4>Return</h4>
+				<p>riff Object</p>
+			</div>
+			<div class="detailSection">
+				<h4>Description</h4>
+				<p> flickRight 이벤트 등록 함수. 해당 이벤트에 대해 event hander 함수를 실행한다. </p>
+			</div>
+		</div>
+		<table>
+			<caption>Version History</caption>
+			<colgroup>
+				<col width="30%">
+				<col width="70%">
+			</colgroup>
+			<thead>
+				<tr>
+					<th scope="col">
+						Version
+					</th>
+					<th scope="col">
+						Description
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						Trial 1.0.10
+					</td>
+					<td>
+						Refactoring
+					</td>
+				</tr>
+			</tbody>
+		</table>
+
+	</div>
+	<!-- ******************  //API Detail ****************** -->
+	<!-- ******************  API Detail ****************** -->
+	<div id="flickUpView">
+		<h2>flickUp()</h2>
+		<div class="detailPart">
+			<h3>flickUp(<em> fnEventHandle  </em>)</h3>
+			<div class="detailSection">
+				<h4>Argument</h4>
+				<dl>
+					<dt> fnEventHandle </dt>
+					<dd> 이벤트가 발생하면 실행할 이벤트 핸들러 함수 </dd>
+				</dl>
+			</div>
+			<div class="detailSection">
+				<h4>Return</h4>
+				<p>riff Object</p>
+			</div>
+			<div class="detailSection">
+				<h4>Description</h4>
+				<p> flickUp 이벤트 등록 함수. 해당 이벤트에 대해 event hander 함수를 실행한다. </p>
+			</div>
+		</div>
+		<table>
+			<caption>Version History</caption>
+			<colgroup>
+				<col width="30%">
+				<col width="70%">
+			</colgroup>
+			<thead>
+				<tr>
+					<th scope="col">
+						Version
+					</th>
+					<th scope="col">
+						Description
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						Trial 1.0.10
+					</td>
+					<td>
+						Refactoring
+					</td>
+				</tr>
+			</tbody>
+		</table>
+
+	</div>
+	<!-- ******************  //API Detail ****************** -->
+	<!-- ******************  API Detail ****************** -->
+	<div id="flickDownView">
+		<h2>flickDown()</h2>
+		<div class="detailPart">
+			<h3>flickDown(<em> fnEventHandle  </em>)</h3>
+			<div class="detailSection">
+				<h4>Argument</h4>
+				<dl>
+					<dt> fnEventHandle </dt>
+					<dd> 이벤트가 발생하면 실행할 이벤트 핸들러 함수 </dd>
+				</dl>
+			</div>
+			<div class="detailSection">
+				<h4>Return</h4>
+				<p>riff Object</p>
+			</div>
+			<div class="detailSection">
+				<h4>Description</h4>
+				<p> flickDown 이벤트 등록 함수. 해당 이벤트에 대해 event hander 함수를 실행한다. </p>
+			</div>
+		</div>
+		<table>
+			<caption>Version History</caption>
+			<colgroup>
+				<col width="30%">
+				<col width="70%">
+			</colgroup>
+			<thead>
+				<tr>
+					<th scope="col">
+						Version
+					</th>
+					<th scope="col">
+						Description
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						Trial 1.0.10
+					</td>
+					<td>
+						Refactoring
+					</td>
+				</tr>
+			</tbody>
+		</table>
+
+	</div>
+	<!-- ******************  //API Detail ****************** -->
+	<!-- ******************  API Detail ****************** -->
+	<div id="tapView">
+		<h2>tap()</h2>
+		<div class="detailPart">
+			<h3>tap(<em> fnEventHandle  </em>)</h3>
+			<div class="detailSection">
+				<h4>Argument</h4>
+				<dl>
+					<dt> fnEventHandle </dt>
+					<dd> 이벤트가 발생하면 실행할 이벤트 핸들러 함수 </dd>
+				</dl>
+			</div>
+			<div class="detailSection">
+				<h4>Return</h4>
+				<p>riff Object</p>
+			</div>
+			<div class="detailSection">
+				<h4>Description</h4>
+				<p> tap 이벤트 등록 함수. 해당 이벤트에 대해 event hander 함수를 실행한다. </p>
+			</div>
+		</div>
+		<table>
+			<caption>Version History</caption>
+			<colgroup>
+				<col width="30%">
+				<col width="70%">
+			</colgroup>
+			<thead>
+				<tr>
+					<th scope="col">
+						Version
+					</th>
+					<th scope="col">
+						Description
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						Trial 1.0.10
+					</td>
+					<td>
+						Refactoring
+					</td>
+				</tr>
+			</tbody>
+		</table>
+
+	</div>
+	<!-- ******************  //API Detail ****************** -->
+	<!-- ******************  API Detail ****************** -->
+	<div id="longTapView">
+		<h2>longTap()</h2>
+		<div class="detailPart">
+			<h3>longTap(<em> fnEventHandle, [ touchTime ] </em>)</h3>
+			<div class="detailSection">
+				<h4>Argument</h4>
+				<dl>
+					<dt> fnEventHandle </dt>
+					<dd> 이벤트가 발생하면 실행할 이벤트 핸들러 함수 </dd>
+					<dt> touchTime (option)</dt>
+					<dd> 숫자. millisecond단위이고, long tap이 걸리는 기준시간을 설정한다. (optional). </dd>
+				</dl>
+			</div>
+			<div class="detailSection">
+				<h4>Return</h4>
+				<p>riff Object</p>
+			</div>
+			<div class="detailSection">
+				<h4>Description</h4>
+				<p> longTap 이벤트 등록 함수. 해당 이벤트에 대해 event hander 함수를 실행한다.
+				touchTime을 지정할 경우, 해당 DOM Element에 대해 long tap 이벤트 판정 기준시간이 설정한 값으로 변경된다. </p>
+			</div>
+		</div>
+		<table>
+			<caption>Version History</caption>
+			<colgroup>
+				<col width="30%">
+				<col width="70%">
+			</colgroup>
+			<thead>
+				<tr>
+					<th scope="col">
+						Version
+					</th>
+					<th scope="col">
+						Description
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						Trial 1.0.10
+					</td>
+					<td>
+						Refactoring
+					</td>
+				</tr>
+			</tbody>
+		</table>
+
+	</div>
+	<!-- ******************  //API Detail ****************** -->
+	<!-- ******************  API Detail ****************** -->
+	<div id="doubleTapView">
+		<h2>doubleTap()</h2>
+		<div class="detailPart">
+			<h3>doubleTap(<em> fnEventHandle  </em>)</h3>
+			<div class="detailSection">
+				<h4>Argument</h4>
+				<dl>
+					<dt> fnEventHandle </dt>
+					<dd> 이벤트가 발생하면 실행할 이벤트 핸들러 함수 </dd>
+				</dl>
+			</div>
+			<div class="detailSection">
+				<h4>Return</h4>
+				<p>riff Object</p>
+			</div>
+			<div class="detailSection">
+				<h4>Description</h4>
+				<p> doubleTap 이벤트 등록 함수. 해당 이벤트에 대해 event hander 함수를 실행한다. </p>
+			</div>
+		</div>
+		<table>
+			<caption>Version History</caption>
+			<colgroup>
+				<col width="30%">
+				<col width="70%">
+			</colgroup>
+			<thead>
+				<tr>
+					<th scope="col">
+						Version
+					</th>
+					<th scope="col">
+						Description
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						Trial 1.0.10
+					</td>
+					<td>
+						Refactoring
+					</td>
+				</tr>
+			</tbody>
+		</table>
+
+	</div>
+	<!-- ******************  //API Detail ****************** -->
+	<!-- ******************  API Detail ****************** -->
+	<div id="touchStartView">
+		<h2>touchStart()</h2>
+		<div class="detailPart">
+			<h3>touchStart(<em> fnEventHandle  </em>)</h3>
+			<div class="detailSection">
+				<h4>Argument</h4>
+				<dl>
+					<dt> fnEventHandle </dt>
+					<dd> 이벤트가 발생하면 실행할 이벤트 핸들러 함수 </dd>
+				</dl>
+			</div>
+			<div class="detailSection">
+				<h4>Return</h4>
+				<p>riff Object</p>
+			</div>
+			<div class="detailSection">
+				<h4>Description</h4>
+				<p> touchStart 이벤트 등록 함수. 해당 이벤트에 대해 event hander 함수를 실행한다. </p>
+			</div>
+		</div>
+		<table>
+			<caption>Version History</caption>
+			<colgroup>
+				<col width="30%">
+				<col width="70%">
+			</colgroup>
+			<thead>
+				<tr>
+					<th scope="col">
+						Version
+					</th>
+					<th scope="col">
+						Description
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						Trial 1.0.10
+					</td>
+					<td>
+						Refactoring
+					</td>
+				</tr>
+			</tbody>
+		</table>
+
+	</div>
+	<!-- ******************  //API Detail ****************** -->
+	<!-- ******************  API Detail ****************** -->
+	<div id="touchMoveView">
+		<h2>touchMove()</h2>
+		<div class="detailPart">
+			<h3>touchMove(<em> fnEventHandle  </em>)</h3>
+			<div class="detailSection">
+				<h4>Argument</h4>
+				<dl>
+					<dt> fnEventHandle </dt>
+					<dd> 이벤트가 발생하면 실행할 이벤트 핸들러 함수 </dd>
+				</dl>
+			</div>
+			<div class="detailSection">
+				<h4>Return</h4>
+				<p>riff Object</p>
+			</div>
+			<div class="detailSection">
+				<h4>Description</h4>
+				<p> touchMove 이벤트 등록 함수. 해당 이벤트에 대해 event hander 함수를 실행한다. </p>
+			</div>
+		</div>
+		<table>
+			<caption>Version History</caption>
+			<colgroup>
+				<col width="30%">
+				<col width="70%">
+			</colgroup>
+			<thead>
+				<tr>
+					<th scope="col">
+						Version
+					</th>
+					<th scope="col">
+						Description
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						Trial 1.0.10
+					</td>
+					<td>
+						Refactoring
+					</td>
+				</tr>
+			</tbody>
+		</table>
+
+	</div>
+	<!-- ******************  //API Detail ****************** -->
+	<!-- ******************  API Detail ****************** -->
+	<div id="touchEndView">
+		<h2>touchEnd()</h2>
+		<div class="detailPart">
+			<h3>touchEnd(<em> fnEventHandle  </em>)</h3>
+			<div class="detailSection">
+				<h4>Argument</h4>
+				<dl>
+					<dt> fnEventHandle </dt>
+					<dd> 이벤트가 발생하면 실행할 이벤트 핸들러 함수 </dd>
+				</dl>
+			</div>
+			<div class="detailSection">
+				<h4>Return</h4>
+				<p>riff Object</p>
+			</div>
+			<div class="detailSection">
+				<h4>Description</h4>
+				<p> touchEnd 이벤트 등록 함수. 해당 이벤트에 대해 event hander 함수를 실행한다. </p>
+			</div>
+		</div>
+		<table>
+			<caption>Version History</caption>
+			<colgroup>
+				<col width="30%">
+				<col width="70%">
+			</colgroup>
+			<thead>
+				<tr>
+					<th scope="col">
+						Version
+					</th>
+					<th scope="col">
+						Description
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						Trial 1.0.10
+					</td>
+					<td>
+						Refactoring
+					</td>
+				</tr>
+			</tbody>
+		</table>
+
+	</div>
+	<!-- ******************  //API Detail ****************** -->
+	<!-- ******************  API Detail ****************** -->
+	<div id="swipeView">
+		<h2>swipe()</h2>
+		<div class="detailPart">
+			<h3>swipe(<em> isFlickEnd , verlocityPercent, fnEventHandle </em>)</h3>
+			<div class="detailSection">
+				<h4>Argument</h4>
+				<dl>
+					<dt> isFlickEnd </dt>
+					<dd> boolean. swipe시에 swipe객체를 감싸고 있는 box객체를 넘을지 안넘을지 선언해주는 부분. true일경우 box객체를 넘을수없다. </dd>
+					<dt> verlocityPercent </dt>
+					<dd> number. swipe 이벤트 중 DOM Element가 자동으로 움직일때, 움직이는 속도를 퍼센트 단위로 설정해주는 부분.</dd>
+					<dt> fnEventHandle </dt>
+					<dd> 이벤트가 발생하면 실행할 이벤트 핸들러 함수 </dd>
+				</dl>
+			</div>
+			<div class="detailSection">
+				<h4>Return</h4>
+				<p>riff Object</p>
+			</div>
+			<div class="detailSection">
+				<h4>Description</h4>
+				<p>
+swipe event 는 darg, flickRight, flickLeft가 합쳐진 event 이다.<br>
+DOM Elenent에 대해 drag event -> flick event 가 발생한다.<br>
+이 때 이벤트가 적용중인 DOM Element는, 자연스럽게 움직이며( CSS의 left값 변환) 이동하다 멈춘다. <br>
+그러므로 움직이는 DOM Element를 감싸주는 box 역할을 하는 DOM Element가 필요하다. <br>
+DOM Element에 swipe 이벤트를 적용한 후 swipe 이벤트가 발생하면, 인자값인 _fnEventHandle 가 작동한다.<br>
+_fnEventHandle 에는, swipe의 상태( drag/ 감속이동 / 정지 )를 알 수 있는 인자값을 전달한다.<br>
+_fnEventHandle 함수에 전달되는 인자값은 다음과 같다.<br>
+	_fnEventHandler( state, ptx, pty )<br>
+		state : swipe event가 적용되어 움직이는 DOM Element의 현재 상황을 나타나는 값.<br>
+			문자열이며, 다음의 중 한 가지를 반환한다.<br>
+				"dragMove" : swipe event 중 drag 가 발생중일 때 전달하는 값.<br>
+				"leftMove" : swipe event가 발생 해서 왼쪽으로 움직이기 시작할 때 최초로 한번 전달하는 값.<br>
+				"rightMove" : swipe event가 발생 해서 오른쪽으로 움직일 때 최초로 한번 전달하는 값.<br>
+				"move" : swipe event가 발생하고 움직일 때 전달하는 값.<br>
+				"leftEnd" : swipe event가 발생하여 왼쪽 끝으로 이동 하였을 때에 전달하는 값.<br>
+				"rightEnd" : swipe event가 발생하여 오른쪽 끝으로 이동 하였을 때에 전달하는 값.<br>
+				"end" : swipe event가 끝났을 때에 전달하는 값.<br>
+			고로, 예를 들어 swipe이 왼쪽에서 오른쪽으로 발생할 경우, state는 다음과 같은 순서로 값을 전달한다.<br>
+			"dragMove" -> "dragMove" -> ... "dragMove" -> "rightMove" -> "move" -> "move" ... "move" -> "rightEnd" -> "end"<br>
+		ptx : swipe event 중 객체의 left속성 위치를 나타낸다.<br>
+		pty : swipe event 중 객체의 top속성 위치를 나타낸다.<br>
+</p>
+			</div>
+		</div>
+		<table>
+			<caption>Version History</caption>
+			<colgroup>
+				<col width="30%">
+				<col width="70%">
+			</colgroup>
+			<thead>
+				<tr>
+					<th scope="col">
+						Version
+					</th>
+					<th scope="col">
+						Description
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						Trial 1.0.10
+					</td>
+					<td>
+						Refactoring
+					</td>
+				</tr>
+			</tbody>
+		</table>
+
+	</div>
+	<!-- ******************  //API Detail ****************** -->
+	<!-- ******************  API Detail ****************** -->
+	<div id="addEventByTypeView">
+		<h2>addEventByType()</h2>
+		<div class="detailPart">
+			<h3>addEventByType(<em> eventType, fnEventHandle </em>)</h3>
+			<div class="detailSection">
+				<h4>Argument</h4>
+				<dl>
+					<dt> eventType </dt>
+					<dd> 문자열. 합성이벤트의 이름. </dd>
+					<dt> fnEventHandle </dt>
+					<dd> 이벤트가 발생하면 실행할 이벤트 핸들러 함수 </dd>
+				</dl>
+			</div>
+			<div class="detailSection">
+				<h4>Return</h4>
+				<p>riff Object</p>
+			</div>
+			<div class="detailSection">
+				<h4>Description</h4>
+				<p> 인자값으로 들어온 함수를 DOM Element에 적용한다. </p>
+			</div>
+		</div>
+		<table>
+			<caption>Version History</caption>
+			<colgroup>
+				<col width="30%">
+				<col width="70%">
+			</colgroup>
+			<thead>
+				<tr>
+					<th scope="col">
+						Version
+					</th>
+					<th scope="col">
+						Description
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						Trial 1.0.10
+					</td>
+					<td>
+						Refactoring
+					</td>
+				</tr>
+			</tbody>
+		</table>
+
+	</div>
+	<!-- ******************  //API Detail ****************** -->
+
+
+
+
+
+
+
+
+	<!-- ******************  API Detail ****************** -->
+	<div id="sizeView">
+		<h2>size()</h2>
+		<div class="detailPart">
+			<h3>next(<em>[selector]</em>)</h3>
+			<div class="detailSection">
+				<h4>Argument</h4>
+				<dl>
+					<dt>None</dt>
+				</dl>
+			</div>
+			<div class="detailSection">
+				<h4>Return</h4>
+				<p>질의된 DOM Element 의 갯수를 반환. </p>
+			</div>
+			<div class="detailSection">
+				<h4>Description</h4>
+				<p> 선택된 DOM Element의 갯수를 반환한다.</p>
+			</div>
+		</div>
+
+
+		<table>
+			<caption>Version History</caption>
+			<colgroup>
+				<col width="30%">
+				<col width="70%">
+			</colgroup>
+			<thead>
+				<tr>
+					<th scope="col">
+						Version
+					</th>
+					<th scope="col">
+						Description
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						Trial 1.0.10
+					</td>
+					<td>
+						Refactoring
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<!-- ******************  //API Detail ****************** -->
+
+
+	<!-- ******************  API Detail ****************** -->
+	<div id="trimView">
+		<h2>trim()</h2>
+		<div class="detailPart">
+			<h3>trim(<em>string</em>)</h3>
+			<div class="detailSection">
+				<h4>Argument</h4>
+				<dl>
+					<dt>string</dt>
+					<dd> 앞, 뒤 공백을 제거할 문자열 </dd>
+				</dl>
+			</div>
+			<div class="detailSection">
+				<h4>Return</h4>
+				<p>string</p>
+			</div>
+			<div class="detailSection">
+				<h4>Description</h4>
+				<p>선택된 문자열의 맨 앞과 맨 뒤에 공백이 있다면 제거한후에 반환한다.</p>
+			</div>
+		</div>
+
+
+		<table>
+			<caption>Version History</caption>
+			<colgroup>
+				<col width="30%">
+				<col width="70%">
+			</colgroup>
+			<thead>
+				<tr>
+					<th scope="col">
+						Version
+					</th>
+					<th scope="col">
+						Description
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						Trial 1.0.10
+					</td>
+					<td>
+						Refactoring
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<!-- ******************  //API Detail ****************** -->
+
+
+	<!-- ******************  API Detail ****************** -->
+	<div id="camelizeView">
+		<h2>camelize()</h2>
+		<div class="detailPart">
+			<h3>camelize(<em>string</em>)</h3>
+			<div class="detailSection">
+				<h4>Argument</h4>
+				<dl>
+					<dt>string</dt>
+					<dd>카멜 표기법으로 변환할 문자열.</dd>
+				</dl>
+			</div>
+			<div class="detailSection">
+				<h4>Return</h4>
+				<p>string</p>
+			</div>
+			<div class="detailSection">
+				<h4>Description</h4>
+				<p>선택된 문자열을 카멜 표기법으로 변환한 후 반환한다.
+						( ex: str-str => strStr )
+				</p>
+			</div>
+		</div>
+
+
+		<table>
+			<caption>Version History</caption>
+			<colgroup>
+				<col width="30%">
+				<col width="70%">
+			</colgroup>
+			<thead>
+				<tr>
+					<th scope="col">
+						Version
+					</th>
+					<th scope="col">
+						Description
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						Trial 1.0.10
+					</td>
+					<td>
+						Refactoring
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<!-- ******************  //API Detail ****************** -->
+
+	<!-- ******************  API Detail ****************** -->
+	<div id="openURLView">
+		<h2>openURL()</h2>
+		<div class="detailPart">
+			<h3>openURL(<em>url</em>)</h3>
+			<div class="detailSection">
+				<h4>Argument</h4>
+				<dl>
+					<dt>url</dt>
+					<dd>이동할 링크주소</dd>
+				</dl>
+			</div>
+			<div class="detailSection">
+				<h4>Return</h4>
+				<p> boolean </p>
+			</div>
+			<div class="detailSection">
+				<h4>Description</h4>
+				<p>새 링크로 이동하는 함수. phone의 경우 widget함수를 이용하고 PC의 경우 해당 링크로 이동한다. 함수 실행에 성공하면 true, 실패하면( 예: 올바르지 않은 인자값 ) false를 반환한다. </p>
+			</div>
+		</div>
+
+
+		<table>
+			<caption>Version History</caption>
+			<colgroup>
+				<col width="30%">
+				<col width="70%">
+			</colgroup>
+			<thead>
+				<tr>
+					<th scope="col">
+						Version
+					</th>
+					<th scope="col">
+						Description
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						Trial 1.0.10
+					</td>
+					<td>
+						Refactoring
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<!-- ******************  //API Detail ****************** -->
+
+	<!-- ******************  API Detail ****************** -->
+	<div id="toIDView">
+		<h2>toID()</h2>
+		<div class="detailPart">
+			<h3>toID(<em>string</em>)</h3>
+			<div class="detailSection">
+				<h4>Argument</h4>
+				<dl>
+					<dt>string</dt>
+					<dd>ID 검색 형식으로 변환할 문자열</dd>
+				</dl>
+			</div>
+			<div class="detailSection">
+				<h4>Return</h4>
+				<p>string</p>
+			</div>
+			<div class="detailSection">
+				<h4>Description</h4>
+				<p>문자열을 CSS의 ID 검색 형식으로 바꾸는 함수. 문자열 앞에 "#" 가 없으면 붙이고, 있으면 그대로 반환.</p>
+			</div>
+		</div>
+
+
+		<table>
+			<caption>Version History</caption>
+			<colgroup>
+				<col width="30%">
+				<col width="70%">
+			</colgroup>
+			<thead>
+				<tr>
+					<th scope="col">
+						Version
+					</th>
+					<th scope="col">
+						Description
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						Trial 1.0.10
+					</td>
+					<td>
+						Refactoring
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<!-- ******************  //API Detail ****************** -->
+
+	<!-- ******************  API Detail ****************** -->
+	<div id="isEmulatorView">
+		<h2>isEmulator()</h2>
+		<div class="detailPart">
+			<h3>isEmulator(<em></em>)</h3>
+			<div class="detailSection">
+				<h4>Return</h4>
+				<p>boolean</p>
+			</div>
+			<div class="detailSection">
+				<h4>Description</h4>
+				<p>PC, Emulator, widget 중 현재 어디서 작동중인지 판단,
+				SDK( emulator ) 에서 실행중이면 true, 그 이외에는 false 반환. </p>
+			</div>
+		</div>
+
+
+		<table>
+			<caption>Version History</caption>
+			<colgroup>
+				<col width="30%">
+				<col width="70%">
+			</colgroup>
+			<thead>
+				<tr>
+					<th scope="col">
+						Version
+					</th>
+					<th scope="col">
+						Description
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						Trial 1.0.10
+					</td>
+					<td>
+						Refactoring
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<!-- ******************  //API Detail ****************** -->
+
+	<!-- ******************  API Detail ****************** -->
+	<div id="queueView">
+		<h2>queue()</h2>
+		<div class="detailPart">
+			<h3>queue(<em>data</em>)</h3>
+			<div class="detailSection">
+				<h4>Argument</h4>
+				<dl>
+					<dt>data</dt>
+					<dd>queue 에 저장한 animation 효과 배열에 대한 key값</dd>
+				</dl>
+			</div>
+			<div class="detailSection">
+				<h4>Return</h4>
+				<p>
+			입력한 인자값이 문자열 "clear" 일 때 : null<br>
+			입력한 인자값을 key 로 하는 animation 효과 data가 존재하지 않을 때 : null<br>
+			입력한 인자값을 key 로 하는 animation 효과 data가 존재할 때 : animation 효과 data.<br>
+				</p>
+			</div>
+			<div class="detailSection">
+				<h4>Description</h4>
+				<p></p>
+			</div>
+		</div>
+
+		<div class="detailPart">
+			<h3>queue(<em>data, id</em>)</h3>
+			<div class="detailSection">
+				<h4>Argument</h4>
+				<dl>
+					<dt>data</dt>
+					<dd>queue 에 저장한 animation 효과 배열에 대한 key값</dd>
+				</dl>
+			</div>
+			<div class="detailSection">
+				<h4>Argument</h4>
+				<dl>
+					<dt>id</dt>
+					<dd>ID 검색 형식으로 변환할 문자열</dd>
+				</dl>
+			</div>
+			<div class="detailSection">
+				<h4>Return</h4>
+				<p> null </p>
+			</div>
+			<div class="detailSection">
+				<h4>Description</h4>
+				<p>queue 에 저장한 animation 효과 배열을 저장. <br>
+				Animation용 전역 배열( riffGlobal.queueList )에서 _id값을 키 값으로 animation queue를 가져온다.<br>
+				만일 id에 해당하는 animation queue에 animation 효과가 없을 경우, _data 를 추가한다.</p>
+			</div>
+		</div>
+
+		<table>
+			<caption>Version History</caption>
+			<colgroup>
+				<col width="30%">
+				<col width="70%">
+			</colgroup>
+			<thead>
+				<tr>
+					<th scope="col">
+						Version
+					</th>
+					<th scope="col">
+						Description
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						Trial 1.0.10
+					</td>
+					<td>
+						Refactoring
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<!-- ******************  //API Detail ****************** -->
+
+	<!-- ******************  API Detail ****************** -->
+	<div id="isWidgetView">
+		<h2>isWidget()</h2>
+		<div class="detailPart">
+			<h3>isWidget(<em></em>)</h3>
+			<div class="detailSection">
+				<h4>Return</h4>
+				<p>boolean</p>
+			</div>
+			<div class="detailSection">
+				<h4>Description</h4>
+				<p>현재 작동이 PC 인지 단말( 전화기 ) 인지 판단, 위젯 객체가 true 반환, 없으면 false 반환</p>
+			</div>
+		</div>
+
+		<table>
+			<caption>Version History</caption>
+			<colgroup>
+				<col width="30%">
+				<col width="70%">
+			</colgroup>
+			<thead>
+				<tr>
+					<th scope="col">
+						Version
+					</th>
+					<th scope="col">
+						Description
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						Trial 1.0.10
+					</td>
+					<td>
+						Refactoring
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<!-- ******************  //API Detail ****************** -->
+
+	<!-- ******************  API Detail ****************** -->
+	<div id="moveView">
+		<h2>move()</h2>
+		<div class="detailPart">
+			<h3>move(<em>page, [option]</em>)</h3>
+			<div class="detailSection">
+				<h4>Argument</h4>
+				<dl>
+					<dt>page</dt>
+					<dd>이동할 페이지의 DOM Element의 ID</dd>
+				</dl>
+				<dl>
+					<dt>option(optional)</dt>
+					<dd>페이지 이동시 적용할 효과 (optional)</dd>
+				</dl>
+			</div>
+			<div class="detailSection">
+				<h4>Return</h4>
+				<p>팝업 또는 페이지 이동 시 함수를 호출한 결과값.</p>
+			</div>
+			<div class="detailSection">
+				<h4>Description</h4>
+				<p>navigation 기능으로 페이지로 이동에 쓰인다. <br>#id 혹은 id 로 접근가능하며, 글로벌 변수엔 # 붙인것까지 저장한다. <br>
+				팝업일 경우는 반환값으로 riff.popup 함수를 호출하고, 일반적인 페이지 이동시 반환값으로 riff.scene 함수를 호출한다.
+				</p>
+			</div>
+		</div>
+
+
+		<table>
+			<caption>Version History</caption>
+			<colgroup>
+				<col width="30%">
+				<col width="70%">
+			</colgroup>
+			<thead>
+				<tr>
+					<th scope="col">
+						Version
+					</th>
+					<th scope="col">
+						Description
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						Trial 1.0.10
+					</td>
+					<td>
+						Refactoring
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<!-- ******************  //API Detail ****************** -->
+
+	<!-- ******************  API Detail ****************** -->
+	<div id="backView">
+		<h2>back()</h2>
+		<div class="detailPart">
+			<h3>back(<em>[option]</em>)</h3>
+			<div class="detailSection">
+				<h4>Argument</h4>
+				<dl>
+					<dt>option(optional)</dt>
+					<dd>페이지 이동시 효과</dd>
+				</dl>
+			</div>
+			<div class="detailSection">
+				<h4>Return</h4>
+				<p>riff.scene 함수를 호출한 결과값.</p>
+			</div>
+			<div class="detailSection">
+				<h4>Description</h4>
+				<p>뒤로가기 기능 <br>반환값으로 riff.scene 함수를 호출한다.</p>
+			</div>
+		</div>
+
+
+		<table>
+			<caption>Version History</caption>
+			<colgroup>
+				<col width="30%">
+				<col width="70%">
+			</colgroup>
+			<thead>
+				<tr>
+					<th scope="col">
+						Version
+					</th>
+					<th scope="col">
+						Description
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						Trial 1.0.10
+					</td>
+					<td>
+						Refactoring
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<!-- ******************  //API Detail ****************** -->
+
+	<!-- ******************  API Detail ****************** -->
+	<div id="sceneView">
+		<h2>scene()</h2>
+		<div class="detailPart">
+			<h3>scene(<em>scene, [option]</em>)</h3>
+			<div class="detailSection">
+				<h4>Argument</h4>
+				<dl>
+					<dt>scene</dt>
+					<dd>이동할 페이지의 DOM Element의 ID</dd>
+				</dl>
+				<dl>
+					<dt>option(optional)</dt>
+					<dd>페이지 이동시 효과</dd>
+				</dl>
+			</div>
+			<div class="detailSection">
+				<h4>Return</h4>
+				<p>riff.scene.move 또는 riff.scene.back 함수를 호출한 결과값.</p>
+			</div>
+			<div class="detailSection">
+				<h4>Description</h4>
+				<p>navigation 기능으로 페이지로 이동에 쓰인다. <br>#id 혹은 id 로 접근가능하며, 글로벌 변수엔 # 붙인것까지 저장한다. <br>
+						반환값으로는 scene의 타입을 확인 후 string 이면 riff.scene.move 함수를 호출하고, scene의 타입이 string 이 아닐 경우 riff.scene.back 함수를 호출한다.
+				</p>
+			</div>
+		</div>
+
+
+		<table>
+			<caption>Version History</caption>
+			<colgroup>
+				<col width="30%">
+				<col width="70%">
+			</colgroup>
+			<thead>
+				<tr>
+					<th scope="col">
+						Version
+					</th>
+					<th scope="col">
+						Description
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						Trial 1.0.10
+					</td>
+					<td>
+						Refactoring
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<!-- ******************  //API Detail ****************** -->
+
+	<!-- ******************  API Detail ****************** -->
+	<div id="sceneMoveView">
+		<h2>scene.move()</h2>
+		<div class="detailPart">
+			<h3>scene.move(<em>scene, [option]</em>)</h3>
+			<div class="detailSection">
+				<h4>Argument</h4>
+				<dl>
+					<dt>scene</dt>
+					<dd>이동할 페이지의 DOM Element의 ID</dd>
+				</dl>
+				<dl>
+					<dt>option(optional)</dt>
+					<dd>페이지 이동시 효과</dd>
+				</dl>
+			</div>
+			<div class="detailSection">
+				<h4>Return</h4>
+				<p>boolean( true )</p>
+			</div>
+			<div class="detailSection">
+				<h4>Description</h4>
+				<p>navigation 기능으로 페이지로 이동에 쓰인다. <br>#id 혹은 id 로 접근가능하며, 글로벌 변수엔 # 붙인것까지 저장한다. <br>
+						해당하는 scene으로 이동한다.
+				</p>
+			</div>
+		</div>
+
+
+		<table>
+			<caption>Version History</caption>
+			<colgroup>
+				<col width="30%">
+				<col width="70%">
+			</colgroup>
+			<thead>
+				<tr>
+					<th scope="col">
+						Version
+					</th>
+					<th scope="col">
+						Description
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						Trial 1.0.10
+					</td>
+					<td>
+						Refactoring
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<!-- ******************  //API Detail ****************** -->
+
+	<!-- ******************  API Detail ****************** -->
+	<div id="sceneBackView">
+		<h2>scene.back()</h2>
+		<div class="detailPart">
+			<h3>scene.back(<em>[option]</em>)</h3>
+			<div class="detailSection">
+				<h4>Argument</h4>
+				<dl>
+					<dt>option(optional)</dt>
+					<dd>페이지 이동시 효과</dd>
+				</dl>
+			</div>
+			<div class="detailSection">
+				<h4>Return</h4>
+				<p>boolean( true )</p>
+			</div>
+			<div class="detailSection">
+				<h4>Description</h4>
+				<p>이전 scene으로 이동한다.</p>
+			</div>
+		</div>
+
+
+		<table>
+			<caption>Version History</caption>
+			<colgroup>
+				<col width="30%">
+				<col width="70%">
+			</colgroup>
+			<thead>
+				<tr>
+					<th scope="col">
+						Version
+					</th>
+					<th scope="col">
+						Description
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						Trial 1.0.10
+					</td>
+					<td>
+						Refactoring
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<!-- ******************  //API Detail ****************** -->
+
+	<!-- ******************  API Detail ****************** -->
+	<div id="popupView">
+		<h2>popup()</h2>
+		<div class="detailPart">
+			<h3>popup(<em>popup, [option]</em>)</h3>
+			<div class="detailSection">
+				<h4>Argument</h4>
+				<dl>
+					<dt>popup</dt>
+					<dd>이동할 페이지의 DOM Element의 popupID</dd>
+				</dl>
+				<dl>
+					<dt>option(optional)</dt>
+					<dd>페이지 이동시 효과</dd>
+				</dl>
+			</div>
+			<div class="detailSection">
+				<h4>Return</h4>
+				<p>riff.popup.move 또는 riff.popup.back 함수를 호출한 결과값.</p>
+			</div>
+			<div class="detailSection">
+				<h4>Description</h4>
+				<p>지정된 ID( _popup )를 popup scene으로 띄운다. <br>#id 혹은 id 로 접근가능하다.<br>
+					popup의 타입이 string 일경우 반환값으로 riff.popup.move 함수를 호출하고, 타입이 string이 아닐 경우 riff.popup.back 함수를 호출한다.
+				</p>
+			</div>
+		</div>
+
+
+		<table>
+			<caption>Version History</caption>
+			<colgroup>
+				<col width="30%">
+				<col width="70%">
+			</colgroup>
+			<thead>
+				<tr>
+					<th scope="col">
+						Version
+					</th>
+					<th scope="col">
+						Description
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						Trial 1.0.10
+					</td>
+					<td>
+						Refactoring
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<!-- ******************  //API Detail ****************** -->
+
+	 <!-- ******************  API Detail ****************** -->
+	<div id="popupMoveView">
+		<h2>popup.move()</h2>
+		<div class="detailPart">
+			<h3>popup.move(<em>popup, [option]</em>)</h3>
+			<div class="detailSection">
+				<h4>Argument</h4>
+				<dl>
+					<dt>popup</dt>
+					<dd>이동할 페이지의 DOM Element의 popupID</dd>
+				</dl>
+				<dl>
+					<dt>option(optional)</dt>
+					<dd>페이지 이동시 효과</dd>
+				</dl>
+			</div>
+			<div class="detailSection">
+				<h4>Return</h4>
+				<p>boolean( true )</p>
+			</div>
+			<div class="detailSection">
+				<h4>Description</h4>
+				<p>해당 ID의 popup scene를 띄운다.</p>
+			</div>
+		</div>
+
+
+		<table>
+			<caption>Version History</caption>
+			<colgroup>
+				<col width="30%">
+				<col width="70%">
+			</colgroup>
+			<thead>
+				<tr>
+					<th scope="col">
+						Version
+					</th>
+					<th scope="col">
+						Description
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						Trial 1.0.10
+					</td>
+					<td>
+						Refactoring
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<!-- ******************  //API Detail ****************** -->
+
+	<!-- ******************  API Detail ****************** -->
+	<div id="popupBackView">
+		<h2>popup.back()</h2>
+		<div class="detailPart">
+			<h3>popup.back(<em>[option]</em>)</h3>
+			<div class="detailSection">
+				<h4>Argument</h4>
+				<dl>
+					<dt>option(optional)</dt>
+					<dd>페이지 이동시 효과</dd>
+				</dl>
+			</div>
+			<div class="detailSection">
+				<h4>Return</h4>
+				<p>boolean( true )</p>
+			</div>
+			<div class="detailSection">
+				<h4>Description</h4>
+				<p>현재 화면에 떠 있는 popup을 지운다.</p>
+			</div>
+		</div>
+
+
+		<table>
+			<caption>Version History</caption>
+			<colgroup>
+				<col width="30%">
+				<col width="70%">
+			</colgroup>
+			<thead>
+				<tr>
+					<th scope="col">
+						Version
+					</th>
+					<th scope="col">
+						Description
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						Trial 1.0.10
+					</td>
+					<td>
+						Refactoring
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<!-- ******************  //API Detail ****************** -->
+
+	<!-- ******************  API Detail ****************** -->
+	<div id="transitionView">
+		<h2>transition()</h2>
+		<div class="detailPart">
+			<h3>transition(<em>on, off, [option]</em>)</h3>
+			<div class="detailSection">
+				<h4>Argument</h4>
+				<dl>
+					<dt>on</dt>
+					<dd>보여질 riff Object</dd>
+				</dl>
+				<dl>
+					<dt>off</dt>
+					<dd>감춰지는 riff Object</dd>
+				</dl>
+				<dl>
+					<dt>option(optional)</dt>
+					<dd>효과</dd>
+				</dl>
+			</div>
+			<div class="detailSection">
+				<h4>Return</h4>
+				<p>boolean( true )</p>
+			</div>
+			<div class="detailSection">
+				<h4>Description</h4>
+				<p>화면 이동시 보여지는 효과를 설정해준다.</p>
+			</div>
+		</div>
+
+
+		<table>
+			<caption>Version History</caption>
+			<colgroup>
+				<col width="30%">
+				<col width="70%">
+			</colgroup>
+			<thead>
+				<tr>
+					<th scope="col">
+						Version
+					</th>
+					<th scope="col">
+						Description
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						Trial 1.0.10
+					</td>
+					<td>
+						Refactoring
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<!-- ******************  //API Detail ****************** -->
+
+	<!-- ******************  API Detail ****************** -->
+	<div id="resizeView">
+		<h2>resize()</h2>
+		<div class="detailPart">
+			<h3>resize(<em>[width], [height]</em>)</h3>
+			<div class="detailSection">
+				<h4>Argument</h4>
+				<dl>
+					<dt>width(optional)</dt>
+					<dd>변경할 너비값</dd>
+				</dl>
+				<dl>
+					<dt>height(optional)</dt>
+					<dd>변경할 높이값</dd>
+				</dl>
+			</div>
+			<div class="detailSection">
+				<h4>Return</h4>
+				<p>boolean( true )</p>
+			</div>
+			<div class="detailSection">
+				<h4>Description</h4>
+				<p>h 현재 페이지의 사이즈를 줄인다.<br>위젯 객체가 있으면 위젯의 사이즈를 줄이고, 없으면 윈도우 사이즈 줄임<br>width, height가 둘다 인자로 들어오지 않으면 위젯 활성화 크기인 480, 800으로 변경</p>
+			</div>
+		</div>
+
+
+		<table>
+			<caption>Version History</caption>
+			<colgroup>
+				<col width="30%">
+				<col width="70%">
+			</colgroup>
+			<thead>
+				<tr>
+					<th scope="col">
+						Version
+					</th>
+					<th scope="col">
+						Description
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						Trial 1.0.10
+					</td>
+					<td>
+						Refactoring
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<!-- ******************  //API Detail ****************** -->
+
+	<!-- ******************  API Detail ****************** -->
+	<div id="storageView">
+		<h2>storage()</h2>
+		<div class="detailPart">
+			<h3>storage(<em>key</em>)</h3>
+			<div class="detailSection">
+				<h4>Argument</h4>
+				<dl>
+					<dt>key</dt>
+					<dd>해당 데이터를 검색할 키</dd>
+				</dl>
+			</div>
+			<div class="detailSection">
+				<h4>Return</h4>
+				<p>key로 매칭되는 데이터(문자열) 반환</p>
+			</div>
+			<div class="detailSection">
+				<h4>Description</h4>
+				<p>로컬에 저장된 데이터(문자열)를 가져온다. 위젯일 경우는 storage.preference 함수를 호출하고, pc일 경우는 storage.localStorage 함수를 호출한다.</p>
+			</div>
+		</div>
+
+		<div class="detailPart">
+			<h3>storage(<em>key, value</em>)</h3>
+			<div class="detailSection">
+				<h4>Argument</h4>
+				<dl>
+					<dt>key</dt>
+					<dd>해당 데이터를 저장할 키</dd>
+				</dl>
+				<dl>
+					<dt>value</dt>
+					<dd>저장할 데이터</dd>
+				</dl>
+			</div>
+			<div class="detailSection">
+				<h4>Return</h4>
+				<p>boolean( true )</p>
+			</div>
+			<div class="detailSection">
+				<h4>Description</h4>
+				<p>로컬에 데이터(문자열)를 저장한다. 위젯일 경우는 storage.preference 함수를 호출하고, pc일 경우는 storage.localStorage 함수를 호출한다.</p>
+			</div>
+		</div>
+
+		<table>
+			<caption>Version History</caption>
+			<colgroup>
+				<col width="30%">
+				<col width="70%">
+			</colgroup>
+			<thead>
+				<tr>
+					<th scope="col">
+						Version
+					</th>
+					<th scope="col">
+						Description
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						Trial 1.0.10
+					</td>
+					<td>
+						Refactoring
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<!-- ******************  //API Detail ****************** -->
+
+	<!-- ******************  API Detail ****************** -->
+	<div id="storagePreferenceView">
+		<h2>storage.preference()</h2>
+		<div class="detailPart">
+			<h3>storage.Preference(<em>key</em>)</h3>
+			<div class="detailSection">
+				<h4>Argument</h4>
+				<dl>
+					<dt>key</dt>
+					<dd>해당 데이터를 검색할 키</dd>
+				</dl>
+			</div>
+			<div class="detailSection">
+				<h4>Return</h4>
+				<p>widget.preferenceForKey 함수를 호출한 후 반환되는 값</p>
+			</div>
+			<div class="detailSection">
+				<h4>Description</h4>
+				<p>단말에 저장된 데이터를 가져온다. </p>
+			</div>
+		</div>
+
+		<div class="detailPart">
+			<h3>storage.Preference(<em>key, value</em>)</h3>
+			<div class="detailSection">
+				<h4>Argument</h4>
+				<dl>
+					<dt>key</dt>
+					<dd>해당 데이터를 저장할 키</dd>
+				</dl>
+				<dl>
+					<dt>value</dt>
+					<dd>저장할 데이터(문자열)</dd>
+				</dl>
+			</div>
+			<div class="detailSection">
+				<h4>Return</h4>
+				<p>widget.setPreferenceForKey 함수를 호출한 후 반환되는 값</p>
+			</div>
+			<div class="detailSection">
+				<h4>Description</h4>
+				<p>단말에 데이터(문자열)를 저장한다.</p>
+			</div>
+		</div>
+
+		<table>
+			<caption>Version History</caption>
+			<colgroup>
+				<col width="30%">
+				<col width="70%">
+			</colgroup>
+			<thead>
+				<tr>
+					<th scope="col">
+						Version
+					</th>
+					<th scope="col">
+						Description
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						Trial 1.0.10
+					</td>
+					<td>
+						Refactoring
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<!-- ******************  //API Detail ****************** -->
+
+	<!-- ******************  API Detail ****************** -->
+	<div id="storageLocalStorageView">
+		<h2>storage.localStorage()</h2>
+		<div class="detailPart">
+			<h3>storage.localStorage(<em>key</em>)</h3>
+			<div class="detailSection">
+				<h4>Argument</h4>
+				<dl>
+					<dt>key</dt>
+					<dd>해당 데이터를 검색할 키</dd>
+				</dl>
+			</div>
+			<div class="detailSection">
+				<h4>Return</h4>
+				<p>PC에 저장된 데이터(문자열)</p>
+			</div>
+			<div class="detailSection">
+				<h4>Description</h4>
+				<p>PC에 저장된 데이터(문자열)를 가져온다.</p>
+			</div>
+		</div>
+
+		<div class="detailPart">
+			<h3>storage.localStorage(<em>key, value</em>)</h3>
+			<div class="detailSection">
+				<h4>Argument</h4>
+				<dl>
+					<dt>key</dt>
+					<dd>해당 데이터를 저장할 키</dd>
+				</dl>
+				<dl>
+					<dt>value</dt>
+					<dd>저장할 데이터(문자열)</dd>
+				</dl>
+			</div>
+			<div class="detailSection">
+				<h4>Return</h4>
+				<p></p>
+			</div>
+			<div class="detailSection">
+				<h4>Description</h4>
+				<p>PC에 데이터(문자열)를 저장한다.</p>
+			</div>
+		</div>
+
+		<table>
+			<caption>Version History</caption>
+			<colgroup>
+				<col width="30%">
+				<col width="70%">
+			</colgroup>
+			<thead>
+				<tr>
+					<th scope="col">
+						Version
+					</th>
+					<th scope="col">
+						Description
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						Trial 1.0.10
+					</td>
+					<td>
+						Refactoring
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<!-- ******************  //API Detail ****************** -->
+
+	<!-- ******************  API Detail ****************** -->
+	<div id="globalSettingView">
+		<h2>globalSetting()</h2>
+		<div class="detailPart">
+			<h3>globalSetting(<em>option</em>)</h3>
+			<div class="detailSection">
+				<h4>Argument</h4>
+				<dl>
+					<dt>option</dt>
+					<dd>설정할 옵션. property : value 형태의 object</dd>
+				</dl>
+			</div>
+			<div class="detailSection">
+				<h4>Return</h4>
+				<p>boolean( true )</p>
+			</div>
+			<div class="detailSection">
+				<h4>Description</h4>
+				<p>입력받은 인자값을 기준으로, 전역적인 옵션을 설정한다. 설정할 수 있는 정보는 아래와 같다.<br>
+						transEffect : transistion 할 때 기본 효과 지정<br>
+						theme : 화면 theme 지정<br>
+						softkeyType : 소프트키 타입 지정 (type1)<br>
+						softkeyFunc : 소프트키 하단 리턴 시 실행할 함수 지정<br>
+						softkeyData : 소프트키 데이터 지정<br>
+						softkeyMore : 소프트키 모어 버튼 열기 / 해제 (on / off)<br>
+						name : 위젯 이름 설정<br>
+						eventType : 이벤트를 마우스 / 터치로 받기 (mouse / touch)</p>
+			</div>
+		</div>
+
+		<table>
+			<caption>Version History</caption>
+			<colgroup>
+				<col width="30%">
+				<col width="70%">
+			</colgroup>
+			<thead>
+				<tr>
+					<th scope="col">
+						Version
+					</th>
+					<th scope="col">
+						Description
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						Trial 1.0.10
+					</td>
+					<td>
+						Refactoring
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<!-- ******************  //API Detail ****************** -->
+
+	<!-- ******************  API Detail ****************** -->
+	<div id="softKeyView">
+		<h2>softKey()</h2>
+		<div class="detailPart">
+			<h3>softKey(<em>object</em>)</h3>
+			<div class="detailSection">
+				<h4>Argument</h4>
+				<dl>
+					<dt>object</dt>
+					<dd>데이터 배열</dd>
+				</dl>
+			</div>
+			<div class="detailSection">
+				<h4>Return</h4>
+				<p>boolean( true )</p>
+			</div>
+			<div class="detailSection">
+				<h4>Description</h4>
+				<p>인자로 object가 들어오면 데이터 배열이라고 인식</p>
+			</div>
+		</div>
+
+		<div class="detailPart">
+			<h3>softKey(<em>function</em>)</h3>
+			<div class="detailSection">
+				<h4>Argument</h4>
+				<dl>
+					<dt>function</dt>
+					<dd>back 키에 들어갈 함수</dd>
+				</dl>
+			</div>
+			<div class="detailSection">
+				<h4>Return</h4>
+				<p>boolean( true )</p>
+			</div>
+			<div class="detailSection">
+				<h4>Description</h4>
+				<p>인자로 function가 들어오면 back 키에 들어갈 함수로 인식</p>
+			</div>
+		</div>
+
+		<div class="detailPart">
+			<h3>softKey(<em>string</em>)</h3>
+			<div class="detailSection">
+				<h4>Argument</h4>
+				<dl>
+					<dt>string</dt>
+					<dd>소프트키 타입</dd>
+				</dl>
+			</div>
+			<div class="detailSection">
+				<h4>Return</h4>
+				<p>boolean( true )</p>
+			</div>
+			<div class="detailSection">
+				<h4>Description</h4>
+				<p>인자로 string이 들어오면 소프트키 타입으로 인식 ( type1 )</p>
+			</div>
+		</div>
+
+		<table>
+			<caption>Version History</caption>
+			<colgroup>
+				<col width="30%">
+				<col width="70%">
+			</colgroup>
+			<thead>
+				<tr>
+					<th scope="col">
+						Version
+					</th>
+					<th scope="col">
+						Description
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						Trial 1.0.10
+					</td>
+					<td>
+						Refactoring
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<!-- ******************  //API Detail ****************** -->
+
+	<!-- ******************  API Detail ****************** -->
+	<div id="softKeySoftKeyMoreHideView">
+		<h2>softKey.softKeyMoreHide()</h2>
+		<div class="detailPart">
+			<h3>softKey.softKeyMoreHide(<em></em>)</h3>
+			<div class="detailSection">
+				<h4>Return</h4>
+				<p>boolean( true )</p>
+			</div>
+			<div class="detailSection">
+				<h4>Description</h4>
+				<p>소프트키 more버튼이 scene에 올라왔을 경우 more버튼을 감춘다.</p>
+			</div>
+		</div>
+
+		<table>
+			<caption>Version History</caption>
+			<colgroup>
+				<col width="30%">
+				<col width="70%">
+			</colgroup>
+			<thead>
+				<tr>
+					<th scope="col">
+						Version
+					</th>
+					<th scope="col">
+						Description
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						Trial 1.0.10
+					</td>
+					<td>
+						Refactoring
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<!-- ******************  //API Detail ****************** -->
+
+	<!-- ******************  API Detail ****************** -->
+	<div id="ajaxView">
+		<h2>ajax()</h2>
+		<div class="detailPart">
+			<h3>ajax(<em>url, fnSuccess, option</em>)</h3>
+			<div class="detailSection">
+				<h4>Argument</h4>
+				<dl>
+					<dt>url</dt>
+					<dd>링크주소</dd>
+				</dl>
+				<dl>
+					<dt>fnSuccess</dt>
+					<dd>통신 성공시 콜백함수</dd>
+				</dl>
+				<dl>
+					<dt>option</dt>
+					<dd>비정상 적인 통신 상태에 따른 콜백 및 설정</dd>
+				</dl>
+			</div>
+			<div class="detailSection">
+				<h4>Return</h4>
+				<p>boolean</p>
+			</div>
+			<div class="detailSection">
+				<h4>Description</h4>
+				<p>ajax 통신을 위한 객체</p>
+			</div>
+		</div>
+
+		<table>
+			<caption>Version History</caption>
+			<colgroup>
+				<col width="30%">
+				<col width="70%">
+			</colgroup>
+			<thead>
+				<tr>
+					<th scope="col">
+						Version
+					</th>
+					<th scope="col">
+						Description
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						Trial 1.0.10
+					</td>
+					<td>
+						Refactoring
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<!-- ******************  //API Detail ****************** -->
+
+	<!-- ******************  API Detail ****************** -->
+	<div id="xmlView">
+		<h2>xml()</h2>
+		<div class="detailPart">
+			<h3>xml(<em>url, fnSuccess, option</em>)</h3>
+			<div class="detailSection">
+				<h4>Argument</h4>
+				<dl>
+					<dt>url</dt>
+					<dd></dd>
+				</dl>
+				<dl>
+					<dt>fnSuccess</dt>
+					<dd></dd>
+				</dl>
+				<dl>
+					<dt>option</dt>
+					<dd></dd>
+				</dl>
+			</div>
+			<div class="detailSection">
+				<h4>Return</h4>
+				<p>boolean</p>
+			</div>
+			<div class="detailSection">
+				<h4>Description</h4>
+				<p>xml 통신을 위한 객체</p>
+			</div>
+		</div>
+
+		<table>
+			<caption>Version History</caption>
+			<colgroup>
+				<col width="30%">
+				<col width="70%">
+			</colgroup>
+			<thead>
+				<tr>
+					<th scope="col">
+						Version
+					</th>
+					<th scope="col">
+						Description
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						Trial 1.0.10
+					</td>
+					<td>
+						Refactoring
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<!-- ******************  //API Detail ****************** -->
+
+	<!-- ******************  API Detail ****************** -->
+	<div id="loadView">
+		<h2>load()</h2>
+		<div class="detailPart">
+			<h3>load(<em>func</em>)</h3>
+			<div class="detailSection">
+				<h4>Argument</h4>
+				<dl>
+					<dt>func</dt>
+					<dd>Window 객체가 완전히 load 되고 나서 실행하는 함수</dd>
+				</dl>
+			</div>
+			<div class="detailSection">
+				<h4>Return</h4>
+				<p>boolean</p>
+			</div>
+			<div class="detailSection">
+				<h4>Description</h4>
+				<p>window 객체가  onload event 후에 실행하는 함수 설정.</p>
+			</div>
+		</div>
+
+		<table>
+			<caption>Version History</caption>
+			<colgroup>
+				<col width="30%">
+				<col width="70%">
+			</colgroup>
+			<thead>
+				<tr>
+					<th scope="col">
+						Version
+					</th>
+					<th scope="col">
+						Description
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						Trial 1.0.10
+					</td>
+					<td>
+						Refactoring
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<!-- ******************  //API Detail ****************** -->
+
+	<!-- ******************  API Detail ****************** -->
+	<div id="noConflictView">
+		<h2>noConflict()</h2>
+		<div class="detailPart">
+			<h3>noConflict(<em></em>)</h3>
+			<div class="detailSection">
+				<h4>Return</h4>
+				<p>riff object</p>
+			</div>
+			<div class="detailSection">
+				<h4>Description</h4>
+				<p></p>
+			</div>
+		</div>
+
+		<table>
+			<caption>Version History</caption>
+			<colgroup>
+				<col width="30%">
+				<col width="70%">
+			</colgroup>
+			<thead>
+				<tr>
+					<th scope="col">
+						Version
+					</th>
+					<th scope="col">
+						Description
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						Trial 1.0.10
+					</td>
+					<td>
+						Refactoring
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<!-- ******************  //API Detail ****************** -->
+
+	<!-- ******************  API Detail ****************** -->
+	<div id="nowView">
+		<h2>now()</h2>
+		<div class="detailPart">
+			<h3>now(<em></em>)</h3>
+			<div class="detailSection">
+				<h4>Return</h4>
+				<p>now time</p>
+			</div>
+			<div class="detailSection">
+				<h4>Description</h4>
+				<p>현재 시간을 가져온다.</p>
+			</div>
+		</div>
+
+		<table>
+			<caption>Version History</caption>
+			<colgroup>
+				<col width="30%">
+				<col width="70%">
+			</colgroup>
+			<thead>
+				<tr>
+					<th scope="col">
+						Version
+					</th>
+					<th scope="col">
+						Description
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						Trial 1.0.10
+					</td>
+					<td>
+						Refactoring
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<!-- ******************  //API Detail ****************** -->
+
+	<!-- ******************  API Detail ****************** -->
+	<div id="feedReceiveTimeView">
+		<h2>feedReceiveTime()</h2>
+		<div class="detailPart">
+			<h3>feedReceiveTime(<em></em>)</h3>
+				<div class="detailSection">
+				<h4>Return</h4>
+				<p>boolean( true )</p>
+			</div>
+			<div class="detailSection">
+				<h4>Description</h4>
+				<p>RSS Component에서 RSS 데이터 수신시간을 감춘다.</p>
+			</div>
+		</div>
+
+		<div class="detailPart">
+			<h3>feedReceiveTime(<em>time</em>)</h3>
+			<div class="detailSection">
+				<h4>Argument</h4>
+				<dl>
+					<dt>time</dt>
+					<dd>RSS 데이터 수신시간</dd>
+				</dl>
+			</div>
+			<div class="detailSection">
+				<h4>Return</h4>
+				<p>boolean( true )</p>
+			</div>
+			<div class="detailSection">
+				<h4>Description</h4>
+				<p>RSS Component에서 RSS 데이터 수신시간을 보여준다.</p>
+			</div>
+		</div>
+
+		<table>
+			<caption>Version History</caption>
+			<colgroup>
+				<col width="30%">
+				<col width="70%">
+			</colgroup>
+			<thead>
+				<tr>
+					<th scope="col">
+						Version
+					</th>
+					<th scope="col">
+						Description
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						Trial 1.0.10
+					</td>
+					<td>
+						Refactoring
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<!-- ******************  //API Detail ****************** -->
+
+	<!-- ******************  API Detail ****************** -->
+	<div id="adjustSceneSizeView">
+		<h2>adjustSceneSize()</h2>
+		<div class="detailPart">
+			<h3>adjustSceneSize(<em></em>)</h3>
+				<div class="detailSection">
+				<h4>Return</h4>
+				<p>boolean( true )</p>
+			</div>
+			<div class="detailSection">
+				<h4>Description</h4>
+				<p>화면 크기를 자동으로 맞춰준다.</p>
+			</div>
+		</div>
+
+		<table>
+			<caption>Version History</caption>
+			<colgroup>
+				<col width="30%">
+				<col width="70%">
+			</colgroup>
+			<thead>
+				<tr>
+					<th scope="col">
+						Version
+					</th>
+					<th scope="col">
+						Description
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						Trial 1.0.10
+					</td>
+					<td>
+						Refactoring
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<!-- ******************  //API Detail ****************** -->
+
+	<!-- ******************  API Detail ****************** -->
+	<div id="xmlSelectorView">
+		<h2>xmlSelector()</h2>
+		<div class="detailPart">
+			<h3>xmlSelector(<em>xml, queryString</em>)</h3>
+			<div class="detailSection">
+				<h4>Argument</h4>
+				<dl>
+					<dt>xml</dt>
+					<dd>xml 데이터</dd>
+				</dl>
+				<dl>
+					<dt>queryString</dt>
+					<dd>질의문자열</dd>
+				</dl>
+			</div>
+			<div class="detailSection">
+				<h4>Return</h4>
+				<p>boolean( true )</p>
+			</div>
+			<div class="detailSection">
+				<h4>Description</h4>
+				<p>질의문으로 XML 데이터를 검색한 후, 검색 결과를 riff로 감싸주어 리턴한다. </p>
+			</div>
+		</div>
+
+		<table>
+			<caption>Version History</caption>
+			<colgroup>
+				<col width="30%">
+				<col width="70%">
+			</colgroup>
+			<thead>
+				<tr>
+					<th scope="col">
+						Version
+					</th>
+					<th scope="col">
+						Description
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						Trial 1.0.10
+					</td>
+					<td>
+						Refactoring
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<!-- ******************  //API Detail ****************** -->
+
+	<!-- ******************  API Detail ****************** -->
+	<div id="ellipsisStringView">
+		<h2>ellipsisString()</h2>
+		<div class="detailPart">
+			<h3>ellipsisString(<em>string, number</em>)</h3>
+			<div class="detailSection">
+				<h4>Argument</h4>
+				<dl>
+					<dt>string</dt>
+					<dd>줄일 문자열</dd>
+				</dl>
+				<dl>
+					<dt>number</dt>
+					<dd>문자열 길이제한 범위</dd>
+				</dl>
+			</div>
+			<div class="detailSection">
+				<h4>Return</h4>
+				<p>말 줄임된 문자열</p>
+			</div>
+			<div class="detailSection">
+				<h4>Description</h4>
+				<p>선택된 문자열의 길이가 한계치를 초과하면 "..." 말줄임표를 붙여서 반환한다.</p>
+			</div>
+		</div>
+
+		<table>
+			<caption>Version History</caption>
+			<colgroup>
+				<col width="30%">
+				<col width="70%">
+			</colgroup>
+			<thead>
+				<tr>
+					<th scope="col">
+						Version
+					</th>
+					<th scope="col">
+						Description
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						Trial 1.0.10
+					</td>
+					<td>
+						Refactoring
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<!-- ******************  //API Detail ****************** -->
+
+	<!-- ******************  API Detail ****************** -->
+	<div id="extendView">
+		<h2>extend()</h2>
+		<div class="detailPart">
+			<h3>extend(<em>name, function </em>)</h3>
+			<div class="detailSection">
+				<h4>Argument</h4>
+				<dl>
+					<dt>name</dt>
+					<dd>줄일 문자열</dd>
+				</dl>
+				<dl>
+					<dt>function</dt>
+					<dd>문자열 길이제한 범위</dd>
+				</dl>
+			</div>
+			<div class="detailSection">
+				<h4>Return</h4>
+				<p>boolean( true )</p>
+			</div>
+			<div class="detailSection">
+				<h4>Description</h4>
+				<p>플러그인 확장 함수, 함수 확장 시 사용한다.</p>
+			</div>
+		</div>
+
+		<table>
+			<caption>Version History</caption>
+			<colgroup>
+				<col width="30%">
+				<col width="70%">
+			</colgroup>
+			<thead>
+				<tr>
+					<th scope="col">
+						Version
+					</th>
+					<th scope="col">
+						Description
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						Trial 1.0.10
+					</td>
+					<td>
+						Refactoring
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<!-- ******************  //API Detail ****************** -->
+
+	<!-- ******************  API Detail ****************** -->
+	<div id="alertView">
+		<h2>alert()</h2>
+		<div class="detailPart">
+			<h3>alert(<em>string, [option] </em>)</h3>
+			<div class="detailSection">
+				<h4>Argument</h4>
+				<dl>
+					<dt>string</dt>
+					<dd>팝업창에 보여줄 문자열</dd>
+				</dl>
+				<dl>
+					<dt>option(optional)</dt>
+					<dd>효과</dd>
+				</dl>
+			</div>
+			<div class="detailSection">
+				<h4>Return</h4>
+				<p>boolean( true )</p>
+			</div>
+			<div class="detailSection">
+				<h4>Description</h4>
+				<p>알림창</p>
+			</div>
+		</div>
+
+		<table>
+			<caption>Version History</caption>
+			<colgroup>
+				<col width="30%">
+				<col width="70%">
+			</colgroup>
+			<thead>
+				<tr>
+					<th scope="col">
+						Version
+					</th>
+					<th scope="col">
+						Description
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						Trial 1.0.10
+					</td>
+					<td>
+						Refactoring
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<!-- ******************  //API Detail ****************** -->
+
+	<!-- ******************  API Detail ****************** -->
+	<div id="timerView">
+		<h2>timer()</h2>
+		<div class="detailPart">
+			<h3>timer(<em> function, time, id </em>)</h3>
+			<div class="detailSection">
+				<h4>Argument</h4>
+				<dl>
+					<dt>function</dt>
+					<dd>timer 실행시에 실행되는 함수</dd>
+				</dl>
+				<dl>
+					<dt>time</dt>
+					<dd>timer 함수가 실행되는 주기</dd>
+				</dl>
+				<dl>
+					<dt>id</dt>
+					<dd>timer 를 쉽게관리하기 위해 사용하는 id</dd>
+				</dl>
+			</div>
+			<div class="detailSection">
+				<h4>Return</h4>
+				<p>boolean( true )</p>
+			</div>
+			<div class="detailSection">
+				<h4>Description</h4>
+				<p>timer를 관리하기 쉽게 함든 함수<br>riff.timer(_id) 이런식으로 사용할 경우 timer삭제</p>
+			</div>
+		</div>
+
+		<table>
+			<caption>Version History</caption>
+			<colgroup>
+				<col width="30%">
+				<col width="70%">
+			</colgroup>
+			<thead>
+				<tr>
+					<th scope="col">
+						Version
+					</th>
+					<th scope="col">
+						Description
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						Trial 1.0.10
+					</td>
+					<td>
+						Refactoring
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<!-- ******************  //API Detail ****************** -->
+
+	<!-- ******************  API Detail ****************** -->
+	<div id="changeSubsceneFlagView">
+		<h2>changeSubsceneFlag()</h2>
+		<div class="detailPart">
+			<h3>changeSubsceneFlag(<em>maxLength, currentIndex, dataSet, isGoRun, isAutoRefreshRun, isRefreshRun</em>)</h3>
+			<div class="detailSection">
+				<h4>Argument</h4>
+				<dl>
+					<dt>maxLength</dt>
+					<dd>subScene의 최대 갯수</dd>
+				</dl>
+				<dl>
+					<dt>currentIndex</dt>
+					<dd>현재 subScene의 index</dd>
+				</dl>
+				<dl>
+					<dt>dataSet</dt>
+					<dd>subscene을 구축하기 위해  makeContents 혹은 makeStructure에서 isSubSceneNew 플래그를 저장한 객체</dd>
+				</dl>
+				<dl>
+					<dt>isGoRun</dt>
+					<dd>현재 화면이 component.move() 함수를 이용해 실행되었는지의 여부</dd>
+				</dl>
+				<dl>
+					<dt>isAutoRefreshRun</dt>
+					<dd>현재 subScene이 component.autorefresh () 함수를 이용해 실행되었는지의 여부</dd>
+				</dl>
+				<dl>
+					<dt>isRefreshRun</dt>
+					<dd>현재 subScene이 component.refresh () 함수를 이용해 실행되었는지의 여부</dd>
+				</dl>
+			</div>
+			<div class="detailSection">
+				<h4>Return</h4>
+				<p>boolean( true )</p>
+			</div>
+			<div class="detailSection">
+				<h4>Description</h4>
+				<p>화면 갱신 정책을 적용한다.</p>
+			</div>
+		</div>
+
+		<table>
+			<caption>Version History</caption>
+			<colgroup>
+				<col width="30%">
+				<col width="70%">
+			</colgroup>
+			<thead>
+				<tr>
+					<th scope="col">
+						Version
+					</th>
+					<th scope="col">
+						Description
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						Trial 1.0.10
+					</td>
+					<td>
+						Refactoring
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<!-- ******************  //API Detail ****************** -->
+
+	<!-- ******************  API Detail ****************** -->
+	<div id="isArrayView">
+		<h2>isArray()</h2>
+		<div class="detailPart">
+			<h3>isArray(<em>value</em>)</h3>
+			<div class="detailSection">
+				<h4>Argument</h4>
+				<dl>
+					<dt>value</dt>
+					<dd>배열인지 체크하기 위한 데이터</dd>
+				</dl>
+			</div>
+			<div class="detailSection">
+				<h4>Return</h4>
+				<p>boolean</p>
+			</div>
+			<div class="detailSection">
+				<h4>Description</h4>
+				<p>선택된 object가 배열인지 아닌지 체크한다.</p>
+			</div>
+		</div>
+
+		<table>
+			<caption>Version History</caption>
+			<colgroup>
+				<col width="30%">
+				<col width="70%">
+			</colgroup>
+			<thead>
+				<tr>
+					<th scope="col">
+						Version
+					</th>
+					<th scope="col">
+						Description
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						Trial 1.0.10
+					</td>
+					<td>
+						Refactoring
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<!-- ******************  //API Detail ****************** -->
+
+
+	<!-- ******************  API Detail ****************** -->
+	<div id="makeStructsView">
+		<h2>makeStructs()</h2>
+		<div class="detailPart">
+			<h3>$("<em>.select</em>").makeStructs(<em></em>)</h3>
+			<div class="detailSection">
+				<h4>Selector</h4>
+				<p>Component Class Name</p>
+			</div>
+			<div class="detailSection">
+				<h4>Return</h4>
+				<p>riff object</p>
+			</div>
+			<div class="detailSection">
+				<h4>Description</h4>
+				<p>공통적으로 blank DIV Element 생성하고, 해당하는 컴포넌트의 특성에 맞게 셋팅하며, 옵션을 적용하게 된다.<br><br>
+				popup은 버튼에 이벤트를 걸어준다.<br>
+				list는 터치이벤트를 걸고, 리스트의 형태를 구성한다.<br>
+				settingList는 checkBox, radioButton, on/off 버튼을 구성하며, 리스트의 형태를 갖춘다.<br>
+				tab은 탭 이동 시 발생하는 이벤트를 걸어준다.
+				</p>
+			</div>
+		</div>
+
+		<table>
+			<caption>Version History</caption>
+			<colgroup>
+				<col width="30%">
+				<col width="70%">
+			</colgroup>
+			<thead>
+				<tr>
+					<th scope="col">
+						Version
+					</th>
+					<th scope="col">
+						Description
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						Trial 1.0.10
+					</td>
+					<td>
+						Refactoring
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<!-- ******************  //API Detail ****************** -->
+
+	<!-- ******************  API Detail ****************** -->
+	<div id="makeContentsView">
+		<h2>makeContents()</h2>
+		<div class="detailPart">
+			<h3>("<em>#setting</em>").makeContents(<em>data</em>)</h3>
+			<div class="detailSection">
+				<h4>Argument</h4>
+				<dl>
+					<dt>data</dt>
+					<dd>markup을 만들기 위한 data</dd>
+				</dl>
+				<dl>
+					<dt>data Interface</dt>
+					<dd>
+					var settingListData =  [ <br>
+						&nbsp; ["radio", "Radio1", [ function(str) { alert(str) }, "radio"] ], <br>
+						&nbsp; ["radio", "Radio2", function() { alert("radio2")  } ], <br>
+						&nbsp; ["check", "Checkbox", function() { alert("check")  } ], <br>
+						&nbsp; ["check", "Checkbox", function() { alert("check")  } ], <br>
+						&nbsp; ["check", "Checkbox", function() { alert("check")  } ], <br>
+						&nbsp; ["onoff", "On/Off Toggle", function() { alert("onoff")  } ], <br>
+						&nbsp; ["onoff", "On/Off Toggle", function() { alert("onoff")  } ] <br>
+					]; 
+					</dd>
+				</dl>
+			</div>
+			<div class="detailSection">
+				<h4>Return</h4>
+				<p>riff object</p>
+			</div>
+			<div class="detailSection">
+				<h4>Description</h4>
+				<p>data를 가지고 markup을 생성하고 데이터를 적용해준다.</p>
+			</div>
+		</div>
+
+		<div class="detailPart">
+			<h3>("<em>#setThemeList</em>").makeContents(<em>data</em>)</h3>
+			<div class="detailSection">
+				<h4>Argument</h4>
+				<dl>
+					<dt>data</dt>
+					<dd>markup을 만들기 위한 data</dd>
+				</dl>
+				<dl>
+					<dt>data Interface</dt>
+					<dd>
+					var setThemeListData =	[{ <br>
+						&nbsp; "none" : ["radio", true, "none"], <br>
+						&nbsp; "aquablue" : ["radio", "aquablue"], <br>
+						&nbsp; "green" : ["radio", "green"], <br>
+						&nbsp; "leather" : ["radio", "leather" ], <br>
+						&nbsp; "modern_black" : ["radio", "modern_black"], <br>
+						&nbsp; "note" : ["radio", "note"], <br>
+						&nbsp; "papercut" : ["radio", "papercut"], <br>
+						&nbsp; "rusty" : ["radio", "rusty"], <br>
+						&nbsp; "vivid" : ["radio", "vivid"] <br>
+					}, function( params ) { <br>
+							&nbsp; $.globalSetting( { "theme" : params[0] } ); <br>
+					}];
+					</dd>
+				</dl>
+			</div>
+			<div class="detailSection">
+				<h4>Return</h4>
+				<p>riff object</p>
+			</div>
+			<div class="detailSection">
+				<h4>Description</h4>
+				<p>data를 가지고 markup을 생성하고 데이터를 적용해준다.</p>
+			</div>
+		</div>
+
+		<table>
+			<caption>Version History</caption>
+			<colgroup>
+				<col width="30%">
+				<col width="70%">
+			</colgroup>
+			<thead>
+				<tr>
+					<th scope="col">
+						Version
+					</th>
+					<th scope="col">
+						Description
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						Trial 1.0.10
+					</td>
+					<td>
+						Refactoring
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<!-- ******************  //API Detail ****************** -->
+
+	<!-- ******************  API Detail ****************** -->
+	<div id="countView">
+		<h2>count()</h2>
+		<div class="detailPart">
+			<h3>count(<em></em>)</h3>
+			<div class="detailSection">
+				<h4>Return</h4>
+				<p>number</p>
+			</div>
+			<div class="detailSection">
+				<h4>Description</h4>
+				<p>선택된 요소의 자식노드(ul)의 자식노드(li)의 수를 반환</p>
+			</div>
+		</div>
+
+		<table>
+			<caption>Version History</caption>
+			<colgroup>
+				<col width="30%">
+				<col width="70%">
+			</colgroup>
+			<thead>
+				<tr>
+					<th scope="col">
+						Version
+					</th>
+					<th scope="col">
+						Description
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						Trial 1.0.10
+					</td>
+					<td>
+						Refactoring
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<!-- ******************  //API Detail ****************** -->
+
+	<!-- ******************  API Detail ****************** -->
+	<div id="componentMoveView">
+		<h2>move()</h2>
+		<div class="detailPart">
+			<h3>move(<em>number</em>)</h3>
+			<div class="detailSection">
+				<h4>Argument</h4>
+				<dl>
+					<dt>number</dt>
+					<dd>indexNo</dd>
+				</dl>
+			</div>
+			<div class="detailSection">
+				<h4>Return</h4>
+				<p>riff object</p>
+			</div>
+			<div class="detailSection">
+				<h4>Description</h4>
+				<p>선택된 요소의 indexNo에 해당하는 subScene으로 이동한다.<br>
+					tab 컴포넌트의 경우 탭이동시 현재탭의 focus해제 한 후 indexNo에 해당하는 탭의 focus 설정한다.</p>
+			</div>
+		</div>
+
+		<table>
+			<caption>Version History</caption>
+			<colgroup>
+				<col width="30%">
+				<col width="70%">
+			</colgroup>
+			<thead>
+				<tr>
+					<th scope="col">
+						Version
+					</th>
+					<th scope="col">
+						Description
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						Trial 1.0.10
+					</td>
+					<td>
+						Refactoring
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<!-- ******************  //API Detail ****************** -->
+
+	<!-- ******************  API Detail ****************** -->
+	<div id="rssView">
+		<h2>rss()</h2>
+		<div class="detailPart">
+			<h3>("<em>#rssList</em>").rss(<em>data</em>)</h3>
+			<div class="detailSection">
+				<h4>Argument</h4>
+				<dl>
+					<dt>data</dt>
+					<dd>markup을 만들기 위한 data</dd>
+				</dl>
+				<dl>
+					<dt>data Interface</dt>
+					<dd>
+					var data = <br>
+					{ <br>
+						&nbsp; runs : <br>
+						&nbsp; [ <br>
+							&nbsp;&nbsp; "rssFeedUrl",   fooList, [ {"image" : "thumbnail[url]"}, "args2", "args3"] <br>
+						&nbsp; ] <br>
+						&nbsp; , layout : [ riffList, [ {"image" : "thumbnail[url]"}, "arg2", "arg3" ] ] <br>
+					} 
+					</dd>
+				</dl>
+			</div>
+			<div class="detailSection">
+				<h4>Return</h4>
+				<p>riff object</p>
+			</div>
+			<div class="detailSection">
+				<h4>Description</h4>
+				<p>data에서 riffList, fooList는 프레임워크에서 지원하는 함수로 markup을 생성하고 데이터를 적용해준다. rssFeedUrl 부분은 사용자 정의.</p>
+			</div>
+		</div>
+
+		<div class="detailPart">
+			<h3>("<em>#rssTab</em>").rss(<em>data</em>)</h3>
+			<div class="detailSection">
+				<h4>Argument</h4>
+				<dl>
+					<dt>data</dt>
+					<dd>markup을 만들기 위한 data</dd>
+				</dl>
+				<dl>
+					<dt>data Interface</dt>
+					<dd>
+					var data = <br>
+					{ <br>
+						&nbsp; runs : <br>
+						&nbsp; { <br>
+								&nbsp;&nbsp; "news"		: [ "rssFeedUrl",   fooTab, [ {"image" : "thumbnail[url]"}, "args2", "args3"]], <br>
+								&nbsp;&nbsp; "sports"	: [ "rssFeedUrl",   fooTab, [ {"image" : "thumbnail[url]"}, "args2", "args3"]], <br>
+								&nbsp;&nbsp; "science"	: [ "rssFeedUrl",   fooTab, [ {"image" : "thumbnail[url]"}, "args2", "args3"]], <br>
+								&nbsp;&nbsp; "topic"		: [ "rssFeedUrl",   fooTab, [ {"image" : "thumbnail[url]"}, "args2", "args3"]]	 <br>
+						&nbsp; } <br>
+						&nbsp; , layout : [ riffTab, [ {"image" : "thumbnail[url]"}, "args2", "args3" ] ] <br>
+					} 
+					</dd>
+				</dl>
+			</div>
+			<div class="detailSection">
+				<h4>Return</h4>
+				<p>riff object</p>
+			</div>
+			<div class="detailSection">
+				<h4>Description</h4>
+				<p>위 data에서 riffTab, fooTab은 프레임워크에서 지원하는 함수로 markup을 생성하고 데이터를 적용해준다. rssFeedUrl 부분은 사용자 정의.</p>
+			</div>
+		</div>
+
+		<table>
+			<caption>Version History</caption>
+			<colgroup>
+				<col width="30%">
+				<col width="70%">
+			</colgroup>
+			<thead>
+				<tr>
+					<th scope="col">
+						Version
+					</th>
+					<th scope="col">
+						Description
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						Trial 1.0.10
+					</td>
+					<td>
+						Refactoring
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<!-- ******************  //API Detail ****************** -->
+
+	<!-- ******************  API Detail ****************** -->
+	<div id="subSceneLoadView">
+		<h2>subSceneLoad()</h2>
+		<div class="detailPart">
+			<h3>subSceneLoad(<em></em>)</h3>
+			<div class="detailSection">
+				<h4>Return</h4>
+				<p>riff object</p>
+			</div>
+			<div class="detailSection">
+				<h4>Description</h4>
+				<p>선택된 요소의 subScene화면을 갱신한다.</p>
+			</div>
+		</div>
+
+		<table>
+			<caption>Version History</caption>
+			<colgroup>
+				<col width="30%">
+				<col width="70%">
+			</colgroup>
+			<thead>
+				<tr>
+					<th scope="col">
+						Version
+					</th>
+					<th scope="col">
+						Description
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						Trial 1.0.10
+					</td>
+					<td>
+						Refactoring
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<!-- ******************  //API Detail ****************** -->
+
+	<!-- ******************  API Detail ****************** -->
+	<div id="subSceneLoadFlagView">
+		<h2>subSceneLoadFlag()</h2>
+		<div class="detailPart">
+			<h3>subSceneLoadFlag(<em></em>)</h3>
+			<div class="detailSection">
+				<h4>Return</h4>
+				<p>riff object</p>
+			</div>
+			<div class="detailSection">
+				<h4>Description</h4>
+				<p>선택된 요소의 subScene에 플래그를 체크해서 화면을 갱신한다.</p>
+			</div>
+		</div>
+
+		<table>
+			<caption>Version History</caption>
+			<colgroup>
+				<col width="30%">
+				<col width="70%">
+			</colgroup>
+			<thead>
+				<tr>
+					<th scope="col">
+						Version
+					</th>
+					<th scope="col">
+						Description
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						Trial 1.0.10
+					</td>
+					<td>
+						Refactoring
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<!-- ******************  //API Detail ****************** -->
+
+	<!-- ******************  API Detail ****************** -->
+	<div id="subSceneSelectView">
+		<h2>subSceneSelect()</h2>
+		<div class="detailPart">
+			<h3>subSceneSelect(<em>key</em>)</h3>
+			<div class="detailSection">
+				<h4>Argument</h4>
+				<dl>
+					<dt>key</dt>
+					<dd>indexNo</dd>
+				</dl>
+			</div>
+
+			<div class="detailSection">
+				<h4>Return</h4>
+				<p>Dom Element</p>
+			</div>
+			<div class="detailSection">
+				<h4>Description</h4>
+				<p>key값에 해당하는 하위요소를 반환한다. <br>
+						인자의 타입이 string or number 이 아닐 경우 하위 요소 전체를 반환한다.
+				</p>
+			</div>
+		</div>
+
+		<table>
+			<caption>Version History</caption>
+			<colgroup>
+				<col width="30%">
+				<col width="70%">
+			</colgroup>
+			<thead>
+				<tr>
+					<th scope="col">
+						Version
+					</th>
+					<th scope="col">
+						Description
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						Trial 1.0.10
+					</td>
+					<td>
+						Refactoring
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<!-- ******************  //API Detail ****************** -->
+
+	<!-- ******************  API Detail ****************** -->
+	<div id="refreshView">
+		<h2>refresh()</h2>
+		<div class="detailPart">
+			<h3>refresh(<em></em>)</h3>
+			<div class="detailSection">
+				<h4>Return</h4>
+				<p>riff object</p>
+			</div>
+			<div class="detailSection">
+				<h4>Description</h4>
+				<p>화면을 수동으로 갱신한다. <br>
+						tab일 경우 _isCallByAutoRefresh 플래그를 통해 autoRefresh 함수로부터 호출됐는지 확인한다.
+				</p>
+			</div>
+		</div>
+
+		<table>
+			<caption>Version History</caption>
+			<colgroup>
+				<col width="30%">
+				<col width="70%">
+			</colgroup>
+			<thead>
+				<tr>
+					<th scope="col">
+						Version
+					</th>
+					<th scope="col">
+						Description
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						Trial 1.0.10
+					</td>
+					<td>
+						Refactoring
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<!-- ******************  //API Detail ****************** -->
+
+	<!-- ******************  API Detail ****************** -->
+	<div id="autoRefreshView">
+		<h2>autoRefresh()</h2>
+		<div class="detailPart">
+			<h3>autoRefresh(<em>[time]</em>)</h3>
+			<div class="detailSection">
+				<h4>Argument</h4>
+				<dl>
+					<dt>time(optional)</dt>
+					<dd>갱신 시간</dd>
+				</dl>
+			</div>
+			<div class="detailSection">
+				<h4>Return</h4>
+				<p>riff object</p>
+			</div>
+			<div class="detailSection">
+				<h4>Description</h4>
+				<p>화면을 자동으로 갱신한다.<br>
+				인자로 시간이 넘어오면 그 시간에 맞춰 자동으로 갱신된다.
+				</p>
+			</div>
+		</div>
+
+		<table>
+			<caption>Version History</caption>
+			<colgroup>
+				<col width="30%">
+				<col width="70%">
+			</colgroup>
+			<thead>
+				<tr>
+					<th scope="col">
+						Version
+					</th>
+					<th scope="col">
+						Description
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						Trial 1.0.10
+					</td>
+					<td>
+						Refactoring
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<!-- ******************  //API Detail ****************** -->
+
+	<!-- ******************  API Detail ****************** -->
+	<div id="optionView">
+		<h2>option()</h2>
+		<div class="detailPart">
+			<h3>("<em>.selector</em>").option( data );</h3>
+			<div class="detailSection">
+				<h4>Selector</h4>
+				<p>Component Class Name</p>
+
+				<h4>Argument</h4>
+				<dl>
+					<dt>data</dt>
+					<dd>{ property : value } 이루어진 object data</dd>
+				</dl>
+
+				<dl>
+					<dt>data Interface</dt>
+					<dd>var data = { 'fontSize':'small', 'fontColor':'#eaeaea' }</dd>
+				</dl>
+			</div>
+			<div class="detailSection">
+				<h4>Return</h4>
+				<p>riff object</p>
+			</div>
+			<div class="detailSection">
+				<h4>Description</h4>
+				<p>선택된 요소에 해당 데이터를 통해 스타일을 적용한다.</p>
+			</div>
+		</div>
+
+		<table>
+			<caption>Version History</caption>
+			<colgroup>
+				<col width="30%">
+				<col width="70%">
+			</colgroup>
+			<thead>
+				<tr>
+					<th scope="col">
+						Version
+					</th>
+					<th scope="col">
+						Description
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						Trial 1.0.10
+					</td>
+					<td>
+						Refactoring
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<!-- ******************  //API Detail ****************** -->
+
+	<!-- ******************  API Detail ****************** -->
+	<div id="removeListItemView">
+		<h2>removeListItem()</h2>
+		<div class="detailPart">
+			<h3>removeListItem(<em>key</em>)</h3>
+			<div class="detailSection">
+				<h4>Argument</h4>
+				<dl>
+					<dt>key</dt>
+					<dd>list에서 삭제할 요소의 index</dd>
+				</dl>
+			</div>
+			<div class="detailSection">
+				<h4>Return</h4>
+				<p>riff object</p>
+			</div>
+			<div class="detailSection">
+				<h4>Description</h4>
+				<p>list에서 해당 key의 요소를 삭제한다.</p>
+			</div>
+		</div>
+
+		<table>
+			<caption>Version History</caption>
+			<colgroup>
+				<col width="30%">
+				<col width="70%">
+			</colgroup>
+			<thead>
+				<tr>
+					<th scope="col">
+						Version
+					</th>
+					<th scope="col">
+						Description
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						Trial 1.0.10
+					</td>
+					<td>
+						Refactoring
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<!-- ******************  //API Detail ****************** -->
+
+	<!-- ******************  API Detail ****************** -->
+	<div id="okFuncView">
+		<h2>okFunc()</h2>
+		<div class="detailPart">
+			<h3>okFunc(<em></em>)</h3>
+			<div class="detailSection">
+				<h4>Return</h4>
+				<p>riff object</p>
+			</div>
+			<div class="detailSection">
+				<h4>Description</h4>
+				<p> setting에서 ok버튼 누를때 실행된다. 인자로는 선택된 key값들을 배열로 넘긴다.</p>
+			</div>
+		</div>
+
+		<table>
+			<caption>Version History</caption>
+			<colgroup>
+				<col width="30%">
+				<col width="70%">
+			</colgroup>
+			<thead>
+				<tr>
+					<th scope="col">
+						Version
+					</th>
+					<th scope="col">
+						Description
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						Trial 1.0.10
+					</td>
+					<td>
+						Refactoring
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<!-- ******************  //API Detail ****************** -->
+
+	<!-- ******************  API Detail ****************** -->
+	<div id="getSettingValueView">
+		<h2>getSettingValue()</h2>
+		<div class="detailPart">
+			<h3>getSettingValue(<em></em>)</h3>
+			<div class="detailSection">
+				<h4>Return</h4>
+				<p>riff object</p>
+			</div>
+			<div class="detailSection">
+				<h4>Description</h4>
+				<p>인자로는 okFunc()실행 시 선택된 key값들을 배열로 받아온다. settingList 에서 선택한 목록의 플래그를 변경해준다.</p>
+			</div>
+		</div>
+
+		<table>
+			<caption>Version History</caption>
+			<colgroup>
+				<col width="30%">
+				<col width="70%">
+			</colgroup>
+			<thead>
+				<tr>
+					<th scope="col">
+						Version
+					</th>
+					<th scope="col">
+						Description
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						Trial 1.0.10
+					</td>
+					<td>
+						Refactoring
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<!-- ******************  //API Detail ****************** -->
+
+	<!-- ******************  API Detail ****************** -->
+	<div id="moveRSSArticleView">
+		<h2>moveRSSArticle()</h2>
+		<div class="detailPart">
+			<h3>moveRSSArticle(<em>number</em>)</h3>
+			<div class="detailSection">
+				<h4>Argument</h4>
+				<dl>
+					<dt>number</dt>
+					<dd>이동할 indexNo</dd>
+				</dl>
+			</div>
+			<div class="detailSection">
+				<h4>Return</h4>
+				<p>riff object</p>
+			</div>
+			<div class="detailSection">
+				<h4>Description</h4>
+				<p>선택된 요소의 해당 인자를 통해 내부적으로 subScene을 변경하고, 해당 인자의 뉴스를 idle에 출력해준다.</p>
+			</div>
+		</div>
+
+		<div class="detailPart">
+			<h3>moveRSSArticle(<em>string</em>)</h3>
+			<div class="detailSection">
+				<h4>Argument</h4>
+				<dl>
+					<dt>string</dt>
+					<dd>이벤트에 매칭되는 문자열</dd>
+				</dl>
+			</div>
+			<div class="detailSection">
+				<h4>Return</h4>
+				<p>riff object</p>
+			</div>
+			<div class="detailSection">
+				<h4>Description</h4>
+				<p>각 문자열에 해당하는 이벤트를 활성화하고, 이벤트 발생 시 RSS </p>
+			</div>
+		</div>
+
+		<table>
+			<caption>Version History</caption>
+			<colgroup>
+				<col width="30%">
+				<col width="70%">
+			</colgroup>
+			<thead>
+				<tr>
+					<th scope="col">
+						Version
+					</th>
+					<th scope="col">
+						Description
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						Trial 1.0.10
+					</td>
+					<td>
+						Refactoring
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<!-- ******************  //API Detail ****************** -->
+
+	<!-- ******************  API Detail ****************** -->
+	<div id="setRSSComponentView">
+		<h2>setRSSComponent()</h2>
+		<div class="detailPart">
+			<h3>setRSSComponent(<em>ID</em>)</h3>
+			<div class="detailSection">
+				<h4>Argument</h4>
+				<dl>
+					<dt>ID</dt>
+					<dd>idle에서 참조할 RSS 요소의 id</dd>
+				</dl>
+			</div>
+			<div class="detailSection">
+				<h4>Return</h4>
+				<p>riff object</p>
+			</div>
+			<div class="detailSection">
+				<h4>Description</h4>
+				<p>선택된 요소를 riff Component 로 감싼 후 rssComponent를 셋팅한다.</p>
+			</div>
+		</div>
+
+		<table>
+			<caption>Version History</caption>
+			<colgroup>
+				<col width="30%">
+				<col width="70%">
+			</colgroup>
+			<thead>
+				<tr>
+					<th scope="col">
+						Version
+					</th>
+					<th scope="col">
+						Description
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						Trial 1.0.10
+					</td>
+					<td>
+						Refactoring
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<!-- ******************  //API Detail ****************** -->
+
+
+</div>
+</div>
+
+
+<script language="JavaScript" type="text/javascript">
+	function hideall(){
+		partsObj = document.getElementById("contentDetail").getElementsByTagName("div");
+		for ( var i=0; i < partsObj.length; i ++){
+			if(partsObj[i].id.indexOf("View") != -1 ){
+				partsObj[i].style.display = "none";
+			}
+		}
+	}
+	var linkObj = document.getElementById("linkWrap").getElementsByTagName("a");
+	for ( var j=0; j < linkObj.length; j ++){
+		linkObj[j].onclick = function(){
+			hideall();
+			document.getElementById(this.id+"View").style.display="block";
+		}
+	}
+</script>
+
+</body>
+</html>

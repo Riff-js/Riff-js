@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>Cheese Factory</title>
+	<link rel="stylesheet" href="framework.css" type="text/css">
+	<script type="text/javascript" src="framework.js"></script>
+	<script language="javascript">
+
+/*
+tab 구성 방식
+mark up
+<div class="tab" id="markupTab">
+	<ul>
+		<li>tab1</li>
+		<li>tab2</li>
+		<li>tab3</li>
+	</ul>
+</div>
+<div class="subScene">
+	tab subscene1
+</div>
+<div class="subScene">
+	tab subscene2
+</div>
+<div class="subScene">
+	tab subscene3
+</div>
+
+
+mark up + data 함수
+<div class="tab" id="dataTab">
+</div>
+
+//data.js
+var tabData = {
+	"tab1" : "tab subscene1",
+	"tab2" : "tab subscene2",
+	"tab3" : "tab subscene3"
+};
+
+//user.js
+$('#dataTab').data( tabData );
+
+mark up + rss 함수
+<div class="tab" id="rssTab">
+</div>
+
+//data.js
+var tabRSSData = [
+	{
+		"tab1" : "http://175.125.20.219/xml/xml.php?url=http://175.125.20.219/xml/bbc.xml",
+		"tab2" : "http://175.125.20.219/xml/xml.php?url=http://175.125.20.219/xml/bbc.xml",
+		"tab3" : "http://175.125.20.219/xml/xml.php?url=http://175.125.20.219/xml/bbc.xml"
+	},
+	{ "image" : "thumbnail[url]" }
+];
+
+//user.js
+$('#rssTab').rss( tabRSSData );
+
+
+
+
+
+*/
+
+
+//user.js
+$(function(){
+	$("#idlego").tap( function() { $.go("index"); });
+	$("#indexList").data( [
+		["text", "mark up tab", function() { $.go("markup"); } ],
+		["text", "data tab", function() { $.go("data"); } ],
+		["text", "rss tab", function() { $.go("rss"); } ]
+	]);
+
+	$('#dataTab').data( {
+		"tab1" : "tab subscene1",
+		"tab2" : "tab subscene2",
+		"tab3" : "tab subscene3"
+	});
+
+	$('#rssTab').rss(
+	[
+		{
+			"tab1" : "http://175.125.20.219/xml/xml.php?url=http://175.125.20.219/xml/bbc.xml",
+			"tab2" : "http://175.125.20.219/xml/xml.php?url=http://175.125.20.219/xml/bbc.xml",
+			"tab3" : "http://175.125.20.219/xml/xml.php?url=http://175.125.20.219/xml/bbc.xml"
+		},
+		{ "image" : "thumbnail[url]" }
+	]);
+
+});
+	</script>
+
+</head>
+<body>
+
+<!-- Idle -->
+<div id="idle" class="idle">
+	<div id="idlego">
+	Tab
+	</div>
+</div>
+<!-- //idle -->
+
+<!-- Title -->
+<div class="title">
+	Tab
+</div>
+<!-- //Title -->
+
+<!-- Index -->
+<div class="scene" id="index">
+	<div class="list" id="indexList">
+	</div>
+</div>
+
+<div class="scene" id="markup">
+	<div class="tab" id="markupTab">
+		<ul>
+			<li>tab1</li>
+			<li>tab2</li>
+			<li>tab3</li>
+		</ul>
+	</div>
+	<div class="subScene">
+		tab subscene1
+	</div>
+	<div class="subScene">
+		tab subscene2
+	</div>
+	<div class="subScene">
+		tab subscene3
+	</div>
+</div>
+
+<div class="scene" id="data">
+	<div class="tab" id="dataTab">
+	</div>
+</div>
+
+<div class="scene" id="rss">
+	<div class="tab" id="rssTab">
+	</div>
+</div>
+
+<!-- Index -->
+
+</body>
+</html>
+
+
+

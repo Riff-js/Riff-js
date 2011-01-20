@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>CFW Alpha V0.94</title>
+	<link rel="stylesheet" href="cheese.css" type="text/css">
+	<script type="text/javascript" src="cheese.js"></script>
+	<script type="text/javascript" src="user.js"></script>
+	<script type="text/javascript" src="data.js"></script>
+</head>
+<body>
+
+<!-- Idle -->
+<div id="idle" class="idle">
+	<div id="idlego">Alpha V0.94</div>
+</div>
+<!-- //idle -->
+
+<div class="title">
+	Cheese Factory
+</div>
+
+<div class="scene" id="index">
+	<div class="list" id="indexList">
+	</div>
+</div>
+
+<div class="scene" id="markup">
+	<div class="list" id="markupList">
+			<ul>
+				<li>
+					Text 1 Line
+				</li>
+				<li class="radio">
+					hi
+				</li>
+				<li class="radio">
+					<div class="txt">Text 3 Line</div>
+					<div class="subTxt">AJAX-ZOOM uses image tiles to quickly generate a portion of the image. It also has the ability</div>
+				</li>
+				<li class="onoff">
+					<div class="txt">Text 2 Line</div>
+					<div class="subTxt">Subtxt txt txt txt txttxt txt</div>
+				</li>
+				<li class="check">
+					<div class="txt">Text 2 Line</div>
+					<div class="subTxt">Subtxt txt txt txt txttxt txt</div>
+				</li>
+				<li>
+					<div class="img"><img src="img/sample_img1.png"></div>
+					<div class="txt">Text 1 Line</div>
+				</li>
+				<li>
+					<div class="img"><img src="img/sample_img1.png"></div>
+					<div class="txt">Text 2 Line</div>
+					<div class="subTxt">AJAX-ZOOM uses imagegenerate a</div>
+				</li>
+				<li>
+					<div class="img"><img src="img/sample_img2.png"></div>
+					<div class="txt">Text 3 Line</div>
+					<div class="subTxt">AJAX-ZOOM uses image tiles to quickly generate a portion of the image. It also has the ability</div>
+				</li>
+				<li>
+					<div class="txt">Text 1 Line</div>
+					<div class="img"><img src="img/sample_img1.png"></div>
+					<div class="subTxt">AJAX-ZOOM uses imagegenerAJAX-ZOOM uses imagegenerateateAJAX-ZOOM uses imagegenerate a</div>
+				</li>
+			</ul>
+	</div>
+</div>
+
+</body>
+
+
+<script language="javascript" >
+alert("START");
+
+	function FindContentsFromXML( _xml, tagLump, tagChildArray )
+	{
+		var t1 ;
+		var rvBig = new Array();
+//		var rvSmall = new Object();
+		var subTagName = "";
+
+		// item 처럼, 반복되는 section의 덩어리.
+		var tLump = Cheese.xmlSelector( _xml, tagLump );
+		for( var lp = 0; lp < tLump.length ; lp++ )
+		{
+			t1 = tLump.dom(lp);
+			if ( t1.nodeType == 1 )
+			{
+				var rvSmall = new Object();
+				for( var lp2 = 0 ; lp2 < tagChildArray.length; lp2++ )
+				{
+					subTagName = tagChildArray[ lp2 ];
+//					alert( " subTagName:" + subTagName + " text:" + tLump.eq(lp).find( subTagName ).text() );
+					rvSmall[ subTagName ] = tLump.eq(lp).find( subTagName ).text();
+				}
+				rvBig.push( rvSmall );
+			} 
+		}
+
+		return rvBig;
+	}
+
+	function FindContentsFromXMLXPath( _xml, tagLump, tagChildArray )
+	{
+		var t1 ;
+		var rvBig = new Array();
+//		var rvSmall = new Object();
+		var subTagName = "";
+		// item 처럼, 반복되는 section의 덩어리.
+		var tLump = Cheese.xpathSelector( _xml, tagLump );
+		for( var lp = 0; lp < tLump.length ; lp++ )
+		{
+			t1 = tLump.dom(lp);
+			if ( t1.nodeType == 1 )
+			{
+				var rvSmall = new Object();
+				for( var lp2 = 0 ; lp2 < tagChildArray.length; lp2++ )
+				{
+					subTagName = tagChildArray[ lp2 ];
+//					alert( " subTagName:" + subTagName + " text:" + tLump.eq(lp).find( subTagName ).text() );
+					rvSmall[ subTagName ] = tLump.eq(lp).find( subTagName ).text();
+				}
+				rvBig.push( rvSmall );
+			} 
+		}
+
+		return rvBig;
+	}
+
+	function FindContentsFromXMLXPath2( _xml, xpathQuery )
+	{
+		var t1 ;
+		var rvBig = new Array();
+		var subTagName = "";
+		// item 처럼, 반복되는 section의 덩어리.
+				
+				var rvSmall = new Object();
+				for( var lp2 = 0 ; lp2 < xpathQuery.length; lp2++ )
+				{
+					var xpath = Cheese.xpathSelector( _xml, xpathQuery[lp2] );
+					subTagName = xpathQuery[ lp2 ];
+//					alert( " subTagName:" + subTagName + " text:" + xpath.text() );
+					rvBig.push( xpath.eq(0).text() );
+				}
+		return rvBig;
+	}
+
+	Cheese.xml( "test_baido.xml", function( _this ) {
+	
+		var itemElem = Cheese.xmlSelector( _this.xmlLocal, "item");
+		//요런식으로 함수 만들어서 줄 수 잇다
+		var xmlBody = FindContentsFromXML( _this.xmlLocal, "result", [ "index", "keyword", "url", "search-num" ] );
+	
+		alert( " xmlBody 0:"  + 
+				"\n index:" + xmlBody[0]["index"] + 
+				"\n keyword:" + xmlBody[0]["keyword"] + 
+				"\n url:" + xmlBody[0]["url"] + 
+				"\n search-num:" + xmlBody[0]["search-num"] );
+		
+		var xpathBody = FindContentsFromXMLXPath( _this.xmlLocal, "/TopListData/result", [ "index", "keyword", "url", "search-num" ] );
+	
+		alert( " xpathBody 0:"  + 
+			"\n index:" + xpathBody[0]["index"] + 
+			"\n keyword:" + xpathBody[0]["keyword"] + 
+			"\n url:" + xpathBody[0]["url"] + 
+			"\n search-num:" + xpathBody[0]["search-num"] );
+		
+		var xpathBody = FindContentsFromXMLXPath2( 
+			_this.xmlLocal, [ "/TopListData/result/index", "/TopListData/result/keyword", 
+								"/TopListData/result/url", "/TopListData/result/search-num" ] );
+								
+		alert( " xpathBody 2:"  + 
+			"\n index:" + xpathBody[0] + 
+			"\n keyword:" + xpathBody[1] + 
+			"\n url:" + xpathBody[2] + 
+			"\n search-num:" + xpathBody[3] );
+
+		var xpath = Cheese.xpathSelector( _this.xmlLocal, "count(//index)" );
+		alert( " xpath:" + xpath );
+
+	}, function() {	alert("FNFAIL().");	} );
+
+
+alert("END");
+</script>
+</html>
+
+

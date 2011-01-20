@@ -1,0 +1,288 @@
+/*															*/
+/* Theme : Paper Cut									*/
+/*															*/
+/* Copyright 2010, Licensed under the MIT license.			*/
+/* http://innovator.samsungmobile.com/						*/
+/*															*/
+/*															*/
+
+
+
+
+.sceneBackground {
+	background-image: url("img/bg.png");
+	opacity: 1;
+}
+
+
+
+
+
+.title {
+	background: url("img/title.png") 0 0 no-repeat;
+	font-size: 0;
+	text-indent: -1000px;
+	
+}
+
+.setTitle, /* Default Radius Setting */
+.setTitle > img,
+.setTitle > div {
+	-webkit-border-radius : 0
+}
+
+.title, /* Default Radius Setting */
+.title > img,
+.title > div {
+	-webkit-border-radius : 0
+}
+
+.setTitle{
+	background: url('img/bg_set.png') 0 0 no-repeat;
+}
+
+
+.textPage {
+	padding-left: 30px;
+	padding-right: 30px;
+}
+
+.textPage .tit{ 
+	color: #fff;
+	font-size: 24px;
+	margin-bottom: 15px;
+}
+
+.textPage .desc{ 
+	color: #083537;	
+	border: none;
+	border-top: 1px solid #083537;
+	-webkit-border-radius: 0;
+	padding: 15px 0;
+	background: none;
+}
+
+.list{
+	border-top: 2px solid #174747;  
+}
+
+
+.list > ul > li {
+	color: #083537;
+}
+
+.list > ul > li .subTxt {
+	color: #e6f2f2;
+}
+
+.list > ul > li.focus {
+	background: #13aace;
+}
+
+.list > ul > li.focus .subTxt {
+	color: #fff !important;
+	opacity: 1.0;
+}
+
+.list > ul > li .listLineBottom {
+	border-bottom: 1px solid #abdadb;
+}
+
+.list > ul > li .img img{
+	width: 70px;
+	height: 70px; 
+	border: 2px solid #d0d9d9;
+}
+
+
+.list > ul > li .ico1{
+	width: 40px;
+	height: 40px;
+	background: url("img/papaer_cut_icon.png") center center no-repeat;
+}
+
+.list > ul > li .ico2{
+	width: 40px;
+	height: 40px;
+	background: url("img/papaer_cut_icon.png") center center no-repeat;
+}
+
+.list > ul > li .ico3{
+	width: 40px;
+	height: 40px;
+	background: url("img/papaer_cut_icon.png") center center no-repeat;
+}
+
+.list > ul > li .ico4{
+	width: 40px;
+	height: 40px;
+	background: url("img/papaer_cut_icon.png") center center no-repeat;
+}
+
+
+.list .subTit{
+	background: url("img/bg_subtit.png") 0 0 no-repeat;
+
+}
+
+.list > ul > li.accordion .ico_accordion {
+	background: url('img/papercut_acco_down.png') center center no-repeat; 
+}
+
+
+.list > ul > li.accordion .ico_accordion.on {
+	background-image: url('img/papercut_acco_up.png');
+}
+
+
+.list > ul > li.accordion .list {
+	width: 480px; 	
+	margin: 0;
+}
+
+.list > ul > li.accordion .list li {
+	color: #083537
+}
+
+
+.list > ul > li.accordion > div.accCon {
+	background: url('img/bg_acc.png') 0 0 repeat;
+}
+
+
+/* Radio */
+
+.symRadio {
+	background: url('img/papercut_radio_dim.png') 50% 50%  no-repeat;
+	
+}
+
+.symRadio.on {
+	background-image: url('img/papercut_radio_on.png');
+}
+
+.symRadio.on .comRadioObj,
+.symRadio.on .comRadioOnShadow {
+	display: none !important;;
+}
+
+
+/* Onoff */
+.symOnoff{
+	background: url('img/papercut_onoff_off.png') center center no-repeat;
+}
+
+.symOnoff.on{
+	background-image: url('img/papercut_onoff_on.png');
+
+}
+
+.symOnoff.on .symOnoffOnBg{
+	display: none; 
+}
+
+
+/* Checkbox */
+
+.symCheck{
+	background: url('img/papercut_check_dim.png') center 20% no-repeat;
+}
+
+.symCheck.on{
+	background-image: url('img/papercut_check_on.png');
+}
+
+.symCheck.on > div{
+	display: none !important;
+}
+
+
+.busyIndicator.type1{
+	background-image: url('img/papercut_busy indicator.png');
+}
+
+
+
+
+/* Button */
+.btn {
+	-webkit-border-image: url('img/papercut_btn_nor.png') 10 stretch stretch;
+	font-size: 22px;
+}
+
+.btn.focus {
+	-webkit-border-image: url('img/papercut_btn_press.png') 10 stretch stretch;
+	font-size: 22px;
+	color: #fff;
+}
+
+
+
+/* Popup */
+.popCon {
+	border: 1px solid #d0d3d4;
+	background: #67b9ba;
+	font-size: 24px;
+	color: #083537; 
+}
+
+.popCon .popConTxt {
+	padding: 35px;
+}
+
+
+.popCon .btnArea {
+	background: #50999b;
+}
+
+
+
+.pageControl {
+	height: 60px;
+	border-top: 2px solid #174747;
+	border-bottom: none;
+	background: url("img/bg_pagecontrol.png") 0 0 repeat-x;
+}
+
+
+.pageControl .arrLeft {
+	width: 30px;
+	height: 30px;
+	background: url('img/aqua_pagecontrol_left.png') 0 0 no-repeat;
+	
+}
+
+.pageControl .arrRight {
+	width: 30px;
+	height: 30px;
+	background: url('img/aqua_pagecontrol_right.png') 0 0 no-repeat;
+}
+
+.pageControl li {
+	color: #fff;
+}
+
+
+
+.softkey.type1 .normalList {
+	background: url('img/bg_soft.png') 0 0 no-repeat;
+}
+
+.softkey.type1 ul.keyList li {
+	border-right: 1px solid #284f51;
+	border-left: 1px solid #487072;
+	color: #fff;
+}
+
+
+.softkey.type1 .focus {
+	background: #37231b;	
+	color: #fff !important;
+}
+
+
+
+.softkey.type1 .back{
+	background: url('img/btn_softkey_back.png') 50% 50% no-repeat;
+		border-left: #487072; 
+}

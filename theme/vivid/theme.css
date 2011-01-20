@@ -1,0 +1,293 @@
+/*															*/
+/* Theme : Green									*/
+/*															*/
+/* Copyright 2010, Licensed under the MIT license.			*/
+/* http://innovator.samsungmobile.com/						*/
+/*															*/
+/*															*/
+
+
+.scene { 
+	background: #1b1b1b;
+}
+
+
+.title {
+	background: #000;
+}
+
+.title .glow {
+	display: block; 
+}
+
+
+
+.title, /* Default Radius Setting */
+.title > img,
+.title > div {
+	-webkit-border-radius : 0
+}
+
+
+
+.setTitle {
+	background: #000
+
+}
+.setTitle .glow {
+	display: block; 
+}
+
+.setTitle, /* Default Radius Setting */
+.setTitle > img,
+.setTitle > div {
+	-webkit-border-radius : 0
+}
+
+
+.list > ul > li {
+	color: #fff;
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#b7d857), to(#8dc237));
+	
+}
+
+.list > ul > li:nth-child(2n) {
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#00d7c6), to(#00bfa5));
+}
+
+.list > ul > li:nth-child(3n) {
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#f0b637), to(#e88d23));
+}
+
+.list > ul > li:nth-child(4n) {
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#ed9494), to(#e25d5d));
+}
+
+.list > ul > li:nth-child(5n) {
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#d3a5e4), to(#b970d4));
+}
+
+.list > ul > li:nth-child(6n) {
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#967cee), to(#5f4ee4));
+}
+
+.list > ul > li .subTxt {
+	color: #fff;
+	opacity: 0.8;
+}
+
+
+.list > ul > li .listLineBottom {
+	border-bottom: 1px solid #000;
+	opacity: 0.3;
+}
+
+.list > ul > li.focus {
+	background: #f0da25;
+}
+
+
+
+
+
+.list > ul > li.accordion > div.accCon {
+	background: #5c7528;
+
+}
+
+.list > ul > li.accordion .list li {
+	color: #fff;
+	background: none;
+}
+
+.list .subTit{
+	background: url("img/bg_subtit.png") 0 0 no-repeat;
+
+}
+
+
+.list > ul > li.accordion .ico_accordion {
+	background: url('img/vivid_acco_down.png') center center no-repeat; 
+}
+
+
+.list > ul > li.accordion .ico_accordion.on {
+	background-image: url('img/vivid_acco_up.png');
+}
+
+
+
+
+/* TextPage */
+
+.textPage .tit {
+	color: #fff;
+
+}
+
+.textPage .desc {
+	color: #fff;
+	border-top: 1px solid #b2d653;
+	border-bottom: none;
+	padding: 20px 0;
+	-webkit-border-radius: 0;
+	background: none;
+}
+
+
+
+/* Radio */
+.symRadio {
+	background: url('img/vivid_radio_dim.png') 50% 50%  no-repeat;
+	
+}
+
+.symRadio.on {
+	background-image: url('img/vivid_radio_on.png');
+}
+
+.symRadio.on .comRadioObj,
+.symRadio.on .comRadioOnShadow {
+	display: none !important;;
+}
+
+
+/* Onoff */
+.symOnoff{
+	background: url('img/vivid_onoff_off.png') center center no-repeat;
+}
+
+.symOnoff.on{
+	background-image: url('img/vivid_onoff_on.png');
+
+}
+
+.symOnoff.on .symOnoffOnBg{
+	display: none; 
+}
+
+/* Checkbox */
+
+.symCheck{
+	background: url('img/vivid_check_dim.png') center 20% no-repeat;
+}
+
+.symCheck.on{
+	background-image: url('img/vivid_check_on.png');
+}
+
+.symCheck.on > div{
+	display: none !important;
+}
+
+
+.busyIndicator.type1{
+	background-image: url('img/vivid_busy.png');
+}
+
+.list > ul > li .ico1{
+	width: 80px;
+	height: 80px;
+	background: url("img/vivid_icon01.png") center center no-repeat;
+}
+
+.list > ul > li .ico2{
+	width: 80px;
+	height: 80px;
+	background: url("img/vivid_icon02.png") center center no-repeat;
+}
+
+.list > ul > li .ico3{
+	width: 80px;
+	height: 80px;
+	background: url("img/vivid_icon03.png") center center no-repeat;
+}
+
+.list > ul > li .ico4{
+	width: 80px;
+	height: 80px;
+	background: url("img/vivid_icon04.png") center center no-repeat;
+}
+
+.list > ul > li .ico5{
+	width: 80px;
+	height: 80px;
+	background: url("img/vivid_icon05.png") center center no-repeat;
+}
+
+.list > ul > li .ico6{
+	width: 80px;
+	height: 80px;
+	background: url("img/vivid_icon06.png") center center no-repeat;
+}
+
+.list > ul > li .ico7{
+	width: 80px;
+	height: 80px;
+	background: url("img/vivid_icon07.png") center center no-repeat;
+}
+
+.list > ul > li .ico8{
+	width: 80px;
+	height: 80px;
+	background: url("img/vivid_icon08.png") center center no-repeat;
+}
+
+
+
+/* Popup */
+.popCon {
+	border: none;
+	background: #838383;
+	font-size: 24px;
+	color: #fff;
+}
+
+.popCon .btnArea {
+	background: none;
+}
+
+
+/* Button */
+.btn {
+	-webkit-border-image: url('img/vivid_btn_orange_nor.png') 10 stretch stretch;
+	font-size: 22px;
+}
+
+.btn.focus {
+	-webkit-border-image: url('img/vivid_btn_orange_press.png') 10 stretch stretch;
+	font-size: 22px;
+}
+
+.softkey.type1 .normalList {
+	background: url('img/bg_soft.png') 0 0 repeat-x;
+}
+
+.softkey.type1 ul.keyList li {
+	border-right: 1px solid #313131;
+	border-left: 1px solid #929292;
+	color: #fff;
+}
+
+.softkey.type1 .back{
+	background: url('img/vivid_softkey_back.png	') 50% 50% no-repeat;	
+	border-left: 1px solid #929292;
+}
+
+.pageControl {
+	background: url("img/bg_page.png") 0 0 no-repeat;
+	border: none;
+}
+
+
+.pageControl .arrLeft {
+	background: url('img/vivid_pagecontrol_left.png') center center no-repeat;
+}
+
+.pageControl .arrRight {
+	background: url('img/vivid_pagecontrol_right.png') center center no-repeat;
+}
+
+.pageControl li {
+	color: #fff;	
+}

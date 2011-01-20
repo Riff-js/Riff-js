@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>CFW Alpha V0.92_Revision2</title>
+  	<link rel="stylesheet" href="cheese.css" type="text/css"> 
+	
+	<script type="text/javascript" src="cheese.js"></script>
+
+
+</head>
+<body>
+<!-- Index -->
+<style>
+
+    .box { width : 300px; position: absolute; top: 0; left: 0px; height: 100px; background-color : Black;} 
+    .drag { width: 100px; height: 100px; position: absolute; background-color: #green; top: 0; left: 0; border-color : #black;border: 3px solid red; }
+    .drop { width: 100px; height: 100px; background-color: #yellow; bottom: 0; right: 0; position: absolute; }
+    .drop2{ width: 100px; height: 100px; background-color: #yellow; bottom: 0; left: 0; position: absolute; }
+    .wrap { width: 474px; border: 3px solid blue; height: 340px; overflow: hidden; position: relative; top : 300px; }
+    </style>
+
+<div class="scene" id="index">
+
+<div class="swipeWrap" style=" width: 474px; border: 3px solid red; height: 100px; position: relative;  overflow : hidden;">
+    <div class="box" id="moveobj" style ="width : 200px; position: absolute; top: 0; left: 0px; height: 100px; background-color : Aqua;">
+        SWIPEeaskldfhaskldjfhasklfhasklfhasklfhaflashflasfhlasjdfhaskldfhlaskdfhlaskdfhaklsdfhlasjkdhfklahsdfklhalsfkhaskldf
+    </div>
+</div>
+<div class="box" id="Div0" style ="width : 120px; position: absolute; top: 103px;  height: 100px; background-color : Black;">
+    TAP
+</div>
+<div class="box" id="Div1" style ="width : 120px; position: absolute; top: 103px; left: 120px;  height: 100px; background-color : Blue;">
+    LONGTAP
+</div>
+<div class="box" id="Div2" style ="width : 120px; position: absolute; top: 103px; left: 240px; height: 100px; background-color : Red;">
+    DOUBLETAP
+</div>
+<div class="box" id="Div3" style ="width : 120px; position: absolute; top: 103px; left: 360px; height: 100px; background-color : Green;">
+    TOUCH
+</div>
+<div class="box" id="Div4" style =" width : 480px; position: absolute; top: 203px; left: 0px; height:200px; background-color : Purple;">
+    FLICK
+</div>
+
+<div class="wrap" id="fuckwrap">
+    <div class="drag" id = "dragObj"></div>
+    <div class="drop" id = "dropObj2"></div>
+    <div class="drop2" id = "dropObj"></div>
+</div>
+
+</div>
+
+
+<script language="javascript">
+
+$(function()
+{
+	$.go("index");
+	$("#moveobj").swipe(true,50,function(state,x,y)
+	{
+	    if(state == "leftEnd")
+	        alert("Left End");     
+	    if(state == "rightEnd")
+	        alert("Right End");   
+	    if(state == "dragMove")
+	    {
+	        //this.firstChild.nodeValue = "drag";
+	        return;
+	    }
+        //this.firstChild.nodeValue = "SWIPE";
+        
+	});
+	
+$("#moveobj").animate({"width" : "800px"},500,function(){alert("animation end");});
+	$("#Div0").toggle(test,ttt);
+	//$("#Div0").disableEvent("TAP");
+	//$("#Div0").enableEvent("TAP");
+	
+	$("#Div1").longTap(function(){ alert("long Tap fire"); });
+	$("#Div2").doubleTap(function(){ alert("double Tap fire"); });
+	$("#Div3").touchStart(function(){ alert("touch Start fire"); });
+	$("#Div3").touchEnd(function(){ alert("touch End fire"); });
+	
+	$("#Div4").flickRight(function(){ alert("flick Right fire"); });
+	$("#Div4").flickLeft(function(){ alert("flick Left fire"); });
+	$("#Div4").flickDown(function(){ alert("flick Down fire"); });
+	$("#Div4").flickUp(function(){ alert("flick Up fire"); });
+	
+	$("#dragObj").dragDrop(function(){ alert("dragDrop fire"); },false,dropObj2,dropObj);
+});
+
+
+function test()
+{
+   $("#dragObj").disableEvent("tap");
+}
+function ttt()
+{
+    $("#dragObj").enableEvent("DRAGDROP");
+}
+</script>
+<!-- Index -->
+
+</body>
+</html>
+
+

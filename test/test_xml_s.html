@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>Cheese Factory</title>
+	<link rel="stylesheet" href="framework.css" type="text/css">
+	<script type="text/javascript" src="framework.js"></script>
+	<script language="javascript">
+
+$(function(){
+		$("#idlego").tap( function() {
+			$.go("index");
+		});
+
+		$.xml( "http://175.125.20.219/xml/xml.php?url=http://175.125.20.219/xml/test_xml.xml",
+		{
+			//데이터 설정 함수
+			"load" : function( _xml ) {
+				var dataSet = {};
+				dataSet.open = parseInt(_xml.selector("open").text());
+				dataSet.volume = parseInt(_xml.selector("volume").text());
+				dataSet.high = parseInt(_xml.selector("high").text());
+				dataSet.highCheck = (dataSet.high>10000)?"높다":"낮다";
+				dataSet.low = parseInt(_xml.selector("low").text());
+				dataSet.lowCheck = (dataSet.low>10000)?"높다":"낮다";
+
+				return dataSet;
+			},
+			
+			//데이터 적용 함수
+			"attach" : function( _data ) {
+				$("#index").append( "open : " + _data.open + "<br>" );
+				$("#index").append( "volume : " + _data.volume + "<br>" );
+				$("#index").append( "high : " + _data.high + "<br>" );
+				$("#index").append( "highCheck : " + _data.highCheck + "<br>" );
+				$("#index").append( "low : " + _data.low + "<br>" );
+				$("#index").append( "lowCheck : " + _data.lowCheck + "<br>" );
+			}
+		});
+});
+	</script>
+
+</head>
+<body>
+
+<!-- Idle -->
+<div id="idle" class="idle">
+	<div id="idlego">
+	Go
+	</div>
+</div>
+<!-- //idle -->
+
+<!-- Title -->
+<div class="title">
+	Title
+</div>
+<!-- //Title -->
+
+<!-- Index -->
+<div class="scene" id="index">
+
+</div>
+<!-- Index -->
+
+</body>
+</html>
+
+
+
+

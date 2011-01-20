@@ -1,0 +1,234 @@
+/*															*/
+/* Theme : Modern Black									*/
+/*															*/
+/* Copyright 2010, Licensed under the MIT license.			*/
+/* http://innovator.samsungmobile.com/						*/
+/*															*/
+/*															*/
+
+
+
+.scene { 
+	background: #000;
+}
+
+
+
+.title {
+	background: url("img/title.png") 0 0 no-repeat;;
+	font-size: 0;
+	text-indent: -1000px;
+}
+
+.title, /* Default Radius Setting */
+.title > img,
+.title > div {
+	-webkit-border-radius : 0
+}
+
+.setTitle {
+	background: url("img/settitle.png") 0 0 no-repeat;
+	font-size: 0;
+	text-indent: -1000px;
+}
+
+.setTitle, /* Default Radius Setting */
+.setTitle > img,
+.setTitle > div {
+	-webkit-border-radius : 0
+}
+
+
+
+
+.list > ul > li {
+	background: #020202 url("img/bg_list.png") 0 bottom no-repeat;
+	color: #fff;
+}
+
+.list > ul > li .listLineBottom {
+	border-bottom: 1px solid #353535;
+}
+
+.list > ul > li.focus {
+	background: #a33cad;
+}
+
+.list > ul > li .subTxt {
+	color: #8b5c8b;
+}
+
+.softkey.type1 .focus {
+	background: #a33cad;
+}
+
+.pageControl {
+	width: 480px;
+	height: 60px;
+	border: none;
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#7f7f7f), to(#4e4e4e));
+	background: url("img/bg_controller.png") 0 0 no-repeat;
+}
+
+.pageControl .arrLeft {
+	position: absolute;
+	width: 20px;
+	height: 24px;
+	background: url('img/arr_left.png') 0 0 no-repeat;
+	top: 20px;
+	left: 15px;
+	display: block;
+	z-index: 10;
+}
+
+.pageControl .arrRight {
+	position: absolute;
+	width: 20px;
+	height: 24px;
+	background: url('img/arr_right.png') 0 0 no-repeat;
+	top: 20px;
+	right: 15px;
+	display: block;
+	z-index: 10;
+}
+
+
+
+.popCon {
+	border: 1px solid #ccc;
+	position: absolute;
+	-webkit-border-radius: 7px;
+	color: #efefef;
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#292929), to(#000000));
+}
+
+.popCon .popConTxt {
+	padding: 35px;
+}
+
+.popCon .btnArea {
+	background: none;
+	-webkit-border-bottom-left-radius: 7px;
+	-webkit-border-bottom-right-radius: 7px;
+	
+}
+
+
+.btn {
+	border-width: 12px;
+	-webkit-border-image: url('img/btn.png') 12 stretch stretch;
+	font-size: 22px;	
+}
+
+.btn.focus {
+	-webkit-border-image: url('img/btn_press.png') 12 stretch stretch;
+}
+
+
+.list > ul > li.accordion .ico_accordion {
+	top: 30px; 
+	right: 10px;
+	background: url('img/ico_accordion_down.png') 0 0 no-repeat; 
+}
+
+
+.list > ul > li.accordion .ico_accordion.on {
+	background-image: url('img/ico_accordion_up.png');
+}
+
+
+.list > ul > li.accordion .list li {
+	background: #bfbebe; 
+	color: #363636;
+}
+
+.list > ul > li.accordion .list li:first-child {
+	background: #bfbebe url("img/bg_acclist.png") 0 0 repeat-x;  
+}
+
+
+.list > ul > li.accordion .list > ul > li .listLineTop {
+	border-top: 1px solid #f4f3f3;
+	display: block;
+}
+
+.list > ul > li.accordion .list > ul > li .listLineBottom {
+	border-bottom: 1px solid #353535;
+	
+}
+
+
+/* TextPage */
+
+.textPage .tit{ 
+	color: #eeeeee;
+
+}
+
+.textPage .desc{ 
+	color: #8b5c8b;	
+	font-size: 24px;
+	line-height: 1.3em;
+	border-top: 1px solid #353535;
+	border-bottom: 1px solid #353535;
+	padding: 20px 0;
+	-webkit-border-radius: 0;
+	background: -webkit-gradient(radial, 225 30, 220, 225 0, 30, from(#000), to(#232222))
+	
+}
+
+
+/* Radio */
+
+.symRadio {
+	background: url('img/radio.png') 50% 50%  no-repeat;
+	
+}
+
+.symRadio.on {
+	background-image: url('img/radio_on.png');
+}
+
+.symRadio.on .comRadioObj,
+.symRadio.on .comRadioOnShadow {
+	display: none !important;;
+}
+
+
+/* Onoff */
+.symOnoff{
+	background: url('img/onoff.png') center center no-repeat;
+}
+
+.symOnoff.on{
+	background-image: url('img/onoff_on.png');
+
+}
+
+.symOnoff.on .symOnoffOnBg{
+	display: none; 
+}
+
+
+
+
+/* Checkbox */
+
+.symCheck{
+	background: url('img/check.png') center 20% no-repeat;
+}
+
+.symCheck.on{
+	background-image: url('img/check_on.png');
+}
+
+.symCheck.on > div{
+	display: none !important;
+}
+
+
+.busyIndicator.type1{
+	background-image: url('img/busyindicator_1.png');
+}
+
+

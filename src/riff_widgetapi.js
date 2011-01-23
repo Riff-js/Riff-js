@@ -1,4 +1,14 @@
-﻿
+﻿//
+// Framework TrialVersion 1.0.32 
+//
+// Copyright 2011, Licensed under the MIT license.
+// http://innovator.samsungmobile.com/
+//
+//
+
+/* @Framework_Ver  TrialVersion 1.0.32  */
+
+
 riff.widget= {
     sysInfo_network_getIsNetworkAvailable : function()
     {

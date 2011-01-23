@@ -1,3 +1,13 @@
+//
+// Framework TrialVersion 1.0.32 
+//
+// Copyright 2011, Licensed under the MIT license.
+// http://innovator.samsungmobile.com/
+//
+//
+
+/* @Framework_Ver  TrialVersion 1.0.32  */
+
 
 var riffTouch = {
 	theTarget:null,				// this variable is used to identity the triggering element

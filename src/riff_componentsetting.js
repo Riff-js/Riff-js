@@ -1,3 +1,14 @@
+//
+// Framework TrialVersion 1.0.32 
+//
+// Copyright 2011, Licensed under the MIT license.
+// http://innovator.samsungmobile.com/
+//
+//
+
+/* @Framework_Ver  TrialVersion 1.0.32  */
+
+
 //h ComponentSetting.js 에서는, 주로 DOM Element의 className 값을 보고 그에 맞는 markUp 을 재구성해 준다.
 
 riff(function () {
@@ -66,7 +77,6 @@ riff.option( {
 });
 
 //h scene, title, setTitle, list, setList, tab, popup Component 에 대한 markUp 재조정
-riff('.idle').makeStructs();
 riff('.scene').makeStructs();
 riff('.title').makeStructs();
 riff('.setTitle').makeStructs();

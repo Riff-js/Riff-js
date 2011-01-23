@@ -1,3 +1,14 @@
+//
+// Framework TrialVersion 1.0.32 
+//
+// Copyright 2011, Licensed under the MIT license.
+// http://innovator.samsungmobile.com/
+//
+//
+
+/* @Framework_Ver  TrialVersion 1.0.32  */
+
+
 var riffAJAX = function ( _url, _fnSuccess, _theOtherSet, _functionTossAgumentSet )
 {
 
@@ -125,7 +136,7 @@ var riffAJAX = function ( _url, _fnSuccess, _theOtherSet, _functionTossAgumentSe
 			//h error handler가 있으면 실행.
 			if ( this.__errorHandler && typeof( this.__errorHandler ) == 'function' )
 			{
-				this.__errorHandler( readystate, status, "ajax.timeout :: retry over. " );
+				this.__errorHandler( readystate, status, "ajax.retryOnError :: retry over. " );
 			}
 		} else {
 			this.retry( );

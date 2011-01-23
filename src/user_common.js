@@ -1,12 +1,13 @@
 //
-// Framework 0.98
+// Framework TrialVersion 1.0.32 
 //
-// Copyright 2010, Licensed under the MIT license.
+// Copyright 2011, Licensed under the MIT license.
 // http://innovator.samsungmobile.com/
 //
 //
 
-/* @Framework_Ver 0.98 */
+/* @Framework_Ver  TrialVersion 1.0.32  */
+
 
 $( function (){
 
@@ -27,7 +28,6 @@ $( function (){
 	$("#goSlideHor").tap( function(){ $.move("effectArea", {"transitionEffect" : "slideHor"}); });
 	$("#goFade").tap( function(){ $.move("effectArea", {"transitionEffect" : "fade"}); });
 	$("#goPop").tap( function(){ $.move("effectArea", {"transitionEffect" : "popup"}); });
-	$("#goSpin").tap( function(){ $.move("effectArea", {"transitionEffect" : "spin"}); });
 	$("#btnEffBack").tap( function(){ $.back(); });
 
 	$("#goTouchEvent").tap( function(){ $.move("#sTouchEvent"); });
@@ -42,7 +42,6 @@ $( function (){
 
 	$("#goRssData").tap( function () { $.move("#sRssData"); } );
 	$("#goRssTab").tap( function() { $.move("#sRssTab");} );
-	$("#goRssList").tap( function() { $.move("#sRssList");} );
 
 	$("#goUserSetting").tap( function () { $.move("#sUserSetting"); } );
 
@@ -69,10 +68,4 @@ $( function (){
 	
 	// rssTab
 	$("#rssTab").rss( rssTestDataTab );
-
-	// rssList
-	$("#rssList").rss( rssTestDataList );
-
-	// idle
-	$(".idle").setRSSComponent("#rssTab");
 });

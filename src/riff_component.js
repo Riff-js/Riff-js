@@ -1,12 +1,13 @@
 //
-// Framework 0.98
+// Framework TrialVersion 1.0.32 
 //
-// Copyright 2010, Licensed under the MIT license.
+// Copyright 2011, Licensed under the MIT license.
 // http://innovator.samsungmobile.com/
 //
 //
 
-/* @Framework_Ver 0.98 */
+/* @Framework_Ver  TrialVersion 1.0.32  */
+
 
 // Basic riff Object Component
 
@@ -16,171 +17,6 @@ var riffBasic = function ( _elementContext )
 	this.elementContext = _elementContext;
 	this.type = "object";
 }
-
-// riff Idle Component
-//h className = idle 인 DOM Element 일 경우 호출되어 타입을 idle 으로 설정한다.
-var ComponentIdle = function ( _elementContext )
-{
-	this.elementContext = _elementContext;
-	this.type = "idle";
-}
-
-//h idle의 요소를 동적으로 생성
-ComponentIdle.prototype.makeStructs = function ()
-{
-	var riffThis = riff(this);
-
-	var idleString = "";
-	idleString += "<div class='article' style='margin-top:50px;'>";
-	idleString += "article";
-	idleString += "</div>";
-
-	idleString += "<div class='idle_categoryleft' style='float:left; margin-right:20px;'>";
-	idleString += "category left  ";
-	idleString += "</div>";
-
-	idleString += "<div class='idle_categoryright' >";
-	idleString += "category right";
-	idleString += "</div>";
-
-	idleString += "<div class='idle_left' style='float:left;margin-right:20px;'>";
-	idleString += "left";
-	idleString += "</div>";
-
-	idleString += "<div class='idle_right' style='float:left;margin-right:20px;'>";
-	idleString += "right";
-	idleString += "</div>";
-
-	idleString += "<div class='idle_refresh'>";
-	idleString += "refresh";
-	idleString += "</div>";
-
-	//h Idle 전용 div
-	riffThis.prepend(idleString);
-
-	//h idle용 busyIndicator, alert, 생성
-	riffThis.prepend("<div class='popup'></div>");
-	riffThis.append('<div class="blackBlank"></div>'); // Black Blank Element
-	riffThis.append('<div class="whiteBlank"></div>'); // Black Blank Element
-	riff('#idle .blackBlank')
-	.before('<div class="popup" id="busyIndicator"><div class="busyIndicator type1"></div><div class="busyIndicatorTxt">Loading, Please wait...</div></div>')
-	.before('<div class="popup" id="alert"></div>');
-
-	riff("#idle .popup").css("width",riff("#idle").width()+"px").css("height",riff("#idle").height()+"px");
-
-	//h idle 컨트롤 부분
-	riff(".article").tap( function() { riff.move("#sRssTab"); } );
-	riff(".idle_categoryleft").tap( function () { riffThis.moveRSSArticle("categoryLeft") } );
-	riff(".idle_categoryright").tap( function () { riffThis.moveRSSArticle("categoryRight") } );
-	riff(".idle_left").tap( function () { riffThis.moveRSSArticle("left") } );
-	riff(".idle_right").tap( function () { riffThis.moveRSSArticle("right") } );
-	riff(".idle_refresh").tap( function () { riffThis.moveRSSArticle("refresh") } );
-}
-
-ComponentIdle.prototype.makeContents = function ()
-{
-
-}
-
-/*
-  idle에 있는 것들을 이동
-  @param
-    _move : "left", "right", "categoryLeft", "categoryRight", (number)
- */
-ComponentIdle.prototype.moveRSSArticle = function ( _move )
-{
-	var riffThis = riff(this);
-
-	var rssComponent = riffThis.buffer("ComponentDataRSSComponent");
-	if( !rssComponent )
-		return;
-
-	var componentObject = rssComponent.component();
-	if( !componentObject )
-		return;
-
-	//h 타입이 tab일 경우
-	if ( componentObject.type == "tab" )
-	{
-		//h refresh 이벤트 
-		if(_move == "refresh")	{
-			var tabID = riffThis.buffer("ComponentDataRSSComponentID");
-			riff(tabID).refresh(false);
-		}
-
-		var dataSet = rssComponent.buffer("ComponentTabComponentDataSet");
-		if( !dataSet )
-			return;
-
-		var RSSKey = riffThis.buffer("ComponentDataRSSKey");
-		if ( typeof RSSKey !="number" && !RSSKey )
-			riffThis.buffer("ComponentDataRSSKey", RSSKey = null);
-
-		var RSSIndex = riffThis.buffer("ComponentDataRSSIndex");
-		if ( typeof RSSIndex !="number" && !RSSIndex )
-			riffThis.buffer("ComponentDataRSSKey", RSSIndex = null);
-
-		if ( RSSKey == null ){
-			RSSKey = 0;
-		}else {
-			if ( _move == "categoryLeft" )	{
-				if (--RSSKey < 0) {
-					RSSKey = dataSet.length - 1;
-				}
-			}else if ( _move == "categoryRight" )	{
-				if ( ++RSSKey >= dataSet.length) {
-					RSSKey = 0;
-				}
-			}
-		}
-
-		riffThis.buffer("ComponentDataRSSKey",RSSKey);
-
-		var idleSet = rssComponent.subSceneSelect(RSSKey).find(".list").buffer("ComponentDataIdleSet");
-		if( !idleSet )
-			RSSIndex = null;
-		
-		if( typeof _move == "number"){
-			RSSIndex = _move;
-		}else if ( RSSIndex == null ||  _move == "categoryLeft" ||  _move == "categoryRight" ){
-			rssComponent.move(RSSKey);
-			RSSIndex = 0;
-		}else{
-			if ( _move == "left" ){
-				if (--RSSIndex < 0) {
-					RSSIndex = idleSet.length - 1;
-				}
-			}else if ( _move == "right" ){
-				if ( ++RSSIndex >= dataSet.length) {
-					RSSIndex = 0;
-				}
-			}
-		}
-
-		riffThis.buffer("ComponentDataRSSIndex",RSSIndex);
-
-		//h idle 기사부분에 text 출력
-		if( RSSIndex != null ){
-			if ( idleSet[RSSIndex] ){
-				riff(".article").text( idleSet[RSSIndex].txtTitle );
-			}
-		}
-	}
-}
-
-//h rssComponent 셋팅한다.
-ComponentIdle.prototype.setRSSComponent = function ( _component )
-{
-	if ( typeof _component  == "string" ){
-		//h 버퍼에 ID값을 저장한다.
-		riff(this).buffer("ComponentDataRSSComponentID", _component );
-		riff(this).setRSSComponent( riff( _component ) );
-	}else if ( typeof _component == "object" ){
-		_component.buffer("ComponentDataRSSIdle", riff(this) );
-		riff(this).buffer("ComponentDataRSSComponent", _component );
-	}
-}
-
 
 // riff Button Component
 //h className = btn 일 경우 호출되어 타입을 btn 으로 설정한다.
@@ -1283,8 +1119,6 @@ ComponentTab.prototype.makeStructs = function ( )
 	});
 
 	riffThis.option( riffThis.buffer("ComponentDataOption") );
-
-	riffThis.move(0); //First Scene View
 }
 
 

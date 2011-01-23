@@ -1,12 +1,12 @@
 /*															*/
-/* Framework 0.98											*/
+/* Framework TrialVersion 1.0.29							*/
 /*															*/
-/* Copyright 2010, Licensed under the MIT license.			*/
+/* Copyright 2011, Licensed under the MIT license.			*/
 /* http://innovator.samsungmobile.com/						*/
 /*															*/
 /*															*/
 
-/* @Framework_Ver 0.98 */
+/* @Framework_Ver TrialVersion 1.0.29 */
 
 /* Common Setting */
 
@@ -76,10 +76,11 @@ li {
 }
 
 .idle div {
-	margin: 0px 0 0 0px;
-	color: #red;
-	font-size: 20px;
-	line-height: 20px;
+	width: 320px;
+	height: 85px;
+	margin: 63px 0 0 20px;
+	color: #666;
+	font-size: 30px;
 }
 
 
@@ -1373,48 +1374,6 @@ li {
 	width: 159px;
 }
 
-
-
-/* Popup */
-
-#idle .popup {
-	position: absolute;
-	top: 0;
-	left: 0;
-	display: none; 
-}
-
-#idle .popupCon {
-	position: absolute;
-	top: 20%;
-	width: 220px;
-	border: 1px solid #d9d9d9;
-	-webkit-border-radius: 10px;
-	z-index: 70;
-	color: #2f2f30;
-	line-height: 28px;
-	font-size: 20px;
-	z-index: 500;
-	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fafafb), to(#888e96));
-	text-align: center;
-}
-
-#idle .popupCon .popupConTxt {
-	padding: 15px;
-}
-
-
-#idle .popupCon .btnArea {
-	
-	text-align: center;
-	padding: 12px 0;
-	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#979ca3), to(#71777f));
-	-webkit-border-bottom-left-radius: 10px;
-	-webkit-border-bottom-right-radius: 10px;
-	overflow: hidden;
-}
-
-
 /* Popup */
 
 .popup {
@@ -1810,7 +1769,7 @@ li {
 
 
 
-/* Spin */
+/* Spin 
 @-webkit-keyframes spinOnCur {
 	 0% { -webkit-transform: rotate(0deg) scale(1); opacity : 1  }
 	 100% { -webkit-transform: rotate(180deg) scale(0.3); opacity : 0 }
@@ -1858,3 +1817,4 @@ li {
 	-webkit-animation-iteration-count: 1;
 }
 
+*/

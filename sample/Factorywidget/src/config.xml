@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<widget xmlns="http://www.w3.org/ns/widgets" height="100" id="CheeseFactory" version="1.0" width="200">
-    <title>RSS Data Prototype Widget v1</title>
-    <description/>
-    <icon src="icon.png"/>
-    <content src="index.html"/>
-    <access network="true"/>
-</widget>

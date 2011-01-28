@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>Cheese Factory</title>
+	<link rel="stylesheet" href="framework.css" type="text/css">
+	<script type="text/javascript" src="framework.js"></script>
+	<script language="javascript">
+
+$(function(){
+		$("#idlego").tap( function() {
+			$.go("index");
+		});
+
+		$.xml( "http://175.125.20.219/xml/xml.php?url=http://175.125.20.219/xml/bbc.xml",
+		{
+			//데이터 설정 함수
+			"load" : function( _xml ) {
+				var dataSet = new Array();
+				var items = _xml.selector("item");
+				for(var i =0, l = items.length; i < l; i++ )
+				{
+					var dataSetCur = new Array();
+					dataSetCur.push( "text" );
+					dataSetCur.push(items.eq(i).find("title").text());
+					dataSetCur.push(items.eq(i).find("description").text());
+					dataSet.push( dataSetCur );
+				}
+				return dataSet;
+			},
+			
+			//데이터 적용 함수
+			"attach" : function( _data ) {
+				$("#indexList").data( _data );
+			}
+		});
+});
+	</script>
+
+</head>
+<body>
+
+<!-- Idle -->
+<div id="idle" class="idle">
+	<div id="idlego">
+	Go
+	</div>
+</div>
+<!-- //idle -->
+
+<!-- Title -->
+<div class="title">
+	Title
+</div>
+<!-- //Title -->
+
+<!-- Index -->
+<div class="scene" id="index">
+	<div class="list" id="indexList">
+	</div>
+</div>
+<!-- Index -->
+
+</body>
+</html>
+
+
+
+

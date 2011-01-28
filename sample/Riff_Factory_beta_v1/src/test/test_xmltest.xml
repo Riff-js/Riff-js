@@ -1,0 +1,21 @@
+		
+<rss xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">  
+  <channel> 
+    <title>BBC News - Have Your Say</title>  
+    <link>http://www.bbc.co.uk/go/rss/int/news/-/news/have_your_say/</link>  
+    <description>The latest stories from the Have Your Say section of the BBC News web site.</description>  
+    <language>en-gb</language>  
+    <lastBuildDate>Fri, 29 Oct 2010 16:20:46 GMT</lastBuildDate>  
+    <copyright>Copyright: (C) British Broadcasting Corporation, see http://news.bbc.co.uk/2/hi/help/rss/4498287.stm for terms and conditions of reuse.</copyright>  
+    <docs>http://www.bbc.co.uk/syndication/</docs>  
+    <ttl>15</ttl>  
+    <atom:link href="http://feeds.bbci.co.uk/news/have_your_say/rss.xml" rel="self" type="application/rss+xml"/>  
+
+    <item at1="attr1"> a1 </item> 
+    <item at1="attr2"> a2 </item>link
+    <item at1="attr3"> a3 </item> 
+    <item at1="attr4"> a4 </item> 
+
+
+  </channel> 
+</rss> 

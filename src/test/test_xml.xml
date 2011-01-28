@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<response>
+	<result type="getquotes" timestamp="1289375415">
+		<list count="1" total="1">
+			<quote>
+			<name>SAMSUNG ELECTRO-MECHANICS-PF</name>
+			<symbol>009155.KS</symbol>
+			<exchange>KSE</exchange>
+			<status>0</status>
+			<timestamp>1289368804</timestamp>
+			<price>49900.0000</price>
+			<change>150.0000</change>
+			<changepercent>0.3015</changepercent>
+			<open>49700.0000</open>
+			<high>50200.0000</high>
+			<low>49500.0000</low>
+			<volume>7911</volume>
+			<marketcap>N/A</marketcap>
+			<link>http://m.yahoo.com/s/samsungwi/yfinance/quote/009155.KS/</link>
+			</quote>
+		</list>
+	</result>
+</response>

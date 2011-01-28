@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+ <title>CFW Alpha V0.94</title>
+ <link rel="stylesheet" href="cheese.css" type="text/css">
+ <script type="text/javascript" src="cheese.js"></script>
+ <script type="text/javascript">
+ 
+ var TimerChange1 = 1;
+ var TimerChange2 = 1;
+ var ManualHeight = 0;
+ var ManualWidth = 0;
+ var LoadTest;
+ 
+ var ManualEffect = "";
+ 
+ $.load(myLoadTest);
+ 
+ function myLoadTest()
+ {
+  LoadTest = "Success";
+ }
+ 
+  $( function (){
+ 
+  $.globalSetting ({
+   "softkeyData" : softKeyData,
+  });
+ 
+  $("#idlego").tap(function(){
+   $.go("#index");
+  });
+  
+  $("#GoEvent").tap(function(){
+   $.go("#event")
+  });
+
+  $("#GoETC").tap(function(){
+   $.go("#ETC")
+  });
+
+  $("#GoWidget").tap(function(){
+   $.go("#Widget")
+  });
+
+  $("#GoEffect").tap(function(){
+   $.go("#Effect")
+  });
+      
+  $("#DragDrop").tap(function(){
+   $.go("#InDragDrop")
+  });
+
+  $("#Swipe1").tap(function(){
+   $.go("#InSwipe1")
+  });
+  
+  $("#Swipe2").tap(function(){
+   $.go("#InSwipe2")
+  }); 
+
+  
+  $("#DoubleTap").doubleTap(function(){ $("#inner").text("double tap"); });
+  $("#Tap").tap(function(){ $("#inner").text("Tap"); });
+  $("#LongTap").longTap(function(){ $("#inner").text("LongTap"); });
+  $("#Drag").drag(function(){ $("#inner").text("Drag"); });
+  $("#myDragdrop").dragDrop(function(){ $("#inner").text("Drag and Drop"); }, false,myDrop,myDrop2);
+  $("#FlickDown").flickDown(function(){ $("#inner").text("FlickDown"); });
+  $("#FlickLeft").flickLeft(function(){ $("#inner").text("FlickLeft"); });
+  $("#FlickRight").flickRight(function(){ $("#inner").text("FlickRight"); });
+  $("#FlickUp").flickUp(function(){ $("#inner").text("FlickUp"); });
+  $("#Toggle").toggle(function(){ $("#inner").text("Toggle On"); }, function(){ $("#inner").text("Toggle Off"); });
+  $("#TouchMove").touchMove(function(){ $("#inner").text("TouchMove"); });
+  $("#TouchStart").touchStart(function(){ $("#inner").text("TouchStart"); });
+  $("#TouchEnd").touchEnd(function(){ $("#inner").text("TouchEnd"); });
+  $("#mySwipe1").swipe(true, 50, function(state, ptx, pty)
+   {
+    if (state == "leftMove")
+    {
+     $("#inner").text("Left Move");
+    }
+    if( state == "rightMove" )
+    {
+     $("#inner").text("Right Move");
+    }
+    if(state == "leftEnd")
+    {
+     $("#inner").text("Left End");
+    }
+    if(state == "rightEnd")
+    {
+     $("#inner").text("Right End");
+    }
+   }
+  );
+  
+  $("#mySwipe2").swipe(false, 50, function(state, ptx, pty)
+   {
+    if (state == "move")
+    {
+     $("#inner").text("Move");
+    }
+    
+    if (state == "end")
+    {
+     $("#inner").text("End");
+    }
+   }
+  );
+  
+  $.timer(function() { TimerChange1 = TimerChange1 + 1; } , 1000, "myTimerID");
+  $("#Timer1").tap(function() { $("#inner").text(TimerChange1); } );
+  $("#TimerStop").tap(function() { $.timer("myTimerID"); } );
+  
+  $.timer(function() { TimerChange2 = TimerChange2 + 1; } , 0, "myTimerID2");
+  $("#Timer2").tap(function() { $("#inner").text(TimerChange2); } );
+  
+  $("#resize1").tap(resize_01);
+  $("#resize2").tap(resize_02);
+  
+  $("#Load").tap(function() { $("#inner").text(LoadTest); } );
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ //----------------------------------------------------------------------animation
+
+
+  // clearQueue 함수는 animation 관련된 queue의 내용을 삭제하기 때문에
+  // 마지막 실행되고 있는 해당 애니메이션 까지는 실행됩니다.
+  // stop 함수는 현재 실행되고 있는 애니메이션을 중지시키고 queue를 실행시키기 때문에
+  // 현재 실행되고 있는 애니메이션도 중지되고 다음 애니메이션을 실행시킬 queue도 사라집니다.
+
+ //따라서 animatie 리스트를 클릭하고 해당 실행중에 
+ // clearQueue리스트를  클릭 하면
+ //진행하던 애니메이션 까지만 진행되고
+ // stop 리스트를 클릭하면
+ // 현재 징행중인 애니메이션을 중지합니다.
+
+  $("#animate").tap(function(){
+		$.go("myanimatetest");
+  });
+
+
+  $("#animatetest").tap(function(){
+
+		$("#animatediv").width("100px");
+		$("#animatediv").height("100px");
+		$("#animatediv").animate( {"height" : "300px"} , 2000  );
+		$("#animatediv").animate( {"width" : "300px"} , 2000  );
+
+  });
+
+   $("#clearqueuetest").tap(function(){
+		$("#animatediv").clearQueue();
+  });
+
+  $("#stoptest").tap(function(){
+		$("#animatediv").stop();
+  });
+
+
+  $("#clearqueue").tap(function(){
+   $("#clearqueue").clearQueue();
+   $("#inner").text("clear queue");
+  });
+
+
+  //-----------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+  $("#myfade").toggle(function(){
+    $("#fadeInOut").fadeOut("slow",function() { $("#inner").text("FadeIn Success"); })
+   },
+   function(){
+    $("#fadeInOut").fadeIn("normal",function() { $("#inner").text("FadeOut Success"); })
+   }
+  );
+  
+  $("#ShowHide1").toggle(function(){
+    $("#show1").hide();
+   },
+   function(){
+    $("#show1").show();
+   }
+  );
+
+  $("#ShowHide2").toggle(function(){
+    $("#show2").hide("fast",function(){ $("#inner").text("hide Success"); });
+   },
+   function(){
+    $("#show2").show(1000,  function(){ $("#inner").text("show Success"); });
+   }
+  );
+
+  
+  
+  
+  
+  
+  
+  
+  
+  //----------------------------------------------------------------------slide
+  // 보이지 않은 scene에 animation을 적용하여 주어서 그렇습니다.
+  // 다른 scene으로 넘어가서 해당 사항을 적용시켜 보았습니다.
+  // #slidetestdiv를 slide 관련 함수로 조작합니다.
+  
+  $("#slidetest").tap( function() {
+	$.go("myslidedowntest");
+  });
+
+  $("#slidedown").tap( function() {
+   $("#slidetestdiv").slideDown("slow",function(){ $("#inner").text("SlideDown Success"); })
+  });
+
+  $("#slidetoggle").tap( function() {
+   $("#slidetestdiv").slideToggle("normal",function(){ $("#inner").text("SlideToggle Success"); })
+  });
+  
+  $("#slideup").tap( function() {
+   $("#slidetestdiv").slideUp(1000,function(){ $("#inner").text("SlideUp Success"); })
+  });
+  
+  //-----------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  $("#stop").tap( $("#stop").stop() );
+  
+ });
+ 
+ function Animate_01()
+ {
+  $("#animate").height( "100px" );
+  $("#animate").animate( {"height" : "200px"} , 300 ,
+   function(){
+    ManualEffect = ManualEffect + "animate end";
+   },
+   function(){
+    ManualEffect = ManualEffect + "animate start";
+   }
+  );
+ }
+ 
+ function resize_01()
+ {
+   var testResult = "";
+   testResult = Cheese.resize();
+   ManualHeight = window.outerHeight;
+   ManualWidth = window.outerWidth;
+   $("#inner").text(ManualWidth.toString() + " " + ManualHeight.toString());
+ }
+ function resize_02()
+ {
+   var testResult = "";
+   testResult = Cheese.resize(500,800);
+   ManualHeight = window.outerHeight;
+   ManualWidth = window.outerWidth;
+   $("#inner").text(ManualWidth.toString() + " " + ManualHeight.toString());
+ }
+
+
+ </script>
+ <script type="text/javascript" src="data.js"></script>
+ 
+ <style>
+    .drag{ width: 200px; height: 200px; position: absolute; background-color: #green; top: 0; left: 0; border-color : #black;border: 3px solid red; }
+    .drop{ width: 300px; height: 300px; background-color: #yellow; bottom: 0; right: 0; position: absolute; z-index : -1;}
+    .drop2{ width: 300px; height: 300px; background-color: #yellow; bottom: 0; left: 0; position: absolute; z-index : -1;}
+    .wrap{ width: 1000px; border: 3px solid blue; height: 800px; overflow: hidden; position: relative; margin-bottom: 40px; }
+ .swipebox{ width: 450px; border: 3px solid red; height: 100px; position: relative; }
+ .swipebox2{ width : 300px; position: absolute; top: 0; left: 0px; height: 100px; background-color : Aqua; }
+ </style>
+ 
+</head>
+<body>
+
+<!-- Idle -->
+<div id="idle" class="idle">
+ <div id="idlego">Alpha V0.94</div>
+</div>
+<!-- //idle -->
+
+<div class="title">
+ <div class ="inner" id="inner">
+  Event - DoubleTap
+ </div>
+</div>
+
+<div class="scene" id="index">
+ <div class="list">
+  <ul>
+   <li id="GoEvent">Event</li>
+   <li id="GoETC">ETC</li>
+   <li id="GoWidget">Widget</li>
+   <li id="GoEffect">Effect</li>
+  </ul>
+ </div>
+</div>
+
+<div class="scene" id="event">
+ <div class="list">
+  <ul>
+   <li id="Tap">
+    Tap
+   </li> 
+   <li id="LongTap">
+    LongTap
+   </li>   
+   <li id="DoubleTap">
+    DoubleTap
+   </li>
+   <li id="Drag">
+    Drag
+   </li>
+   <li id="DragDrop">
+    Drag and Drop
+   </li> 
+   <li id="FlickDown" style="height : 100px">
+    FlickDown
+   </li>
+   <li id="FlickUp" style="height : 100px">
+    FlickUp
+   </li>
+   <li id="FlickLeft">
+    FlickLeft
+   </li>
+   <li id="FlickRight">
+    FlickRight
+   </li>
+   <li id="Swipe1">
+    Swipe1
+   </li>
+   <li id="Swipe2">
+    Swip2
+   </li>                     
+   <li id="Toggle">
+    Toggle
+   </li>    
+   <li id="TouchEnd">
+    TouchEnd
+   </li> 
+   <li id="TouchMove">
+    TouchMove
+   </li>
+   <li id="TouchStart">
+    TouchStart
+   </li>
+                 
+  </ul>
+ </div>
+</div>
+
+
+<div class="scene" id="ETC">
+ <div class="list">
+  <ul>
+   <li id="Timer1">Timer 1 </li>
+   <li id="TimerStop">Timer Stop</li>
+   <li id="Timer2">Timer 2</li>
+   <li id="Load">Load</li>
+  </ul>
+ </div>
+</div>
+
+
+<div class="scene" id="Widget">
+ <div class="list">
+  <ul>
+   <li id="resize1">resize default</li>
+   <li id="resize2">resize 500,800</li>
+  </ul>
+ </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<!---------------------------------------------------------------->
+
+<div class="scene" id="Effect">
+ <div class="list">
+  <ul>
+   <li id="animate">Animate</li>
+   <li id="myfade">Fade test</li>
+   <li id="fadeInOut">Fade In/Out</li>
+   <li id="ShowHide1">Show / Hide test1</li>
+   <li id="show1">Show1</li>
+   <li id="ShowHide2">Show / Hide test2</li>
+   <li id="show2">Show2</li>
+   <li id="slidetest">Slide</li>
+   <li id="stop">Stop</li>
+  </ul>
+ </div>
+</div>
+
+
+<div class="scene" id="myanimatetest">
+<div class="list">
+  <ul>
+   <li id="animatetest">Animate</li>
+   <li id="clearqueuetest">ClearQueue</li>
+   <li id="stoptest">Stop</li>
+ </ul>
+</div>
+<div style="width:100px;height:100px;background-color:#000000" id="animatediv"></div>
+</div>
+
+
+<div class="scene" id="myslidedowntest">
+<div class="list">
+  <ul>
+   <li id="slidedown">SlideDown</li>
+   <li id="slidetoggle">SlideToggle</li>
+   <li id="slideup">SlideUp</li>
+ </ul>
+</div>
+<div style="width:100px;height:100px;background-color:#000000" id="slidetestdiv"></div>
+</div>
+
+<!-------------------------------------------------->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="scene" id="InDragDrop">
+ <div class="wrap" >
+  <div class="drag"  id="myDragdrop"></div>
+  <div class="drop2" id = "myDrop"></div>
+  <div class="drop" id = "myDrop2"></div>
+ </div>
+</div>
+
+<div class="scene" id="InSwipe1">
+ <div class="swipebox">
+     <div class="swipebox2" id="mySwipe1">
+         move object
+     </div>
+ </div>
+</div>
+
+<div class="scene" id="InSwipe2">얼마
+ <div class="swipebox">
+     <div class="swipebox2" id="mySwipe2">
+         move object
+     </div>
+ </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>CFW Alpha V0.94</title>
+	<link rel="stylesheet" href="cheese.css" type="text/css">
+	<script type="text/javascript" src="cheese.js"></script>
+	<script type="text/javascript" src="user.js"></script>
+	<script type="text/javascript" src="data.js"></script>
+</head>
+<body>
+
+<!-- Idle -->
+<div id="idle" class="idle">
+	<div id="idlego">Alpha V0.94</div>
+	<div id="div_log">ABCDE</div>
+
+
+
+
+</div>
+<!-- //idle -->
+
+<div class="title">
+	Cheese Factory
+</div>
+
+<div class="scene" id="index">
+	<div class="list" id="indexList">
+	</div>
+</div>
+
+<div class="scene" id="markup">
+	<div class="list" id="markupList">
+			<ul>
+				<li>
+					Text 1 Line
+				</li>
+				<li class="radio">
+					hi
+				</li>
+				<li class="radio">
+					<div class="txt">Text 3 Line</div>
+					<div class="subTxt">AJAX-ZOOM uses image tiles to quickly generate a portion of the image. It also has the ability</div>
+				</li>
+				<li class="onoff">
+					<div class="txt">Text 2 Line</div>
+					<div class="subTxt">Subtxt txt txt txt txttxt txt</div>
+				</li>
+				<li class="check">
+					<div class="txt">Text 2 Line</div>
+					<div class="subTxt">Subtxt txt txt txt txttxt txt</div>
+				</li>
+				<li>
+					<div class="img"><img src="img/sample_img1.png"></div>
+					<div class="txt">Text 1 Line</div>
+				</li>
+				<li>
+					<div class="img"><img src="img/sample_img1.png"></div>
+					<div class="txt">Text 2 Line</div>
+					<div class="subTxt">AJAX-ZOOM uses imagegenerate a</div>
+				</li>
+				<li>
+					<div class="img"><img src="img/sample_img2.png"></div>
+					<div class="txt">Text 3 Line</div>
+					<div class="subTxt">AJAX-ZOOM uses image tiles to quickly generate a portion of the image. It also has the ability</div>
+				</li>
+				<li>
+					<div class="txt">Text 1 Line</div>
+					<div class="img"><img src="img/sample_img1.png"></div>
+					<div class="subTxt">AJAX-ZOOM uses imagegenerAJAX-ZOOM uses imagegenerateateAJAX-ZOOM uses imagegenerate a</div>
+				</li>
+			</ul>
+	</div>
+</div>
+
+</body>
+
+<script language="javascript" >
+
+	alert("START");
+
+	var tCheeseXML = new CheeseXML( "test_book.xml", fnS2, fnF );
+
+	function fnS1( _xmlThis, text, xml )
+	{
+		alert("fnS() START.");
+
+		debug.log( "xml:" + xml.document +"|"+ xml.documentElement +"|"+ xml.evaluate );
+		var t = Cheese.xmlSelector( xml, "bookstore > book");
+		alert(" T.TEXT: " + t.text() );
+		alert(" T.attr: " + t.attr("category") );
+
+		alert("fnS() END.");
+	}
+
+	function fnS2( _CheeseXML )
+	{
+		alert("fnS2() START.");
+
+//		debug.log( "this.xml:" + _CheeseXML.xmlLocal.document +"|"+ _CheeseXML.xmlLocal.documentElement +"|"+ _CheeseXML.xmlLocal.evaluate );
+//		alert( "_CheeseXML:" + _CheeseXML + " _CheeseXML.seletor:" + _CheeseXML.selector + " _CheeseXML.loadXML:" + _CheeseXML.loadXML );
+		var t = _CheeseXML.selector( "bookstore > book" );
+
+//		var t = Cheese.xmlSelector( _CheeseXML.xmlLocal, "bookstore > book");
+		alert(" T.TEXT: " + t.text() );
+		alert(" T.attr: " + t.attr("category") );
+
+		alert("fnS2() END.");
+	}
+
+
+	function fnF( )
+	{
+		alert("fnF() ERROROCCUR.");
+	}
+
+</script>
+
+</html>
+
+

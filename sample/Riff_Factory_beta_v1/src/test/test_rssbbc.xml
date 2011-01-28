@@ -1,0 +1,86 @@
+
+<rss xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">  
+  <channel> 
+    <title>BBC News - Have Your Say</title>  
+    <link>http://www.bbc.co.uk/go/rss/int/news/-/news/have_your_say/</link>  
+    <description>The latest stories from the Have Your Say section of the BBC News web site.</description>  
+    <language>en-gb</language>  
+    <lastBuildDate>Fri, 29 Oct 2010 16:20:46 GMT</lastBuildDate>  
+    <copyright>Copyright: (C) British Broadcasting Corporation, see http://news.bbc.co.uk/2/hi/help/rss/4498287.stm for terms and conditions of reuse.</copyright>  
+    <docs>http://www.bbc.co.uk/syndication/</docs>  
+    <ttl>15</ttl>  
+    <atom:link href="http://feeds.bbci.co.uk/news/have_your_say/rss.xml" rel="self" type="application/rss+xml"/>  
+    <item> 
+      <title>Air tax rises: Your views</title>  
+      <description>Air taxes are to rise by up to 55% making some trips unaffordable, the travel industry has warned. BBC News website readers share their views.</description>  
+      <link>http://www.bbc.co.uk/go/rss/int/news/-/news/uk-11654079</link>  
+      <guid isPermaLink="false">http://www.bbc.co.uk/news/uk-11654079</guid>  
+      <pubDate>Fri, 29 Oct 2010 15:42:31 GMT</pubDate>  
+      <media:thumbnail width="66" height="49" url="http://news.bbcimg.co.uk/media/images/49708000/jpg/_49708105_dsc00445.jpg"/> 
+    </item>  
+    <item> 
+      <title>Your pictures: Dawn</title>  
+      <description>BBC Breakfast asked viewers to go outside with their cameras and take a photo of how dark the sky where they live was at 0730.</description>  
+      <link>http://www.bbc.co.uk/go/rss/int/news/-/news/uk-11628252</link>  
+      <guid isPermaLink="false">http://www.bbc.co.uk/news/uk-11628252</guid>  
+      <pubDate>Tue, 26 Oct 2010 15:02:13 GMT</pubDate>  
+      <media:thumbnail width="66" height="49" url="http://news.bbcimg.co.uk/media/images/49661000/jpg/_49661101_suzanneincanterbury.jpg"/> 
+    </item>  
+    <item> 
+      <title>The British at work</title>  
+      <description>Did you work during the 80s? We would like to hear from you</description>  
+      <link>http://www.bbc.co.uk/go/rss/int/news/-/news/uk-11390434</link>  
+      <guid isPermaLink="false">http://www.bbc.co.uk/news/uk-11390434</guid>  
+      <pubDate>Wed, 22 Sep 2010 13:59:33 GMT</pubDate>  
+      <media:thumbnail width="66" height="49" url="http://news.bbcimg.co.uk/media/images/49201000/jpg/_49201605_759-1.jpg"/> 
+    </item> 
+    <item> 
+      <title>Air tax rises: Your views</title>  
+      <description>Air taxes are to rise by up to 55% making some trips unaffordable, the travel industry has warned. BBC News website readers share their views.</description>  
+      <link>http://www.bbc.co.uk/go/rss/int/news/-/news/uk-11654079</link>  
+      <guid isPermaLink="false">http://www.bbc.co.uk/news/uk-11654079</guid>  
+      <pubDate>Fri, 29 Oct 2010 15:42:31 GMT</pubDate>  
+      <media:thumbnail width="66" height="49" url="http://news.bbcimg.co.uk/media/images/49708000/jpg/_49708105_dsc00445.jpg"/> 
+    </item>  
+    <item> 
+      <title>Your pictures: Dawn</title>  
+      <description>BBC Breakfast asked viewers to go outside with their cameras and take a photo of how dark the sky where they live was at 0730.</description>  
+      <link>http://www.bbc.co.uk/go/rss/int/news/-/news/uk-11628252</link>  
+      <guid isPermaLink="false">http://www.bbc.co.uk/news/uk-11628252</guid>  
+      <pubDate>Tue, 26 Oct 2010 15:02:13 GMT</pubDate>  
+      <media:thumbnail width="66" height="49" url="http://news.bbcimg.co.uk/media/images/49661000/jpg/_49661101_suzanneincanterbury.jpg"/> 
+    </item>  
+    <item> 
+      <title>The British at work</title>  
+      <description>Did you work during the 80s? We would like to hear from you</description>  
+      <link>http://www.bbc.co.uk/go/rss/int/news/-/news/uk-11390434</link>  
+      <guid isPermaLink="false">http://www.bbc.co.uk/news/uk-11390434</guid>  
+      <pubDate>Wed, 22 Sep 2010 13:59:33 GMT</pubDate>  
+      <media:thumbnail width="66" height="49" url="http://news.bbcimg.co.uk/media/images/49201000/jpg/_49201605_759-1.jpg"/> 
+    </item> 
+    <item> 
+      <title>Air tax rises: Your views</title>  
+      <description>Air taxes are to rise by up to 55% making some trips unaffordable, the travel industry has warned. BBC News website readers share their views.</description>  
+      <link>http://www.bbc.co.uk/go/rss/int/news/-/news/uk-11654079</link>  
+      <guid isPermaLink="false">http://www.bbc.co.uk/news/uk-11654079</guid>  
+      <pubDate>Fri, 29 Oct 2010 15:42:31 GMT</pubDate>  
+      <media:thumbnail width="66" height="49" url="http://news.bbcimg.co.uk/media/images/49708000/jpg/_49708105_dsc00445.jpg"/> 
+    </item>  
+    <item> 
+      <title>Your pictures: Dawn</title>  
+      <description>BBC Breakfast asked viewers to go outside with their cameras and take a photo of how dark the sky where they live was at 0730.</description>  
+      <link>http://www.bbc.co.uk/go/rss/int/news/-/news/uk-11628252</link>  
+      <guid isPermaLink="false">http://www.bbc.co.uk/news/uk-11628252</guid>  
+      <pubDate>Tue, 26 Oct 2010 15:02:13 GMT</pubDate>  
+      <media:thumbnail width="66" height="49" url="http://news.bbcimg.co.uk/media/images/49661000/jpg/_49661101_suzanneincanterbury.jpg"/> 
+    </item>  
+    <item> 
+      <title>The British at work</title>  
+      <description>Did you work during the 80s? We would like to hear from you</description>  
+      <link>http://www.bbc.co.uk/go/rss/int/news/-/news/uk-11390434</link>  
+      <guid isPermaLink="false">http://www.bbc.co.uk/news/uk-11390434</guid>  
+      <pubDate>Wed, 22 Sep 2010 13:59:33 GMT</pubDate>  
+      <media:thumbnail width="66" height="49" url="http://news.bbcimg.co.uk/media/images/49201000/jpg/_49201605_759-1.jpg"/> 
+    </item> 
+  </channel> 
+</rss> 

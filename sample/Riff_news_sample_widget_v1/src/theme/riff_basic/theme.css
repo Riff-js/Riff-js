@@ -1,0 +1,114 @@
+/*															*/
+/* Theme : Riff Basic										*/
+/*															*/
+/* Copyright 2011, Licensed under the MIT license.			*/
+/* http://innovator.samsungmobile.com/						*/
+/*															*/
+/*															*/
+
+
+
+/* Header */
+.rf-component-header {
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#2f7fc9), to(#052f6e));
+}
+
+.rf-component-header, /* Default Radius Setting */
+.rf-component-header > img,
+.rf-component-header > div {
+	-webkit-border-top-left-radius : 0;
+	-webkit-border-top-right-radius : 0;
+}
+
+.rf-effect-dropshadow-header {
+	display: block;
+}
+
+.rf-component-header-setting {
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#2f7fc9), to(#052f6e));
+}
+
+.rf-component-header-setting, /* Default Radius Setting */
+.rf-component-header-setting > img,
+.rf-component-header-setting > div {
+	-webkit-border-top-left-radius : 0;
+	-webkit-border-top-right-radius : 0;
+}
+
+
+
+/* scene */
+.rf-component-scene { 
+	background: #282828;
+}
+.rf-component-list > ul > li {
+	color: #90b3d4;
+}
+
+/* List */
+.rf-component-list > ul > li .rf-effect-line-top {
+	border-top: 1px solid #3e3e3e;
+	display: block;
+}
+
+.rf-component-list > ul > li .rf-effect-line-bottom {
+	border-bottom: 1px solid #131313;	
+}
+
+.rf-component-list .rf-component-header-list{
+	background-color: #000;
+}
+
+.rf-component-list > ul > li .rf-wrapper-thumnail img{
+	width: 88px;
+	height: 88px; 
+	border: 1px solid #cfcfcf;
+}
+
+/* Softkey */
+.rf-component-softkey.rf-type-softkey-1 .rf-area-key-normal {
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#898989), to(#515151));
+}
+
+.rf-component-softkey.rf-type-softkey-1 ul.rf-style-key-normal li {
+	color: #000;
+}
+
+.rf-component-softkey.rf-type-softkey-1 .rf-state-onfocus {
+	background: #3c79ad;	
+	color: #fff !important;
+}
+
+
+/* Copmonent Radio */
+.rf-component-radio {
+	background: url('img/bg_radio.png') 0 0  no-repeat;
+}
+
+.rf-component-radio.rf-state-on {
+	background-image: url('img/bg_radio_on.png');
+}
+
+
+/* Component Tab Menu */
+.rf-component-tabmenu li {
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#dfdfdf), to(#777));
+	color: #2a2f3f;
+	font-size: 24px;
+}
+
+.rf-component-tabmenu li.on {
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#00c0ff), to(#025e98));
+	color: #fff;
+}
+
+.rf-component-tabmenu li .rf-obj-border-tab {
+	border-right: 1px solid #000;
+	border-left: 1px solid #fff;
+}
+
+
+/* Softkey */
+.rf-component-softkey.rf-type-softkey-1 .rf-area-backbtn{
+	background: url('img/btn_basic_softkey_back.png') 50% 50% no-repeat;
+}

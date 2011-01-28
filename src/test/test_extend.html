@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>Cheese Factory</title>
+	<link rel="stylesheet" href="cheese.css" type="text/css">
+	<script type="text/javascript" src="cheese.js"></script>
+	<script language="javascript">
+	$(function(){
+
+		function test_extend_P03()
+		{ 
+			var ar = new Array(); //object를 첫번째 파라미터로 이용
+			var testResult = "";
+
+/*
+			ar[0] = "xFunc1";
+			ar[1] = "xFunc2";
+			ar[2] = "xFunc3";
+
+			Cheese.extend(ar,  function() { strChange = "extend_03" });
+*/
+
+			//첫번째 인자에만 { property: function }과 같이 사용합니다.
+			Cheese.extend(
+			{
+				"xFunc1" : function() { strChange = "extend_01"; },
+				"xFunc2" : function() { strChange = "extend_02"; },
+				"xFunc3" : function() { strChange = "extend_03"; }
+			});
+
+			Cheese().xFunc1();
+			testResult = strChange;
+
+			alert("ETC : test_extend_P03","extend_03 " + testResult );
+			//assertEquals("ETC : test_extend_P03","extend_03" ,testResult );
+		}		
+
+		test_extend_P03();
+
+	});
+	</script>
+</head>
+<body>
+
+<!-- Idle -->
+<div id="idle" class="idle">
+	<div id="idlego">
+	V0.97
+	</div>
+</div>
+<!-- //idle -->
+
+<!-- Title -->
+<div class="title">
+	Mobile Widget
+</div>
+<!-- //Title -->
+
+<!-- Index -->
+<div class="scene" id="index">
+</div>
+<!-- Index -->
+
+</body>
+</html>
+
+
+

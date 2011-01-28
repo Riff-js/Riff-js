@@ -3,16 +3,217 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>Riff API References</title>
-</head>
+	<link rel="stylesheet" href="layout2.css" type="text/css" charset="UTF-8">
 <style>
-td,th,tr,thead,tfoot,tbody,caption,table,legend,label,form,fieldset,dd,dt,dl,var,tt,sup,sub,strong,strike,small,samp,s,q,kbd,ins,img,font,em,dfn,del,code,cite,big,address,acronym,abbr,a,pre,blockquote,p,h6,h5,h4,h3,h2,h1,iframe,object,applet,span,div,body{font:100% inherit inherit inherit;margin:0;padding:0;border:0;vertical-align:baseline}td,th,tr,thead,tfoot,tbody,caption,table,legend,label,form,fieldset,dd,dt,dl,var,tt,sup,sub,strong,strike,small,samp,s,q,kbd,ins,img,font,em,dfn,del,code,cite,big,address,acronym,abbr,a,pre,blockquote,p,h6,h5,h4,h3,h2,h1,iframe,object,applet,span,div,body,:focus{outline:0}html,body,body{height:100%}table{border-collapse:collapse;border-spacing:0}body{font:12px arial,dotum;color:#333;padding:15px}.dpn{display:none}a{text-decoration:none}a,dt{color:#666}.wrapper{max-width:1100px}.header,iframe,table,.codeBox{width:100%}.header{padding:15px 0;border-bottom:2px solid #0c84ff}.header,ul li,.detailPart{margin-bottom:20px}h1{font-size:35px}h1,h2,h3,h4,ul li,dt,caption,th,.detailPart em{font-weight:bold}h2{font-size:30px;margin-bottom:15px;padding-bottom:5px}h3{font-size:20px;margin-bottom:40px}h4{font-size:14px;margin-bottom:5px;background:#e4f0f5}ol li{margin-bottom:0;font-weight:normal}.sideBar{background:#ececec;float:left;width:20%;margin-right:15px;padding:10px 0}.content{float:right;width:77%}dd,.detailSection p{margin-bottom:10px}iframe{height:800px}caption{text-align:right}td,th{padding:5px}th{background:#eaeaea;text-align:left}td{border-bottom:1px solid #ccc}.detailPart,pre{padding:10px}.detailPart{border:1px solid #ccc}.detailPart em{color:red}.detailSection{margin-bottom:25px}.codeBox{background:#333;margin:10px 0 15px;overflow-y:scroll}pre{font:12px verdana normal /1.2em;word-wrap:break-word;color:#fff}
+/* CSS Reset */
+body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td { margin: 0; padding: 0; border: 0; outline: 0; font-weight: inherit; font-style: inherit; font-size: 100%; font-family: inherit; vertical-align: baseline;}
+html { height: 100%; }
+body { height: 100%;}
+table { border-collapse: collapse; border-spacing: 0; display: none;}
+caption, th, td { text-align: left; font-weight: normal; }
+:focus { outline: 0; }
+
+body {
+	font-family: arial, Dotum;
+	height: 100%;
+	color: #333;
+	font-size: 14px;
+	padding: 15px;
+}
+
+.dpn {
+	display: none;
+}
+
+a {
+	text-decoration: none;
+	color: #666;
+}
+
+.wrapper {
+	max-width: 1100px;
+}
+
+
+.header {
+	width: 100%;
+	padding: 15px 0;
+	margin-bottom: 20px;
+}
+
+.logo {
+	font-size: 30px;
+	font-style: italic;
+	font-family: arial black;
+	letter-spacing: -1px;
+	color: #9b9b9b;
+	padding-bottom: 10px;
+	border-bottom: 2px solid #0c84ff;
+}
+
+.logo strong {
+	color: #1870d3;
+	font-size: 40px;
+	font-weight: bold;
+}
+
+.logo span {
+	font-style: normal;
+	font-family: arial;
+	font-size: 12px;
+	color: #000;
+	letter-spacing: 0px;
+}
+
+
+h1 {
+	font-size: 30px;
+	font-weight: bold;
+}
+
+h2 {
+	font-size: 30px;
+	font-weight: bold;
+	margin-bottom: 22px;
+	padding: 15px;
+	background-color: #e7ecf2;
+	color: #000;
+}
+
+h3 {
+	font-weight: bold;
+	font-size: 24px;
+	margin-bottom: 15px;
+}
+
+
+h4 {
+	font-weight: bold;
+	font-size: 14px;
+	margin-bottom: 5px;
+	background: #ebf3fb;
+	padding: 5px 0;
+}
+
+ul li {
+	margin-bottom: 20px;
+	font-weight: bold;
+}
+
+ol li {
+	margin-bottom: 0;
+	font-weight: normal;
+}
+
+.sideBar {
+	float: left;
+	width: 25%;
+	background-color: #e1edf9;
+	margin-right: 15px;
+	padding: 10px 0;
+}
+
+.content {
+	float: right;
+	width: 70%;
+}
+
+
+
+dt {
+	color: #ff7d00;
+	font-weight: normal;
+}
+
+dd{
+	margin-bottom: 10px;
+}
+
+iframe {
+	width: 100%;
+	height: 800px;
+}
+
+table {
+	width: 100%;
+}
+
+caption {
+	text-align: right;
+	font-weight: bold;
+}
+
+th, td {
+	padding: 5px;
+
+}
+
+th {
+	background: #eaeaea;
+	font-weight: bold;
+}
+
+td {
+	border-bottom: 1px solid #ccc;
+}
+
+.detailPart {
+	padding: 15px;
+	border-bottom: 1px solid #c9d7e4;
+	margin-bottom: 20px;
+}
+
+.detailPart em {
+	color: #ff7d00;
+	font-weight: bold;
+}
+
+.detailSection {
+	margin-bottom: 25px;
+}
+
+.detailSection p {
+	margin-bottom: 10px;
+}
+
+.codeBox {
+	background: #4f6377;
+	width: 100%;
+	height: 200px;
+	margin: 10px 0 15px;
+	overflow-y: scroll;
+
+}
+
+pre {
+	word-wrap: break-word;
+	line-height: 1.2em;
+	color: #fff;
+	font-size: 12px;
+	font-family: courier;
+	padding: 10px;
+	font-weight: normal;
+}
+
+
 </style>
+</head>
+
 <body>
 
 <div class="wrapper">
+<div class="logo">
+	<strong>Riff</strong>js <span>Beta v1 (.0.67)</span>
+</div>
 <div class="header">
-	<h1>Riff API References</h1>
-	Trial 1.0.11
+	<h1>API References</h1>
+
 </div>
 
 <!-- ******************  Side Menu ****************** -->
@@ -23,7 +224,6 @@ td,th,tr,thead,tfoot,tbody,caption,table,legend,label,form,fieldset,dd,dt,dl,var
 				<li><a href="#" id="each">each</a></li>
 				<li><a href="#" id="filter">filter</a></li>
 				<li><a href="#" id="not">not</a></li>
-				<li><a href="#" id="clone">clone</a></li>
 				<li><a href="#" id="buffer">buffer</a></li>
 				<li><a href="#" id="prev">prev</a></li>
 				<li><a href="#" id="next">next</a></li>
@@ -52,8 +252,8 @@ td,th,tr,thead,tfoot,tbody,caption,table,legend,label,form,fieldset,dd,dt,dl,var
 				<li><a href="#" id="after">after</a></li>
 				<li><a href="#" id="before">before</a></li>
 
-				
-				
+
+
 				<li><a href="#" id="add">add</a></li>
 				<li><a href="#" id="attr">attr</a></li>
 				<li><a href="#" id="dom">dom</a></li>
@@ -122,13 +322,13 @@ td,th,tr,thead,tfoot,tbody,caption,table,legend,label,form,fieldset,dd,dt,dl,var
 				<li><a href="#" id="camelize">camelize</a></li>
 				<li><a href="#" id="toID">toID</a></li>
 				<li><a href="#" id="queue">queue</a></li>
-				<li><a href="#" id="move">move</a></li>
+				<li><a href="#" id="go">go</a></li>
 				<li><a href="#" id="back">back</a></li>
 				<li><a href="#" id="scene">scene</a></li>
-				<li><a href="#" id="sceneMove">scene.move</a></li>
+				<li><a href="#" id="sceneGo">scene.go</a></li>
 				<li><a href="#" id="sceneBack">scene.back</a></li>
 				<li><a href="#" id="popup">popup</a></li>
-				<li><a href="#" id="popupMove">popup.move</a></li>
+				<li><a href="#" id="popupGo">popup.go</a></li>
 				<li><a href="#" id="popupBack">popup.back</a></li>
 				<li><a href="#" id="transition">transition</a></li>
 				<li><a href="#" id="globalSetting">globalSetting</a></li>
@@ -136,15 +336,18 @@ td,th,tr,thead,tfoot,tbody,caption,table,legend,label,form,fieldset,dd,dt,dl,var
 				<li><a href="#" id="softKeySoftKeyMoreHide">softkey.softKeyMoreHide</a></li>
 				<li><a href="#" id="load">load</a></li>
 				<li><a href="#" id="noConflict">noConflict</a></li>
-				<li><a href="#" id="now">now</a></li>
-				<li><a href="#" id="feedReceiveTime">feedReceiveTime</a></li>
+				<li><a href="#" id="currentTime">currentTime</a></li>
+				<li><a href="#" id="dataReceiveTime">dataReceiveTime</a></li>
 				<li><a href="#" id="adjustSceneSize">adjustSceneSize</a></li>
 				<li><a href="#" id="ellipsisString">ellipsisString</a></li>
 				<li><a href="#" id="extend">extend</a></li>
 				<li><a href="#" id="alert">alert</a></li>
 				<li><a href="#" id="timer">timer</a></li>
-				<li><a href="#" id="changeSubsceneFlag">changeSubsceneFlag</a></li>
+				<li><a href="#" id="changeScenePartFlag">changeScenePartFlag</a></li>
 				<li><a href="#" id="isArray">isArray</a></li>
+				<li><a href="#" id="transitionEffectNone">transitionEffectNone</a></li>
+				<li><a href="#" id="makeSetListDiv">makeSetListDiv</a></li>
+				<!-- <li><a href="#" id="frameworkTabMenu">frameworkTabMenu</a></li> -->
 			</ol>
 		</li>
 		<li>ETC
@@ -154,19 +357,19 @@ td,th,tr,thead,tfoot,tbody,caption,table,legend,label,form,fieldset,dd,dt,dl,var
 				<li><a href="#" id="component">component</a></li>
 				<li><a href="#" id="triggerExistEvent">triggerExistEvent</a></li>
 				<li><a href="#" id="triggerCustomEvent">triggerCustomEvent</a></li>
-				<li><a href="#" id="addEventByType">addEventByType</a></li>
+				<!-- <li><a href="#" id="addEventByType">addEventByType</a></li> -->
 				<li><a href="#" id="primaryEventRegist">primaryEventRegist</a></li>
 			</ol>
 		</li>
-		<li>Component Function 
+		<li>Component Function
 			<ol>
 				<li><a href="#" id="makeStructs">makeStructs</a></li>
 				<li><a href="#" id="makeContents">makeContents</a></li>
 				<li><a href="#" id="count">count</a></li>
-				<li><a href="#" id="componentMove">move</a></li>
-				<li><a href="#" id="subSceneLoad">subSceneLoad</a></li>
-				<li><a href="#" id="subSceneLoadFlag">subSceneLoadFlag</a></li>
-				<li><a href="#" id="subSceneSelect">subSceneSelect</a></li>
+				<li><a href="#" id="componentGo">go</a></li>
+				<li><a href="#" id="scenePartLoad">scenePartLoad</a></li>
+				<li><a href="#" id="scenePartLoadFlag">scenePartLoadFlag</a></li>
+				<li><a href="#" id="scenePartSelect">scenePartSelect</a></li>
 				<li><a href="#" id="refresh">refresh</a></li>
 				<li><a href="#" id="autoRefresh">autoRefresh</a></li>
 				<li><a href="#" id="option">option</a></li>
@@ -195,30 +398,27 @@ td,th,tr,thead,tfoot,tbody,caption,table,legend,label,form,fieldset,dd,dt,dl,var
 				<h4>Argument</h4>
 				<dl>
 					<dt> function </dt>
-					<dd> 선택된 DOM Element를 순회하며 실행될 함수. 이 함수는 실행시 첫번째 인자로 DOM
-Element의 순서(index)가 전달된다. </dd>
+					<dd>The function to be executed while iterating through the selected DOM elements. The index of the DOM element will be passed on as the first parameter of this function.</dd>
 				</dl>
 			</div>
 			<div class="detailSection">
 				<h4>Return</h4>
-				<p>riff Object</p>
+				<p>Riff Object</p>
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p>선택된 DOM Element를 순회하며 실행될 function을 실행한다. 첫번째 인자 index로 DOM Element의
-순서가 전달되며 함수 내에서의 this는 해당 DOM Element가 된다.</p>
+				<p>Iterates through the selected DOM elements and executes a given function. The index of the current DOM element is passed on as the first parameter of the given function. They keyword 'this' refers to the DOM element.</p>
 			</div>
-
 			<div class="detailSection">
 				<h4>Example</h4>
-				<p>다음은 리스트형식의 마크업이다.</p>
+				<p>The following is a HTML markup of a unordered list.</p>
 				<div class="codeBox">
 <pre>&lt;ul&gt;
 	&lt;li&gt;foo&lt;/li&gt;
 	&lt;li&gt;bar&lt;/li&gt;
 &lt;/ul&gt;</pre>
 				</div>
-				<p>리스트 아이템을 순회하여 각각의 인덱스와 텍스트를 출력한다.</p>
+				<p>The following code iterates through each list item and prints the index number and text through a alert window.</p>
 				<div class="codeBox">
 <pre>$('li').each(function(index) {
     alert(index + ': ' + $(this).text());
@@ -263,21 +463,23 @@ Element의 순서(index)가 전달된다. </dd>
 	<div id="filterView">
 		<h2>filter()</h2>
 		<div class="detailPart">
-			<h3>filter(<em> [selector] </em>)</h3>
+			<h3>filter( <em>selector</em> )</h3>
 			<div class="detailSection">
 				<h4>Argument</h4>
 				<dl>
-					<dt> selector( optional) </dt>
-					<dd> 선택된 DOM Element 중 대응되는 DOM Element만 선택하기 위한 String, tagName, Class, ID 의 사용이 가능. (optional) </dd>
+					<dt> selector </dt>
+					<dd> A string to select certain DOM elements within a set of selected DOM elements. Selector may be a tag name, class name, or ID. (optional)
+					</dd>
 				</dl>
 			</div>
 			<div class="detailSection">
 				<h4>Return</h4>
-				<p>riff Object</p>
+				<p>Riff Object</p>
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p>선택된 DOM Element에 대해 selector에 해당하는 DOM Element를 선택하여 반환한다. 인자값이 입력되지 않았거나 String이 아니라면 기존 선택된 riff Object를 반환한다.</p>
+				<p>Selects DOM elements from the set of selected DOM elements that match the selector string. If the parameter is empty or not a string, the previosly selected Riff Object is returned.
+				</p>
 			</div>
 			<div class="detailSection">
 				<h4>Example</h4>
@@ -285,11 +487,11 @@ Element의 순서(index)가 전달된다. </dd>
 <pre>$('li').filter(".foo").hide();
 </pre>
 				</div>
-				<p>"li" Tag Element를 선택하고 그중 클래스명이 "foo"인 DOM Element에 hide() 를 실행한다.</p>
+				<p>Selects the "li" tag element and executes hide() on a DOM element which has the class name "foo".</p>
 			</div>
 			<div class="detailSection">
 				<h4>Issue</h4>
-				<p> id, class, tagName 으로 선택하게 되어 있는 걸 CSS Selector 규칙 모두로 확장 적용할 필요가 있다.</p>
+				<p>Currently only id, class name, tag names are valid selctors. CSS selector syntax will be applied.</p>
 			</div>
 
 		</div>
@@ -336,20 +538,21 @@ Element의 순서(index)가 전달된다. </dd>
 				<h4>Argument</h4>
 				<dl>
 					<dt> index </dt>
-					<dd> 숫자. 선택된 DOM Element 중 제외할 DOM Element의 순서. </dd>
+					<dd>Integer. The index of the DOM element to exclude from the set of selected DOM elements.
+					</dd>
 				</dl>
 			</div>
 			<div class="detailSection">
 				<h4>Return</h4>
-				<p>riff Object</p>
+				<p>Riff Object</p>
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p> 선택된 DOM Element에 대하여 입력된 인자값에 대응되는 것들을 제외한 집합을 선택하여 반환한다. 인자값이 index인 경우,선택된 DOM Element 중 number 번째에 해당되는 DOM Element를 제외시켜 반환한다.</p>
+				<p>Excludes the DOM elements that correspond to the given parameter from the set of selected DOM elements. If the parameter is an index, the DOM element of the corresponding index number is excluded from the set of selected DOM elements, and the remaining set is returned.</p>
 			</div>
 			<div class="detailSection">
 				<h4>Example</h4>
-				<p>다음은 리스트형식의 마크업이다.</p>
+				<p>The following is a HTML markup of a unordered list.</p>
 				<div class="codeBox">
 <pre>
 &lt;ul&gt;
@@ -359,14 +562,14 @@ Element의 순서(index)가 전달된다. </dd>
 &lt;/ul&gt;
 </pre>
 				</div>
-				<p>"" 주말 선택된 리스트 내용 중, selector로 지정된 값을 제외한 나머지 값을 반환한다.</p>
+				<p>The DOM elements that correspond to the selector string are excluded, and the remaining DOM elements are returned.</p>
 				<div class="codeBox">
 <pre>
 var t = $("li").not("#bar1").text();
 alert("text:" + t );
 </pre>
 				</div>
-				<p>실행할 경우 alert 창으로 "foo2foo3" 이 출력된다.</p>
+				<p>"foo2foo3" is printed on the alert window.</p>
 			</div>
 		</div>
 		<div class="detailPart">
@@ -375,16 +578,17 @@ alert("text:" + t );
 				<h4>Argument</h4>
 				<dl>
 					<dt> DOMElement </dt>
-					<dd> 선택된 DOM Element 중 제외할 DOM Element. </dd>
+					<dd> The DOM element to exclude from the set of selected DOm elements. </dd>
 				</dl>
 			</div>
 			<div class="detailSection">
 				<h4>Return</h4>
-				<p>riff Object</p>
+				<p>Riff Object</p>
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p> 선택된 DOM Element에 대하여 입력된 인자값에 대응되는 것들을 제외한 집합을 선택하여 반환한다. 인자값이 DOMElement가 입력되면,선택된 DOM Element 중 DOMElement를 제외시켜 반환한다.</p>
+				<p>Excludes the DOM elements that correspond to the given parameter from the set of selected DOM elements. If the parameter is an DOM element, the corresponding DOM element is excluded from the set of selected DOM elements, and the remaining set is returned.
+				</p>
 			</div>
 		</div>
 		<div class="detailPart">
@@ -393,26 +597,24 @@ alert("text:" + t );
 				<h4>Argument</h4>
 				<dl>
 					<dt> selector </dt>
-					<dd> 선택된 DOM Element 중 대응되는 DOM Element를 제외하기 위한 문자열.
-tagName, Class, ID 의 사용이 가능. </dd>
+					<dd> A string to select certain DOM elements within a set of selected DOM elements. Selector may be a tag name, class name, or ID. </dd>
 				</dl>
 			</div>
 			<div class="detailSection">
 				<h4>Return</h4>
-				<p>riff Object</p>
+				<p>Riff Object</p>
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p> 선택된 DOM Element에 대하여 입력된 인자값에 대응되는 것들을 제외한 집합을 선택하여 반환한다.인자값으로 selector가 입력되면, 선택된 DOM Element 중 selector에 대응되는 DOM Element를 제외시켜 반환한다. </p>
+				<p> Excludes the DOM elements that correspond to the given parameter from the set of selected DOM elements. If the parameter is an selector string, the DOM element of the corresponding selector string is excluded from the set of selected DOM elements, and the remaining set is returned.
+				</p>
 			</div>
 
 			<div class="detailSection">
 				<h4>Issue</h4>
-				<p> id, class, tagName 으로 선택하게 되어 있는 걸 CSS Selector 규칙 모두로 확장 적용할 필요가 있다.</p>
+				<p>Currently only id, class name, tag names are valid selctors. CSS selector syntax will be applied.</p>
 			</div>
 		</div>
-
-
 		<table>
 			<caption>Version History</caption>
 			<colgroup>
@@ -443,60 +645,9 @@ tagName, Class, ID 의 사용이 가능. </dd>
 
 	</div>
 	<!-- ******************  //API Detail ****************** -->
-	<!-- ******************  API Detail ****************** -->
-	<div id="cloneView">
-		<h2>clone()</h2>
-		<div class="detailPart">
-			<h3>clone(<em> [ deep ] </em>)</h3>
-			<div class="detailSection">
-				<h4>Argument</h4>
-				<dl>
-					<dt> deep (Optional)</dt>
-					<dd> boolean값. 만일 true면 자식( chile ) Node 도 복사. </dd>
-				</dl>
-			</div>
-			<div class="detailSection">
-				<h4>Return</h4>
-				<p>riff Object</p>
-			</div>
-			<div class="detailSection">
-				<h4>Description</h4>
-				<p> 질의된 DOM Element 를 복사한다. 인자값 deep가 true면 자식(child) node를 같이 복사한다. </p>
-			</div>
-		</div>
 
-		<table>
-			<caption>Version History</caption>
-			<colgroup>
-				<col width="30%">
-				<col width="70%">
-			</colgroup>
-			<thead>
-				<tr>
-					<th scope="col">
-						Version
-					</th>
-					<th scope="col">
-						Description
-					</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<td>
-						Trial 1.0.10
-					</td>
-					<td>
-						Refactoring
-					</td>
-				</tr>
-			</tbody>
-		</table>
-
-	</div>
-	<!-- ******************  //API Detail ****************** -->
 	<!-- ******************  API Detail ****************** -->
-	<div id="hasClassView">
+	<div id="hasClassView"><!-- old -->
 		<h2>hasClass()</h2>
 		<div class="detailPart">
 			<h3>hasClass(<em> classNames </em>)</h3>
@@ -504,7 +655,7 @@ tagName, Class, ID 의 사용이 가능. </dd>
 				<h4>Argument</h4>
 				<dl>
 					<dt> classNames </dt>
-					<dd> 선택된 DOM Element의 Class와 비교할 Class 이름들을 가진 String.Class는 공백으로 구분 </dd>
+					<dd>String of class names to compare with the classes of the selected DOM element. The class names are separated by a blank space.</dd>
 				</dl>
 			</div>
 			<div class="detailSection">
@@ -513,8 +664,27 @@ tagName, Class, ID 의 사용이 가능. </dd>
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p> 선택된 DOM Element들이 classNames으로 입력된 Class들를 모두 가지고 있는지 비교한다. 모두 존
-재한다면 true를 반환하고, 그렇지 없다면 false를 반환한다. </p>
+				<p> Returns true if all the classes that match the argument exists. Returns false if any class name does not match.</p>
+			</div>
+			<div class="detailSection">
+				<h4>Example</h4>
+				<p>The following is a HTML markup of a unordered list.</p>
+				<div class="codeBox">
+<pre>
+&lt;ul&gt;
+	&lt;li id="item1"&gt;Item 1&lt;/li&gt;
+	&lt;li id="item2" class="item"&gt;Item 2&lt;/li&gt;
+	&lt;li id="item3"&gt;Item 3&lt;/li&gt;
+&lt;/ul&gt;
+</pre>
+				</div>
+				<p> The following code checks if item2 has a class named "item". Since item2 does have a "item" class, true is returned.
+				</p>
+				<div class="codeBox">
+<pre>
+$("#item2").hasClass("item");
+</pre>
+				</div>
 			</div>
 		</div>
 
@@ -549,7 +719,7 @@ tagName, Class, ID 의 사용이 가능. </dd>
 	</div>
 	<!-- ******************  //API Detail ****************** -->
 	<!-- ******************  API Detail ****************** -->
-	<div id="addClassView">
+	<div id="addClassView"><!--old-->
 		<h2>addClass()</h2>
 		<div class="detailPart">
 			<h3>addClass(<em> classNames </em>)</h3>
@@ -557,17 +727,37 @@ tagName, Class, ID 의 사용이 가능. </dd>
 				<h4>Argument</h4>
 				<dl>
 					<dt> classNames </dt>
-					<dd>선택된 DOM Element의 Class에 추가할 Class 이름들을 가진 String. Class는 공백으로 구분.</dd>
+					<dd>String of class names to add to the classes of the selected DOM element. The class names are separated by a blank space.</dd>
 				</dl>
 			</div>
 			<div class="detailSection">
 				<h4>Return</h4>
-				<p>riff Object</p>
+				<p>Riff Object</p>
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p> 선택된 DOM Element들에 대해 classNames으로 입력된 Class들을 추가한다. 이미 DOM Element에
-추가할 Class가 적용되어 있다면 해당 Class는 추가하지 않는다. </p>
+				<p> Adds all the classes in the classNames into the selected DOM element. If a class with the same
+				name already exists, the class will not be added.
+				</p>
+			</div>
+			<div class="detailSection">
+				<h4>Example</h4>
+				<p> The following is a HTML markup of a unordered list. </p>
+				<div class="codeBox">
+<pre>
+&lt;ul&gt;
+	&lt;li id="item1"&gt;Item 1&lt;/li&gt;
+	&lt;li id="item2"&gt;Item 2&lt;/li&gt;
+	&lt;li id="item3"&gt;Item 3&lt;/li&gt;
+&lt;/ul&gt;
+</pre>
+				</div>
+				<p> The following code adds a "glow" class to item2. </p>
+				<div class="codeBox">
+<pre>
+$("#item2").addClass("glow");
+</pre>
+				</div>
 			</div>
 		</div>
 		<table>
@@ -601,7 +791,7 @@ tagName, Class, ID 의 사용이 가능. </dd>
 	</div>
 	<!-- ******************  //API Detail ****************** -->
 	<!-- ******************  API Detail ****************** -->
-	<div id="removeClassView">
+	<div id="removeClassView"><!-- old -->
 		<h2>removeClass()</h2>
 		<div class="detailPart">
 			<h3>removeClass(<em> classNames </em>)</h3>
@@ -609,17 +799,36 @@ tagName, Class, ID 의 사용이 가능. </dd>
 				<h4>Argument</h4>
 				<dl>
 					<dt> classNames </dt>
-					<dd> 선택된 DOM Element의 Class에 삭제할 Class 이름들을 가진 String. Class는 공백으로 구분. </dd>
+					<dd> String of class names to remove from the classes of the selected DOM element. The class names are separated by a blank space. </dd>
 				</dl>
 			</div>
 			<div class="detailSection">
 				<h4>Return</h4>
-				<p>riff Object</p>
+				<p>Riff Object</p>
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p>선택된 DOM Element들에 대해 classNames으로 입력된 Class들을 제거한다. 인자값이 입력되지 않
-았을 경우, DOM Element에 적용되어있던 모든 Class를 제거한다. </p>
+				<p> Removes all the classes in the classNames from the selected DOM element. If the argument is empty, all classes of the selected DOM elements are removed.</p>
+			</div>
+			<div class="detailSection">
+				<h4>Example</h4>
+				<p>The following is a HTML markup of a unordered list.</p>
+				<div class="codeBox">
+<pre>
+&lt;ul&gt;
+	&lt;li id="item1"&gt;Item 1&lt;/li&gt;
+	&lt;li id="item2" class="item"&gt;Item 2&lt;/li&gt;
+	&lt;li id="item3"&gt;Item 3&lt;/li&gt;
+&lt;/ul&gt;
+</pre>
+				</div>
+				<p>
+				The following code removes the class named "item" from item2.</p>
+				<div class="codeBox">
+<pre>
+$("#item2").removeClass("item");
+</pre>
+				</div>
 			</div>
 		</div>
 		<table>
@@ -653,7 +862,7 @@ tagName, Class, ID 의 사용이 가능. </dd>
 	</div>
 	<!-- ******************  //API Detail ****************** -->
 	<!-- ******************  API Detail ****************** -->
-	<div id="toggleClassView">
+	<div id="toggleClassView"><!-- old -->
 		<h2>toggleClass()</h2>
 		<div class="detailPart">
 			<h3>toggleClass(<em> classNames </em>)</h3>
@@ -661,17 +870,36 @@ tagName, Class, ID 의 사용이 가능. </dd>
 				<h4>Argument</h4>
 				<dl>
 					<dt> classNames </dt>
-					<dd> 선택된 DOM Element의 Class에 추가 또는 삭제할 Class 이름들을 가진 String. Class는 공백으로 구분.</dd>
+					<dd> String of class names to toggle on the classes of the selected DOM element. The class names are separated by a blank space.</dd>
 				</dl>
 			</div>
 			<div class="detailSection">
 				<h4>Return</h4>
-				<p>riff Object</p>
+				<p>Riff Object</p>
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p> classNames으로 입력된 Class들에 대하여 해당 Class가 DOM Element에 적용되어 있으면 해당
-Class를 제거하고 적용되어 있지 않으면 해당 Class를 추가한다. </p>
+				<p> If the classes in the classNames do not exist in the selected DOM element, they are added. If not, they are removed.</p>
+			</div>
+			<div class="detailSection">
+				<h4>Example</h4>
+				<p>The following is a HTML markup of a unordered list.</p>
+				<div class="codeBox">
+<pre>
+&lt;ul&gt;
+	&lt;li id="item1"&gt;Item 1&lt;/li&gt;
+	&lt;li id="item2" class="item"&gt;Item 2&lt;/li&gt;
+	&lt;li id="item3"&gt;Item 3&lt;/li&gt;
+&lt;/ul&gt;
+</pre>
+				</div>
+				<p> The following code toggles the "item" class on item1 and item2. Since item1 does not have the "item" class, "item" class is added. But since "item" class exists on item2, the "item" class is removed.</p>
+				<div class="codeBox">
+<pre>
+$("#item1").toggleClass("item");
+$("#item2").toggleClass("item");
+</pre>
+				</div>
 			</div>
 		</div>
 		<table>
@@ -707,57 +935,74 @@ Class를 제거하고 적용되어 있지 않으면 해당 Class를 추가한다
 	<!-- ******************  API Detail ****************** -->
 	<div id="bufferView">
 		<h2>buffer()</h2>
-		<div class="detailPart">
-			<h3>buffer(<em> key </em>)</h3>
-			<div class="detailSection">
-				<h4>Argument</h4>
-				<dl>
-					<dt> key </dt>
-					<dd> 선택된 DOM Element에서 얻을 value 값에 대응하는 String( = 데이터 value 에 대해 key 값으로 지정한 문자열 ). </dd>
-				</dl>
-			</div>
-			<div class="detailSection">
-				<h4>Return</h4>
-				<p> 저장한 값( 숫자, 문자, 객체, 함수 등 )</p>
-			</div>
-			<div class="detailSection">
-				<h4>Description</h4>
-				<p> 전역배열인 riffGlobal.buffer 배열에 값을 저장하거나, key 값에 해당하는 값을 불러와 반환한다.
-				전역 배열의 index값으로는, class마다 고유하게 할당된 riffGlobal.prefixBufferID 값을 이용한다. ( prefix + 숫자( 증가값 ) )
-				즉, buffer() 함수가 실행되는 각각의 DOM Element마다 저장공간을 확보하고, 거기에 key - value로 value 값을 저장하거나, 불러온다.
-				<br>
-				선택된 DOM Element 중 첫번째 DOM Element의 key 값에 대응하는 value를 반환한다.
-				선택된 DOM Element가 복수개이고 key 값이 설정되면, 선택된 DOM Element 중 맨 첫번째 DOM Element에 대해 key 값으로 value를 반환한다.
-				</p>
-			</div>
-		</div>
 
 		<div class="detailPart">
 			<h3>buffer(<em> key, value </em>)</h3>
 			<div class="detailSection">
 				<h4>Argument</h4>
 				<dl>
-					<dt>selector (Optional)</dt>
-					<dd>선택된 DOM Element 중 대응되는 DOM Element만 선택하기 위한 String.tagName, Class, ID 의 사용이 가능. </dd>
-					<dt>option</dt>
-					<dd>선택된 DOM Element 중 대응되는 DOM Element만 선택하기 위한 String.tagName, Class, ID 의 사용이 가능. (optional)</dd>
+					<dt>key</dt>
+					<dd>The identifying string for the "value".</dd>
+					<dt>value</dt>
+					<dd>The value of the data to store in the buffer</dd>
 				</dl>
 			</div>
 			<div class="detailSection">
 				<h4>Return</h4>
-				<p>riff Object</p>
+				<p>Riff Object</p>
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p> 전역배열인 riffGlobal.buffer 배열에 값을 저장하거나, key 값에 해당하는 값을 불러와 반환한다.
-				전역 배열의 index값으로는, class마다 고유하게 할당된 riffGlobal.prefixBufferID 값을 이용한다. ( prefix + 숫자( 증가값 ) )
-				즉, buffer() 함수가 실행되는 각각의 DOM Element마다 저장공간을 확보하고, 거기에 key - value로 value 값을 저장하거나, 불러온다.
+				<p>	Allocates storage space for each DOM element that buffer() is executed on, and stores "value" on "key".
+				</p>
+				<p> The "key" and "value" are stored on riffGlobal.buffer (global array). For every DOM element that buffer is set, a class designated by the framework is added to the DOM element.
 				<br>
-				선택된 DOM Element의 key 값에 대해 value을 설정한다.
-				선택된 DOM Element가 복수개이고 key 값이 설정되면, 선택된 DOM Element 모두에 대해 buffer() 를 적용하여 key 값에 대한 value 를 저장한다.
+				If there are more than one selected DOM elements, "value" is stored on "key" for each DOM element.
 				</p>
 			</div>
+			<div class="detailSection">
+				<h4>Example</h4>
+				<p>The following code stores "123" to "key" to a DOM element where the ID is "index".</p>
+				<div class="codeBox">
+<pre>
+$("#index").buffer("key", 123);
+</pre>
+				</div>
+			</div>
 		</div>
+
+		<div class="detailPart">
+			<h3>buffer(<em> key </em>)</h3>
+			<div class="detailSection">
+				<h4>Argument</h4>
+				<dl>
+					<dt> key </dt>
+					<dd> The identifying string for the "value". </dd>
+				</dl>
+			</div>
+			<div class="detailSection">
+				<h4>Return</h4>
+				<p> Stored value ( numbers, characters, objects, functions etc )</p>
+			</div>
+			<div class="detailSection">
+				<h4>Description</h4>
+				<p> Finds and returns the "value" which corresponds to the "key" from riffGlobal.buffer (global array).
+				<br>
+				If there are more than one selected DOM elements, only the "value" of the first selected DOM element is returned.
+				</p>
+			</div>
+			<div class="detailSection">
+				<h4>Example</h4>
+				<p>The following code returns the value of "key" rom the DOM element where the ID is "index".</p>
+				<div class="codeBox">
+<pre>
+$("#index").buffer("value");
+</pre>
+				</div>
+			</div>
+		</div>
+
+
 
 		<table>
 			<caption>Version History</caption>
@@ -790,7 +1035,7 @@ Class를 제거하고 적용되어 있지 않으면 해당 Class를 추가한다
 	</div>
 	<!-- ******************  //API Detail ****************** -->
 	<!-- ******************  API Detail ****************** -->
-	<div id="prevView">
+	<div id="prevView"><!--old-->
 		<h2>prev()</h2>
 		<div class="detailPart">
 			<h3>prev(<em> [selector] </em>)</h3>
@@ -798,17 +1043,41 @@ Class를 제거하고 적용되어 있지 않으면 해당 Class를 추가한다
 				<h4>Argument</h4>
 				<dl>
 					<dt>selector (Optional)</dt>
-					<dd> 선택된 DOM Element 중 대응되는 DOM Element만 선택하기 위한 String. tagName, Class, ID 의 사용이 가능하다. (optional) </dd>
+					<dd> A string to select certain DOM elements within a set of selected DOM elements. Selector may be a tag name, class name, or ID. (optional) </dd>
 				</dl>
 			</div>
 			<div class="detailSection">
 				<h4>Return</h4>
-				<p>riff Object</p>
+				<p>Riff Object</p>
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p> 선택된 DOM Element의 형제 DOM Element 중 Node Type이 ELEMENT_NODE인 이전 DOM Element를
-				선택한다. 인자값이 입력되었을 경우, 선택된 DOM Element중 selector 에 대응되는 DOM Element만 선택하여 반환한다. </p>
+				<p> Returns previous siblings of the selected DOM element, which are of the same type. If the argument is a valid selector string, only the corresponding DOM elements are returned. </p>
+			</div>
+			<div class="detailSection">
+				<h4>Example</h4>
+				<p>The following is a HTML markup of a unordered list.</p>
+				<div class="codeBox">
+<pre>
+&lt;ul&gt;
+	&lt;li id="item1"&gt;Item 1&lt;/li&gt;
+	&lt;li id="item2"&gt;Item 2&lt;/li&gt;
+	&lt;li id="item3"&gt;Item 3&lt;/li&gt;
+&lt;/ul&gt;
+</pre>
+				</div>
+				<p> The following code selects and returns the previous node of item2: item1.</p>
+				<div class="codeBox">
+<pre>
+$("#item2").prev();
+</pre>
+				</div>
+				<p> The following code selects and returns the previous node of item2 where the ID is item3. But, since the ID of the previous node is not item3, null is returned.</p>
+				<div class="codeBox">
+<pre>
+$("#item2").prev("#item3");
+</pre>
+				</div>
 			</div>
 		</div>
 		<table>
@@ -838,11 +1107,10 @@ Class를 제거하고 적용되어 있지 않으면 해당 Class를 추가한다
 				</tr>
 			</tbody>
 		</table>
-
 	</div>
 	<!-- ******************  //API Detail ****************** -->
 	<!-- ******************  API Detail ****************** -->
-	<div id="nextView">
+	<div id="nextView"><!--old-->
 		<h2>next()</h2>
 		<div class="detailPart">
 			<h3>next(<em> [selector] </em>)</h3>
@@ -850,21 +1118,44 @@ Class를 제거하고 적용되어 있지 않으면 해당 Class를 추가한다
 				<h4>Argument</h4>
 				<dl>
 					<dt>selector (Optional)</dt>
-					<dd> 선택된 DOM Element 중 대응되는 DOM Element만 선택하기 위한 String.
-tagName, Class, ID 의 사용이 가능. (optional) </dd>
+					<dd>  A string to select certain DOM elements within a set of selected DOM elements. Selector may be a tag name, class name, or ID. (optional) </dd>
 				</dl>
 			</div>
 			<div class="detailSection">
 				<h4>Return</h4>
-				<p>riff Object</p>
+				<p>Riff Object</p>
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p> 선택된 DOM Element의 형제 DOM Element 중 Node Type이 ELEMENT_NODE인 다음 DOM Element를
-선택한다. 인자값이 입력되었을 경우, 선택된 DOM Element중 selector 에 대응되는 DOM
-Element만 선택하여 반환한다. </p>
+				<p> Returns next siblings of the selected DOM element, which are of the same type. If the argument is a valid selector string, only the corresponding DOM elements are returned. </p>
+			</div>
+			<div class="detailSection">
+				<h4>Example</h4>
+				<p>The following is a HTML markup of a unordered list.</p>
+				<div class="codeBox">
+<pre>
+&lt;ul&gt;
+	&lt;li id="item1"&gt;Item 1&lt;/li&gt;
+	&lt;li id="item2"&gt;Item 2&lt;/li&gt;
+	&lt;li id="item3"&gt;Item 3&lt;/li&gt;
+&lt;/ul&gt;
+</pre>
+				</div>
+				<p>The following code selects and returns the previous node of item2: item1.</p>
+				<div class="codeBox">
+<pre>
+$("#item2").next();
+</pre>
+				</div>
+				<p> The following code selects and returns the next node of item2 where the ID is item1. But, since the ID of the previous node is not item1, null is returned.</p>
+				<div class="codeBox">
+<pre>
+$("#item2").next("#item1");
+</pre>
+				</div>
 			</div>
 		</div>
+
 		<table>
 			<caption>Version History</caption>
 			<colgroup>
@@ -896,7 +1187,7 @@ Element만 선택하여 반환한다. </p>
 	</div>
 	<!-- ******************  //API Detail ****************** -->
 	<!-- ******************  API Detail ****************** -->
-	<div id="parentView">
+	<div id="parentView"><!--old-->
 		<h2>parent()</h2>
 		<div class="detailPart">
 			<h3>parent(<em> [selector] </em>)</h3>
@@ -904,21 +1195,44 @@ Element만 선택하여 반환한다. </p>
 				<h4>Argument</h4>
 				<dl>
 					<dt> selector (Optional)</dt>
-					<dd> 선택된 DOM Element 중 대응되는 DOM Element만 선택하기 위한 String.
-tagName, Class, ID 의 사용이 가능. (optional) </dd>
+					<dd> A string to select certain DOM elements within a set of selected DOM elements. Selector may be a tag name, class name, or ID. (optional) </dd>
 				</dl>
 			</div>
 			<div class="detailSection">
 				<h4>Return</h4>
-				<p>riff Object</p>
+				<p>Riff Object</p>
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p> 선택된 DOM Element의 부모 DOM Element를 선택하여 반환한다.
-				선택된 DOM Element가 복수 개일 때, 선택된 DOM Element 각각의 부모 DOM Element를 모두 선택하여 반환한다.
-				인자값이 입력되었을 경우, 선택된 DOM Element중 selector 에 대응되는 DOM Element만 선택하여 반환한다.</p>
+				<p> Returns parent siblings of the selected DOM element, which are of the same type. If there are more than one selected DOM element, parent() returns all parent DOM elements for each selected DOM element. If the argument is a valid selector string, only the corresponding DOM elements are returned.</p>
+			</div>
+			<div class="detailSection">
+				<h4>Example</h4>
+				<p>The following is a HTML markup of a unordered list.</p>
+				<div class="codeBox">
+<pre>
+&lt;ul&gt;
+	&lt;li id="item1"&gt;Item 1&lt;/li&gt;
+	&lt;li id="item2"&gt;Item 2&lt;/li&gt;
+	&lt;li id="item3"&gt;Item 3&lt;/li&gt;
+&lt;/ul&gt;
+</pre>
+				</div>
+				<p> The following code returns the parent and all sibling nodes of item2. </p>
+				<div class="codeBox">
+<pre>
+$("#item2").parent();
+</pre>
+				</div>
+				<p> The following code searches for a parent node where the ID is "parent". But since there is no such parent node, null is returned. </p>
+				<div class="codeBox">
+<pre>
+$("#item2").parent("#parent");
+</pre>
+				</div>
 			</div>
 		</div>
+
 		<table>
 			<caption>Version History</caption>
 			<colgroup>
@@ -950,7 +1264,7 @@ tagName, Class, ID 의 사용이 가능. (optional) </dd>
 	</div>
 	<!-- ******************  //API Detail ****************** -->
 	<!-- ******************  API Detail ****************** -->
-	<div id="contentsView">
+	<div id="contentsView"><!--old-->
 		<h2>contents()</h2>
 		<div class="detailPart">
 			<h3>contents(<em> [selector] </em>)</h3>
@@ -958,19 +1272,41 @@ tagName, Class, ID 의 사용이 가능. (optional) </dd>
 				<h4>Argument</h4>
 				<dl>
 					<dt>selector (Optional)</dt>
-					<dd> 선택된 DOM Element 중 대응되는 DOM Element만 선택하기 위한 String.
-tagName, Class, ID 의 사용이 가능. (optional) </dd>
+					<dd> A string to select certain DOM elements within a set of selected DOM elements. Selector may be a tag name, class name, or ID. (optional) </dd>
 				</dl>
 			</div>
 			<div class="detailSection">
 				<h4>Return</h4>
-				<p>riff Object</p>
+				<p>Riff Object</p>
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p> 질의된 DOM Element의 자식 DOM Element를 모두 선택한다.( ChildNodes의 NodeType을 구별하지 않는다. )<br>
-				인자값이 입력되었을 경우, 선택된 DOM Element중 selector 에 대응하는 DOM Element만 선택하여 반
-환한다. </p>
+				<p> Returns all children of the selected DOM element (does not distinguish node types of the children nodes). If the argument is a valid selector string, only the corresponding DOM elements are returned. </p>
+			</div>
+			<div class="detailSection">
+				<h4>Example</h4>
+				<p>The following is a HTML markup of a unordered list.</p>
+				<div class="codeBox">
+<pre>
+&lt;ul&gt;
+	&lt;li id="item1"&gt;Item 1&lt;/li&gt;
+	&lt;li id="item2"&gt;Item 2&lt;/li&gt;
+	&lt;li id="item3"&gt;Item 3&lt;/li&gt;
+&lt;/ul&gt;
+</pre>
+				</div>
+				<p> The following code selects and returns all children nodes of &lt;ul&gt;: item1, item2, item3.</p>
+				<div class="codeBox">
+<pre>
+$("ul").contents();
+</pre>
+				</div>
+				<p> The following code only selects and returns item2 from the children nodes of &lt;ul&gt;. </p>
+				<div class="codeBox">
+<pre>
+$("ul").contents("#item2");
+</pre>
+				</div>
 			</div>
 		</div>
 		<table>
@@ -1005,26 +1341,51 @@ tagName, Class, ID 의 사용이 가능. (optional) </dd>
 	<!-- ******************  //API Detail ****************** -->
 	<!-- ******************  API Detail ****************** -->
 	<div id="childrenView">
-		<h2>children()</h2>
+		<h2>children()</h2><!--old-->
 		<div class="detailPart">
 			<h3>children(<em> [selector] </em>)</h3>
 			<div class="detailSection">
 				<h4>Argument</h4>
 				<dl>
 					<dt>selector (Optional)</dt>
-					<dd> 선택된 DOM Element 중 대응되는 DOM Element만 선택하기 위한 String.
-tagName, Class, ID 의 사용이 가능. (optional) </dd>
+					<dd> A string to select certain DOM elements within a set of selected DOM elements. Selector may be a tag name, class name, or ID. (optional) </dd>
 				</dl>
 			</div>
 			<div class="detailSection">
 				<h4>Return</h4>
-				<p>riff Object</p>
+				<p>Riff Object</p>
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p> 질의된 DOM Element의 자식 DOM Element 중 Node Type이 ELEMENT_NODE인 것만 선택한다.<br>
-				인자값이 입력되었을 경우, 선택된 DOM Element중 selector 에 대응하는 DOM Element만 선택하여 반
-환한다. </p>
+				<p> Returns children siblings of the selected DOM element which are of the same type. If the argument
+				is a valid selector string, only the corresponding DOM elements are returned.
+				</p>
+			</div>
+			<div class="detailSection">
+				<h4>Example</h4>
+				<p>The following is a HTML markup of a unordered list.</p>
+				<div class="codeBox">
+<pre>
+&lt;ul&gt;
+	&lt;li id="item1"&gt;Item 1&lt;/li&gt;
+	&lt;li id="item2"&gt;Item 2&lt;/li&gt;
+	&lt;li id="item3"&gt;Item 3&lt;/li&gt;
+&lt;/ul&gt;
+</pre>
+				</div>
+				<p> The following code selects and returns all children nodes of &lt;ul&gt;: item1, item2, item3.
+				</p>
+				<div class="codeBox">
+<pre>
+$("ul").children();
+</pre>
+				</div>
+				<p> The following code only selects and returns item2 from the children nodes of &lt;ul&gt;.</p>
+				<div class="codeBox">
+<pre>
+$("ul").children("#item2");
+</pre>
+				</div>
 			</div>
 		</div>
 		<table>
@@ -1058,7 +1419,7 @@ tagName, Class, ID 의 사용이 가능. (optional) </dd>
 	</div>
 	<!-- ******************  //API Detail ****************** -->
 	<!-- ******************  API Detail ****************** -->
-	<div id="siblingsView">
+	<div id="siblingsView"><!--old-->
 		<h2>siblings()</h2>
 		<div class="detailPart">
 			<h3>siblings(<em> [selector] </em>)</h3>
@@ -1066,21 +1427,45 @@ tagName, Class, ID 의 사용이 가능. (optional) </dd>
 				<h4>Argument</h4>
 				<dl>
 					<dt>selector (Optional)</dt>
-					<dd>선택된 DOM Element 중 대응되는 DOM Element만 선택하기 위한 String.
-tagName, Class, ID 의 사용이 가능. (optional)</dd>
+					<dd>A string to select certain DOM elements within a set of selected DOM elements. Selector may be a tag name, class name, or ID. (optional)</dd>
 				</dl>
 			</div>
 			<div class="detailSection">
 				<h4>Return</h4>
-				<p>riff Object</p>
+				<p>Riff Object</p>
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p>선택된 DOM Element의 형제 DOM Element 중 Node Type이 ELEMENT_NODE인 것들을 선택한다.
-인자값이 입력되었을 경우, 선택된 DOM Element중 selector 에 대응되는 DOM Element만 선택하여
-반환한다.</p>
+				<p> Returns siblings of the selected DOM element, which are of the same type. If the argument is a valid selector string, only the corresponding DOM elements are returned.
+				</p>
+			</div>
+						<div class="detailSection">
+				<h4>Example</h4>
+				<p>The following is a HTML markup of a unordered list.</p>
+				<div class="codeBox">
+<pre>
+&lt;ul&gt;
+	&lt;li id="item1"&gt;Item 1&lt;/li&gt;
+	&lt;li id="item2"&gt;Item 2&lt;/li&gt;
+	&lt;li id="item3"&gt;Item 3&lt;/li&gt;
+&lt;/ul&gt;
+</pre>
+				</div>
+				<p> The following code returns the sibling nodes of item2: item1 and item3.</p>
+				<div class="codeBox">
+<pre>
+$("#item2").siblings();
+</pre>
+				</div>
+				<p> The following code returns item1 from the sibling nodes of item2.</p>
+				<div class="codeBox">
+<pre>
+$("#item2").siblings("#item1");
+</pre>
+				</div>
 			</div>
 		</div>
+
 		<table>
 			<caption>Version History</caption>
 			<colgroup>
@@ -1112,7 +1497,7 @@ tagName, Class, ID 의 사용이 가능. (optional)</dd>
 	</div>
 	<!-- ******************  //API Detail ****************** -->
 	<!-- ******************  API Detail ****************** -->
-	<div id="eqView">
+	<div id="eqView"><!-- old -->
 		<h2>eq()</h2>
 		<div class="detailPart">
 			<h3>eq(<em> [index] </em>)</h3>
@@ -1120,19 +1505,37 @@ tagName, Class, ID 의 사용이 가능. (optional)</dd>
 				<h4>Argument</h4>
 				<dl>
 					<dt> index (Optional)</dt>
-					<dd> 선택할 DOM Element의 순서 (zero-based). (optional) </dd>
+					<dd> The index number of the DOM element to select (zero-based). (optional) </dd>
 
 				</dl>
 			</div>
 			<div class="detailSection">
 				<h4>Return</h4>
-				<p>riff Object</p>
+				<p>Riff Object</p>
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p>선택된 DOM Element에 대해, index 번째의 DOM Element를 선택하여 반환한다. 만약 index가 범위
-를 벗어난 경우, 빈 riff Object를 반환한다. 인자값이 입력되지 않으면, 첫번째 DOM Element
-를 선택하여 반환한다.</p>
+				<p> Returns the DOM element which corresponds to the index number. If the index is out of bounds, eq() returns an empty Riff Object. If the argument is empty, the first DOM element is returned.
+				</p>
+			</div>
+			<div class="detailSection">
+				<h4>Example</h4>
+				<p>The following is a HTML markup of a unordered list.</p>
+				<div class="codeBox">
+<pre>
+&lt;ul&gt;
+	&lt;li id="item1"&gt;Item 1&lt;/li&gt;
+	&lt;li id="item2"&gt;Item 2&lt;/li&gt;
+	&lt;li id="item3"&gt;Item 3&lt;/li&gt;
+&lt;/ul&gt;
+</pre>
+				</div>
+				<p> The following code returns the second item from the list item2.</p>
+				<div class="codeBox">
+<pre>
+$("ul").children().eq(1);
+</pre>
+				</div>
 			</div>
 		</div>
 		<table>
@@ -1166,7 +1569,7 @@ tagName, Class, ID 의 사용이 가능. (optional)</dd>
 	</div>
 	<!-- ******************  //API Detail ****************** -->
 	<!-- ******************  API Detail ****************** -->
-	<div id="addView">
+	<div id="addView"><!-- old -->
 		<h2>add()</h2>
 		<div class="detailPart">
 			<h3>add(<em> selector </em>)</h3>
@@ -1174,38 +1577,34 @@ tagName, Class, ID 의 사용이 가능. (optional)</dd>
 				<h4>Argument</h4>
 				<dl>
 					<dt> selector </dt>
-					<dd> DOM Element를 선택하기 위한 CSS Selector Syntax String. </dd>
+					<dd> A string to select certain DOM elements within a set of selected DOM elements. Selector may be a tag name, class name, or ID. (optional) </dd>
 				</dl>
 			</div>
 			<div class="detailSection">
 				<h4>Return</h4>
-				<p>riff Object</p>
+				<p>Riff Object</p>
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p> 선택된 DOM Element들에 인자값으로 입력된 내용들에 해당하는 DOM Element를 추가로 선택한다.
-인자값이 DOM Element를 선택하기 위한 CSS Selector Syntax String이라면, selector로 검색한 결과를 추가한다.
-</p>
+				<p> Add DOM elements to the set of matched DOM elements, and returns the added set of DOM elements. If the argument is a selector, the corresponding DOM element is added.</p>
 			</div>
 		</div>
 		<div class="detailPart">
-			<h3>add(<em> riff Object </em>)</h3>
+			<h3>add(<em> Riff Object </em>)</h3>
 			<div class="detailSection">
 				<h4>Argument</h4>
 				<dl>
-					<dt>  riff Object </dt>
-					<dd> 선택된 DOM Element 집합에 추가할 DOM Element를 선택한 riff Object. </dd>
+					<dt> Riff Object </dt>
+					<dd> The Riff Object to add to the selected set of DOM elements. </dd>
 				</dl>
 			</div>
 			<div class="detailSection">
 				<h4>Return</h4>
-				<p>riff Object</p>
+				<p>Riff Object</p>
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p> 선택된 DOM Element들에 인자값으로 입력된 내용들에 해당하는 DOM Element를 추가로 선택한다.
-					인자값으로 riff Object가 입력되면, 선택된 DOM Element 집합에 riff Object에 선택된 DOM Element를 합쳐서 반환한다.
-				</p>
+				<p> Add DOM elements to the set of matched DOM elements, and returns the added set of DOM elements. If the argument is a Riff Object, the DOM elements of the Riff Object are added to the set.</p>
 			</div>
 		</div>
 		<table>
@@ -1248,17 +1647,17 @@ tagName, Class, ID 의 사용이 가능. (optional)</dd>
 				<h4>Argument</h4>
 				<dl>
 					<dt> name </dt>
-					<dd>DOM Element의 Attribute Name String. </dd>
+					<dd> The attribute name string of the DOM element. </dd>
 				</dl>
 			</div>
 			<div class="detailSection">
 				<h4>Return</h4>
-				<p> DOM Element의 Attribute 속성 문자열 </p>
+				<p> The attribute value string of the DOM element. </p>
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p> 선택된 DOM Element의 Attribute을 가져올 수 있다.
-				인자 값으로 name만 입력되었을 경우, 선택된 DOM Element 중 첫번째 DOM Element의 name 에 해당하는 Attribute를 반환한다.</p>
+				<p> Returns the attribute value of the DOM element that corresponds to the attribute name string.
+				</p>
 			</div>
 		</div>
 		<div class="detailPart">
@@ -1269,16 +1668,16 @@ tagName, Class, ID 의 사용이 가능. (optional)</dd>
 					<dt> name </dt>
 					<dd>DOM Element의 Attribute Name String. </dd>
 					<dt> attribute </dt>
-					<dd> DOM Element의 Attribute에 설정할 String. </dd>
+					<dd> The attribute value string of the DOM element. </dd>
 				</dl>
 			</div>
 			<div class="detailSection">
 				<h4>Return</h4>
-				<p>riff Object</p>
+				<p>Riff Object</p>
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p> 선택된 DOM Element의 Attribute을 설정할 수 있다. 인자 값으로 name과 value가 모두 입력되었을 경우, 선택된 DOM Element들에 name에 해당하는 Attrubte를 value로 설정한다.</p>
+				<p> Sets the attribute value of the DOM element that corresponds to the attribute name.</p>
 			</div>
 		</div>
 		<table>
@@ -1320,7 +1719,7 @@ tagName, Class, ID 의 사용이 가능. (optional)</dd>
 				<h4>Argument</h4>
 				<dl>
 					<dt> index (Optional)</dt>
-					<dd> 반환 받을 DOM Element의 순서. (optional) </dd>
+					<dd> The index number of the DOM element to return. (optional) </dd>
 				</dl>
 			</div>
 			<div class="detailSection">
@@ -1329,8 +1728,7 @@ tagName, Class, ID 의 사용이 가능. (optional)</dd>
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p> riff 객체가 가진 DOM Element 를 반환한다.
-				인자값이 입력된 경우, 선택된 DOM Element 중 index 번째 DOM Element를 반환한다. 인자값이 입력되지 않았을 경우, 선택된 DOM Element 중 첫 번째 DOM Element를 반환한다. </p>
+				<p> Returns the DOM element within the Riff Object. If the index number is specified, the DOM element that corresponds to the index number is returned. If the argument is empty, the first DOM element of the Riff Object is returned. </p>
 			</div>
 		</div>
 		<table>
@@ -1372,7 +1770,7 @@ tagName, Class, ID 의 사용이 가능. (optional)</dd>
 				<h4>Argument</h4>
 				<dl>
 					<dt> index (Optional)</dt>
-					<dd> 반환 받을 Component Object의 순서. (optional) </dd>
+					<dd> The index of the component objects to return. (optional) </dd>
 
 				</dl>
 			</div>
@@ -1382,8 +1780,9 @@ tagName, Class, ID 의 사용이 가능. (optional)</dd>
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p> riff 객체가 가진 Component Object 를 반환한다.
-				인자값이 입력된 경우, 선택된 DOM Element를 가지는 Component Object 중 index 번째 Component Object를 반환한다. 인자값이 입력되지 않았을 경우, 선택된 DOM Element를 가지는 Component Object 중 첫 번째 Component Object를 반환한다.</p>
+				<p> Returns the Component Object of the Riff Object.<br>
+				If the argument is inserted, the corresponding Component Object of the selected DOM element is returned. If the argument is null, the the first Component Object of the selected DOM element is returned.
+				</p>
 			</div>
 		</div>
 		<table>
@@ -1430,12 +1829,30 @@ tagName, Class, ID 의 사용이 가능. (optional)</dd>
 			</div>
 			<div class="detailSection">
 				<h4>Return</h4>
-				<p> 몇번째( 숫자 ) </p>
+				<p> The index number of the selected DOM element. </p>
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p>선택된 DOM Element 중 첫번째 DOM Element가 형제 DOM Element 중 몇번째 순서
-				( index: zero-based ) 인지 반환한다.</p>
+				<p> Returns a zero-based index number of the selected DOM element. The index number is the order of the selected DOM element relevent to it's siblings.</p>
+			</div>
+			<div class="detailSection">
+				<h4>Example</h4>
+				<p>The following is a HTML markup of a unordered list.</p>
+				<div class="codeBox">
+<pre>
+&lt;ul&gt;
+	&lt;li id="item1"&gt;Item 1&lt;/li&gt;
+	&lt;li id="item2"&gt;Item 2&lt;/li&gt;
+	&lt;li id="item3"&gt;Item 3&lt;/li&gt;
+&lt;/ul&gt;
+</pre>
+				</div>
+				<p> The following code returns 1, the index number of item2.</p>
+				<div class="codeBox">
+<pre>
+$("#item2").index();
+</pre>
+				</div>
 			</div>
 		</div>
 		<table>
@@ -1482,12 +1899,30 @@ tagName, Class, ID 의 사용이 가능. (optional)</dd>
 			</div>
 			<div class="detailSection">
 				<h4>Return</h4>
-				<p>riff Object</p>
+				<p>Riff Object</p>
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p>선택된 DOM Element 중 인자 값에 대응하는 DOM Element를 제거한다.
-				인자 값이 입력되지 않았을 경우, 선택된 DOM Element 전체를 제거한다.</p>
+				<p>Removes all selected DOM elements.</p>
+			</div>
+			<div class="detailSection">
+				<h4>Example</h4>
+				<p>The following is a HTML markup of a unordered list.</p>
+				<div class="codeBox">
+<pre>
+&lt;ul&gt;
+	&lt;li id="item1"&gt;Item 1&lt;/li&gt;
+	&lt;li id="item2"&gt;Item 2&lt;/li&gt;
+	&lt;li id="item3"&gt;Item 3&lt;/li&gt;
+&lt;/ul&gt;
+</pre>
+				</div>
+				<p> The following code removes item2 from the list.</p>
+				<div class="codeBox">
+<pre>
+$("#item2").remove();
+</pre>
+				</div>
 			</div>
 		</div>
 		<div class="detailPart">
@@ -1496,17 +1931,35 @@ tagName, Class, ID 의 사용이 가능. (optional)</dd>
 				<h4>Argument</h4>
 				<dl>
 					<dt> index </dt>
-					<dd>선택된 DOM Element 중에서 제거할 index의 순서.</dd>
+					<dd>The index number of the DOM element to remove.</dd>
 				</dl>
 			</div>
 			<div class="detailSection">
 				<h4>Return</h4>
-				<p>riff Object</p>
+				<p>Riff Object</p>
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p>선택된 DOM Element 중 인자 값에 대응하는 DOM Element를 제거한다.
-				인자 값으로 index가 입력되었을 경우,선택된 DOM Element 중 index 번째의 DOM Element를 제거한다.</p>
+				<p> Removes the DOM element that corresponds to the index number from the selected DOM elements.</p>
+			</div>
+			<div class="detailSection">
+				<h4>Example</h4>
+				<p>The following is a HTML markup of a unordered list.</p>
+				<div class="codeBox">
+<pre>
+&lt;ul&gt;
+	&lt;li id="item1"&gt;Item 1&lt;/li&gt;
+	&lt;li id="item2"&gt;Item 2&lt;/li&gt;
+	&lt;li id="item3"&gt;Item 3&lt;/li&gt;
+&lt;/ul&gt;
+</pre>
+				</div>
+				<p>다음 소스는 위에 마크업된 리스트의 모든 자식 노드중 2번째 노드, 즉 item2를 제거한다.</p>
+				<div class="codeBox">
+<pre>
+$("ul").children().remove(1);
+</pre>
+				</div>
 			</div>
 		</div>
 		<div class="detailPart">
@@ -1515,17 +1968,35 @@ tagName, Class, ID 의 사용이 가능. (optional)</dd>
 				<h4>Argument</h4>
 				<dl>
 					<dt> DOMElement </dt>
-					<dd>선택된 DOM Element 중 제거할 DOM Element.</dd>
+					<dd> The DOM element to remove.</dd>
 				</dl>
 			</div>
 			<div class="detailSection">
 				<h4>Return</h4>
-				<p>riff Object</p>
+				<p>Riff Object</p>
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p> 선택된 DOM Element 중 인자 값에 대응하는 DOM Element를 제거한다.
-				인자 값으로 DOMElement가 입력되었을 경우, 선택된 DOM Element 중 DOMElement를 제거한다.</p>
+				Removes the DOM element that corresponds to the argument.</p>
+			</div>
+			<div class="detailSection">
+				<h4>Example</h4>
+				<p>The following is a HTML markup of a unordered list.</p>
+				<div class="codeBox">
+<pre>
+&lt;ul&gt;
+	&lt;li id="item1"&gt;Item 1&lt;/li&gt;
+	&lt;li id="item2"&gt;Item 2&lt;/li&gt;
+	&lt;li id="item3"&gt;Item 3&lt;/li&gt;
+&lt;/ul&gt;
+</pre>
+				</div>
+				<p>The following node removes item2.</p>
+				<div class="codeBox">
+<pre>
+$("ul").children().remove($("#item2"));
+</pre>
+				</div>
 			</div>
 		</div>
 		<table>
@@ -1567,16 +2038,17 @@ tagName, Class, ID 의 사용이 가능. (optional)</dd>
 				<h4>Argument</h4>
 				<dl>
 					<dt> name </dt>
-					<dd> DOM Element의 CSS Property Name String. </dd>
+					<dd> CSS Property Name String. </dd>
 				</dl>
 			</div>
 			<div class="detailSection">
 				<h4>Return</h4>
-				<p> DOM Element의 name에 해당하는 CSS 값의 String.</p>
+				<p> CSS Property value string that corresponds to CSS Property name.</p>
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p> 선택된 DOM Element의 CSS Property을 설정하거나 가져올 수 있다. 인자 값으로 name만 입력되었을 경우, 선택된 DOM Element 중 첫번째 DOM Element의 name 값에 해당하는 CSS Property를 반환한다. </p>
+				<p> Returns the CSS Property value that corresponds to the CSS Property name of the selected DOM element. If there are more than one selected DOM elements, the CSS Property value of the first DOM element will be returned.
+				</p>
 			</div>
 		</div>
 		<div class="detailPart">
@@ -1585,18 +2057,18 @@ tagName, Class, ID 의 사용이 가능. (optional)</dd>
 				<h4>Argument</h4>
 				<dl>
 					<dt> name </dt>
-					<dd> DOM Element의 CSS Property Name String. </dd>
+					<dd> CSS Property Name String. </dd>
 					<dt> value </dt>
-					<dd> DOM Element에 설정할 CSS Style String. </dd>
+					<dd> CSS Property value string. </dd>
 				</dl>
 			</div>
 			<div class="detailSection">
 				<h4>Return</h4>
-				<p>riff Object</p>
+				<p>Riff Object</p>
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
- 				<p> 선택된 DOM Element의 CSS Property을 설정하거나 가져올 수 있다. 인자 값으로 name만 입력되었을 경우, 선택된 DOM Element 중 첫번째 DOM Element의 name 값에 해당하는 CSS Property를 반환한다. </p>
+ 				<p> Sets the CSS property value that corresponds to the CSS property name of the selected DOM elements. </p>
 			</div>
 		</div>
 		<table>
@@ -1638,18 +2110,16 @@ tagName, Class, ID 의 사용이 가능. (optional)</dd>
 				<h4>Argument</h4>
 				<dl>
 					<dt> none </dt>
-					<dd> DOM Element에 설정할 CSS top Style String.</dd>
+					<dd> </dd>
 				</dl>
 			</div>
 			<div class="detailSection">
 				<h4>Return</h4>
-				<p> CSS top 속성에 해당하는 문자열 반환 </p>
+				<p> The CSS top value of the selected DOM element. </p>
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p>	선택된 DOM Element의 Top값을 설정하거나 가져올 수 있다.
-					인자값이 없는 경우, 선택된 DOM Element의 실제 그려진 스타일(Computed Style)의 Top 값을 반환한다.
-				</p>
+				<p>	Returns the computed style top value of the selected DOM element. </p>
 			</div>
 		</div>
 		<div class="detailPart">
@@ -1658,18 +2128,16 @@ tagName, Class, ID 의 사용이 가능. (optional)</dd>
 				<h4>Argument</h4>
 				<dl>
 					<dt> value </dt>
-					<dd> 선택된 DOM Element들의 CSS Property 중 Top으로 설정할 값.</dd>
+					<dd> The desired CSS top vaule of the selected DOM element.</dd>
 				</dl>
 			</div>
 			<div class="detailSection">
 				<h4>Return</h4>
-				<p> riff Object </p>
+				<p> Riff Object </p>
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p>	선택된 DOM Element의 Top값을 설정하거나 가져올 수 있다.
-					인자값이 value 인 경우, 선택된 DOM Element의 CSS Property 중 Top를 value로 설정한다.
-				</p>
+				<p>Sets the CSS top property of the selected DOM element.</p>
 			</div>
 		</div>
 		<table>
@@ -1711,18 +2179,16 @@ tagName, Class, ID 의 사용이 가능. (optional)</dd>
 				<h4>Argument</h4>
 				<dl>
 					<dt> none </dt>
-					<dd> DOM Element에 설정할 CSS left Style String.</dd>
+					<dd> </dd>
 				</dl>
 			</div>
 			<div class="detailSection">
 				<h4>Return</h4>
-				<p> CSS left 속성에 해당하는 문자열 반환 </p>
+				<p> The CSS left value of the selected DOM element. </p>
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p>	선택된 DOM Element의 left값을 설정하거나 가져올 수 있다.
-					인자값이 없는 경우, 선택된 DOM Element의 실제 그려진 스타일(Computed Style)의 left 값을 반환한다.
-				</p>
+				<p>Returns the computed style left value of the selected DOM element.</p>
 			</div>
 		</div>
 		<div class="detailPart">
@@ -1731,18 +2197,16 @@ tagName, Class, ID 의 사용이 가능. (optional)</dd>
 				<h4>Argument</h4>
 				<dl>
 					<dt> value </dt>
-					<dd> 선택된 DOM Element들의 CSS Property 중 left으로 설정할 값.</dd>
+					<dd> The desired CSS left vaule of the selected DOM element.</dd>
 				</dl>
 			</div>
 			<div class="detailSection">
 				<h4>Return</h4>
-				<p> riff Object </p>
+				<p> Riff Object </p>
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p>	선택된 DOM Element의 left값을 설정하거나 가져올 수 있다.
-					인자값이 value 인 경우, 선택된 DOM Element의 CSS Property 중 left를 value로 설정한다.
-				</p>
+				<p>	Sets the CSS left property of the selected DOM element.</p>
 			</div>
 		</div>
 		<table>
@@ -1784,18 +2248,16 @@ tagName, Class, ID 의 사용이 가능. (optional)</dd>
 				<h4>Argument</h4>
 				<dl>
 					<dt> none </dt>
-					<dd> DOM Element에 설정할 CSS width Style String.</dd>
+					<dd> </dd>
 				</dl>
 			</div>
 			<div class="detailSection">
 				<h4>Return</h4>
-				<p> CSS width 속성에 해당하는 문자열 반환 </p>
+				<p> The CSS width value of the selected DOM element. </p>
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p>	선택된 DOM Element의 width값을 설정하거나 가져올 수 있다.
-					인자값이 없는 경우, 선택된 DOM Element의 실제 그려진 스타일(Computed Style)의 width 값을 반환한다.
-				</p>
+				<p> Returns the computed style width value of the selected DOM element. </p>
 			</div>
 		</div>
 		<div class="detailPart">
@@ -1804,18 +2266,16 @@ tagName, Class, ID 의 사용이 가능. (optional)</dd>
 				<h4>Argument</h4>
 				<dl>
 					<dt> value </dt>
-					<dd> 선택된 DOM Element들의 CSS Property 중 width으로 설정할 값.</dd>
+					<dd> The desired CSS width vaule of the selected DOM element.</dd>
 				</dl>
 			</div>
 			<div class="detailSection">
 				<h4>Return</h4>
-				<p> riff Object </p>
+				<p> Riff Object </p>
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p>	선택된 DOM Element의 width값을 설정하거나 가져올 수 있다.
-					인자값이 value 인 경우, 선택된 DOM Element의 CSS Property 중 width를 value로 설정한다.
-				</p>
+				<p>Sets the CSS width property of the selected DOM element.</p>
 			</div>
 		</div>
 		<table>
@@ -1857,18 +2317,16 @@ tagName, Class, ID 의 사용이 가능. (optional)</dd>
 				<h4>Argument</h4>
 				<dl>
 					<dt> none </dt>
-					<dd> DOM Element에 설정할 CSS height Style String.</dd>
+					<dd> </dd>
 				</dl>
 			</div>
 			<div class="detailSection">
 				<h4>Return</h4>
-				<p> CSS height 속성에 해당하는 문자열 반환 </p>
+				<p> The CSS height value of the selected DOM element. </p>
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p>	선택된 DOM Element의 height값을 설정하거나 가져올 수 있다.
-					인자값이 없는 경우, 선택된 DOM Element의 실제 그려진 스타일(Computed Style)의 height 값을 반환한다.
-				</p>
+				<p> Returns the computed style height value of the selected DOM element. </p>
 			</div>
 		</div>
 		<div class="detailPart">
@@ -1877,18 +2335,16 @@ tagName, Class, ID 의 사용이 가능. (optional)</dd>
 				<h4>Argument</h4>
 				<dl>
 					<dt> value </dt>
-					<dd> 선택된 DOM Element들의 CSS Property 중 height으로 설정할 값.</dd>
+					<dd> The desired CSS height vaule of the selected DOM element.</dd>
 				</dl>
 			</div>
 			<div class="detailSection">
 				<h4>Return</h4>
-				<p> riff Object </p>
+				<p> Riff Object </p>
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p>	선택된 DOM Element의 height값을 설정하거나 가져올 수 있다.
-					인자값이 value 인 경우, 선택된 DOM Element의 CSS Property 중 height를 value로 설정한다.
-				</p>
+				<p> Sets the CSS height property of the selected DOM element. </p>
 			</div>
 		</div>
 		<table>
@@ -1928,19 +2384,35 @@ tagName, Class, ID 의 사용이 가능. (optional)</dd>
 			<h3>html( )</h3>
 			<div class="detailSection">
 				<h4>Argument</h4>
-				<dl>
-					<dt> none </dt>
-					<dd> DOM Element에 설정할 CSS height Style String.</dd>
-				</dl>
+				<p>None</p>
 			</div>
 			<div class="detailSection">
 				<h4>Return</h4>
-				<p> innerHTML에 해당하는 문자열 </p>
+				<p> the inner HTML string </p>
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p> 선택된 DOM Element 의 innerHTML 을 반환하거나, 설정한다.
-				인자값이 입력되지 않으면, 선택된 DOM Element 중 첫번째 DOM Element의 innerHTML String를 반환한다.</p>
+				<p> Returns the inner HTML string of the first selected DOM element.
+				</p>
+			</div>
+			<div class="detailSection">
+				<h4>Example</h4>
+				<p>The following is a HTML markup of a unordered list.</p>
+				<div class="codeBox">
+<pre>
+&lt;ul&gt;
+	&lt;li id="item1"&gt;Item 1&lt;/li&gt;
+	&lt;li id="item2"&gt;Item 2&lt;/li&gt;
+	&lt;li id="item3"&gt;Item 3&lt;/li&gt;
+&lt;/ul&gt;
+</pre>
+				</div>
+				<p> The following code returns the inner HTML string of item2. </p>
+				<div class="codeBox">
+<pre>
+$("#item2").html();
+</pre>
+				</div>
 			</div>
 		</div>
 		<div class="detailPart">
@@ -1949,17 +2421,36 @@ tagName, Class, ID 의 사용이 가능. (optional)</dd>
 				<h4>Argument</h4>
 				<dl>
 					<dt> htmlCode </dt>
-					<dd> 선택된 DOM Element의 innerHTML에 대입될 HTML Code을 의미하는 문자열. </dd>
+					<dd> The HTML code to insert as the inner HTML of the selected DOM element. </dd>
 				</dl>
 			</div>
 			<div class="detailSection">
 				<h4>Return</h4>
-				<p>riff Object</p>
+				<p>Riff Object</p>
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p> 선택된 DOM Element 의 innerHTML 을 반환하거나, 설정한다.
-				인자값이 입력되면, 선택된 모든 DOM Element의 innerHTML을 htmlCode로 변경한다.</p>
+				<p> Changes the inner HTML of the selected DOM elements to the given HTML code.
+				</p>
+			</div>
+			<div class="detailSection">
+				<h4>Example</h4>
+				<p>The following is a HTML markup of a unordered list.</p>
+				<div class="codeBox">
+<pre>
+&lt;ul&gt;
+	&lt;li id="item1"&gt;Item 1&lt;/li&gt;
+	&lt;li id="item2"&gt;Item 2&lt;/li&gt;
+	&lt;li id="item3"&gt;Item 3&lt;/li&gt;
+&lt;/ul&gt;
+</pre>
+				</div>
+				<p> The following code changes the font of item2 to bold. </p>
+				<div class="codeBox">
+<pre>
+$("#item2").html("<b>Item2</b>");
+</pre>
+				</div>
 			</div>
 		</div>
 		<table>
@@ -2006,12 +2497,30 @@ tagName, Class, ID 의 사용이 가능. (optional)</dd>
 			</div>
 			<div class="detailSection">
 				<h4>Return</h4>
-				<p> 선택된 DOM Element 중 첫번째 DOM Element의 Text Node들의 String를 반환. </p>
+				<p> The text node string of the first selected DOM element. </p>
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p>선택된 DOM Element의 Text Node 값을 설정하거나 반환한다.
-				인자값이 없을 경우, 선택된 DOM Element 중 첫번째 DOM Element의 Text Node들의 String를 반환.</p>
+				<p> Returns the the text node string of the first selected DOM element. </p>
+			</div>
+			<div class="detailSection">
+				<h4>Example</h4>
+				<p>The following is a HTML markup of a unordered list.</p>
+				<div class="codeBox">
+<pre>
+&lt;ul&gt;
+	&lt;li id="item1"&gt;Item 1&lt;/li&gt;
+	&lt;li id="item2"&gt;Item 2&lt;/li&gt;
+	&lt;li id="item3"&gt;Item 3&lt;/li&gt;
+&lt;/ul&gt;
+</pre>
+				</div>
+				<p> The following code returns "Item2", the text node of item2.</p>
+				<div class="codeBox">
+<pre>
+$("#item2").text();
+</pre>
+				</div>
 			</div>
 		</div>
 		<div class="detailPart">
@@ -2020,17 +2529,36 @@ tagName, Class, ID 의 사용이 가능. (optional)</dd>
 				<h4>Argument</h4>
 				<dl>
 					<dt> textString </dt>
-					<dd> 선택된 모든 DOM Element의 자식들을 삭제하고 textString 값을 가지는 Text Node를 자식으로 추가. </dd>
+					<dd> The string value to replace the text node of the selected DOM elements.
+					</dd>
 				</dl>
 			</div>
 			<div class="detailSection">
 				<h4>Return</h4>
-				<p> riff Object </p>
+				<p> Riff Object </p>
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p>선택된 DOM Element의 Text Node 값을 설정하거나 반환한다.
-				인자값이 있을 경우,선택된 모든 DOM Element의 자식들을 삭제하고 textString 값을 가지는 Text Node를 자식으로 추가.</p>
+				<p> The children nodes of the selected DOM elements are replaced with a text node that contains the textString argument.</p>
+			</div>
+			<div class="detailSection">
+				<h4>Example</h4>
+				<p>The following is a HTML markup of a unordered list.</p>
+				<div class="codeBox">
+<pre>
+&lt;ul&gt;
+	&lt;li id="item1"&gt;Item 1&lt;/li&gt;
+	&lt;li id="item2"&gt;Item 2&lt;/li&gt;
+	&lt;li id="item3"&gt;Item 3&lt;/li&gt;
+&lt;/ul&gt;
+</pre>
+				</div>
+				<p> The following code changes the text of item2 to "Item2 Text".</p>
+				<div class="codeBox">
+<pre>
+$("#item2").text("Item2 Text");
+</pre>
+				</div>
 			</div>
 		</div>
 		<table>
@@ -2072,17 +2600,16 @@ tagName, Class, ID 의 사용이 가능. (optional)</dd>
 				<h4>Argument</h4>
 				<dl>
 					<dt> SelectedDomElementArray </dt>
-					<dd> text() 함수를 적용하기 위해 선택된 모든 DOM Element. </dd>
+					<dd> Selected DOM element array. </dd>
 				</dl>
 			</div>
 			<div class="detailSection">
 				<h4>Return</h4>
-				<p> 인자값인 SelectedDomElementArray ( DOM Element ) 가 가진 모든 Text를 취합해 반환. </p>
+				<p> All text of the selected DOM element array. </p>
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p> Dom Element 의 텍스트 노드들을 얻기 위한 재귀호출 함수.
-				text() 함수를 실행하면 내부적으로 자식 노드(childNode) 를 처리하기 위해 재귀로 사용</p>
+				<p> Recursively returns all text nodes of the selected DOM elements. </p>
 			</div>
 		</div>
 		<table>
@@ -2124,16 +2651,35 @@ tagName, Class, ID 의 사용이 가능. (optional)</dd>
 				<h4>Argument</h4>
 				<dl>
 					<dt> htmlCode </dt>
-					<dd>문자열. 마지막에 삽입할 htmlCode </dd>
+					<dd> HTML code to insert.</dd>
 				</dl>
 			</div>
 			<div class="detailSection">
 				<h4>Return</h4>
-				<p>riff Object</p>
+				<p>Riff Object</p>
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p> 선택된 DOM Element들의 마지막 자식( ChildNode )으로 htmlCode에 해당하는 DOM Element를 삽입한다. </p>
+				<p> The DOM element created by the inserted HTML code is inserted as the last child node of the selected DOM element.</p>
+			</div>
+			<div class="detailSection">
+				<h4>Example</h4>
+				<p>The following is a HTML markup of a unordered list.</p>
+				<div class="codeBox">
+<pre>
+&lt;ul&gt;
+	&lt;li id="item1"&gt;Item 1&lt;/li&gt;
+	&lt;li id="item2"&gt;Item 2&lt;/li&gt;
+	&lt;li id="item3"&gt;Item 3&lt;/li&gt;
+&lt;/ul&gt;
+</pre>
+				</div>
+				<p> The following code inserts item4 to the end of the list.</p>
+				<div class="codeBox">
+<pre>
+$("ul").append("&lt;li&gt;Item4&lt;/li&gt;");
+</pre>
+				</div>
 			</div>
 		</div>
 		<table>
@@ -2175,16 +2721,16 @@ tagName, Class, ID 의 사용이 가능. (optional)</dd>
 				<h4>Argument</h4>
 				<dl>
 					<dt> htmlCode </dt>
-					<dd>문자열. 처음 자리에 삽입할 htmlCode </dd>
+					<dd> HTML code to insert. </dd>
 				</dl>
 			</div>
 			<div class="detailSection">
 				<h4>Return</h4>
-				<p>riff Object</p>
+				<p>Riff Object</p>
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p> 선택된 DOM Element들의 첫 자식( ChildNode )으로 htmlCode에 해당하는 DOM Element를 삽입한다. </p>
+				<p> The DOM element created by the inserted HTML code is inserted as the first child node of the selected DOM element.</p>
 			</div>
 		</div>
 		<table>
@@ -2218,7 +2764,7 @@ tagName, Class, ID 의 사용이 가능. (optional)</dd>
 	</div>
 	<!-- ******************  //API Detail ****************** -->
 	<!-- ******************  API Detail ****************** -->
-	<div id="wrapView">
+	<div id="wrapView"><!-- old -->
 		<h2>wrap()</h2>
 		<div class="detailPart">
 			<h3>wrap(<em> htmlCode </em>)</h3>
@@ -2226,16 +2772,35 @@ tagName, Class, ID 의 사용이 가능. (optional)</dd>
 				<h4>Argument</h4>
 				<dl>
 					<dt> htmlCode </dt>
-					<dd>문자열. 선택된 DOM Element 각각을 감쌀 Node를 만들기 위한 htmlCode. </dd>
+					<dd>HTML code to wrap the selected DOM element.</dd>
 				</dl>
 			</div>
 			<div class="detailSection">
 				<h4>Return</h4>
-				<p>riff Object</p>
+				<p>Riff Object</p>
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p>선택된 DOM Element 각각을 입력받은 htmlCode 로 감싼다. 즉, 선택된 DOM Element 각각이 htmlCode에 해당되는 DOM Element의 자식 노드가 된다.</p>
+				<p> Wraps the selected DOM elements with the inserted HTML code, so that each of the selected DOM elements becomes the children nodes of the htmlCode.</p>
+			</div>
+			<div class="detailSection">
+				<h4>Example</h4>
+				<p>The following is a HTML markup of a unordered list.</p>
+				<div class="codeBox">
+<pre>
+&lt;ul&gt;
+	&lt;li id="item1"&gt;Item 1&lt;/li&gt;
+	&lt;li id="item2"&gt;Item 2&lt;/li&gt;
+	&lt;li id="item3"&gt;Item 3&lt;/li&gt;
+&lt;/ul&gt;
+</pre>
+				</div>
+				<p> The following code adds item4 at the end of the list.</p>
+				<div class="codeBox">
+<pre>
+$("ul").wrap("&lt;b&gt;Item4&lt;/b&gt;");
+</pre>
+				</div>
 			</div>
 		</div>
 		<table>
@@ -2269,7 +2834,7 @@ tagName, Class, ID 의 사용이 가능. (optional)</dd>
 	</div>
 	<!-- ******************  //API Detail ****************** -->
 	<!-- ******************  API Detail ****************** -->
-	<div id="wrapAllView">
+	<div id="wrapAllView"><!-- old -->
 		<h2>wrapAll()</h2>
 		<div class="detailPart">
 			<h3>wrapAll(<em> htmlCode </em>)</h3>
@@ -2277,17 +2842,16 @@ tagName, Class, ID 의 사용이 가능. (optional)</dd>
 				<h4>Argument</h4>
 				<dl>
 					<dt> htmlCode </dt>
-					<dd>문자열. 선택된 DOM Element 전부를 감쌀 Node를 만들기 위한 htmlCode. </dd>
+					<dd>HTML code to wrap the selected DOM element.</dd>
 				</dl>
 			</div>
 			<div class="detailSection">
 				<h4>Return</h4>
-				<p>riff Object</p>
+				<p>Riff Object</p>
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p>	입력받은 htmlCode 으로, 선택된 DOM Element 모두를 감싸는 DOM Element 를 생성한다.
-				선택된 DOM Element 모두가, htmlCode로 생성된 DOM Element의 자식 노드가 된다.</p>
+				<p>	Wraps all of the selected DOM element with the inserted HTML code. All of the selected DOM elements become the children of DOM element created by the HTML code.</p>
 			</div>
 		</div>
 		<table>
@@ -2329,17 +2893,16 @@ tagName, Class, ID 의 사용이 가능. (optional)</dd>
 				<h4>Argument</h4>
 				<dl>
 					<dt> htmlCode </dt>
-					<dd>문자열. 선택된 DOM Element의 다음에 삽입 될 DOM Element에 해당하는 HTMLCode.</dd>
+					<dd> HTML code to insert. </dd>
 				</dl>
 			</div>
 			<div class="detailSection">
 				<h4>Return</h4>
-				<p>riff Object</p>
+				<p>Riff Object</p>
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p> 선택된 DOM Element 뒤에 HtmlCode를 추가한다.
-				즉, 선택된 DOM Element들의 다음에, htmlCode에 해당하는 DOM Element를 삽입한다.</p>
+				<p> Adds a DOM element created by the inserted HTML code to come behind the selected DOM element. </p>
 			</div>
 		</div>
 		<table>
@@ -2381,17 +2944,16 @@ tagName, Class, ID 의 사용이 가능. (optional)</dd>
 				<h4>Argument</h4>
 				<dl>
 					<dt> htmlCode </dt>
-					<dd>문자열. 선택된 DOM Element의 이전에 삽입 될 DOM Element에 해당하는 HTMLCode.</dd>
+					<dd> HTML code to insert. </dd>
 				</dl>
 			</div>
 			<div class="detailSection">
 				<h4>Return</h4>
-				<p>riff Object</p>
+				<p>Riff Object</p>
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p> 선택된 DOM Element 이전에 HtmlCode를 추가한다.
-				즉, 선택된 DOM Element들의 이전에, htmlCode에 해당하는 DOM Element를 삽입한다.</p>
+				<p> Adds a DOM element created by the inserted HTML code to come before the selected DOM element.</p>
 			</div>
 		</div>
 		<table>
@@ -2426,24 +2988,44 @@ tagName, Class, ID 의 사용이 가능. (optional)</dd>
 	<!-- ******************  //API Detail ****************** -->
 	<!-- ******************  API Detail ****************** -->
 	<div id="findView">
-		<h2>find()</h2>
+		<h2>find()</h2><!-- old -->
 		<div class="detailPart">
 			<h3>find(<em> [selector] </em>)</h3>
 			<div class="detailSection">
 				<h4>Argument</h4>
 				<dl>
 					<dt> selector (option)</dt>
-					<dd> 찿으려는 DOM Element를 검색하기 위한 CSS Selector Syntax String. (optional)</dd>
+					<dd> A string to select certain DOM elements within a set of selected DOM elements. Selector may be a tag name, class name, or ID. (optional)</dd>
 				</dl>
 			</div>
 			<div class="detailSection">
 				<h4>Return</h4>
-				<p>riff Object</p>
+				<p>Riff Object</p>
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p> 선택된 DOM Element의 자손 DOM Element 중, selector에 대응되는 DOM Element를 선택하여 반환
-한다. 인자값으로 문자열 이외의 값을 입력하면, 빈 객체를 반환한다. </p>
+				<p> Returns the children DOM elements of the selected DOM element which corresponds to the selector string. If the argument is not a vaild selector string, an empty Riff Object is returned.
+				</p>
+			</div>
+			<div class="detailSection">
+				<h4>Example</h4>
+				<p>The following is a HTML markup of a unordered list.</p>
+				<div class="codeBox">
+<pre>
+&lt;ul&gt;
+	&lt;li id="item1"&gt;Item 1&lt;/li&gt;
+	&lt;li id="item2"&gt;Item 2&lt;/li&gt;
+	&lt;li id="item3"&gt;Item 3&lt;/li&gt;
+&lt;/ul&gt;
+</pre>
+				</div>
+				<p> The following code finds and returns the child node where the ID is "item2" from the list above.
+				</p>
+				<div class="codeBox">
+<pre>
+$("ul").find("#item2");
+</pre>
+				</div>
 			</div>
 		</div>
 		<table>
@@ -2485,26 +3067,23 @@ tagName, Class, ID 의 사용이 가능. (optional)</dd>
 				<h4>Argument</h4>
 				<dl>
 					<dt> endCssStatus </dt>
-					<dd> 애니메이션의 원하는 css속성 목표치를 설정해주는 부분. </dd>
+					<dd> The desired CSS property values at the end of the animation. </dd>
 					<dt> speed </dt>
-					<dd> 애니메이션이 속도(목표치까지의 이동시간). “slow”, “normal”, “fast”혹은 ms 단위의 시간.</dd>
+					<dd> The speed or the duration of the animation ("slow", "normal", "fast", or time in milliseconds)</dd>
 					<dt> callbackFunction (option) </dt>
-					<dd> 애니메이션이 끝나고 실행되는 함수. (optional)</dd>
+					<dd> Funtion to execute at the end of the animation. (optional)</dd>
 					<dt> precallbackFunction (option) </dt>
-					<dd> 애니메이션 시작 전에 실행되는 함수. (optional) </dd>
+					<dd> Funtion to execute before the animation. (optional) </dd>
 				</dl>
 			</div>
 			<div class="detailSection">
 				<h4>Return</h4>
-				<p>riff Object</p>
+				<p>Riff Object</p>
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p> 선택된 DOM Element에 대하여 CSS 속성을 이용하여 에니메이션을 적용할 수있다.
-CSS Property 의 변화 할 값과 변화할 시간을 정한다.
-callback이 인자값으로 입력되면 애니메이션이 끝나고 실행된다.
-preCallback가 인자값으로 입력되면 애니메이션이 시작될 때 실행된다.
-애니메이션은 애니메이션Queue를 이용하여 관리된다.</p>
+				<p> Animates the selected DOM elements by using CSS properties. The selected DOM elements will change to the desired CSS property values at the specified speed or duration. If specified, the callback function and the precallback function will each run after and before the animation.
+				</p>
 			</div>
 		</div>
 		<table>
@@ -2551,14 +3130,13 @@ preCallback가 인자값으로 입력되면 애니메이션이 시작될 때 실
 			</div>
 			<div class="detailSection">
 				<h4>Return</h4>
-				<p>riff Object</p>
+				<p>Riff Object</p>
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p> animation queue를 비우고 현재 실행중인 animation까지 실행시킨다.
-즉, 애니메이션 Queue에 저장되어 있는 에니메이션들을 제거한다.
-이 때 만약 현재 애니메이션이 실행되고 있다면, 해당 애니메이션 까지는 실행이 진행되어 완료되고
-그 다음 애니메이션 부터는 실행이 시작되지 않는다.</p>
+				<p> 현재 실행되고있는 ANIMATION의 QUEUE를 삭제한다. ANIMATION이 동작중이면
+				Empties the animation queue after finishing the current animation.
+				</p>
 			</div>
 		</div>
 		<table>
@@ -2605,11 +3183,11 @@ preCallback가 인자값으로 입력되면 애니메이션이 시작될 때 실
 			</div>
 			<div class="detailSection">
 				<h4>Return</h4>
-				<p>riff Object</p>
+				<p>Riff Object</p>
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p> animation queue 를 비우고, 현재 실행중인 animation을 멈춘다.</p>
+				<p> Empties the animation queue and stops the animation that is currently running </p>
 			</div>
 		</div>
 		<table>
@@ -2646,45 +3224,24 @@ preCallback가 인자값으로 입력되면 애니메이션이 시작될 때 실
 	<div id="showView">
 		<h2>show()</h2>
 		<div class="detailPart">
-			<h3>show( )</h3>
+			<h3>show(<em> [speed], [callbackFunction] </em>)</h3>
 			<div class="detailSection">
 				<h4>Argument</h4>
 				<dl>
-					<dt> none </dt>
-					<dd> </dd>
+					<dt> speed (optional) </dt>
+					<dd> The speed or the duration of the animation ("slow", "normal", "fast", or time in milliseconds) (optional)</dd>
+					<dt> callbackFunction (optional)</dt>
+					<dd> The callback function that executes after the animation. (optional)</dd>
 				</dl>
 			</div>
 			<div class="detailSection">
 				<h4>Return</h4>
-				<p>riff Object</p>
+				<p>Riff Object</p>
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p>	지정한 객체를 화면에 나타낸다.
-					인자값이 입력되지 않으면, 선택한 DOM Element를 화면상에 표시하기 위해 display 속성을 block로 변경한다.</p>
-			</div>
-		</div>
-		<div class="detailPart">
-			<h3>show(<em> speed, [callbackFunction] </em>)</h3>
-			<div class="detailSection">
-				<h4>Argument</h4>
-				<dl>
-					<dt> speed </dt>
-					<dd> 애니메이션의 속도(CSS 속성 상태 변화 목표치까지의 이동시간). “slow”, “normal”, “fast”혹은 ms 단위의 시간. </dd>
-					<dt> callbackFunction (option)</dt>
-					<dd> 애니메이션이 끝나고 실행되는 함수. (optional)</dd>
-				</dl>
-			</div>
-			<div class="detailSection">
-				<h4>Return</h4>
-				<p>riff Object</p>
-			</div>
-			<div class="detailSection">
-				<h4>Description</h4>
-				<p> 지정한 객체를 화면에 나타낸다.
-				인자값이 입력되는 경우, 선택된 DOM Element를 나타나게 하는 애니메이션을 실행하기 위해 width, height, opacity값을 0에서 기존 값까지 동시에 변화시킨다.
-				이로 인해 객체의 투명도와 width, height 가 바뀌며 나타난다.
-				기존의 display속성이 있을 경우는 메소드 호출 후 display속성이 기존의 값으로 변화되고, 기존에 없었을 경우 “block”로 설정된다.</p>
+				<p> Shows the selected DOM element on screen. If the speed value is designated, the width, height, opacity of the DOM element are gradually increased from 0 to the original value simultaneously. If not, no animation effect is applied.
+				</p>
 			</div>
 		</div>
 		<table>
@@ -2721,43 +3278,23 @@ preCallback가 인자값으로 입력되면 애니메이션이 시작될 때 실
 	<div id="hideView">
 		<h2>hide()</h2>
 		<div class="detailPart">
-			<h3>hide( )</h3>
+			<h3>hide(<em> [speed], [callbackFunction] </em>)</h3>
 			<div class="detailSection">
 				<h4>Argument</h4>
 				<dl>
-					<dt> none </dt>
-					<dd> </dd>
+					<dt> speed (optional) </dt>
+					<dd> The speed or the duration of the animation ("slow", "normal", "fast", or time in milliseconds) (optional)</dd>
+					<dt> callbackFunction (optional)</dt>
+					<dd> The callback function that executes after the animation. (optional)</dd>
 				</dl>
 			</div>
 			<div class="detailSection">
 				<h4>Return</h4>
-				<p>riff Object</p>
+				<p>Riff Object</p>
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p>	지정한 객체를 화면에서 사라지게 한다. 인자값이 입력되지 않으면, 선택한 DOM Element를 화면상에서 가리기 위해 display 속성을 none으로 변경한다.</p>
-			</div>
-		</div>
-		<div class="detailPart">
-			<h3>hide(<em> speed, [callbackFunction] </em>)</h3>
-			<div class="detailSection">
-				<h4>Argument</h4>
-				<dl>
-					<dt> speed </dt>
-					<dd> 애니메이션의 속도(CSS 속성 상태 변화 목표치까지의 이동시간). “slow”, “normal”, “fast”혹은 ms 단위의 시간. </dd>
-					<dt> callbackFunction (option)</dt>
-					<dd> 애니메이션이 끝나고 실행되는 함수. (optional)</dd>
-				</dl>
-			</div>
-			<div class="detailSection">
-				<h4>Return</h4>
-				<p>riff Object</p>
-			</div>
-			<div class="detailSection">
-				<h4>Description</h4>
-				<p> 지정한 객체를 화면에서 사라지게 한다. 인자값이 입력되는 경우, 선택된 DOM Element를 가리는
-				애니메이션을 실행하기 위해 width, height, opacity값을 기존 값에서 0까지 동시에 변화시킨다.
-				메소드 호출 후 display속성은 “none”으로 설정된다. </p>
+				<p> Hides the selected DOM element from screen. If the speed value is designated, the width, height, opacity of the DOM element are gradually decreased to 0 from the original value simultaneously. If not, no animation effect is applied. </p>
 			</div>
 		</div>
 		<table>
@@ -2799,18 +3336,18 @@ preCallback가 인자값으로 입력되면 애니메이션이 시작될 때 실
 				<h4>Argument</h4>
 				<dl>
 					<dt> callBackFunction1 </dt>
-					<dd> 번갈아 실행할 함수 1 </dd>
+					<dd> callback Function 1 </dd>
 					<dt> callBackFunction2 </dt>
-					<dd> 번갈아 실행할 함수 2 </dd>
+					<dd> callback Function 2 </dd>
 				</dl>
 			</div>
 			<div class="detailSection">
 				<h4>Return</h4>
-				<p>riff Object</p>
+				<p>Riff Object</p>
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p>toggle() 함수가 실행될때마다, _func1, _func2 callback 함수가 번갈아 실행된다.</p>
+				<p> Whenever toggle() is executed, callBackFuntion1 and callBackFunction2 are alternately executed. </p>
 			</div>
 		</div>
 		<table>
@@ -2852,17 +3389,16 @@ preCallback가 인자값으로 입력되면 애니메이션이 시작될 때 실
 				<h4>Argument</h4>
 				<dl>
 					<dt> existEventName </dt>
-					<dd> 기존에 존재하는 이벤트 이름 문자열( ex: "onfocus" ) </dd>
+					<dd> Default event name string ( ex: "onfocus" ) </dd>
 				</dl>
 			</div>
 			<div class="detailSection">
 				<h4>Return</h4>
-				<p>riff Object</p>
+				<p>Riff Object</p>
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p> 배열.trigger( 이벤트 종류 )  배열 객체에 대해 순차적으로 [이벤트 종류] 를 실행한다.
-				"이벤트 종류"는 반드시 기존 존재 이벤트. Framework에서 정의한 artificial event 는 쓰면 안된다.</p>
+				<p> Successively executes array.trigger(event name) for every element of the array object. The event name must be a default event, and artificial events defined on Riff may not be used. </p>
 			</div>
 		</div>
 		<table>
@@ -2904,17 +3440,16 @@ preCallback가 인자값으로 입력되면 애니메이션이 시작될 때 실
 				<h4>Argument</h4>
 				<dl>
 					<dt> customEventName </dt>
-					<dd> Framework에서 정의한 Artificial Event 문자열( ex: "tap" ) </dd>
+					<dd> Artificial event name string defined on the framework ( ex: "tap" ) </dd>
 				</dl>
 			</div>
 			<div class="detailSection">
 				<h4>Return</h4>
-				<p>riff Object</p>
+				<p>Riff Object</p>
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p> 배열.trigger( 이벤트 종류 )  배열 객체에 대해 순차적으로 [이벤트 종류] 를 실행한다.
-				"이벤트 종류"는 반드시 Framework에서 정의한 Artificial Event이여야 한다.</p>
+				<p> Successively executes array.trigger(event name) for every element of the array object. Only artificial events defined on Riff may be used. </p>
 			</div>
 		</div>
 		<table>
@@ -2956,17 +3491,17 @@ preCallback가 인자값으로 입력되면 애니메이션이 시작될 때 실
 				<h4>Argument</h4>
 				<dl>
 					<dt> eventName </dt>
-					<dd> toggle을 설정할  Event 종류 문자열( ex: "tap" ) </dd>
+					<dd> The event type string to apply to trigger(). ( ex: "tap" ) </dd>
 				</dl>
 			</div>
 			<div class="detailSection">
 				<h4>Return</h4>
-				<p>riff Object</p>
+				<p>Riff Object</p>
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p> 배열.trigger( 이벤트 종류 )  배열 객체에 대해 순차적으로 [이벤트 종류] 를 실행.
-	만일 배열 객체 중 [이벤트 종류]에 대해 이벤트 핸들러가 설정되어 있지 않으면, 아무 일도 일어나지 않는다.</p>
+				<p> Successively triggers events for the selected DOM elements. If the event handlers for the triggered events are not specified, nothing happens.
+				</p>
 			</div>
 		</div>
 		<table>
@@ -3008,16 +3543,16 @@ preCallback가 인자값으로 입력되면 애니메이션이 시작될 때 실
 				<h4>Argument</h4>
 				<dl>
 					<dt> DOM Element </dt>
-					<dd> 이벤트를 추가할 DOM Element </dd>
+					<dd> DOM element to register the event to </dd>
 				</dl>
 			</div>
 			<div class="detailSection">
 				<h4>Return</h4>
-				<p>riff Object</p>
+				<p>Riff Object</p>
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p> 이벤트 추가 공통 함수. 전역변수설정에 있는 "touch"( widget ) / "mouse"( PC or SDK ) 값으로, 등록해야 할 이벤트를 판단한다. </p>
+				<p> Common event register function. Decided whether the event should be registered on "touch"( widget ) or "mouse"( PC or SDK ). </p>
 			</div>
 		</div>
 		<table>
@@ -3059,16 +3594,16 @@ preCallback가 인자값으로 입력되면 애니메이션이 시작될 때 실
 				<h4>Argument</h4>
 				<dl>
 					<dt> Event </dt>
-					<dd> DOM 객체에 대해, 이벤트 가능을 설정할 이벤트 문자열. ( "flickLeft" , "flickRight" , "flickUp" , "flickDown" , "drag" , "swipe" ,  "tap" , "longTap" , "doubleTap" , "touchStart" , "touchMove" , "touchEnd" ) </dd>
+					<dd> The name of the event to enable for the DOM element. ( "flickLeft" , "flickRight" , "flickUp" , "flickDown" , "drag" , "swipe" ,  "tap" , "longTap" , "doubleTap" , "touchStart" , "touchMove" , "touchEnd" ) </dd>
 				</dl>
 			</div>
 			<div class="detailSection">
 				<h4>Return</h4>
-				<p>riff Object</p>
+				<p>Riff Object</p>
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p> 객체의 event가 disable되었을때 사용되는 함수로, event를 enable 시켜주어 이벤트에 등록된 event handler 를 실행할 수 있도록 한다. </p>
+				<p> Enables events for the selected DOM elements that are disabled to allow the corresponding event handlers to be executed. </p>
 			</div>
 		</div>
 		<table>
@@ -3110,16 +3645,16 @@ preCallback가 인자값으로 입력되면 애니메이션이 시작될 때 실
 				<h4>Argument</h4>
 				<dl>
 					<dt> Event </dt>
-					<dd> DOM 객체에 대해, 이벤트 불가능을 설정할 이벤트 문자열. ( "flickLeft" , "flickRight" , "flickUp" , "flickDown" , "drag" , "swipe" ,  "tap" , "longTap" , "doubleTap" , "touchStart" , "touchMove" , "touchEnd" ) </dd>
+					<dd> The name of the event to disable for the DOM element. ( "flickLeft" , "flickRight" , "flickUp" , "flickDown" , "drag" , "swipe" ,  "tap" , "longTap" , "doubleTap" , "touchStart" , "touchMove" , "touchEnd" ) </dd>
 				</dl>
 			</div>
 			<div class="detailSection">
 				<h4>Return</h4>
-				<p>riff Object</p>
+				<p>Riff Object</p>
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p> event를 disable 시켜주어, 이벤트에 등록된 event handler 를 실행할 수 없도록 한다.  </p>
+				<p> Disables events for the selected DOM elements so the corresponding event handlers cannot be executed. </p>
 			</div>
 		</div>
 		<table>
@@ -3161,16 +3696,16 @@ preCallback가 인자값으로 입력되면 애니메이션이 시작될 때 실
 				<h4>Argument</h4>
 				<dl>
 					<dt> fnEventHandle </dt>
-					<dd> 이벤트가 발생하면 실행할 이벤트 핸들러 함수 </dd>
+					<dd> The event handler function to run when the event occurs. </dd>
 				</dl>
 			</div>
 			<div class="detailSection">
 				<h4>Return</h4>
-				<p>riff Object</p>
+				<p>Riff Object</p>
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p> drag 이벤트 등록 함수. 해당 이벤트에 대해 event hander 함수를 실행한다. </p>
+				<p> Registers the drag event, and executes the event handler. </p>
 			</div>
 		</div>
 		<table>
@@ -3212,16 +3747,16 @@ preCallback가 인자값으로 입력되면 애니메이션이 시작될 때 실
 				<h4>Argument</h4>
 				<dl>
 					<dt> fnEventHandle </dt>
-					<dd> 이벤트가 발생하면 실행할 이벤트 핸들러 함수 </dd>
+					<dd> The event handler function to run when the event occurs. </dd>
 				</dl>
 			</div>
 			<div class="detailSection">
 				<h4>Return</h4>
-				<p>riff Object</p>
+				<p>Riff Object</p>
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p> flickLeft 이벤트 등록 함수. 해당 이벤트에 대해 event hander 함수를 실행한다. </p>
+				<p> Registers the flickLeft event, and executes the event handler. </p>
 			</div>
 		</div>
 		<table>
@@ -3263,16 +3798,16 @@ preCallback가 인자값으로 입력되면 애니메이션이 시작될 때 실
 				<h4>Argument</h4>
 				<dl>
 					<dt> fnEventHandle </dt>
-					<dd> 이벤트가 발생하면 실행할 이벤트 핸들러 함수 </dd>
+					<dd> The event handler function to run when the event occurs. </dd>
 				</dl>
 			</div>
 			<div class="detailSection">
 				<h4>Return</h4>
-				<p>riff Object</p>
+				<p>Riff Object</p>
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p> flickRight 이벤트 등록 함수. 해당 이벤트에 대해 event hander 함수를 실행한다. </p>
+				<p> Registers the flickRight event, and executes the event handler. </p>
 			</div>
 		</div>
 		<table>
@@ -3314,16 +3849,16 @@ preCallback가 인자값으로 입력되면 애니메이션이 시작될 때 실
 				<h4>Argument</h4>
 				<dl>
 					<dt> fnEventHandle </dt>
-					<dd> 이벤트가 발생하면 실행할 이벤트 핸들러 함수 </dd>
+					<dd> The event handler function to run when the event occurs. </dd>
 				</dl>
 			</div>
 			<div class="detailSection">
 				<h4>Return</h4>
-				<p>riff Object</p>
+				<p>Riff Object</p>
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p> flickUp 이벤트 등록 함수. 해당 이벤트에 대해 event hander 함수를 실행한다. </p>
+				<p> Registers the flickUp event, and executes the event handler. </p>
 			</div>
 		</div>
 		<table>
@@ -3365,16 +3900,16 @@ preCallback가 인자값으로 입력되면 애니메이션이 시작될 때 실
 				<h4>Argument</h4>
 				<dl>
 					<dt> fnEventHandle </dt>
-					<dd> 이벤트가 발생하면 실행할 이벤트 핸들러 함수 </dd>
+					<dd> The event handler function to run when the event occurs. </dd>
 				</dl>
 			</div>
 			<div class="detailSection">
 				<h4>Return</h4>
-				<p>riff Object</p>
+				<p>Riff Object</p>
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p> flickDown 이벤트 등록 함수. 해당 이벤트에 대해 event hander 함수를 실행한다. </p>
+				<p> Registers the flickDown event, and executes the event handler. </p>
 			</div>
 		</div>
 		<table>
@@ -3416,16 +3951,16 @@ preCallback가 인자값으로 입력되면 애니메이션이 시작될 때 실
 				<h4>Argument</h4>
 				<dl>
 					<dt> fnEventHandle </dt>
-					<dd> 이벤트가 발생하면 실행할 이벤트 핸들러 함수 </dd>
+					<dd> The event handler function to run when the event occurs. </dd>
 				</dl>
 			</div>
 			<div class="detailSection">
 				<h4>Return</h4>
-				<p>riff Object</p>
+				<p>Riff Object</p>
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p> tap 이벤트 등록 함수. 해당 이벤트에 대해 event hander 함수를 실행한다. </p>
+				<p> Registers the tap event, and executes the event handler. </p>
 			</div>
 		</div>
 		<table>
@@ -3467,19 +4002,18 @@ preCallback가 인자값으로 입력되면 애니메이션이 시작될 때 실
 				<h4>Argument</h4>
 				<dl>
 					<dt> fnEventHandle </dt>
-					<dd> 이벤트가 발생하면 실행할 이벤트 핸들러 함수 </dd>
+					<dd> The event handler function to run when the event occurs. </dd>
 					<dt> touchTime (option)</dt>
-					<dd> 숫자. millisecond단위이고, long tap이 걸리는 기준시간을 설정한다. (optional). </dd>
+					<dd> The duration of the long tap in milliseconds. (optional). </dd>
 				</dl>
 			</div>
 			<div class="detailSection">
 				<h4>Return</h4>
-				<p>riff Object</p>
+				<p>Riff Object</p>
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p> longTap 이벤트 등록 함수. 해당 이벤트에 대해 event hander 함수를 실행한다.
-				touchTime을 지정할 경우, 해당 DOM Element에 대해 long tap 이벤트 판정 기준시간이 설정한 값으로 변경된다. </p>
+				<p> Registers the longTap event, and executes the event handler. If touchTime is specified, the duration of the longTap is changed to the specified value.</p>
 			</div>
 		</div>
 		<table>
@@ -3521,16 +4055,16 @@ preCallback가 인자값으로 입력되면 애니메이션이 시작될 때 실
 				<h4>Argument</h4>
 				<dl>
 					<dt> fnEventHandle </dt>
-					<dd> 이벤트가 발생하면 실행할 이벤트 핸들러 함수 </dd>
+					<dd> The event handler function to run when the event occurs. </dd>
 				</dl>
 			</div>
 			<div class="detailSection">
 				<h4>Return</h4>
-				<p>riff Object</p>
+				<p>Riff Object</p>
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p> doubleTap 이벤트 등록 함수. 해당 이벤트에 대해 event hander 함수를 실행한다. </p>
+				<p> Registers the doubleTap event, and executes the event handler. </p>
 			</div>
 		</div>
 		<table>
@@ -3572,16 +4106,16 @@ preCallback가 인자값으로 입력되면 애니메이션이 시작될 때 실
 				<h4>Argument</h4>
 				<dl>
 					<dt> fnEventHandle </dt>
-					<dd> 이벤트가 발생하면 실행할 이벤트 핸들러 함수 </dd>
+					<dd> The event handler function to run when the event occurs. </dd>
 				</dl>
 			</div>
 			<div class="detailSection">
 				<h4>Return</h4>
-				<p>riff Object</p>
+				<p>Riff Object</p>
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p> touchStart 이벤트 등록 함수. 해당 이벤트에 대해 event hander 함수를 실행한다. </p>
+				<p> Registers the touchStart event, and executes the event handler.</p>
 			</div>
 		</div>
 		<table>
@@ -3623,16 +4157,16 @@ preCallback가 인자값으로 입력되면 애니메이션이 시작될 때 실
 				<h4>Argument</h4>
 				<dl>
 					<dt> fnEventHandle </dt>
-					<dd> 이벤트가 발생하면 실행할 이벤트 핸들러 함수 </dd>
+					<dd> The event handler function to run when the event occurs. </dd>
 				</dl>
 			</div>
 			<div class="detailSection">
 				<h4>Return</h4>
-				<p>riff Object</p>
+				<p>Riff Object</p>
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p> touchMove 이벤트 등록 함수. 해당 이벤트에 대해 event hander 함수를 실행한다. </p>
+				<p> Registers the touchMove event, and executes the event handler. </p>
 			</div>
 		</div>
 		<table>
@@ -3674,16 +4208,16 @@ preCallback가 인자값으로 입력되면 애니메이션이 시작될 때 실
 				<h4>Argument</h4>
 				<dl>
 					<dt> fnEventHandle </dt>
-					<dd> 이벤트가 발생하면 실행할 이벤트 핸들러 함수 </dd>
+					<dd> The event handler function to run when the event occurs. </dd>
 				</dl>
 			</div>
 			<div class="detailSection">
 				<h4>Return</h4>
-				<p>riff Object</p>
+				<p>Riff Object</p>
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p> touchEnd 이벤트 등록 함수. 해당 이벤트에 대해 event hander 함수를 실행한다. </p>
+				<p> Registers the touchEnd event, and executes the event handler. </p>
 			</div>
 		</div>
 		<table>
@@ -3717,7 +4251,7 @@ preCallback가 인자값으로 입력되면 애니메이션이 시작될 때 실
 	</div>
 	<!-- ******************  //API Detail ****************** -->
 	<!-- ******************  API Detail ****************** -->
-	<div id="swipeView">
+	<div id="swipeView"><!-- old -->
 		<h2>swipe()</h2>
 		<div class="detailPart">
 			<h3>swipe(<em> isFlickEnd , verlocityPercent, fnEventHandle </em>)</h3>
@@ -3725,42 +4259,36 @@ preCallback가 인자값으로 입력되면 애니메이션이 시작될 때 실
 				<h4>Argument</h4>
 				<dl>
 					<dt> isFlickEnd </dt>
-					<dd> boolean. swipe시에 swipe객체를 감싸고 있는 box객체를 넘을지 안넘을지 선언해주는 부분. true일경우 box객체를 넘을수없다. </dd>
+					<dd> A boolean value to check if the swipe object goes over the wrapping box object. The swipe object cannot go over the box object if the value is true. </dd>
 					<dt> verlocityPercent </dt>
-					<dd> number. swipe 이벤트 중 DOM Element가 자동으로 움직일때, 움직이는 속도를 퍼센트 단위로 설정해주는 부분.</dd>
+					<dd> The movement speed of the swipe event in percentage.</dd>
 					<dt> fnEventHandle </dt>
-					<dd> 이벤트가 발생하면 실행할 이벤트 핸들러 함수 </dd>
+					<dd> The event handler function to run when the event occurs. </dd>
 				</dl>
 			</div>
 			<div class="detailSection">
 				<h4>Return</h4>
-				<p>riff Object</p>
+				<p>Riff Object</p>
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
 				<p>
-swipe event 는 darg, flickRight, flickLeft가 합쳐진 event 이다.<br>
-DOM Elenent에 대해 drag event -> flick event 가 발생한다.<br>
-이 때 이벤트가 적용중인 DOM Element는, 자연스럽게 움직이며( CSS의 left값 변환) 이동하다 멈춘다. <br>
-그러므로 움직이는 DOM Element를 감싸주는 box 역할을 하는 DOM Element가 필요하다. <br>
-DOM Element에 swipe 이벤트를 적용한 후 swipe 이벤트가 발생하면, 인자값인 _fnEventHandle 가 작동한다.<br>
-_fnEventHandle 에는, swipe의 상태( drag/ 감속이동 / 정지 )를 알 수 있는 인자값을 전달한다.<br>
-_fnEventHandle 함수에 전달되는 인자값은 다음과 같다.<br>
-	_fnEventHandler( state, ptx, pty )<br>
-		state : swipe event가 적용되어 움직이는 DOM Element의 현재 상황을 나타나는 값.<br>
-			문자열이며, 다음의 중 한 가지를 반환한다.<br>
-				"dragMove" : swipe event 중 drag 가 발생중일 때 전달하는 값.<br>
-				"leftMove" : swipe event가 발생 해서 왼쪽으로 움직이기 시작할 때 최초로 한번 전달하는 값.<br>
-				"rightMove" : swipe event가 발생 해서 오른쪽으로 움직일 때 최초로 한번 전달하는 값.<br>
-				"move" : swipe event가 발생하고 움직일 때 전달하는 값.<br>
-				"leftEnd" : swipe event가 발생하여 왼쪽 끝으로 이동 하였을 때에 전달하는 값.<br>
-				"rightEnd" : swipe event가 발생하여 오른쪽 끝으로 이동 하였을 때에 전달하는 값.<br>
-				"end" : swipe event가 끝났을 때에 전달하는 값.<br>
-			고로, 예를 들어 swipe이 왼쪽에서 오른쪽으로 발생할 경우, state는 다음과 같은 순서로 값을 전달한다.<br>
-			"dragMove" -> "dragMove" -> ... "dragMove" -> "rightMove" -> "move" -> "move" ... "move" -> "rightEnd" -> "end"<br>
-		ptx : swipe event 중 객체의 left속성 위치를 나타낸다.<br>
-		pty : swipe event 중 객체의 top속성 위치를 나타낸다.<br>
-</p>
+				The swipe event is a combination of the drag, flickRight, flickLeft events.
+				The parameter of the event handler are as following<br>
+				_fnEventHandler( state, ptx, pty )<br>
+				state: flag to distinguish the current state of the drag event<br>
+				"leftMove" : flag to distinguish when the swipe event occurs and starts moving to the left.<br>
+				"rightMove" : flag to distinguish when the swipe event occurs and starts moving to the right.<br>
+				"move" : flag to distinguish when the swipe event occurs and moves.<br>
+				"leftEnd" : flag to distinguish when the swipe event occurs and moves to the left end of the screen.<br>
+				"rightEnd" : flag to distinguish when the swipe event occurs and moves to the right end of the	screen.<br>
+				"end" : flag to distinguish the end of the swipe.
+				ptx: the left coordinate of the DOM element on the swipe event.<br>
+				pty: the top coordinate of the DOM element on the swipe event.<br>
+				<br>
+				Therefore, if a swipe event occurs from left to right, the state values change as the following:<br>
+				"dragMove" -> "dragMove" -> ... "dragMove" -> "rightMove" -> "move" -> "move" ... "move" -> "rightEnd" -> "end"
+				</p>
 			</div>
 		</div>
 		<table>
@@ -3794,7 +4322,7 @@ _fnEventHandle 함수에 전달되는 인자값은 다음과 같다.<br>
 	</div>
 	<!-- ******************  //API Detail ****************** -->
 	<!-- ******************  API Detail ****************** -->
-	<div id="addEventByTypeView">
+	<div id="addEventByTypeView" style="display: none;">
 		<h2>addEventByType()</h2>
 		<div class="detailPart">
 			<h3>addEventByType(<em> eventType, fnEventHandle </em>)</h3>
@@ -3804,16 +4332,16 @@ _fnEventHandle 함수에 전달되는 인자값은 다음과 같다.<br>
 					<dt> eventType </dt>
 					<dd> 문자열. 합성이벤트의 이름. </dd>
 					<dt> fnEventHandle </dt>
-					<dd> 이벤트가 발생하면 실행할 이벤트 핸들러 함수 </dd>
+					<dd> The event handler function to run when the event occurs. </dd>
 				</dl>
 			</div>
 			<div class="detailSection">
 				<h4>Return</h4>
-				<p>riff Object</p>
+				<p>Riff Object</p>
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p> 인자값으로 들어온 함수를 DOM Element에 적용한다. </p>
+				<p> Applies the callback function to the designated event of the DOM element. </p>
 			</div>
 		</div>
 		<table>
@@ -3858,7 +4386,7 @@ _fnEventHandle 함수에 전달되는 인자값은 다음과 같다.<br>
 	<div id="sizeView">
 		<h2>size()</h2>
 		<div class="detailPart">
-			<h3>next(<em>[selector]</em>)</h3>
+			<h3>size(<em></em>)</h3>
 			<div class="detailSection">
 				<h4>Argument</h4>
 				<dl>
@@ -3867,11 +4395,11 @@ _fnEventHandle 함수에 전달되는 인자값은 다음과 같다.<br>
 			</div>
 			<div class="detailSection">
 				<h4>Return</h4>
-				<p>질의된 DOM Element 의 갯수를 반환. </p>
+				<p> The number of the selected DOM elements.</p>
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p> 선택된 DOM Element의 갯수를 반환한다.</p>
+				<p> Returns the number of the selected DOM elements.</p>
 			</div>
 		</div>
 
@@ -3916,7 +4444,7 @@ _fnEventHandle 함수에 전달되는 인자값은 다음과 같다.<br>
 				<h4>Argument</h4>
 				<dl>
 					<dt>string</dt>
-					<dd> 앞, 뒤 공백을 제거할 문자열 </dd>
+					<dd> String to trim </dd>
 				</dl>
 			</div>
 			<div class="detailSection">
@@ -3925,7 +4453,13 @@ _fnEventHandle 함수에 전달되는 인자값은 다음과 같다.<br>
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p>선택된 문자열의 맨 앞과 맨 뒤에 공백이 있다면 제거한후에 반환한다.</p>
+				<p> Trims all white-space at the beginning and end of the string and returns it. </p>
+			</div>
+			<div class="detailSection">
+				<h4>Example</h4>
+				<div class="codeBox">
+					<pre>riff.trim( string );</pre>
+				</div>
 			</div>
 		</div>
 
@@ -3970,7 +4504,7 @@ _fnEventHandle 함수에 전달되는 인자값은 다음과 같다.<br>
 				<h4>Argument</h4>
 				<dl>
 					<dt>string</dt>
-					<dd>카멜 표기법으로 변환할 문자열.</dd>
+					<dd>String to camelize.</dd>
 				</dl>
 			</div>
 			<div class="detailSection">
@@ -3979,9 +4513,13 @@ _fnEventHandle 함수에 전달되는 인자값은 다음과 같다.<br>
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p>선택된 문자열을 카멜 표기법으로 변환한 후 반환한다.
-						( ex: str-str => strStr )
-				</p>
+				<p>Returns the camelized argument string. ( ex: str-str => strStr ) </p>
+			</div>
+			<div class="detailSection">
+				<h4>Example</h4>
+				<div class="codeBox">
+					<pre>riff.camelize( string );</pre>
+				</div>
 			</div>
 		</div>
 
@@ -4025,7 +4563,7 @@ _fnEventHandle 함수에 전달되는 인자값은 다음과 같다.<br>
 				<h4>Argument</h4>
 				<dl>
 					<dt>url</dt>
-					<dd>이동할 링크주소</dd>
+					<dd>URL address to move to</dd>
 				</dl>
 			</div>
 			<div class="detailSection">
@@ -4034,7 +4572,14 @@ _fnEventHandle 함수에 전달되는 인자값은 다음과 같다.<br>
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p>새 링크로 이동하는 함수. phone의 경우 widget함수를 이용하고 PC의 경우 해당 링크로 이동한다. 함수 실행에 성공하면 true, 실패하면( 예: 올바르지 않은 인자값 ) false를 반환한다. </p>
+				<p>	Moves to a new link. The widget.openURL() function is used on a mobile device, window.location.href is used on a PC. Returns true if openURL() succesfully executes, false if not.
+				</p>
+			</div>
+			<div class="detailSection">
+				<h4>Example</h4>
+				<div class="codeBox">
+					<pre>riff.openURL( url );</pre>
+				</div>
 			</div>
 		</div>
 
@@ -4078,7 +4623,7 @@ _fnEventHandle 함수에 전달되는 인자값은 다음과 같다.<br>
 				<h4>Argument</h4>
 				<dl>
 					<dt>string</dt>
-					<dd>ID 검색 형식으로 변환할 문자열</dd>
+					<dd>String to change to ID format.</dd>
 				</dl>
 			</div>
 			<div class="detailSection">
@@ -4087,7 +4632,13 @@ _fnEventHandle 함수에 전달되는 인자값은 다음과 같다.<br>
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p>문자열을 CSS의 ID 검색 형식으로 바꾸는 함수. 문자열 앞에 "#" 가 없으면 붙이고, 있으면 그대로 반환.</p>
+				<p>Changes and returns the string to CSS ID format. If the string does begins with "#" the string is returned as is, if else "#" is added to the beginning of the string and returned.</p>
+			</div>
+			<div class="detailSection">
+				<h4>Example</h4>
+				<div class="codeBox">
+					<pre>riff.toID( string );</pre>
+				</div>
 			</div>
 		</div>
 
@@ -4139,8 +4690,13 @@ _fnEventHandle 함수에 전달되는 인자값은 다음과 같다.<br>
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p>PC, Emulator, widget 중 현재 어디서 작동중인지 판단,
-				SDK( emulator ) 에서 실행중이면 true, 그 이외에는 false 반환. </p>
+				<p> Checks if the framework is running on a SDK (emulator), PC or a mobile device. Returns true for emulator, false for all else.</p>
+			</div>
+			<div class="detailSection">
+				<h4>Example</h4>
+				<div class="codeBox">
+					<pre>riff.isEmulator();</pre>
+				</div>
 			</div>
 		</div>
 
@@ -4179,25 +4735,32 @@ _fnEventHandle 함수에 전달되는 인자값은 다음과 같다.<br>
 	<div id="queueView">
 		<h2>queue()</h2>
 		<div class="detailPart">
-			<h3>queue(<em>data</em>)</h3>
+			<h3>queue(<em>id</em>)</h3>
 			<div class="detailSection">
 				<h4>Argument</h4>
 				<dl>
-					<dt>data</dt>
-					<dd>queue 에 저장한 animation 효과 배열에 대한 key값</dd>
+					<dt>id</dt>
+					<dd>The key value of te animiation effects array stored on the queue.</dd>
 				</dl>
 			</div>
 			<div class="detailSection">
 				<h4>Return</h4>
 				<p>
-			입력한 인자값이 문자열 "clear" 일 때 : null<br>
-			입력한 인자값을 key 로 하는 animation 효과 data가 존재하지 않을 때 : null<br>
-			입력한 인자값을 key 로 하는 animation 효과 data가 존재할 때 : animation 효과 data.<br>
+					If the parameter is "clear" : null<br>
+					If the animation effects that match the key does not exist : null<br>
+					If the animation effects that match the key exists : animation effects data<br>
 				</p>
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
 				<p></p>
+			</div>
+			<div class="detailSection">
+				<h4>Example</h4>
+				<p>Gets the animation queue with riffAnimateQueue.</p>
+				<div class="codeBox">
+					<pre>riff.queue( "riffAnimateQueue" );</pre>
+				</div>
 			</div>
 		</div>
 
@@ -4207,14 +4770,14 @@ _fnEventHandle 함수에 전달되는 인자값은 다음과 같다.<br>
 				<h4>Argument</h4>
 				<dl>
 					<dt>data</dt>
-					<dd>queue 에 저장한 animation 효과 배열에 대한 key값</dd>
+					<dd>The animation effect to store on the queue</dd>
 				</dl>
 			</div>
 			<div class="detailSection">
 				<h4>Argument</h4>
 				<dl>
 					<dt>id</dt>
-					<dd>ID 검색 형식으로 변환할 문자열</dd>
+					<dd>The key value of te animiation effects array to store on the queue.</dd>
 				</dl>
 			</div>
 			<div class="detailSection">
@@ -4223,9 +4786,14 @@ _fnEventHandle 함수에 전달되는 인자값은 다음과 같다.<br>
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p>queue 에 저장한 animation 효과 배열을 저장. <br>
-				Animation용 전역 배열( riffGlobal.queueList )에서 _id값을 키 값으로 animation queue를 가져온다.<br>
-				만일 id에 해당하는 animation queue에 animation 효과가 없을 경우, _data 를 추가한다.</p>
+				<p> Stores animation effects on to the animation queue. </p>
+			</div>
+			<div class="detailSection">
+				<h4>Example</h4>
+				<p>Stores data object on to the animation queue as riffAnimateQueue.</p>
+				<div class="codeBox">
+					<pre>riff.queue({"prop":_prop,"time":_time,"func":_func,"pre":_preFunc},"riffAnimateQueue");</pre>
+				</div>
 			</div>
 		</div>
 
@@ -4276,7 +4844,13 @@ _fnEventHandle 함수에 전달되는 인자값은 다음과 같다.<br>
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p>현재 작동이 PC 인지 단말( 전화기 ) 인지 판단, 위젯 객체가 true 반환, 없으면 false 반환</p>
+				<p>Checks if the framework is running on a PC or a mobile device. Returns true for mobile devices.</p>
+			</div>
+			<div class="detailSection">
+				<h4>Example</h4>
+				<div class="codeBox">
+					<pre>riff.isWidget();</pre>
+				</div>
 			</div>
 		</div>
 
@@ -4311,30 +4885,38 @@ _fnEventHandle 함수에 전달되는 인자값은 다음과 같다.<br>
 	<!-- ******************  //API Detail ****************** -->
 
 	<!-- ******************  API Detail ****************** -->
-	<div id="moveView">
-		<h2>move()</h2>
+	<div id="goView">
+		<h2>go()</h2>
 		<div class="detailPart">
-			<h3>move(<em>page, [option]</em>)</h3>
+			<h3>go(<em>page, [option]</em>)</h3>
 			<div class="detailSection">
 				<h4>Argument</h4>
 				<dl>
 					<dt>page</dt>
-					<dd>이동할 페이지의 DOM Element의 ID</dd>
+					<dd> The DOM element ID of the page to move to.</dd>
 				</dl>
 				<dl>
 					<dt>option(optional)</dt>
-					<dd>페이지 이동시 적용할 효과 (optional)</dd>
+					<dd> Transition effects to be applied when moving between pages (optional).</dd>
 				</dl>
 			</div>
 			<div class="detailSection">
 				<h4>Return</h4>
-				<p>팝업 또는 페이지 이동 시 함수를 호출한 결과값.</p>
+				<p> The result value riff.scene() or riff.popup().</p>
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p>navigation 기능으로 페이지로 이동에 쓰인다. <br>#id 혹은 id 로 접근가능하며, 글로벌 변수엔 # 붙인것까지 저장한다. <br>
-				팝업일 경우는 반환값으로 riff.popup 함수를 호출하고, 일반적인 페이지 이동시 반환값으로 riff.scene 함수를 호출한다.
+				<p>Used for navigating between pages.<br>
+				The pages are accessible by #id or id, and the global variable is stored with # prepened to the id.<br>
+				If the page is a popup, riff.popup() is called as return value. If the page is a ordinary page, riff.scene() is called as return value.
 				</p>
+			</div>
+			<div class="detailSection">
+				<h4>Example</h4>
+				<p> The following code moves to the index Scene when the idle Scene is clicked.</p>
+				<div class="codeBox">
+					<pre>$("#idle").tap(function(){ $.go("#index"); });</pre>
+				</div>
 			</div>
 		</div>
 
@@ -4378,16 +4960,23 @@ _fnEventHandle 함수에 전달되는 인자값은 다음과 같다.<br>
 				<h4>Argument</h4>
 				<dl>
 					<dt>option(optional)</dt>
-					<dd>페이지 이동시 효과</dd>
+					<dd> Transition effects to be applied when moving between pages (optional).</dd>
 				</dl>
 			</div>
 			<div class="detailSection">
 				<h4>Return</h4>
-				<p>riff.scene 함수를 호출한 결과값.</p>
+				<p> The result value riff.scene().</p>
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p>뒤로가기 기능 <br>반환값으로 riff.scene 함수를 호출한다.</p>
+				<p>Moves to the previous scene.<br>
+				riff.scnene() is called as return value.</p>
+			</div>
+			<div class="detailSection">
+				<h4>Example</h4>
+				<div class="codeBox">
+					<pre>riff.back();</pre>
+				</div>
 			</div>
 		</div>
 
@@ -4431,21 +5020,22 @@ _fnEventHandle 함수에 전달되는 인자값은 다음과 같다.<br>
 				<h4>Argument</h4>
 				<dl>
 					<dt>scene</dt>
-					<dd>이동할 페이지의 DOM Element의 ID</dd>
+					<dd> The DOM element ID of the page to move to.</dd>
 				</dl>
 				<dl>
 					<dt>option(optional)</dt>
-					<dd>페이지 이동시 효과</dd>
+					<dd>Transition effects to be applied when moving between pages (optional).</dd>
 				</dl>
 			</div>
 			<div class="detailSection">
 				<h4>Return</h4>
-				<p>riff.scene.move 또는 riff.scene.back 함수를 호출한 결과값.</p>
+				<p> The result value of riff.scene.go() or riff.scene.back().</p>
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p>navigation 기능으로 페이지로 이동에 쓰인다. <br>#id 혹은 id 로 접근가능하며, 글로벌 변수엔 # 붙인것까지 저장한다. <br>
-						반환값으로는 scene의 타입을 확인 후 string 이면 riff.scene.move 함수를 호출하고, scene의 타입이 string 이 아닐 경우 riff.scene.back 함수를 호출한다.
+				<p> Used for navigating between pages.<br>
+				The pages are accessible by #id or id, and the global variable is stored with # prepened to the id.<br>
+				If the scene type value is a string, then riff.scene.go() is called, if the scene type value is not a string, riff.scene.back() is called.
 				</p>
 			</div>
 		</div>
@@ -4482,19 +5072,19 @@ _fnEventHandle 함수에 전달되는 인자값은 다음과 같다.<br>
 	<!-- ******************  //API Detail ****************** -->
 
 	<!-- ******************  API Detail ****************** -->
-	<div id="sceneMoveView">
-		<h2>scene.move()</h2>
+	<div id="sceneGoView">
+		<h2>scene.go()</h2>
 		<div class="detailPart">
-			<h3>scene.move(<em>scene, [option]</em>)</h3>
+			<h3>scene.go(<em>scene, [option]</em>)</h3>
 			<div class="detailSection">
 				<h4>Argument</h4>
 				<dl>
 					<dt>scene</dt>
-					<dd>이동할 페이지의 DOM Element의 ID</dd>
+					<dd>The DOM element ID of the page to move to.</dd>
 				</dl>
 				<dl>
 					<dt>option(optional)</dt>
-					<dd>페이지 이동시 효과</dd>
+					<dd>Transition effects to be applied when moving between scenes (optional).</dd>
 				</dl>
 			</div>
 			<div class="detailSection">
@@ -4503,8 +5093,9 @@ _fnEventHandle 함수에 전달되는 인자값은 다음과 같다.<br>
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p>navigation 기능으로 페이지로 이동에 쓰인다. <br>#id 혹은 id 로 접근가능하며, 글로벌 변수엔 # 붙인것까지 저장한다. <br>
-						해당하는 scene으로 이동한다.
+				<p> Used for navigating between pages.<br>
+				The pages are accessible by #id or id, and the global variable is stored with # prepened to the id.<br>
+				Moves to the corresponding scene.
 				</p>
 			</div>
 		</div>
@@ -4549,7 +5140,7 @@ _fnEventHandle 함수에 전달되는 인자값은 다음과 같다.<br>
 				<h4>Argument</h4>
 				<dl>
 					<dt>option(optional)</dt>
-					<dd>페이지 이동시 효과</dd>
+					<dd>Transition effects to be applied when moving between scenes (optional).</dd>
 				</dl>
 			</div>
 			<div class="detailSection">
@@ -4558,7 +5149,7 @@ _fnEventHandle 함수에 전달되는 인자값은 다음과 같다.<br>
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p>이전 scene으로 이동한다.</p>
+				<p>Moves back to the previous scene.</p>
 			</div>
 		</div>
 
@@ -4602,22 +5193,29 @@ _fnEventHandle 함수에 전달되는 인자값은 다음과 같다.<br>
 				<h4>Argument</h4>
 				<dl>
 					<dt>popup</dt>
-					<dd>이동할 페이지의 DOM Element의 popupID</dd>
+					<dd>The DOM element's popupID of the page to move to.</dd>
 				</dl>
 				<dl>
 					<dt>option(optional)</dt>
-					<dd>페이지 이동시 효과</dd>
+					<dd>Transition effects to be applied when moving between pages (optional).</dd>
 				</dl>
 			</div>
 			<div class="detailSection">
 				<h4>Return</h4>
-				<p>riff.popup.move 또는 riff.popup.back 함수를 호출한 결과값.</p>
+				<p> The result values of riff.popup.go() or riff.popup.back().</p>
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p>지정된 ID( _popup )를 popup scene으로 띄운다. <br>#id 혹은 id 로 접근가능하다.<br>
-					popup의 타입이 string 일경우 반환값으로 riff.popup.move 함수를 호출하고, 타입이 string이 아닐 경우 riff.popup.back 함수를 호출한다.
+				<p> Shows the designated ID( _popup ) as a popup scene.<br>
+				The popups are accesible with #id or id.<br>
+				If the popup type is a string then riff.popup.go() will be returned, if popup type is not a string then riff.popup.back() will be returned.
 				</p>
+			</div>
+			<div class="detailSection">
+				<h4>Example</h4>
+				<div class="codeBox">
+					<pre>riff.popup();</pre>
+				</div>
 			</div>
 		</div>
 
@@ -4653,19 +5251,19 @@ _fnEventHandle 함수에 전달되는 인자값은 다음과 같다.<br>
 	<!-- ******************  //API Detail ****************** -->
 
 	 <!-- ******************  API Detail ****************** -->
-	<div id="popupMoveView">
-		<h2>popup.move()</h2>
+	<div id="popupGoView">
+		<h2>popup.go()</h2>
 		<div class="detailPart">
-			<h3>popup.move(<em>popup, [option]</em>)</h3>
+			<h3>popup.go(<em>popup, [option]</em>)</h3>
 			<div class="detailSection">
 				<h4>Argument</h4>
 				<dl>
 					<dt>popup</dt>
-					<dd>이동할 페이지의 DOM Element의 popupID</dd>
+					<dd>The DOM element's popupID of the page to move to.</dd>
 				</dl>
 				<dl>
 					<dt>option(optional)</dt>
-					<dd>페이지 이동시 효과</dd>
+					<dd>Transition effects to be applied when moving between pages (optional).</dd>
 				</dl>
 			</div>
 			<div class="detailSection">
@@ -4674,11 +5272,9 @@ _fnEventHandle 함수에 전달되는 인자값은 다음과 같다.<br>
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p>해당 ID의 popup scene를 띄운다.</p>
+				<p> Shows the popup scene of the corresponding ID.</p>
 			</div>
 		</div>
-
-
 		<table>
 			<caption>Version History</caption>
 			<colgroup>
@@ -4718,7 +5314,7 @@ _fnEventHandle 함수에 전달되는 인자값은 다음과 같다.<br>
 				<h4>Argument</h4>
 				<dl>
 					<dt>option(optional)</dt>
-					<dd>페이지 이동시 효과</dd>
+					<dd>Transition effects to be applied when moving between pages (optional).</dd>
 				</dl>
 			</div>
 			<div class="detailSection">
@@ -4727,7 +5323,7 @@ _fnEventHandle 함수에 전달되는 인자값은 다음과 같다.<br>
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p>현재 화면에 떠 있는 popup을 지운다.</p>
+				<p> Removes the current popup.</p>
 			</div>
 		</div>
 
@@ -4771,15 +5367,15 @@ _fnEventHandle 함수에 전달되는 인자값은 다음과 같다.<br>
 				<h4>Argument</h4>
 				<dl>
 					<dt>on</dt>
-					<dd>보여질 riff Object</dd>
+					<dd> Riff Object to show </dd>
 				</dl>
 				<dl>
 					<dt>off</dt>
-					<dd>감춰지는 riff Object</dd>
+					<dd> Riff Object to hide </dd>
 				</dl>
 				<dl>
 					<dt>option(optional)</dt>
-					<dd>효과</dd>
+					<dd> Transition options </dd>
 				</dl>
 			</div>
 			<div class="detailSection">
@@ -4788,7 +5384,7 @@ _fnEventHandle 함수에 전달되는 인자값은 다음과 같다.<br>
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p>화면 이동시 보여지는 효과를 설정해준다.</p>
+				<p> Sets the screen transition effects.</p>
 			</div>
 		</div>
 
@@ -4832,11 +5428,11 @@ _fnEventHandle 함수에 전달되는 인자값은 다음과 같다.<br>
 				<h4>Argument</h4>
 				<dl>
 					<dt>width(optional)</dt>
-					<dd>변경할 너비값</dd>
+					<dd>Width value to resize to.</dd>
 				</dl>
 				<dl>
 					<dt>height(optional)</dt>
-					<dd>변경할 높이값</dd>
+					<dd>Height value to resize to.</dd>
 				</dl>
 			</div>
 			<div class="detailSection">
@@ -4845,7 +5441,7 @@ _fnEventHandle 함수에 전달되는 인자값은 다음과 같다.<br>
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p>h 현재 페이지의 사이즈를 줄인다.<br>위젯 객체가 있으면 위젯의 사이즈를 줄이고, 없으면 윈도우 사이즈 줄임<br>width, height가 둘다 인자로 들어오지 않으면 위젯 활성화 크기인 480, 800으로 변경</p>
+				<p> Resets the current window size.<br>If a widget object exists, the widget is resized, if not the window object is resized.</p>
 			</div>
 		</div>
 
@@ -4889,16 +5485,16 @@ _fnEventHandle 함수에 전달되는 인자값은 다음과 같다.<br>
 				<h4>Argument</h4>
 				<dl>
 					<dt>key</dt>
-					<dd>해당 데이터를 검색할 키</dd>
+					<dd>The key to search the corresponding data</dd>
 				</dl>
 			</div>
 			<div class="detailSection">
 				<h4>Return</h4>
-				<p>key로 매칭되는 데이터(문자열) 반환</p>
+				<p>The data that matches the key (string)</p>
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p>로컬에 저장된 데이터(문자열)를 가져온다. 위젯일 경우는 storage.preference 함수를 호출하고, pc일 경우는 storage.localStorage 함수를 호출한다.</p>
+				<p> Returns the locally stored data (string). storage.preference() function is executed in a widget environment, and storage.localstorage is executed in a PC environment.</p>
 			</div>
 		</div>
 
@@ -4908,11 +5504,11 @@ _fnEventHandle 함수에 전달되는 인자값은 다음과 같다.<br>
 				<h4>Argument</h4>
 				<dl>
 					<dt>key</dt>
-					<dd>해당 데이터를 저장할 키</dd>
+					<dd>The key to store the data in</dd>
 				</dl>
 				<dl>
 					<dt>value</dt>
-					<dd>저장할 데이터</dd>
+					<dd>Data to store (string)</dd>
 				</dl>
 			</div>
 			<div class="detailSection">
@@ -4921,7 +5517,7 @@ _fnEventHandle 함수에 전달되는 인자값은 다음과 같다.<br>
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p>로컬에 데이터(문자열)를 저장한다. 위젯일 경우는 storage.preference 함수를 호출하고, pc일 경우는 storage.localStorage 함수를 호출한다.</p>
+				<p>Locally stores data (string). storage.preference() function is executed in a widget environment, and storage.localstorage is executed in a PC environment.</p>
 			</div>
 		</div>
 
@@ -4964,16 +5560,16 @@ _fnEventHandle 함수에 전달되는 인자값은 다음과 같다.<br>
 				<h4>Argument</h4>
 				<dl>
 					<dt>key</dt>
-					<dd>해당 데이터를 검색할 키</dd>
+					<dd>The key to search the corresponding data</dd>
 				</dl>
 			</div>
 			<div class="detailSection">
 				<h4>Return</h4>
-				<p>widget.preferenceForKey 함수를 호출한 후 반환되는 값</p>
+				<p>widget.preferenceForKey</p>
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p>단말에 저장된 데이터를 가져온다. </p>
+				<p> Returns data (string) stored on the device.</p>
 			</div>
 		</div>
 
@@ -4983,20 +5579,20 @@ _fnEventHandle 함수에 전달되는 인자값은 다음과 같다.<br>
 				<h4>Argument</h4>
 				<dl>
 					<dt>key</dt>
-					<dd>해당 데이터를 저장할 키</dd>
+					<dd>The key to store the data in</dd>
 				</dl>
 				<dl>
 					<dt>value</dt>
-					<dd>저장할 데이터(문자열)</dd>
+					<dd>Data to store (string)</dd>
 				</dl>
 			</div>
 			<div class="detailSection">
 				<h4>Return</h4>
-				<p>widget.setPreferenceForKey 함수를 호출한 후 반환되는 값</p>
+				<p>widget.setPreferenceForKey</p>
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p>단말에 데이터(문자열)를 저장한다.</p>
+				<p>Stores data (string) on the device.</p>
 			</div>
 		</div>
 
@@ -5039,16 +5635,16 @@ _fnEventHandle 함수에 전달되는 인자값은 다음과 같다.<br>
 				<h4>Argument</h4>
 				<dl>
 					<dt>key</dt>
-					<dd>해당 데이터를 검색할 키</dd>
+					<dd>The key to search the corresponding data</dd>
 				</dl>
 			</div>
 			<div class="detailSection">
 				<h4>Return</h4>
-				<p>PC에 저장된 데이터(문자열)</p>
+				<p>Data stored on PC (string)</p>
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p>PC에 저장된 데이터(문자열)를 가져온다.</p>
+				<p>Returns data (string) from the PC.</p>
 			</div>
 		</div>
 
@@ -5058,20 +5654,20 @@ _fnEventHandle 함수에 전달되는 인자값은 다음과 같다.<br>
 				<h4>Argument</h4>
 				<dl>
 					<dt>key</dt>
-					<dd>해당 데이터를 저장할 키</dd>
+					<dd>The key to store data in</dd>
 				</dl>
 				<dl>
 					<dt>value</dt>
-					<dd>저장할 데이터(문자열)</dd>
+					<dd>Data to store (string)</dd>
 				</dl>
 			</div>
 			<div class="detailSection">
 				<h4>Return</h4>
-				<p></p>
+				<p>boolean(true)</p>
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p>PC에 데이터(문자열)를 저장한다.</p>
+				<p>Stores data (string) on the device.</p>
 			</div>
 		</div>
 
@@ -5114,7 +5710,7 @@ _fnEventHandle 함수에 전달되는 인자값은 다음과 같다.<br>
 				<h4>Argument</h4>
 				<dl>
 					<dt>option</dt>
-					<dd>설정할 옵션. property : value 형태의 object</dd>
+					<dd>Global settings. Object in the form of "property : value" </dd>
 				</dl>
 			</div>
 			<div class="detailSection">
@@ -5123,15 +5719,15 @@ _fnEventHandle 함수에 전달되는 인자값은 다음과 같다.<br>
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p>입력받은 인자값을 기준으로, 전역적인 옵션을 설정한다. 설정할 수 있는 정보는 아래와 같다.<br>
-						transEffect : transistion 할 때 기본 효과 지정<br>
-						theme : 화면 theme 지정<br>
-						softkeyType : 소프트키 타입 지정 (type1)<br>
-						softkeyFunc : 소프트키 하단 리턴 시 실행할 함수 지정<br>
-						softkeyData : 소프트키 데이터 지정<br>
-						softkeyMore : 소프트키 모어 버튼 열기 / 해제 (on / off)<br>
-						name : 위젯 이름 설정<br>
-						eventType : 이벤트를 마우스 / 터치로 받기 (mouse / touch)</p>
+				<p>Global settings are set according to the arguments. The available options are as following.<br>
+						transEffect : The default transition effects<br>
+						theme : The default theme<br>
+						softkeyType : Softkey type (type1)<br>
+						softkeyFunc : Function to execute when the bottom of the softkey is returned<br>
+						softkeyData : Softkey data<br>
+						softkeyMore : Softkey button on / off<br>
+						name : Name of the widget<br>
+						eventType : Whether to recieve events with mouse or touch</p>
 			</div>
 		</div>
 
@@ -5174,7 +5770,7 @@ _fnEventHandle 함수에 전달되는 인자값은 다음과 같다.<br>
 				<h4>Argument</h4>
 				<dl>
 					<dt>object</dt>
-					<dd>데이터 배열</dd>
+					<dd>Data Array</dd>
 				</dl>
 			</div>
 			<div class="detailSection">
@@ -5183,7 +5779,7 @@ _fnEventHandle 함수에 전달되는 인자값은 다음과 같다.<br>
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p>인자로 object가 들어오면 데이터 배열이라고 인식</p>
+				<p> If an object is inserted as argument, it distinguishes whether the object is a data array or not. </p>
 			</div>
 		</div>
 
@@ -5193,7 +5789,7 @@ _fnEventHandle 함수에 전달되는 인자값은 다음과 같다.<br>
 				<h4>Argument</h4>
 				<dl>
 					<dt>function</dt>
-					<dd>back 키에 들어갈 함수</dd>
+					<dd> The callback function of the back key. </dd>
 				</dl>
 			</div>
 			<div class="detailSection">
@@ -5202,7 +5798,7 @@ _fnEventHandle 함수에 전달되는 인자값은 다음과 같다.<br>
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p>인자로 function가 들어오면 back 키에 들어갈 함수로 인식</p>
+				<p> If a function is inserted as argument, it is recognized as the callback function of the back key. </p>
 			</div>
 		</div>
 
@@ -5212,7 +5808,7 @@ _fnEventHandle 함수에 전달되는 인자값은 다음과 같다.<br>
 				<h4>Argument</h4>
 				<dl>
 					<dt>string</dt>
-					<dd>소프트키 타입</dd>
+					<dd>softkey type</dd>
 				</dl>
 			</div>
 			<div class="detailSection">
@@ -5221,7 +5817,7 @@ _fnEventHandle 함수에 전달되는 인자값은 다음과 같다.<br>
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p>인자로 string이 들어오면 소프트키 타입으로 인식 ( type1 )</p>
+				<p> If a string is inserted as argument, it is recognized as the softkey type (type1). </p>
 			</div>
 		</div>
 
@@ -5272,7 +5868,7 @@ _fnEventHandle 함수에 전달되는 인자값은 다음과 같다.<br>
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p>소프트키 more버튼이 scene에 올라왔을 경우 more버튼을 감춘다.</p>
+				<p> If the more button of the softkey is shown on scene, it is hidden. </p>
 			</div>
 		</div>
 
@@ -5315,15 +5911,15 @@ _fnEventHandle 함수에 전달되는 인자값은 다음과 같다.<br>
 				<h4>Argument</h4>
 				<dl>
 					<dt>url</dt>
-					<dd>링크주소</dd>
+					<dd>URL address for AJAX communication.</dd>
 				</dl>
 				<dl>
 					<dt>fnSuccess</dt>
-					<dd>통신 성공시 콜백함수</dd>
+					<dd>callback function to run when communication is successful.</dd>
 				</dl>
 				<dl>
 					<dt>option</dt>
-					<dd>비정상 적인 통신 상태에 따른 콜백 및 설정</dd>
+					<dd>callback and options for abnormal communication states.	</dd>
 				</dl>
 			</div>
 			<div class="detailSection">
@@ -5332,7 +5928,7 @@ _fnEventHandle 함수에 전달되는 인자값은 다음과 같다.<br>
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p>ajax 통신을 위한 객체</p>
+				<p>Object for ajax communication</p>
 			</div>
 		</div>
 
@@ -5375,15 +5971,15 @@ _fnEventHandle 함수에 전달되는 인자값은 다음과 같다.<br>
 				<h4>Argument</h4>
 				<dl>
 					<dt>url</dt>
-					<dd>xml 데이터를 가져올 url</dd>
+					<dd>URL to recieve XML feed from</dd>
 				</dl>
 				<dl>
 					<dt>fnSuccess</dt>
-					<dd>데이터 통신이 정상 종료되었을 때 실행할 CallBack 함수 혹은 객체. 자세한 설명은 descrption 참조.</dd>
+					<dd>callback function to run when communication has successfully ended.</dd>
 				</dl>
 				<dl>
 					<dt>options</dt>
-					<dd>통신 예외 상황, 통신 방법 등을 설정할 객체. 자세한 설명은 description 참조. </dd>
+					<dd>Options that define communication exceptions and methods.</dd>
 				</dl>
 			</div>
 			<div class="detailSection">
@@ -5392,23 +5988,20 @@ _fnEventHandle 함수에 전달되는 인자값은 다음과 같다.<br>
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<p>입력받은 url에 대하여 데이터 통신을 시도한다.<br>
-성공할 경우 CallBack 함수인 fnSuccess 을 실행하고, 실패할 경우 options 에 설정된 CallBack 함수를 실행한다.<br>
-fnSuccess() 가 실행될 경우, 인자값으로 데이터 통신으로 수신한 데이터를 전달한다.<br>
-&nbsp;&nbsp;&nbsp;&nbsp;fnSuccess()에 전달되는 인자값은 다음과 같다.<br>
+				<p>	Attempts data communication to the designated URL.<br>
+				If successful, the callback function, fnSuccess(), is executed. If not, the callback funtion designated in options is executed.<br>
+				The data recieved from the communication is passed on to fnSuccess() as an argument.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The parameters of fnSuccess are as following.<br>
 &nbsp;&nbsp;&nbsp;&nbsp;fnSuccess( _this, _xml , _xmlText )<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_this: 첫번째 인자로써, callBack이 실행된 시점의 this객체인 riff객체를 인자로 전달한다. <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;예를 들어 DOM Element를 질의한 riff객체에 대하여 xml() 함수를 이용해 데이터 통신을 했을 경우, 질의한 DOM Element를 가진 riff객체를 fnSuccess()에 전달한다.<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_xml: 데이터 송수신이 성공했을 때, 수신한 데이터의 XML객체를 전달한다.<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_xmlText: 만일 송수신한 xml데이터가 text로 수신되었을 경우, 해당 문자열을 반환한다.<br>
-사용자는, _this( = riff ) 객체와 수신한 데이터( xml, xmlText ) 를 이용하여, 원하는 데이터 조작을 할 수 있다.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_this: The Riff Object on which the callback was executed (this).<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_xml: If data communication is successful, the XML object of the recieved data is passed on as argument.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_xmlText: If the recieved XML data is in text, it is passed on as _xmlText<br>
+Users may manipulate data as they wish by using _this( = riff ) and the recieved XML data (xml, xmlText).<br>
 <br>
 <br>
-options 인자값은, ajax 통신을 위한 옵션 및 실패시의 CallBack 함수 전달을 위한 객체이다.<br>
-데이터 통신에 실패할 경우, options 로 전달된 CallBack Function 을 통하여, 실패시 처리할 함수를 지정할 수 있다.<br>
-혹은 ajax 통신을 위한 timeout 간격이라던지 retry 횟수 등을 지정할 수 있다.<br>
+The options argument is an object used for AJAX communication options (timeout duration, retry numbers etc) and callback funtions in case of failiure.<br>
 <br>
-options 의 지정 방법은 { optionName1 : optionValue1, optionName2 : optionValue2, ...  } 의 형태로 진행되며, 다음과 같다.<br>
+The syntax for options is { optionName1 : optionValue1, optionName2 : optionValue2, ...  }. The following options are available.<br>
 <br>
 options = {<br>
 &nbsp;&nbsp;&nbsp;&nbsp;e: fnError,<br>
@@ -5422,48 +6015,48 @@ options = {<br>
 &nbsp;&nbsp;&nbsp;&nbsp;sendData:"userValue=uservalue1"<br>
 }<br>
 <br>
-e: 에러가 발생했을 때 실행할 함수를 지정한다. 예를 들어 { e: fnError } 라면, fnError 는 CallBack 함수이다.<br>  
-&nbsp;&nbsp;&nbsp;&nbsp;함수 fnError() 가 실행될 때 CallBack 함수에 전달되는 인자값은 다음과 같다.<br>
+e: The callback funtion to execute in case of error. For example, if { e: fnError }, then fnError is the callback function. <br>
+&nbsp;&nbsp;&nbsp;&nbsp;The parameters of fnError() are as following.<br>
 &nbsp;&nbsp;&nbsp;&nbsp;fnError( _readyState, _status )<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_readyState : 통신 상태를 나타내는 xHttpRequest 객체의 readyState 를 의미한다.<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_status : 통신 상태를 나타내는 xHttpRequest 객체의 status 를 의미한다.<br>
-&nbsp;&nbsp;&nbsp;&nbsp;에러로 판단하는 기준은 다음의 경우중 한가지를 만족할 경우다.<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;통신이 성공하지 못하고 ( readState != 4 ) Timeout이 경과하였을 경우.<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Retry가 설정되지 않고, 데이터 수신은 성공( readyState = 4 )하였으나, 상태가 정상( status = 0 or 200 ) 이 아닌 경우. <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Retry가 설정되지 않고, 데이터 수신 성공( readyState = 4 ), 상태 정상( status = 0 or 200 ) 이지만, responseXml = null 이고 responseText = null 일 경우.<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Retry 횟수가 설정되어, 예외 상황 발생으로 통신을 재시도하였으나 재송한 횟수가 설정된 retry 를 넘었을 경우.<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Retry 횟수와 Timeout 이 설정되어, 시간 만료로 재송한 횟수가 설정된 retry 를 넘었을 경우.<br>
-a: 전송 취소( abort ) 가 발생했을 때 실행할 함수를 지정한다.  예를 들어 { a: fnAbort } 라면, fnAbort 는 CallBack 함수이다. <br>
-&nbsp;&nbsp;&nbsp;&nbsp;함수 fnAbort() 가 실행될 때 CallBack 함수에 전달되는 인자값은 다음과 같다.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_readyState : The readyState of the xHttpRequest object.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_status : The communication status of the xHttpRequest object.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;If any of the following critera are met, the communication is considered as failure.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Communication failed ( readyState != 4 ), and timeout has expired.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Retry value is not designated, data communication is successful, but communication status is not normal ( status != 0 or 200 )<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Retry value is not designated, data communication is successful, communication status is normal ( status = 0 or 200 ), but responseXml = null and responseText = null.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Retry value is designated, and the number of retries exceeds the designated retry number.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Retry and timeout value are designated, but the number of retries due to timeout exceeds the designated retry value.<br>
+a: The callback funtion to execute in case of communication abort. For example if { a: fnAbort }, then fnAbort is the callback function.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The parameters of fnAbort() are as following.<br>
 &nbsp;&nbsp;&nbsp;&nbsp;fnAbort( _this, _retryCount )<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_this : 데이터 통신을 실행하는 ajax 객체를 전달한다.<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_retryCount : 통신 재시도 횟수를 전달한다.<br>
-r: 데이터 재송( retry ) 이 발생했을 때 실행할 함수를 지정한다.  예를 들어 { r: fnRetry } 라면, fnRetry 는 CallBack 함수이다. <br>
-&nbsp;&nbsp;&nbsp;&nbsp;함수 fnRetry() 가 실행될 때 CallBack 함수에 전달되는 인자값은 다음과 같다.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_this : The AJAX object that is communicating.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_retryCount : The number of retries.<br>
+r: The callback funtion to execute when data retransmission occurs. For example if { r: fnRetry }, then fnRetry is the callback function.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The parameters of fnRetry() are as following.<br>
 &nbsp;&nbsp;&nbsp;&nbsp;fnRetry( _this, _retryCount )<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_this : 데이터 통신을 실행하는 ajax 객체를 전달한다.<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_retryCount : 통신 재시도 횟수를 전달한다.<br>
-t: 데이터 송수신이 설정 시간 ( timeout ) 안에 성공하지 못했을 때 실행할 함수를 지정한다.  예를 들어 { t: fnTimeout } 라면, fnTimeout 는 CallBack 함수이다. <br>
-&nbsp;&nbsp;&nbsp;&nbsp;함수 fnTimeout() 가 실행될 때 CallBack 함수에는 전달되는 값이 없다.<br>
-timeout : 데이터 통신 대기 최대 시간( timeout ) 을 지정한다. 단위는 millisecond이다. 예를 들어 { timeout : 5000 } 이라면, timeout 은 5초로 설정된다.<br>
-retry : 데이터 통신 재시도 횟수를 지정한다. 예를 들어 { retry:1 } 이라면, 데이터 통신에서 예외 상황이 발생했을 때, 1번은 재시도를 한다. 성공했을 경우는 fnSuccess() 를 실행하고, 실패했을 경우는 앞서 기술한 e,a,r,t 값에 따라 예외 상황을 처리한다.<br>
-type : 데이터 통신 방법을 지정한다. "GET"/"POST" 중 원하는 데이터 통신 방법을 지정한다. 예를 들어 { type: "GET" } 이라면, get 방식으로 데이터 교환을 한다.<br>
-isAsync : 데이터 통신 방법을 지정한다. AJAX 통신 방법을 동기 / 비동기 방식 중 선택한다. 예를 들어 { isAsync : true } 라면, 비동기 방식으로 데이터 교환을 한다.<br>
-sendData : 데이터 통신 시 송신할 데이터를 지정한다. 예를 들어 { sendData:"userValue=uservalue1" } 라면, get 혹은 post 방식으로 userValue=uservalue1 데이터를 송신하고, 그 결과를 수신한다.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_this : The AJAX object that is communicating.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_retryCount : The communication retry count.<br>
+t: The callback funtion to execute when data commmunication does not succeed within the designated timeout. For example if { t: fnTimeout }, then fnTimeout is the callback function.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;There are no parameters for fnTimeout.<br>
+timeout : The maximum time to wait for data communication in milliseconds. For example, if { timeout : 5000 } then timeout is set to 5 seconds.<br>
+retry : The maximum number of retries. For example, if { retry:1 }, only one retry is attempted in case a exception occurs. If communication is successful fnSuccess() is executed, but in case of an failure, excetptions are processed as explained above.<br>
+type : Data communication type. A data communication type may be either "GET" or "POST".<br>
+isAsync : Data communication method, asynchronous or synchronous. For example, if { isAsync : true } then, data is exchanged asynchronously.<br>
+sendData : The data to transmit. For example, if { sendData:"userValue=uservalue1" } then, the data userValue=uservalue1 is transmitted, and the result is recieved.<br>
 <br>
-위의 _optiop 값은 사용자가 설정하지 않았을 경우 기본값이 설정되어 있는 경우와 설정되어 있지 않는 경우가 있다. 자세한 경우는 다음과 같다.<br>
+The default option values are as following.<br>
 <br>
-e: 사용자가 지정하지 않을 경우, riff.alert( 문자열 ) 함수를 이용하여 경고 문구 및 에러 상태를 알 수 있는 xHttpRequest.readyState, xHttpRequest.status 를 기본으로 표시한다.<br>
-&nbsp;&nbsp;&nbsp;&nbsp;화면에 표시되는 기본 문구는 다음과 같다.<br>
-&nbsp;&nbsp;&nbsp;&nbsp;"Error occured: readyState:" + readyState + " status:" + status + " " + 에러 상황 설명;<br>
-a: 사용자가 지정하지 않을 경우, 아무런 처리를 하지 않는다. <br>
-r: 사용자가 지정하지 않을 경우, 아무런 처리를 하지 않는다. <br>
-t: 사용자가 지정하지 않을 경우, 아무런 처리를 하지 않는다. <br>
-timeout: 사용자가 지정하지 않을 경우( undefined or null ), 5000 으로 기본 설정한다. 사용자가 0을 설정할 경우, timeout 을 적용하지 않는다. <br>
-retry: 사용자가 지정하지 않을 경우( undefined or null ), 1 으로 기본 설정한다. 사용자가 0을 설정할 경우, retry를 하지 않는다. <br>
-type : 사용자가 지정하지 않을 경우, "GET"으로 지정한다.<br>
-isAsync : 사용자가 지정하지 않을 경우, true로 ( 비동기 방식 ) 지정한다.<br>
-sendData : 사용자가 지정하지 않을 경우, 별다른 데이터를 송신하지 않는다.<br>
+e: Unless specified by the user, xHttpRequest.readyState, xHttpRequest.status is displayed by the riff.alert() function.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;They following string shows on the alert window.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;"Error occured: readyState:" + readyState + " status:" + status + " " + error information;<br>
+a: Unless specified by the user, does nothing. <br>
+r: Unless specified by the user, does nothing. <br>
+t: Unless specified by the user, does nothing. <br>
+timeout: Unless specified by the user, default timeout value is 5000. If timeout value is 0, then there is no timeout. <br>
+retry: Unless specified by the user, the default retry value is 1. If retry value is 0, then there is no retry. <br>
+type : Unless specified by the user, the default type value is "GET".<br>
+isAsync : Unless specified by the user, the default isAsync value is true (asynchronous).<br>
+sendData : Unless specified by the user, no data is transmitted.<br>
 <br>
 <br>
 	</p>
@@ -5509,7 +6102,7 @@ sendData : 사용자가 지정하지 않을 경우, 별다른 데이터를 송�
 				<h4>Argument</h4>
 				<dl>
 					<dt>func</dt>
-					<dd>Window 객체가 완전히 load 되고 나서 실행하는 함수</dd>
+					<dd>Function to execute when the window object has fully loaded.</dd>
 				</dl>
 			</div>
 			<div class="detailSection">
@@ -5518,7 +6111,7 @@ sendData : 사용자가 지정하지 않을 경우, 별다른 데이터를 송�
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p>window 객체가  onload event 후에 실행하는 함수 설정.</p>
+				<p> Sets the funtion to execute after the window object's onload event. </p>
 			</div>
 		</div>
 
@@ -5565,11 +6158,11 @@ sendData : 사용자가 지정하지 않을 경우, 별다른 데이터를 송�
 			</div>
 			<div class="detailSection">
 				<h4>Return</h4>
-				<p>riff object</p>
+				<p>Riff Object</p>
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p>다른 javascript 라이브러리를 함께 사용할 경우 $사용으로 인한 충돌을 방지하기 위해 사용한다.</p>
+				<p> Prevents conflicts that occur from using "$" while using different Javascript libraries. </p>
 			</div>
 		</div>
 
@@ -5604,10 +6197,10 @@ sendData : 사용자가 지정하지 않을 경우, 별다른 데이터를 송�
 	<!-- ******************  //API Detail ****************** -->
 
 	<!-- ******************  API Detail ****************** -->
-	<div id="nowView">
-		<h2>now()</h2>
+	<div id="currentTimeView">
+		<h2>currentTime()</h2>
 		<div class="detailPart">
-			<h3>now(<em></em>)</h3>
+			<h3>currentTime(<em></em>)</h3>
 			<div class="detailSection">
 				<h4>Argument</h4>
 				<dl>
@@ -5616,11 +6209,11 @@ sendData : 사용자가 지정하지 않을 경우, 별다른 데이터를 송�
 			</div>
 			<div class="detailSection">
 				<h4>Return</h4>
-				<p>now time</p>
+				<p>currentTime time</p>
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p>현재 시간을 가져온다.</p>
+				<p>Returns the current time.</p>
 			</div>
 		</div>
 
@@ -5655,10 +6248,10 @@ sendData : 사용자가 지정하지 않을 경우, 별다른 데이터를 송�
 	<!-- ******************  //API Detail ****************** -->
 
 	<!-- ******************  API Detail ****************** -->
-	<div id="feedReceiveTimeView">
-		<h2>feedReceiveTime()</h2>
+	<div id="dataReceiveTimeView">
+		<h2>dataReceiveTime()</h2>
 		<div class="detailPart">
-			<h3>feedReceiveTime(<em></em>)</h3>
+			<h3>dataReceiveTime(<em></em>)</h3>
 			<div class="detailSection">
 				<h4>Argument</h4>
 				<dl>
@@ -5671,17 +6264,17 @@ sendData : 사용자가 지정하지 않을 경우, 별다른 데이터를 송�
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p>RSS Component에서 RSS 데이터 수신시간을 감춘다.</p>
+				<p> Hides the RSS data recieve time on the RSS Component. </p>
 			</div>
 		</div>
 
 		<div class="detailPart">
-			<h3>feedReceiveTime(<em>time</em>)</h3>
+			<h3>dataReceiveTime(<em>time</em>)</h3>
 			<div class="detailSection">
 				<h4>Argument</h4>
 				<dl>
 					<dt>time</dt>
-					<dd>RSS 데이터 수신시간</dd>
+					<dd>RSS data recieve time</dd>
 				</dl>
 			</div>
 			<div class="detailSection">
@@ -5690,7 +6283,7 @@ sendData : 사용자가 지정하지 않을 경우, 별다른 데이터를 송�
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p>RSS Component에서 RSS 데이터 수신시간을 보여준다.</p>
+				<p> Hides the RSS data recieve time on the RSS Component. </p>
 			</div>
 		</div>
 
@@ -5741,7 +6334,7 @@ sendData : 사용자가 지정하지 않을 경우, 별다른 데이터를 송�
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p>화면 크기를 자동으로 맞춰준다.</p>
+				<p> Automatically adjusts scene size. </p>
 			</div>
 		</div>
 
@@ -5784,11 +6377,11 @@ sendData : 사용자가 지정하지 않을 경우, 별다른 데이터를 송�
 				<h4>Argument</h4>
 				<dl>
 					<dt>xml</dt>
-					<dd>xml 데이터</dd>
+					<dd>XML data</dd>
 				</dl>
 				<dl>
 					<dt>queryString</dt>
-					<dd>질의문자열</dd>
+					<dd>query string</dd>
 				</dl>
 			</div>
 			<div class="detailSection">
@@ -5797,7 +6390,7 @@ sendData : 사용자가 지정하지 않을 경우, 별다른 데이터를 송�
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p>질의문으로 XML 데이터를 검색한 후, 검색 결과를 riff로 감싸주어 리턴한다. </p>
+				<p>Searches for XML data that match the query, and the search results are wrapped as a Riff Object and returned.</p>
 			</div>
 		</div>
 
@@ -5840,20 +6433,20 @@ sendData : 사용자가 지정하지 않을 경우, 별다른 데이터를 송�
 				<h4>Argument</h4>
 				<dl>
 					<dt>string</dt>
-					<dd>줄일 문자열</dd>
+					<dd> String to reduce </dd>
 				</dl>
 				<dl>
 					<dt>number</dt>
-					<dd>문자열 길이제한 범위</dd>
+					<dd> The length of the reduced string </dd>
 				</dl>
 			</div>
 			<div class="detailSection">
 				<h4>Return</h4>
-				<p>말 줄임된 문자열</p>
+				<p> Reduced string </p>
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p>선택된 문자열의 길이가 한계치를 초과하면 "..." 말줄임표를 붙여서 반환한다.</p>
+				<p> Returns a reduced string. If the input string exceeds the designated length, the rest of the string is returned as "...".</p>
 			</div>
 		</div>
 
@@ -5896,11 +6489,11 @@ sendData : 사용자가 지정하지 않을 경우, 별다른 데이터를 송�
 				<h4>Argument</h4>
 				<dl>
 					<dt>name</dt>
-					<dd>줄일 문자열</dd>
+					<dd>The name of the function to extend.</dd>
 				</dl>
 				<dl>
 					<dt>function</dt>
-					<dd>문자열 길이제한 범위</dd>
+					<dd>The function to extend</dd>
 				</dl>
 			</div>
 			<div class="detailSection">
@@ -5909,7 +6502,7 @@ sendData : 사용자가 지정하지 않을 경우, 별다른 데이터를 송�
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p>플러그인 확장 함수, 함수 확장 시 사용한다.</p>
+				<p> Used to extend plugins.</p>
 			</div>
 		</div>
 
@@ -5952,11 +6545,11 @@ sendData : 사용자가 지정하지 않을 경우, 별다른 데이터를 송�
 				<h4>Argument</h4>
 				<dl>
 					<dt>string</dt>
-					<dd>팝업창에 보여줄 문자열</dd>
+					<dd>The string to show on the popup window.</dd>
 				</dl>
 				<dl>
 					<dt>option(optional)</dt>
-					<dd>효과</dd>
+					<dd>Effects</dd>
 				</dl>
 			</div>
 			<div class="detailSection">
@@ -5965,7 +6558,7 @@ sendData : 사용자가 지정하지 않을 경우, 별다른 데이터를 송�
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p>알림창</p>
+				<p>Shows a alert window.</p>
 			</div>
 		</div>
 
@@ -6008,15 +6601,15 @@ sendData : 사용자가 지정하지 않을 경우, 별다른 데이터를 송�
 				<h4>Argument</h4>
 				<dl>
 					<dt>function</dt>
-					<dd>timer 실행시에 실행되는 함수</dd>
+					<dd> The function that excecutes when timer is loaded.</dd>
 				</dl>
 				<dl>
 					<dt>time</dt>
-					<dd>timer 함수가 실행되는 주기</dd>
+					<dd> The frquency of timer() execution.</dd>
 				</dl>
 				<dl>
 					<dt>id</dt>
-					<dd>timer 를 쉽게관리하기 위해 사용하는 id</dd>
+					<dd> The ID used to easily manage the timer. </dd>
 				</dl>
 			</div>
 			<div class="detailSection">
@@ -6025,7 +6618,8 @@ sendData : 사용자가 지정하지 않을 경우, 별다른 데이터를 송�
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p>timer를 관리하기 쉽게 함든 함수<br>riff.timer(_id) 이런식으로 사용할 경우 timer삭제</p>
+				<p> Makes managing timers easy.<br>
+				Inserting only the ID as parameter ( ex : riff.timer(_id) ) removes the timer.</p>
 			</div>
 		</div>
 
@@ -6060,35 +6654,35 @@ sendData : 사용자가 지정하지 않을 경우, 별다른 데이터를 송�
 	<!-- ******************  //API Detail ****************** -->
 
 	<!-- ******************  API Detail ****************** -->
-	<div id="changeSubsceneFlagView">
-		<h2>changeSubsceneFlag()</h2>
+	<div id="changeScenePartFlagView">
+		<h2>changeScenePartFlag()</h2>
 		<div class="detailPart">
-			<h3>changeSubsceneFlag(<em>maxLength, currentIndex, dataSet, isGoRun, isAutoRefreshRun, isRefreshRun</em>)</h3>
+			<h3>changeScenePartFlag(<em>maxLength, currentIndex, dataSet, isGoRun, isAutoRefreshRun, isRefreshRun</em>)</h3>
 			<div class="detailSection">
 				<h4>Argument</h4>
 				<dl>
 					<dt>maxLength</dt>
-					<dd>subScene의 최대 갯수</dd>
+					<dd>the maximum number of sceneParts</dd>
 				</dl>
 				<dl>
 					<dt>currentIndex</dt>
-					<dd>현재 subScene의 index</dd>
+					<dd>the index of the current scenePart</dd>
 				</dl>
 				<dl>
 					<dt>dataSet</dt>
-					<dd>subscene을 구축하기 위해  makeContents 혹은 makeStructure에서 isSubSceneNew 플래그를 저장한 객체</dd>
+					<dd>The object which stores the isScenePartNew flag which is used to construct the ScenePart.</dd>
 				</dl>
 				<dl>
 					<dt>isGoRun</dt>
-					<dd>현재 화면이 component.move() 함수를 이용해 실행되었는지의 여부</dd>
+					<dd>A flag to check if the current ScenePart is loaded by component.move().</dd>
 				</dl>
 				<dl>
 					<dt>isAutoRefreshRun</dt>
-					<dd>현재 subScene이 component.autorefresh () 함수를 이용해 실행되었는지의 여부</dd>
+					<dd>A flag to check if the current ScenePart is loaded by component.autorefresh().</dd>
 				</dl>
 				<dl>
 					<dt>isRefreshRun</dt>
-					<dd>현재 subScene이 component.refresh () 함수를 이용해 실행되었는지의 여부</dd>
+					<dd>A flag to check if the current ScenePart is loaded by component.refresh().</dd>
 				</dl>
 			</div>
 			<div class="detailSection">
@@ -6097,7 +6691,7 @@ sendData : 사용자가 지정하지 않을 경우, 별다른 데이터를 송�
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p>화면 갱신 정책을 적용한다.</p>
+				<p>Applies the ScenePart update policies.</p>
 			</div>
 		</div>
 
@@ -6140,7 +6734,7 @@ sendData : 사용자가 지정하지 않을 경우, 별다른 데이터를 송�
 				<h4>Argument</h4>
 				<dl>
 					<dt>value</dt>
-					<dd>배열인지 체크하기 위한 데이터</dd>
+					<dd>Object to check</dd>
 				</dl>
 			</div>
 			<div class="detailSection">
@@ -6149,7 +6743,7 @@ sendData : 사용자가 지정하지 않을 경우, 별다른 데이터를 송�
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p>선택된 object가 배열인지 아닌지 체크한다.</p>
+				<p>Checks if the selected object is a array or not.</p>
 			</div>
 		</div>
 
@@ -6201,14 +6795,14 @@ sendData : 사용자가 지정하지 않을 경우, 별다른 데이터를 송�
 			</div>
 			<div class="detailSection">
 				<h4>Return</h4>
-				<p>riff object</p>
+				<p>Riff Object</p>
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p>공통적으로 blank DIV Element 생성하고, 해당하는 컴포넌트의 특성에 맞게 셋팅하며, 옵션을 적용하게 된다.<br><br>
-				popup은 버튼에 이벤트를 걸어준다.<br>
-				list는 터치이벤트를 걸고, 리스트의 형태를 구성한다.<br>
-				settingList는 checkBox, radioButton, on/off 버튼을 구성하며, 리스트의 형태를 갖춘다.<br>
+				<p>Creates a blank DIV element, sets the proper options according to the corresponding component features.<br><br>
+				Touch events are linked to the popup button.<br>
+				Touch events are linked to the list, then list form is constructed.<br>
+				settingList constructs the on/off buttons for the checkBox and radioButton and form a list.<br>
 				tab은 탭 이동 시 발생하는 이벤트를 걸어준다.
 				</p>
 			</div>
@@ -6253,7 +6847,7 @@ sendData : 사용자가 지정하지 않을 경우, 별다른 데이터를 송�
 				<h4>Argument</h4>
 				<dl>
 					<dt>data</dt>
-					<dd>markup을 만들기 위한 data</dd>
+					<dd>data to generate the markup with.</dd>
 				</dl>
 				<dl>
 					<dt>data Interface</dt>
@@ -6266,17 +6860,17 @@ sendData : 사용자가 지정하지 않을 경우, 별다른 데이터를 송�
 						&nbsp; ["check", "Checkbox", function() { alert("check")  } ], <br>
 						&nbsp; ["onoff", "On/Off Toggle", function() { alert("onoff")  } ], <br>
 						&nbsp; ["onoff", "On/Off Toggle", function() { alert("onoff")  } ] <br>
-					]; 
+					];
 					</dd>
 				</dl>
 			</div>
 			<div class="detailSection">
 				<h4>Return</h4>
-				<p>riff object</p>
+				<p>Riff Object</p>
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p>data를 가지고 markup을 생성하고 데이터를 적용해준다.</p>
+				<p>Generates markup and applies data.</p>
 			</div>
 		</div>
 
@@ -6286,7 +6880,7 @@ sendData : 사용자가 지정하지 않을 경우, 별다른 데이터를 송�
 				<h4>Argument</h4>
 				<dl>
 					<dt>data</dt>
-					<dd>markup을 만들기 위한 data</dd>
+					<dd>data to generate the markup with.</dd>
 				</dl>
 				<dl>
 					<dt>data Interface</dt>
@@ -6309,11 +6903,11 @@ sendData : 사용자가 지정하지 않을 경우, 별다른 데이터를 송�
 			</div>
 			<div class="detailSection">
 				<h4>Return</h4>
-				<p>riff object</p>
+				<p>Riff Object</p>
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p>data를 가지고 markup을 생성하고 데이터를 적용해준다.</p>
+				<p>Generates markup and applies data.</p>
 			</div>
 		</div>
 
@@ -6364,7 +6958,7 @@ sendData : 사용자가 지정하지 않을 경우, 별다른 데이터를 송�
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p>선택된 요소의 자식노드(ul)의 자식노드(li)의 수를 반환</p>
+				<p> Returns the number of children nodes. </p>
 			</div>
 		</div>
 
@@ -6399,10 +6993,10 @@ sendData : 사용자가 지정하지 않을 경우, 별다른 데이터를 송�
 	<!-- ******************  //API Detail ****************** -->
 
 	<!-- ******************  API Detail ****************** -->
-	<div id="componentMoveView">
-		<h2>move()</h2>
+	<div id="componentGoView">
+		<h2>go()</h2>
 		<div class="detailPart">
-			<h3>move(<em>number</em>)</h3>
+			<h3>go(<em>number</em>)</h3>
 			<div class="detailSection">
 				<h4>Argument</h4>
 				<dl>
@@ -6412,12 +7006,12 @@ sendData : 사용자가 지정하지 않을 경우, 별다른 데이터를 송�
 			</div>
 			<div class="detailSection">
 				<h4>Return</h4>
-				<p>riff object</p>
+				<p>Riff Object</p>
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p>선택된 요소의 indexNo에 해당하는 subScene으로 이동한다.<br>
-					tab 컴포넌트의 경우 탭이동시 현재탭의 focus해제 한 후 indexNo에 해당하는 탭의 focus 설정한다.</p>
+				<p> Moves to the scenePart that corresponds to the indexNo on the selected DOM elements.<br>
+				For tab components, the focus of the current tab is cleared and set to the tab of the corresponding indexNo. </p>
 			</div>
 		</div>
 
@@ -6460,7 +7054,7 @@ sendData : 사용자가 지정하지 않을 경우, 별다른 데이터를 송�
 				<h4>Argument</h4>
 				<dl>
 					<dt>data</dt>
-					<dd>markup을 만들기 위한 data</dd>
+					<dd>The data to create markup with</dd>
 				</dl>
 				<dl>
 					<dt>data Interface</dt>
@@ -6472,17 +7066,17 @@ sendData : 사용자가 지정하지 않을 경우, 별다른 데이터를 송�
 							&nbsp;&nbsp; "rssFeedUrl",   fooList, [ {"image" : "thumbnail[url]"}, "args2", "args3"] <br>
 						&nbsp; ] <br>
 						&nbsp; , layout : [ riffList, [ {"image" : "thumbnail[url]"}, "arg2", "arg3" ] ] <br>
-					} 
+					}
 					</dd>
 				</dl>
 			</div>
 			<div class="detailSection">
 				<h4>Return</h4>
-				<p>riff object</p>
+				<p>Riff Object</p>
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p>data에서 riffList, fooList는 프레임워크에서 지원하는 함수로 markup을 생성하고 데이터를 적용해준다. rssFeedUrl 부분은 사용자 정의.</p>
+				<p> The riffList and fooList in data are riff functions that generate markup and apply data. The rssFeedUrl is user defined.	</p>
 			</div>
 		</div>
 
@@ -6492,7 +7086,7 @@ sendData : 사용자가 지정하지 않을 경우, 별다른 데이터를 송�
 				<h4>Argument</h4>
 				<dl>
 					<dt>data</dt>
-					<dd>markup을 만들기 위한 data</dd>
+					<dd>The data to create markup with</dd>
 				</dl>
 				<dl>
 					<dt>data Interface</dt>
@@ -6507,17 +7101,18 @@ sendData : 사용자가 지정하지 않을 경우, 별다른 데이터를 송�
 								&nbsp;&nbsp; "topic"		: [ "rssFeedUrl",   fooTab, [ {"image" : "thumbnail[url]"}, "args2", "args3"]]	 <br>
 						&nbsp; } <br>
 						&nbsp; , layout : [ riffTab, [ {"image" : "thumbnail[url]"}, "args2", "args3" ] ] <br>
-					} 
+					}
 					</dd>
 				</dl>
 			</div>
 			<div class="detailSection">
 				<h4>Return</h4>
-				<p>riff object</p>
+				<p>Riff Object</p>
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p>위 data에서 riffTab, fooTab은 프레임워크에서 지원하는 함수로 markup을 생성하고 데이터를 적용해준다. rssFeedUrl 부분은 사용자 정의.</p>
+				<p> The riffTab and fooTab in data are riff functions that generate markup and apply data. The rssFeedUrl is user defined.
+				</p>
 			</div>
 		</div>
 
@@ -6552,10 +7147,10 @@ sendData : 사용자가 지정하지 않을 경우, 별다른 데이터를 송�
 	<!-- ******************  //API Detail ****************** -->
 
 	<!-- ******************  API Detail ****************** -->
-	<div id="subSceneLoadView">
-		<h2>subSceneLoad()</h2>
+	<div id="scenePartLoadView">
+		<h2>scenePartLoad()</h2>
 		<div class="detailPart">
-			<h3>subSceneLoad(<em></em>)</h3>
+			<h3>scenePartLoad(<em></em>)</h3>
 			<div class="detailSection">
 				<h4>Argument</h4>
 				<dl>
@@ -6564,11 +7159,11 @@ sendData : 사용자가 지정하지 않을 경우, 별다른 데이터를 송�
 			</div>
 			<div class="detailSection">
 				<h4>Return</h4>
-				<p>riff object</p>
+				<p>Riff Object</p>
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p>선택된 요소의 subScene화면을 갱신한다.</p>
+				<p>Updates the selected ScenePart.</p>
 			</div>
 		</div>
 
@@ -6603,10 +7198,10 @@ sendData : 사용자가 지정하지 않을 경우, 별다른 데이터를 송�
 	<!-- ******************  //API Detail ****************** -->
 
 	<!-- ******************  API Detail ****************** -->
-	<div id="subSceneLoadFlagView">
-		<h2>subSceneLoadFlag()</h2>
+	<div id="scenePartLoadFlagView">
+		<h2>scenePartLoadFlag()</h2>
 		<div class="detailPart">
-			<h3>subSceneLoadFlag(<em></em>)</h3>
+			<h3>scenePartLoadFlag(<em></em>)</h3>
 			<div class="detailSection">
 				<h4>Argument</h4>
 				<dl>
@@ -6615,11 +7210,11 @@ sendData : 사용자가 지정하지 않을 경우, 별다른 데이터를 송�
 			</div>
 			<div class="detailSection">
 				<h4>Return</h4>
-				<p>riff object</p>
+				<p>Riff Object</p>
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p>선택된 요소의 subScene에 플래그를 체크해서 화면을 갱신한다.</p>
+				<p>Checks the flag of the selected ScenePart and updates.</p>
 			</div>
 		</div>
 
@@ -6654,10 +7249,10 @@ sendData : 사용자가 지정하지 않을 경우, 별다른 데이터를 송�
 	<!-- ******************  //API Detail ****************** -->
 
 	<!-- ******************  API Detail ****************** -->
-	<div id="subSceneSelectView">
-		<h2>subSceneSelect()</h2>
+	<div id="scenePartSelectView">
+		<h2>scenePartSelect()</h2>
 		<div class="detailPart">
-			<h3>subSceneSelect(<em>key</em>)</h3>
+			<h3>scenePartSelect(<em>key</em>)</h3>
 			<div class="detailSection">
 				<h4>Argument</h4>
 				<dl>
@@ -6672,8 +7267,7 @@ sendData : 사용자가 지정하지 않을 경우, 별다른 데이터를 송�
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p>key값에 해당하는 하위요소를 반환한다. <br>
-						인자의 타입이 string or number 이 아닐 경우 하위 요소 전체를 반환한다.
+				<p>Returns the ScenePart that corresponds to the key value. If the argument is not a string or number, all of the SceneParts are returned.<br>
 				</p>
 			</div>
 		</div>
@@ -6721,12 +7315,12 @@ sendData : 사용자가 지정하지 않을 경우, 별다른 데이터를 송�
 			</div>
 			<div class="detailSection">
 				<h4>Return</h4>
-				<p>riff object</p>
+				<p>Riff Object</p>
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p>화면을 수동으로 갱신한다. <br>
-						tab일 경우 _isCallByAutoRefresh 플래그를 통해 autoRefresh 함수로부터 호출됐는지 확인한다.
+				<p>Manually refreshes the component.<br>
+				In case of tab, _isCallByAutoRefresh is used to check if the component was loaded by autoRefresh().
 				</p>
 			</div>
 		</div>
@@ -6770,17 +7364,17 @@ sendData : 사용자가 지정하지 않을 경우, 별다른 데이터를 송�
 				<h4>Argument</h4>
 				<dl>
 					<dt>time(optional)</dt>
-					<dd>갱신 시간</dd>
+					<dd>refresh time in milliseconds</dd>
 				</dl>
 			</div>
 			<div class="detailSection">
 				<h4>Return</h4>
-				<p>riff object</p>
+				<p>Riff Object</p>
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p>화면을 자동으로 갱신한다.<br>
-				인자로 시간이 넘어오면 그 시간에 맞춰 자동으로 갱신된다.
+				<p>Automatically refreshes the component.<br>
+				Waits for the specified time given by the time argument before refreshing.
 				</p>
 			</div>
 		</div>
@@ -6826,7 +7420,7 @@ sendData : 사용자가 지정하지 않을 경우, 별다른 데이터를 송�
 				<h4>Argument</h4>
 				<dl>
 					<dt>data</dt>
-					<dd>{ property : value } 이루어진 object data</dd>
+					<dd> Object data { property : value }</dd>
 				</dl>
 
 				<dl>
@@ -6836,11 +7430,11 @@ sendData : 사용자가 지정하지 않을 경우, 별다른 데이터를 송�
 			</div>
 			<div class="detailSection">
 				<h4>Return</h4>
-				<p>riff object</p>
+				<p>Riff Object</p>
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p>선택된 요소에 해당 데이터를 통해 스타일을 적용한다.</p>
+				<p> The style is applied to the component by data.</p>
 			</div>
 		</div>
 
@@ -6883,16 +7477,16 @@ sendData : 사용자가 지정하지 않을 경우, 별다른 데이터를 송�
 				<h4>Argument</h4>
 				<dl>
 					<dt>key</dt>
-					<dd>list에서 삭제할 요소의 index</dd>
+					<dd>The index of the list to delete.</dd>
 				</dl>
 			</div>
 			<div class="detailSection">
 				<h4>Return</h4>
-				<p>riff object</p>
+				<p>Riff Object</p>
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p>list에서 해당 key의 요소를 삭제한다.</p>
+				<p> Delets the list item that corresponds to the key. </p>
 			</div>
 		</div>
 
@@ -6939,11 +7533,11 @@ sendData : 사용자가 지정하지 않을 경우, 별다른 데이터를 송�
 			</div>
 			<div class="detailSection">
 				<h4>Return</h4>
-				<p>riff object</p>
+				<p>Riff Object</p>
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p> setting에서 ok버튼 누를때 실행된다. 인자로는 선택된 key값들을 배열로 넘긴다.</p>
+				<p> Executed when the ok button is clicked on setting. The argument is a array of the selected key values. </p>
 			</div>
 		</div>
 
@@ -6990,11 +7584,12 @@ sendData : 사용자가 지정하지 않을 경우, 별다른 데이터를 송�
 			</div>
 			<div class="detailSection">
 				<h4>Return</h4>
-				<p>riff object</p>
+				<p>Riff Object</p>
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p>인자로는 okFunc()실행 시 선택된 key값들을 배열로 받아온다. settingList 에서 선택한 목록의 플래그를 변경해준다.</p>
+				<p>
+				Receives the array of key values from okFunc(). The flags of the selected list from settingList are changed. </p>
 			</div>
 		</div>
 
@@ -7037,16 +7632,16 @@ sendData : 사용자가 지정하지 않을 경우, 별다른 데이터를 송�
 				<h4>Argument</h4>
 				<dl>
 					<dt>number</dt>
-					<dd>이동할 indexNo</dd>
+					<dd>Index number to move to</dd>
 				</dl>
 			</div>
 			<div class="detailSection">
 				<h4>Return</h4>
-				<p>riff object</p>
+				<p>Riff Object</p>
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p>선택된 요소의 해당 인자를 통해 내부적으로 subScene을 변경하고, 해당 인자의 뉴스를 idle에 출력해준다.</p>
+				<p>Moves the ScenePart to the corresponding index number, and displays the feed data on the idle window.</p>
 			</div>
 		</div>
 
@@ -7056,16 +7651,12 @@ sendData : 사용자가 지정하지 않을 경우, 별다른 데이터를 송�
 				<h4>Argument</h4>
 				<dl>
 					<dt>string</dt>
-					<dd>이벤트에 매칭되는 문자열</dd>
+					<dd>String to match to the event.</dd>
 				</dl>
 			</div>
 			<div class="detailSection">
 				<h4>Return</h4>
-				<p>riff object</p>
-			</div>
-			<div class="detailSection">
-				<h4>Description</h4>
-				<p>각 문자열에 해당하는 이벤트를 활성화하고, 이벤트 발생 시 RSS </p>
+				<p>Riff Object</p>
 			</div>
 		</div>
 
@@ -7108,16 +7699,16 @@ sendData : 사용자가 지정하지 않을 경우, 별다른 데이터를 송�
 				<h4>Argument</h4>
 				<dl>
 					<dt>ID</dt>
-					<dd>idle에서 참조할 RSS 요소의 id</dd>
+					<dd>the ID of the RSS component to refer to at idle state</dd>
 				</dl>
 			</div>
 			<div class="detailSection">
 				<h4>Return</h4>
-				<p>riff object</p>
+				<p>Riff Object</p>
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p>선택된 요소를 riff Component 로 감싼 후 rssComponent를 셋팅한다.</p>
+				<p>Sets the RSS component after wrapping it in a Riff Object.</p>
 			</div>
 		</div>
 
@@ -7151,9 +7742,163 @@ sendData : 사용자가 지정하지 않을 경우, 별다른 데이터를 송�
 	</div>
 	<!-- ******************  //API Detail ****************** -->
 
+	<!-- ******************  API Detail ****************** -->
+	<div id="transitionEffectNoneView">
+		<h2>transitionEffectNone()</h2>
+		<div class="detailPart">
+			<h3>transitionEffectNone(<em>bool</em>)</h3>
+			<div class="detailSection">
+				<h4>Argument</h4>
+				<dl>
+					<dt>bool</dt>
+					<dd>boolean</dd>
+				</dl>
+			</div>
+			<div class="detailSection">
+				<h4>Return</h4>
+				<p>boolean</p>
+			</div>
+			<div class="detailSection">
+				<h4>Description</h4>
+				<p>remove Transition Effect</p>
+			</div>
+		</div>
+
+		<table>
+			<caption>Version History</caption>
+			<colgroup>
+				<col width="30%">
+				<col width="70%">
+			</colgroup>
+			<thead>
+				<tr>
+					<th scope="col">
+						Version
+					</th>
+					<th scope="col">
+						Description
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						Trial 1.0.10
+					</td>
+					<td>
+						Refactoring
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<!-- ******************  //API Detail ****************** -->
+
+	<!-- ******************  API Detail ****************** -->
+	<div id="makeSetListDivView">
+		<h2>makeSetListDiv()</h2>
+		<div class="detailPart">
+			<h3>makeSetListDiv(<em>id, data</em>)</h3>
+			<div class="detailSection">
+				<h4>Argument</h4>
+				<dl>
+					<dt>id</dt>
+					<dd>Scene ID, String</dd>
+				</dl>
+				<dl>
+					<dt>data</dt>
+					<dd>Data Object</dd>
+				</dl>
+			</div>
+			<div class="detailSection">
+				<h4>Return</h4>
+				<p>boolean</p>
+			</div>
+			<div class="detailSection">
+				<h4>Description</h4>
+				<p>Create setting list Component.</p>
+			</div>
+		</div>
+
+		<table>
+			<caption>Version History</caption>
+			<colgroup>
+				<col width="30%">
+				<col width="70%">
+			</colgroup>
+			<thead>
+				<tr>
+					<th scope="col">
+						Version
+					</th>
+					<th scope="col">
+						Description
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						Trial 1.0.10
+					</td>
+					<td>
+						Refactoring
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<!-- ******************  //API Detail ****************** -->
+
+	<!-- ******************  API Detail ****************** -->
+	<div id="frameworkTabMenuView" style="display: none;">
+		<h2>frameworkTabMenu()</h2>
+		<div class="detailPart">
+			<h3>frameworkTabMenu(<em></em>)</h3>
+			<div class="detailSection">
+				<h4>Return</h4>
+				<p>boolean</p>
+			</div>
+			<div class="detailSection">
+				<h4>Description</h4>
+				<p>framework에서 제공하는 tab 구조를 만들기 위한 함수.</p>
+			</div>
+		</div>
+
+		<table>
+			<caption>Version History</caption>
+			<colgroup>
+				<col width="30%">
+				<col width="70%">
+			</colgroup>
+			<thead>
+				<tr>
+					<th scope="col">
+						Version
+					</th>
+					<th scope="col">
+						Description
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						Trial 1.0.10
+					</td>
+					<td>
+						Refactoring
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<!-- ******************  //API Detail ****************** -->
 
 </div>
+
 </div>
+
 
 
 <script language="JavaScript" type="text/javascript">
@@ -7170,6 +7915,7 @@ sendData : 사용자가 지정하지 않을 경우, 별다른 데이터를 송�
 		linkObj[j].onclick = function(){
 			hideall();
 			document.getElementById(this.id+"View").style.display="block";
+
 		}
 	}
 </script>

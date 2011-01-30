@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>Riff Factory</title>
+	<link rel="stylesheet" href="riff.beta.1.8.8.css" type="text/css">
+	<link rel="stylesheet" href="theme/riff_basic/theme.css" type="text/css">
+	<link rel="stylesheet" href="user.css" type="text/css">
+	<script type="text/javascript" src="riff.beta.1.8.8.js"></script>
+	<script type="text/javascript" src="user_common.js"></script>
+	<script type="text/javascript" src="user_data.js"></script>
+
+</head>
+<body>
+<!-- Idle : User Markup -->
+<div class="rf-component-idle">
+	<div class="factory-idle">
+		<span>
+			Beta v1<Br>
+			Tap to Fullmode
+		</span>
+	</div>
+</div>
+
+<!-- header -->
+<div class="rf-component-header">
+	Riff Factory
+</div>
+<!-- //header -->
+
+<!-- Index -->
+<div class="rf-component-scene" id="index">
+	<div class="rf-component-list">
+		<ul>
+			<li id="goComponent">Component	</li>
+			<li id="goDataProcessing">Ajax Processing</li>
+			<li id="goTransition">Transition</li>
+			<li id="goTouchEvent">Touch Event</li>
+		</ul>
+	</div>
+</div>
+<!-- Index -->
+
+<!-- Component -->
+<div class="rf-component-scene" id="sComponent">
+	<div class="rf-component-list">
+		<ul>
+			<li id="goTextList">Text List</li>
+			<li id="goImageList">Image List</li>
+			<li id="goTab">Tab</li>
+			<li id="goTextPage">Text Page</li>
+			<li id="goPopup">Popup</li>
+			<li id="goUserSetting">User Setting Data</li>
+		</ul>
+	</div>
+</div>
+<!-- Component -->
+
+<div class="rf-component-scene" id="sPopup">
+	<div class="rf-component-popup" id="popupID">
+	</div>
+</div>
+
+<!-- Text List -->
+<div class="rf-component-scene" id="sTextList">
+	<div class="rf-component-list">
+		<div class="rf-component-header-list">
+			One Line
+		</div>
+		<ul>
+			<li>One Line Text</li>
+			<li>One Line Text</li>
+		</ul>
+		<div class="rf-component-header-list">
+			Multi Line
+		</div>
+		<ul>
+			<li>
+				<span class="rf-style-txt-head">
+					Multi Line Text
+				</span>
+				<span class="rf-style-txt-desc">
+					Sub Some Text.
+				</span>
+			</li>
+			<li>
+				<span class="rf-style-txt-head">
+					Multi Line Text
+				</span>
+				<span class="rf-style-txt-desc">
+					Sub Some Text. Sub Some Text. Sub Some Text. Sub Some Text. Sub Some Text.
+				</span>
+			</li>
+		</ul>
+	</div>
+</div>
+<!-- Text List -->
+
+
+<!-- Image List -->
+<div class="rf-component-scene" id="sImageList">
+	<div class="rf-component-list">
+		<div class="rf-component-header-list">
+			Image List
+		</div>
+		<ul>
+			<li>
+				<div class="rf-wrapper-thumnail">
+					<img src="img/samplethumnail_1.png">
+				</div>
+				<div class="rf-style-txt-head">Image List</div>
+			</li>
+			<li>
+				<div class="rf-wrapper-thumnail">
+					<img src="img/samplethumnail_2.png">
+				</div>
+				<div class="rf-style-txt-head">Image List</div>
+			</li>
+		</ul>
+		<div class="rf-component-header-list">
+			Image Multi Line
+		</div>
+		<ul>
+			<li>
+				<div class="rf-wrapper-thumnail">
+					<img src="img/samplethumnail_3.png">
+				</div>
+				<div class="rf-style-txt-head">UI Component</div>
+				<div class="rf-style-txt-desc">Provides modularized Components that have all the functionality you need for you Web Application.</div>
+			</li>
+			<li>
+				<div class="rf-wrapper-thumnail">
+					<img src="img/samplethumnail_4.png">
+				</div>
+				<div class="rf-style-txt-head">Touch Event</div>
+				<div class="rf-style-txt-desc">Provides Event that makes Buttons, Lists and certain Objects to respond to Touch.</div>
+			</li>
+		</ul>
+		<div class="rf-component-header-list">
+			Image Multi Line Type2
+		</div>
+		<ul>
+			<li>
+				<div class="rf-style-txt-head">Theme</div>
+				<div class="rf-wrapper-thumnail">
+					<img src="img/samplethumnail_5.png">
+				</div>
+				<div class="rf-style-txt-desc">Riff offers Theme that can be used for developing Web Applications without having to do any design work.</div>
+			</li>
+			<li>
+				<div class="rf-style-txt-head">XML Data Processing</div>
+				<div class="rf-wrapper-thumnail">
+					<img src="img/samplethumnail_3.png">
+				</div>
+				<div class="rf-style-txt-desc">One of the vital features of a Web Application is AJAX communication.</div>
+			</li>
+		</ul>
+	</div>
+</div>
+<!-- Image List -->
+
+<!-- Tab -->
+<div class="rf-component-scene" id="sTab">
+	<div class="rf-component-tabmenu">
+		<ul>
+			<li>Tab Menu1</li>
+			<li>Tab Menu2</li>
+			<li>Tab Menu3</li>
+			<li>Tab Menu4</li>
+		</ul>
+	</div>
+	<div class="rf-component-scenepart">
+		<div class="rf-component-textdetail">
+			<div class="rf-area-textdetail-head">
+				What is Riff??
+			</div>
+			<div class="rf-area-textdetail-desc">
+			Riff is a web based application development framework that is optimized for Samsung Mobile Devices. <br>
+			Riff allows users to easily develop in Javascript, HTML, and CSS environments. <br>
+			The powerful Components offered with Riff allow design elements and interactions to be used without any complicated development processes. <br>
+			Methods for processing feed data such as XML are also offered, saving precious time used to develop a data processing module.
+			</div>
+		</div>
+	</div>
+	<div class="rf-component-scenepart">
+		<div class="rf-component-textdetail">
+			<div class="rf-area-textdetail-head">
+				HTML Mark-up
+			</div>
+			<div class="rf-area-textdetail-desc">
+				Riff marks up the index.html file to create a Web Application structure. The difference between previous Web Development is that with Riff, you don’t have to mark up everything shown on screen, you just have to mark up the structure of the Components being used.<br>
+				The following are automatically marked up by Riff.
+			</div>
+		</div>
+	</div>
+	<div class="rf-component-scenepart">
+		<div class="rf-component-textdetail">
+			<div class="rf-area-textdetail-head">
+				UI Component
+			</div>
+			<div class="rf-area-textdetail-desc">
+				Provides modularized Components that have all the functionality you need for you Web Application. <br>
+				You can simply develop a Web Application by combining Components. <br>
+				Making full use of Components is the way to use Riff.
+			</div>
+		</div>
+	</div>
+	<div class="rf-component-scenepart">
+		<div class="rf-component-textdetail">
+			<div class="rf-area-textdetail-head">
+				Touch Event
+			</div>
+			<div class="rf-area-textdetail-desc">
+				Provides Event that makes Buttons, Lists and certain Objects to respond to Touch. <br>
+				Although similar to the Mouse Event, API for Touch exclusive events such as Flick and Swipe are offered. <br>
+			</div>
+		</div>
+
+	</div>
+</div>
+<!-- Tab -->
+
+<!-- Text Page -->
+<div class="rf-component-scene" id="sTextPage">
+	<div class="rf-component-textdetail">
+		<div class="rf-area-textdetail-head">
+			Supported Devices
+		</div>
+		<div class="rf-area-textdetail-desc">
+			Milestone 1 : Wave , Wave2 (bada, WVGA) < Current Phase<br>
+			Milestone 2 : Wave723/Wave525/Wave575/Wave533 (bada, WQVGA)<br>
+			Milestone 3 : upcoming models that support WAC 2.0 (android/bada, WVGA)<br>
+			Mobile Browser Support<br>
+			Android<br> Wave (WVGA, WQVGA) iPhone <br>
+			bq. [Tip] Some features may not supported on certain mobile devices.
+		</div>
+	</div>
+</div>
+<!-- Image List -->
+
+
+<!-- DataProcessing -->
+<div class="rf-component-scene" id="sDataProcessing">
+	<div class="rf-component-list">
+		<ul>
+			<li id="goFeedData">FEED Data</li>
+		</ul>
+	</div>
+</div>
+<!-- DataProcessing -->
+
+<!-- FEED Data -->
+<div class="rf-component-scene" id="sFeedData">
+	<div class="rf-component-list">
+		<ul>
+			<li id="goFeedTab">feedTab</li>
+		</ul>
+	</div>
+</div>
+<!-- FEED Data -->
+
+<!-- FEED tab -->
+<div class="rf-component-scene" id="sFeedTab">
+	<div class="rf-component-tabmenu" id="feedTab">
+	</div>
+</div>
+<!-- FEED tab -->
+
+<!-- Transtion -->
+<div class="rf-component-scene" id="sTransition">
+	<div class="rf-component-list">
+		<ul>
+			<li id="goSlideVer">Slide Vertical</li>
+			<li id="goSlideHor">Slide Horizontal</li>
+			<li id="goFade">Fade</li>
+			<li id="goPop">Pop</li>
+		</ul>
+	</div>
+</div>
+<!-- //Transtion -->
+
+<!-- Effect Area -->
+<div class="rf-component-scene" id="effectArea">
+<div style="margin-top: 150px; text-align: center; font-size: 20px;">
+Transtion Test<br>
+	<button class="rf-component-btn" id="btnEffBack">Back</button>
+</div>
+</div>
+<!-- //Effect Area -->
+
+<!-- Touch Event -->
+<div class="rf-component-scene" id="sTouchEvent">
+	<div class="rf-component-list">
+		<ul>
+			<li id="goTap">Tap</li>
+			<li id="goFlick">Flick</li>
+			<li id="goSwipe">Swipe</li>
+		</ul>
+	</div>
+</div>
+<!-- //Touch Event -->
+
+<!-- Touch Event : Tab -->
+<div class="rf-component-scene" id="sTap">
+	<div class="rf-area-customcontent bgTap">
+		<div class="touchInfoBox1">
+			<h1>Tap</h1>
+			Touch the this box.
+			<img src="img/touchimg1.png" class="touchImg">
+		</div>
+
+		<div class="touchInfoBox2">
+			<div class="touchExBox exTap">
+				Tap
+			</div>
+
+			<div class="touchExBox exLongTap">
+				Long Tap
+			</div>
+
+			<div class="touchExBox exDoubleTap">
+				Double Tap
+			</div>
+		</div>
+	</div>
+</div>
+<!-- //Touch Event -->
+
+
+<!-- Touch Event : Flick -->
+<div class="rf-component-scene" id="sFlick">
+	<div class="rf-area-customcontent bgTap">
+		<div class="touchInfoBox1">
+			<h1>Flick</h1>
+			Come on!
+			<img src="img/touchimg2.png" class="touchImg">
+		</div>
+
+		<div class="touchInfoBox2">
+			<div class="flickExBox">
+				Flick
+			</div>
+		</div>
+
+
+	</div>
+</div>
+<!-- //Touch Event -->
+
+<!-- Touch Event : Swipe -->
+<div class="rf-component-scene" id="sSwipe">
+	<div class="rf-area-customcontent bgTap">
+		<div class="touchInfoBox1">
+			<h1>Swipe</h1>
+			Come on!
+			<img src="img/touchimg3.png" class="touchImg">
+		</div>
+
+		<div class="touchInfoBox2">
+			<div class="swipeWrap">
+				<div class="swipeExBox">
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- //Touch Event -->
+
+<div class="rf-component-popup" id="popup1">
+	This is Popup Window.<Br>
+	Hello!
+	<div class="rf-area-btn-popup">
+		<button class="rf-component-btn popupOff">Ok</button>
+		<button class="rf-component-btn popupOff">Cancel</button>
+	</div>
+</div>
+
+</body>
+</html>
+
+
+

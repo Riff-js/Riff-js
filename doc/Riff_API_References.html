@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+7<!DOCTYPE html>
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -302,7 +302,7 @@ pre {
 				<li><a href="#" id="ajax">ajax</a></li>
 				<li><a href="#" id="xml">xml</a></li>
 				<li><a href="#" id="xmlSelector">xmlSelector</a></li>
-				<li><a href="#" id="rss">rss</a></li>
+				<li><a href="#" id="feed">feed</a></li>
 			</ol>
 		</li>
 		<li>Widget
@@ -346,8 +346,9 @@ pre {
 				<li><a href="#" id="changeScenePartFlag">changeScenePartFlag</a></li>
 				<li><a href="#" id="isArray">isArray</a></li>
 				<li><a href="#" id="transitionEffectNone">transitionEffectNone</a></li>
-				<li><a href="#" id="makeSetListDiv">makeSetListDiv</a></li>
+				<li><a href="#" id="settingList">settingList</a></li>
 				<!-- <li><a href="#" id="frameworkTabMenu">frameworkTabMenu</a></li> -->
+				<li><a href="#" id="feedRefresh">feedRefresh</a></li>
 			</ol>
 		</li>
 		<li>ETC
@@ -376,8 +377,8 @@ pre {
 				<li><a href="#" id="removeListItem">removeListItem</a></li>
 				<li><a href="#" id="okFunc">okFunc</a></li>
 				<li><a href="#" id="getSettingValue">getSettingValue</a></li>
-				<li><a href="#" id="moveRSSArticle">moveRSSArticle</a></li>
-				<li><a href="#" id="setRSSComponent">setRSSComponent</a></li>
+				<li><a href="#" id="moveFEEDArticle">moveFEEDArticle</a></li>
+				<li><a href="#" id="setFEEDComponent">setFEEDComponent</a></li>
 			</ol>
 		</li>
 	</ul>
@@ -6264,7 +6265,7 @@ sendData : Unless specified by the user, no data is transmitted.<br>
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p> Hides the RSS data recieve time on the RSS Component. </p>
+				<p> Hides the FEED data recieve time on the FEED Component. </p>
 			</div>
 		</div>
 
@@ -6274,7 +6275,7 @@ sendData : Unless specified by the user, no data is transmitted.<br>
 				<h4>Argument</h4>
 				<dl>
 					<dt>time</dt>
-					<dd>RSS data recieve time</dd>
+					<dd>FEED data recieve time</dd>
 				</dl>
 			</div>
 			<div class="detailSection">
@@ -6283,7 +6284,7 @@ sendData : Unless specified by the user, no data is transmitted.<br>
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p> Hides the RSS data recieve time on the RSS Component. </p>
+				<p> Hides the FEED data recieve time on the FEED Component. </p>
 			</div>
 		</div>
 
@@ -7046,10 +7047,10 @@ sendData : Unless specified by the user, no data is transmitted.<br>
 	<!-- ******************  //API Detail ****************** -->
 
 	<!-- ******************  API Detail ****************** -->
-	<div id="rssView">
-		<h2>rss()</h2>
+	<div id="feedView">
+		<h2>feed()</h2>
 		<div class="detailPart">
-			<h3>("<em>#rssList</em>").rss(<em>data</em>)</h3>
+			<h3>("<em>#rssList</em>").feed(<em>data</em>)</h3>
 			<div class="detailSection">
 				<h4>Argument</h4>
 				<dl>
@@ -7081,7 +7082,7 @@ sendData : Unless specified by the user, no data is transmitted.<br>
 		</div>
 
 		<div class="detailPart">
-			<h3>("<em>#rssTab</em>").rss(<em>data</em>)</h3>
+			<h3>("<em>#rssTab</em>").feed(<em>data</em>)</h3>
 			<div class="detailSection">
 				<h4>Argument</h4>
 				<dl>
@@ -7624,10 +7625,10 @@ sendData : Unless specified by the user, no data is transmitted.<br>
 	<!-- ******************  //API Detail ****************** -->
 
 	<!-- ******************  API Detail ****************** -->
-	<div id="moveRSSArticleView">
-		<h2>moveRSSArticle()</h2>
+	<div id="moveFEEDArticleView">
+		<h2>moveFEEDArticle()</h2>
 		<div class="detailPart">
-			<h3>moveRSSArticle(<em>number</em>)</h3>
+			<h3>moveFEEDArticle(<em>number</em>)</h3>
 			<div class="detailSection">
 				<h4>Argument</h4>
 				<dl>
@@ -7646,7 +7647,7 @@ sendData : Unless specified by the user, no data is transmitted.<br>
 		</div>
 
 		<div class="detailPart">
-			<h3>moveRSSArticle(<em>string</em>)</h3>
+			<h3>moveFEEDArticle(<em>string</em>)</h3>
 			<div class="detailSection">
 				<h4>Argument</h4>
 				<dl>
@@ -7691,15 +7692,15 @@ sendData : Unless specified by the user, no data is transmitted.<br>
 	<!-- ******************  //API Detail ****************** -->
 
 	<!-- ******************  API Detail ****************** -->
-	<div id="setRSSComponentView">
-		<h2>setRSSComponent()</h2>
+	<div id="setFEEDComponentView">
+		<h2>setFEEDComponent()</h2>
 		<div class="detailPart">
-			<h3>setRSSComponent(<em>ID</em>)</h3>
+			<h3>setFEEDComponent(<em>ID</em>)</h3>
 			<div class="detailSection">
 				<h4>Argument</h4>
 				<dl>
 					<dt>ID</dt>
-					<dd>the ID of the RSS component to refer to at idle state</dd>
+					<dd>the ID of the FEED component to refer to at idle state</dd>
 				</dl>
 			</div>
 			<div class="detailSection">
@@ -7708,7 +7709,7 @@ sendData : Unless specified by the user, no data is transmitted.<br>
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p>Sets the RSS component after wrapping it in a Riff Object.</p>
+				<p>Sets the FEED component after wrapping it in a Riff Object.</p>
 			</div>
 		</div>
 
@@ -7795,10 +7796,10 @@ sendData : Unless specified by the user, no data is transmitted.<br>
 	<!-- ******************  //API Detail ****************** -->
 
 	<!-- ******************  API Detail ****************** -->
-	<div id="makeSetListDivView">
-		<h2>makeSetListDiv()</h2>
+	<div id="settingListView">
+		<h2>settingList()</h2>
 		<div class="detailPart">
-			<h3>makeSetListDiv(<em>id, data</em>)</h3>
+			<h3>settingList(<em>id, data</em>)</h3>
 			<div class="detailSection">
 				<h4>Argument</h4>
 				<dl>
@@ -7862,6 +7863,51 @@ sendData : Unless specified by the user, no data is transmitted.<br>
 			<div class="detailSection">
 				<h4>Description</h4>
 				<p>framework에서 제공하는 tab 구조를 만들기 위한 함수.</p>
+			</div>
+		</div>
+
+		<table>
+			<caption>Version History</caption>
+			<colgroup>
+				<col width="30%">
+				<col width="70%">
+			</colgroup>
+			<thead>
+				<tr>
+					<th scope="col">
+						Version
+					</th>
+					<th scope="col">
+						Description
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						Trial 1.0.10
+					</td>
+					<td>
+						Refactoring
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<!-- ******************  //API Detail ****************** -->
+
+	<!-- ******************  API Detail ****************** -->
+	<div id="feedRefreshView">
+		<h2>feedRefresh()</h2>
+		<div class="detailPart">
+			<h3>feedRefresh(<em></em>)</h3>
+			<div class="detailSection">
+				<h4>Return</h4>
+				<p>boolean</p>
+			</div>
+			<div class="detailSection">
+				<h4>Description</h4>
+				<p>softkey refresh button Event</p>
 			</div>
 		</div>
 

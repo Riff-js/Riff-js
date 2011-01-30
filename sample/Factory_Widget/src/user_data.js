@@ -1,5 +1,5 @@
 //
-// Riff js - User Data
+// Riff - User Data
 //
 // Copyright 2011, Licensed under the MIT license.
 // http://innovator.samsungmobile.com/

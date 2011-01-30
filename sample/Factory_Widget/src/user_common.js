@@ -1,5 +1,5 @@
 //
-// Framework TrialVersion 1.0.60
+// Riff - User Common
 //
 // Copyright 2011, Licensed under the MIT license.
 // http://innovator.samsungmobile.com/

@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<widget xmlns="http://www.w3.org/ns/widgets" height="258" id="RiffFactory" version="1.0" width="440">
-    <title>Riff Factory</title>
-    <description/>
-    <icon src="icon.png"/>
-    <content src="index.html"/>
-    <access network="true"/>
-</widget>

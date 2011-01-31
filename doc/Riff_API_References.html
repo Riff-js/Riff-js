@@ -1,4 +1,4 @@
-7<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -209,7 +209,7 @@ pre {
 
 <div class="wrapper">
 <div class="logo">
-	<strong>Riff</strong>js <span>Beta v1 (.0.67)</span>
+	<strong>Riff</strong>js <span>Beta v1.8.8</span>
 </div>
 <div class="header">
 	<h1>API References</h1>
@@ -271,7 +271,8 @@ pre {
 		<li>Effect
 			<ol>
 				<li><a href="#" id="animate">animate</a></li>
-				<li><a href="#" id="clearQueue">clearQueue</a></li>
+				<li><a href="#" id="queue">queue</a></li>
+				<!-- <li><a href="#" id="clearQueue">clearQueue</a></li> -->
 				<li><a href="#" id="stop">stop</a></li>
 				<li><a href="#" id="show">show</a></li>
 				<li><a href="#" id="hide">hide</a></li>
@@ -297,7 +298,7 @@ pre {
 				<li><a href="#" id="swipe">swipe</a></li>
 			</ol>
 		</li>
-		<li>Data Processing
+		<li>Ajax Processing
 			<ol>
 				<li><a href="#" id="ajax">ajax</a></li>
 				<li><a href="#" id="xml">xml</a></li>
@@ -318,10 +319,7 @@ pre {
 		</li>
 		<li>Component
 			<ol>
-				<li><a href="#" id="trim">trim</a></li>
-				<li><a href="#" id="camelize">camelize</a></li>
-				<li><a href="#" id="toID">toID</a></li>
-				<li><a href="#" id="queue">queue</a></li>
+				<li><a href="#" id="component">component</a></li>
 				<li><a href="#" id="go">go</a></li>
 				<li><a href="#" id="back">back</a></li>
 				<li><a href="#" id="scene">scene</a></li>
@@ -333,29 +331,32 @@ pre {
 				<li><a href="#" id="transition">transition</a></li>
 				<li><a href="#" id="globalSetting">globalSetting</a></li>
 				<li><a href="#" id="softKey">softKey</a></li>
-				<li><a href="#" id="softKeySoftKeyMoreHide">softkey.softKeyMoreHide</a></li>
+				<!-- <li><a href="#" id="softKeySoftKeyMoreHide">softkey.softKeyMoreHide</a></li> -->
+				<li><a href="#" id="feedRefresh">feedRefresh</a></li>
 				<li><a href="#" id="load">load</a></li>
-				<li><a href="#" id="noConflict">noConflict</a></li>
 				<li><a href="#" id="currentTime">currentTime</a></li>
 				<li><a href="#" id="dataReceiveTime">dataReceiveTime</a></li>
-				<li><a href="#" id="adjustSceneSize">adjustSceneSize</a></li>
 				<li><a href="#" id="ellipsisString">ellipsisString</a></li>
-				<li><a href="#" id="extend">extend</a></li>
 				<li><a href="#" id="alert">alert</a></li>
 				<li><a href="#" id="timer">timer</a></li>
+				<li><a href="#" id="count">count</a></li>
 				<li><a href="#" id="changeScenePartFlag">changeScenePartFlag</a></li>
 				<li><a href="#" id="isArray">isArray</a></li>
 				<li><a href="#" id="transitionEffectNone">transitionEffectNone</a></li>
 				<li><a href="#" id="settingList">settingList</a></li>
 				<!-- <li><a href="#" id="frameworkTabMenu">frameworkTabMenu</a></li> -->
-				<li><a href="#" id="feedRefresh">feedRefresh</a></li>
+				<li><a href="#" id="adjustSceneSize">adjustSceneSize</a></li>
 			</ol>
 		</li>
 		<li>ETC
 			<ol>
+				<li><a href="#" id="noConflict">noConflict</a></li>
+				<li><a href="#" id="extend">extend</a></li>
+				<li><a href="#" id="toID">toID</a></li>
 				<li><a href="#" id="size">size</a></li>
+				<li><a href="#" id="trim">trim</a></li>
+				<li><a href="#" id="camelize">camelize</a></li>
 				<li><a href="#" id="getTextByRecursive">getTextByRecursive</a></li>
-				<li><a href="#" id="component">component</a></li>
 				<li><a href="#" id="triggerExistEvent">triggerExistEvent</a></li>
 				<li><a href="#" id="triggerCustomEvent">triggerCustomEvent</a></li>
 				<!-- <li><a href="#" id="addEventByType">addEventByType</a></li> -->
@@ -366,7 +367,6 @@ pre {
 			<ol>
 				<li><a href="#" id="makeStructs">makeStructs</a></li>
 				<li><a href="#" id="makeContents">makeContents</a></li>
-				<li><a href="#" id="count">count</a></li>
 				<li><a href="#" id="componentGo">go</a></li>
 				<li><a href="#" id="scenePartLoad">scenePartLoad</a></li>
 				<li><a href="#" id="scenePartLoadFlag">scenePartLoadFlag</a></li>
@@ -377,8 +377,8 @@ pre {
 				<li><a href="#" id="removeListItem">removeListItem</a></li>
 				<li><a href="#" id="okFunc">okFunc</a></li>
 				<li><a href="#" id="getSettingValue">getSettingValue</a></li>
-				<li><a href="#" id="moveFEEDArticle">moveFEEDArticle</a></li>
-				<li><a href="#" id="setFEEDComponent">setFEEDComponent</a></li>
+				<li><a href="#" id="moveFEEDArticle">moveFeedArticle</a></li>
+				<li><a href="#" id="setFEEDComponent">setFeedComponent</a></li>
 			</ol>
 		</li>
 	</ul>
@@ -1955,7 +1955,6 @@ $("#item2").remove();
 &lt;/ul&gt;
 </pre>
 				</div>
-				<p>다음 소스는 위에 마크업된 리스트의 모든 자식 노드중 2번째 노드, 즉 item2를 제거한다.</p>
 				<div class="codeBox">
 <pre>
 $("ul").children().remove(1);
@@ -3117,59 +3116,7 @@ $("ul").find("#item2");
 
 	</div>
 	<!-- ******************  //API Detail ****************** -->
-	<!-- ******************  API Detail ****************** -->
-	<div id="clearQueueView">
-		<h2>clearQueue()</h2>
-		<div class="detailPart">
-			<h3>clearQueue( )</h3>
-			<div class="detailSection">
-				<h4>Argument</h4>
-				<dl>
-					<dt> none </dt>
-					<dd> </dd>
-				</dl>
-			</div>
-			<div class="detailSection">
-				<h4>Return</h4>
-				<p>Riff Object</p>
-			</div>
-			<div class="detailSection">
-				<h4>Description</h4>
-				<p> 현재 실행되고있는 ANIMATION의 QUEUE를 삭제한다. ANIMATION이 동작중이면
-				Empties the animation queue after finishing the current animation.
-				</p>
-			</div>
-		</div>
-		<table>
-			<caption>Version History</caption>
-			<colgroup>
-				<col width="30%">
-				<col width="70%">
-			</colgroup>
-			<thead>
-				<tr>
-					<th scope="col">
-						Version
-					</th>
-					<th scope="col">
-						Description
-					</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<td>
-						Trial 1.0.10
-					</td>
-					<td>
-						Refactoring
-					</td>
-				</tr>
-			</tbody>
-		</table>
 
-	</div>
-	<!-- ******************  //API Detail ****************** -->
 	<!-- ******************  API Detail ****************** -->
 	<div id="stopView">
 		<h2>stop()</h2>
@@ -6804,7 +6751,6 @@ sendData : Unless specified by the user, no data is transmitted.<br>
 				Touch events are linked to the popup button.<br>
 				Touch events are linked to the list, then list form is constructed.<br>
 				settingList constructs the on/off buttons for the checkBox and radioButton and form a list.<br>
-				tab은 탭 이동 시 발생하는 이벤트를 걸어준다.
 				</p>
 			</div>
 		</div>
@@ -7862,7 +7808,7 @@ sendData : Unless specified by the user, no data is transmitted.<br>
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p>framework에서 제공하는 tab 구조를 만들기 위한 함수.</p>
+				<p>Create the structure of Tabmenu Component. </p>
 			</div>
 		</div>
 

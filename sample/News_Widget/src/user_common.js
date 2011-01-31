@@ -19,8 +19,7 @@ $( function (){
 	// Ajax processing at Tabmenu Component (#feedtab)
 	$("#feedTab").feed( feedTabData );
 
-	// Idle Data Setting
-	$(".rf-component-idle").setFeedComponent("#feedTab");
+
 
 
 });

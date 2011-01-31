@@ -24,13 +24,13 @@ var refreshSettingData =  [{
 var feedTabData = {
 	runs :
 	{
-		"World"	: "http://175.125.20.219/xml/xml.php?url=http://rss.news.yahoo.com/rss/world",
-		"Sports"	: "http://175.125.20.219/xml/xml.php?url=http://rss.news.yahoo.com/rss/sports",
-		"Science"	: "http://175.125.20.219/xml/xml.php?url=http://rss.news.yahoo.com/rss/science",
-		"Health"	: "http://175.125.20.219/xml/xml.php?url=http://rss.news.yahoo.com/rss/health"
+		// Coding your Feed URL here.
+		// Example Code.
+		//"Discussion"	: "http://175.125.20.219/xml/xml.php?url=http://innovator.samsungmobile.com/servlet/rss/discussion.xml",
+		//"Products"	: "http://175.125.20.219/xml/xml.php?url=http://innovator.samsungmobile.com/servlet/rss/products.xml"
 	},
 	layout :
 	{
-		"image" : "thumbnail[url]"
+		//"image" : "thumbnail[url]"
 	}
 }

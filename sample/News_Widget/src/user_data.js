@@ -31,6 +31,6 @@ var feedTabData = {
 	},
 	layout :
 	{
-		//"image" : "thumbnail[url]"
+		"image" : "thumbnail[url]"
 	}
 }

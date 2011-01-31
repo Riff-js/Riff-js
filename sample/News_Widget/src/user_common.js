@@ -22,6 +22,5 @@ $( function (){
 	// Idle Data Setting
 	$(".rf-component-idle").setFeedComponent("#feedTab");
 
-	// Insert text string on the Datareceivetime Component
-	$.dataReceiveInfo( "Yahoo! News." );
+
 });

@@ -24,7 +24,7 @@ var refreshSettingData =  [{
 var feedTabData = {
 	runs :
 	{
-		"News"		: "http://175.125.20.219/xml/xml.php?url=http://rss.news.yahoo.com/rss/world",
+		"World"	: "http://175.125.20.219/xml/xml.php?url=http://rss.news.yahoo.com/rss/world",
 		"Sports"	: "http://175.125.20.219/xml/xml.php?url=http://rss.news.yahoo.com/rss/sports",
 		"Science"	: "http://175.125.20.219/xml/xml.php?url=http://rss.news.yahoo.com/rss/science",
 		"Health"	: "http://175.125.20.219/xml/xml.php?url=http://rss.news.yahoo.com/rss/health"

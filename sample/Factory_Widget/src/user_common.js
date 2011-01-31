@@ -1,5 +1,5 @@
 //
-// Riff - User Common
+// Framework TrialVersion 1.0.60
 //
 // Copyright 2011, Licensed under the MIT license.
 // http://innovator.samsungmobile.com/
@@ -62,6 +62,6 @@ $( function (){
 	$("#feedTab").feed( feedTestDataTabMenu );
 
 	// Insert text string on the Datareceivetime Component
-	$.dataReceiveInfo( "Yahoo! News." );
+	$.dataReceiveInfo( "Samsung Mobile Innovator" );
 
 });

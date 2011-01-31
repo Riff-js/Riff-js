@@ -3136,7 +3136,6 @@ ComponentIdle.prototype.option = function ( _data )
 }
 
 
-//  idle�� �ִ� �͵��� �̵�
 //  @param
 //    _move : "articleLeft", "articleRight", "categoryLeft", "categoryRight", (number)
 ComponentIdle.prototype.moveFEEDArticle = function ( _move )
@@ -3226,8 +3225,9 @@ ComponentIdle.prototype.moveFEEDArticle = function ( _move )
 				riff(".rf-idle-category").text( reduceTitleText );
 				var reduceArticleText = riff.ellipsisString( idleSet[FEEDIndex].txtHead, riffGlobal.idleArticleEllipsisStringLength );
 				riff(".rf-idle-article").text( reduceArticleText );
+				// dataReceivedTime
 				var dataReceiveTimeComponent = riff('.rf-component-datareceivetime');
-				riff(".rf-component-idle").dataReceiveTime( dataReceiveTimeComponent.buffer("feedDataReceiveTime" + FEEDIndex ), dataReceiveTimeComponent.buffer("feedDataReceiveText") );
+				riff(".rf-component-idle").dataReceiveTime( dataReceiveTimeComponent.buffer("feedDataReceiveTime" ), dataReceiveTimeComponent.buffer("feedDataReceiveText") );
 			}
 		}
 	}

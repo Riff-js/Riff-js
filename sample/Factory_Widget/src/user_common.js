@@ -1,5 +1,5 @@
 //
-// Framework TrialVersion 1.0.60
+// Riff - User Common
 //
 // Copyright 2011, Licensed under the MIT license.
 // http://innovator.samsungmobile.com/
@@ -17,7 +17,9 @@ $( function (){
 	})
 	// Scene Navigation
 	$("#goComponent").tap(		function(){ $.go("#sComponent"); });
-	$("#goDataProcessing").tap(	function(){ $.go("#sFeedTab"); });
+	$("#goDataProcessing").tap(	function(){ $.go("#sFeedData"); });
+	$("#goFeedTab").tap(	function(){ $.go("#sFeedTab"); });
+	$("#goFeedNavigation").tap(	function(){ $.go("#sFeedNavigation"); });
 
 	$("#goTransition").tap( function(){ $.go("sTransition"); });
 	$("#goSlideVer").tap( function(){ $.go("effectArea", {"transitionEffect" : "slideVer"}); });
@@ -30,7 +32,8 @@ $( function (){
 	$("#goTextList").tap( function(){ $.go("#sTextList"); });
 	$("#goImageList").tap( function(){ $.go("#sImageList"); });
 	$("#goTab").tap( function(){ $.go("#sTab"); });
-	$("#goTextPage").tap( function(){ $.go("#sTextPage"); });
+	$("#goNavigationMenu").tap(	function(){ $.go("#sNavigationMenu"); });
+	$("#goTextDetail").tap( function(){ $.go("#sTextDetail"); });
 	$("#goTap").tap(	function(){ $.go("#sTap"); });
 	$("#goFlick").tap( function(){ $.go("#sFlick"); });
 	$("#goSwipe").tap( function(){ $.go("#sSwipe"); });
@@ -58,10 +61,20 @@ $( function (){
 	$.settingList( "setTrans", setTransListData );
 	$.settingList( "setTheme", setThemeListData );
 
+//	$.settingList( "setting", valueSetListData );
+
 	// Ajax processing at Tabmenu Component (#feedtab)
 	$("#feedTab").feed( feedTestDataTabMenu );
+	// Idle Data Setting
+//	$(".rf-component-idle").setFeedComponent("#feedTab");
+
+	// Ajax processing at Tabmenu Component (#feedNavigation)
+	$("#feedNavigation").feed( feedTestDataNavigationMenu );
+	// Idle Data Setting
+//	$(".rf-component-idle").setFeedComponent("#feedNavigation");
 
 	// Insert text string on the Datareceivetime Component
-	$.dataReceiveInfo( "Samsung Mobile Innovator" );
+	$.dataReceiveInfo( "Yahoo! News." );
 
+	$("#textDetailID").setContents(textDetailData);
 });

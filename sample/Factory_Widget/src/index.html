@@ -3,10 +3,10 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<title>Riff Factory</title>
-	<link rel="stylesheet" href="riff.beta.1.8.9.css" type="text/css">
+	<link rel="stylesheet" href="riff_style.beta.1.9.327.min.css" type="text/css">
 	<link rel="stylesheet" href="theme/riff_basic/theme.css" type="text/css">
 	<link rel="stylesheet" href="user.css" type="text/css">
-	<script type="text/javascript" src="riff.beta.1.8.9.js"></script>
+	<script type="text/javascript" src="riff.beta.1.9.327.min.js"></script>
 	<script type="text/javascript" src="user_common.js"></script>
 	<script type="text/javascript" src="user_data.js"></script>
 
@@ -48,7 +48,8 @@
 			<li id="goTextList">Text List</li>
 			<li id="goImageList">Image List</li>
 			<li id="goTab">Tab</li>
-			<li id="goTextPage">Text Page</li>
+			<li id="goNavigationMenu">Navigation</li>
+			<li id="goTextDetail">Text Page</li>
 			<li id="goPopup">Popup</li>
 			<li id="goUserSetting">User Setting Data</li>
 		</ul>
@@ -220,40 +221,79 @@
 </div>
 <!-- Tab -->
 
-<!-- Text Page -->
-<div class="rf-component-scene" id="sTextPage">
-	<div class="rf-component-textdetail">
-		<div class="rf-area-textdetail-head">
-			Supported Devices
-		</div>
-		<div class="rf-area-textdetail-desc">
-			Milestone 1 : Wave , Wave2 (bada, WVGA) < Current Phase<br>
-			Milestone 2 : Wave723/Wave525/Wave575/Wave533 (bada, WQVGA)<br>
-			Milestone 3 : upcoming models that support WAC 2.0 (android/bada, WVGA)<br>
-			Mobile Browser Support<br>
-			Android<br> Wave (WVGA, WQVGA) iPhone <br>
-			bq. [Tip] Some features may not supported on certain mobile devices.
-		</div>
-	</div>
-</div>
-<!-- Image List -->
-
-
-<!-- DataProcessing -->
-<div class="rf-component-scene" id="sDataProcessing">
-	<div class="rf-component-list">
+<!-- Navigation -->
+<div class="rf-component-scene" id="sNavigationMenu">
+	<div class="rf-component-navigationMenu" >
 		<ul>
-			<li id="goFeedData">FEED Data</li>
+			<li>NV Menu1</li>
+			<li>NV Menu2</li>
+			<li>NV Menu3</li>
+			<li>NV Menu4</li>
 		</ul>
 	</div>
+	<div class="rf-component-scenepart">
+		<div class="rf-component-textdetail">
+			<div class="rf-area-textdetail-head">
+				What is Riff??
+			</div>
+			<div class="rf-area-textdetail-desc">
+			Riff is a web based application development framework that is optimized for Samsung Mobile Devices. <br>
+			Riff allows users to easily develop in Javascript, HTML, and CSS environments. <br>
+			The powerful Components offered with Riff allow design elements and interactions to be used without any complicated development processes. <br>
+			Methods for processing feed data such as XML are also offered, saving precious time used to develop a data processing module.
+			</div>
+		</div>
+	</div>
+	<div class="rf-component-scenepart">
+		<div class="rf-component-textdetail">
+			<div class="rf-area-textdetail-head">
+				HTML Mark-up
+			</div>
+			<div class="rf-area-textdetail-desc">
+				Riff marks up the index.html file to create a Web Application structure. The difference between previous Web Development is that with Riff, you don’t have to mark up everything shown on screen, you just have to mark up the structure of the Components being used.<br>
+				The following are automatically marked up by Riff.
+			</div>
+		</div>
+	</div>
+	<div class="rf-component-scenepart">
+		<div class="rf-component-textdetail">
+			<div class="rf-area-textdetail-head">
+				UI Component
+			</div>
+			<div class="rf-area-textdetail-desc">
+				Provides modularized Components that have all the functionality you need for you Web Application. <br>
+				You can simply develop a Web Application by combining Components. <br>
+				Making full use of Components is the way to use Riff.
+			</div>
+		</div>
+	</div>
+	<div class="rf-component-scenepart">
+		<div class="rf-component-textdetail">
+			<div class="rf-area-textdetail-head">
+				Touch Event
+			</div>
+			<div class="rf-area-textdetail-desc">
+				Provides Event that makes Buttons, Lists and certain Objects to respond to Touch. <br>
+				Although similar to the Mouse Event, API for Touch exclusive events such as Flick and Swipe are offered. <br>
+			</div>
+		</div>
+
+	</div>
 </div>
-<!-- DataProcessing -->
+<!-- Navigation -->
+
+<!-- Text Page -->
+<div class="rf-component-scene" id="sTextDetail">
+	<div class="rf-component-textDetail" id="textDetailID"></div>
+</div>
+<!-- Text Page -->
 
 <!-- FEED Data -->
 <div class="rf-component-scene" id="sFeedData">
 	<div class="rf-component-list">
 		<ul>
 			<li id="goFeedTab">feedTab</li>
+			<li id="goFeedNavigation">FeedNavigation</li>
 		</ul>
 	</div>
 </div>
@@ -265,6 +305,13 @@
 	</div>
 </div>
 <!-- FEED tab -->
+
+<!-- FEED navigation -->
+<div class="rf-component-scene" id="sFeedNavigation">
+	<div class="rf-component-navigationMenu" id="feedNavigation">
+	</div>
+</div>
+<!-- FEED navigation -->
 
 <!-- Transtion -->
 <div class="rf-component-scene" id="sTransition">

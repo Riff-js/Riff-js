@@ -209,7 +209,7 @@ pre {
 
 <div class="wrapper">
 <div class="logo">
-	<strong>Riff</strong>js <span>Beta v1.8.8</span>
+	<strong>Riff</strong>js <span>Beta v1.9</span>
 </div>
 <div class="header">
 	<h1>API References</h1>
@@ -272,7 +272,7 @@ pre {
 			<ol>
 				<li><a href="#" id="animate">animate</a></li>
 				<li><a href="#" id="queue">queue</a></li>
-				<!-- <li><a href="#" id="clearQueue">clearQueue</a></li> -->
+				<li><a href="#" id="clearQueue">clearQueue</a></li>
 				<li><a href="#" id="stop">stop</a></li>
 				<li><a href="#" id="show">show</a></li>
 				<li><a href="#" id="hide">hide</a></li>
@@ -319,7 +319,7 @@ pre {
 		</li>
 		<li>Component
 			<ol>
-				<li><a href="#" id="component">component</a></li>
+				<li><a href="#" id="Component">Component</a></li>
 				<li><a href="#" id="go">go</a></li>
 				<li><a href="#" id="back">back</a></li>
 				<li><a href="#" id="scene">scene</a></li>
@@ -331,11 +331,12 @@ pre {
 				<li><a href="#" id="transition">transition</a></li>
 				<li><a href="#" id="globalSetting">globalSetting</a></li>
 				<li><a href="#" id="softKey">softKey</a></li>
-				<!-- <li><a href="#" id="softKeySoftKeyMoreHide">softkey.softKeyMoreHide</a></li> -->
+				<li><a href="#" id="softKeySoftKeyMoreHide">softkey.softKeyMoreHide</a></li>
 				<li><a href="#" id="feedRefresh">feedRefresh</a></li>
 				<li><a href="#" id="load">load</a></li>
 				<li><a href="#" id="currentTime">currentTime</a></li>
 				<li><a href="#" id="dataReceiveTime">dataReceiveTime</a></li>
+				<li><a href="#" id="dataReceiveInfo">dataReceiveInfo</a></li>
 				<li><a href="#" id="ellipsisString">ellipsisString</a></li>
 				<li><a href="#" id="alert">alert</a></li>
 				<li><a href="#" id="timer">timer</a></li>
@@ -344,7 +345,7 @@ pre {
 				<li><a href="#" id="isArray">isArray</a></li>
 				<li><a href="#" id="transitionEffectNone">transitionEffectNone</a></li>
 				<li><a href="#" id="settingList">settingList</a></li>
-				<!-- <li><a href="#" id="frameworkTabMenu">frameworkTabMenu</a></li> -->
+				<li><a href="#" id="frameworkTabMenu">frameworkTabMenu</a></li>
 				<li><a href="#" id="adjustSceneSize">adjustSceneSize</a></li>
 			</ol>
 		</li>
@@ -359,15 +360,17 @@ pre {
 				<li><a href="#" id="getTextByRecursive">getTextByRecursive</a></li>
 				<li><a href="#" id="triggerExistEvent">triggerExistEvent</a></li>
 				<li><a href="#" id="triggerCustomEvent">triggerCustomEvent</a></li>
-				<!-- <li><a href="#" id="addEventByType">addEventByType</a></li> -->
+				<li><a href="#" id="addEventByType">addEventByType</a></li>
 				<li><a href="#" id="primaryEventRegist">primaryEventRegist</a></li>
+				<li><a href="#" id="selector">selector</a></li>
+				<li><a href="#" id="contextToComponent">contextToComponent</a></li>
 			</ol>
 		</li>
 		<li>Component Function
 			<ol>
 				<li><a href="#" id="makeStructs">makeStructs</a></li>
-				<li><a href="#" id="makeContents">makeContents</a></li>
-				<li><a href="#" id="componentGo">go</a></li>
+				<li><a href="#" id="setContents">setContents</a></li>
+				<li><a href="#" id="ComponentGo">go</a></li>
 				<li><a href="#" id="scenePartLoad">scenePartLoad</a></li>
 				<li><a href="#" id="scenePartLoadFlag">scenePartLoadFlag</a></li>
 				<li><a href="#" id="scenePartSelect">scenePartSelect</a></li>
@@ -379,6 +382,10 @@ pre {
 				<li><a href="#" id="getSettingValue">getSettingValue</a></li>
 				<li><a href="#" id="moveFEEDArticle">moveFeedArticle</a></li>
 				<li><a href="#" id="setFEEDComponent">setFeedComponent</a></li>
+				<li><a href="#" id="showListItemOne">showListItemOne</a></li>
+				<li><a href="#" id="showListItem">showListItem</a></li>
+				<li><a href="#" id="hideListItemOne">hideListItemOne</a></li>
+				<li><a href="#" id="hideListItem">hideListItem</a></li>
 			</ol>
 		</li>
 	</ul>
@@ -399,7 +406,7 @@ pre {
 				<h4>Argument</h4>
 				<dl>
 					<dt> function </dt>
-					<dd>The function to be executed while iterating through the selected DOM elements. The index of the DOM element will be passed on as the first parameter of this function.</dd>
+					<dd>The function to be executed while iterating through the selected DOM Elements. The index of the DOM Element will be passed on as the first parameter of this function.</dd>
 				</dl>
 			</div>
 			<div class="detailSection">
@@ -408,7 +415,7 @@ pre {
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p>Iterates through the selected DOM elements and executes a given function. The index of the current DOM element is passed on as the first parameter of the given function. They keyword 'this' refers to the DOM element.</p>
+				<p>Iterates through the selected DOM Elements and executes a given function. The index of the current DOM Element is passed on as the first parameter of the given function. They keyword 'this' refers to the DOM Element.</p>
 			</div>
 			<div class="detailSection">
 				<h4>Example</h4>
@@ -469,7 +476,7 @@ pre {
 				<h4>Argument</h4>
 				<dl>
 					<dt> selector </dt>
-					<dd> A string to select certain DOM elements within a set of selected DOM elements. Selector may be a tag name, class name, or ID. (optional)
+					<dd> A string to select certain DOM Elements within a set of selected DOM Elements. Selector may be a tag name, class name, or ID. (optional)
 					</dd>
 				</dl>
 			</div>
@@ -479,7 +486,7 @@ pre {
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p>Selects DOM elements from the set of selected DOM elements that match the selector string. If the parameter is empty or not a string, the previosly selected Riff Object is returned.
+				<p>Selects DOM Elements from the set of selected DOM Elements that match the selector string. If the parameter is empty or not a string, the previosly selected Riff Object is returned.
 				</p>
 			</div>
 			<div class="detailSection">
@@ -488,7 +495,7 @@ pre {
 <pre>$('li').filter(".foo").hide();
 </pre>
 				</div>
-				<p>Selects the "li" tag element and executes hide() on a DOM element which has the class name "foo".</p>
+				<p>Selects the "li" tag Element and executes hide() on a DOM Element which has the class name "foo".</p>
 			</div>
 			<div class="detailSection">
 				<h4>Issue</h4>
@@ -539,7 +546,7 @@ pre {
 				<h4>Argument</h4>
 				<dl>
 					<dt> index </dt>
-					<dd>Integer. The index of the DOM element to exclude from the set of selected DOM elements.
+					<dd>Integer. The index of the DOM Element to exclude from the set of selected DOM Elements.
 					</dd>
 				</dl>
 			</div>
@@ -549,7 +556,7 @@ pre {
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p>Excludes the DOM elements that correspond to the given parameter from the set of selected DOM elements. If the parameter is an index, the DOM element of the corresponding index number is excluded from the set of selected DOM elements, and the remaining set is returned.</p>
+				<p>Excludes the DOM Elements that correspond to the given parameter from the set of selected DOM Elements. If the parameter is an index, the DOM Element of the corresponding index number is excluded from the set of selected DOM Elements, and the remaining set is returned.</p>
 			</div>
 			<div class="detailSection">
 				<h4>Example</h4>
@@ -563,7 +570,7 @@ pre {
 &lt;/ul&gt;
 </pre>
 				</div>
-				<p>The DOM elements that correspond to the selector string are excluded, and the remaining DOM elements are returned.</p>
+				<p>The DOM Elements that correspond to the selector string are excluded, and the remaining DOM Elements are returned.</p>
 				<div class="codeBox">
 <pre>
 var t = $("li").not("#bar1").text();
@@ -579,7 +586,7 @@ alert("text:" + t );
 				<h4>Argument</h4>
 				<dl>
 					<dt> DOMElement </dt>
-					<dd> The DOM element to exclude from the set of selected DOm elements. </dd>
+					<dd> The DOM Element to exclude from the set of selected DOm Elements. </dd>
 				</dl>
 			</div>
 			<div class="detailSection">
@@ -588,7 +595,7 @@ alert("text:" + t );
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p>Excludes the DOM elements that correspond to the given parameter from the set of selected DOM elements. If the parameter is an DOM element, the corresponding DOM element is excluded from the set of selected DOM elements, and the remaining set is returned.
+				<p>Excludes the DOM Elements that correspond to the given parameter from the set of selected DOM Elements. If the parameter is an DOM Element, the corresponding DOM Element is excluded from the set of selected DOM Elements, and the remaining set is returned.
 				</p>
 			</div>
 		</div>
@@ -598,7 +605,7 @@ alert("text:" + t );
 				<h4>Argument</h4>
 				<dl>
 					<dt> selector </dt>
-					<dd> A string to select certain DOM elements within a set of selected DOM elements. Selector may be a tag name, class name, or ID. </dd>
+					<dd> A string to select certain DOM Elements within a set of selected DOM Elements. Selector may be a tag name, class name, or ID. </dd>
 				</dl>
 			</div>
 			<div class="detailSection">
@@ -607,7 +614,7 @@ alert("text:" + t );
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p> Excludes the DOM elements that correspond to the given parameter from the set of selected DOM elements. If the parameter is an selector string, the DOM element of the corresponding selector string is excluded from the set of selected DOM elements, and the remaining set is returned.
+				<p> Excludes the DOM Elements that correspond to the given parameter from the set of selected DOM Elements. If the parameter is an selector string, the DOM Element of the corresponding selector string is excluded from the set of selected DOM Elements, and the remaining set is returned.
 				</p>
 			</div>
 
@@ -656,7 +663,7 @@ alert("text:" + t );
 				<h4>Argument</h4>
 				<dl>
 					<dt> classNames </dt>
-					<dd>String of class names to compare with the classes of the selected DOM element. The class names are separated by a blank space.</dd>
+					<dd>String of class names to compare with the classes of the selected DOM Element. The class names are separated by a blank space.</dd>
 				</dl>
 			</div>
 			<div class="detailSection">
@@ -728,7 +735,7 @@ $("#item2").hasClass("item");
 				<h4>Argument</h4>
 				<dl>
 					<dt> classNames </dt>
-					<dd>String of class names to add to the classes of the selected DOM element. The class names are separated by a blank space.</dd>
+					<dd>String of class names to add to the classes of the selected DOM Element. The class names are separated by a blank space.</dd>
 				</dl>
 			</div>
 			<div class="detailSection">
@@ -737,7 +744,7 @@ $("#item2").hasClass("item");
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p> Adds all the classes in the classNames into the selected DOM element. If a class with the same
+				<p> Adds all the classes in the classNames into the selected DOM Element. If a class with the same
 				name already exists, the class will not be added.
 				</p>
 			</div>
@@ -800,7 +807,7 @@ $("#item2").addClass("glow");
 				<h4>Argument</h4>
 				<dl>
 					<dt> classNames </dt>
-					<dd> String of class names to remove from the classes of the selected DOM element. The class names are separated by a blank space. </dd>
+					<dd> String of class names to remove from the classes of the selected DOM Element. The class names are separated by a blank space. </dd>
 				</dl>
 			</div>
 			<div class="detailSection">
@@ -809,7 +816,7 @@ $("#item2").addClass("glow");
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p> Removes all the classes in the classNames from the selected DOM element. If the argument is empty, all classes of the selected DOM elements are removed.</p>
+				<p> Removes all the classes in the classNames from the selected DOM Element. If the argument is empty, all classes of the selected DOM Elements are removed.</p>
 			</div>
 			<div class="detailSection">
 				<h4>Example</h4>
@@ -871,7 +878,7 @@ $("#item2").removeClass("item");
 				<h4>Argument</h4>
 				<dl>
 					<dt> classNames </dt>
-					<dd> String of class names to toggle on the classes of the selected DOM element. The class names are separated by a blank space.</dd>
+					<dd> String of class names to toggle on the classes of the selected DOM Element. The class names are separated by a blank space.</dd>
 				</dl>
 			</div>
 			<div class="detailSection">
@@ -880,7 +887,7 @@ $("#item2").removeClass("item");
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p> If the classes in the classNames do not exist in the selected DOM element, they are added. If not, they are removed.</p>
+				<p> If the classes in the classNames do not exist in the selected DOM Element, they are added. If not, they are removed.</p>
 			</div>
 			<div class="detailSection">
 				<h4>Example</h4>
@@ -954,16 +961,16 @@ $("#item2").toggleClass("item");
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p>	Allocates storage space for each DOM element that buffer() is executed on, and stores "value" on "key".
+				<p>	Allocates storage space for each DOM Element that buffer() is executed on, and stores "value" on "key".
 				</p>
-				<p> The "key" and "value" are stored on riffGlobal.buffer (global array). For every DOM element that buffer is set, a class designated by the framework is added to the DOM element.
+				<p> The "key" and "value" are stored on riffGlobal.buffer (global array). For every DOM Element that buffer is set, a class designated by the framework is added to the DOM Element.
 				<br>
-				If there are more than one selected DOM elements, "value" is stored on "key" for each DOM element.
+				If there are more than one selected DOM Elements, "value" is stored on "key" for each DOM Element.
 				</p>
 			</div>
 			<div class="detailSection">
 				<h4>Example</h4>
-				<p>The following code stores "123" to "key" to a DOM element where the ID is "index".</p>
+				<p>The following code stores "123" to "key" to a DOM Element where the ID is "index".</p>
 				<div class="codeBox">
 <pre>
 $("#index").buffer("key", 123);
@@ -989,12 +996,12 @@ $("#index").buffer("key", 123);
 				<h4>Description</h4>
 				<p> Finds and returns the "value" which corresponds to the "key" from riffGlobal.buffer (global array).
 				<br>
-				If there are more than one selected DOM elements, only the "value" of the first selected DOM element is returned.
+				If there are more than one selected DOM Elements, only the "value" of the first selected DOM Element is returned.
 				</p>
 			</div>
 			<div class="detailSection">
 				<h4>Example</h4>
-				<p>The following code returns the value of "key" rom the DOM element where the ID is "index".</p>
+				<p>The following code returns the value of "key" rom the DOM Element where the ID is "index".</p>
 				<div class="codeBox">
 <pre>
 $("#index").buffer("value");
@@ -1044,7 +1051,7 @@ $("#index").buffer("value");
 				<h4>Argument</h4>
 				<dl>
 					<dt>selector (Optional)</dt>
-					<dd> A string to select certain DOM elements within a set of selected DOM elements. Selector may be a tag name, class name, or ID. (optional) </dd>
+					<dd> A string to select certain DOM Elements within a set of selected DOM Elements. Selector may be a tag name, class name, or ID. (optional) </dd>
 				</dl>
 			</div>
 			<div class="detailSection">
@@ -1053,7 +1060,7 @@ $("#index").buffer("value");
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p> Returns previous siblings of the selected DOM element, which are of the same type. If the argument is a valid selector string, only the corresponding DOM elements are returned. </p>
+				<p> Returns previous siblings of the selected DOM Element, which are of the same type. If the argument is a valid selector string, only the corresponding DOM Elements are returned. </p>
 			</div>
 			<div class="detailSection">
 				<h4>Example</h4>
@@ -1119,7 +1126,7 @@ $("#item2").prev("#item3");
 				<h4>Argument</h4>
 				<dl>
 					<dt>selector (Optional)</dt>
-					<dd>  A string to select certain DOM elements within a set of selected DOM elements. Selector may be a tag name, class name, or ID. (optional) </dd>
+					<dd>  A string to select certain DOM Elements within a set of selected DOM Elements. Selector may be a tag name, class name, or ID. (optional) </dd>
 				</dl>
 			</div>
 			<div class="detailSection">
@@ -1128,7 +1135,7 @@ $("#item2").prev("#item3");
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p> Returns next siblings of the selected DOM element, which are of the same type. If the argument is a valid selector string, only the corresponding DOM elements are returned. </p>
+				<p> Returns next siblings of the selected DOM Element, which are of the same type. If the argument is a valid selector string, only the corresponding DOM Elements are returned. </p>
 			</div>
 			<div class="detailSection">
 				<h4>Example</h4>
@@ -1196,7 +1203,7 @@ $("#item2").next("#item1");
 				<h4>Argument</h4>
 				<dl>
 					<dt> selector (Optional)</dt>
-					<dd> A string to select certain DOM elements within a set of selected DOM elements. Selector may be a tag name, class name, or ID. (optional) </dd>
+					<dd> A string to select certain DOM Elements within a set of selected DOM Elements. Selector may be a tag name, class name, or ID. (optional) </dd>
 				</dl>
 			</div>
 			<div class="detailSection">
@@ -1205,7 +1212,7 @@ $("#item2").next("#item1");
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p> Returns parent siblings of the selected DOM element, which are of the same type. If there are more than one selected DOM element, parent() returns all parent DOM elements for each selected DOM element. If the argument is a valid selector string, only the corresponding DOM elements are returned.</p>
+				<p> Returns parent siblings of the selected DOM Element, which are of the same type. If there are more than one selected DOM Element, parent() returns all parent DOM Elements for each selected DOM Element. If the argument is a valid selector string, only the corresponding DOM Elements are returned.</p>
 			</div>
 			<div class="detailSection">
 				<h4>Example</h4>
@@ -1273,7 +1280,7 @@ $("#item2").parent("#parent");
 				<h4>Argument</h4>
 				<dl>
 					<dt>selector (Optional)</dt>
-					<dd> A string to select certain DOM elements within a set of selected DOM elements. Selector may be a tag name, class name, or ID. (optional) </dd>
+					<dd> A string to select certain DOM Elements within a set of selected DOM Elements. Selector may be a tag name, class name, or ID. (optional) </dd>
 				</dl>
 			</div>
 			<div class="detailSection">
@@ -1282,7 +1289,7 @@ $("#item2").parent("#parent");
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p> Returns all children of the selected DOM element (does not distinguish node types of the children nodes). If the argument is a valid selector string, only the corresponding DOM elements are returned. </p>
+				<p> Returns all children of the selected DOM Element (does not distinguish node types of the children nodes). If the argument is a valid selector string, only the corresponding DOM Elements are returned. </p>
 			</div>
 			<div class="detailSection">
 				<h4>Example</h4>
@@ -1349,7 +1356,7 @@ $("ul").contents("#item2");
 				<h4>Argument</h4>
 				<dl>
 					<dt>selector (Optional)</dt>
-					<dd> A string to select certain DOM elements within a set of selected DOM elements. Selector may be a tag name, class name, or ID. (optional) </dd>
+					<dd> A string to select certain DOM Elements within a set of selected DOM Elements. Selector may be a tag name, class name, or ID. (optional) </dd>
 				</dl>
 			</div>
 			<div class="detailSection">
@@ -1358,8 +1365,8 @@ $("ul").contents("#item2");
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p> Returns children siblings of the selected DOM element which are of the same type. If the argument
-				is a valid selector string, only the corresponding DOM elements are returned.
+				<p> Returns children siblings of the selected DOM Element which are of the same type. If the argument
+				is a valid selector string, only the corresponding DOM Elements are returned.
 				</p>
 			</div>
 			<div class="detailSection">
@@ -1428,7 +1435,7 @@ $("ul").children("#item2");
 				<h4>Argument</h4>
 				<dl>
 					<dt>selector (Optional)</dt>
-					<dd>A string to select certain DOM elements within a set of selected DOM elements. Selector may be a tag name, class name, or ID. (optional)</dd>
+					<dd>A string to select certain DOM Elements within a set of selected DOM Elements. Selector may be a tag name, class name, or ID. (optional)</dd>
 				</dl>
 			</div>
 			<div class="detailSection">
@@ -1437,7 +1444,7 @@ $("ul").children("#item2");
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p> Returns siblings of the selected DOM element, which are of the same type. If the argument is a valid selector string, only the corresponding DOM elements are returned.
+				<p> Returns siblings of the selected DOM Element, which are of the same type. If the argument is a valid selector string, only the corresponding DOM Elements are returned.
 				</p>
 			</div>
 						<div class="detailSection">
@@ -1506,7 +1513,7 @@ $("#item2").siblings("#item1");
 				<h4>Argument</h4>
 				<dl>
 					<dt> index (Optional)</dt>
-					<dd> The index number of the DOM element to select (zero-based). (optional) </dd>
+					<dd> The index number of the DOM Element to select (zero-based). (optional) </dd>
 
 				</dl>
 			</div>
@@ -1516,7 +1523,7 @@ $("#item2").siblings("#item1");
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p> Returns the DOM element which corresponds to the index number. If the index is out of bounds, eq() returns an empty Riff Object. If the argument is empty, the first DOM element is returned.
+				<p> Returns the DOM Element which corresponds to the index number. If the index is out of bounds, eq() returns an empty Riff Object. If the argument is empty, the first DOM Element is returned.
 				</p>
 			</div>
 			<div class="detailSection">
@@ -1578,7 +1585,7 @@ $("ul").children().eq(1);
 				<h4>Argument</h4>
 				<dl>
 					<dt> selector </dt>
-					<dd> A string to select certain DOM elements within a set of selected DOM elements. Selector may be a tag name, class name, or ID. (optional) </dd>
+					<dd> A string to select certain DOM Elements within a set of selected DOM Elements. Selector may be a tag name, class name, or ID. (optional) </dd>
 				</dl>
 			</div>
 			<div class="detailSection">
@@ -1587,7 +1594,7 @@ $("ul").children().eq(1);
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p> Add DOM elements to the set of matched DOM elements, and returns the added set of DOM elements. If the argument is a selector, the corresponding DOM element is added.</p>
+				<p> Add DOM Elements to the set of matched DOM Elements, and returns the added set of DOM Elements. If the argument is a selector, the corresponding DOM Element is added.</p>
 			</div>
 		</div>
 		<div class="detailPart">
@@ -1596,7 +1603,7 @@ $("ul").children().eq(1);
 				<h4>Argument</h4>
 				<dl>
 					<dt> Riff Object </dt>
-					<dd> The Riff Object to add to the selected set of DOM elements. </dd>
+					<dd> The Riff Object to add to the selected set of DOM Elements. </dd>
 				</dl>
 			</div>
 			<div class="detailSection">
@@ -1605,7 +1612,7 @@ $("ul").children().eq(1);
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p> Add DOM elements to the set of matched DOM elements, and returns the added set of DOM elements. If the argument is a Riff Object, the DOM elements of the Riff Object are added to the set.</p>
+				<p> Add DOM Elements to the set of matched DOM Elements, and returns the added set of DOM Elements. If the argument is a Riff Object, the DOM Elements of the Riff Object are added to the set.</p>
 			</div>
 		</div>
 		<table>
@@ -1648,16 +1655,16 @@ $("ul").children().eq(1);
 				<h4>Argument</h4>
 				<dl>
 					<dt> name </dt>
-					<dd> The attribute name string of the DOM element. </dd>
+					<dd> The attribute name string of the DOM Element. </dd>
 				</dl>
 			</div>
 			<div class="detailSection">
 				<h4>Return</h4>
-				<p> The attribute value string of the DOM element. </p>
+				<p> The attribute value string of the DOM Element. </p>
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p> Returns the attribute value of the DOM element that corresponds to the attribute name string.
+				<p> Returns the attribute value of the DOM Element that corresponds to the attribute name string.
 				</p>
 			</div>
 		</div>
@@ -1669,7 +1676,7 @@ $("ul").children().eq(1);
 					<dt> name </dt>
 					<dd>DOM Element의 Attribute Name String. </dd>
 					<dt> attribute </dt>
-					<dd> The attribute value string of the DOM element. </dd>
+					<dd> The attribute value string of the DOM Element. </dd>
 				</dl>
 			</div>
 			<div class="detailSection">
@@ -1678,7 +1685,7 @@ $("ul").children().eq(1);
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p> Sets the attribute value of the DOM element that corresponds to the attribute name.</p>
+				<p> Sets the attribute value of the DOM Element that corresponds to the attribute name.</p>
 			</div>
 		</div>
 		<table>
@@ -1720,7 +1727,7 @@ $("ul").children().eq(1);
 				<h4>Argument</h4>
 				<dl>
 					<dt> index (Optional)</dt>
-					<dd> The index number of the DOM element to return. (optional) </dd>
+					<dd> The index number of the DOM Element to return. (optional) </dd>
 				</dl>
 			</div>
 			<div class="detailSection">
@@ -1729,7 +1736,7 @@ $("ul").children().eq(1);
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p> Returns the DOM element within the Riff Object. If the index number is specified, the DOM element that corresponds to the index number is returned. If the argument is empty, the first DOM element of the Riff Object is returned. </p>
+				<p> Returns the DOM Element within the Riff Object. If the index number is specified, the DOM Element that corresponds to the index number is returned. If the argument is empty, the first DOM Element of the Riff Object is returned. </p>
 			</div>
 		</div>
 		<table>
@@ -1763,26 +1770,26 @@ $("ul").children().eq(1);
 	</div>
 	<!-- ******************  //API Detail ****************** -->
 	<!-- ******************  API Detail ****************** -->
-	<div id="componentView">
-		<h2>component()</h2>
+	<div id="ComponentView">
+		<h2>Component()</h2>
 		<div class="detailPart">
-			<h3>component(<em> [ index ] </em>)</h3>
+			<h3>Component(<em> [ index ] </em>)</h3>
 			<div class="detailSection">
 				<h4>Argument</h4>
 				<dl>
 					<dt> index (Optional)</dt>
-					<dd> The index of the component objects to return. (optional) </dd>
+					<dd> The index of the Component objects to return. (optional) </dd>
 
 				</dl>
 			</div>
 			<div class="detailSection">
 				<h4>Return</h4>
-				<p>riff Component Object</p>
+				<p>Riff Component Object</p>
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
 				<p> Returns the Component Object of the Riff Object.<br>
-				If the argument is inserted, the corresponding Component Object of the selected DOM element is returned. If the argument is null, the the first Component Object of the selected DOM element is returned.
+				If the argument is inserted, the corresponding Component Object of the selected DOM Element is returned. If the argument is null, the the first Component Object of the selected DOM Element is returned.
 				</p>
 			</div>
 		</div>
@@ -1830,11 +1837,11 @@ $("ul").children().eq(1);
 			</div>
 			<div class="detailSection">
 				<h4>Return</h4>
-				<p> The index number of the selected DOM element. </p>
+				<p> The index number of the selected DOM Element. </p>
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p> Returns a zero-based index number of the selected DOM element. The index number is the order of the selected DOM element relevent to it's siblings.</p>
+				<p> Returns a zero-based index number of the selected DOM Element. The index number is the order of the selected DOM Element relevent to it's siblings.</p>
 			</div>
 			<div class="detailSection">
 				<h4>Example</h4>
@@ -1904,7 +1911,7 @@ $("#item2").index();
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p>Removes all selected DOM elements.</p>
+				<p>Removes all selected DOM Elements.</p>
 			</div>
 			<div class="detailSection">
 				<h4>Example</h4>
@@ -1932,7 +1939,7 @@ $("#item2").remove();
 				<h4>Argument</h4>
 				<dl>
 					<dt> index </dt>
-					<dd>The index number of the DOM element to remove.</dd>
+					<dd>The index number of the DOM Element to remove.</dd>
 				</dl>
 			</div>
 			<div class="detailSection">
@@ -1941,7 +1948,7 @@ $("#item2").remove();
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p> Removes the DOM element that corresponds to the index number from the selected DOM elements.</p>
+				<p> Removes the DOM Element that corresponds to the index number from the selected DOM Elements.</p>
 			</div>
 			<div class="detailSection">
 				<h4>Example</h4>
@@ -1968,7 +1975,7 @@ $("ul").children().remove(1);
 				<h4>Argument</h4>
 				<dl>
 					<dt> DOMElement </dt>
-					<dd> The DOM element to remove.</dd>
+					<dd> The DOM Element to remove.</dd>
 				</dl>
 			</div>
 			<div class="detailSection">
@@ -1977,7 +1984,7 @@ $("ul").children().remove(1);
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				Removes the DOM element that corresponds to the argument.</p>
+				Removes the DOM Element that corresponds to the argument.</p>
 			</div>
 			<div class="detailSection">
 				<h4>Example</h4>
@@ -2047,7 +2054,7 @@ $("ul").children().remove($("#item2"));
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p> Returns the CSS Property value that corresponds to the CSS Property name of the selected DOM element. If there are more than one selected DOM elements, the CSS Property value of the first DOM element will be returned.
+				<p> Returns the CSS Property value that corresponds to the CSS Property name of the selected DOM Element. If there are more than one selected DOM Elements, the CSS Property value of the first DOM Element will be returned.
 				</p>
 			</div>
 		</div>
@@ -2068,7 +2075,7 @@ $("ul").children().remove($("#item2"));
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
- 				<p> Sets the CSS property value that corresponds to the CSS property name of the selected DOM elements. </p>
+ 				<p> Sets the CSS property value that corresponds to the CSS property name of the selected DOM Elements. </p>
 			</div>
 		</div>
 		<table>
@@ -2115,11 +2122,11 @@ $("ul").children().remove($("#item2"));
 			</div>
 			<div class="detailSection">
 				<h4>Return</h4>
-				<p> The CSS top value of the selected DOM element. </p>
+				<p> The CSS top value of the selected DOM Element. </p>
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p>	Returns the computed style top value of the selected DOM element. </p>
+				<p>	Returns the computed style top value of the selected DOM Element. </p>
 			</div>
 		</div>
 		<div class="detailPart">
@@ -2128,7 +2135,7 @@ $("ul").children().remove($("#item2"));
 				<h4>Argument</h4>
 				<dl>
 					<dt> value </dt>
-					<dd> The desired CSS top vaule of the selected DOM element.</dd>
+					<dd> The desired CSS top vaule of the selected DOM Element.</dd>
 				</dl>
 			</div>
 			<div class="detailSection">
@@ -2137,7 +2144,7 @@ $("ul").children().remove($("#item2"));
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p>Sets the CSS top property of the selected DOM element.</p>
+				<p>Sets the CSS top property of the selected DOM Element.</p>
 			</div>
 		</div>
 		<table>
@@ -2184,11 +2191,11 @@ $("ul").children().remove($("#item2"));
 			</div>
 			<div class="detailSection">
 				<h4>Return</h4>
-				<p> The CSS left value of the selected DOM element. </p>
+				<p> The CSS left value of the selected DOM Element. </p>
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p>Returns the computed style left value of the selected DOM element.</p>
+				<p>Returns the computed style left value of the selected DOM Element.</p>
 			</div>
 		</div>
 		<div class="detailPart">
@@ -2197,7 +2204,7 @@ $("ul").children().remove($("#item2"));
 				<h4>Argument</h4>
 				<dl>
 					<dt> value </dt>
-					<dd> The desired CSS left vaule of the selected DOM element.</dd>
+					<dd> The desired CSS left vaule of the selected DOM Element.</dd>
 				</dl>
 			</div>
 			<div class="detailSection">
@@ -2206,7 +2213,7 @@ $("ul").children().remove($("#item2"));
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p>	Sets the CSS left property of the selected DOM element.</p>
+				<p>	Sets the CSS left property of the selected DOM Element.</p>
 			</div>
 		</div>
 		<table>
@@ -2253,11 +2260,11 @@ $("ul").children().remove($("#item2"));
 			</div>
 			<div class="detailSection">
 				<h4>Return</h4>
-				<p> The CSS width value of the selected DOM element. </p>
+				<p> The CSS width value of the selected DOM Element. </p>
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p> Returns the computed style width value of the selected DOM element. </p>
+				<p> Returns the computed style width value of the selected DOM Element. </p>
 			</div>
 		</div>
 		<div class="detailPart">
@@ -2266,7 +2273,7 @@ $("ul").children().remove($("#item2"));
 				<h4>Argument</h4>
 				<dl>
 					<dt> value </dt>
-					<dd> The desired CSS width vaule of the selected DOM element.</dd>
+					<dd> The desired CSS width vaule of the selected DOM Element.</dd>
 				</dl>
 			</div>
 			<div class="detailSection">
@@ -2275,7 +2282,7 @@ $("ul").children().remove($("#item2"));
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p>Sets the CSS width property of the selected DOM element.</p>
+				<p>Sets the CSS width property of the selected DOM Element.</p>
 			</div>
 		</div>
 		<table>
@@ -2322,11 +2329,11 @@ $("ul").children().remove($("#item2"));
 			</div>
 			<div class="detailSection">
 				<h4>Return</h4>
-				<p> The CSS height value of the selected DOM element. </p>
+				<p> The CSS height value of the selected DOM Element. </p>
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p> Returns the computed style height value of the selected DOM element. </p>
+				<p> Returns the computed style height value of the selected DOM Element. </p>
 			</div>
 		</div>
 		<div class="detailPart">
@@ -2335,7 +2342,7 @@ $("ul").children().remove($("#item2"));
 				<h4>Argument</h4>
 				<dl>
 					<dt> value </dt>
-					<dd> The desired CSS height vaule of the selected DOM element.</dd>
+					<dd> The desired CSS height vaule of the selected DOM Element.</dd>
 				</dl>
 			</div>
 			<div class="detailSection">
@@ -2344,7 +2351,7 @@ $("ul").children().remove($("#item2"));
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p> Sets the CSS height property of the selected DOM element. </p>
+				<p> Sets the CSS height property of the selected DOM Element. </p>
 			</div>
 		</div>
 		<table>
@@ -2392,7 +2399,7 @@ $("ul").children().remove($("#item2"));
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p> Returns the inner HTML string of the first selected DOM element.
+				<p> Returns the inner HTML string of the first selected DOM Element.
 				</p>
 			</div>
 			<div class="detailSection">
@@ -2421,7 +2428,7 @@ $("#item2").html();
 				<h4>Argument</h4>
 				<dl>
 					<dt> htmlCode </dt>
-					<dd> The HTML code to insert as the inner HTML of the selected DOM element. </dd>
+					<dd> The HTML code to insert as the inner HTML of the selected DOM Element. </dd>
 				</dl>
 			</div>
 			<div class="detailSection">
@@ -2430,7 +2437,7 @@ $("#item2").html();
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p> Changes the inner HTML of the selected DOM elements to the given HTML code.
+				<p> Changes the inner HTML of the selected DOM Elements to the given HTML code.
 				</p>
 			</div>
 			<div class="detailSection">
@@ -2497,11 +2504,11 @@ $("#item2").html("<b>Item2</b>");
 			</div>
 			<div class="detailSection">
 				<h4>Return</h4>
-				<p> The text node string of the first selected DOM element. </p>
+				<p> The text node string of the first selected DOM Element. </p>
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p> Returns the the text node string of the first selected DOM element. </p>
+				<p> Returns the the text node string of the first selected DOM Element. </p>
 			</div>
 			<div class="detailSection">
 				<h4>Example</h4>
@@ -2529,7 +2536,7 @@ $("#item2").text();
 				<h4>Argument</h4>
 				<dl>
 					<dt> textString </dt>
-					<dd> The string value to replace the text node of the selected DOM elements.
+					<dd> The string value to replace the text node of the selected DOM Elements.
 					</dd>
 				</dl>
 			</div>
@@ -2539,7 +2546,7 @@ $("#item2").text();
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p> The children nodes of the selected DOM elements are replaced with a text node that contains the textString argument.</p>
+				<p> The children nodes of the selected DOM Elements are replaced with a text node that contains the textString argument.</p>
 			</div>
 			<div class="detailSection">
 				<h4>Example</h4>
@@ -2600,16 +2607,16 @@ $("#item2").text("Item2 Text");
 				<h4>Argument</h4>
 				<dl>
 					<dt> SelectedDomElementArray </dt>
-					<dd> Selected DOM element array. </dd>
+					<dd> Selected DOM Element array. </dd>
 				</dl>
 			</div>
 			<div class="detailSection">
 				<h4>Return</h4>
-				<p> All text of the selected DOM element array. </p>
+				<p> All text of the selected DOM Element array. </p>
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p> Recursively returns all text nodes of the selected DOM elements. </p>
+				<p> Recursively returns all text nodes of the selected DOM Elements. </p>
 			</div>
 		</div>
 		<table>
@@ -2660,7 +2667,7 @@ $("#item2").text("Item2 Text");
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p> The DOM element created by the inserted HTML code is inserted as the last child node of the selected DOM element.</p>
+				<p> The DOM Element created by the inserted HTML code is inserted as the last child node of the selected DOM Element.</p>
 			</div>
 			<div class="detailSection">
 				<h4>Example</h4>
@@ -2730,7 +2737,7 @@ $("ul").append("&lt;li&gt;Item4&lt;/li&gt;");
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p> The DOM element created by the inserted HTML code is inserted as the first child node of the selected DOM element.</p>
+				<p> The DOM Element created by the inserted HTML code is inserted as the first child node of the selected DOM Element.</p>
 			</div>
 		</div>
 		<table>
@@ -2772,7 +2779,7 @@ $("ul").append("&lt;li&gt;Item4&lt;/li&gt;");
 				<h4>Argument</h4>
 				<dl>
 					<dt> htmlCode </dt>
-					<dd>HTML code to wrap the selected DOM element.</dd>
+					<dd>HTML code to wrap the selected DOM Element.</dd>
 				</dl>
 			</div>
 			<div class="detailSection">
@@ -2781,7 +2788,7 @@ $("ul").append("&lt;li&gt;Item4&lt;/li&gt;");
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p> Wraps the selected DOM elements with the inserted HTML code, so that each of the selected DOM elements becomes the children nodes of the htmlCode.</p>
+				<p> Wraps the selected DOM Elements with the inserted HTML code, so that each of the selected DOM Elements becomes the children nodes of the htmlCode.</p>
 			</div>
 			<div class="detailSection">
 				<h4>Example</h4>
@@ -2842,7 +2849,7 @@ $("ul").wrap("&lt;b&gt;Item4&lt;/b&gt;");
 				<h4>Argument</h4>
 				<dl>
 					<dt> htmlCode </dt>
-					<dd>HTML code to wrap the selected DOM element.</dd>
+					<dd>HTML code to wrap the selected DOM Element.</dd>
 				</dl>
 			</div>
 			<div class="detailSection">
@@ -2851,7 +2858,7 @@ $("ul").wrap("&lt;b&gt;Item4&lt;/b&gt;");
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p>	Wraps all of the selected DOM element with the inserted HTML code. All of the selected DOM elements become the children of DOM element created by the HTML code.</p>
+				<p>	Wraps all of the selected DOM Element with the inserted HTML code. All of the selected DOM Elements become the children of DOM Element created by the HTML code.</p>
 			</div>
 		</div>
 		<table>
@@ -2902,7 +2909,7 @@ $("ul").wrap("&lt;b&gt;Item4&lt;/b&gt;");
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p> Adds a DOM element created by the inserted HTML code to come behind the selected DOM element. </p>
+				<p> Adds a DOM Element created by the inserted HTML code to come behind the selected DOM Element. </p>
 			</div>
 		</div>
 		<table>
@@ -2953,7 +2960,7 @@ $("ul").wrap("&lt;b&gt;Item4&lt;/b&gt;");
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p> Adds a DOM element created by the inserted HTML code to come before the selected DOM element.</p>
+				<p> Adds a DOM Element created by the inserted HTML code to come before the selected DOM Element.</p>
 			</div>
 		</div>
 		<table>
@@ -2995,7 +3002,7 @@ $("ul").wrap("&lt;b&gt;Item4&lt;/b&gt;");
 				<h4>Argument</h4>
 				<dl>
 					<dt> selector (option)</dt>
-					<dd> A string to select certain DOM elements within a set of selected DOM elements. Selector may be a tag name, class name, or ID. (optional)</dd>
+					<dd> A string to select certain DOM Elements within a set of selected DOM Elements. Selector may be a tag name, class name, or ID. (optional)</dd>
 				</dl>
 			</div>
 			<div class="detailSection">
@@ -3004,7 +3011,7 @@ $("ul").wrap("&lt;b&gt;Item4&lt;/b&gt;");
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p> Returns the children DOM elements of the selected DOM element which corresponds to the selector string. If the argument is not a vaild selector string, an empty Riff Object is returned.
+				<p> Returns the children DOM Elements of the selected DOM Element which corresponds to the selector string. If the argument is not a vaild selector string, an empty Riff Object is returned.
 				</p>
 			</div>
 			<div class="detailSection">
@@ -3082,7 +3089,7 @@ $("ul").find("#item2");
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p> Animates the selected DOM elements by using CSS properties. The selected DOM elements will change to the desired CSS property values at the specified speed or duration. If specified, the callback function and the precallback function will each run after and before the animation.
+				<p> Animates the selected DOM Elements by using CSS properties. The selected DOM Elements will change to the desired CSS property values at the specified speed or duration. If specified, the callback function and the precallback function will each run after and before the animation.
 				</p>
 			</div>
 		</div>
@@ -3188,7 +3195,7 @@ $("ul").find("#item2");
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p> Shows the selected DOM element on screen. If the speed value is designated, the width, height, opacity of the DOM element are gradually increased from 0 to the original value simultaneously. If not, no animation effect is applied.
+				<p> Shows the selected DOM Element on screen. If the speed value is designated, the width, height, opacity of the DOM Element are gradually increased from 0 to the original value simultaneously. If not, no animation effect is applied.
 				</p>
 			</div>
 		</div>
@@ -3242,7 +3249,7 @@ $("ul").find("#item2");
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p> Hides the selected DOM element from screen. If the speed value is designated, the width, height, opacity of the DOM element are gradually decreased to 0 from the original value simultaneously. If not, no animation effect is applied. </p>
+				<p> Hides the selected DOM Element from screen. If the speed value is designated, the width, height, opacity of the DOM Element are gradually decreased to 0 from the original value simultaneously. If not, no animation effect is applied. </p>
 			</div>
 		</div>
 		<table>
@@ -3346,7 +3353,7 @@ $("ul").find("#item2");
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p> Successively executes array.trigger(event name) for every element of the array object. The event name must be a default event, and artificial events defined on Riff may not be used. </p>
+				<p> Successively executes array.trigger(event name) for every Element of the array object. The event name must be a default event, and artificial events defined on Riff may not be used. </p>
 			</div>
 		</div>
 		<table>
@@ -3397,7 +3404,7 @@ $("ul").find("#item2");
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p> Successively executes array.trigger(event name) for every element of the array object. Only artificial events defined on Riff may be used. </p>
+				<p> Successively executes array.trigger(event name) for every Element of the array object. Only artificial events defined on Riff may be used. </p>
 			</div>
 		</div>
 		<table>
@@ -3448,7 +3455,7 @@ $("ul").find("#item2");
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p> Successively triggers events for the selected DOM elements. If the event handlers for the triggered events are not specified, nothing happens.
+				<p> Successively triggers events for the selected DOM Elements. If the event handlers for the triggered events are not specified, nothing happens.
 				</p>
 			</div>
 		</div>
@@ -3491,7 +3498,7 @@ $("ul").find("#item2");
 				<h4>Argument</h4>
 				<dl>
 					<dt> DOM Element </dt>
-					<dd> DOM element to register the event to </dd>
+					<dd> DOM Element to register the event to </dd>
 				</dl>
 			</div>
 			<div class="detailSection">
@@ -3534,15 +3541,15 @@ $("ul").find("#item2");
 	</div>
 	<!-- ******************  //API Detail ****************** -->
 	<!-- ******************  API Detail ****************** -->
-	<div id="enableEventView">
-		<h2>enableEvent()</h2>
+	<!-- 번역 필요함. -->
+	<div id="selectorView">
+		<h2>selector()</h2>
 		<div class="detailPart">
-			<h3>enableEvent(<em> Event </em>)</h3>
+			<h3>selector(<em> DOM Element </em>)</h3>
 			<div class="detailSection">
 				<h4>Argument</h4>
 				<dl>
-					<dt> Event </dt>
-					<dd> The name of the event to enable for the DOM element. ( "flickLeft" , "flickRight" , "flickUp" , "flickDown" , "drag" , "swipe" ,  "tap" , "longTap" , "doubleTap" , "touchStart" , "touchMove" , "touchEnd" ) </dd>
+					<dt> DOM Element </dt>
 				</dl>
 			</div>
 			<div class="detailSection">
@@ -3551,7 +3558,170 @@ $("ul").find("#item2");
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p> Enables events for the selected DOM elements that are disabled to allow the corresponding event handlers to be executed. </p>
+				<p> If argument is a DOM Element, the corresponding DOM Element is queried and wrapped as a Riff Object. </p>
+			</div>
+		</div>
+
+		<div class="detailPart">
+			<h3>selector(<em> string </em>)</h3>
+			<div class="detailSection">
+				<h4>Argument</h4>
+				<dl>
+					<dt> string </dt>
+				</dl>
+			</div>
+			<div class="detailSection">
+				<h4>Return</h4>
+				<p>Riff Object</p>
+			</div>
+			<div class="detailSection">
+				<h4>Description</h4>
+				<p> If argument is a string, the corresponding DOM Element is queried and wrapped as a Riff Object. </p>
+			</div>
+		</div>
+
+
+		<div class="detailPart">
+			<h3>selector(<em> function </em>)</h3>
+			<div class="detailSection">
+				<h4>Argument</h4>
+				<dl>
+					<dt> function </dt>
+				</dl>
+			</div>
+			<div class="detailSection">
+				<h4>Return</h4>
+				<p>boolean</p>
+			</div>
+			<div class="detailSection">
+				<h4>Description</h4>
+				<p> If the argument is a function, the function is exectued after the window objecte loads. </p>
+			</div>
+		</div>
+
+
+		<table>
+			<caption>Version History</caption>
+			<colgroup>
+				<col width="30%">
+				<col width="70%">
+			</colgroup>
+			<thead>
+				<tr>
+					<th scope="col">
+						Version
+					</th>
+					<th scope="col">
+						Description
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						Trial 1.0.10
+					</td>
+					<td>
+						Refactoring
+					</td>
+				</tr>
+			</tbody>
+		</table>
+
+	</div>
+	<!-- ******************  //API Detail ****************** -->
+	<!-- ******************  API Detail ****************** -->
+	<!-- 번역 필요함. -->
+	<div id="contextToComponentView">
+		<h2>contextToComponent()</h2>
+		<div class="detailPart">
+			<h3>contextToComponent(<em> DOM element </em>)</h3>
+			<div class="detailSection">
+				<h4>Argument</h4>
+				<dl>
+					<dt> cArray </dt>
+					<dd> user defined argument array. </dd>
+				</dl>
+			</div>
+			<div class="detailSection">
+				<h4>Return</h4>
+				<p>Riff Object</p>
+			</div>
+			<div class="detailSection">
+				<h4>Description</h4>
+				<p> The DOM Element corresponding user defined argument value is selected to set the Component and Framework object.</p>
+			</div>
+		</div>
+
+
+		<div class="detailPart">
+			<h3>contextToComponent(<em> string </em>)</h3>
+			<div class="detailSection">
+				<h4>Argument</h4>
+				<dl>
+					<dt> cArray </dt>
+					<dd> 사용자가 입력한 인자값을 가진 배열. </dd>
+				</dl>
+			</div>
+			<div class="detailSection">
+				<h4>Return</h4>
+				<p>Riff Object</p>
+			</div>
+			<div class="detailSection">
+				<h4>Description</h4>
+				<p> 사용자가 입력한 인자값에 맞는 DOM Element를 판단하여 Component 및 Framework 객체를 설정한다. </p>
+			</div>
+		</div>
+
+		<table>
+			<caption>Version History</caption>
+			<colgroup>
+				<col width="30%">
+				<col width="70%">
+			</colgroup>
+			<thead>
+				<tr>
+					<th scope="col">
+						Version
+					</th>
+					<th scope="col">
+						Description
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						Trial 1.0.10
+					</td>
+					<td>
+						Refactoring
+					</td>
+				</tr>
+			</tbody>
+		</table>
+
+	</div>
+	<!-- ******************  //API Detail ****************** -->
+	<!-- ******************  API Detail ****************** -->
+	<div id="enableEventView">
+		<h2>enableEvent()</h2>
+		<div class="detailPart">
+			<h3>enableEvent(<em> Event </em>)</h3>
+			<div class="detailSection">
+				<h4>Argument</h4>
+				<dl>
+					<dt> Event </dt>
+					<dd> The name of the event to enable for the DOM Element. ( "flickLeft" , "flickRight" , "flickUp" , "flickDown" , "drag" , "swipe" ,  "tap" , "longTap" , "doubleTap" , "touchStart" , "touchMove" , "touchEnd" ) </dd>
+				</dl>
+			</div>
+			<div class="detailSection">
+				<h4>Return</h4>
+				<p>Riff Object</p>
+			</div>
+			<div class="detailSection">
+				<h4>Description</h4>
+				<p> Enables events for the selected DOM Elements that are disabled to allow the corresponding event handlers to be executed. </p>
 			</div>
 		</div>
 		<table>
@@ -3593,7 +3763,7 @@ $("ul").find("#item2");
 				<h4>Argument</h4>
 				<dl>
 					<dt> Event </dt>
-					<dd> The name of the event to disable for the DOM element. ( "flickLeft" , "flickRight" , "flickUp" , "flickDown" , "drag" , "swipe" ,  "tap" , "longTap" , "doubleTap" , "touchStart" , "touchMove" , "touchEnd" ) </dd>
+					<dd> The name of the event to disable for the DOM Element. ( "flickLeft" , "flickRight" , "flickUp" , "flickDown" , "drag" , "swipe" ,  "tap" , "longTap" , "doubleTap" , "touchStart" , "touchMove" , "touchEnd" ) </dd>
 				</dl>
 			</div>
 			<div class="detailSection">
@@ -3602,7 +3772,7 @@ $("ul").find("#item2");
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p> Disables events for the selected DOM elements so the corresponding event handlers cannot be executed. </p>
+				<p> Disables events for the selected DOM Elements so the corresponding event handlers cannot be executed. </p>
 			</div>
 		</div>
 		<table>
@@ -4231,8 +4401,8 @@ $("ul").find("#item2");
 				"leftEnd" : flag to distinguish when the swipe event occurs and moves to the left end of the screen.<br>
 				"rightEnd" : flag to distinguish when the swipe event occurs and moves to the right end of the	screen.<br>
 				"end" : flag to distinguish the end of the swipe.
-				ptx: the left coordinate of the DOM element on the swipe event.<br>
-				pty: the top coordinate of the DOM element on the swipe event.<br>
+				ptx: the left coordinate of the DOM Element on the swipe event.<br>
+				pty: the top coordinate of the DOM Element on the swipe event.<br>
 				<br>
 				Therefore, if a swipe event occurs from left to right, the state values change as the following:<br>
 				"dragMove" -> "dragMove" -> ... "dragMove" -> "rightMove" -> "move" -> "move" ... "move" -> "rightEnd" -> "end"
@@ -4270,7 +4440,7 @@ $("ul").find("#item2");
 	</div>
 	<!-- ******************  //API Detail ****************** -->
 	<!-- ******************  API Detail ****************** -->
-	<div id="addEventByTypeView" style="display: none;">
+	<div id="addEventByTypeView">
 		<h2>addEventByType()</h2>
 		<div class="detailPart">
 			<h3>addEventByType(<em> eventType, fnEventHandle </em>)</h3>
@@ -4278,7 +4448,7 @@ $("ul").find("#item2");
 				<h4>Argument</h4>
 				<dl>
 					<dt> eventType </dt>
-					<dd> 문자열. 합성이벤트의 이름. </dd>
+					<dd> eventName. </dd>
 					<dt> fnEventHandle </dt>
 					<dd> The event handler function to run when the event occurs. </dd>
 				</dl>
@@ -4289,7 +4459,7 @@ $("ul").find("#item2");
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p> Applies the callback function to the designated event of the DOM element. </p>
+				<p> Applies the callback function to the designated event of the DOM Element. </p>
 			</div>
 		</div>
 		<table>
@@ -4343,11 +4513,11 @@ $("ul").find("#item2");
 			</div>
 			<div class="detailSection">
 				<h4>Return</h4>
-				<p> The number of the selected DOM elements.</p>
+				<p> The number of the selected DOM Elements.</p>
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p> Returns the number of the selected DOM elements.</p>
+				<p> Returns the number of the selected DOM Elements.</p>
 			</div>
 		</div>
 
@@ -4406,7 +4576,7 @@ $("ul").find("#item2");
 			<div class="detailSection">
 				<h4>Example</h4>
 				<div class="codeBox">
-					<pre>riff.trim( string );</pre>
+					<pre>Riff.trim( string );</pre>
 				</div>
 			</div>
 		</div>
@@ -4466,7 +4636,7 @@ $("ul").find("#item2");
 			<div class="detailSection">
 				<h4>Example</h4>
 				<div class="codeBox">
-					<pre>riff.camelize( string );</pre>
+					<pre>Riff.camelize( string );</pre>
 				</div>
 			</div>
 		</div>
@@ -4526,7 +4696,7 @@ $("ul").find("#item2");
 			<div class="detailSection">
 				<h4>Example</h4>
 				<div class="codeBox">
-					<pre>riff.openURL( url );</pre>
+					<pre>Riff.openURL( url );</pre>
 				</div>
 			</div>
 		</div>
@@ -4585,7 +4755,7 @@ $("ul").find("#item2");
 			<div class="detailSection">
 				<h4>Example</h4>
 				<div class="codeBox">
-					<pre>riff.toID( string );</pre>
+					<pre>Riff.toID( string );</pre>
 				</div>
 			</div>
 		</div>
@@ -4643,7 +4813,7 @@ $("ul").find("#item2");
 			<div class="detailSection">
 				<h4>Example</h4>
 				<div class="codeBox">
-					<pre>riff.isEmulator();</pre>
+					<pre>Riff.isEmulator();</pre>
 				</div>
 			</div>
 		</div>
@@ -4707,7 +4877,7 @@ $("ul").find("#item2");
 				<h4>Example</h4>
 				<p>Gets the animation queue with riffAnimateQueue.</p>
 				<div class="codeBox">
-					<pre>riff.queue( "riffAnimateQueue" );</pre>
+					<pre>Riff.queue( "riffAnimateQueue" );</pre>
 				</div>
 			</div>
 		</div>
@@ -4740,7 +4910,64 @@ $("ul").find("#item2");
 				<h4>Example</h4>
 				<p>Stores data object on to the animation queue as riffAnimateQueue.</p>
 				<div class="codeBox">
-					<pre>riff.queue({"prop":_prop,"time":_time,"func":_func,"pre":_preFunc},"riffAnimateQueue");</pre>
+					<pre>Riff.queue({"prop":_prop,"time":_time,"func":_func,"pre":_preFunc},"riffAnimateQueue");</pre>
+				</div>
+			</div>
+		</div>
+
+		<table>
+			<caption>Version History</caption>
+			<colgroup>
+				<col width="30%">
+				<col width="70%">
+			</colgroup>
+			<thead>
+				<tr>
+					<th scope="col">
+						Version
+					</th>
+					<th scope="col">
+						Description
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						Trial 1.0.10
+					</td>
+					<td>
+						Refactoring
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<!-- ******************  //API Detail ****************** -->
+
+	<!-- ******************  API Detail ****************** -->
+	<div id="clearQueueView">
+		<h2>clearQueue()</h2>
+		<div class="detailPart">
+			<h3>clearQueue(<em></em>)</h3>
+			<div class="detailSection">
+				<h4>Argument</h4>
+				<dl>
+					<dt>none</dt>
+				</dl>
+			</div>
+			<div class="detailSection">
+				<h4>Return</h4>
+				<p>Riff Object</p>
+			</div>
+			<div class="detailSection">
+				<h4>Description</h4>
+				<p>Clears animation queue.</p>
+			</div>
+			<div class="detailSection">
+				<h4>Example</h4>
+				<div class="codeBox">
+					<pre>Riff.clearQueue();</pre>
 				</div>
 			</div>
 		</div>
@@ -4797,7 +5024,7 @@ $("ul").find("#item2");
 			<div class="detailSection">
 				<h4>Example</h4>
 				<div class="codeBox">
-					<pre>riff.isWidget();</pre>
+					<pre>Riff.isWidget();</pre>
 				</div>
 			</div>
 		</div>
@@ -4841,7 +5068,7 @@ $("ul").find("#item2");
 				<h4>Argument</h4>
 				<dl>
 					<dt>page</dt>
-					<dd> The DOM element ID of the page to move to.</dd>
+					<dd> The DOM Element ID of the page to move to.</dd>
 				</dl>
 				<dl>
 					<dt>option(optional)</dt>
@@ -4850,13 +5077,13 @@ $("ul").find("#item2");
 			</div>
 			<div class="detailSection">
 				<h4>Return</h4>
-				<p> The result value riff.scene() or riff.popup().</p>
+				<p> The result value Riff.scene() or Riff.popup().</p>
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
 				<p>Used for navigating between pages.<br>
 				The pages are accessible by #id or id, and the global variable is stored with # prepened to the id.<br>
-				If the page is a popup, riff.popup() is called as return value. If the page is a ordinary page, riff.scene() is called as return value.
+				If the page is a popup, Riff.popup() is called as return value. If the page is a ordinary page, Riff.scene() is called as return value.
 				</p>
 			</div>
 			<div class="detailSection">
@@ -4913,17 +5140,17 @@ $("ul").find("#item2");
 			</div>
 			<div class="detailSection">
 				<h4>Return</h4>
-				<p> The result value riff.scene().</p>
+				<p> The result value Riff.scene().</p>
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
 				<p>Moves to the previous scene.<br>
-				riff.scnene() is called as return value.</p>
+				Riff.scnene() is called as return value.</p>
 			</div>
 			<div class="detailSection">
 				<h4>Example</h4>
 				<div class="codeBox">
-					<pre>riff.back();</pre>
+					<pre>Riff.back();</pre>
 				</div>
 			</div>
 		</div>
@@ -4968,7 +5195,7 @@ $("ul").find("#item2");
 				<h4>Argument</h4>
 				<dl>
 					<dt>scene</dt>
-					<dd> The DOM element ID of the page to move to.</dd>
+					<dd> The DOM Element ID of the page to move to.</dd>
 				</dl>
 				<dl>
 					<dt>option(optional)</dt>
@@ -4977,13 +5204,13 @@ $("ul").find("#item2");
 			</div>
 			<div class="detailSection">
 				<h4>Return</h4>
-				<p> The result value of riff.scene.go() or riff.scene.back().</p>
+				<p> The result value of Riff.scene.go() or Riff.scene.back().</p>
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
 				<p> Used for navigating between pages.<br>
 				The pages are accessible by #id or id, and the global variable is stored with # prepened to the id.<br>
-				If the scene type value is a string, then riff.scene.go() is called, if the scene type value is not a string, riff.scene.back() is called.
+				If the scene type value is a string, then Riff.scene.go() is called, if the scene type value is not a string, Riff.scene.back() is called.
 				</p>
 			</div>
 		</div>
@@ -5028,7 +5255,7 @@ $("ul").find("#item2");
 				<h4>Argument</h4>
 				<dl>
 					<dt>scene</dt>
-					<dd>The DOM element ID of the page to move to.</dd>
+					<dd>The DOM Element ID of the page to move to.</dd>
 				</dl>
 				<dl>
 					<dt>option(optional)</dt>
@@ -5141,7 +5368,7 @@ $("ul").find("#item2");
 				<h4>Argument</h4>
 				<dl>
 					<dt>popup</dt>
-					<dd>The DOM element's popupID of the page to move to.</dd>
+					<dd>The DOM Element's popupID of the page to move to.</dd>
 				</dl>
 				<dl>
 					<dt>option(optional)</dt>
@@ -5150,19 +5377,19 @@ $("ul").find("#item2");
 			</div>
 			<div class="detailSection">
 				<h4>Return</h4>
-				<p> The result values of riff.popup.go() or riff.popup.back().</p>
+				<p> The result values of Riff.popup.go() or Riff.popup.back().</p>
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
 				<p> Shows the designated ID( _popup ) as a popup scene.<br>
 				The popups are accesible with #id or id.<br>
-				If the popup type is a string then riff.popup.go() will be returned, if popup type is not a string then riff.popup.back() will be returned.
+				If the popup type is a string then Riff.popup.go() will be returned, if popup type is not a string then Riff.popup.back() will be returned.
 				</p>
 			</div>
 			<div class="detailSection">
 				<h4>Example</h4>
 				<div class="codeBox">
-					<pre>riff.popup();</pre>
+					<pre>Riff.popup();</pre>
 				</div>
 			</div>
 		</div>
@@ -5207,7 +5434,7 @@ $("ul").find("#item2");
 				<h4>Argument</h4>
 				<dl>
 					<dt>popup</dt>
-					<dd>The DOM element's popupID of the page to move to.</dd>
+					<dd>The DOM Element's popupID of the page to move to.</dd>
 				</dl>
 				<dl>
 					<dt>option(optional)</dt>
@@ -5944,7 +6171,7 @@ $("ul").find("#item2");
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_this: The Riff Object on which the callback was executed (this).<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_xml: If data communication is successful, the XML object of the recieved data is passed on as argument.<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_xmlText: If the recieved XML data is in text, it is passed on as _xmlText<br>
-Users may manipulate data as they wish by using _this( = riff ) and the recieved XML data (xml, xmlText).<br>
+Users may manipulate data as they wish by using _this( = Riff ) and the recieved XML data (xml, xmlText).<br>
 <br>
 <br>
 The options argument is an object used for AJAX communication options (timeout duration, retry numbers etc) and callback funtions in case of failiure.<br>
@@ -5994,7 +6221,7 @@ sendData : The data to transmit. For example, if { sendData:"userValue=uservalue
 <br>
 The default option values are as following.<br>
 <br>
-e: Unless specified by the user, xHttpRequest.readyState, xHttpRequest.status is displayed by the riff.alert() function.<br>
+e: Unless specified by the user, xHttpRequest.readyState, xHttpRequest.status is displayed by the Riff.alert() function.<br>
 &nbsp;&nbsp;&nbsp;&nbsp;They following string shows on the alert window.<br>
 &nbsp;&nbsp;&nbsp;&nbsp;"Error occured: readyState:" + readyState + " status:" + status + " " + error information;<br>
 a: Unless specified by the user, does nothing. <br>
@@ -6194,7 +6421,6 @@ sendData : Unless specified by the user, no data is transmitted.<br>
 		</table>
 	</div>
 	<!-- ******************  //API Detail ****************** -->
-
 	<!-- ******************  API Detail ****************** -->
 	<div id="dataReceiveTimeView">
 		<h2>dataReceiveTime()</h2>
@@ -6235,6 +6461,29 @@ sendData : Unless specified by the user, no data is transmitted.<br>
 			</div>
 		</div>
 
+		<div class="detailPart">
+			<h3>dataReceiveTime(<em>time,text</em>)</h3>
+			<div class="detailSection">
+				<h4>Argument</h4>
+				<dl>
+					<dt>time</dt>
+					<dd>FEED data recieve time.</dd>
+				</dl>
+				<dl>
+					<dt>text</dt>
+					<dd>text to show on the FEED Component.</dd>
+				</dl>
+			</div>
+			<div class="detailSection">
+				<h4>Return</h4>
+				<p>boolean( true )</p>
+			</div>
+			<div class="detailSection">
+				<h4>Description</h4>
+				<p> Display the time, text arguments on the FEED Component. </p>
+			</div>
+		</div>
+
 		<table>
 			<caption>Version History</caption>
 			<colgroup>
@@ -6264,7 +6513,75 @@ sendData : Unless specified by the user, no data is transmitted.<br>
 		</table>
 	</div>
 	<!-- ******************  //API Detail ****************** -->
+	<!-- ******************  API Detail ****************** -->
+	<div id="dataReceiveInfoView">
+		<h2>dataReceiveInfo()</h2>
+		<div class="detailPart">
+			<h3>dataReceiveInfo(<em></em>)</h3>
+			<div class="detailSection">
+				<h4>Argument</h4>
+				<dl>
+					<dt>none</dt>
+				</dl>
+			</div>
+				<div class="detailSection">
+				<h4>Return</h4>
+				<p>boolean( true )</p>
+			</div>
+			<div class="detailSection">
+				<h4>Description</h4>
+				<p> Hides the text on the FEED Component. (hide text ONLY. the time is not included.) </p>
+			</div>
+		</div>
 
+		<div class="detailPart">
+			<h3>dataReceiveInfo(<em>text</em>)</h3>
+			<div class="detailSection">
+				<h4>Argument</h4>
+				<dl>
+					<dt>text</dt>
+					<dd> Shows the text on the FEED Component. </dd>
+				</dl>
+			</div>
+			<div class="detailSection">
+				<h4>Return</h4>
+				<p>boolean( true )</p>
+			</div>
+			<div class="detailSection">
+				<h4>Description</h4>
+				<p> Shows the text on the FEED Component. </p>
+			</div>
+		</div>
+
+		<table>
+			<caption>Version History</caption>
+			<colgroup>
+				<col width="30%">
+				<col width="70%">
+			</colgroup>
+			<thead>
+				<tr>
+					<th scope="col">
+						Version
+					</th>
+					<th scope="col">
+						Description
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						Trial 1.0.10
+					</td>
+					<td>
+						Refactoring
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<!-- ******************  //API Detail ****************** -->
 	<!-- ******************  API Detail ****************** -->
 	<div id="adjustSceneSizeView">
 		<h2>adjustSceneSize()</h2>
@@ -6376,7 +6693,7 @@ sendData : Unless specified by the user, no data is transmitted.<br>
 	<div id="ellipsisStringView">
 		<h2>ellipsisString()</h2>
 		<div class="detailPart">
-			<h3>ellipsisString(<em>string, number</em>)</h3>
+			<h3>ellipsisString(<em>string, [number], [isArabic]</em>)</h3>
 			<div class="detailSection">
 				<h4>Argument</h4>
 				<dl>
@@ -6384,8 +6701,12 @@ sendData : Unless specified by the user, no data is transmitted.<br>
 					<dd> String to reduce </dd>
 				</dl>
 				<dl>
-					<dt>number</dt>
-					<dd> The length of the reduced string </dd>
+					<dt>number(optional)</dt>
+					<dd> The length of the reduced string. Default value is "riffGlobal.ellipsisStringNum"(optional) </dd>
+				</dl>
+				<dl>
+					<dt>isArabic(optional)</dt>
+					<dd> Boolean. The palce to attach "..." . The return value will be "...ABCDEFG" if this value is true or "ABCDEFG..." if the value is false. (optional)</dd>
 				</dl>
 			</div>
 			<div class="detailSection">
@@ -6567,7 +6888,7 @@ sendData : Unless specified by the user, no data is transmitted.<br>
 			<div class="detailSection">
 				<h4>Description</h4>
 				<p> Makes managing timers easy.<br>
-				Inserting only the ID as parameter ( ex : riff.timer(_id) ) removes the timer.</p>
+				Inserting only the ID as parameter ( ex : Riff.timer(_id) ) removes the timer.</p>
 			</div>
 		</div>
 
@@ -6622,15 +6943,15 @@ sendData : Unless specified by the user, no data is transmitted.<br>
 				</dl>
 				<dl>
 					<dt>isGoRun</dt>
-					<dd>A flag to check if the current ScenePart is loaded by component.move().</dd>
+					<dd>A flag to check if the current ScenePart is loaded by Component.move().</dd>
 				</dl>
 				<dl>
 					<dt>isAutoRefreshRun</dt>
-					<dd>A flag to check if the current ScenePart is loaded by component.autorefresh().</dd>
+					<dd>A flag to check if the current ScenePart is loaded by Component.autorefresh().</dd>
 				</dl>
 				<dl>
 					<dt>isRefreshRun</dt>
-					<dd>A flag to check if the current ScenePart is loaded by component.refresh().</dd>
+					<dd>A flag to check if the current ScenePart is loaded by Component.refresh().</dd>
 				</dl>
 			</div>
 			<div class="detailSection">
@@ -6730,7 +7051,7 @@ sendData : Unless specified by the user, no data is transmitted.<br>
 	<div id="makeStructsView">
 		<h2>makeStructs()</h2>
 		<div class="detailPart">
-			<h3>$("<em>.select</em>").makeStructs(<em></em>)</h3>
+			<h3>("<em>.select</em>").makeStructs(<em></em>)</h3>
 			<div class="detailSection">
 				<h4>Selector</h4>
 				<p>Component Class Name</p>
@@ -6747,7 +7068,7 @@ sendData : Unless specified by the user, no data is transmitted.<br>
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p>Creates a blank DIV element, sets the proper options according to the corresponding component features.<br><br>
+				<p>Creates a blank DIV Element, sets the proper options according to the corresponding Component features.<br><br>
 				Touch events are linked to the popup button.<br>
 				Touch events are linked to the list, then list form is constructed.<br>
 				settingList constructs the on/off buttons for the checkBox and radioButton and form a list.<br>
@@ -6786,10 +7107,10 @@ sendData : Unless specified by the user, no data is transmitted.<br>
 	<!-- ******************  //API Detail ****************** -->
 
 	<!-- ******************  API Detail ****************** -->
-	<div id="makeContentsView">
-		<h2>makeContents()</h2>
+	<div id="setContentsView">
+		<h2>setContents()</h2>
 		<div class="detailPart">
-			<h3>("<em>#setting</em>").makeContents(<em>data</em>)</h3>
+			<h3>("<em>#setting</em>").setContents(<em>data</em>)</h3>
 			<div class="detailSection">
 				<h4>Argument</h4>
 				<dl>
@@ -6822,7 +7143,7 @@ sendData : Unless specified by the user, no data is transmitted.<br>
 		</div>
 
 		<div class="detailPart">
-			<h3>("<em>#setThemeList</em>").makeContents(<em>data</em>)</h3>
+			<h3>("<em>#setThemeList</em>").setContents(<em>data</em>)</h3>
 			<div class="detailSection">
 				<h4>Argument</h4>
 				<dl>
@@ -6940,7 +7261,7 @@ sendData : Unless specified by the user, no data is transmitted.<br>
 	<!-- ******************  //API Detail ****************** -->
 
 	<!-- ******************  API Detail ****************** -->
-	<div id="componentGoView">
+	<div id="ComponentGoView">
 		<h2>go()</h2>
 		<div class="detailPart">
 			<h3>go(<em>number</em>)</h3>
@@ -6957,8 +7278,8 @@ sendData : Unless specified by the user, no data is transmitted.<br>
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p> Moves to the scenePart that corresponds to the indexNo on the selected DOM elements.<br>
-				For tab components, the focus of the current tab is cleared and set to the tab of the corresponding indexNo. </p>
+				<p> Moves to the scenePart that corresponds to the indexNo on the selected DOM Elements.<br>
+				For tab Components, the focus of the current tab is cleared and set to the tab of the corresponding indexNo. </p>
 			</div>
 		</div>
 
@@ -7023,7 +7344,7 @@ sendData : Unless specified by the user, no data is transmitted.<br>
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p> The riffList and fooList in data are riff functions that generate markup and apply data. The rssFeedUrl is user defined.	</p>
+				<p> The riffList and fooList in data are Riff functions that generate markup and apply data. The rssFeedUrl is user defined.	</p>
 			</div>
 		</div>
 
@@ -7058,7 +7379,7 @@ sendData : Unless specified by the user, no data is transmitted.<br>
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p> The riffTab and fooTab in data are riff functions that generate markup and apply data. The rssFeedUrl is user defined.
+				<p> The riffTab and fooTab in data are Riff functions that generate markup and apply data. The rssFeedUrl is user defined.
 				</p>
 			</div>
 		</div>
@@ -7266,8 +7587,8 @@ sendData : Unless specified by the user, no data is transmitted.<br>
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p>Manually refreshes the component.<br>
-				In case of tab, _isCallByAutoRefresh is used to check if the component was loaded by autoRefresh().
+				<p>Manually refreshes the Component.<br>
+				In case of tab, _isCallByAutoRefresh is used to check if the Component was loaded by autoRefresh().
 				</p>
 			</div>
 		</div>
@@ -7320,7 +7641,7 @@ sendData : Unless specified by the user, no data is transmitted.<br>
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p>Automatically refreshes the component.<br>
+				<p>Automatically refreshes the Component.<br>
 				Waits for the specified time given by the time argument before refreshing.
 				</p>
 			</div>
@@ -7381,7 +7702,7 @@ sendData : Unless specified by the user, no data is transmitted.<br>
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p> The style is applied to the component by data.</p>
+				<p> The style is applied to the Component by data.</p>
 			</div>
 		</div>
 
@@ -7646,7 +7967,7 @@ sendData : Unless specified by the user, no data is transmitted.<br>
 				<h4>Argument</h4>
 				<dl>
 					<dt>ID</dt>
-					<dd>the ID of the FEED component to refer to at idle state</dd>
+					<dd>the ID of the FEED Component to refer to at idle state</dd>
 				</dl>
 			</div>
 			<div class="detailSection">
@@ -7655,7 +7976,100 @@ sendData : Unless specified by the user, no data is transmitted.<br>
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p>Sets the FEED component after wrapping it in a Riff Object.</p>
+				<p>Sets the FEED Component after wrapping it in a Riff Object.</p>
+			</div>
+		</div>
+
+		<table>
+			<caption>Version History</caption>
+			<colgroup>
+				<col width="30%">
+				<col width="70%">
+			</colgroup>
+			<thead>
+				<tr>
+					<th scope="col">
+						Version
+					</th>
+					<th scope="col">
+						Description
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						Trial 1.0.10
+					</td>
+					<td>
+						Refactoring
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<!-- ******************  //API Detail ****************** -->
+
+	<!-- ******************  API Detail ****************** -->
+	<div id="ComponentDataReceiveTimeView">
+		<h2>dataReceiveTime()</h2>
+		<div class="detailPart">
+			<h3>("<em>.rf-Component-idle</em>").dataReceiveTime(<em></em>)</h3>
+			<div class="detailSection">
+				<h4>Argument</h4>
+				<dl>
+					<dt>none</dt>
+				</dl>
+			</div>
+			<div class="detailSection">
+				<h4>Return</h4>
+				<p>boolean( true )</p>
+			</div>
+			<div class="detailSection">
+				<h4>Description</h4>
+				<p>Hides the FEED data recieve time on the FEED Component</p>
+			</div>
+		</div>
+
+		<div class="detailPart">
+			<h3>("<em>.rf-Component-idle</em>").dataReceiveTime(<em>time</em>)</h3>
+			<div class="detailSection">
+				<h4>Argument</h4>
+				<dl>
+					<dt>time</dt>
+					<dd>feed data receive Time.</dd>
+				</dl>
+			</div>
+			<div class="detailSection">
+				<h4>Return</h4>
+				<p>boolean( true )</p>
+			</div>
+			<div class="detailSection">
+				<h4>Description</h4>
+				<p>Shows the FEED data recieve time on the FEED Component</p>
+			</div>
+		</div>
+
+		<div class="detailPart">
+			<h3>("<em>.rf-Component-idle</em>").dataReceiveTime(<em>time, text</em>)</h3>
+			<div class="detailSection">
+				<h4>Argument</h4>
+				<dl>
+					<dt>time</dt>
+					<dd>feed data receive Time.</dd>
+				</dl>
+				<dl>
+					<dt>text</dt>
+					<dd>feed data origin.</dd>
+				</dl>
+			</div>
+			<div class="detailSection">
+				<h4>Return</h4>
+				<p>boolean( true )</p>
+			</div>
+			<div class="detailSection">
+				<h4>Description</h4>
+				<p>Shows the FEED data recieve time and feed data origin on the FEED Component</p>
 			</div>
 		</div>
 
@@ -7798,17 +8212,24 @@ sendData : Unless specified by the user, no data is transmitted.<br>
 	<!-- ******************  //API Detail ****************** -->
 
 	<!-- ******************  API Detail ****************** -->
-	<div id="frameworkTabMenuView" style="display: none;">
+	<div id="frameworkTabMenuView">
 		<h2>frameworkTabMenu()</h2>
 		<div class="detailPart">
-			<h3>frameworkTabMenu(<em></em>)</h3>
+			<h3>frameworkTabMenu(<em>data</em>)</h3>
+			<div class="detailSection">
+				<h4>Argument</h4>
+				<dl>
+					<dt>data</dt>
+					<dd>RSS feed Info.</dd>
+				</dl>
+			</div>
 			<div class="detailSection">
 				<h4>Return</h4>
 				<p>boolean</p>
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
-				<p>Create the structure of Tabmenu Component. </p>
+				<p> Creates the structure of Tabmenu Component. </p>
 			</div>
 		</div>
 
@@ -7848,12 +8269,276 @@ sendData : Unless specified by the user, no data is transmitted.<br>
 		<div class="detailPart">
 			<h3>feedRefresh(<em></em>)</h3>
 			<div class="detailSection">
+				<h4>Argument</h4>
+				<dl>
+					<dt>none</dt>
+				</dl>
+			</div>
+			<div class="detailSection">
 				<h4>Return</h4>
 				<p>boolean</p>
 			</div>
 			<div class="detailSection">
 				<h4>Description</h4>
 				<p>softkey refresh button Event</p>
+			</div>
+		</div>
+
+		<table>
+			<caption>Version History</caption>
+			<colgroup>
+				<col width="30%">
+				<col width="70%">
+			</colgroup>
+			<thead>
+				<tr>
+					<th scope="col">
+						Version
+					</th>
+					<th scope="col">
+						Description
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						Trial 1.0.10
+					</td>
+					<td>
+						Refactoring
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<!-- ******************  //API Detail ****************** -->
+
+	<!-- ******************  API Detail ****************** -->
+	<!-- 번역필요 -->
+	<div id="showListItemOneView">
+		<h2>showListItemOne()</h2>
+		<div class="detailPart">
+			<h3>showListItemOne(<em> idx </em>)</h3>
+			<div class="detailSection">
+				<h4>Argument</h4>
+				<dl>
+					<dt>idx</dt>
+					<dd>보여질 리스트 item의 index</dd>
+				</dl>
+			</div>
+			<div class="detailSection">
+				<h4>Return</h4>
+				<p>boolean</p>
+			</div>
+			<div class="detailSection">
+				<h4>Description</h4>
+				<p>idx에 해당되는 list item을 보여준다.</p>
+			</div>
+		</div>
+
+		<div class="detailPart">
+			<h3>showListItemOne(<em> array </em>)</h3>
+			<div class="detailSection">
+				<h4>Argument</h4>
+				<dl>
+					<dt>array</dt>
+					<dd>보여질 리스트 item들의 배열</dd>
+				</dl>
+			</div>
+			<div class="detailSection">
+				<h4>Return</h4>
+				<p>boolean</p>
+			</div>
+			<div class="detailSection">
+				<h4>Description</h4>
+				<p>array에 있는 idx들에 해당되는 리스트 item을 보여준다.</p>
+			</div>
+		</div>
+
+		<table>
+			<caption>Version History</caption>
+			<colgroup>
+				<col width="30%">
+				<col width="70%">
+			</colgroup>
+			<thead>
+				<tr>
+					<th scope="col">
+						Version
+					</th>
+					<th scope="col">
+						Description
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						Trial 1.0.10
+					</td>
+					<td>
+						Refactoring
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<!-- ******************  //API Detail ****************** -->
+
+	<!-- ******************  API Detail ****************** -->
+	<!-- 번역필요 -->
+	<div id="showListItemView">
+		<h2>showListItem()</h2>
+		<div class="detailPart">
+			<h3>showListItem(<em> position, offset </em>)</h3>
+			<div class="detailSection">
+				<h4>Argument</h4>
+				<dl>
+					<dt>position</dt>
+					<dd>보여질 list item들 중에 가장 첫 index</dd>
+				</dl>
+				<dl>
+					<dt>offset</dt>
+					<dd>보여질 list item들의 수</dd>
+				</dl>
+			</div>
+			<div class="detailSection">
+				<h4>Return</h4>
+				<p>boolean</p>
+			</div>
+			<div class="detailSection">
+				<h4>Description</h4>
+				<p>position번째의 item index부터 offset 수만큼을 배열로 만든 후 showListItemOne()을 호출한다.</p>
+			</div>
+		</div>
+
+		<table>
+			<caption>Version History</caption>
+			<colgroup>
+				<col width="30%">
+				<col width="70%">
+			</colgroup>
+			<thead>
+				<tr>
+					<th scope="col">
+						Version
+					</th>
+					<th scope="col">
+						Description
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						Trial 1.0.10
+					</td>
+					<td>
+						Refactoring
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<!-- ******************  //API Detail ****************** -->
+
+	<!-- ******************  API Detail ****************** -->
+	<!-- 번역필요 -->
+	<div id="hideListItemOneView">
+		<h2>hideListItemOne()</h2>
+		<div class="detailPart">
+			<h3>hideListItemOne(<em> idx </em>)</h3>
+			<div class="detailSection">
+				<h4>Argument</h4>
+				<dl>
+					<dt>idx</dt>
+					<dd>숨길 리스트 item의 index</dd>
+				</dl>
+			</div>
+			<div class="detailSection">
+				<h4>Return</h4>
+				<p>boolean</p>
+			</div>
+			<div class="detailSection">
+				<h4>Description</h4>
+				<p>idx에 해당되는 list item을 숨긴다.</p>
+			</div>
+		</div>
+
+		<div class="detailPart">
+			<h3>hideListItemOne(<em> array </em>)</h3>
+			<div class="detailSection">
+				<h4>Argument</h4>
+				<dl>
+					<dt>array</dt>
+					<dd>숨길 리스트 item들의 배열</dd>
+				</dl>
+			</div>
+			<div class="detailSection">
+				<h4>Return</h4>
+				<p>boolean</p>
+			</div>
+			<div class="detailSection">
+				<h4>Description</h4>
+				<p>array에 있는 idx들에 해당되는 리스트 item을 숨긴다.</p>
+			</div>
+		</div>
+
+		<table>
+			<caption>Version History</caption>
+			<colgroup>
+				<col width="30%">
+				<col width="70%">
+			</colgroup>
+			<thead>
+				<tr>
+					<th scope="col">
+						Version
+					</th>
+					<th scope="col">
+						Description
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						Trial 1.0.10
+					</td>
+					<td>
+						Refactoring
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<!-- ******************  //API Detail ****************** -->
+
+	<!-- ******************  API Detail ****************** -->
+	<!-- 번역필요 -->
+	<div id="hideListItemView">
+		<h2>hideListItem()</h2>
+		<div class="detailPart">
+			<h3>hideListItem(<em> position, offset </em>)</h3>
+			<div class="detailSection">
+				<h4>Argument</h4>
+				<dl>
+					<dt>position</dt>
+					<dd>숨길 list item들 중에 가장 첫 index</dd>
+				</dl>
+				<dl>
+					<dt>offset</dt>
+					<dd>보여질 list item들의 수</dd>
+				</dl>
+			</div>
+			<div class="detailSection">
+				<h4>Return</h4>
+				<p>boolean</p>
+			</div>
+			<div class="detailSection">
+				<h4>Description</h4>
+				<p>position번째의 item index부터 offset 수만큼을 배열로 만든 후 hideListItemOne()을 호출한다.</p>
 			</div>
 		</div>
 

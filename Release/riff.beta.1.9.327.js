@@ -1292,7 +1292,7 @@ riff.fn = riff.prototype = {
         {
             // Handles triggering a single element
             // Does not trigger events on text and comment nodes
-            domObject[ _existEventName ] && domObject[ _existEventName ]();  // Text 노드 등 클릭 이벤트가 Null or Undefined 경우를 상정
+            domObject[ _existEventName ] && domObject[ _existEventName ]();
             domObject = this.dom(++i);
         };
     	return this;
@@ -2750,8 +2750,8 @@ riff.currentTime = function ( )
 // riff.dataReceiveTime ( ) -> clears screen. clears the time and text values stored on the buffer.
 // riff.dataReceiveTime ( _showTime ) -> only the time displayed on screen is updated. the text is displayed as is.
 // riff.dataReceiveTime ( _showTime, _showText ) -> the time and text displayed on screen are updated. they are both stored in the buffer.
-// riff.dataReceiveTime ( _showTime, null ) 혹은 riff.dataReceiveTime( _showTime, "" ) -> same as riff.dataReceiveTime ( _showTime, _showTime ).
-// riff.dataReceiveTime ( null, _showText ) 혹은 riff.dataReceiveTime( "", _showText ) -> same as riff.dataReceiveTime ( _showTime, _showTime ).
+// riff.dataReceiveTime ( _showTime, null ) or riff.dataReceiveTime( _showTime, "" ) -> same as riff.dataReceiveTime ( _showTime, _showTime ).
+// riff.dataReceiveTime ( null, _showText ) or riff.dataReceiveTime( "", _showText ) -> same as riff.dataReceiveTime ( _showTime, _showTime ).
 riff.dataReceiveTime = function ( _showTime, _showText )
 {
 	var localShowTime = _showTime;
@@ -7008,9 +7008,9 @@ var riffAJAX = function ( _url, _fnSuccess, _theOtherSet, _functionTossAgumentSe
 	// Therefore, if this function was to be used for transmission only, it will need to be modified.
 	this.__receiveSuccessCheck = function() {
 		if (
-				( riffGlobal.AJAXREADYSTATE.DONE == this.__xhr.readyState )			// readyState = 4 체크
-				&& ( ( 0 === this.__xhr.status ) || ( 200 === this.__xhr.status ) )		// readyStatus = 0 / 200 체크
-				&& ( this.__xhr.responseText || this.__xhr.responseXml )				// return value 가 있는지 체크
+				( riffGlobal.AJAXREADYSTATE.DONE == this.__xhr.readyState )			
+				&& ( ( 0 === this.__xhr.status ) || ( 200 === this.__xhr.status ) )		
+				&& ( this.__xhr.responseText || this.__xhr.responseXml )				
 			)
 		{
 			return true;

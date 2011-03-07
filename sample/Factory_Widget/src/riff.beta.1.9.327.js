@@ -1292,7 +1292,7 @@ riff.fn = riff.prototype = {
         {
             // Handles triggering a single element
             // Does not trigger events on text and comment nodes
-            domObject[ _existEventName ] && domObject[ _existEventName ]();  // Text ë…¸ë“œ ë“± í´ë¦­ ì´ë²¤íŠ¸ê°€ Null or Undefined ê²½ìš°ë¥¼ ìƒì •
+            domObject[ _existEventName ] && domObject[ _existEventName ]();  // Text ³ëµå µî Å¬¸¯ ÀÌº¥Æ®°¡ Null or Undefined °æ¿ì¸¦ »óÁ¤
             domObject = this.dom(++i);
         };
     	return this;
@@ -2750,8 +2750,8 @@ riff.currentTime = function ( )
 // riff.dataReceiveTime ( ) -> clears screen. clears the time and text values stored on the buffer.
 // riff.dataReceiveTime ( _showTime ) -> only the time displayed on screen is updated. the text is displayed as is.
 // riff.dataReceiveTime ( _showTime, _showText ) -> the time and text displayed on screen are updated. they are both stored in the buffer.
-// riff.dataReceiveTime ( _showTime, null ) í˜¹ì€ riff.dataReceiveTime( _showTime, "" ) -> same as riff.dataReceiveTime ( _showTime, _showTime ).
-// riff.dataReceiveTime ( null, _showText ) í˜¹ì€ riff.dataReceiveTime( "", _showText ) -> same as riff.dataReceiveTime ( _showTime, _showTime ).
+// riff.dataReceiveTime ( _showTime, null ) È¤Àº riff.dataReceiveTime( _showTime, "" ) -> same as riff.dataReceiveTime ( _showTime, _showTime ).
+// riff.dataReceiveTime ( null, _showText ) È¤Àº riff.dataReceiveTime( "", _showText ) -> same as riff.dataReceiveTime ( _showTime, _showTime ).
 riff.dataReceiveTime = function ( _showTime, _showText )
 {
 	var localShowTime = _showTime;
@@ -3141,9 +3141,6 @@ ComponentIdle.prototype.option = function ( _data )
 	}
 }
 
-//  idleì— ìˆëŠ” ê²ƒë“¤ì„ ì´ë™
-//  @param
-//  _move : "articleLeft", "articleRight", "categoryLeft", "categoryRight", (number)
 ComponentIdle.prototype.moveFEEDArticle = function ( _move )
 {
 	var riffThis = riff(this);
@@ -7011,9 +7008,9 @@ var riffAJAX = function ( _url, _fnSuccess, _theOtherSet, _functionTossAgumentSe
 	// Therefore, if this function was to be used for transmission only, it will need to be modified.
 	this.__receiveSuccessCheck = function() {
 		if (
-				( riffGlobal.AJAXREADYSTATE.DONE == this.__xhr.readyState )			// readyState = 4 ì²´í¬
-				&& ( ( 0 === this.__xhr.status ) || ( 200 === this.__xhr.status ) )		// readyStatus = 0 / 200 ì²´í¬
-				&& ( this.__xhr.responseText || this.__xhr.responseXml )				// return value ê°€ ìˆëŠ”ì§€ ì²´í¬
+				( riffGlobal.AJAXREADYSTATE.DONE == this.__xhr.readyState )			// readyState = 4 Ã¼Å©
+				&& ( ( 0 === this.__xhr.status ) || ( 200 === this.__xhr.status ) )		// readyStatus = 0 / 200 Ã¼Å©
+				&& ( this.__xhr.responseText || this.__xhr.responseXml )				// return value °¡ ÀÖ´ÂÁö Ã¼Å©
 			)
 		{
 			return true;

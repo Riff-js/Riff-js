@@ -26,8 +26,8 @@ var feedTabData = {
 	{
 		// Coding your Feed URL here.
 		// Example Code.
-		"Discussion"	: "http://175.125.20.219/xml/xml.php?url=http://innovator.samsungmobile.com/servlet/rss/discussion.xml",
-		"Products"	: "http://175.125.20.219/xml/xml.php?url=http://innovator.samsungmobile.com/servlet/rss/products.xml"
+		"Discussion"	: [ "Discussion", "http://175.125.20.219/xml/xml.php?url=http://innovator.samsungmobile.com/servlet/rss/discussion.xml" ],
+		"Products"	: [ "Products", "http://175.125.20.219/xml/xml.php?url=http://innovator.samsungmobile.com/servlet/rss/products.xml" ]
 	},
 	layout :
 	{

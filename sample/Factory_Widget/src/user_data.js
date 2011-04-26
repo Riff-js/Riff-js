@@ -42,37 +42,58 @@ var setTransListData  =	[{
 
 
 
+
 var feedTestDataTabMenu = {
 	runs :
 	{
-			"World"		: "http://175.125.20.219/xml/xml.php?url=http://rss.news.yahoo.com/rss/world",
-			"Sports"	: "http://175.125.20.219/xml/xml.php?url=http://rss.news.yahoo.com/rss/sports",
-			"Science"	: "http://175.125.20.219/xml/xml.php?url=http://rss.news.yahoo.com/rss/science",
-			"Health"	: "http://175.125.20.219/xml/xml.php?url=http://rss.news.yahoo.com/rss/health"
+		"World"	: [ "WORLD", "http://175.125.20.219/xml/xml.php?url=http://rss.news.yahoo.com/rss/world" ],
+		"Sports"	: [ "SPORTS","http://175.125.20.219/xml/xml.php?url=http://rss.news.yahoo.com/rss/sports" ],
+		"Science"	: [ "SCIENCE","http://175.125.20.219/xml/xml.php?url=http://rss.news.yahoo.com/rss/science" ],
+		"Health"	: [ "HEALTH","http://175.125.20.219/xml/xml.php?url=http://rss.news.yahoo.com/rss/health" ]
+
 	}
 	, layout :
 	{
 			"image" : "thumbnail[url]"
 	}
+
 };
 
 var feedTestDataTabMenu2 = {
 	runs :
 	{
-			"World"		: [ "http://175.125.20.219/xml/xml.php?url=http://rss.news.yahoo.com/rss/world", function( xml, idx, args ){ alert( " scenePartScreenFunction1. arg1:" + xml + " arg2:" + idx + " arg3:" + args );  }, [ "arg1", "arg2", "arg3" ] ],
-			"Sports"	: [ "http://175.125.20.219/xml/xml.php?url=http://rss.news.yahoo.com/rss/sports", function(){ alert( " scenePartScreenFunction2."); } , [ "arg1", "arg2", "arg3" ] ],
-			"Science"	: [ "http://175.125.20.219/xml/xml.php?url=http://rss.news.yahoo.com/rss/science", function(){ alert( " scenePartScreenFunction3."); } , [ "arg1", "arg2", "arg3" ] ],
-			"Health"	: [ "http://175.125.20.219/xml/xml.php?url=http://rss.news.yahoo.com/rss/health", function(){ alert( " scenePartScreenFunction4."); } , [ "arg1", "arg2", "arg3" ] ]
-//			"World"		: "http://175.125.20.219/xml/xml.php?url=http://rss.news.yahoo.com/rss/world",
-//			"Sports"	: "http://175.125.20.219/xml/xml.php?url=http://rss.news.yahoo.com/rss/sports",
-//			"Science"	: "http://175.125.20.219/xml/xml.php?url=http://rss.news.yahoo.com/rss/science",
-//			"Health"	: "http://175.125.20.219/xml/xml.php?url=http://rss.news.yahoo.com/rss/health"
+
+		"World"	: [ "WORLD"
+							, "http://175.125.20.219/xml/xml.php?url=http://rss.news.yahoo.com/rss/world"
+							, function( xml, idx, args ){ alert( " scenePartScreenFunction1. arg1:" + xml + " arg2:" + idx + " arg3:" + args );  }
+							, [ "arg1", "arg2", "arg3" ] 
+							],
+		"Sports"	: [ "SPORTS"
+							, "http://175.125.20.219/xml/xml.php?url=http://rss.news.yahoo.com/rss/sports"
+							, function(){ alert( " scenePartScreenFunction2."); } 
+							, [ "arg1", "arg2", "arg3" ] 
+							],
+		"Science"	: [ "SCIENCE"
+							, "http://175.125.20.219/xml/xml.php?url=http://rss.news.yahoo.com/rss/science"
+							, function(){ alert( " scenePartScreenFunction3."); } 
+							, [ "arg1", "arg2", "arg3" ] ],
+		"Health"	: [ "HEALTH"
+							, "http://175.125.20.219/xml/xml.php?url=http://rss.news.yahoo.com/rss/health"
+							, function(){ alert( " scenePartScreenFunction4."); } 
+							, [ "arg1", "arg2", "arg3" ] ]
 	}
 	, layout : { "image" : "thumbnail[url]" } 
 //	, layout : [ function(){ alert(" Layout Function."); } , [ {"image" : "thumbnail[url]"}, "args2", "args2" ] ]
 	, opts :
 	{
-		ajaxOption : { a: function(){ alert( "abort Function."); } }
+		ajaxOption : { 
+			a: function(){ alert( "abort Function."); }
+			, e: function(){ alert( "FAIL Function."); }
+			, headerData: {
+				header1:"value1" 
+				, header2 : "value2"
+			}
+		 }
 	}
 	, successFnAfterXML : { 
 		func: function( idx, xml, argsArray ){ 
@@ -85,28 +106,39 @@ var feedTestDataTabMenu2 = {
 var feedTestDataNavigationMenu = {
 	runs :
 	{
-			"World"		: "http://175.125.20.219/xml/xml.php?url=http://rss.news.yahoo.com/rss/world",
-			"Sports"	: "http://175.125.20.219/xml/xml.php?url=http://rss.news.yahoo.com/rss/sports",
-			"Science"	: "http://175.125.20.219/xml/xml.php?url=http://rss.news.yahoo.com/rss/science",
-			"Health"	: "http://175.125.20.219/xml/xml.php?url=http://rss.news.yahoo.com/rss/health"
+		"World"	: [ "WORLD", "http://175.125.20.219/xml/xml.php?url=http://rss.news.yahoo.com/rss/world" ],
+		"Sports"	: [ "SPORTS","http://175.125.20.219/xml/xml.php?url=http://rss.news.yahoo.com/rss/sports" ],
+		"Science"	: [ "SCIENCE","http://175.125.20.219/xml/xml.php?url=http://rss.news.yahoo.com/rss/science" ],
+		"Health"	: [ "HEALTH","http://175.125.20.219/xml/xml.php?url=http://rss.news.yahoo.com/rss/health" ]
+
 	}
 	, layout :
 	{
 			"image" : "thumbnail[url]"
 	}
-}
+};
 
 var feedTestDataNavigationMenu2 = {
 	runs :
 	{
-			"World"		: [ "http://175.125.20.219/xml/xml.php?url=http://rss.news.yahoo.com/rss/world", function( xml, idx, args ){ alert( " scenePartScreenFunction1. arg1:" + xml + " arg2:" + idx + " arg3:" + args );  }, [ "arg1", "arg2", "arg3" ] ],
-			"Sports"	: [ "http://175.125.20.219/xml/xml.php?url=http://rss.news.yahoo.com/rss/sports", function(){ alert( " scenePartScreenFunction2."); } , [ "arg1", "arg2", "arg3" ] ],
-			"Science"	: [ "http://175.125.20.219/xml/xml.php?url=http://rss.news.yahoo.com/rss/science", function(){ alert( " scenePartScreenFunction3."); } , [ "arg1", "arg2", "arg3" ] ],
-			"Health"	: [ "http://175.125.20.219/xml/xml.php?url=http://rss.news.yahoo.com/rss/health", function(){ alert( " scenePartScreenFunction4."); } , [ "arg1", "arg2", "arg3" ] ]
-//			"World"		: "http://175.125.20.219/xml/xml.php?url=http://rss.news.yahoo.com/rss/world",
-//			"Sports"	: "http://175.125.20.219/xml/xml.php?url=http://rss.news.yahoo.com/rss/sports",
-//			"Science"	: "http://175.125.20.219/xml/xml.php?url=http://rss.news.yahoo.com/rss/science",
-//			"Health"	: "http://175.125.20.219/xml/xml.php?url=http://rss.news.yahoo.com/rss/health"
+		"World"	: [ "WORLD"
+							, "http://175.125.20.219/xml/xml.php?url=http://rss.news.yahoo.com/rss/world"
+							, function( xml, idx, args ){ alert( " scenePartScreenFunction1. arg1:" + xml + " arg2:" + idx + " arg3:" + args );  }
+							, [ "arg1", "arg2", "arg3" ] 
+							],
+		"Sports"	: [ "SPORTS"
+							, "http://175.125.20.219/xml/xml.php?url=http://rss.news.yahoo.com/rss/sports"
+							, function(){ alert( " scenePartScreenFunction2."); } 
+							, [ "arg1", "arg2", "arg3" ] 
+							],
+		"Science"	: [ "SCIENCE"
+							, "http://175.125.20.219/xml/xml.php?url=http://rss.news.yahoo.com/rss/science"
+							, function(){ alert( " scenePartScreenFunction3."); } 
+							, [ "arg1", "arg2", "arg3" ] ],
+		"Health"	: [ "HEALTH"
+							, "http://175.125.20.219/xml/xml.php?url=http://rss.news.yahoo.com/rss/health"
+							, function(){ alert( " scenePartScreenFunction4."); } 
+							, [ "arg1", "arg2", "arg3" ] ]
 	}
 	, layout : { "image" : "thumbnail[url]" } 
 //	, layout : [ function(){ alert(" Layout Function."); } , [ {"image" : "thumbnail[url]"}, "args2", "args2" ] ]

@@ -4179,7 +4179,7 @@ ComponentList.prototype.setContents = function ( _data, _type )
 				tagInfo.link = _tagOpts[k];
 			else if(k == "image")
 				tagInfo.image = _tagOpts[k];
-			else if(k == "iterator") {		// ckbcorp
+			else if(k == "iterator") {	
 				tagInfo.iterator = _tagOpts[k];
 				opts.iterator = tagInfo.iterator;
 			}
@@ -6892,8 +6892,7 @@ var riffTouch = {
 };
 
 
-//h AJAX 통신용 함수. 입력받은 _url로 데이터 통신을 하고, 성공했을 경우 _fnSuccess 함수를 실행한다. 실패했을 경우, _theOtherSet 에 설정된 값에 따라 retry, timeout, 에러 처리 함수등을 실행한다.
-//e AJAX communication function. Data communication is attempted at the designated URL address (_url). If communication is successful, _fnSuccess function is executed. If communication fails, retry, timeout, error handler function are executed as designated on _theOtherSet.
+// AJAX communication function. Data communication is attempted at the designated URL address (_url). If communication is successful, _fnSuccess function is executed. If communication fails, retry, timeout, error handler function are executed as designated on _theOtherSet.
 var riffAJAX = function ( _url, _fnSuccess, _theOtherSet, _functionTossAgumentSet )
 {
 
@@ -6909,17 +6908,16 @@ var riffAJAX = function ( _url, _fnSuccess, _theOtherSet, _functionTossAgumentSe
 	this.__timeoutObject = null;					// window.setTimeout Object
 	this.__retry = _theOtherSet && _theOtherSet.retry;
 	this.__retryCount = 0;
-	this.__isAbortByUserWork = false;				//n 사용자가 전송 중단을 요청했을 때, retryOnError()를 실행하지 않기 위해
+	this.__isAbortByUserWork = false;				
 	this.__sendData = _theOtherSet && _theOtherSet.sendData;	// mouse move
-	this.__headerData = _theOtherSet && _theOtherSet.headerData;	//n header정보 저장.
+	this.__headerData = _theOtherSet && _theOtherSet.headerData;	
 	this.__option = {
 		type : "GET",
 		isAsync : true,
 		contentType : "TEXT"
 	};
 
-	//h 종료시에 각종 데이터를 null 해서, 메모리 해제를 요청.
-	//e on termination, all data are set to null, requesting memory deallocation
+	// on termination, all data are set to null, requesting memory deallocation
 	this.__destroy = function( )
 	{
 		try
@@ -6966,23 +6964,18 @@ var riffAJAX = function ( _url, _fnSuccess, _theOtherSet, _functionTossAgumentSe
 		}
 	};
 
-	//h 성공 callback이 없거나, 에러이면
-	//e If there is no succesful callback or if there is an error
+	// If there is no succesful callback or if there is an error
 	if( !this.__successFunction || typeof( this.__successFunction ) != 'function' )
 	{
 		return false;
 	}
 
-	//h 데이터 통신이 최종적으로 실패했을 때 처리해야 할 내용
-	//e executes when the data communication has finally failed
+	// executes when the data communication has finally failed
 	function actionOnFail( timeoutMillisec ) 
 	{
-		//h busy Indicator 삭제.
-		//e removes the busy Indicator
+		// removes the busy Indicator
 		closeIndicator();
-		//h no data display 표시.
-		//e shows the no data display
-//d		riff(".rf-component-list > .rf-style-nodata").css("display", "block");
+		// shows the no data display
 		function displayNoData( ) {
 			var scenepart = riff( ".rf-component-scenepart" );
 			for( var lp = 0; lp < scenepart.size(); lp++ )
@@ -6995,81 +6988,59 @@ var riffAJAX = function ( _url, _fnSuccess, _theOtherSet, _functionTossAgumentSe
 			}	
 		};
 
-		//n tabTransitionOrder == "after" 라면, 화면 이동 효과(animation)를 시작하고, 종료와 관계없이 data load 를 시작하는 것을 의미한다. 
-		//n transition 시간이 데이터 전송대기시간보다 크다면, 이는 화면이동 효과가 끝나기 전에 displayNoData를 찾아버릴 수도 있다는 것을 의미한다.
-		//n 이 경우, 화면 이동 효과가 끝난 후에 display:block을 찾아 NoData 를 보여주어야 한다.
-		//n ( window.parseFloat( riffGlobal.transitionSecond ) * 1000 ) - this.__timeoutMillisec ) : transition 효과 실행 시간에서 데이터 통신 timeout 시간 빼고 남은 시간 
 		var tTimeout = ( window.parseFloat( riffGlobal.transitionSecond ) * 1000 ) - ( timeoutMillisec || 0 );
 		if ( riffGlobal.feedTransitionOrder == "after" && ( tTimeout >= 0 ) )
 		{
-			//n  + 100 : 저사양 시스템의 animation효과 처리 지연을 위한 여유 시간
 			this.__actionOnFailTimer = window.setTimeout( displayNoData, tTimeout + 100 ) ;
 		} else {
-			//n tabTransitionOrder == "before" 라면, 화면 이동 효과(animation)가 종료된 후에 data load 를 의미한다. 
 			displayNoData();
 		}
 
-		//h idle 기사 및 indicator 부분
-		//e the idle article and indicator
+		// the idle article and indicator
 		riff(".rf-idle-section1").hide();
 		riff(".rf-idle-busyindicator").show();
 		riff(".rf-idle-busyindicator").text("Loading Failed");
 	}
 
-	//h 데이터 송수신 취소하면, 종료.
-	//e If data transmit/recieve is cancelled, terminate
+	// If data transmit/recieve is cancelled, terminate
 	this.abort = function( ) {
-		//h HTTP request가 존재하면
-		//e If HTTP request exists
+		// If HTTP request exists
 		if ( this.__xhr )
 		{
 			this.__xhr.abort();
 		}
 
-		//h abort할 때 handler가 존재하면
-		//e If a handler exists during abort
-//d		if ( this.__abortHandler && typeof( this.__abortHandler ) == 'function' )
-//d		{
-//d			this.__abortHandler( this, this.retryCount );
-//d		}
+		// If a handler exists during abort
 	};
 
-	//h 사용자가 강제로 취소시키는 함수.
-	//e function that allaws the user to manually abort
+	// function that allaws the user to manually abort
 	this.abortByUser = function ( )
 	{
-		//h timeout 을 제거
-		//e removes the timeout
+		// removes the timeout
 		window.clearTimeout( this.__timeoutObject );
 		this.__timeoutObject = null;
 		this.__isAbortByUserWork = true;
 		this.abort();
 
-		//h abort할 때 handler가 존재하면
-		//e If a handler exists during abort
+		// If a handler exists during abort
 		if ( this.__abortHandler && typeof( this.__abortHandler ) == 'function' )
 		{
 			this.__abortHandler( this, this.retryCount );
 		}
 	};
 
-	//h retry는, XMLHttpRequest.Request 를 재송신.
-	//e retry retransmits XMLHttpRequest.Request
+	// retry retransmits XMLHttpRequest.Request
 	this.retry = function( ) {
-		//h 이때의 abort 는 abortCallBack()을 실행
-		//e abort executes the abortCallBack() function
+		// abort executes the abortCallBack() function
 		this.abort();
 
-		//h HTTP request가 존재하면
-		//e if HTTP request exists
+		// if HTTP request exists
 		if ( this.__xhr )
 		{
-			//h Request 재송신.
-			//e Retransmit Request.
+			// Retransmit Request.
 			this.Request( );
 
-			//h retry Handler 있으면 실행
-			//e execute if retry Handler exists
+			// execute if retry Handler exists
 			if ( this.__retryHandler && typeof( this.__retryHandler ) == 'function' )
 			{
 				this.__retryHandler( this, this.__retryCount );
@@ -7077,15 +7048,12 @@ var riffAJAX = function ( _url, _fnSuccess, _theOtherSet, _functionTossAgumentSe
 		}
 	};
 
-	//h 데이터 통신 중 예외 상황이 발생했을 때, retry 조건에 따라 데이터 통신을 재실행한다.
-	//e when an exception occurs during data communication, communication is retried according to the retry options.
+	// when an exception occurs during data communication, communication is retried according to the retry options.
 	this.retryOnError = function( _readyState, _status ) {
-		//n 사용자가 전송중단을 요청했다면, 데이터 통신 재시도 자체를 하지 않는다.
 		if ( this.__isAbortByUserWork ) {
 			return;
 		}
-		//h status를 할당한다. 예외 상황이 발생하면 readystate = -1 로 설정한다.
-		//e Status assignment. If error, set readystate to -1.
+		// Status assignment. If error, set readystate to -1.
 
 		var readystate, state;
 
@@ -7102,50 +7070,37 @@ var riffAJAX = function ( _url, _fnSuccess, _theOtherSet, _functionTossAgumentSe
 			status = _status || -1;
 		}
 
-		//h retry count up
-		//e execute retry count up
+		// execute retry count up
 		this.__retryCount++;
 
-		//h 사용자가 retry를 설정하지 않았거나, retry 횟수를 넘었으니, 종료.
-		//e if thre retry number is not exist or the retry number exceed the designated number of times, quit
+		// if thre retry number is not exist or the retry number exceed the designated number of times, quit
 		if ( ( !this.__retry ) || (this.__retryCount > this.__retry) )
 		{
 			actionOnFail( this.__timeoutMillisec );
-			//h error handler가 있으면 실행.
-			//e if error handler exists, execute.
+			// if error handler exists, execute.
 			if ( this.__errorHandler && typeof( this.__errorHandler ) == 'function' )
 			{
 				this.__errorHandler( readystate, status, "ajax.retryOnError :: retry over. " );
 			}
-		} else if ( this.__retry ) {	//n retry 횟수가 설정값 이하면
+		} else if ( this.__retry ) {	
 			this.retry( );
 		}
 	};
 
 
-	//h timeout이 발생하면, retry 조건을 검색한다.( 이미 시간이 경과했다는 것을 의미하므로 ).
-	//h readyState == 4 && status == 0 or 200인지 확인( 통신 정상 성공 종료 확인 )
-	//h 통신이 이미 성공했다면 사용자가 clearTimeout을 잊은 거니까, 그냥 종료
-	//h 통신이 실패했다면
-	//h retry 조건이 맞는지 확인하고.
-	//h 맞다면, XMLHttpRequest.Request 재실행 후 Timeout CallBack()실행.
-	//h 틀리다면, abort() 실행 후 abort CallBack() 실행.
-	//h 작업 다 끝나고 나면, timeoutHandler 실행.
-	//e if timeout occurs, check the retry condition. (because it means that the time as passed)
-	//e checks if readyState == 4 && status == 0 or 200( checks for normal communication termination )
-	//e if communication fails
-	//e check if the retry conditions are correct
-	//e if it is, XMLHttpRequest.Request is executed again, and then Timeout CallBack() is executed.
-	//e if not, abort() is executed and then abort CallBack() is executed.
-	//e when everything is complete, timeoutHandler is executed.
+	// if timeout occurs, check the retry condition. (because it means that the time as passed)
+	// checks if readyState == 4 && status == 0 or 200( checks for normal communication termination )
+	// if communication fails
+	// check if the retry conditions are correct
+	// if it is, XMLHttpRequest.Request is executed again, and then Timeout CallBack() is executed.
+	// if not, abort() is executed and then abort CallBack() is executed.
+	// when everything is complete, timeoutHandler is executed.
 	this.timeout = function( ) {
-		//h timeout조건 체크 먼저. timeoutMillisec 값이 없거나 0 이하면, 정상이 아닌 걸로 취급해 아무 것도 안한다.
-		//e First checks the timeout condition.  If there is no timeoutMillisec value or if the value is below 0, then nothing is done as this is not considered valid.
+		// First checks the timeout condition.  If there is no timeoutMillisec value or if the value is below 0, then nothing is done as this is not considered valid.
 		if ( ! this.__timeoutMillisec || typeof( this.__timeoutMillisec ) != "number" || this.__timeoutMillisec <= 0 ) {
 			return null;
 		}
 
-		//n 사용자가 timeout 값을 설정했다면
 		window.clearTimeout( this.__timeoutObject );
 		try{
 			this.retryOnError( this.__xhr.readyState, this.__xhr.status );
@@ -7153,27 +7108,21 @@ var riffAJAX = function ( _url, _fnSuccess, _theOtherSet, _functionTossAgumentSe
 			this.retryOnError( );
 		}
 
-		//n 재전송 요청( 혹은 실패에 따른 에러) 후, timeout handler가 있으면 실행.
 		if ( this.__timeoutHandler && typeof( this.__timeoutHandler ) == "function" )
 		{
 			this.__timeoutHandler( );
 		}
 	};
 
-	//h 데이터 교환이 성공했는지를 확인한다.
-	//h readyState가 4 + status 0/200 + responseText / responseXML이 존재하는지를 확인한다.
-	//h framework에서 제공하는 AJAX 객체는, [데이터 수신] 이 대전제이다.
-	//h 즉, 사용자가 framework 의 AJAX 객체를 사용한다면, 반드시 데이터 수신이 발생한다는 전제 하에 코드가 작성이 되어 있으므로
-	//h 전송만이 목적인 경우로 사용한다면, 이 함수를 변경하여야 한다.
-	//e Checks if data exchange was successful.
-	//e Checks if readyState == 4, status == 0 && 200, responseText and responseXML exists.
-	//e The AJAX object provided by the framework requires that the data is recieved.
-	//e Therefore, if this function was to be used for transmission only, it will need to be modified.
+	// Checks if data exchange was successful.
+	// Checks if readyState == 4, status == 0 && 200, responseText and responseXML exists.
+	// The AJAX object provided by the framework requires that the data is recieved.
+	// Therefore, if this function was to be used for transmission only, it will need to be modified.
 	this.__receiveSuccessCheck = function() {
 		if (
-				( riffGlobal.AJAXREADYSTATE.DONE == this.__xhr.readyState )			//n readyState = 4 체크
-				&& ( ( 0 === this.__xhr.status ) || ( 200 === this.__xhr.status ) )		//n readyStatus = 0 / 200 체크
-				&& ( this.__xhr.responseText || this.__xhr.responseXML )				//n return value 가 있는지 체크
+				( riffGlobal.AJAXREADYSTATE.DONE == this.__xhr.readyState )			
+				&& ( ( 0 === this.__xhr.status ) || ( 200 === this.__xhr.status ) )		
+				&& ( this.__xhr.responseText || this.__xhr.responseXML )				
 			)
 		{
 			return true;
@@ -7197,14 +7146,11 @@ var riffAJAX = function ( _url, _fnSuccess, _theOtherSet, _functionTossAgumentSe
 		}
 	};
 
-	//h 전송이 성공했을 때에 할 일들.
-	//e Things to do when transmission is successful
+	// Things to do when transmission is successful
 	this.requestSuccess = function( ) {
-		//h busy Indicator 삭제.
-		//e removes busy Indicator.
+		// removes busy Indicator.
 		closeIndicator();
-		//h idle 기사 및 indicator 부분
-		//e idle article and indicator section.
+		// idle article and indicator section.
 		riff('.rf-idle-busyindicator').hide();
 		riff('.rf-idle-section1').show();
 
@@ -7213,19 +7159,16 @@ var riffAJAX = function ( _url, _fnSuccess, _theOtherSet, _functionTossAgumentSe
 		this.__retryCount = 0 ;
 	};
 
-	//h 에러 처리 함수( callback 이 없을때 쓸 default )
-	//e error processing function (used as default function when callback is not specified)
+	// error processing function (used as default function when callback is not specified)
 	this.defaultError = function( _readyState, _status, _description )
 	{
 		riff( "#ajaxPopup" ).children().children(".rf-area-txt-popup").text( "Connection failed" );
 		riff.go("#ajaxPopup");
 		function show3sec()
 		{
-			//h 화면에 뜬 popup 객체를 삭제한다.
 			closeIndicator( );
 			riff.timer( "_ajaxDefaultError3Sec" );
 		};
-		//h 3초 후에 화면에서 삭제.
 		riff.timer( show3sec , 3000, "_ajaxDefaultError3Sec" );
 	};
 
@@ -7238,9 +7181,7 @@ var riffAJAX = function ( _url, _fnSuccess, _theOtherSet, _functionTossAgumentSe
 		} else {
 			this.__xhr.open( this.__option.type, _url, this.__option.isAsync );
 			this.__xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-//d			this.__xhr.setRequestHeader("Content-type", "application/xml");
 
-			//n header 정보를 더 설정하려 할 경우, 배열로 된 헤더 정보를 설정한다. 
 			for( var k in this.__headerData )
 				this.__xhr.setRequestHeader( k, this.__headerData[k] );
 
@@ -7261,68 +7202,49 @@ var riffAJAX = function ( _url, _fnSuccess, _theOtherSet, _functionTossAgumentSe
 
 	// ajax::Constructor
 	{
-		//h busy Indicator 화면 표시.
-		//e shows the bussy Indicator.
+		// shows the bussy Indicator.
 		riff.popup( "#busyIndicator" );
 
-		//h idle 기사 및 indicator 부분
-		//e idle article and indicator section.
+		// idle article and indicator section.
 		riff('.rf-idle-section1').hide();
 		riff(".rf-idle-busyindicator").show();
 		riff(".rf-idle-busyindicator").text("Loading, Please wait...");
 
-		//h fnSuccess의 option 설정
-		//e the option settings of fnSuccess
+		// the option settings of fnSuccess
 		if ( _theOtherSet )
 		{
 			this.__option.type = _theOtherSet.type || "GET";
 			this.__option.isAsync = ( typeof( _theOtherSet.isAsync ) == "undefined" ) ? true : _theOtherSet.isAsync ;
 			this.__option.contentType = _theOtherSet.contentType || "TEXT";
-			//h 대문자 변환
-			//e convert to capital letters
+			// convert to capital letters
 			this.__option.type = this.__option.type.toUpperCase();
 			this.__option.contentType = this.__option.contentType.toUpperCase();
 		}
 
-		//h retry 값 설정
-		//h retry = 1 -> 실행
-		//h retry = undefined -> 기본 실행
-		//h retry = null -> 미실행
-		//h retry = 0 -> 미실행
-		//h 통신 실패시의 retry 설정
-		//e retry setting
-		//e retry == 1 -> execute
-		//e retry == undefined -> execute default
-		//e retry == null -> does not execute
-		//e retry == 0 -> does not execute
-		//e retry setting in case communication fails
+		// retry setting
+		// retry == 1 -> execute
+		// retry == undefined -> execute default
+		// retry == null -> does not execute
+		// retry == 0 -> does not execute
+		// retry setting in case communication fails
 		if ( typeof( this.__retry ) == 'undefined' || this.__retry < 0 )
 		{
-			//h retry 기본값 설정
 			this.__retry = riffGlobal.ajaxRetry;
 		}
 
-		//h timeout 시간 설정
-		//h timeout = 1 -> 실행
-		//h timeout = undefined -> 기본 실행
-		//h timeout = null -> 미실행
-		//h timeout = 0 -> 미실행
-		//h 통신 실패시의 timeout 설정
-		//e timeout duration setting
-		//e timeout == 1 -> execute
-		//e timeout == undefined -> execute default
-		//e timeout == null -> does not execute
-		//e timeout == 0 -> does not execute
-		//e timeout setting in case communication fails
+		// timeout duration setting
+		// timeout == 1 -> execute
+		// timeout == undefined -> execute default
+		// timeout == null -> does not execute
+		// timeout == 0 -> does not execute
+		// timeout setting in case communication fails
 		if ( typeof( this.__timeoutMillisec ) == 'undefined' || this.__timeoutMillisec < 0 )
 		{
-			//h 데이터 통신을 할 때 timeout으로 설정되는 기본 대기 시간.
-			//e default timeout setting of data communication
+			// default timeout setting of data communication
 			this.__timeoutMillisec = riffGlobal.ajaxTimeoutMillisecond;
 		}
 
-		//h 에러 함수 설정.
-		//e error function setting
+		// error function setting
 		if ( !this.__errorHandler || typeof( this.__errorHandler ) != 'function' )
 		{
 			this.__errorHandler = this.defaultError;
@@ -7347,32 +7269,24 @@ var riffAJAX = function ( _url, _fnSuccess, _theOtherSet, _functionTossAgumentSe
 		}
 
         this.__xhr.ajax = this;
-		//h readyState = 4 일때의 이벤트 등록
-		//e register the event if readyState = 4
+		// register the event if readyState = 4
 		this.__xhr.handlers	= [];
 		this.__xhr.datas	= [];
 		this.__xhr.handlers[ riffGlobal.AJAXREADYSTATE.DONE ] = this.__successFunction;
 
         this.__xhr.onreadystatechange = function ( ) {
-        //h 여기서의 this 는 AJAX 객체가 아니고 xhttp 객체( xhr ) 다.
-        //h 만일 ajax객체를 사용하고 싶으면, this.ajax를 이용할것.
-	//e The "this" keyword (of the javascript ) in this function is not an the ajax component object but is a xhttp (xhr) object
-        //e but if you wish to use an AJAX object, use "this.ajax".
+	// The "this" keyword (of the javascript ) in this function is not an the ajax component object but is a xhttp (xhr) object
+        // but if you wish to use an AJAX object, use "this.ajax".
 
-			//h 이 구역은, 에러 발생과 관계없이( __xhr.status 값과 관계없이 ) 실행한다.
-			//h retry 를 이용하려면 에러인지 아닌지를 판단해야 하므로
-			//h 에러의 기준은 status 값이 0 , 200 이 아닌 경우이다. 이 경우만 retry 하자.
-			//e this section executes regardless of error (regardless of __xhr.status value)
-			//e If the status value is not 0 or 200, it is considered an error. Communication is retried then.
+			// this section executes regardless of error (regardless of __xhr.status value)
+			// If the status value is not 0 or 200, it is considered an error. Communication is retried then.
 
 			try
 			{
 				if ( this.status !== 0 && this.status !== 200 )
 				{
-					//h retry 가 설정되어 있으면 retry를 하고, retryCount를 전부 소비했으면 errorHandler() 를 실행.
-					//h timeout 이 설정되어 있다면, 일단 지운다.
-					//e If the "retry" option is set, retry the data communation. If the "retryCount" value exceeds then the "retry" option, it will activate the errorHandler() function
-					//e if timeout is set, clear it.
+					// If the "retry" option is set, retry the data communation. If the "retryCount" value exceeds then the "retry" option, it will activate the errorHandler() function
+					// if timeout is set, clear it.
 					window.clearTimeout( this.ajax.__timeoutObject );
 					this.ajax.retryOnError( this.readyState, this.status );
 					return;
@@ -7383,44 +7297,33 @@ var riffAJAX = function ( _url, _fnSuccess, _theOtherSet, _functionTossAgumentSe
 			}
 
 			if ( riffGlobal.AJAXREADYSTATE.DONE == this.readyState ) {
-				//h 정상이라면
-				//e if normal
+				// if normal
 				if ( this.ajax.__receiveSuccessCheck() )
 				{
-					//h timeout 용 타이머 지우자.
-					//e delete timeout timer
+					// delete timeout timer
 					this.ajax.requestSuccess();
-					//h text에서 xml 을 추출
-					//e extract XML from text
+					// extract XML from text
 					if( !this.responseXML ) {
 						this.responseXML = ( new DOMParser() ).parseFromString( this.responseText, "application/xml" );
 					};
 					this.ajax.__successFunction( this.responseXML, this.responseText, this.ajax, _functionTossAgumentSet );
 				} else {
-					//h 정상 이외의 경우( ex: alzajira feed처럼 데이터 통신 결과가 늦거나, 다르게 주는 경우 )
-					//h status값이 반환되었다는 것은, 어떤 형태로든 데이터 통신이 종결되었다는 뜻이다
-					//h 즉, readyState 4 / status = 0 -> readyState 4 / status = 200 의 형태로 변하는 것이 아니라
-					//h readyState가 3 -> 4 로 변경될 때, status값은 단 한번에 0 , 200, 404 등으로 정해지는 것이다.
-					//e abnormal cases( ex: if data communication method is late or different like the alzjira feed)
-					//e If status value is returned, that means the data communication has been completed.
-					//e The readyState and status value of the xHttpRequest is not changed like "readyState 4 / status = 0" -> "readyState 4 / status = 200".
-					//e When the readyState changes from 3 to 4, status value is set to 0, 200, or 404 etc at ONCE.
+					// abnormal cases( ex: if data communication method is late or different like the alzjira feed)
+					// If status value is returned, that means the data communication has been completed.
+					// The readyState and status value of the xHttpRequest is not changed like "readyState 4 / status = 0" -> "readyState 4 / status = 200".
+					// When the readyState changes from 3 to 4, status value is set to 0, 200, or 404 etc at ONCE.
 
-					//h retry with error Handler() + retry handler()
-					//h retry 가 설정되어 있으면 retry를 하고, retryCount를 전부 소비했으면 errorHandler() 를 실행.
-					//e retry with error Handler() + retry handler()
-					//e If the "retry" option is set, retry the data communation. If the "retryCount" value exceeds then the "retry" option, it will activate the errorHandler() function
+					// retry with error Handler() + retry handler()
+					// If the "retry" option is set, retry the data communation. If the "retryCount" value exceeds then the "retry" option, it will activate the errorHandler() function
 
-					//h timeout 이 설정되어 있다면, 일단 지우자.
-					//e if timeout is set, it is cleared.
+					// if timeout is set, it is cleared.
 					window.clearTimeout( this.ajax.__timeoutObject );
 					this.ajax.retryOnError( this.readyState, this.status );
 				}
 
 			}
 		};
-		//h 데이터 전송
-		//e data transmission
+		// data transmission
 		this.Request( ) ;
 	};
 

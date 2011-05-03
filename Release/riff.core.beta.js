@@ -1,5 +1,5 @@
 //
-// Riff Beta 1.9.327
+// Framework Beta 2.0.591
 //
 // Copyright 2011, Licensed under the MIT license.
 // http://innovator.samsungmobile.com/
@@ -111,8 +111,10 @@ var riffGlobal = new (function()
 	this.eventType = null;
 
 	// Indicates data communcation and transition order within the Tab Component
-	this.tabOrNavigationTransitionOrder = "after";
+	this.feedTransitionOrder = "after";
 
+	this.ajaxConnectionListMax = 100;
+	this.ajaxConnectionList = new Array( this.ajaxConnectionListMax );
 	// Ajax communication state names
 	this.AJAXREADYSTATE = {
 		"UNINIT"		: 0,
@@ -816,19 +818,12 @@ riff.fn = riff.prototype = {
 
     top : function( _value )
 	{
-		if( !_value ) {
-			if( this.dom() ) {
-				if( RegExp(/Firefox/).test(navigator.userAgent) ) {
-					//n Filefox
-					return window.parseFloat(this.dom().ownerDocument.defaultView.getComputedStyle(this.dom(), null).getPropertyValue("top"));
-				}else {
-					//n other Browser
-					return window.parseFloat(window.getComputedStyle(this.dom(), null).getPropertyValue("top"));
-				}
-			}
+		if( !_value )
+			if( this.dom() )
+				return window.parseFloat(window.getComputedStyle(this.dom()).getPropertyValue("top"));
 			else
 				return null;
-		}
+
 		// If the user does not input the css value string, the riff object is returned and the function ends
 		if( isNaN( window.parseFloat(_value) ) ) return this;
 
@@ -840,19 +835,11 @@ riff.fn = riff.prototype = {
 
 	left : function( _value )
 	{
-		if( !_value ) {
-			if( this.dom() ) {
-				if( RegExp(/Firefox/).test(navigator.userAgent) ) {
-					//n Filefox
-					return window.parseFloat(this.dom().ownerDocument.defaultView.getComputedStyle(this.dom(), null).getPropertyValue("left"));
-				}else {
-					//n other Browser
-					return window.parseFloat(window.getComputedStyle(this.dom(), null).getPropertyValue("left"));
-				}
-			}
+		if( !_value )
+			if( this.dom() )
+				return window.parseFloat(window.getComputedStyle(this.dom()).getPropertyValue("left"));
 			else
 				return null;
-		}
 
 		// If the user does not input the css value string, the riff object is returned and the function ends
 		if( isNaN( window.parseFloat(_value) ) ) return this;
@@ -868,10 +855,8 @@ riff.fn = riff.prototype = {
 		if( !_value ) {
 			if( this.dom() ) {
 				if( RegExp(/Firefox/).test(navigator.userAgent) ) {
-					//n Filefox
 					return window.parseFloat(this.dom().ownerDocument.defaultView.getComputedStyle(this.dom(), null).getPropertyValue("width"));
 				}else {
-					//n other Browser
 					return window.parseFloat(window.getComputedStyle(this.dom(), null).getPropertyValue("width"));
 				}
 			}
@@ -892,11 +877,10 @@ riff.fn = riff.prototype = {
 	{
 		if( !_value ) {
 			if( this.dom() ) {
-				if( RegExp(/Firefox/).test(navigator.userAgent) ) {
-					//n Filefox
+				
+				if ( RegExp(/Firefox/).test(navigator.userAgent) ) {
 					return window.parseFloat(this.dom().ownerDocument.defaultView.getComputedStyle(this.dom(), null).getPropertyValue("height"));
 				}else {
-					//n other Browser
 					return window.parseFloat(window.getComputedStyle(this.dom(), null).getPropertyValue("height"));
 				}
 			}
@@ -1151,6 +1135,13 @@ riff.fn = riff.prototype = {
 						this.buffer("riffAnimationTimerParamRiseValue",risevalue);
 						this.buffer("riffAnimationTimerFirstSetting",false);
 					}
+
+					if( !popupObj ) {
+						riff.timer("riffAnimationTimer");
+						this.buffer("riffAnimateInitFlag", false);
+						return;
+					}
+
 					for(var p in popupObj["prop"])
 					{
 						var str = this.css(p);
@@ -1323,7 +1314,7 @@ riff.fn = riff.prototype = {
         {
             // Handles triggering a single element
             // Does not trigger events on text and comment nodes
-            domObject[ _existEventName ] && domObject[ _existEventName ]();
+            domObject[ _existEventName ] && domObject[ _existEventName ]();  
             domObject = this.dom(++i);
         };
     	return this;
@@ -1511,6 +1502,8 @@ riff.fn = riff.prototype = {
 
 		this.buffer("riffSwipeFunc",_fnEventHandle);
 		this.buffer("riffSwipeVerlocityPercent",_verlocityPercent);
+		if( !_verlocityPercent || typeof ( _verlocityPercent ) != "number" || ( _verlocityPercent < 1 ) )
+			_verlocityPercent = 50;
 		this.buffer("riffSwipeIsSwipeEnd",_isFlickEnd);
 		return this;
 	},
@@ -2316,9 +2309,9 @@ riff.scene.back = function ( _option )
 riff.popup = function(_popup, _option)
 {
 	if( typeof _popup == "object" || typeof _popup =="undefined" )
-		return riff.popup.back.apply(this, arguments);
+		return riff.popup.back.call(this, _option);
 	else
-		return riff.popup.go.apply(this, arguments);
+		return riff.popup.go.call(this, _popup, _option);
 };
 
 riff.popup.go = function ( _popup, _option )
@@ -2653,6 +2646,9 @@ riff.globalSetting =  riff.option = function( )
 			riffGlobal.widgetName = setting[k];
 			// The title of the children widget are changed to the widget name
 			riff(".rf-idle-logo").text( riffGlobal.widgetName );
+		} else if ( k == "ajaxConnectionListMax" )
+		{
+			riffGlobal.ajaxConnectionListMax = setting[k];
 		}
 	}
 	return true;
@@ -2916,7 +2912,7 @@ riff.alert = function ( _str, _opts )
 {
 	var opts = {};
 
-	opts.cancelFunc = function(){ riff.back(); };
+	opts.cancelFunc = function(){ riff.popup.back(); };
 
 	for ( var k in _opts )
 		opts[k] = _opts[k];
@@ -3081,27 +3077,78 @@ riff.settingList = function( _id, _data )
 // Executes when the softkey refresh button is pressed.
 riff.feedRefresh = function ()
 {
-	if( riff(".rf-component-scene").css("display") == "block" ){
-		riff(".rf-component-scene").each( function () {
-			if( riff(this).find(".rf-component-tabmenu").size() != 0 ) {
-				var tabID= riff(this).find(".rf-component-tabmenu").dom().id;
-				riff("#"+tabID).refresh( true );
-				return true;
+	var tViewScene = riff(".rf-component-scene");
+	var tViewLen = tViewScene.size();
+	
+	for( var i = 0; i < tViewLen; i++ ) {
+		if( tViewScene.eq(i).css("display") == "block" ) {
+			
+			var riffThis = tViewScene.eq(i).find(".rf-component-tabmenu");
+			if( riffThis.size() > 0 ) {
+				var tabID = riffThis.dom().id;
+				riff("#"+tabID).refresh( false );
+				riffThis = null;
+				break;
 			}
 
-			if( riff(this).find(".rf-component-list").size() != 0 ) {
-				var listID= riff(this).find(".rf-component-list").dom().id;
-				riff("#"+listID).refresh( true );
-				return true;
+			var riffThis = tViewScene.eq(i).find(".rf-component-navigationMenu");
+			if( riffThis.size() > 0 ) {
+				var tabID = riffThis.dom().id;
+				riff("#"+tabID).refresh( false );
+				riffThis = null;
+				break;
 			}
-		});
+		}
 	}
+
+	tViewScene = null;
+	return true;
+
 }
+
+riff.abortAllAjax = function()
+{
+	var ajaxConn = null;
+	var lp = 0;
+	var len = riffGlobal.ajaxConnectionList.length;
+	var isAbortWork = false;
+
+	for( lp = 0; lp < len ; lp++ )
+	{
+		if( ajaxConn = riffGlobal.ajaxConnectionList[ lp ] )
+		{
+			ajaxConn[0].abortByUser();
+			ajaxConn[0].__destroy();
+			delete ajaxConn[0];
+			delete riffGlobal.ajaxConnectionList[ lp ];
+			isAbortWork = true;
+		};
+	};
+
+
+	return true;
+};
+
+riff.getAjaxConnectionListIndex = function()
+{
+	var lp = 0;
+	var len = riffGlobal.ajaxConnectionList.length;
+
+	for( lp = 0 ; lp < len ; lp++ )
+	{
+		if( !riffGlobal.ajaxConnectionList[ lp ] ) return lp;
+	}
+
+	riff.alert(" riffGlobal.AjaxConnectionList( " + riffGlobal.ajaxConnectionList.length + " ) is full. please extend the ajaxConnectionList's max list amount." );
+	return false;
+}
+
 
 
 riff.fn.selector.prototype = riff.fn;
 window.riff = window.$ = riff;
 window.riffGlobal = riffGlobal;
+
 
 // Basic Riff Object Component
 
@@ -3148,11 +3195,6 @@ ComponentIdle.prototype.makeStructs = function ()
 
 }
 
-ComponentIdle.prototype.setContents = function ()
-{
-
-}
-
 ComponentIdle.prototype.option = function ( _data )
 {
 	for ( var k in _data){
@@ -3184,41 +3226,28 @@ ComponentIdle.prototype.moveFEEDArticle = function ( _move )
 	if( !componentObject )
 		return;
 
-	// If type is tab
+
+	// Article click event
+	if(_move == "article"){
+		var tabID = riffThis.buffer("ComponentDataFEEDComponentID");
+		var parentID = $(tabID).parent().parent().dom().id;
+		riff.go( parentID );
+	}
+
+	// Refresh event
+	if(_move == "refresh")	{
+		var tabID = riffThis.buffer("ComponentDataFEEDComponentID");
+		riff(tabID).refresh(false);
+	}
+
 	if ( componentObject.type == "tabMenu" )
 	{
-		// Article click event
-		if(_move == "article"){
-			var tabID = riffThis.buffer("ComponentDataFEEDComponentID");
-			var parentID = $(tabID).parent().parent().dom().id;
-			riff.go( parentID );
-		}
-
-		// Refresh event
-		if(_move == "refresh")	{
-			var tabID = riffThis.buffer("ComponentDataFEEDComponentID");
-			riff(tabID).refresh(false);
-		}
-
+		// If type is tab
 		var dataSet = feedComponent.buffer("ComponentTabMenuComponentDataSet");
 
 	} else if ( componentObject.type == "navigationMenu" )
 	{
 		// if type is navigation
-
-		// article click event
-		if(_move == "article"){
-			var navigationID = riffThis.buffer("ComponentDataFEEDComponentID");
-			var parentID = $(navigationID).parent().parent().dom().id;
-			riff.go( parentID );
-		}
-
-		// refresh event
-		if(_move == "refresh")	{
-			var navigationID = riffThis.buffer("ComponentDataFEEDComponentID");
-			riff( navigationID ).refresh(false);
-		}
-
 		var dataSet = feedComponent.buffer("ComponentNavigationMenuComponentDataSet");
 	}
 
@@ -3265,7 +3294,7 @@ ComponentIdle.prototype.moveFEEDArticle = function ( _move )
 				FEEDIndex = idleSet.length - 1;
 			}
 		}else if ( _move == "articleRight" ){
-			if ( ++FEEDIndex >= dataSet.length) {
+			if ( ++FEEDIndex >= idleSet.length) {
 				FEEDIndex = 0;
 			}
 		}
@@ -3278,10 +3307,10 @@ ComponentIdle.prototype.moveFEEDArticle = function ( _move )
 		if ( idleSet[FEEDIndex] ){
 			// category
 			var reduceTitleText = riff.ellipsisString( feedComponent.children("ul").children("li").eq(FEEDKey).text(), 15 );
-			riff(".rf-idle-category").text( reduceTitleText );
+			riff(".rf-idle-category").html( reduceTitleText );
 			// article
 			var reduceArticleText = riff.ellipsisString( idleSet[FEEDIndex].txtHead, riffGlobal.idleArticleEllipsisStringLength );
-			riff(".rf-idle-article").text( reduceArticleText );
+			riff(".rf-idle-article").html( reduceArticleText );
 			// dataReceivedTime
 			var dataReceiveTimeComponent = riff('.rf-component-datareceivetime');
 			riff(".rf-component-idle").dataReceiveTime( dataReceiveTimeComponent.buffer("feedDataReceiveTime"), dataReceiveTimeComponent.buffer("feedDataReceiveText") );
@@ -3303,8 +3332,16 @@ ComponentIdle.prototype.setFeedComponent = function ( _component )
 		riff(this).buffer("ComponentDataFEEDComponent", _component );
 		_component.go(0);
 	}
+};
 
-}
+ComponentIdle.prototype.showBusyIndicator = function ( _html )
+{
+	if( !_html ) _html = " ";
+	riff( ".rf-component-idle > .rf-idle-busyindicator").html( _html );
+	riff( ".rf-component-idle > .rf-idle-busyindicator").show();
+	riff( ".rf-component-idle > .rf-idle-section1").hide();
+};
+
 // Time values of when the pubData or Recieved Data, ect, of FEED Component are outputed as html
 ComponentIdle.prototype.dataReceiveTime = function ( _showTime , _showText )
 {
@@ -3342,35 +3379,38 @@ var ComponentButton = function ( _elementContext )
 // params  : _data => { property : value }
 ComponentButton.prototype.option = function ( _data )
 {
+	var riffThis = riff(this);
 	for ( var k in _data)
 	{
 		// Applies size, color, btnImage to corresponding buttons
 		if(k == "fontSize"){
 			if (_data[k] == "big"){
-				riff(this).css("font-size","32px");
+				riffThis.css("font-size","32px");
 			} else if (_data[k] == "normal"){
-				riff(this).css("font-size","28px");
+				riffThis.css("font-size","28px");
 			} else if (_data[k] == "small"){
-				riff(this).css("font-size","24px");
+				riffThis.css("font-size","24px");
 			} else {
-				riff(this).css("font-size",_data[k]);
+				riffThis.css("font-size",_data[k]);
 			}
 		}
 
 		if(k == "fontColor"){
-			riff(this).css("color",_data[k]);
+			riffThis.css("color",_data[k]);
 		}
 
 		if(k == "btnImage"){
-			riff(this).css("-webkit-border-image" ,"url('"+_data[k]+"') 15 stretch stretch");
+			riffThis.css("-webkit-border-image" ,"url('"+_data[k]+"') 15 stretch stretch");
 		}
 
 		// Saves the option data into the buffer.  (additional options are given if Elements were dynamically created after reset)
-		var optionData = riff(this).buffer("ComponentDataOption");
+		var optionData = riffThis.buffer("ComponentDataOption");
 		if( !optionData )
-			riff(this).buffer("ComponentDataOption", optionData = {} );
+			riffThis.buffer("ComponentDataOption", optionData = {} );
 		optionData[k] = _data[k];
 	}
+
+	riffThis = null;
 }
 
 // Riff dataReceiveTime Component
@@ -3873,8 +3913,8 @@ ComponentList.prototype.makeStructs = function ()
 				"<div class='rf-effect-half-glow'></div>"); 		// Blank DIV Element for Gradient
 
 	// Add or remove focus
-	listRow.touchStart(	function() { riff(this).addClass('rf-state-onfocus'); })
-		.touchEnd( function() { riff(this).removeClass('rf-state-onfocus'); });
+	listRow.touchStart(	function() { riff(this).addClass('rf-state-onfocus'); });
+	listRow.touchEnd( function() { riff(this).parent().parent().find( "ul > li " ).removeClass( "rf-state-onfocus" ); 	});
 
 	// If there is no data, markups data will be read and saved
 	if( !riffThis.buffer("ComponentListComponentDataSet") )
@@ -4139,8 +4179,11 @@ ComponentList.prototype.setContents = function ( _data, _type )
 				tagInfo.link = _tagOpts[k];
 			else if(k == "image")
 				tagInfo.image = _tagOpts[k];
+			else if(k == "iterator") {	
+				tagInfo.iterator = _tagOpts[k];
+				opts.iterator = tagInfo.iterator;
+			}
 		}
-
 		// Feed Callback
 		var dataArray = new Array();
 		var itemElem = _xml.selector(opts.iterator);
@@ -4149,7 +4192,6 @@ ComponentList.prototype.setContents = function ( _data, _type )
 
 		// Data for Idle
 		var dataSetFEED = new Array();
-
 		for ( var i=0, l=itemElem.size(); i<l; i++ )
 		{
 			var dataType = "";
@@ -4580,7 +4622,6 @@ ComponentTabMenu.prototype.makeStructs = function ( )
 	riffThis.option( riffThis.buffer("ComponentDataOption") );
 }
 
-
 // Creates tabMenu control markup and tabMenu scenePart list markup
 ComponentTabMenu.prototype.setContents = function ( _data )
 {
@@ -4597,7 +4638,7 @@ ComponentTabMenu.prototype.setContents = function ( _data )
 	{
 		var dataSetCur = {};
 
-		dataSetCur.feedTitle = k;
+		dataSetCur.feedTitle = _data[k][3];			// TAB expression
 		dataSetCur.enable = true;
 
 		if( typeof _data[k] == "string" )
@@ -4667,7 +4708,7 @@ ComponentTabMenu.prototype.go = function ( _tab, _opts )
 
 		// Calculates the number of milliseconds
 		var second = 0;
-		if( typeof curTabMenu != "number" || riffGlobal.tabOrNavigationTransitionOrder == "after")
+		if( typeof curTabMenu != "number" || riffGlobal.feedTransitionOrder == "after")
 		{
 			second = 0;
 		}
@@ -4820,13 +4861,14 @@ ComponentTabMenu.prototype.autoRefresh = function ( _time )
 }
 
 // The tab layout for the framework.
-ComponentTabMenu.prototype.frameworkTabMenu = function ()
+ComponentTabMenu.prototype.frameworkTabMenu = function ( _layoutParamsArray, _scenePartArray, _opts, _xmlSuccessCallback )
 {
 	var riffThis = riff(this);
-	var layoutParamsArray		= arguments[0];		
-	var scenePartArray			= arguments[1];		
-	var opts					= arguments[2];		
-	var xmlSuccessCallback		= arguments[3];		
+
+	var layoutParamsArray		= _layoutParamsArray;		// layout params
+	var scenePartArray			= _scenePartArray;		// runs
+	var opts							= _opts;		// ajaxOption
+	var xmlSuccessCallback	= _xmlSuccessCallback;		// successCallback function
 
 	// Saves feed option data ( used for moving between tabs )
 	var dataSetFEED = new Array();
@@ -4851,7 +4893,6 @@ ComponentTabMenu.prototype.frameworkTabMenu = function ()
 				riff.xml(
 					riffThisDataSetFeed[idx].url,
 					function( _xml, _xmlObject, _xmlString ) {
-
 						var _xmlCache = _xmlObject;
 						var args = new Array();
 						args.push( _xml );
@@ -4908,20 +4949,26 @@ ComponentTabMenu.prototype.frameworkTabMenu = function ()
 				// time + text is displayed on idle scene
 				riff(".rf-component-idle").dataReceiveTime( tTime, dataReceiveTimeComponent.buffer("feedDataReceiveText") );
 				riff.dataReceiveTime( tTime );
-			}
+			},
+			scenePartArray[k][0]			
 		];
 
 		// The setting inserted to dataSetFEED from data.js
 		var dataSetFEEDCur = {};
-		if ( typeof( scenePartArray[k] ) == "string" )	
-		{
-			dataSetFEEDCur.url					= scenePartArray[k];
-		} else if ( riff.isArray( scenePartArray[k] ) )	
-		{
-			dataSetFEEDCur.url					= scenePartArray[k][0];
-			dataSetFEEDCur.scenePartFunction	= scenePartArray[k][1];
-			dataSetFEEDCur.tagOpts				= scenePartArray[k][2];
-		}
+
+        if ( typeof( scenePartArray[k] ) == "string" )
+        {
+            dataSetFEEDCur.tabExpression = scenePartArray[k][0];        // tap Expression
+            dataSetFEEDCur.url                    = scenePartArray[k][1];        // url
+            dataSetFEEDCur.tagOpts                = layoutParamsArray[0];        // layoutTagOption
+        } else if ( riff.isArray( scenePartArray[k] ) )
+        {
+            dataSetFEEDCur.tabExpression = scenePartArray[k][0];        // tap Expression
+            dataSetFEEDCur.url                    = scenePartArray[k][1];
+            dataSetFEEDCur.scenePartFunction    = scenePartArray[k][2];
+            dataSetFEEDCur.tagOpts                = scenePartArray[k][3] || layoutParamsArray[0] ;    // each URL's tagOption
+        }
+
 		dataSetFEEDCur.opts					= opts;
 		dataSetFEEDCur.xmlSuccessCallBackSet = xmlSuccessCallback;
 		dataSetFEED.push(dataSetFEEDCur);
@@ -4932,13 +4979,7 @@ ComponentTabMenu.prototype.frameworkTabMenu = function ()
 	if ( urlExistCount <= 0 )	
 	{
 		riff.alert( "Check Feed URL in JS file." );
-		var tIdleIndicator = riff(".rf-idle-busyindicator");
-		if ( tIdleIndicator )
-		{
-			riff(".rf-idle-section1").hide();
-			riff(".rf-idle-busyindicator").show();
-			riff(".rf-idle-busyindicator").text("Check Feed URL in JS file.");
-		}
+		riff(".rf-component-idle").showBusyIndicator( "Check Feed URL in JS file." );
 		return false;
 	};
 
@@ -5490,7 +5531,7 @@ ComponentNavigationMenu.prototype.setContents = function ( _data )
 	for ( var k in _data )
 	{
 		var dataSetCur = {};
-		dataSetCur.feedTitle = k;
+		dataSetCur.feedTitle = _data[k][3];		// Navigation Expression
 		
 		if ( typeof _data[k][1] == "function" )
 		{
@@ -5535,6 +5576,14 @@ ComponentNavigationMenu.prototype.makeStructs = function ()
 	riffThis.prepend("<div class='rf-effect-half-glow'></div>" + 										// Blank DIV Element for Glow
 						"<span class='rf-obj-arrow-left'></span><span class='rf-obj-arrow-right'></span>"); 	// Blank DIV Element for Arrow Icon
 
+	riffThis.children('.rf-obj-arrow-left')
+		.touchStart(function(){ riff(this).addClass("rf-state-on"); })
+		.touchEnd(function(){ riff(this).removeClass("rf-state-on"); });
+
+	riffThis.children('.rf-obj-arrow-right')
+		.touchStart(function(){ riff(this).addClass("rf-state-on"); })
+		.touchEnd(function(){ riff(this).removeClass("rf-state-on"); });
+
 	// when there's no dataset in the buffer (just like feed function does not dynamically create elements, when the component uses a tab creates an indext.html element and uses it)
 	if ( !riffThis.buffer("ComponentNavigationMenuComponentDataSet") )
 	{
@@ -5551,15 +5600,15 @@ ComponentNavigationMenu.prototype.makeStructs = function ()
 		});
 	}
 
-	riffThis.children('ul').addClass('pageList');
+	riffThis.children('ul').addClass('rf-dev-pageList');
 
 	var dataSet = riffThis.buffer("ComponentNavigationMenuComponentDataSet");
 
 	// flick setting in navigationMenu header
-	riffThis.children('.pageList').flickLeft(function(){
-		riff(this).siblings(".rf-obj-arrow-left").trigger( riffGlobal.EVENTSTRING.TAP );
-	}).flickRight(function(){
+	riffThis.children('.rf-dev-pageList').flickLeft(function(){
 		riff(this).siblings(".rf-obj-arrow-right").trigger( riffGlobal.EVENTSTRING.TAP );
+	}).flickRight(function(){
+		riff(this).siblings(".rf-obj-arrow-left").trigger( riffGlobal.EVENTSTRING.TAP );
 	});
 
 	// right, left click setting in header
@@ -5608,7 +5657,7 @@ ComponentNavigationMenu.prototype.go = function ( _page, _opts )
 
 		// Calculates the number of milliseconds
 		var second = 0;
-		if( typeof curTabMenu != "number" || riffGlobal.tabOrNavigationTransitionOrder == "after")
+		if( typeof curTabMenu != "number" || riffGlobal.feedTransitionOrder == "after")
 		{
 			second = 0;
 		}
@@ -5686,7 +5735,7 @@ ComponentNavigationMenu.prototype.go = function ( _page, _opts )
 
 		if( _page == "left" )
 		{
-			opts.transitionDirection = "on";
+			opts.transitionDirection = "off";
 			var nextPage = (curPage-1+pageSize)%pageSize;
 			while ( dataSet[nextPage] && !dataSet[nextPage].enable )
 				nextPage = (nextPage-1+pageSize)%pageSize;
@@ -5695,7 +5744,7 @@ ComponentNavigationMenu.prototype.go = function ( _page, _opts )
 		}
 		else if ( _page == "right" )
 		{
-			opts.transitionDirection = "off";
+			opts.transitionDirection = "on";
 			var nextPage = (curPage+1)%pageSize;
 
 			while ( dataSet[nextPage] && !dataSet[nextPage].enable )
@@ -5797,13 +5846,14 @@ ComponentNavigationMenu.prototype.autoRefresh = function ( _time )
 	}, _time );
 }
 
-ComponentNavigationMenu.prototype.frameworkNavigationMenu = function ()
+ComponentNavigationMenu.prototype.frameworkNavigationMenu = function ( _layoutParamsArray, _scenePartArray, _opts, _xmlSuccessCallback  )
 {
 	var riffThis = riff(this);
-	var layoutParamsArray		= arguments[0];
-	var scenePartArray			= arguments[1];
-	var opts							= arguments[2];
-	var xmlSuccessCallback	= arguments[3];
+
+	var layoutParamsArray		= _layoutParamsArray;		// layout params
+	var scenePartArray			= _scenePartArray;		// runs
+	var opts							= _opts;		// ajaxOption
+	var xmlSuccessCallback	= _xmlSuccessCallback;		// successCallback function
 
 	// Saves feed option data ( used for moving between navigation menus )
 	var dataSetFEED = new Array();
@@ -5884,18 +5934,24 @@ ComponentNavigationMenu.prototype.frameworkNavigationMenu = function ()
 				// time + text is displayed on idle scene
 				riff(".rf-component-idle").dataReceiveTime( tTime, dataReceiveTimeComponent.buffer("feedDataReceiveText") );
 				riff.dataReceiveTime( tTime );
-			}
+			},
+			scenePartArray[k][0]		// Navigation Expression
 		];
 		var dataSetFEEDCur = {};
-		if ( typeof( scenePartArray[k] ) == "string" )	
-		{
-			dataSetFEEDCur.url					= scenePartArray[k];
-		} else if ( riff.isArray( scenePartArray[k] ) )	
-		{
-			dataSetFEEDCur.url					= scenePartArray[k][0];
-			dataSetFEEDCur.scenePartFunction	= scenePartArray[k][1];
-			dataSetFEEDCur.tagOpts				= scenePartArray[k][2];
-		}
+
+        if ( typeof( scenePartArray[k] ) == "string" )
+        {
+            dataSetFEEDCur.tabExpression = scenePartArray[k][0];        // tap Expression
+            dataSetFEEDCur.url                    = scenePartArray[k][1];        // url
+            dataSetFEEDCur.tagOpts                = layoutParamsArray[0];        // layoutTagOption
+        } else if ( riff.isArray( scenePartArray[k] ) )
+        {
+            dataSetFEEDCur.tabExpression = scenePartArray[k][0];        // tap Expression
+            dataSetFEEDCur.url                    = scenePartArray[k][1];
+            dataSetFEEDCur.scenePartFunction    = scenePartArray[k][2];
+            dataSetFEEDCur.tagOpts                = scenePartArray[k][3] || layoutParamsArray[0] ;    // each URL's tagOption
+        }
+
 		dataSetFEEDCur.opts						= opts;
 		dataSetFEEDCur.xmlSuccessCallBackSet = xmlSuccessCallback;
 		dataSetFEED.push(dataSetFEEDCur);
@@ -5906,13 +5962,7 @@ ComponentNavigationMenu.prototype.frameworkNavigationMenu = function ()
 	if ( urlExistCount <= 0 )	
 	{
 		riff.alert( "Check Feed URL in JS file." );
-		var tIdleIndicator = riff(".rf-idle-busyindicator");
-		if ( tIdleIndicator )
-		{
-			riff(".rf-idle-section1").hide();
-			riff(".rf-idle-busyindicator").show();
-			riff(".rf-idle-busyindicator").text("Check Feed URL in JS file.");
-		}
+		riff(".rf-component-idle").showBusyIndicator( "Check Feed URL in JS file." );
 		return false;
 	};
 	
@@ -5978,6 +6028,7 @@ ComponentTextDetail.prototype.setContents = function ( _data )
 
 	riffThis.makeStructs();
 }
+
 
 // The componentSetting.js will reconstruct markups that match elements found within the DOM Element className
 
@@ -6479,7 +6530,7 @@ var riffTouch = {
 				|| _eventNodeObj[riffGlobal.EVENTSTRING.FLICK_UP]
 				|| _eventNodeObj[riffGlobal.EVENTSTRING.FLICK_DOWN] )
 				&& ( ( currentTouchEndTime - riffThis.buffer("riffTouchLastTouchMoveTime") ) < riffGlobal.TouchTimer.FLICK )
-				&& ( ( curX != riffThis.buffer("riffTouchStartX") ) && ( curY != riffThis.buffer("riffTouchStartY") ) )
+				&& ( ( curX != riffThis.buffer("riffTouchStartX") ) || ( curY != riffThis.buffer("riffTouchStartY") ) )
 				&& ( riffThis.buffer("riffTouchLastMoveLength") > _touchObj.FLICKMinLength ) 
 			)
 			{	
@@ -6617,6 +6668,10 @@ var riffTouch = {
     // Can only move vertically and horizontally
 	dragForSwipe : function( ev )
 	{	
+		if( !ev.data ) {
+			return;
+		}
+
 		var riffThis = riff(this);
 		var func = riffThis.buffer("riffSwipeFunc");
 		var isSwipeEnd = riffThis.buffer("riffSwipeIsSwipeEnd"); 
@@ -6677,6 +6732,9 @@ var riffTouch = {
 		var len = ev.data.x - ev.data.startX;
 	
 		var verlocity = dx * riffThis.buffer("riffSwipeVerlocityPercent") / 100;
+		if( parseInt( verlocity ) == 0 ) {
+			verlocity = ( dx > 0 ) ? verlocity = 1 : verlocity = -1;
+		}
 		var position = currentLeft;
 
 		riffThis.buffer("riffSwipeVerlocity",verlocity);
@@ -6846,14 +6904,64 @@ var riffAJAX = function ( _url, _fnSuccess, _theOtherSet, _functionTossAgumentSe
 	this.__retryHandler = _theOtherSet && _theOtherSet.r;
 	this.__timeoutHandler = _theOtherSet && _theOtherSet.t;				// timeout handler
 	this.__timeoutMillisec = _theOtherSet && _theOtherSet.timeout;		// millisec
+	this.__actionOnFailTimer = null;					// window.setTimeout Object
 	this.__timeoutObject = null;					// window.setTimeout Object
 	this.__retry = _theOtherSet && _theOtherSet.retry;
 	this.__retryCount = 0;
+	this.__isAbortByUserWork = false;				
 	this.__sendData = _theOtherSet && _theOtherSet.sendData;	// mouse move
+	this.__headerData = _theOtherSet && _theOtherSet.headerData;	
 	this.__option = {
 		type : "GET",
 		isAsync : true,
 		contentType : "TEXT"
+	};
+
+	// on termination, all data are set to null, requesting memory deallocation
+	this.__destroy = function( )
+	{
+		try
+		{
+			window.clearTimeout( this.__timeoutObject );
+			window.clearTimeout( this.__actionOnFailTimer );
+			if( this.timeout ) this.timeout = null;
+			if( tAjaxForTimeout ) tAjaxForTimeout = null;
+			if( this.__xhr.ajax ) this.__xhr.ajax = this;
+			if( this.__xhr.datas ) this.__xhr.datas	= null;
+			if( this.__xhr.handlers[ riffGlobal.AJAXREADYSTATE.UNINIT ] ) this.__xhr.handlers[ riffGlobal.AJAXREADYSTATE.UNINIT ] = null;
+			if( this.__xhr.handlers[ riffGlobal.AJAXREADYSTATE.NOTSENT ] ) this.__xhr.handlers[ riffGlobal.AJAXREADYSTATE.NOTSENT ] = null;
+			if( this.__xhr.handlers[ riffGlobal.AJAXREADYSTATE.SENDING ] ) this.__xhr.handlers[ riffGlobal.AJAXREADYSTATE.SENDING ] = null;
+			if( this.__xhr.handlers[ riffGlobal.AJAXREADYSTATE.RECEIVING ] ) this.__xhr.handlers[ riffGlobal.AJAXREADYSTATE.RECEIVING ] = null;
+			if( this.__xhr.handlers[ riffGlobal.AJAXREADYSTATE.DONE ] ) this.__xhr.handlers[ riffGlobal.AJAXREADYSTATE.DONE ] = null;
+			if( this.__xhr.handlers ) this.__xhr.handlers = null;
+			if( this.__xhr ) this.__xhr = null;
+			if( this.__successFunction ) this.__successFunction = null;
+			if( this.__errorHandler ) this.__errorHandler = null;
+			if( this.__abortHandler ) this.__abortHandler = null;
+			if( this.__retryHandler ) this.__retryHandler = null;
+			if( this.__timeoutHandler ) this.__timeoutHandler = null;
+			if( this.__timeoutMillisec ) this.__timeoutMillisec = null;
+			if( this.__timeoutObject ) this.__timeoutObject = null;
+			if( this.__retry ) this.__retry = null;
+			if( this.__retryCount ) this.__retryCount = null;
+			if( this.__sendData ) this.__sendData = null;
+			if( this.__option ) this.__option = null;
+			if( this.abort ) this.abort = null;
+			if( this.abortByUser ) this.abortByUser = null;
+			if( this.retry ) this.retry = null;
+			if( this.retryOnError ) this.retryOnError = null;
+			if( this.timeout ) this.timeout = null;
+			if( this.__receiveSuccessCheck ) this.__receiveSuccessCheck = null;
+			if( this.requestSuccess ) this.requestSuccess = null;
+			if( this.defaultError ) this.defaultError = null;
+			if( this.Request ) this.Request = null;
+			if(	this.__headerData ) this.__headerData = null;
+			if( this.__uiStartDefault ) this.__uiStartDefault = null;
+		}
+		catch ( e )
+		{
+			return this;
+		}
 	};
 
 	// If there is no succesful callback or if there is an error
@@ -6866,7 +6974,7 @@ var riffAJAX = function ( _url, _fnSuccess, _theOtherSet, _functionTossAgumentSe
 	function actionOnFail( timeoutMillisec ) 
 	{
 		// removes the busy Indicator
-		riff.popup.back( );
+		closeIndicator();
 		// shows the no data display
 		function displayNoData( ) {
 			var scenepart = riff( ".rf-component-scenepart" );
@@ -6881,9 +6989,9 @@ var riffAJAX = function ( _url, _fnSuccess, _theOtherSet, _functionTossAgumentSe
 		};
 
 		var tTimeout = ( window.parseFloat( riffGlobal.transitionSecond ) * 1000 ) - ( timeoutMillisec || 0 );
-		if ( riffGlobal.tabOrNavigationTransitionOrder == "after" && ( tTimeout >= 0 ) )
+		if ( riffGlobal.feedTransitionOrder == "after" && ( tTimeout >= 0 ) )
 		{
-			window.setTimeout( displayNoData, tTimeout + 100 ) ;
+			this.__actionOnFailTimer = window.setTimeout( displayNoData, tTimeout + 100 ) ;
 		} else {
 			displayNoData();
 		}
@@ -6894,27 +7002,6 @@ var riffAJAX = function ( _url, _fnSuccess, _theOtherSet, _functionTossAgumentSe
 		riff(".rf-idle-busyindicator").text("Loading Failed");
 	}
 
-	// on termination, all data are set to null, requesting memory deallocation
-	this.__destroy = function( )
-	{
-		try
-		{
-			window.clearTimeout( this.__timeoutObject );
-			this.timeout = null;
-			tAjaxForTimeout = null;
-			this.__xhr = null;
-			this.__errorHandler = null;
-			this.__abortHandler = null;
-			this.__retry = null;
-			this.__retryCount = null;
-			this.__timeoutObject = null;
-		}
-		catch ( e )
-		{
-			return null;
-		}
-	};
-
 	// If data transmit/recieve is cancelled, terminate
 	this.abort = function( ) {
 		// If HTTP request exists
@@ -6922,11 +7009,8 @@ var riffAJAX = function ( _url, _fnSuccess, _theOtherSet, _functionTossAgumentSe
 		{
 			this.__xhr.abort();
 		}
+
 		// If a handler exists during abort
-		if ( this.__abortHandler && typeof( this.__abortHandler ) == 'function' )
-		{
-			this.__abortHandler( this, this.retryCount );
-		}
 	};
 
 	// function that allaws the user to manually abort
@@ -6935,8 +7019,14 @@ var riffAJAX = function ( _url, _fnSuccess, _theOtherSet, _functionTossAgumentSe
 		// removes the timeout
 		window.clearTimeout( this.__timeoutObject );
 		this.__timeoutObject = null;
-		this.__retryCount = 0 ;
+		this.__isAbortByUserWork = true;
 		this.abort();
+
+		// If a handler exists during abort
+		if ( this.__abortHandler && typeof( this.__abortHandler ) == 'function' )
+		{
+			this.__abortHandler( this, this.retryCount );
+		}
 	};
 
 	// retry retransmits XMLHttpRequest.Request
@@ -6959,30 +7049,32 @@ var riffAJAX = function ( _url, _fnSuccess, _theOtherSet, _functionTossAgumentSe
 	};
 
 	// when an exception occurs during data communication, communication is retried according to the retry options.
-	this.retryOnError = function( ) {
-
-		// Status assignment. If error, set readystate to -1.
-		var	readystate = this.__xhr.readyStatus;
-		if ( typeof( readystate ) == "undefined" )
-		{
-			readystate = -1;
+	this.retryOnError = function( _readyState, _status ) {
+		if ( this.__isAbortByUserWork ) {
+			return;
 		}
+		// Status assignment. If error, set readystate to -1.
 
-		var status = -1;
+		var readystate, state;
+
 		try
 		{
-			status = this.__xhr.status;
+			readystate = _readyState || this.__xhr.readyState ;
+			if ( typeof( readystate ) == "undefined" ) readystate = -1;
+			status = _status || this.__xhr.status;
+			if ( typeof( status ) == "undefined" ) status = -1;
 		}
 		catch ( e )
 		{
-			status = -1;
+			readystate = readystate || -1;
+			status = _status || -1;
 		}
 
 		// execute retry count up
 		this.__retryCount++;
 
-		// if the retry number exceed the designated number of times, quit
-		if ( this.__retryCount > this.__retry )
+		// if thre retry number is not exist or the retry number exceed the designated number of times, quit
+		if ( ( !this.__retry ) || (this.__retryCount > this.__retry) )
 		{
 			actionOnFail( this.__timeoutMillisec );
 			// if error handler exists, execute.
@@ -6990,10 +7082,11 @@ var riffAJAX = function ( _url, _fnSuccess, _theOtherSet, _functionTossAgumentSe
 			{
 				this.__errorHandler( readystate, status, "ajax.retryOnError :: retry over. " );
 			}
-		} else {
+		} else if ( this.__retry ) {	
 			this.retry( );
 		}
 	};
+
 
 	// if timeout occurs, check the retry condition. (because it means that the time as passed)
 	// checks if readyState == 4 && status == 0 or 200( checks for normal communication termination )
@@ -7004,30 +7097,18 @@ var riffAJAX = function ( _url, _fnSuccess, _theOtherSet, _functionTossAgumentSe
 	// when everything is complete, timeoutHandler is executed.
 	this.timeout = function( ) {
 		// First checks the timeout condition.  If there is no timeoutMillisec value or if the value is below 0, then nothing is done as this is not considered valid.
-		if ( ! this.__timeoutMillisec || typeof( this.__timeoutMillisec ) != 'number' || this.__timeoutMillisec <= 0 ) { return null; }
-		// Checks the retry condition.  If there is no retry condition or if the value is negative, no retry will be attempted
-		if ( ! this.__retry || typeof( this.__retry ) != 'number' || this.__retry < 0 )	{	return null;	}
-
-		this.__retryCount++;
-		// quits if the retry number has exceeded it's set value
-		if ( this.__retryCount > this.__retry )
-		{
-			actionOnFail( this.__timeoutMillisec );
-			// abortCallBack is activated by abort
-			this.abort( );
-			// executes if an error handler exists.
-			if ( this.__errorHandler && typeof( this.__errorHandler ) == 'function' )
-			{
-				this.__errorHandler( this.__xhr.readyStatus, -1, "ajax.timeout :: retry over. " );
-			}
-
-		} else {
-			// abort executes abortCallBack() for retransmission.
-			this.retry( );
+		if ( ! this.__timeoutMillisec || typeof( this.__timeoutMillisec ) != "number" || this.__timeoutMillisec <= 0 ) {
+			return null;
 		}
 
-		// execute if the handler exists.
-		if ( this.__timeoutHandler && typeof( this.__timeoutHandler ) == 'function' )
+		window.clearTimeout( this.__timeoutObject );
+		try{
+			this.retryOnError( this.__xhr.readyState, this.__xhr.status );
+		} catch( e ) {
+			this.retryOnError( );
+		}
+
+		if ( this.__timeoutHandler && typeof( this.__timeoutHandler ) == "function" )
 		{
 			this.__timeoutHandler( );
 		}
@@ -7041,7 +7122,7 @@ var riffAJAX = function ( _url, _fnSuccess, _theOtherSet, _functionTossAgumentSe
 		if (
 				( riffGlobal.AJAXREADYSTATE.DONE == this.__xhr.readyState )			
 				&& ( ( 0 === this.__xhr.status ) || ( 200 === this.__xhr.status ) )		
-				&& ( this.__xhr.responseText || this.__xhr.responseXml )				
+				&& ( this.__xhr.responseText || this.__xhr.responseXML )				
 			)
 		{
 			return true;
@@ -7050,10 +7131,25 @@ var riffAJAX = function ( _url, _fnSuccess, _theOtherSet, _functionTossAgumentSe
 		return false;
 	};
 
+	function closeIndicator()
+	{
+		if ( riffGlobal.popup
+			&& ( riffGlobal.popup[0] == "#busyIndicator" || riffGlobal.popup[0] == "busyIndicator" )
+		) {
+			riff.popup.back( );
+		}
+
+		if ( riffGlobal.popup
+			&& ( riffGlobal.popup[0] == "#ajaxPopup" || riffGlobal.popup[0] == "ajaxPopup" )
+		) {
+			riff.back( );
+		}
+	};
+
 	// Things to do when transmission is successful
 	this.requestSuccess = function( ) {
 		// removes busy Indicator.
-		riff.popup.back( );
+		closeIndicator();
 		// idle article and indicator section.
 		riff('.rf-idle-busyindicator').hide();
 		riff('.rf-idle-section1').show();
@@ -7070,7 +7166,7 @@ var riffAJAX = function ( _url, _fnSuccess, _theOtherSet, _functionTossAgumentSe
 		riff.go("#ajaxPopup");
 		function show3sec()
 		{
-			riff.popup.back( );
+			closeIndicator( );
 			riff.timer( "_ajaxDefaultError3Sec" );
 		};
 		riff.timer( show3sec , 3000, "_ajaxDefaultError3Sec" );
@@ -7083,9 +7179,12 @@ var riffAJAX = function ( _url, _fnSuccess, _theOtherSet, _functionTossAgumentSe
 			this.__errorHandler( -1, -1, "ajax.Request :: Object initialization failed." );
 			return false;
 		} else {
-
 			this.__xhr.open( this.__option.type, _url, this.__option.isAsync );
 			this.__xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+			for( var k in this.__headerData )
+				this.__xhr.setRequestHeader( k, this.__headerData[k] );
+
 			this.__xhr.send( this.__sendData );
 
 			// TimeoutSetting
@@ -7099,6 +7198,7 @@ var riffAJAX = function ( _url, _fnSuccess, _theOtherSet, _functionTossAgumentSe
 			}
 		}
 	};
+
 
 	// ajax::Constructor
 	{
@@ -7188,7 +7288,7 @@ var riffAJAX = function ( _url, _fnSuccess, _theOtherSet, _functionTossAgumentSe
 					// If the "retry" option is set, retry the data communation. If the "retryCount" value exceeds then the "retry" option, it will activate the errorHandler() function
 					// if timeout is set, clear it.
 					window.clearTimeout( this.ajax.__timeoutObject );
-					this.ajax.retryOnError();
+					this.ajax.retryOnError( this.readyState, this.status );
 					return;
 				}
 			}
@@ -7203,10 +7303,10 @@ var riffAJAX = function ( _url, _fnSuccess, _theOtherSet, _functionTossAgumentSe
 					// delete timeout timer
 					this.ajax.requestSuccess();
 					// extract XML from text
-					if( !this.responseXml ) {
-						this.responseXml = ( new DOMParser() ).parseFromString( this.responseText, "application/xml" );
+					if( !this.responseXML ) {
+						this.responseXML = ( new DOMParser() ).parseFromString( this.responseText, "application/xml" );
 					};
-					this.ajax.__successFunction( this.responseXml, this.responseText, this.ajax, _functionTossAgumentSet );
+					this.ajax.__successFunction( this.responseXML, this.responseText, this.ajax, _functionTossAgumentSet );
 				} else {
 					// abnormal cases( ex: if data communication method is late or different like the alzjira feed)
 					// If status value is returned, that means the data communication has been completed.
@@ -7218,7 +7318,7 @@ var riffAJAX = function ( _url, _fnSuccess, _theOtherSet, _functionTossAgumentSe
 
 					// if timeout is set, it is cleared.
 					window.clearTimeout( this.ajax.__timeoutObject );
-					this.ajax.retryOnError();
+					this.ajax.retryOnError( this.readyState, this.status );
 				}
 
 			}
@@ -7254,11 +7354,25 @@ var riffXML = function( _urlStr, _fnSuccess, _theOtherSet )
 	this.loadXML = function( _setting )
 	{
 		var xmlThis = this;
-		this.__ajax = new riffAJAX ( _urlStr, function( _xml, _text ) {
+		var xmlAjax = new Array( 2 );
+		var successFn = function( _xml, _text ) {
 			xmlThis.textLocal = _text;
-			xmlThis.xmlLocal = _xml;
-			_fnSuccess.call( xmlThis, xmlThis, this.xmlLocal, this.textLocal );
-		}, _theOtherSet );
+			xmlThis.xmlLocal = ( new DOMParser() ).parseFromString( xmlThis.textLocal, "application/xml" );
+			_fnSuccess.call( xmlThis, xmlThis, xmlThis.xmlLocal, xmlThis.textLocal );
+			xmlAjax[0].__destroy();
+			delete riffGlobal.ajaxConnectionList[ xmlAjax[1] ];
+			delete xmlAjax[0];
+			delete xmlAjax; xmlAjax = null;
+			xmlThis = null;
+		};
+
+		xmlAjax[1] = riff.getAjaxConnectionListIndex();
+		if( typeof( xmlAjax[1] ) != "number" ) {
+			xmlAjax[1] = null;
+			return false;
+		}
+		xmlAjax[0] = new riffAJAX( _urlStr, successFn, _theOtherSet );
+		riffGlobal.ajaxConnectionList[ xmlAjax[1] ] = xmlAjax;
 	};
 
 	// cunstructor
@@ -7267,7 +7381,6 @@ var riffXML = function( _urlStr, _fnSuccess, _theOtherSet )
 	}
 	return true;
 }
-
 
 
 riff.widget= {

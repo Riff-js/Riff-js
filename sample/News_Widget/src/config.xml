@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<widget xmlns="http://www.w3.org/ns/widgets" height="258" id="RiffNews" version="1.8.9" width="440">
-    <title>News Feed Widget </title>
-    <description/>
-    <icon src="icon.png"/>
-    <content src="index.html"/>
-    <access network="true"/>
-</widget>

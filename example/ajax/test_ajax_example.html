@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>Riff Core Test</title>
+	<script type="text/javascript" src="http://dev.h9works.com/riff/src/riff.latest.js"></script>
+	<script type="text/javascript" src="user_ajax_example.js"></script>
+
+	<style>
+		div { padding: 0.5em; border: 1px solid #3866ba; -webkit-border-radius: 8px; }
+		#div1-wrap div { margin: 0 0 0 1em; }
+		#div1-wrap .div1-dep1 { margin-bottom: 1em; }
+
+
+		ul { border: 1px solid #e740e1; -webkit-border-radius: 8px; }
+		li { padding : 0.5em; margin: 0.5em 0 ; border: 1px solid #faa138; -webkit-border-radius: 8px; }
+
+	</style>
+</head>
+
+
+<!-- Dummy DOMs -->
+
+<h1>Ajax Test</h1>
+URL : <input type="text" value="http://175.125.20.219/xml/xml.php?url=http://rss.news.yahoo.com/rss/world" style="width:500px;" id="inputUrl"/>
+
+<input type="button" id="button1" value="communicate with server(Simple)" />
+<input type="button" id="button2" value="communicate with server(All Option)" />
+
+<div class="div1-wrap" id="div1-wrap"> Received Data </div>
+
+</body>
+</html>

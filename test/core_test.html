@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>Riff Core Test</title>
+	<script type="text/javascript" src="riff.container.js"></script>
+
+	<style>
+		div { padding: 0.5em; border: 1px solid #3866ba; -webkit-border-radius: 8px; }
+		#div1-wrap div { margin: 0 0 0 1em; }
+		#div1-wrap .div1-dep1 { margin-bottom: 1em; }
+
+
+		ul { border: 1px solid #e740e1; -webkit-border-radius: 8px; }
+		li { padding : 0.5em; margin: 0.5em 0 ; border: 1px solid #faa138; -webkit-border-radius: 8px; }
+
+	</style>
+</head>
+
+
+<!-- Dummy DOMs -->
+
+<h1>Div Tree1</h1>
+<div class="div1-wrap" id="div1-wrap">
+	<h2>#div1-wrap.div1-wrap</h2>
+	<div class="div1-dep1">
+		.div1-dep1
+		<div class="div1-dep2">
+			.div1-dep2
+			<div class="div1-dep3">
+				.div1-dep3
+				<div class="div1-dep4">
+					.div1-dep4
+					<div class="div1-dep5">
+						.div1-dep5
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="div1-dep1">
+		.div1-dep1
+		<div class="div1-dep2">
+			.div1-dep2
+			<div class="div1-dep3">
+				.div1-dep3
+				<div class="div1-dep4">
+					.div1-dep4
+					<div class="div1-dep5">
+						.div1-dep5
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="div1-dep1">
+		.div1-dep1
+		<div class="div1-dep2">
+			.div1-dep2
+			<div class="div1-dep3">
+				.div1-dep3
+				<div class="div1-dep4">
+					.div1-dep4
+					<div class="div1-dep5">
+						.div1-dep5
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</div>
+
+
+<h1>List Tree</h1>
+<div class="ul-wrap" id="ul-wrap">
+	<h2>#ul-wrap.ul-wrap</h2>
+	<ul class="ul-dep1">
+		<li class="li-dep1">
+			.ul-dep1 .li-dep1
+			<ul class="ul-dep2">
+				<li class="li-dep2">
+					.ul-dep2 .li-dep2
+					<ul class="ul-dep3">
+						<li class="li-dep3">
+							.ul-dep3 .li-dep3
+							<div class="indiv-dep4">
+								.ul-dep3 .li-dep3 .indiv-dep4
+							</div>
+						</li>
+						<li class="li-dep3">
+							.ul-dep3 .li-dep3
+							<div class="indiv-dep4">
+								.ul-dep3 .li-dep3 .indiv-dep4
+							</div>
+						</li>
+						<li class="li-dep3">
+							.ul-dep3 .li-dep3
+							<div class="indiv-dep4">
+								.ul-dep3 .li-dep3 .indiv-dep4
+							</div>
+						</li>
+						<li class="li-dep3">
+							.ul-dep3 .li-dep3
+							<div class="indiv-dep4">
+								.ul-dep3 .li-dep3 .indiv-dep4
+							</div>
+						</li>
+					</ul>
+				</li>
+				<li class="li-dep2">
+					.ul-dep2 .li-dep2
+					<ul class="ul-dep3">
+						<li class="li-dep3">
+							.ul-dep3 .li-dep3
+							<div class="indiv-dep4">
+								.ul-dep3 .li-dep3 .indiv-dep4
+							</div>
+						</li>
+						<li class="li-dep3">
+							.ul-dep3 .li-dep3
+							<div class="indiv-dep4">
+								.ul-dep3 .li-dep3 .indiv-dep4
+							</div>
+						</li>
+						<li class="li-dep3">
+							.ul-dep3 .li-dep3
+							<div class="indiv-dep4">
+								.ul-dep3 .li-dep3 .indiv-dep4
+							</div>
+						</li>
+						<li class="li-dep3">
+							.ul-dep3 .li-dep3
+							<div class="indiv-dep4">
+								.ul-dep3 .li-dep3 .indiv-dep4
+							</div>
+						</li>
+					</ul>
+				</li>
+				<li class="li-dep2">
+					.ul-dep2 .li-dep2
+					<ul class="ul-dep3">
+						<li class="li-dep3">
+							.ul-dep3 .li-dep3
+							<div class="indiv-dep4">
+								.ul-dep3 .li-dep3 .indiv-dep4
+							</div>
+						</li>
+						<li class="li-dep3">
+							.ul-dep3 .li-dep3
+							<div class="indiv-dep4">
+								.ul-dep3 .li-dep3 .indiv-dep4
+							</div>
+						</li>
+						<li class="li-dep3">
+							.ul-dep3 .li-dep3
+							<div class="indiv-dep4">
+								.ul-dep3 .li-dep3 .indiv-dep4
+							</div>
+						</li>
+						<li class="li-dep3">
+							.ul-dep3 .li-dep3
+							<div class="indiv-dep4">
+								.ul-dep3 .li-dep3 .indiv-dep4
+							</div>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</li>
+		<li class="li-dep1">
+			.ul-dep1 .li-dep1
+			<ul class="ul-dep2">
+				<li class="li-dep2">
+					.ul-dep2 .li-dep2
+					<ul class="ul-dep3">
+						<li class="li-dep3">
+							.ul-dep3 .li-dep3
+							<div class="indiv-dep4">
+								.ul-dep3 .li-dep3 .indiv-dep4
+							</div>
+						</li>
+						<li class="li-dep3">
+							.ul-dep3 .li-dep3
+							<div class="indiv-dep4">
+								.ul-dep3 .li-dep3 .indiv-dep4
+							</div>
+						</li>
+						<li class="li-dep3">
+							.ul-dep3 .li-dep3
+							<div class="indiv-dep4">
+								.ul-dep3 .li-dep3 .indiv-dep4
+							</div>
+						</li>
+						<li class="li-dep3">
+							.ul-dep3 .li-dep3
+							<div class="indiv-dep4">
+								.ul-dep3 .li-dep3 .indiv-dep4
+							</div>
+						</li>
+					</ul>
+				</li>
+				<li class="li-dep2">
+					.ul-dep2 .li-dep2
+					<ul class="ul-dep3">
+						<li class="li-dep3">
+							.ul-dep3 .li-dep3
+							<div class="indiv-dep4">
+								.ul-dep3 .li-dep3 .indiv-dep4
+							</div>
+						</li>
+						<li class="li-dep3">
+							.ul-dep3 .li-dep3
+							<div class="indiv-dep4">
+								.ul-dep3 .li-dep3 .indiv-dep4
+							</div>
+						</li>
+						<li class="li-dep3">
+							.ul-dep3 .li-dep3
+							<div class="indiv-dep4">
+								.ul-dep3 .li-dep3 .indiv-dep4
+							</div>
+						</li>
+						<li class="li-dep3">
+							.ul-dep3 .li-dep3
+							<div class="indiv-dep4">
+								.ul-dep3 .li-dep3 .indiv-dep4
+							</div>
+						</li>
+					</ul>
+				</li>
+				<li class="li-dep2">
+					.ul-dep2 .li-dep2
+					<ul class="ul-dep3">
+						<li class="li-dep3">
+							.ul-dep3 .li-dep3
+							<div class="indiv-dep4">
+								.ul-dep3 .li-dep3 .indiv-dep4
+							</div>
+						</li>
+						<li class="li-dep3">
+							.ul-dep3 .li-dep3
+							<div class="indiv-dep4">
+								.ul-dep3 .li-dep3 .indiv-dep4
+							</div>
+						</li>
+						<li class="li-dep3">
+							.ul-dep3 .li-dep3
+							<div class="indiv-dep4">
+								.ul-dep3 .li-dep3 .indiv-dep4
+							</div>
+						</li>
+						<li class="li-dep3">
+							.ul-dep3 .li-dep3
+							<div class="indiv-dep4">
+								.ul-dep3 .li-dep3 .indiv-dep4
+							</div>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</li>
+		<li class="li-dep1">
+			.ul-dep1 .li-dep1
+			<ul class="ul-dep2">
+				<li class="li-dep2">
+					.ul-dep2 .li-dep2
+					<ul class="ul-dep3">
+						<li class="li-dep3">
+							.ul-dep3 .li-dep3
+							<div class="indiv-dep4">
+								.ul-dep3 .li-dep3 .indiv-dep4
+							</div>
+						</li>
+						<li class="li-dep3">
+							.ul-dep3 .li-dep3
+							<div class="indiv-dep4">
+								.ul-dep3 .li-dep3 .indiv-dep4
+							</div>
+						</li>
+						<li class="li-dep3">
+							.ul-dep3 .li-dep3
+							<div class="indiv-dep4">
+								.ul-dep3 .li-dep3 .indiv-dep4
+							</div>
+						</li>
+						<li class="li-dep3">
+							.ul-dep3 .li-dep3
+							<div class="indiv-dep4">
+								.ul-dep3 .li-dep3 .indiv-dep4
+							</div>
+						</li>
+					</ul>
+				</li>
+				<li class="li-dep2">
+					.ul-dep2 .li-dep2
+					<ul class="ul-dep3">
+						<li class="li-dep3">
+							.ul-dep3 .li-dep3
+							<div class="indiv-dep4">
+								.ul-dep3 .li-dep3 .indiv-dep4
+							</div>
+						</li>
+						<li class="li-dep3">
+							.ul-dep3 .li-dep3
+							<div class="indiv-dep4">
+								.ul-dep3 .li-dep3 .indiv-dep4
+							</div>
+						</li>
+						<li class="li-dep3">
+							.ul-dep3 .li-dep3
+							<div class="indiv-dep4">
+								.ul-dep3 .li-dep3 .indiv-dep4
+							</div>
+						</li>
+						<li class="li-dep3">
+							.ul-dep3 .li-dep3
+							<div class="indiv-dep4">
+								.ul-dep3 .li-dep3 .indiv-dep4
+							</div>
+						</li>
+					</ul>
+				</li>
+				<li class="li-dep2">
+					.ul-dep2 .li-dep2
+					<ul class="ul-dep3">
+						<li class="li-dep3">
+							.ul-dep3 .li-dep3
+							<div class="indiv-dep4">
+								.ul-dep3 .li-dep3 .indiv-dep4
+							</div>
+						</li>
+						<li class="li-dep3">
+							.ul-dep3 .li-dep3
+							<div class="indiv-dep4">
+								.ul-dep3 .li-dep3 .indiv-dep4
+							</div>
+						</li>
+						<li class="li-dep3">
+							.ul-dep3 .li-dep3
+							<div class="indiv-dep4">
+								.ul-dep3 .li-dep3 .indiv-dep4
+							</div>
+						</li>
+						<li class="li-dep3">
+							.ul-dep3 .li-dep3
+							<div class="indiv-dep4">
+								.ul-dep3 .li-dep3 .indiv-dep4
+							</div>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</li>
+	</ul>
+
+</div>
+
+
+
+
+
+
+
+
+
+</body>
+</html>

@@ -1,6 +1,3 @@
-// riff.ajax.js
-// version : v0.0.1
-// revision : 693
 
 riff.extend({
 	ajax : {
@@ -109,7 +106,11 @@ riff.extend({
 			if( txhr.readyState == riff.global.ajax.DONE ) {	//n if the receving ends.
 				window.clearTimeout( this.timeoutID );
 				if ( ( 200 <= txhr.status && txhr.status < 300 ) ) {	//n the condition of the success.
-					tSuccess.fn( txhr.readyState, txhr.status, txhr.responseText, txhr.responseXML, tSuccess.args );
+					if ( tSuccess.resultTextOnly ) {
+						tSuccess.fn( txhr.readyState, txhr.status, txhr.responseText, tSuccess.args );
+					} else {
+						tSuccess.fn( txhr.readyState, txhr.status, txhr.responseText, txhr.responseXML, tSuccess.args );
+					}
 				} else {
 					this.retryWithNewXHR( txhr.readyState, txhr.status );
 				}
@@ -167,7 +168,7 @@ riff.extend({
 			tUserOpts = _ajaxData.openOption;
 			tThisOpts.type = tUserOpts.type || "GET";
 			tThisOpts.isAsync = ( typeof( tUserOpts.isAsync ) == "undefined" ) ? true : tUserOpts.isAsync ;
-			tThisOpts = this.ajaxData.openOption;
+			tThisOpts = this.ajaxData.success;
 			this.retryCount = 0;	//n For the retry function, retry counter set to 0.
 
 			riff.ajax.getXMLHttpRequest.call( this );
@@ -181,8 +182,52 @@ riff.extend({
 			this.xhr.onreadystatechange = function(){ this.tThis.onReceive(); };
 
 			return true;
+		},
+
+		//n search from XML by queryString( _s )
+		//n @_xml { XML Object } XML object.
+		//n @_s { string } queryString to search from XML object
+		//n @return { Array } Array of DOM Elements by searching with _s.
+		xmlSelector : function( _xml, _s ) {
+			if( !_xml || !_xml.documentElement || !_s ) return null;
+			var result = _xml.documentElement.querySelectorAll( _s );
+			if( result.length > 0 ) {
+				return riff.util.toArray( result );
+			} else {
+				return [];
+			}
+		},
+
+		//n Search from XML or DOM Elements List( _elmOrXml ) by queryString( _s ) and return the texts as array.
+		//n @_elmOrXml { XML Object or Array } XML object OR Array of DOM Elements.
+		//n @_s { string } queryString to search from XML object or Array of DOM Elements.
+		//n @return { Array } Array of text from the Array( of DOM Elements ) or searched Nodes by XML( _elmOrXml ) and queryString( _s ).
+		textArray : function ( _elmOrXml, _s ) {
+			var _elm;
+			if ( arguments.length > 1 ) {
+				if( _s )	//n if _elmOrXml = xml and queryString( _s ) exists.
+					_elm = riff.ajax.xmlSelector( _elmOrXml, _s ) ;			
+				else 
+					return [];
+			} else {	//n if _elmOrXml = Array of DOM Elements 
+				if( ! riff.util.isArray( _elmOrXml ) ) return [];	//n _elmOrXml != Array of DOM Elements -> finish.
+				_elm = _elmOrXml;
+			}
+			//n under this code, _eml is always Array of DOM Elements 
+			var tm = riff.manipulation,
+				rArr = [];
+			function tFn( _el ) {
+				rArr.push( tm.text( [ _el ] ) );
+			};
+			_elm.forEach( tFn );
+			tm = null;
+			return rArr;
 		}
 	}
 });
+
+
+
+
 
 

@@ -1,6 +1,3 @@
-//riff.manipulation.js
-// version : v0.0.1
-// revision : 693
 
 riff.extend(
 {
@@ -232,6 +229,7 @@ riff.extend(
 
 			return _elm;
 		},
+
 		//n @_elm {Array} an array of DOM nodes
 		//n @_name {String}
 		//n @_value {String}

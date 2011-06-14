@@ -1,6 +1,3 @@
-// riff.util.js
-// version : v0.0.1
-// revision : 693
 
 riff.extend(
 {

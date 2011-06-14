@@ -1,6 +1,3 @@
-// riff.traversal.ja
-// version : v0.0.1
-// revision : 693
 
 riff.extend(
 {
@@ -166,7 +163,82 @@ riff.extend(
 		//n @_elm {Array} an array of DOM nodes
 		find : function( _elm, _s ){
 			_elm = riff.elmCheck(_elm);
-			return riff.traversal.filtering(_elm, _s);
+			
+			var _s = riff.string.trim( _s ),
+				tChar = _s.charAt(0),
+				tIdx = _s.indexOf(" "),
+				tArrElm = [],
+				tArrTotal = [],
+				rArr = [];
+
+			if ( tIdx < 0 ) {		//n no space in the queryString.
+				if( ! riff.regexSChar.test(_s.substring(1)) ) {	//n no special character from the other words in the queryString.
+					if ( tChar == "."){
+						var tFn = function(_el, _idx, _arr){
+							var tEl = _el.getElementsByClassName( _s.replace(/\./, ""));
+							if(tEl.length > 0) tArrElm.push(tEl);
+						};
+						_elm.forEach(tFn);
+					} else if ( riff.regexChar.test( tChar )){
+						var tFn = function(_el, _idx, _arr){
+							var tEl = _el.getElementsByTagName( _s );
+							if(tEl.length > 0) tArrElm.push(tEl);
+						};
+
+						_elm.forEach(tFn);
+					} else {
+						var tFn = function(_el, _idx, _arr){
+							var tEl = _el.querySelectorAll( _s );
+							if(tEl.length > 0) tArrElm.push(tEl);
+						};
+						_elm.forEach(tFn);
+					}
+				} else {
+					var tFn = function(_el, _idx, _arr){
+						var tEl = _el.querySelectorAll( _s );
+						if(tEl.length > 0) tArrElm.push(tEl);
+					};
+					_elm.forEach(tFn);
+				}
+			} else {				//n space exists
+				var tFn = function(_el, _idx, _arr){
+					var tEl = _el.querySelectorAll( _s );
+					if(tEl.length > 0) tArrElm.push(tEl);
+				};
+				_elm.forEach(tFn);
+			}
+
+			for(var i=0, tArrLen=tArrElm.length;i<tArrLen;i++){
+				if(tArrElm[i].length > 0){
+					var tArrNode = riff.util.toArray(tArrElm[i]);
+					for(var j=0, tArrNodeLen=tArrNode.length; j<tArrNodeLen; j++){
+						tArrTotal.push(tArrNode[j])
+					}
+				} else {
+					tArrTotal.push(tArrElm[i]);
+				}
+			}
+
+			for(var i=0;i<tArrTotal.length;i++){
+				if(rArr.length > 0){
+					var tIsSameNode = 0;
+					for(var j=0; j<rArr.length; j++){
+						if(tArrTotal[i] === rArr[j]) tIsSameNode++;
+					}
+					if(tIsSameNode == 0) rArr.push(tArrTotal[i])
+				} else {
+					rArr.push(tArrTotal[i]);
+				}
+			}
+
+
+
+			tArr = null;
+			tArrTotal = null;
+			tElm = null;
+			
+			return rArr;
+			//return riff.traversal.filtering(_elm, _s);
 		},
 		//n @_elm {Array} an array of DOM nodes
 		siblings : function ( _elm, _s ) {

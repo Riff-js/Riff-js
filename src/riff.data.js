@@ -1,6 +1,3 @@
-// riff.data.js
-// version : v0.0.1
-// revision : 693
 
 riff.extend(
 {
@@ -10,30 +7,46 @@ riff.extend(
 			_el.bufferIdx = riff.global.bufferIdx++;
 			return _el.bufferIdx;
 		},
+		//n Internal function. not for the user.
+		bufferInternalSet : function( _el, _key, _value ) {
+			if( _el.bufferIdx ) {
+				return riff.global.buffer[ _el.bufferIdx ][_key] = _value;
+			} else {
+				tBufferID = riff.data.increaseBufferIdx( _el );
+				riff.global.buffer[ tBufferID ] = {};
+				return riff.global.buffer[ tBufferID][_key] = _value;
+			};
+		},
+		//n Internal function. not for the user.
+		bufferInternalGet : function ( _el, _key ) {
+			if( _el && _el.bufferIdx ) {
+				if ( _el.bufferIdx ) return riff.global.buffer[ _el.bufferIdx ][ _key ];
+			}
+			return "";
+		},
+		//n @_elm {Array} an array of DOM nodes
+		bufferSingle : function ( _el, _key, _value ) {
+			if( arguments.length == 3) {				//n set mode
+				return riff.data.bufferInternalSet( _el, _key, _value );
+			} else if( arguments.length == 2) {			//n get mode
+				return riff.data.bufferInternalGet( _el, _key );
+			}
+		},
+
 		//n @_elm {Array} an array of DOM nodes
 		buffer : function ( _elm, _key, _value ) {
-
 			_elm = riff.elmCheck(_elm);
-
 			if( arguments.length == 3) {				//n set mode
 				function tFnSetMode ( _el ) {
-					if( _el.bufferIdx ) {
-						riff.global.buffer[ _el.bufferIdx ][_key] = _value;
-					} else {
-						tBufferID = riff.data.increaseBufferIdx( _el );
-						riff.global.buffer[ tBufferID ] = {};
-						riff.global.buffer[ tBufferID][_key] = _value;
-					}
+					riff.data.bufferInternalSet( _el, _key, _value );
 				};
 				_elm.forEach( tFnSetMode );
 				return _elm;
 			} else if( arguments.length == 2) {			//n get mode
-				if( _elm[0] && _elm[0].bufferIdx ) {
-					if ( _elm[0].bufferIdx ) return riff.global.buffer[ _elm[0].bufferIdx ][ _key ];
-				}
-				return "";
+				return riff.data.bufferInternalGet( _elm[0], _key );
 			}
 		},
+
 		//n delete the buffer from node( includes the childNodes) by recursive .
 		//n @_el {Node} DOM Elements.NOT ARRAY.
 		deleteBufferSingle : function( _el ) {

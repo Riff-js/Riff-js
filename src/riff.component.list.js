@@ -1,17 +1,17 @@
 riff.component.list = function(_userSet){
 	this.className = "rf-component-list";
 	this.cId = "#" + _userSet.cId;
-	this.effectObj = _userSet.effectObj || riff.global.effectObj;
-	this.sync = _userSet.sync || false;
+	this.effect = _userSet.effect;
+	this.sync = _userSet.sync || riff.widget.global.componentSync;
 	this.fn = _userSet.fn;
 	this.event = _userSet.event;
 	this.item = (typeof _userSet.item == "function") ? _userSet.item.call(_userSet.item) : _userSet.item;
 	
-	this.markup = false;
-	this.effect = false;
+	this.markupFlag = false;
+	this.effectFlag = false;
 	
 	this.listItem = function( _num ){
-		if(!this.markup) this.makeItem.call(this);
+		if(!this.markupFlag) this.makeMarkup.call(this);
 		
 		if( typeof _num == "number" ){
 			return $.selector(this.cId + " li")[_num];
@@ -20,7 +20,7 @@ riff.component.list = function(_userSet){
 		}
 	};
 	
-	this.makeItem = function(){
+	this.makeMarkup = function(){
 		
 		var tStr = "<ul>";
 		
@@ -32,12 +32,45 @@ riff.component.list = function(_userSet){
 		
 		$.manipulation.append(this.cId, tStr);
 		
-		this.markup = true;
+		tStr = null;
+		
+		this.markupFlag = true;
+	};
+	
+	this.updateContents = function(){
+		
+	};
+	
+	this.insertItem = function(_obj, _pos, _type){
+		
+	};
+	
+	this.deleteItem = function(_obj){
+		var tElm =this.listItem(); 
+		
+		if($.util.isArray(_obj)){
+			 
+			 
+		} else {
+			var tTypeObj = typeof _obj;//,
+				;
+			
+			if(tTypeObj == "number"){
+				
+			} 
+
+		}
+	};
+	
+	this.classInit = function(){
+		$.manipulation.addClass(this.cId, this.className);
 	};
 	
 	this.init = function(_this){
+		_this.classInit.call(_this);
 		if(!_this.sync){
-			_this.makeItem();
+			_this.makeMarkup.call(_this);
 		}
 	}(this);
 };
+

@@ -6,7 +6,7 @@ riff.flow = function( _data ){
 	this.actComponent = _data.actComponent;
 	
 	//_obj: a component data
-	this.show = function(_obj){
+	this.visible = function(_obj){
 		if(_obj){
 			$.manipulation.css(_obj.cId, "display", "block");
 		} else {
@@ -19,20 +19,20 @@ riff.flow = function( _data ){
 		}
 	};
 	
-	this.hide = function(_obj, _type){
+	this.invisible = function(_obj, _type){
 		var tLen = arguments.length;
 		if(tLen == 0){
-			this.hideAll(_obj);
+			this.invisibleAll(_obj);
 		} else if(tLen == 1){
-			this.hideSelect(_obj);
+			this.invisibleSelect(_obj);
 		} else if(tLen ==2){
 			if(_type == "other" || _type == 1){
-				this.hideOther(_obj);
+				this.invisibleOther(_obj);
 			}
 		}
 	};
 	
-	this.hideAll = function(_obj){
+	this.invisibleAll = function(_obj){
 		var tFnHideAll = function(_el, _idx, _arr){
 			$.manipulation.css(_el.cId, "display","none");
 		};
@@ -41,11 +41,11 @@ riff.flow = function( _data ){
 		tFnHideAll = null;
 	};
 	
-	this.hideIndex = function(_num){
+	this.invisibleIndex = function(_num){
 		if(typeof _num != "undefined" && _num > -1) $.manipulation.css(this.actComponent[_num].cId, "display", "none");
 	}
 	
-	this.hideSelect = function(_obj){
+	this.invisibleSelect = function(_obj){
 		if($.util.isArray(_obj)){
 			var tArrayType = typeof _obj[0],
 				tThis = this,
@@ -56,7 +56,7 @@ riff.flow = function( _data ){
 				};
 			} else if (tArrayType == "number"){
 				tFnHideSelect = function(_el, _idx, _arr){
-					tThis.hideIndex(_el);
+					tThis.invisibleIndex(_el);
 				};
 			} else if(tArrayType == "object"){
 				tFnSelect = function(_el, _idx, _arr){
@@ -80,7 +80,7 @@ riff.flow = function( _data ){
 		}
 	};
 	
-	this.hideOther = function(_obj){
+	this.invisibleOther = function(_obj){
 		if($.util.isArray(_obj)){
 			var tArrayType = typeof _obj[0],
 				tFnOther;
@@ -151,7 +151,7 @@ riff.flow = function( _data ){
 	};
 
 	
-	this.componentInit = function(_obj){
+	this.compInit = function(_obj){
 		if(_obj){
 			if(!_obj.markupFlag && _obj.makeMarkup) _obj.makeMarkup();
 			if (!_obj.effectFlag && _obj.effect) {
@@ -200,11 +200,11 @@ riff.flow = function( _data ){
 		}
 	};
 	
-	this.componentEachFn = function(_obj){
+	this.compFn = function(_obj){
 		if(_obj){
 			if (_obj.fn) {
 				if (typeof _obj.fn == "function") {
-					_obj.fn.call(_obj.fn)
+					_obj.fn.call(_obj)
 				} else if(riff.util.isArray(_obj.fn)) {
 					var tFnEach = function(_el, _idx, _arr){
 						_el.call(_el);
@@ -237,9 +237,9 @@ riff.flow = function( _data ){
 		var tThis = this;
 		
 		if(_obj){
-			this.componentEachFn(_obj);
-			this.componentInit(_obj);
-			this.show(_obj);
+			this.compFn(_obj);
+			this.compInit(_obj);
+			this.visible(_obj);
 		} else {
 			
 			if(this.sFn && typeof this.sFn == "function"){
@@ -248,17 +248,17 @@ riff.flow = function( _data ){
 			
 			if(this.type == "row"){
 				var tFnRow = function(_el, _idx, _arr){
-					tThis.componentEachFn(_el);
-					tThis.componentInit(_el);
-					tThis.show(_el);
+					tThis.compFn(_el);
+					tThis.compInit(_el);
+					tThis.visible(_el);
 				};
 				
 				this.actComponent.forEach(tFnRow);
 				tFnRow = null;
 			} else {
-				this.componentEachFn();
-				this.componentInit();
-				this.show();
+				this.compFn();
+				this.compInit();
+				this.visible();
 			}
 			
 			if(this.eFn && typeof this.eFn == "function"){

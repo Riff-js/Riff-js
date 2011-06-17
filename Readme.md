@@ -2,8 +2,15 @@
 New Riff 
 Copyright 2011, Licensed under the MIT license.
 http://innovator.samsungmobile.com/
-
 ================================================================
+
+v0.2.2
+
+- Core APIs : bug fix. add the theme, new function in manipulation. 
+- bug fix : touch event bug fix( event propagation prevention ). manipulation.css() ( get values by style() -> getComputedStyle() )
+- new function : appendNode(), appendNodes() , prependNode(), prependNodes(), index() 
+
+----------------------------------------------------------------
 
 v0.2.1
 

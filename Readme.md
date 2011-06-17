@@ -12,31 +12,6 @@ v0.2.2
 
 ----------------------------------------------------------------
 
-v0.2.1
-
-
-Requires Riff Version :
-
-	0.2.1
-
-Included files:
-
-	riff.event.tap.js
-	
-Updated List:
-
-	- Event
-	- Ajax
-
-Description :
-
-	- Added more event( touchStart, touchMove, touchEnd ).
-	- Change event model to plug-in structure( can extend new events ).
-	- Add tap event as the "extension" function( "riff.event.tap.js" ).
-	- XML-parser-function in the ajax.
-
-----------------------------------------------------------------
-
 v0.2.0
 
 

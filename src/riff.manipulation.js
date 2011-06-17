@@ -189,7 +189,7 @@ riff.extend(
 		},
 		//n @_elm {Array} an array of DOM nodes
 		//n @_s {String} a String of HTML codes
-		append : function ( _elm, _s ){
+		appendStr : function ( _elm, _s ){
 			_elm = riff.elmCheck(_elm);
 
 			if( !_s || typeof(_s) != "string" ) return _elm;
@@ -210,7 +210,7 @@ riff.extend(
 		},
 		//n @_elm {Array} an array of DOM nodes
 		//n @_s {String} a String of HTML codes
-		prepend : function ( _elm, _s ){
+		prependStr : function ( _elm, _s ){
 			_elm = riff.elmCheck(_elm);
 
 			if( !_s || typeof(_s) != "string" ) return _elm;
@@ -246,9 +246,14 @@ riff.extend(
 					_elm.forEach(tFnObj);
 
 				} else if (typeof(_key) == 'string') {
-					var tStyle = (_key == 'float') ? 'cssFloat' : riff.string.camelize(_key);
-
-					return _elm[0].style[tStyle];
+					var tStyle = (_key == 'float') ? 'cssFloat' : riff.string.camelize(_key),
+						rValue = _elm[0].style[tStyle];
+						
+					if(!rValue || rValue == "auto") {
+						var tCss = document.defaultView.getComputedStyle(_elm[0],null);
+						rValue = tCss ? tCss[tStyle] : null; 
+					}
+					return rValue;
 				}
 			} else if(arguments.length == 3){
 				var tStyle = (_key == 'float') ? 'cssFloat' : riff.string.camelize(_key);
@@ -350,6 +355,118 @@ riff.extend(
 				};
 				_elm.forEach( tFnElm );
 			}
+		},
+		createElem : function(_tag, _attr){
+			var rElm = document.createElement(_tag);
+			
+			for(var k in _attr){
+				rElm.setAttribute(k, _attr[k]);
+			}
+			
+			return rElm;
+		},
+		
+		createText : function(_s){
+			return document.createTextNode(_s);
+		},
+		/* Old Function
+		//n @_elm {Array} an array of DOM nodes
+		appendNode : function(_elm, _node){
+			_elm = riff.elmCheck(_elm);
+			
+			if(_elm[0]) _elm[0].appendChild(_node);
+		},
+		*/
+		//n @_elm { DOM Element } DOM nodes( singular )( Parent )
+		//n @_node { Array } an array of DOM nodes( Child )
+
+		//n @_elm { Array } an array of DOM nodes( Parent )
+		//n @_node { DOM Element } DOM Element( singular )( Child )
+		appendNode : function( _elm, _node){
+			_elm = riff.elmCheck(_elm);
+
+			if( _elm.length == 1 ) {
+				_elm[0].appendChild( _node );
+			} else {
+				function tFn(_el ){
+					_el.appendChild( _node.cloneNode( true ) );
+				};
+				_elm.forEach( tFn );
+				if( _node.parentNode ) 
+					_node.parentNode.removeChild( _node );
+				else 
+					_node = null;
+			} 
+			return _elm;
+		},	
+		//n @_elm {Array} an array of DOM nodes( Parent )
+		//n @_node {Array} an array of DOM nodes ( Child )
+		appendNodes : function(_elm, _node){
+			_elm = riff.elmCheck(_elm);
+			var tFrag = document.createDocumentFragment();
+			function tFnAppendTarget( _el2 ) {
+				tFrag.appendChild( _el2 );
+			};
+			_node.forEach( tFnAppendTarget ); 
+
+			function tFnAppendSource(_el ){
+				_el.appendChild( tFrag.cloneNode(true) );
+			}
+			_elm.forEach( tFnAppendSource );
+			tFrag = null;
+			return _elm;
+		},	
+/*		
+		//n @_elm {Array} an array of DOM nodes( SOURCE )
+		//n @_node {Array} an array of DOM nodes ( TARGET )		 
+		prependNodes : function(_elm, _node){
+			_elm = riff.elmCheck(_elm);
+			
+			if(_elm[0]) {
+				var tChildNode = _elm[0].childNodes;
+				if(tChildNode.length == 0){
+					_elm[0].appendChild(_node);
+				} else {
+					_elm[0].insertBefore(_node, tChildNode[0]);
+				}
+			}
+		},
+*/
+		//n @_elm {Array} an array of DOM nodes( Parent )
+		//n @_node {Array} an array of DOM nodes ( child )		 
+		prependNode : function(_elm, _node){
+			_elm = riff.elmCheck(_elm);
+		
+			if( _elm.length == 1 ) {
+				_elm[0].insertBefore( _node, _elm[0].firstChild );
+			} else {
+				function tFn(_el ){
+					_el.insertBefore( _node.cloneNode( true ), _el.firstChild );
+				};
+				_elm.forEach( tFn );
+				if( _node.parentNode ) 
+					_node.parentNode.removeChild( _node );
+				else 
+					_node = null;
+			} 
+			return _elm;
+		},
+		//n @_elm { DOM Element } DOM nodes( singular )( Parent )
+		//n @_node {Array} an array of DOM nodes ( child )		 
+		prependNodes : function(_elm, _node){
+			_elm = riff.elmCheck(_elm);
+			var tFrag = document.createDocumentFragment();
+			function tFnPrependTarget( _el2 ) {
+				tFrag.appendChild( _el2 );
+			};
+			_node.forEach( tFnPrependTarget ); 
+
+			function tFnPrependSource(_el ){
+				_el.insertBefore( tFrag.cloneNode(true), _el.firstChild );
+			}
+			_elm.forEach( tFnPrependSource );
+			tFrag = null;
+			return _elm;			
 		}
 	}
 });

@@ -125,6 +125,10 @@ var riff = {
 			touchMove : "touchMove",
 			touchEnd : "touchEnd"
 		},
+		language: {
+			currentLanguage : "en",
+			translateTable: {}
+		}
 	},
 
 	component : {

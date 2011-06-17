@@ -3,7 +3,7 @@ riff.event.extend({
 	"tap" : {
 		checkEventEnable :
 			function( _evBf, _ev ) {
-				if( _evBf.isDisable && !_evBf.isDisable[ "tap" ] ) return false;
+				if( _evBf.isDisable[ "tap" ] == false ) return false;
 				return ( _evBf.evFnEnd[ "tap" ][1] && _evBf.status.touchstart && _evBf.status.touchend );
 			},
 		addEvent: 

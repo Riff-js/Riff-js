@@ -275,6 +275,19 @@ riff.extend(
 			tParenrArr = null;
 
 			return riff.traversal.filtering( rArr, _s );
+		},
+		//n @_el { DOM Element } DOM nodes ( singlur ) 
+		index : function ( _elm )
+		{
+			_elm = riff.elmCheck(_elm)[0];
+			var currentIndex = 0;
+			while( _elm )
+			{
+				_elm = _elm.previousSibling;
+				if (_elm && _elm.nodeType == 1) currentIndex++;
+			}
+	
+			return currentIndex;
 		}
 	}
 }

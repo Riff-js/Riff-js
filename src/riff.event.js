@@ -178,18 +178,19 @@ riff.extend(
 		//n internal function
 		//n touchstart function for primary "touchstart" ( or mousedown etc ) function.
 		primaryTouchStart : function( _ev ) {
-			var tg = riff.global.event, tEvent = riff.data.bufferSingle( _ev.target, tg.bfName );
+			_ev.stopPropagation();
+			var tg = riff.global.event, tEvent = riff.data.bufferSingle( this, tg.bfName );
 			tEvent.startTime = ( new Date() ).getTime();
 			tEvent.status.touchstart = true;
 			tEvent.prevX = tEvent.curX = _ev.clientX;
 			tEvent.prevY = tEvent.curY = _ev.clientY;
 
-			if( tEvent.evFnRiff[ tg.touchStart ] && tEvent.evFnRiff[ tg.touchStart ][0]( tEvent, _ev ) ) tEvent.evFnRiff[ tg.touchStart ][1].call( _ev.target, _ev );
+			if( tEvent.evFnRiff[ tg.touchStart ] && tEvent.evFnRiff[ tg.touchStart ][0]( tEvent, _ev ) ) tEvent.evFnRiff[ tg.touchStart ][1].call( this, _ev );
 			var tEvFn = tEvent.evFnStart;
 
 			for( var k in tEvFn )
 			{
-				if( tEvFn[ k ] && tEvFn[ k ][0]( tEvent, _ev  ) ) tEvFn[ k ][1].call( _ev.target, _ev );
+				if( tEvFn[ k ] && tEvFn[ k ][0]( tEvent, _ev  ) ) tEvFn[ k ][1].call( this, _ev );
 			}
 			tg = tEvFn = tEvent = null;
 			return true;
@@ -197,7 +198,8 @@ riff.extend(
 		//n internal function
 		//n touchstart function for primary "touchmove" ( or mousemove etc ) function.
 		primaryTouchMove : function( _ev ) {
-			var tg = riff.global.event, tEvent = riff.data.bufferSingle( _ev.target, tg.bfName );
+			_ev.stopPropagation();
+			var tg = riff.global.event, tEvent = riff.data.bufferSingle( this, tg.bfName );
 			tEvent.moveTime = ( new Date() ).getTime();
 			tEvent.status.touchmove = true;
 			tEvent.prevX = tEvent.curX;
@@ -205,12 +207,12 @@ riff.extend(
 			tEvent.curX = _ev.clientX;
 			tEvent.curY = _ev.clientY;
 
-			if( tEvent.evFnRiff[ tg.touchMove ] && tEvent.evFnRiff[ tg.touchMove ][0]( tEvent, _ev ) ) tEvent.evFnRiff[ tg.touchMove ][1].call( _ev.target, _ev );
+			if( tEvent.evFnRiff[ tg.touchMove ] && tEvent.evFnRiff[ tg.touchMove ][0]( tEvent, _ev ) ) tEvent.evFnRiff[ tg.touchMove ][1].call( this, _ev );
 			var tEvFn = tEvent.evFnMove;
 
 			for( var k in evfn )
 			{
-				if( tEvFn[ k ] && tEvFn[ k ][0]( tEvent, _ev  ) ) tEvFn[ k ][1].call( _ev.target, _ev );
+				if( tEvFn[ k ] && tEvFn[ k ][0]( tEvent, _ev  ) ) tEvFn[ k ][1].call( this, _ev );
 			}
 			tg = tEvFn = tEvent = null;
 			return true;
@@ -218,7 +220,8 @@ riff.extend(
 		//n internal function
 		//n touchstart function for primary "touchup" ( or mouseup etc ) function.
 		primaryTouchEnd : function( _ev ) {
-			var tg = riff.global.event, tEvent = riff.data.bufferSingle( _ev.target, tg.bfName );
+			_ev.stopPropagation();
+			var tg = riff.global.event, tEvent = riff.data.bufferSingle( this, tg.bfName );
 			tEvent.endTime = ( new Date() ).getTime();
 			tEvent.status.touchend = true;
 			tEvent.prevX = tEvent.curX;
@@ -226,11 +229,11 @@ riff.extend(
 			tEvent.curX = _ev.clientX;
 			tEvent.curY = _ev.clientY;
 
-			if( tEvent.evFnRiff[ tg.touchEnd ] && tEvent.evFnRiff[ tg.touchEnd ][0]( tEvent, _ev ) ) tEvent.evFnRiff[ tg.touchEnd ][1].call( _ev.target, _ev );
+			if( tEvent.evFnRiff[ tg.touchEnd ] && tEvent.evFnRiff[ tg.touchEnd ][0]( tEvent, _ev ) ) tEvent.evFnRiff[ tg.touchEnd ][1].call( this, _ev );
 			var tEvFn = tEvent.evFnEnd;
 			for( var k in tEvFn )
 			{
-				if( tEvFn[ k ] && tEvFn[ k ][0]( tEvent, _ev ) ) tEvFn[ k ][1].call( _ev.target, _ev );
+				if( tEvFn[ k ] && tEvFn[ k ][0]( tEvent, _ev ) ) tEvFn[ k ][1].call( this, _ev );
 			}
 
 			tg = tEvFn = tEvent = null;

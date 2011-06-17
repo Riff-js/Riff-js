@@ -12,6 +12,16 @@ v0.2.2
 
 ----------------------------------------------------------------
 
+v0.2.1
+
+- Core APIs : Updates event and ajax.
+- Added more event( touchStart, touchMove, touchEnd ).
+- Change event model to plug-in structure(can extend new events).
+- Add tap event as the "extension" function( "riff.event.tap.js" ).
+- XML-parser-function in the ajax.
+
+----------------------------------------------------------------
+
 v0.2.0
 
 

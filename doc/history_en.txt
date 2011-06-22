@@ -5,6 +5,14 @@ http://innovator.samsungmobile.com/
 
 ================================================================
 
+v0.2.3
+
+- Core APIs : bug fix. new function in manipulation. 
+- bug fix : remove(), appendNode(s)(), prependNode(s)() ( interface changed. ), riff.extend(), children(), deleteBufferSingle() ( bug fix ).
+- new feature : multilanguage.
+
+----------------------------------------------------------------
+
 v0.2.2
 
 - Core APIs : bug fix. add the theme, new function in manipulation. 

@@ -26,7 +26,7 @@ riff.extend(
 			var rArr = new Array();
 
 			function tFnElm ( _el, _idx, _arr){
-				var tChild = riff.nodeListToArray(_el.childNodes);
+				var tChild = riff.util.toArray(_el.childNodes);
 				if( tChild && tChild.length > 0){
 					tChild.forEach( tFnChild );
 				}

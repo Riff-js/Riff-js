@@ -16,12 +16,26 @@ var riff = {
 			this[ _obj ] = _fn;
 		} else {
 			for( var k in _obj ) {
-				if( this[_obj[k]] ) continue;
-				this[ k ] = _obj[k];
+				if(!this[k]){
+					this[ k ] = _obj[k];
+				} else {
+					this.extendR(this[k], _obj[k] );
+				}
 			}
 		}
 
 		return true;
+	},
+	//n riff.extend internal recursive function.
+	// 
+	extendR : function ( _riff, _extend ){
+		for(var k in _extend){
+			if(!(k in _riff)){
+				_riff[k] = _extend[k];
+			} else {
+				this.extendR( _riff[k], _extend[k]);
+			}
+		}
 	},
 	//n Selects an array of DOM nodes by CSS selector
 	//n @_q {String} CSS selector

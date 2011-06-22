@@ -59,7 +59,7 @@ riff.extend(
 			var tChildNodes = _el.childNodes;
 			for( var k in tChildNodes ) {
 				if( tChildNodes[k].nodeType == 1 ) {
-					riff.data.deleteNodesBufferSingle( tChildNodes[k] );
+					riff.data.deleteBufferSingle( tChildNodes[k] );
 				}
 			}
 			tChildNodes = null;

@@ -78,14 +78,14 @@ riff.extend(
 
 				function tFnClass( _elClass ) {
 					if( tArrRm.indexOf( _elClass ) < 0 ) {
-						tArrOld.push( _elClass );
+						tArrResult.push( _elClass );
 					};
 				};
 
 				if ( tArrOld.length ) {  //n DOM Element's className exist.
 					tArrResult = [];
 					tArrOld.forEach( tFnClass );
-					_el.className = tArr.join(" ");
+					_el.className = tArrResult.join(" ");
 				}
 
 			};
@@ -276,31 +276,32 @@ riff.extend(
 				_fn.call( _elm );
 		},
 		//n @_elm {Array} an array of DOM nodes
-		remove : function ( _elm, _s ){
+		remove : function ( _elm, _mode ){
 			_elm = riff.elmCheck(_elm);
-			_s = riff.elmCheck(_s);
-
-			if(!_s){
-				function tFnSelf ( _el, _idx, _arr){
-					_el.parentNode.removeChild(_el);
+			var tBfName = riff.global.event.bfName, tBf, tFn = null;
+			//n remove dom element only 
+			function tFnRemove( _domParent1, _domDelete1 ){
+				_domParent1.parentNode.removeChild( _domDelete1 );
+			};
+			tFn = tFnRemove;
+			if ( "buffer" == _mode ) {
+				//n remove dom element and buffer
+				function tFnRemoveWithBuffer( _domParent2, _domDelete2 ){
+					tBf = riff.data.bufferSingle( _domDelete2, tBfName );	 
+					riff.event.eventMemoryFree( tBf );
+					riff.data.deleteBufferSingle( _domDelete2 );
+					_domParent2.parentNode.removeChild( _domDelete2 );
 				};
+				tFn = tFnRemoveWithBuffer;
+			};
+			
+			function tFnSelf ( _el, _idx, _arr){
+				tFn( _el, _el );
+			};
+			_elm.forEach(tFnSelf);
 
-				_elm.forEach(tFnSelf);
-			} else {
-				if(typeof(_s) == "number"){
-					_elm[_s].parentNode.removeChild(_elm[_s]);
-				} else if(typeof(_s) == "object"){
-					function tFnFilter( _el, _idx, _arr){
-						for(var i=0; i<_s.length;i++){
-							if(_el === _s[i]) _el.parentNode.removeChild(_s[i]);
-						}
-					}
-
-					_elm.forEach(tFnFilter);
-				}
-			}
-
-			return _elm;
+			tFn = null;
+			return true;
 		},
 		//n @_elm {Array} an array of DOM nodes
 		//n @_s {String} a String of HTML codes
@@ -369,14 +370,6 @@ riff.extend(
 		createText : function(_s){
 			return document.createTextNode(_s);
 		},
-		/* Old Function
-		//n @_elm {Array} an array of DOM nodes
-		appendNode : function(_elm, _node){
-			_elm = riff.elmCheck(_elm);
-			
-			if(_elm[0]) _elm[0].appendChild(_node);
-		},
-		*/
 		//n @_elm { DOM Element } DOM nodes( singular )( Parent )
 		//n @_node { Array } an array of DOM nodes( Child )
 
@@ -416,22 +409,6 @@ riff.extend(
 			tFrag = null;
 			return _elm;
 		},	
-/*		
-		//n @_elm {Array} an array of DOM nodes( SOURCE )
-		//n @_node {Array} an array of DOM nodes ( TARGET )		 
-		prependNodes : function(_elm, _node){
-			_elm = riff.elmCheck(_elm);
-			
-			if(_elm[0]) {
-				var tChildNode = _elm[0].childNodes;
-				if(tChildNode.length == 0){
-					_elm[0].appendChild(_node);
-				} else {
-					_elm[0].insertBefore(_node, tChildNode[0]);
-				}
-			}
-		},
-*/
 		//n @_elm {Array} an array of DOM nodes( Parent )
 		//n @_node {Array} an array of DOM nodes ( child )		 
 		prependNode : function(_elm, _node){

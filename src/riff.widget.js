@@ -16,19 +16,44 @@ riff.extend({
 				dir : "http://dev.h9works.com/riff/newriff_mirror/branches/plugin_themeBasic",
 				name : "src"
 			},
-			comps : [],
-			displayComps : [],
-		},
-		master : {
-			className : {
-				full : "rf-master-full",
-				idle : "rf-master-idle",
-				header : "rf-master-header",
-				scene : "rf-master-scene",
-				datareceivetime : "rf-master-datareceivetime",
-				softkey : "rf-master-softkey"
+			objs : {
+				allMaster : [],
+				allComps : [],
+				allFixed : [],
+				allScene : [],
+				
+				master : null,
+				comps : [],
+				fixed : [],
+				scene : null,
+				sceneComps : [],
+				masterComps : []
 			},
-			visibility : "visible"
+			component : {
+				className : {
+					base : "rf-component",
+					header : "rf-component-header",
+					list : "rf-component-list",
+					tab : "rf-component-tab",
+					navigation : "rf-component-navigation",
+					softkey : "rf-component-softkey",
+					subinfo : "rf-component-subinfo",
+					softBackkey : "rf-component-softBackkey",
+				}
+			},
+			master : {
+				className : {
+					base : "rf-master",
+					full : "rf-master-full",
+					idle : "rf-master-idle",
+					header : "rf-master-header",
+					scene : "rf-master-scene",
+					datareceivetime : "rf-master-datareceivetime",
+					softkey : "rf-master-softkey",
+					menu : "rf-master-menu"					
+				},
+				visibility : "visible",
+			}			
 		}
 	}
 });

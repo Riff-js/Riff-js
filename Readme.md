@@ -4,6 +4,49 @@ Copyright 2011, Licensed under the MIT license.
 http://innovator.samsungmobile.com/
 ================================================================
 
+v0.2.3
+
+Requires Riff Version:
+
+	v0.2.3
+
+
+Included plugin files:
+
+	riff.component.header.js
+	riff.component.js
+	riff.component.list.checklist.js
+	riff.component.list.js
+	riff.component.list.radiolist.js
+	riff.component.menu.js
+	riff.component.softkey.js
+	riff.flow.js
+	riff.master.news.js
+	riff.style.css
+	riff.widget.js
+
+Updated List : new feature, bug fix.
+	
+	- Widget global(riff.widget.js) :
+		- "objs" property ( New ) : represents the status of various objects( = mainly components )
+
+	- New feature : 
+		- add components : header, checklist, radiolist, menu, softkey
+		- regist the component's status to the global value. ( for various using.)
+		- improvement of the inheritance funciton.
+		- new function : 
+			- createItem(), createItem(), clearBody(), item(), classInit(), eventInit()
+				- parent function for child components. ( initialize the common process ).
+			- stop() : hide components and running callback function().
+
+	- Change file names :
+		- riff.component.flow.js -> riff.flow.js 
+		- riff.widget.master.news.js -> riff.master.news.js
+
+	- fixed : "visibility" attribute available. 
+
+----------------------------------------------------------------
+
 v0.2.2
 
 Requires Riff Version:

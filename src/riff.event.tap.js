@@ -10,6 +10,8 @@ riff.event.extend({
 			function( _elm, _fn ) {
 				var tg = riff.global.event, te = riff.event, td = riff.data, tEventName = "tap",
 					_elm = riff.elmCheck(_elm);
+				riff.event.touchStart( _elm, function(){ riff.manipulation.addClass( [this],"rf-status-focus" ); } ); 
+				riff.event.touchEnd( _elm, function(){ riff.manipulation.removeClass( [this],"rf-status-focus" ); } ); 
 				function tFnTap( _el ) {
 					var tEvent = td.bufferSingle( _el, tg.bfName );
 

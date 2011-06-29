@@ -43,10 +43,16 @@ riff.extend(
 				_elm.forEach( tFnSetMode );
 				return _elm;
 			} else if( arguments.length == 2) {			//n get mode
-				return riff.data.bufferInternalGet( _elm[0], _key );
+//				return riff.data.bufferInternalGet( _elm[0], _key );
+				var rvArr = [];
+				function tFnGetBufferArray( _el )
+				{
+					rvArr.push( riff.data.bufferInternalGet( _el, _key ) );
+				};
+				_elm.forEach( tFnGetBufferArray );
+				return rvArr;
 			}
 		},
-
 		//n delete the buffer from node( includes the childNodes) by recursive .
 		//n @_el {Node} DOM Elements.NOT ARRAY.
 		deleteBufferSingle : function( _el ) {
@@ -76,6 +82,21 @@ riff.extend(
 			}
 			_elm.forEach( tFn );
 			return _elm;
+		},
+		//n storage base localStorage(PC)
+		storage : function(_key, _value){
+			if(!_key){
+				return null;
+			}
+			var tStorageObj = window.localStorage;
+			if(tStorageObj){
+				if(arguments.length == 1){
+					return tStorageObj.getItem(_key);
+				} else if(arguments.length == 2) {
+					tStorageObj.setItem(_key, _value);
+				}
+			}
+			tStorageObj = null;
 		}
 	}
 });

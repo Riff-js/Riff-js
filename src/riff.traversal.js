@@ -40,12 +40,33 @@ riff.extend(
 
 			return riff.traversal.filtering(rArr, _s);
 		},
+		//n get the children of each element in the set of matched elements, optionally filtered by a selector.
+		//n @_elm {Array} an array of DOM nodes 
+		contents : function(_elm, _s){
+			_elm = riff.elmCheck(_elm);
+			var rArr = new Array();
+
+			function tFnElm ( _el, _idx, _arr){
+				var tChild = riff.util.toArray(_el.childNodes);
+				if( tChild && tChild.length > 0){
+					tChild.forEach( tFnChild );
+				}
+			};
+
+			function tFnChild ( _el, _idx, _arr){
+				rArr.push(_el);
+			};
+
+			_elm.forEach( tFnElm );
+
+			return riff.traversal.filtering(rArr, _s);
+		},
 		//n @_elm {Array} an array of DOM nodes
 		//n @_s {string / number } queryString or number of index for filtering / not filtering.
 		//n @_type {string} undefined or null or "" for flitering or "EXCLUDE" for NOT filtering.
 		filtering: function ( _elm, _s, _type){
 			if ( !_s && typeof( _s ) != "number" ) {		//n if "_s" is 0
-				if ( _type == "EXCLUDE" ) 
+				if ( _type == "not" ) 
 					return [];
 				else {
 					return _elm;
@@ -64,7 +85,7 @@ riff.extend(
 				function tFnNotFilter(_el, _idx, _arr){
 					if(_idx != _s) rArr.push(_el);
 				}; 
-				if( _type == "EXCLUDE" ) {
+				if( _type == "not" ) {
 					_elm.forEach( tFnNotFilter );
 				} else {
 					_elm.forEach( tFnFilter );
@@ -113,7 +134,7 @@ riff.extend(
 				tParentArr.forEach( tfnCompareByFilter );
 				tFilterList = null;
 			
-				if( _type == "EXCLUDE" ) {
+				if( _type == "not" ) {
 					delete rArr;
 					rArr = currentDOMArr;
 					return currentDOMArr;

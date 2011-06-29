@@ -35,6 +35,7 @@ riff.extend(
 
 			return rText;
 		},
+/*
 		//n @_elm {Array} an array of DOM nodes
 		//n _s {String} to add in the className of nodes.( ex: "class1 class2" )
 		addClass : function ( _elm, _s ) {
@@ -42,18 +43,21 @@ riff.extend(
 			_s = riff.string.trim(_s);
 
 			var tArrAdd = _s.split( /\s+/ ),
-				tArrResult;
+				tArrResult,
+				tNewClassName;
 
 			function tFnElm( _el, _idx, _arr ) {
-				var tOld = _el.className;
+				var tOld = [ " ", _el.className , " " ].join("");
 				function tFnNew( _elNew ) {
-					if( tOld.indexOf( _elNew ) < 0 ) {
+					tNewClassName = [ " ", _elNew , " " ].join(""); 
+					if( tOld.indexOf( tNewClassName ) < 0 ) {
 						tArrResult.push( _elNew );
 					};
+					tNewClassName = null;
 				};
 
-				if ( tOld ) {  //n DOM Element's className exist.
-					tArrResult = [tOld];
+				if ( _el.className ) {  //n DOM Element's className exist.
+					tArrResult = [ _el.className ];
 					tArrAdd.forEach( tFnNew );
 					_el.className = tArrResult.join(" ");
 				} else {
@@ -65,6 +69,49 @@ riff.extend(
 
 			return _elm;
 		},
+*/
+		addClass : function ( _elm, _s ) {
+			_elm = riff.elmCheck(_elm);
+			_s = riff.string.trim(_s);
+/*
+			if( !_elm || ! _elm .length ) {
+				console.log("addClass(): element NOT EXISTs."); //n for debug.
+				return false;
+			}
+	*/		
+			var tArrAdd = _s.split( /\s+/ ),
+				tArrResult,
+				tNewClassName,
+				tOld;
+
+			function tFnElm( _el, _idx, _arr ) {
+				/*
+				if (!_el) {
+					console.log("addClass(): element NOT EXISTs."); //n for debug.
+					return false;
+				}*/
+
+				tOld = _el.className.split( /\s+/ )
+				function tFnNew( _addClass ) {
+					if( tOld.indexOf( _addClass ) < 0 ) {
+						tArrResult.push( _addClass );
+					};
+				};
+
+				if ( _el.className ) {  //n DOM Element's className exist.
+					tArrResult = [ _el.className ];
+					tArrAdd.forEach( tFnNew );
+					_el.className = tArrResult.join(" ");
+				} else {
+					//n DOM Element's className do not exist. -> add the classname as new className of the DOM element.
+					_el.className = _s;
+				}
+			};
+			_elm.forEach( tFnElm );
+
+			return _elm;
+		},
+/*		
 		//n @_elm {Array} an array of DOM nodes
 		//n @_s {String} to add in the className of nodes.( ex: "class1 class2" )
 		removeClass : function ( _elm, _s ) {
@@ -93,6 +140,36 @@ riff.extend(
 
 			return _elm;
 		},
+*/
+		//n @_elm {Array} an array of DOM nodes
+		//n @_s {String} to add in the className of nodes.( ex: "class1 class2" )
+		removeClass : function ( _elm, _s ) {
+			_elm = riff.elmCheck(_elm);
+
+			var tArrRm = _s.replace(/^\s+|\s+$/g, "").split(/\s+/),
+				tArrResult;
+
+			function tFnElm( _el, _idx, _arr ) {
+				var tArrOld = _el.className.split(/\s+/);
+				
+
+				function tFnClass( _elClass ) {
+					if( tArrRm.indexOf( _elClass ) < 0 ) {
+						tArrResult.push( _elClass );
+					};
+				};
+
+				if ( tArrOld.length ) {  //n DOM Element's className exist.
+					tArrResult = [];
+					tArrOld.forEach( tFnClass );
+					_el.className = tArrResult.join(" ");
+				}
+			};
+			_elm.forEach( tFnElm );
+
+			return _elm;
+		},
+/*
 		//n @_elm {Array} an array of DOM nodes
 		hasClass : function ( _elm, _s ) {
 			_elm = riff.elmCheck(_elm);
@@ -111,6 +188,73 @@ riff.extend(
 
 			return true;
 		},
+*/
+		//n @_elm {Array} an array of DOM nodes
+		hasClass : function ( _elm, _s ) {
+			_elm = riff.elmCheck(_elm);
+			//n Checks the validity of the argument
+			if( !_s || typeof(_s) != 'string' ) return true;
+
+			//n Removes white spaces
+			var tArrHas = (_s || "").split( /\s+/ ),
+				tClassName,
+				tTrim = riff.string.trim ;
+
+			function tFnAddSpace( _el, _idx, _arr ){
+				_arr[ _idx ] = [ " ", _el, " " ].join(""); 
+			};
+			tArrHas.forEach( tFnAddSpace );
+			
+			for( var len = _elm.length, lp = len - 1; lp > -1; lp-- ){
+				tClassName = _elm[ lp ].className;
+				if (!tClassName || !tTrim(tClassName)) {
+					tTrim = tClassName = tArrHas = null;
+					return false;
+				};
+				tClassName = [ " ", tClassName, " " ].join("");
+				for (var len2 = tArrHas.length, lp2 = len2 - 1; lp2 > -1; lp2--) {
+					if (tClassName.indexOf(tArrHas[lp2]) < 0) {
+						tTrim = tClassName = tArrHas = null;
+						return false;
+					};
+				}
+			};
+			return true;
+		},
+/*
+		//n @_elm {Array} an array of DOM nodes
+		hasClass2 : function ( _elm, _s ) {
+			_elm = riff.elmCheck(_elm);
+			//n Checks the validity of the argument
+			if( !_s || typeof(_s) != 'string' ) return true;
+
+			//n Removes white spaces
+			var tArrHas = (_s || "").split( /\s+/ ),
+				tElmClassName,
+				tTrim = riff.string.trim,
+				_false = true, _true = false ;
+
+			// 하나라도 없으면 true 를 리턴. 문자열이 모두 있으면 false를 리턴. 
+			function tFnIsNotExist( _elArgsClassName ) {
+				if( tElmClassName.indexOf(_elArgsClassName) < 0 ) 
+					return _false;
+				else 
+					return _true;
+			};
+			// 하나라도 없으면 true를 리턴, 문자열이 모두 있으면 false 를 리턴.
+			function tFn( _tElmClassName ) {
+				tElmClassName = _tElmClassName.className;
+				if( !tElmClassName ) return _false;
+				tElmClassName = tElmClassName.split( /\s+/);
+				// 모두 다 들어있으면 false, 하나라도 들어있지 않으면 true;
+				return tArrHas.some( tFnIsNotExist );
+			};
+			// 하나라도 없으면 false를 리턴.모두 다 들어있으면 true 리턴;
+			rv = !_elm.some( tFn );
+			tArrHas = tElmClassName = tTrim = null;
+			return rv;
+		},
+*/
 		//n @_elm {Array} an array of DOM nodes
 		//n @_s {String} className. ( without space. )
 		//n ex: _s : "class1" -> right.
@@ -267,6 +411,7 @@ riff.extend(
 				return true;
 			}
 		},
+/*
 		//n @_elm {Array} an array of DOM nodes
 		each : function( _elm, _fn ){
 			_elm = riff.elmCheck(_elm);
@@ -274,6 +419,18 @@ riff.extend(
 				_elm.forEach( _fn );
 			else
 				_fn.call( _elm );
+		},
+*/
+		//n @_elm {Array} an array of DOM nodes
+		each : function( _elm, _fn ){
+			_elm = riff.elmCheck(_elm);
+			if (riff.util.isArray(_elm)) {
+				function tfn( _el ) {
+					_fn.call( _el );
+				};
+				_elm.forEach( tfn );
+			} else 
+				_fn.call(_elm);
 		},
 		//n @_elm {Array} an array of DOM nodes
 		remove : function ( _elm, _mode ){

@@ -4,6 +4,13 @@ Copyright 2011, Licensed under the MIT license.
 http://innovator.samsungmobile.com/
 ================================================================
 
+v0.2.4
+
+- Core APIs : bug fix. new function in util.
+- bug fix : ellipsis(), each(), addClass(), removeClass(), hasClass()
+
+----------------------------------------------------------------
+
 v0.2.3
 
 - Core APIs : bug fix. new function in manipulation. 

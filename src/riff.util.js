@@ -1,8 +1,5 @@
-
-riff.extend(
-{
+riff.extend({
 	util : {
-
 		//n Determine whether the argument is an array.
 		//n @_obj {Object}
 		//n @return {Boolean}
@@ -10,14 +7,80 @@ riff.extend(
 			return toString.call(_obj) === "[object Array]";
 			//return _obj instancof Array;
 		},
-
 		//n Nodelist -> Array
 		toArray : function( _obj ) {
 			return Array.prototype.slice.call( _obj );
+		},
+		pop : function(_arr, _obj){
+			if(typeof _obj != "undefined"){
+				var tIdx = _arr.indexOf(_obj);
+				if(tIdx > -1) return _arr.splice(tIdx,1);			
+			} else {
+				return _arr.pop();
+			}
+		},
+		push : function(_arr, _obj, _idx){
+			if(_obj){
+				var tIdx = _arr.indexOf(_obj);
+				if(tIdx == -1){
+					if(_idx){
+						var tArr = _arr.splice(_idx);
+						_arr.push(_obj);
+						_arr = _arr.concat(tArr);
+					} else {
+						_arr.push(_obj);
+					}
+				}
+				tIdx = null;
+			}
+			return _arr;
+		},
+		//n Determine whether the argument is an array.
+		//n @_fnOrId { string or number or function } function to execute.
+		//n @_time { number } timerInterval's exection interval for funciton( millisecond )
+		//n @_id { string } timerInterval's funciton id to delete.
+		//n example : riff.util.timer( foo, 1000 );		// function foo with timerinterval 1000ms. 
+		//n example : riff.util.timer( foo, 1000, "id1" );		// function foo with timerinterval 1000ms and id is "id1".
+		//n example : riff.util.timer( "id1" );		// delete the "id1" timerinterval.
+		timer : function( _fnOrID, _time, _id )
+		{
+			//n when user want to delete timer.
+			if ( arguments.length == 1 ) {
+				clearInterval( riff.global.timerList[ _fnOrID ] );
+				if (riff.global.timerList[_fnOrID]) {
+					riff.util.pop(riff.global.timerList, riff.global.timerList[_fnOrID]);
+				}
+				return true;
+			};
+
+			//n when user want to create timer.
+			var count = 0;
+			var timeoutID = ( _time ) ? 
+				setInterval( function( ){ _fnOrID.call( this, ++count ); } , _time ) 
+				: setInterval( _fnOrID, 0 );
+			if( _id ) 
+				return riff.global.timerList[ _id ] = timeoutID;
+			else  
+				return riff.global.timerList[ timeoutID ] = timeoutID;
+		},
+		//n Clone Object
+		//n ex : target = new cloneObject(source)
+		cloneObject : function(what) {
+		    for (i in what) {
+		        if (typeof what[i] == 'object') {
+		            this[i] = new riff.util.cloneObject(what[i]);
+		        }
+		        else
+		            this[i] = what[i];
+		    }
+		},
+		cipherZero : function(_num){
+			return ( _num > 9 ) ? _num : "0" + _num;
 		}
-
+			
 	}
+});
 
-}
 
-)
+
+

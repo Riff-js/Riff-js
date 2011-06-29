@@ -25,9 +25,9 @@ riff.extend(
 				if (_el.nodeType === 1) {
 					var tChildNode = _el.childNodes,
 						tLen = tChildNode.length,
-						tFn = riff.language.translateNodeR2;
+						tFn = riff.language.translateNodeR;
 					for( var i = 0; i < tLen; i++) {
- 						tFn( riff.global.language.currentLanguage, tChildNode[ i ] );
+ 						tFn( tChildNode[ i ] );
 					}
 					tLen = tFn = tChildNode = null;
 				}
@@ -84,7 +84,7 @@ riff.extend(
 			{
 				riff.language.translateAllComponent( _el, _className );
 			}
-			_flow.actComponent.forEach( tFn );
+			_flow.comps.forEach( tFn );
 			return _flow;
 		},
 		translateAllComponent: function( _component, _className ){

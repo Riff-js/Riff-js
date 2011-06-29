@@ -5,38 +5,61 @@ var riff = {
 	//n 2. regexChar : Alphabet Character ( a-z, A-Z )
 	regexSChar : /[\.\#\,\>\[\]\:\*\+]/,
 	regexChar : /[a-z,A-Z]/,
-
+/*
 	//n extend( "foo", function( ... ){ } )
 	//n extend( { foo1: function( ... ){ }, foo2: function( ... ){ }  )
 	//n @_obj {Object}
 	//n @_fn {Function}
-	extend : function( _obj,  _fn ) {	// add more APIs to the core.
-		if( typeof( _obj) == "string" ) {
-			if( this[_obj] ) return false;	 // already exists.
-			this[ _obj ] = _fn;
-		} else {
-			for( var k in _obj ) {
-				if(!this[k]){
-					this[ k ] = _obj[k];
-				} else {
-					this.extendR(this[k], _obj[k] );
+	extend : function( _obj,  _bool ) {	// add more APIs to the core.
+		if(_obj && typeof _obj == "object"){
+			if(_bool && _bool == true){
+				for(var k in _obj){
+					if(this[_obj[k]]) continue;
+					this[k] = _obj[k];
 				}
+			} else {
+				for( var k in _obj ) {
+					if(!this[k]){
+						this[ k ] = _obj[k];
+					} else {
+						this.extendR(this[k], _obj[k] );
+					}
+				}	
 			}
 		}
 
 		return true;
 	},
+	*/
+
+	//n extend( { foo1: function( ... ){ }, foo2: function( ... ){ } , true )
+	//n @_obj { _extend } object to add / overwrite( PLUGIN etc.).
+	//n @_isOverwrite { boolean } if true, overwrite function.
+	extend : function( _extend, _isOverwrite ) {	// add more APIs to the core.
+		riff.extendR( riff, _extend, _isOverwrite );
+		return true;
+	},
+
+	
+	//n internal function. 
 	//n riff.extend internal recursive function.
-	// 
-	extendR : function ( _riff, _extend ){
-		for(var k in _extend){
-			if(!(k in _riff)){
-				_riff[k] = _extend[k];
-			} else {
-				this.extendR( _riff[k], _extend[k]);
-			}
+	extendR : function ( _source, _extend, _isOverwrite )
+	{
+		for( var k in _extend ) {
+			var t = typeof( _extend[k] );
+			if( t == "function" ) {		//n if "function", overwrite or add the _extend.
+				if( _isOverwrite || !_source[k] ) _source[k] = _extend[k];
+			} else if( typeof( _extend[k] ) == "object" ) {
+				if ( _source[k] )	{					//n if "object", chech each property and add/overrite THE PRPOERTY. DO NOT OVERWRITE Object itself. 
+					riff.extendR( _source[k], _extend[k], _isOverwrite );	//n if exists, recursive it.
+				} else {
+					_source[k] = _extend[k];		//n if no exists, add.
+				}
+			} else 
+				_source[k] = _extend[k];			//n if values, overwrite. do not need to care.
 		}
 	},
+	
 	//n Selects an array of DOM nodes by CSS selector
 	//n @_q {String} CSS selector
 	//n @return {Array} an array of DOM nodes
@@ -120,12 +143,14 @@ var riff = {
 		$ : window.$ ,
 		buffer : [],
 		bufferIdx : 1,
+		timerList : [],
 		ajax : {
 			UNSENT : 0,		//e	open() has not been called yet.
 			OPENED : 1,		//e	send()has not been called yet.
 			HEADERS_RECEIVED : 2,	//e	send() has been called, and headers and status are available.
 			LOADING : 3,	//e	Downloading; responseText holds partial data.
-			DONE : 4			//e	The operation is complete.
+			DONE : 4,			//e	The operation is complete.
+			connectedList : []		//e ajax communication list( currently connected ajax list ).
 		},
 		event : {
 //			touchstartOrMouseDown : "touchstart" ,

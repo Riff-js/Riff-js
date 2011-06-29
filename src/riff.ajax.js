@@ -108,8 +108,10 @@ riff.extend({
 				if ( ( 200 <= txhr.status && txhr.status < 300 ) ) {	//n the condition of the success.
 					if ( tSuccess.resultTextOnly ) {
 						tSuccess.fn( txhr.readyState, txhr.status, txhr.responseText, tSuccess.args );
+						riff.ajax.eraseConnectedList( this );
 					} else {
 						tSuccess.fn( txhr.readyState, txhr.status, txhr.responseText, txhr.responseXML, tSuccess.args );
+						riff.ajax.eraseConnectedList( this );
 					}
 				} else {
 					this.retryWithNewXHR( txhr.readyState, txhr.status );
@@ -123,8 +125,14 @@ riff.extend({
 			}
 			return true;
 		},
+		eraseConnectedList: function( _this ) {
+			var tIdx = riff.global.ajax.connectedList.indexOf( _this );
+			if( tIdx > -1 ) riff.global.ajax.connectedList.splice( tIdx , 1 );
+		},
 		destroy : function( _this, _fnMore ) {		//n free the memory that used in the ajax.
 			if( !_this ) _this = this;
+			//n erase from riff.global.ajax.connectedList array 
+			riff.ajax.eraseConnectedList( _this );	
 			function tFnFree( _obj ) {
 				if( !_obj ) return;
 				if( _obj.fnJudge ) _obj.fnJudge = null;
@@ -134,26 +142,28 @@ riff.extend({
 			};
 			delete _this.xhr;
 			_this.xhr = null;
-			var tObj = this.ajaxData;
+			var tObj = _this.ajaxData;
 			tObj.openOption = null;
 			if( tObj.sendOption ) {
 				tObj.sendOption.headerData = null;
 				tObj.sendOption.sendData = null;
 			};
-			tFnFree( tObj.success );
-			tFnFree( tObj.changeState );
-			tObj = this.ajaxData.error;
+			tObj.sendOption  = tObj.sendOption && null;
+			tFnFree( tObj.success ); tObj.success  = tObj.success && null;
+			tFnFree( tObj.changeState ); tObj.changeState  = tObj.changeState && null;
+			tObj = _this.ajaxData.error;
 			if( tObj ) {
-				tFnFree( tObj.timeout );
-				tFnFree( tObj.retry );
-				tFnFree( tObj.exception );
-				tFnFree( tObj.abort );
+				tFnFree( tObj.timeout ); tObj.timeout = tObj.timeout && null;
+				tFnFree( tObj.retry ); tObj.retry = tObj.retry && null;
+				tFnFree( tObj.exception ); tObj.exception = tObj.exception && null;
+				tFnFree( tObj.abort ); tObj.abort = tObj.abort && null; 
 			};
-			if( _fnMore ) _fnMore.call( this );
+			_this.ajaxData.error = null;
+			_this.ajaxData = null;
+			if( _fnMore ) _fnMore.call( _this );
 			tObj = null;
 			return true;
 		},
-
 		init : function( _ajaxData ) {		//n constructor
 			if( !_ajaxData ) return false;		//n if success callback is not passed by arguments, fail.
 			if( !_ajaxData.success || !_ajaxData.success.fn ) return false;		//n if success callback is not passed by arguments, fail.
@@ -180,8 +190,7 @@ riff.extend({
 			this.abortByUser = riff.ajax.abortByUser;
 			this.retryWithNewXHR = riff.ajax.retryWithNewXHR;
 			this.xhr.onreadystatechange = function(){ this.tThis.onReceive(); };
-
-			return true;
+			riff.global.ajax.connectedList.push( this );
 		},
 
 		//n search from XML by queryString( _s )
@@ -222,6 +231,28 @@ riff.extend({
 			_elm.forEach( tFn );
 			tm = null;
 			return rArr;
+		},
+
+		//n Abort all the communication. ( Call the abort() for all the ajax communication. ) 
+		abortAllAjax : function()
+		{
+			var ajaxConn = null,
+				list = riff.global.ajax.connectedList;
+				len = riff.global.ajax.connectedList.length;
+				isAbortWork = false;
+			function tAbortAll( _el ) { _el.abortByUser(); };
+			list.forEach( tAbortAll );
+			
+			while( list.length > 0 ) {
+				if (list[list.length - 1] && list[list.length - 1].destroy) {
+					list[list.length - 1].destroy();
+				} else {
+					list[list.length - 1] = null;
+					list.pop();
+				}
+			};
+			
+			return true;
 		}
 	}
 });

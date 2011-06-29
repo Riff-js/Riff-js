@@ -4,6 +4,40 @@ Copyright 2011, Licensed under the MIT license.
 http://innovator.samsungmobile.com/
 ================================================================
 
+v0.2.4
+
+Requires Riff Version
+
+	v0.2.4
+
+Included plugin files:
+
+	riff.component.btn.js
+	riff.component.container.js
+	riff.component.header.js
+	riff.component.idle.js
+	riff.component.js
+	riff.component.list.js
+	riff.component.menu.js
+	riff.component.modal.js
+	riff.component.softkey.js
+	riff.component.subinfo.js
+	riff.flow.js
+	riff.master.basics.js
+	riff.master.js
+	riff.master.news.js
+	riff.style.css
+	riff.widget.js
+	riff.widget.master.news.js
+
+Updated List : new feature, bug fix.
+
+	- New feature :
+		- add components : btn, container, header, idle, modal, subinfo
+		- improvement of the inheritance function.
+
+----------------------------------------------------------------
+
 v0.2.3
 
 Requires Riff Version:

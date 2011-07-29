@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<widget xmlns="http://www.w3.org/ns/widgets" height="123" id="YahooNewsQvga" version="2.2" width="226">
+    <title>Yahoo! News</title>
+    <description/>
+    <icon src="icon.png"/>
+    <content src="index.html"/>
+    <access network="true"/>
+</widget>

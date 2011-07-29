@@ -1,0 +1,758 @@
+/* 
+ * Theme
+ * Riff Basic
+ * Ver 0.1 
+ */ 
+
+
+/* CSS Reset */
+body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li, fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td { margin: 0; padding: 0; border: 0; outline: 0; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline;}
+html { height: 100%;}
+body { height: 100%;}
+table { border-collapse: collapse; border-spacing: 0;}
+:focus { outline: 0; }
+ol, ul { list-style: none;}
+
+
+/* init */
+
+body { color: #fff; line-height: 1em; font-family: HelveM_eucjk}
+body > div { display: none; } 
+
+
+/* Component */
+
+.rf-component, .rf-master {
+	display: none; 
+	overflow: hidden; 
+}
+
+.rf-custom-scene {
+	width: 100%;
+	overflow: hidden; 
+	overflow-y: auto; 
+	color: #fff; 
+	background: #000;
+}
+
+.rf-component-dim {
+	width: 100%;
+	height: 800px;
+	position: absolute;
+	z-index: 100;
+	background: #000;
+	opacity: 0.5;
+	display: none; 
+	top: 0;
+	left: 0;
+}
+
+
+
+/* ************************************************************************** */
+
+
+/* Status */
+
+.rf-component.rf-status-visible {
+	display: block; 
+}
+
+.rf-master.rf-status-visible {
+	display: block; 
+}
+
+
+
+/* Master */
+.rf-master-basicFull {
+	width: 240px;
+	height: 381px;
+	background: #000;
+	position: relative; 
+}
+
+.rf-master-basicIdle {
+	width: 300px;
+	height: 200px;
+	background: #333;
+}
+
+/* Header */
+.rf-component-header {
+	height: 27px;
+	line-height: 27px;	
+	background: url('img/header.png') 0 0 no-repeat;
+	width: 100%;
+	overflow: hidden; 
+}
+
+.rf-component-header div {
+	margin: 3px 0 0 7px;
+	height: 18px;
+	line-height: 18px;
+}
+
+.rf-component-header img {
+	margin-top: 3px; 
+}
+
+
+/* List */
+.rf-component-list {
+	width: 100%;
+}
+
+.rf-component-list li {
+	font-size: 13px; 
+	border-bottom: 1px solid #1f262a;
+	padding: 5px 10px;
+	width: 220px;
+	overflow: hidden;	
+	color: #666;
+	position: relative;
+}
+
+.rf-component-list li.rf-status-focus {
+	background-color: #13aace;
+}
+
+.rf-component-list .rf-component-item-tit{
+	font-size: 16px;
+	color: #fff;
+	margin-bottom: 6px;
+}
+
+.rf-component-list .rf-component-item-img{
+	margin-bottom: 8px;
+	margin-right: 9px;
+	float: left; 	
+}
+
+.rf-component-list .rf-component-item-img img{
+	width: 61px;
+	height: 40px;
+	border: 1px solid #4a4a4a;
+}
+
+.rf-component-list .rf-component-item-text{
+	font-size: 13px;
+	float: left;
+	margin-bottom: 3px;
+}
+
+.rf-component-list .rf-component-item-text.rf-status-hasImg{
+	width: 140px;
+}
+
+
+
+.rf-component-list .rf-component-item-itemInfo{
+	font-size: 11px;
+	float: right;
+	margin-left: 5px;
+}
+
+.rf-component-list .rf-component-oneItem {
+	border: none;
+	text-align: center;	
+	color: #fff;
+	  
+}
+
+.rf-component-list .rf-component-oneItem div {
+	float: none;
+	font-size: 16px;	
+	height: 206px; 
+	line-height: 260px;  
+}
+
+
+
+/* callStyle - Setting */
+.rf-component-list .rf-style-list-setting .rf-component-item-tit {
+	font-size: 15px;
+	margin-bottom: 0;
+}
+
+.rf-component-list .rf-style-list-setting .rf-component-item-tit.rf-status-oneItem{
+	line-height: 29px;
+}
+
+.rf-component-list .rf-style-list-setting .rf-component-item-text {
+	font-size: 12px;
+	color: #ffae00;
+	line-height: 1em;
+}
+
+.rf-component-list .rf-style-list-setting li:nth-child(6) .rf-component-item-text{
+	color: #fff;
+}
+
+.rf-component-list .rf-style-list-setting li:nth-child(6) .rf-style-arrObj{
+	display: none;
+}
+
+
+.rf-component-list .rf-style-list-setting li {
+	height: 29px;
+	padding: 5px 10px;
+}
+
+
+.rf-component-list .rf-style-list-setting .rf-component-checkbox {
+	width: 20px;
+	height: 19px;
+	background: url('img/bg_check.png') 0 bottom no-repeat;
+	position: absolute;
+	top: 10px;
+	left: 212px;
+}
+
+.rf-component-list .rf-style-list-setting .rf-component-checkbox.rf-status-on{
+	background: url('img/bg_check_on.png') 1px bottom no-repeat;
+}
+
+
+/* callStyle - Connect Failed */
+.rf-style-list-failed {
+	li {} 
+}
+
+/* radio,check */
+
+li.rf-component-radioList, li.rf-component-checklist, li.rf-component-selectAll{
+	padding-left: 36px;
+}
+li.rf-component-radioList .rf-component-item-text,
+li.rf-component-checklist .rf-component-item-text,
+li.rf-component-selectAll .rf-component-item-text
+{
+	font-size: 15px;
+	line-height: 29px;
+	color: #fff;
+}
+
+.rf-component-radio { 
+	width: 18px; 
+	height: 20px;  
+	background: url('img/bg_radio.png') 0 0 no-repeat;
+	position: absolute;
+	top: 9px;
+	left : 10px;
+}
+
+.rf-component-radio.rf-status-on {
+	background-image: url('img/bg_radio_on.png');
+}
+
+
+.rf-component-checkbox{
+	width: 20px;
+	height: 19px;
+	background: url('img/bg_check.png') 0 bottom no-repeat;
+	position: absolute;
+	top: 10px;
+	left: 11px;
+}
+
+.rf-component-checkbox.rf-status-on{
+	background: url('img/bg_check_on.png') 1px bottom no-repeat;
+}
+
+
+/* Order */
+
+
+.rf-component-list .rf-component-ordering-list {
+	font-size: 15px;
+	color: #fff;
+	line-height: 29px;
+	padding-left: 55px;
+}
+
+
+
+.rf-component-list .rf-component-ordering {	
+	height: 18px;
+	width: 40px;
+	position: absolute;
+	top: 10px;
+	left: 10px;  
+	
+}
+
+.rf-component-list .rf-component-orderingUp {	
+	height: 17px;
+	width: 18px;
+	background: url("img/order_up.png") 0 0 no-repeat;
+	float: left;
+	margin-right : 3px;
+}
+
+.rf-component-list .rf-component-orderingUp.rf-status-focus {
+	background-image: url("img/order_up_on.png");
+}
+.rf-component-list .rf-component-orderingUp.rf-status-dim {
+	background-image: url("img/order_up_dim.png");
+}
+
+.rf-component-list .rf-component-orderingDown {	
+	height: 17px;
+	width: 18px;
+	background: url("img/order_dn.png") 0 0 no-repeat;
+	float: left;   
+}
+
+.rf-component-list .rf-component-orderingDown.rf-status-focus {
+	background-image: url("img/order_dn_on.png");
+}
+.rf-component-list .rf-component-orderingDown.rf-status-dim {
+	background-image: url("img/order_dn_dim.png");
+}
+
+/* softkey */
+.rf-component-softkey {	
+	height: 36px;
+	border-top: 1px solid #282828;
+	background: url('img/bg_softkey.png') 0 0 repeat-x;	
+}
+
+.rf-component-softkey li.rf-component-item{
+	line-height: 36px; 
+	text-align: center;
+	position: relative;
+	float: left;	
+}
+
+.rf-component-softkey li.rf-component-item.rf-status-dim{
+	color: #4d4d4d;
+}
+
+.rf-component-softkey li.rf-component-item .rf-effect-border{
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	height: 36px;
+	width: 2px;
+	background: url('img/border_softkey.png') 0 0 repeat-y;
+}
+
+.rf-component-softkey li.rf-status-focus{
+	background: url('img/bg_softkey_on.png') 0 0 repeat-x;		
+}
+
+.rf-component-softkey li.rf-status-focus .rf-effect-border{
+	background: url('img/border_softkey_on.png') 0 0 repeat-x;		
+}
+
+.rf-component-softkey li.rf-status-oneItem{
+	width : 200px;
+}
+
+.rf-component-softkey li.rf-status-twoItem{
+	width : 100px;
+}
+
+.rf-component-softkey li.rf-status-threeItem{
+	width : 66px;
+}
+
+.rf-component-softkey .rf-component-softBackkey {
+	width: 40px; 
+	height: 36px;
+	float: right;	  
+}
+
+.rf-component-softkey .rf-component-softBackkey-ele {
+	width: 19px;
+	height: 16px;
+	background: url('img/btn_softkey_back.png') 50% 50% no-repeat;
+	margin-top : 10px;
+	margin-left: 10px;   
+}
+
+
+/* Navigation */
+
+.rf-component-navigation{
+	width: 240px;
+	height: 30px;
+	background-position: 0 0;
+	background-repeat: no-repeat;
+	position: relative; 
+	overflow: hidden;
+	background: url('img/bg_navigation.png') 0 0 repeat-x;
+}
+
+.rf-component-navigation li {
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	display: none;
+}
+
+.rf-component-navigation li.rf-status-visible {	
+	display: block;
+}
+
+.rf-component-navigation .rf-effect-arrL {
+	position: absolute;
+	width: 28px;
+	height: 30px;
+	background: url('img/navi_arr_left.png') center center no-repeat;
+	top: 0px;
+	left: 0px;
+	display: block;
+	z-index: 10;
+}
+
+.rf-component-navigation .rf-effect-arrR {
+	position: absolute;
+	width: 28px;
+	height: 30px;
+	background: url('img/navi_arr_right.png') center center no-repeat;
+	top: 0px;
+	right: 0px;
+	display: block;
+	z-index: 10;
+}
+
+.rf-component-navigation .rf-effect-arrL.rf-status-focus {
+	background-image: url('img/navi_arr_left_on.png');
+}
+
+.rf-component-navigation .rf-effect-arrR.rf-status-focus {
+	background-image: url('img/navi_arr_right_on.png');
+}
+
+
+/*subinfo */
+
+.rf-component-subinfo {
+	height:	14px;
+	border-top: 1px solid #21252b;
+	background: #181818; 
+}
+
+.rf-component-subinfo-body {
+	font-size: 11px;
+	color: #676767;
+	padding-left: 10px; 
+	line-height: 14px; 
+}
+
+.rf-component-subinfo-prefix {
+	margin-right: 7px; 
+}
+
+
+
+
+/* Style Object */
+.rf-style-arrObj{
+	width: 5px;
+	height: 11px;
+	background: url('img/img_setting_arrow.png') 0 0 no-repeat;
+	position: absolute;
+	top: 14px;
+	right: 11px;
+}
+
+.rf-component-checklist .rf-style-arrObj{
+	display: none;
+}
+
+.rf-component-radioList .rf-style-arrObj{
+	display: none;
+}
+
+
+
+/* Idle */
+
+
+.rf-master-basicIdle {
+	width: 226px; 
+	height: 123px;
+	background: url('img/bg_idle_42.png') 0 0 no-repeat; 
+	border: none;
+	position: relative;
+} 
+
+.rf-custom-idleLogo {
+	background: url('img/idle_logo.png') 50% 50% no-repeat;
+	width: 71px;
+	height: 17px;
+	position: absolute;
+	text-indent: -1000px;
+	top:5px;
+	left: 5px;
+}
+
+.rf-custom-idleRefresh {
+	background: url('img/btn_idle_refresh.png') 50% 50% no-repeat;
+	width: 25px;
+	height: 23px;	
+	right: 5px;	
+	text-indent: -500px;
+	position: absolute;
+	top: 5px; 
+	right: 5px;
+}
+
+.rf-custom-idleRefresh.rf-status-focus{
+	background-image: url('img/btn_idle_refresh_on.png');
+}
+
+.rf-custom-idleRefresh.rf-status-dim{
+	background-image: url('img/btn_idle_refresh_dim.png');
+}
+
+.rf-custom-idleMore {
+	background: url('img/btn_idle_more.png') 50% 50% no-repeat;
+	width: 50px;
+	height: 20px;
+	bottom: 2px; 
+	right: 5px;
+	z-index: 5;
+	font-size: 12px;
+	color: #fff;
+	position: absolute;
+	text-align: left;
+	padding-left: 10px; 	
+	padding-top: 3px; 	
+}
+.rf-custom-idleSubinfo {
+	line-height: 1em;
+	color: #878787;
+	font-size: 11px;
+	position: absolute;
+	bottom: 3px;
+	left: 4px;
+	border: none;
+	padding-left: 13px;
+	background: url('img/idle_time_bullet.png') 0 1px no-repeat; 
+}
+	
+.rf-custom-idleMore.rf-status-focus {
+	background: url('img/btn_idle_more_on.png') 50% 50% no-repeat;	
+}
+
+.rf-custom-idleMore.rf-status-dim {
+	background: url('img/btn_idle_more_dim.png') 50% 50% no-repeat;	
+	color: #555855;
+}
+
+
+.rf-component-idlePrev {
+	width: 30px;
+	height: 30px;
+	background: url('img/img_idle_arrow_back.png') 50% 50% no-repeat;	
+	top: -27px;	
+	left: 89px;
+	position: absolute;
+	z-index: 10;
+}
+
+.rf-component-idleNext{
+	width: 30px;
+	height: 30px;
+	background: url('img/img_idle_arrow_foward.png') 50% 50% no-repeat;		
+	left: 89px;
+	bottom: -30px;
+	position: absolute;
+	z-index: 10;
+}
+
+
+.rf-component-idleList {
+	width: 210px;
+	height: 55px;
+	position: absolute;	
+	top: 34px;
+	left: 8px;
+	overflow: visible;
+	font-size: 13px;
+	 
+}
+
+.rf-component-idleList li {
+	width: 210px;
+	height: 50px;
+	overflow: hidden;
+	padding-top: 5px;
+	 
+}
+
+.rf-component-idleIndicator {
+	width: 210px;
+	height: 50px;
+	position: absolute;	
+	top: 40px;
+	left: 8px;
+	overflow: visible;
+	font-size: 14px;
+	text-align: center;
+}
+
+.rf-component-idleIndicator-body{
+	line-height: 50px;
+}
+
+.rf-component-idleIndicator-body.rf-status-3line{
+	line-height: 1em;
+	padding-top: 2px;
+}
+
+.rf-component-idleIndicator-body.rf-status-2line{
+	line-height: 1em;
+	padding-top: 10px;
+}
+
+.rf-component-idleIndicator-body.rf-status-idleLoading img{
+	vertical-align: middle;
+	margin-right: 5px;
+}
+
+
+
+
+.rf-component-idleList li{
+	display: none; 
+}
+
+.rf-component-idleList .rf-status-visible{
+	display: block; 
+}
+
+
+
+.rf-component-idleList .rf-component-item-tit{
+	font-size: 13px;
+	color: #fff;
+	margin-bottom: 4px;
+}
+
+.rf-component-idleList .rf-component-item-img{
+	margin-bottom: 8px;
+	margin-right: 9px;
+	float: left; 	
+}
+
+.rf-component-idleList .rf-component-item-img img{
+	width: 61px;
+	height: 40px;
+	border: 1px solid #4a4a4a;
+}
+
+.rf-component-idleList .rf-component-item-text{
+	display: none;
+}
+
+.rf-component-idleList .rf-component-item-tit.rf-status-hasImg{
+	width: 135px;
+	float: right;
+}
+
+
+.rf-component-idleList .rf-component-item-itemInfo{
+	font-size: 11px;
+	float: right;
+	margin-left: 5px;
+	color: #555;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* Modal */
+.rf-component-modal {
+	position: absolute;
+	z-index: 101;
+	overflow: hidden;
+}
+
+
+
+
+
+
+/* Button */
+
+.rf-component-btn {
+	width: 93px;
+	background: url('img/bg_btn1.png') 0 0 no-repeat;
+	height: 27px;
+	text-align: center;
+	font-size: 13px;
+	line-height: 25px;
+}
+
+.rf-component-btn.rf-status-focus {	
+	background-image: url('img/bg_btn1_press.png');	
+}
+
+
+/* Busyindicator */
+.rf-custom-busyindicator, .rf-custom-alert, .rf-custom-msg {
+	width: 214px;
+	height: 106px;
+	top: 120px;
+	left: 13px;
+	background: url("img/bg_alert.png") 0 0 no-repeat;
+}
+
+.rf-custom-busyindicator .rf-component-modal-body {
+	text-align: center;
+	padding-top: 20px;
+	font-size: 16px;
+	height: 20px;	
+	line-height: 20px;	
+	color: #303131;
+}
+
+.rf-custom-busyindicator .rf-component-modal-body img{
+	vertical-align: middle;
+}
+
+.rf-custom-alert .rf-component-btn,
+.rf-custom-busyindicator .rf-component-btn {
+	margin: 30px auto 0;
+}
+
+
+/* Alert */
+ 
+.rf-custom-alert .rf-component-modal-body {
+	text-align: center;
+	padding-top: 6px;
+	font-size: 16px;
+	height: 34px;	
+	vertical-align: top;
+	color: #303131;
+}
+
+
+/* Msg */
+.rf-custom-msg {
+	background: url("img/bg_msg.png") 0 0 no-repeat;
+} 
+.rf-custom-msg .rf-component-modal-body {
+	text-align: center;
+	padding-top: 45px;
+	font-size: 16px;
+	height: 10px;	
+	vertical-align: top;
+	color: #303131;
+}

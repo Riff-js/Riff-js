@@ -4,6 +4,10 @@ Copyright 2011, Licensed under the MIT license.
 http://innovator.samsungmobile.com/
 ================================================================
 
+This branch will be updated from RIFF UI.
+
+================================================================
+
 v0.2.4
 
 Requires Riff Version

@@ -4,9 +4,10 @@ Copyright 2011, Licensed under the MIT license.
 http://innovator.samsungmobile.com/
 ================================================================
 
-This branch will be updated from RIFF UI.
+This branch will be updated from riffUI.
 ================================================================
 
+https://github.com/Riff-js/Riff-js/tree/riffUI
 
 ================================================================
 

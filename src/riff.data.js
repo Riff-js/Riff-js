@@ -43,7 +43,6 @@ riff.extend(
 				_elm.forEach( tFnSetMode );
 				return _elm;
 			} else if( arguments.length == 2) {			//n get mode
-
 				var rvArr = [];
 				function tFnGetBufferArray( _el )
 				{
@@ -58,7 +57,6 @@ riff.extend(
 		deleteBufferSingle : function( _el ) {
 			if( _el.bufferIdx ) {
 				delete riff.global.buffer[ _el.bufferIdx ];
-
 				delete _el.bufferIdx;
 			};
 
@@ -97,6 +95,28 @@ riff.extend(
 				}
 			}
 			tStorageObj = null;
+		},
+		setStorage : function(_key, _value, _opt){
+			if(!_key && !_value){
+				return null;
+			}
+			riff.data.storage(_key, riff.util.objToStr(_value));
+		},
+		getStorage : function(_key, _value){
+			if(!_key){
+				return null;
+			}
+			var t = riff.data.storage(_key);
+			if(!t){
+				return null;
+			}
+			
+			var tData = eval("(" + t + ")");
+			if(!_value){
+				return tData;
+			} else {
+				return tData[_value];
+			}
 		}
 	}
 });

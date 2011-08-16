@@ -36,6 +36,7 @@ riff.extend(
 
 			return rText;
 		},
+
 		addClass : function ( _elm, _s ) {
 			_elm = riff.elmCheck(_elm);
 			_s = riff.string.trim(_s);
@@ -45,7 +46,6 @@ riff.extend(
 				tOld;
 
 			function tFnElm( _el, _idx, _arr ) {
-
 				tOld = _el.className.split( /\s+/ )
 				function tFnNew( _addClass ) {
 					if( tOld.indexOf( _addClass ) < 0 ) {
@@ -291,6 +291,7 @@ riff.extend(
 					return true;
 				}
 		},
+
 		//n @_elm {Array} an array of DOM nodes
 		each : function( _elm, _fn ){
 			_elm = riff.elmCheck(_elm);
@@ -305,7 +306,7 @@ riff.extend(
 		//n @_elm {Array} an array of DOM nodes
 		remove : function ( _elm, _mode ){
 			_elm = riff.elmCheck(_elm);
-			var tBfName = riff.global.event.bfName, tBf, tFn = null;
+			var tBfName = riff.event.constString.bfName, tBf, tFn = null;
 			//n remove dom element only 
 			function tFnRemove( _domParent1, _domDelete1 ){
 				_domParent1.parentNode.removeChild( _domDelete1 );
@@ -400,6 +401,8 @@ riff.extend(
 		//n @_elm { DOM Element } DOM nodes( singular )( Parent )
 		//n @_node { Array } an array of DOM nodes( Child )
 
+		//n @_elm { Array } an array of DOM nodes( Parent )
+		//n @_node { DOM Element } DOM Element( singular )( Child )
 		appendNode : function( _elm, _node){
 			_elm = riff.elmCheck(_elm);
 

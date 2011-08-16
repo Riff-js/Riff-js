@@ -63,6 +63,7 @@ riff.extend({
 			else  
 				return riff.global.timerList[ timeoutID ] = timeoutID;
 		},
+		
 		cloneObject : function(what) {
 			if ( riff.util.isArray( what ) )
 				return what.slice( 0 );
@@ -114,6 +115,48 @@ riff.extend({
 					return 1;
 				}
 			}
+		},
+		textArray : function(_elm, _s){
+			_elm = riff.elmCheck(_elm);
+			
+			if(_elm.nodeType == 9){
+				_elm = [_elm];
+			}
+			
+			if(_s){
+				_elm = riff.traversal.find(_elm, _s);
+			}
+			
+			var rArr = [],
+				tFn = function(_el, _idx, _arr){
+					rArr.push(riff.manipulation.text([_el]));
+				};
+			
+			_elm.forEach(tFn);
+			
+			tFn = null;
+			return rArr;
+		},
+		objToArr : function(_obj){
+			var rArr = [], tVal;
+			for(var _k in _obj){
+				if(_obj.hasOwnProperty(_k)){
+					tVal = _obj[_k];
+					if(tVal && typeof tVal == "object"){
+						rArr[rArr.length] = _k + " : {" + arguments.callee(tVal).join(", ") + "}";
+					} else {
+						if(typeof tVal == "string"){
+							rArr[rArr.length] = [ _k + ": \"" + tVal.toString() + "\""];
+						} else {
+							rArr[rArr.length] = [ _k + ": " + tVal.toString()];
+						}
+					}
+				}
+			}
+			return rArr;
+		},
+		objToStr : function(_obj){
+			return "{" + riff.util.objToArr(_obj).join(", ") + "}"; 
 		}
 	}
 });

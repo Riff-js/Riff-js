@@ -150,20 +150,6 @@ var riff = {
 			DONE : 4,			//e	The operation is complete.
 			connectedList : []		//e ajax communication list( currently connected ajax list ).
 		},
-		event : {
-/*			
-			touchstartOrMouseDown : "touchstart" ,
-			touchmoveOrMouseMove : "touchmove" ,
-			touchendOrMouseUp : "touchend" ,
-*/
-			touchstartOrMouseDown : "mousedown" ,
-			touchmoveOrMouseMove : "mousemove" ,
-			touchendOrMouseUp : "mouseup" ,
-			bfName : "_riffEvent",
-			touchStart : "touchStart",
-			touchMove : "touchMove",
-			touchEnd : "touchEnd"
-		},
 		language: {
 			currentLanguage : "en",
 			translateTable: {}

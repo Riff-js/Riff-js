@@ -39,25 +39,6 @@ riff.extend(
 				}
 			return true;
 		},
-		translateNodeR2: function( _lang, _el ){
-			if ( _el.nodeType === 3 || _el.nodeType === 4 ) {
-				var tKey = _el.translateKey || _el.nodeValue;
-				_el.nodeValue = riff.language.translateAtoB( _lang, tKey );
-				if( ! _el.translateKey ) _el.translateKey = tKey;
-				tKey = null;
-			}
-			else 
-				if (_el.nodeType === 1) {
-					var tChildNode = _el.childNodes,
-						tLen = tChildNode.length,
-						tFn = riff.language.translateNodeR2;
-					for( var i = 0; i < tLen; i++) {
- 						tFn( _lang, tChildNode[ i ] );
-					}
-					tLen = tFn = tChildNode = null;
-				}
-			return true;
-		},
 		translateAllSingle: function( _dom, _targetStr, _replaceStr ){
 			if ( !_dom ) return _dom;
 			riff.language.translateNodeR( _dom, _targetStr, _replaceStr );
@@ -65,7 +46,9 @@ riff.extend(
 		},
 		translateAllArray: function( _domArray, _targetStr, _replaceStr ){
 			if ( !_domArray ) return _domArray;
-			function tFn( _el ) { riff.language.translateNodeR( _el, _targetStr, _replaceStr ); };
+			function tFn( _el ) { 
+				riff.language.translateAllSingle( _el, _targetStr, _replaceStr ) 
+			};
 			_domArray.forEach( tFn );
 			return _domArray;
 		},

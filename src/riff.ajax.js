@@ -227,7 +227,6 @@ riff.extend({
 			this.abortByUser = riff.ajax.abortByUser;
 			this.retryWithNewXHR = riff.ajax.retryWithNewXHR;
 			this.xhr.onreadystatechange = function(){ this.tThis.onReceive(); };
-
 		},
 
 		//n search from XML by queryString( _s )
@@ -243,6 +242,7 @@ riff.extend({
 				return [];
 			}
 		},
+
 		textArray : function ( _elmOrXml, _s ) {
 			var _elm;
 			if( riff.util.isArray( _elmOrXml ) ) {	//n if _elmOrXml = Array of DOM Elements

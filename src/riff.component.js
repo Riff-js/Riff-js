@@ -33,12 +33,12 @@ riff.component.prototype = {
 		var tSet = this.createSet || null;
 		var tConType = typeof tCon;
 		if (tSet){
-			var tEleClassName = riff.widget.global.component.className.item
-			if (tSet.addClassName) var tEleClassName = riff.widget.global.component.className.item + " "+ tSet.addClassName;
+			var tEleClassName = riff.ui.global.component.className.item
+			if (tSet.addClassName) var tEleClassName = riff.ui.global.component.className.item + " "+ tSet.addClassName;
 			if (tSet.customClassName) var tEleClassName = tSet.customClassName;
 			var tType = tSet.type || "node", tClear = tSet.clear || "body", tTag = tSet.tag || "li";
 		} else {
-			var tEleClassName = riff.widget.global.component.className.item
+			var tEleClassName = riff.ui.global.component.className.item
 			var tType = "node", tClear = "body", tTag = "li";
 		}
 		
@@ -94,6 +94,7 @@ riff.component.prototype = {
 			}
 		}
 	},
+
 	clearBody : function(_s){
 		riff.manipulation.remove( riff.traversal.contents( riff.selector(this.bodyId)),"clear" );
 	},		
@@ -115,7 +116,7 @@ riff.component.prototype = {
 	},	
 	classInit : function(){
 		//Component Identity Classname
-		riff.manipulation.addClass(this.cId, riff.widget.global.component.className.base);
+		riff.manipulation.addClass(this.cId, riff.ui.global.component.className.base);
 		
 		//Custom Classname, Original Classname
 		var tClass = (this.customClassName) ? this.customClassName : this.className
@@ -128,6 +129,7 @@ riff.component.prototype = {
 	eventInit : function(){
 		for ( _k in this.content){
 			if(this.item()[_k] != undefined){
+
 				if(this.content[_k].event){
 					riff.event.tap([this.item()[_k]],this.content[_k].event)
 				}			
@@ -139,18 +141,20 @@ riff.component.prototype = {
 	},
 	visible : function()
 	{	
-		riff.widget.global.objs.comps.push(this);
+		riff.ui.global.objs.comps.push(this);
 		riff.manipulation.addClass(this.cId,"rf-status-visible");
 
 	},	
 	invisible : function()
 	{	
-		riff.util.pop(riff.widget.global.objs.comps,this)
+		riff.util.pop(riff.ui.global.objs.comps,this)
 		riff.manipulation.removeClass(this.cId,"rf-status-visible")		
 	},
 	scrollInitFn : function(){
 		var tDom = riff.selector(this.cId);
-		if( tDom && tDom[0].scrollTop ) tDom[0].scrollTop = 0;
+		if( tDom[0] && tDom[0].scrollTop ) {
+			tDom[0].scrollTop = 0;
+		}
 		tDom = null;
 	},
 	run_dev: function(_arg){		
@@ -191,14 +195,14 @@ riff.component.prototype = {
 	},
 	init : function()
 	{
-		if(this.refresh) riff.widget.global.objs.refreshComps.push(this);
+		if(this.refresh) riff.ui.global.objs.refreshComps.push(this);
 		if(this.initFirst) this.initFirst();
 		this.classInit();
-		riff.widget.global.objs.allComps.push( this );		
+		riff.ui.global.objs.allComps.push( this );		
 		riff.data.buffer( this.cId, "data", this );
 		// Fixed Component?
 		if (this.fixed == true){ 
-			riff.widget.global.objs.fixedComps.push(this);
+			riff.ui.global.objs.fixedComps.push(this);
 			riff.manipulation.addClass(this.cId,"rf-status-fixed");
 		}
 	},

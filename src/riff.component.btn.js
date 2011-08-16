@@ -1,5 +1,5 @@
 riff.component.btn = function(_userSet){
-	this.className = riff.widget.global.component.className.btn;
+	this.className = riff.ui.global.component.className.btn;
 	riff.component.call(this,_userSet);
 	this.parent = _userSet.parent;
 };
@@ -8,7 +8,7 @@ riff.component.btn.prototype = new riff.component();
 
 riff.component.btn.prototype.initFirst = function(){
 	if(this.parent){
-		this.parent.children.push(this);
+	 this.parent.children.push(this);
 	}
 		
 	

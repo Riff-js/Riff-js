@@ -1,9 +1,9 @@
 riff.component.menu = function(_userSet){	
 	this.type = _userSet.type;
 	if ( _userSet.type == "tab"){
-		this.className = riff.widget.global.component.className.tab;
+		this.className = riff.ui.global.component.className.tab;
 	} else if( _userSet.type == "navigation" ){
-		this.className = riff.widget.global.component.className.navigation;
+		this.className = riff.ui.global.component.className.navigation;
 	};		
 	riff.component.call(this,_userSet);
 }
@@ -74,8 +74,8 @@ riff.component.menu.prototype.getValue = function(){
 riff.component.menu.prototype.callController = function(){
 	
 	if(this.item().length > 1){
-		var tArrL = riff.widget.global.effObj.arrLeft();
-		var tArrR = riff.widget.global.effObj.arrRight();
+		var tArrL = riff.ui.global.effObj.arrLeft();
+		var tArrR = riff.ui.global.effObj.arrRight();
 		riff.manipulation.appendNode(this.cId,tArrL);
 		riff.manipulation.appendNode(this.cId,tArrR);
 		this.arrL = riff.selector(this.cId+" div.rf-effect-arrL");
@@ -131,7 +131,7 @@ riff.component.menu.prototype.menuGo = function(_idx){
 		this.content[_k].select = false;
 	}
 	this.content[_idx].select = true;
-	riff.widget.global.objs.flow.run();
+	riff.ui.global.objs.flow.run();
 }
 
 riff.component.menu.prototype.failedFn = function(){

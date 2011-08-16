@@ -7,18 +7,18 @@ riff.extend({
 			this.sFn = _userSet.sFn;
 			this.w = _userSet.w;
 			this.h = _userSet.h;
-			this.dim = this.cId+" ."+riff.widget.global.component.className.dim;
+			this.dim = this.cId+" ."+riff.ui.global.component.className.dim;
 		}
 	}
 });
 
 riff.master.prototype = {
 	classInit : function(){		
-		riff.manipulation.addClass(this.cId, riff.widget.global.master.className.base);
+		riff.manipulation.addClass(this.cId, riff.ui.global.master.className.base);
 		riff.manipulation.addClass(this.cId, this.className);
 	},
 	createDim : function(){		
-		var tDim = riff.manipulation.createElem("div",{"class":riff.widget.global.component.className.dim});
+		var tDim = riff.manipulation.createElem("div",{"class":riff.ui.global.component.className.dim});
 		riff.manipulation.appendNode(this.cId,tDim);		
 	},		
 	dimVisible : function(){
@@ -32,7 +32,7 @@ riff.master.prototype = {
 	{		
 		this.createDim();
 		this.classInit();
-		riff.widget.global.objs.allMasters.push(this);
+		riff.ui.global.objs.allMasters.push(this);
 		riff.data.buffer( this.cId, "data", this );
 	},
 	visible : function(){
@@ -50,19 +50,25 @@ riff.master.prototype = {
 			tFh += parseInt(riff.manipulation.css([_el],"height"));
 		}
 		riff.selector(".rf-status-act.rf-status-fixed").forEach(tFn)
-		var tMh = riff.widget.global.marginH;
+
+		var tH = riff.ui.global.fullH;
+		var tMh = riff.ui.global.marginH;
+
 		var tAh = this.h;
-		var tSh = tAh - tFh - tMh;		
+		var tSh = tAh - tFh - tMh;	
+			
 		riff.manipulation.css(this.scene.cId,"height",tSh+"px");
+		riff.manipulation.css(this.cId,"height",tH-tMh+"px");
+		//riff.manipulation.css(this.cId,"padding-top",tMh+"px");
 		
 		tFh = tAh = tSh = null;
 	},
 	run : function(){
 		//Window Resize
-		riff.widget.resize(this.w,this.h);
+		riff.widget.resize(this.w,this.h,riff.ui.global.resizeWork);
 		
 		//Push the global array		
-		riff.widget.global.objs.master = this;		
+		riff.ui.global.objs.master = this;		
 		
 		//Invisible
 		this.invisibleOther();		

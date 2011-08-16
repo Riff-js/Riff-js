@@ -1,5 +1,5 @@
 riff.component.list = function(_userSet){
-	this.className = riff.widget.global.component.className.list
+	this.className = riff.ui.global.component.className.list
 	riff.component.call(this,_userSet);
 };
 
@@ -63,29 +63,27 @@ riff.component.list.prototype.createRepeat = function(tType,tClear,tTag,tEleClas
 	tCreate = tlistItem = tTitEle = tTag = tTit = tEle = tTextEle = tText = tImgEle = tImg = tAttr = null;
 };
 
-
-
 riff.component.list.prototype.callOrdering = function(){
 	this.tempContent = new riff.util.cloneObject(this.content);
 	
-	riff.manipulation.addClass(this.item(),riff.widget.global.component.className.orderingList);
+	riff.manipulation.addClass(this.item(),riff.ui.global.component.className.orderingList);
 	//Create the DOM Element.
-	var tObj = riff.manipulation.createElem("div",{"class":riff.widget.global.component.className.ordering});	
-	var tObjUp = riff.manipulation.createElem("div",{"class":riff.widget.global.component.className.orderingUp});
-	var tObjDown = riff.manipulation.createElem("div",{"class":riff.widget.global.component.className.orderingDown});
+	var tObj = riff.manipulation.createElem("div",{"class":riff.ui.global.component.className.ordering});	
+	var tObjUp = riff.manipulation.createElem("div",{"class":riff.ui.global.component.className.orderingUp});
+	var tObjDown = riff.manipulation.createElem("div",{"class":riff.ui.global.component.className.orderingDown});
 	riff.manipulation.appendNode([tObj],tObjUp);
 	riff.manipulation.appendNode([tObj],tObjDown);
 	riff.manipulation.appendNode(this.item(),tObj);
 	tObj = null;
 	
 	//Added property
-	this.orderingUp = this.cId+" ."+riff.widget.global.component.className.orderingUp;
+	this.orderingUp = this.cId+" ."+riff.ui.global.component.className.orderingUp;
 	
 	//Added property
-	this.orderingDown = this.cId+" ."+riff.widget.global.component.className.orderingDown;
+	this.orderingDown = this.cId+" ."+riff.ui.global.component.className.orderingDown;
 	
 	//Added property
-	this.ordering = this.cId+" ."+riff.widget.global.component.className.ordering;
+	this.ordering = this.cId+" ."+riff.ui.global.component.className.ordering;
 	
 	
 	//Event Binding
@@ -96,8 +94,8 @@ riff.component.list.prototype.callOrdering = function(){
 		var tBody = riff.selector(tComp.bodyId)[0];
 		var tContent = tComp.tempContent;
 		var tLength = tComp.content.length;
-		var tOrderUp = riff.traversal.find([tItem]," ."+riff.widget.global.component.className.orderingUp);
-		var tOrderDown = riff.traversal.find([tItem]," ."+riff.widget.global.component.className.orderingDown);
+		var tOrderUp = riff.traversal.find([tItem]," ."+riff.ui.global.component.className.orderingUp);
+		var tOrderDown = riff.traversal.find([tItem]," ."+riff.ui.global.component.className.orderingDown);
 						
 		riff.event.tap(tOrderUp, function(){			
 			//riff.manipulation.addClass([tItem],"rf-status-focus")
@@ -158,8 +156,8 @@ riff.component.list.prototype.callOrdering = function(){
 	
 	if(tItems2.length){
 		//Dim the first item
-		var tFirstDownEle = riff.traversal.find([tFirstItem],"."+riff.widget.global.component.className.orderingDown);
-		var tFirstUpEle = riff.traversal.find([tFirstItem],"."+riff.widget.global.component.className.orderingUp);
+		var tFirstDownEle = riff.traversal.find([tFirstItem],"."+riff.ui.global.component.className.orderingDown);
+		var tFirstUpEle = riff.traversal.find([tFirstItem],"."+riff.ui.global.component.className.orderingUp);
 		riff.manipulation.addClass(tFirstDownEle,"rf-status-dim");
 		riff.manipulation.addClass(tFirstUpEle,"rf-status-dim");
 	}
@@ -176,15 +174,15 @@ riff.component.list.prototype.callCheckbox = function(){
 	this.tempContent = new riff.util.cloneObject(this.content);
 	var tComp = this;
 	//Create the checkbox
-	var tEle = riff.manipulation.createElem("div",{"class":riff.widget.global.component.className.checkbox});	
+	var tEle = riff.manipulation.createElem("div",{"class":riff.ui.global.component.className.checkbox});	
 	riff.manipulation.appendNode(this.item(),tEle);
-	if(this.item().length > 0)riff.manipulation.addClass(this.item(),riff.widget.global.component.className.checklist);
+	if(this.item().length > 0)riff.manipulation.addClass(this.item(),riff.ui.global.component.className.checklist);
 	
-	this.checkbox = this.cId+" ."+riff.widget.global.component.className.checkbox;
-	this.checklistItem = this.cId+" ."+riff.widget.global.component.className.checklist;
+	this.checkbox = this.cId+" ."+riff.ui.global.component.className.checkbox;
+	this.checklistItem = this.cId+" ."+riff.ui.global.component.className.checklist;
 	for (_k in this.tempContent){		
 		if(this.tempContent[_k].checked == true){
-			riff.manipulation.addClass(riff.traversal.find([this.item()[_k]]," ."+riff.widget.global.component.className.checkbox),"rf-status-on")	
+			riff.manipulation.addClass(riff.traversal.find([this.item()[_k]]," ."+riff.ui.global.component.className.checkbox),"rf-status-on")	
 		}
 	}
 	
@@ -196,10 +194,10 @@ riff.component.list.prototype.callCheckbox = function(){
 		if(tComp.tempContent[tIdx]){
 			if(tComp.tempContent[tIdx].checked){
 				tComp.tempContent[tIdx].checked = false;
-				riff.manipulation.removeClass(riff.traversal.find([this],"."+riff.widget.global.component.className.checkbox),"rf-status-on");						
+				riff.manipulation.removeClass(riff.traversal.find([this],"."+riff.ui.global.component.className.checkbox),"rf-status-on");						
 			} else {
 				tComp.tempContent[tIdx].checked = true;			
-				riff.manipulation.addClass(riff.traversal.find([this],"."+riff.widget.global.component.className.checkbox),"rf-status-on");
+				riff.manipulation.addClass(riff.traversal.find([this],"."+riff.ui.global.component.className.checkbox),"rf-status-on");
 				
 			}
 		}
@@ -214,19 +212,18 @@ riff.component.list.prototype.callSelectAll = function(){
 	this.tempContent = new riff.util.cloneObject(this.content);
 	var tComp = this;
 	//Create the checkbox
-	var tEle = riff.manipulation.createElem("li",{"class":riff.widget.global.component.className.selectAll});
+	var tEle = riff.manipulation.createElem("li",{"class":riff.ui.global.component.className.selectAll});
 	var tTxtEle = riff.manipulation.createElem("div",{"class":"rf-component-item-text"});
-	var tTxt = riff.manipulation.createText(riff.widget.global.component.selectAllStr);
-
+	var tTxt = riff.manipulation.createText(riff.ui.global.component.selectAllStr);
 	riff.manipulation.appendNode([tTxtEle],tTxt);
 	riff.manipulation.appendNode([tEle],tTxtEle)	
 	
-	var tEle2 = riff.manipulation.createElem("div",{"class":riff.widget.global.component.className.checkbox});	
+	var tEle2 = riff.manipulation.createElem("div",{"class":riff.ui.global.component.className.checkbox});	
 	riff.manipulation.appendNode([tEle],tEle2);		
 	riff.manipulation.prependNode(this.bodyId,tEle);
 
 	
-	riff.event.tap( this.bodyId+" ."+riff.widget.global.component.className.selectAll,function(){
+	riff.event.tap( this.bodyId+" ."+riff.ui.global.component.className.selectAll,function(){
 		tComp.selectAll();
 	})			
 	this.selectAllFlag = true;
@@ -262,10 +259,10 @@ riff.component.list.prototype.selectAllCheck = function(){
 	
 	if(tCnt == tLen){
 		this.allChecked = true;
-		riff.manipulation.addClass(riff.traversal.find(this.bodyId," ."+riff.widget.global.component.className.selectAll+" ."+riff.widget.global.component.className.checkbox),"rf-status-on");
+		riff.manipulation.addClass(riff.traversal.find(this.bodyId," ."+riff.ui.global.component.className.selectAll+" ."+riff.ui.global.component.className.checkbox),"rf-status-on");
 	} else {
 		this.allChecked = false;
-		riff.manipulation.removeClass(riff.traversal.find(this.bodyId," ."+riff.widget.global.component.className.selectAll+" ."+riff.widget.global.component.className.checkbox),"rf-status-on");
+		riff.manipulation.removeClass(riff.traversal.find(this.bodyId," ."+riff.ui.global.component.className.selectAll+" ."+riff.ui.global.component.className.checkbox),"rf-status-on");
 	}
 	
 	tCnt = null;
@@ -311,16 +308,16 @@ riff.component.list.prototype.valueDone = function(){
 riff.component.list.prototype.callRadio = function(){	
 	this.tempContent = new riff.util.cloneObject(this.content);
 	var tComp = this;	
-	var tEle = riff.manipulation.createElem("div",{"class":riff.widget.global.component.className.radio});	
+	var tEle = riff.manipulation.createElem("div",{"class":riff.ui.global.component.className.radio});	
 	riff.manipulation.appendNode(this.item(),tEle);
-	riff.manipulation.addClass(this.item(),riff.widget.global.component.className.radioList);
+	riff.manipulation.addClass(this.item(),riff.ui.global.component.className.radioList);
 	
-	this.radio = this.cId+" ."+riff.widget.global.component.className.radio;
-	this.radioListItem = this.cId+" ."+riff.widget.global.component.className.radioList;
+	this.radio = this.cId+" ."+riff.ui.global.component.className.radio;
+	this.radioListItem = this.cId+" ."+riff.ui.global.component.className.radioList;
 	
 	for (_k in this.tempContent){
 		if(this.tempContent[_k].checked == true){			
-			if(this.item().length > 0) riff.manipulation.addClass(riff.traversal.find([this.item()[_k]]," ."+riff.widget.global.component.className.radio),"rf-status-on")	
+			if(this.item().length > 0) riff.manipulation.addClass(riff.traversal.find([this.item()[_k]]," ."+riff.ui.global.component.className.radio),"rf-status-on")	
 		}
 	}
 	
@@ -331,24 +328,24 @@ riff.component.list.prototype.callRadio = function(){
 		for (_k in tComp.tempContent){
 			tComp.tempContent[_k].checked = false;
 		}		
-		riff.manipulation.removeClass(riff.traversal.find(tComp.bodyId,"."+riff.widget.global.component.className.radio),"rf-status-on");			
+		riff.manipulation.removeClass(riff.traversal.find(tComp.bodyId,"."+riff.ui.global.component.className.radio),"rf-status-on");			
 		tComp.tempContent[tIdx].checked = true;
-		riff.manipulation.addClass(riff.traversal.find([this],"."+riff.widget.global.component.className.radio),"rf-status-on");		
+		riff.manipulation.addClass(riff.traversal.find([this],"."+riff.ui.global.component.className.radio),"rf-status-on");		
 	})
 };
 
 
-riff.component.list.prototype.callIdleList = function(){	
-	//riff.manipulation.addClass(this.cId,riff.widget.global.component.className.idleList)
+riff.component.list.prototype.callIdleList = function(){
+	//riff.manipulation.addClass(this.cId,riff.ui.global.component.className.idleList)
 	if(riff.selector(this.cId+" li").length > 0) riff.manipulation.addClass([riff.selector(this.cId+" li")[0]],"rf-status-visible")
 	
 	var tComp = this;	
-	var tP = riff.manipulation.createElem("div",{"class":riff.widget.global.component.className.idlePrev});
-	var tN = riff.manipulation.createElem("div",{"class":riff.widget.global.component.className.idleNext});
+	var tP = riff.manipulation.createElem("div",{"class":riff.ui.global.component.className.idlePrev});
+	var tN = riff.manipulation.createElem("div",{"class":riff.ui.global.component.className.idleNext});
 	riff.manipulation.appendNode(riff.selector(this.cId),tP);
 	riff.manipulation.appendNode(riff.selector(this.cId),tN);
 	
-	riff.event.tap(this.cId+" ."+riff.widget.global.component.className.idlePrev,function(){
+	riff.event.tap(this.cId+" ."+riff.ui.global.component.className.idlePrev,function(){
 		riff.manipulation.each(tComp.item(".rf-status-visible"),function(){
 			if (this.previousSibling != null){
 				riff.manipulation.addClass([this.previousSibling],"rf-status-visible")
@@ -360,7 +357,7 @@ riff.component.list.prototype.callIdleList = function(){
 		})
 	})
 	
-	riff.event.tap(this.cId+" ."+riff.widget.global.component.className.idleNext,function(){
+	riff.event.tap(this.cId+" ."+riff.ui.global.component.className.idleNext,function(){
 		riff.manipulation.each(tComp.item(".rf-status-visible"),function(){
 			if (this.nextSibling != null){
 				riff.manipulation.addClass([this.nextSibling],"rf-status-visible")
@@ -380,6 +377,7 @@ riff.component.list.prototype.callStyle = function(_s){
 		//Not applied to checklist,radiolist
 		riff.manipulation.appendNode( this.bodyId+" li",tEle);
 		
+		//riff.manipulation.addClass([this.item()[this.item().length-1]],"rf-style-list-lastchild");
 	}	
 	if(_s == "failed") {
 		riff.manipulation.removeClass(this.bodyId+" li","rf-component-oneItem");

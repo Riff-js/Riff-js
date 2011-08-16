@@ -1,5 +1,5 @@
 riff.component.idleIndicator = function(_userSet){
-	this.className = riff.widget.global.component.className.idleIndicator
+	this.className = riff.ui.global.component.className.idleIndicator
 	this.disableObj = _userSet.disableObj
 	this.stopObj = _userSet.stopObj	
 	this.nextFlow = _userSet.nextFlow;
@@ -35,7 +35,6 @@ riff.component.idleIndicator.prototype.run = function(_s,_flow){
 					tThis.disableObj[_k].disable();
 					
 				} else {
-					console.log(tThis.disableObj[_k])
 					tThis.disableObj[_k].invisible();
 				}
 			}
@@ -87,28 +86,28 @@ riff.component.idleIndicator.prototype.run = function(_s,_flow){
 	
 	
 	if(_s == "failed"){
-		tFn(riff.widget.global.component.failed)
+		tFn(riff.ui.global.component.failed)
 	};
 	if(_s == "network"){
-		tFn(riff.widget.global.component.unavailable)
+		tFn(riff.ui.global.component.unavailable)
 	};	
 	if(_s == "nodata"){
-		tFn3(riff.widget.global.component.blankMsg,"enable")		
+		tFn3(riff.ui.global.component.blankMsg,"enable")		
 	};
 	if(_s == "loading"){
-		tFn3("<img src='../yahooNews/theme/img/ynews_wqvga_idle_loading.gif' />"+riff.widget.global.component.loadingStr,"disable")
+		tFn3("<span class='rf-component-idleBusy-img'>"+riff.ui.global.component.loadingStr+"</span>","disable")
 		riff.manipulation.removeClass(this.bodyId,"rf-status-2line")
 		riff.manipulation.removeClass(this.bodyId,"rf-status-3line")
 		riff.manipulation.addClass(this.bodyId,"rf-status-idleLoading")
 	};
 	if(_s == "noSelectCategory"){
-		tFn2(riff.widget.global.component.noDefaultCategory);
+		tFn2(riff.ui.global.component.noDefaultCategory);
 		riff.manipulation.removeClass(this.bodyId,"rf-status-3line")
 		riff.manipulation.addClass(this.bodyId,"rf-status-2line")
 	};
 	
 	if(_s == "notRegion"){		
-		tFn2(riff.widget.global.component.notRegion);
+		tFn2(riff.ui.global.component.notRegion);
 		riff.manipulation.removeClass(this.bodyId,"rf-status-2line")
 		riff.manipulation.addClass(this.bodyId,"rf-status-3line")
 	};
@@ -120,14 +119,14 @@ riff.component.idleIndicator.prototype.run = function(_s,_flow){
 }
 
 riff.component.idleIndicator.prototype.invisible = function(){
-		riff.util.pop(riff.widget.global.objs.comps,this)
+		riff.util.pop(riff.ui.global.objs.comps,this)
 		riff.manipulation.removeClass(this.cId,"rf-status-visible")		
 		riff.manipulation.removeClass(this.cId,"rf-status-act")					
 	}
 	
 
 riff.component.idleIndicator.prototype.visible = function(){
-		riff.widget.global.objs.comps.push(this);
+		riff.ui.global.objs.comps.push(this);
 		riff.manipulation.addClass(this.cId,"rf-status-visible");
 		riff.manipulation.addClass(this.cId,"rf-status-act");
 }

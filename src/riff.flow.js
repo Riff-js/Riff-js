@@ -49,14 +49,14 @@ riff.flow.prototype = {
 	run : function(_s){
 		
 		//Create back
-		if(riff.widget.global.objs.flow != this && !_s){
-			this.back = riff.widget.global.objs.flow;
+		if(riff.ui.global.objs.flow != this && !_s){
+			this.back = riff.ui.global.objs.flow;
 		}			
 		
 		
 		
 		//Push the global array 
-		riff.widget.global.objs.flow = this;
+		riff.ui.global.objs.flow = this;
 					
 		
 		//Add status classes to DOM element.			
@@ -89,9 +89,8 @@ riff.flow.prototype = {
 		//Remove status classes to DOM element. 
 		this.removeStatusClass();
 
-		
 	}
-	
+		
 		
 }
 

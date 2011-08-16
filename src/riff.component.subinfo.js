@@ -1,5 +1,5 @@
 riff.component.subinfo = function(_userSet){
-	this.className = riff.widget.global.component.className.subinfo;		
+	this.className = riff.ui.global.component.className.subinfo;		
 	riff.component.call(this,_userSet);
 	this.prefix = _userSet.prefix;
 };

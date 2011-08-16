@@ -4,6 +4,18 @@ Copyright 2011, Licensed under the MIT license.
 http://innovator.samsungmobile.com/
 ================================================================
 
+v1.1
+
+Requires Riff Core Version:
+
+	v3.1
+
+Included plugin files:
+
+	riff.ui.global.js
+
+----------------------------------------------------------------
+
 v1.0
 
 Requires Riff Core Version:
@@ -27,4 +39,4 @@ Included plugin files:
 	riff.master.basics.js
 	riff.widget.js
 
-================================================================
+----------------------------------------------------------------

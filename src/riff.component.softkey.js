@@ -1,6 +1,6 @@
 //Sofykey 
 riff.component.softkey = function(_userSet){
-	this.className = riff.widget.global.component.className.softkey;
+	this.className = riff.ui.global.component.className.softkey;
 	this.backkey = _userSet.backkey || "visible";
 	riff.component.call(this,_userSet);
 };
@@ -9,18 +9,18 @@ riff.component.softkey.prototype = new riff.component();
 
 riff.component.softkey.prototype.createBackkey = function(){
 	//Create the DOM Element.
-	var tlistItem = riff.manipulation.createElem("li",{"class":riff.widget.global.component.className.softBackkey});
-	var tBack = riff.manipulation.createElem("div",{"class":riff.widget.global.component.className.softBackkeyEle});
+	var tlistItem = riff.manipulation.createElem("li",{"class":riff.ui.global.component.className.softBackkey});
+	var tBack = riff.manipulation.createElem("div",{"class":riff.ui.global.component.className.softBackkeyEle});
 	riff.manipulation.appendNode([tlistItem],tBack);
 	riff.manipulation.appendNode(this.bodyId,tlistItem);
 	tlistItem = null;
 	
 	//Added property
-	this.backKey = this.cId+" ."+riff.widget.global.component.className.softBackkey;
+	this.backKey = this.cId+" ."+riff.ui.global.component.className.softBackkey;
 	
 	//Event Binding
 	riff.event.tap(this.backKey, function(){
-		riff.widget.global.objs.flow.back.run("back");	
+		riff.ui.global.objs.flow.back.run("back");	
 	})	
 };
 
@@ -31,7 +31,7 @@ riff.component.softkey.prototype.createBackkey = function(){
 //n objet = DOM Element array
 
 riff.component.softkey.prototype.disableEnable = function(_item,_s){
-	var tItems = riff.selector(this.bodyId+" ."+riff.widget.global.component.className.item);
+	var tItems = riff.selector(this.bodyId+" ."+riff.ui.global.component.className.item);
 	
 	if(typeof _item == "number" ){
 		var tEle = [tItems[_item]];	

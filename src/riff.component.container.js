@@ -1,5 +1,5 @@
 riff.component.container = function(_userSet){
-	this.className = riff.widget.global.component.className.container;	
+	this.className = riff.ui.global.component.className.container;	
 	riff.component.call(this,_userSet);			
 
 };

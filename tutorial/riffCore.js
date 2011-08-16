@@ -2193,9 +2193,9 @@ riff.extend({
 			 hh = riff.util.cipherZero( hh ) ;
 			 mm = riff.util.cipherZero( mm ) ;
 			
-			 var tMcc = riff.widget.global.yahoo.MCC ? Number( riff.widget.global.yahoo.MCC ) : 0;
+			 var tMcc = riff.widget.global.sample.MCC ? Number( riff.widget.global.sample.MCC ) : 0;
 			
-			 switch( riff.widget.global.yahoo.MCC )
+			 switch( riff.widget.global.sample.MCC )
 			 {
 			  case "310" : // us
 			  case "311" :

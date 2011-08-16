@@ -6,7 +6,7 @@ flowIdle3 = new riff.flow({
 	master : idleMaster,
 	comps : [idleLogo,idleRefresh,idleMore,idleNews],
 	sFn : function(){
-	
+
 	},
 	eFn : function(){
 		if(riff.widget.global.ajaxUI.busyStart){
@@ -37,7 +37,7 @@ flowFullNews = new riff.flow({
 		if(riff.widget.global.ajaxUI.busyStart){
 			riff.widget.global.ajaxUI.busyStart();
 		};
-		header.selectContent("yahoo");
+		header.selectContent("sample");
 		flowFullNewsFunction();
 	}, 
 	eFn : function() {

@@ -1,4 +1,4 @@
-riff.widget.global.yahoo = {
+riff.widget.global.sample = {
 	autoRefreshKey : "AUTOREFRESH",
 	autoScrollKey : "AUTOSCROLL",
 

@@ -483,13 +483,14 @@ li.rf-component-selectAll .rf-component-item-text
 } 
 
 .rf-custom-idleLogo {
-	background: url('img/idle_logo.png') 50% 50% no-repeat;
-	width: 71px;
+
+	width: 120px;
 	height: 17px;
 	position: absolute;
-	text-indent: -1000px;
 	top:5px;
 	left: 5px;
+	margin-top:5px;
+	margin-left:5px;
 }
 
 .rf-custom-idleRefresh {

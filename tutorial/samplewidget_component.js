@@ -18,7 +18,7 @@ header = new riff.component.container({
 	alwaysRun: true,
 	fixed : true,
 	multiContent : { 
-		yahoo : "<img src='./theme/img/headerlogo.png'>",
+		sample : "Sample Widget",
 		setting : "Settings",
 		autoRefresh : "Auto refresh",
 		autoScroll : "Auto Scroll"
@@ -27,15 +27,8 @@ header = new riff.component.container({
 		type : "str"
 	},
 	eFn : function(){
-		if(this.selectContentKey == "yahoo"){
-			riff.event.enableDisable(this.bodyId,"tap","enable");
-			riff.event.tap(this.bodyId, function(){
-				riff.widget.openURL( riff.widget.global.yahoo.globalUrl );
-			});
-			
-		} else {
+
 			riff.event.enableDisable(this.bodyId,"tap","disable");
-		}
 	}
 });
 
@@ -101,9 +94,12 @@ popupCancel = new riff.component.btn({
 //Idle
 idleLogo = new riff.component.container({		
 	cId : "idleLogo",
-	content : "Yahoo News!",
+	content : "Sample Widget",
 	fixed : true,
 	alwaysRun : true,
+	createSet : {
+		type : "str"
+	},
 	addClassName : "rf-custom-idleLogo",
 });
 
@@ -161,11 +157,6 @@ idleNews = new riff.component.list({
 		this.callIdleList();
 	},
 	eFn : function(){
-		if(riff.widget.global.yahoo.globalUrl != ""){
-			riff.event.tap(idleLogo.cId, function(){
-				riff.widget.openURL( riff.widget.global.yahoo.globalUrl );
-			});			
-		}
 	},
 	customClassName : "rf-component-idleList",
 });

@@ -151,12 +151,12 @@ function getURLByIndex()
 	//d if( naviMenu && naviMenu.content && naviMenu.content.length > 0 ) tIdx = naviMenu.getValue()[1];
 	try {
 		tIdx = naviMenu.getValue()[1];
-		if( typeof( tIdx ) != "number" || ( tIdx >= riff.widget.global.yahoo.categoryList.length ) ) tIdx = 0;
+		if( typeof( tIdx ) != "number" || ( tIdx >= riff.widget.global.sample.categoryList.length ) ) tIdx = 0;
 	} catch ( ec ) {
 		tIdx = 0;
 	}
 
-	return riff.widget.global.yahoo.globalUrl + riff.widget.global.yahoo.categoryList[ tIdx ].value;
+	return riff.widget.global.sample.globalUrl + riff.widget.global.sample.categoryList[ tIdx ].value;
 }
 
 function flowIdle3Function( _componentArticleIdle ){
@@ -174,38 +174,38 @@ function flowIdle3Function( _componentArticleIdle ){
 };
 
 var setSettingListContentText = function(_settingObj){
-	var tAutoRefresh = $d.getStorage(riff.widget.global.yahoo.autoRefreshKey, "text"),
-		tAutoScroll = $d.getStorage(riff.widget.global.yahoo.autoScrollKey, "text");
+	var tAutoRefresh = $d.getStorage(riff.widget.global.sample.autoRefreshKey, "text"),
+		tAutoScroll = $d.getStorage(riff.widget.global.sample.autoScrollKey, "text");
 	_settingObj.content[0].text = ((tAutoScroll != null) ? tAutoScroll : _settingObj.content[0].text);
 	_settingObj.content[1].text = ((tAutoRefresh != null) ? tAutoRefresh : _settingObj.content[1].text);
 };
 
 
 var initAutoRefresh = function(){
-	var tAuto = riff.data.getStorage(riff.widget.global.yahoo.autoRefreshKey,"value");
+	var tAuto = riff.data.getStorage(riff.widget.global.sample.autoRefreshKey,"value");
 	
 	if(tAuto == null){
-		riff.data.setStorage(riff.widget.global.yahoo.autoRefreshKey,{
+		riff.data.setStorage(riff.widget.global.sample.autoRefreshKey,{
 			value : 0,
 			text : "None"
 		})
 	}
 	
-	riff.util.setAutoRefresh(riff.widget.global.yahoo.autoRefreshKey, tAuto);
+	riff.util.setAutoRefresh(riff.widget.global.sample.autoRefreshKey, tAuto);
 	
 };
 
 var initAutoScroll = function(_on){
-	var tAuto = riff.data.getStorage(riff.widget.global.yahoo.autoScrollKey,"value");
+	var tAuto = riff.data.getStorage(riff.widget.global.sample.autoScrollKey,"value");
 
 	if(tAuto == null){
-		riff.data.setStorage(riff.widget.global.yahoo.autoScrollKey,{
+		riff.data.setStorage(riff.widget.global.sample.autoScrollKey,{
 			value : true,
 			text : "On"
 		})
 	} 
 		//setAutoRefresh(tAuto);
-	riff.util.setAutoScroll(riff.widget.global.yahoo.autoScrollKey, riff.widget.global.yahoo.autoScrollTime, _on);
+	riff.util.setAutoScroll(riff.widget.global.sample.autoScrollKey, riff.widget.global.sample.autoScrollTime, _on);
 	
 };
 
@@ -230,7 +230,7 @@ function flowFullNewsFunction(){
 }
 
 function flowFullRefreshStartFunction(){
-	var tVal = riff.data.getStorage(riff.widget.global.yahoo.autoRefreshKey, "value");
+	var tVal = riff.data.getStorage(riff.widget.global.sample.autoRefreshKey, "value");
 	if(tVal != null){
 		for(var _k in refreshList.content){
 			refreshList.content[_k].checked = (refreshList.content[_k].value == tVal) ? true : false;
@@ -244,7 +244,7 @@ function flowFullRefreshStartFunction(){
 function flowFullRefreshEndFunction(){
 	riff.event.tap("#setting-softkey2-done",function(){
 		refreshList.valueDone();
-		riff.data.setStorage(riff.widget.global.yahoo.autoRefreshKey, refreshList.getValue());
+		riff.data.setStorage(riff.widget.global.sample.autoRefreshKey, refreshList.getValue());
 		initAutoRefresh();
 		flowFullSetting.run("flowFullRefresh");
 	});
@@ -254,7 +254,7 @@ function flowFullRefreshEndFunction(){
 function flowFullScrollEndFunction(){
 	riff.event.tap("#setting-softkey2-done",function(){
 		scrollList.valueDone();
-		riff.data.setStorage(riff.widget.global.yahoo.autoScrollKey, scrollList.getValue());
+		riff.data.setStorage(riff.widget.global.sample.autoScrollKey, scrollList.getValue());
 		flowFullSetting.run("flowFullScroll");
 	});
 }
@@ -262,7 +262,7 @@ function flowFullScrollEndFunction(){
 
 
 function flowFullScrollStartFunction(){
-	var tVal = riff.data.getStorage(riff.widget.global.yahoo.autoScrollKey, "value");
+	var tVal = riff.data.getStorage(riff.widget.global.sample.autoScrollKey, "value");
 	if(tVal != null){
 		for(var _k in scrollList.content){
 			scrollList.content[_k].checked = (scrollList.content[_k].value == tVal) ? true : false;

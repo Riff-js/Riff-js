@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<widget xmlns="http://www.w3.org/ns/widgets" height="123" id="RiffSamplewidget" version="3.1" width="226">
+    <title>Riff Sample Widget</title>
+    <description/>
+    <icon src="icon.png"/>
+    <content src="index.html"/>
+    <access network="true"/>
+</widget>
+

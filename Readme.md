@@ -1,5 +1,5 @@
 ================================================================
-Factory Widget
+Sample Widget
 Copyright 2011, Licensed under the MIT license.
 http://innovator.samsungmobile.com/
 ================================================================

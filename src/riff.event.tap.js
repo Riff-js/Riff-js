@@ -3,8 +3,9 @@ riff.event.extend({
 	"tap" : {
 		checkEventEnable :
 			function( _evBf, _ev ) {
-				if( _evBf.status.isDisable[ "tap" ] == false ) return false;
-				return ( _evBf.evFnEnd[ "tap" ][riff.event.constString.execution] && _evBf.status.touchstart && _evBf.status.touchend && (!_evBf.status.touchmove) );
+				var eventName = "tap";
+				if( _evBf.status.isDisable[ eventName ] == false ) return false;
+				return ( _evBf.evFnEnd[ eventName ][riff.event.constString.execution] && _evBf.status.touchstart && _evBf.status.touchend && (!_evBf.status.touchmove) );
 			},
 		addEvent: 
 			function( _elm, _fn, _useFocus ) {

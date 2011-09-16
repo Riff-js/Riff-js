@@ -4,6 +4,17 @@ Copyright 2011, Licensed under the MIT license.
 http://innovator.samsungmobile.com/
 ================================================================
 
+v3.2
+
+Updated riff.event.js file.
+
+	1. Added event : swipe()
+	2. The touch event code has been changed for better performance in mobile browsers.
+	   Modified : clientX,Y -> pageX,Y
+	   Added : preventDefault()
+
+----------------------------------------------------------------
+
 v3.1
 
 Included files:

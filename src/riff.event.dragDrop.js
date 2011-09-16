@@ -30,13 +30,13 @@ riff.event.extend({
 				if( _evBf.status.isDisable[ eventName ] == false ) return false;
 				return true;
 			};
-			riff.event[eventName].startEventHandler = function( _ev, _evBfStatus, _evBf ) {
+			riff.event[eventName].startEventHandler = function( _ev, _evBf ) {
 				var evBfEtc = _evBf.evEtc[eventName];
 				var txy = { x:0, y :0 };
 				riff.event[eventName].getXY( this, txy );
 				evBfEtc.startX = evBfEtc.curX = txy.x;
 				evBfEtc.startY = evBfEtc.curY = txy.y;
-				evBfEtc = null;
+				evBfEtc = txy = null;
 			};
 
 			riff.event[eventName].checkMovedragDrop = function( _evBf, _ev ) {
@@ -45,8 +45,9 @@ riff.event.extend({
 				if( !_evBf.status.touchstart ) return false;
 				return true;
 			};
-			riff.event[eventName].moveEventHandler = function( _ev, _evBfStatus, _evBf ) {
+			riff.event[eventName].moveEventHandler = function( _ev, _evBf ) {
 				var evBfEtc = _evBf.evEtc[eventName];
+				//h 좌표 이동 
 				evBfEtc.curX = evBfEtc.curX + ( _evBf.status.curX - _evBf.status.prevX );
 				evBfEtc.curY = evBfEtc.curY + ( _evBf.status.curY - _evBf.status.prevY );
 				riff.manipulation.css( [this], "left", evBfEtc.curX + "px" )
@@ -61,9 +62,10 @@ riff.event.extend({
 				if( !_evBf.status.touchstart ) return false;
 
 				var rv = false, prevX = _evBf.status.prevX , prevY = _evBf.status.prevY , curX = _evBf.status.curX, curY = _evBf.status.curY, evBfEtc = _evBf.evEtc[eventName];
+				//h 충돌 체크
 				var txy = { x:0, y :0 };
 				var txyDrag = { x:0, y :0 }, txyDrop = { x:0, y:0 }, tDrag , tDrop ;
-				riff.event[eventName].getXY( this, txyDrag );					// Drag
+				riff.event[eventName].getXY( this, txyDrag );					//e Drag
 
 				tDrag = {
 					x1 : txyDrag.x, y1 : txyDrag.y,
@@ -72,7 +74,7 @@ riff.event.extend({
 				
 				for( var lp = 0, tLen = evBfEtc.domDrop.length; lp < tLen; lp++ ) {
 
-					riff.event[eventName].getXY( evBfEtc.domDrop[lp], txyDrop );		// Drop
+					riff.event[eventName].getXY( evBfEtc.domDrop[lp], txyDrop );		//e Drop
 
 					tDrop = {
 						x1 : txyDrop.x,
@@ -81,12 +83,17 @@ riff.event.extend({
 						y2 : txyDrop.y + parseInt( riff.manipulation.css( [ evBfEtc.domDrop[lp] ], "height" ) )
 					} ;
 					
-					if( evBfEtc.isInside &&
+					//h 충돌 판단 : 
+						//h inside : drag 두 점이 다 drop 안에 포함.
+						//h touch : drag 두 점 중에 한 점이 drop 안에 포함.
+					if( evBfEtc.isInside &&				//h drag 가 drop 안으로 모두 들어와야
 						( tDrop.x1 <= tDrag.x1 ) && ( tDrag.x1 <= tDrop.x2 ) && ( tDrop.y1 <= tDrag.y1 ) && ( tDrag.y1 <= tDrop.y2 )
 						&& ( tDrop.x1 <= tDrag.x2 ) && ( tDrag.x2 <= tDrop.x2 ) && ( tDrop.y1 <= tDrag.y2 ) && ( tDrag.y2 <= tDrop.y2 )
 					) {
 						rv = true;
-					} else if (
+					} else if ( //h drag 가 drop 랑 접촉 
+//d						( ( ( tDrop.x1 <= tDrag.x1 ) && ( tDrag.x1 <= tDrop.x2 ) && ( tDrop.y1 <= tDrag.y1 ) && ( tDrag.y1 <= tDrop.y2 ) ) 
+//d						|| ( ( tDrop.x1 <= tDrag.x2 ) && ( tDrag.x2 <= tDrop.x2 ) && ( tDrop.y1 <= tDrag.y2 ) && ( tDrag.y2 <= tDrop.y2 ) ) )
 						( ( (tDrop.x1<=tDrag.x1)&&(tDrag.x1<=tDrop.x2) ) || ( (tDrop.x1<=tDrag.x2)&&(tDrag.x2<=tDrop.x2) ) )
 						&& ( ( (tDrop.y1<=tDrag.y1)&&(tDrag.y1<=tDrop.y2) ) || ( (tDrop.y1<=tDrag.y2)&&(tDrag.y2<=tDrop.y2) ) ) 
 					) {
@@ -95,7 +102,7 @@ riff.event.extend({
 				};
 
 				if( !rv )	{
-					if( evBfEtc.isReturn ) {
+					if( evBfEtc.isReturn ) {		//h isReturn 이 true 이면, 객체를 원래의 위치로 돌린다.
 						riff.manipulation.css( [this], "left", evBfEtc.startX + "px" );
 						riff.manipulation.css( [this], "top", evBfEtc.startY + "px" );
 					};
@@ -130,7 +137,7 @@ riff.event.extend({
 				function tFndragDrop( _el ) {
 					var tEvent = td.bufferSingle( _el, tg.bfName );
 
-					if( ! ( tEvent && tEvent.evFnEnd && tEvent.evFnEnd[ tEventName ] ) ) {
+					if( ! ( tEvent && tEvent.evEtc && tEvent.evEtc[tEventName] ) ) {
 						if (!tEvent) tEvent = te.getEventBuffer(_el, tEvent);
 						if (!tEvent.evEtc[tEventName] ) tEvent.evEtc[tEventName] = new Object();
 
@@ -153,12 +160,18 @@ riff.event.extend({
 					tEvent.evEtc[tEventName].isInside = _isInside;
 					tEvent.evEtc[tEventName].isReturn = _isReturn;
 					tEvent.evEtc[tEventName].domDrop = _domDrop; 
-					tEvent.evFnEnd[tEventName][riff.event.constString.execution] = function( _ev, _evBfStatus, _evBf ){
+					tEvent.evFnEnd[tEventName][riff.event.constString.execution] = function( _ev, _evBf ){
 
-						if( _fn ) _fn.call( this, _ev, _evBfStatus, _evBf );
+						if( _fn ) _fn.call( this, _ev, _evBf );
 					}
 
 					tEvent.destroy[ tEventName ] = function( _evBf ){
+//d						delete _evBf.evEtc[tEventName].startX;
+//d						delete _evBf.evEtc[tEventName].startY;
+//d						delete _evBf.evEtc[tEventName].curX;
+//d						delete _evBf.evEtc[tEventName].curY;
+//d						delete _evBf.evEtc[tEventName].isInside;
+//d						delete _evBf.evEtc[tEventName].isReturn;
 						delete _evBf.evEtc[tEventName].domDrop;
 					};
 					tEvent = null;

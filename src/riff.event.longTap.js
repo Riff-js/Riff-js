@@ -12,6 +12,7 @@ riff.event.extend({
 				var tEvent = null;
 				if ( riff.event[eventName].dom ) tEvent = riff.data.bufferSingle( riff.event[eventName].dom, riff.event.constString.bfName );
 				if( tEvent ) {
+//					if( tEvent.evFnEtc[ eventName ][riff.event.constString.judgement].call( riff.event[eventName].dom, tEvent, _ev ) ) tEvent.evFnEtc[ eventName ][riff.event.constString.execution].call( riff.event[eventName].dom, _ev, tEvent );
 					if( tEvent.evFnEtc[ eventName ][riff.event.constString.judgement].call( riff.event[eventName].dom, tEvent ) ) tEvent.evFnEtc[ eventName ][riff.event.constString.execution].call( riff.event[eventName].dom, tEvent );
 				}
 				tEvent = null;
@@ -41,6 +42,8 @@ riff.event.extend({
 		checkEventEnable :
 			function( _evBf, _ev ) {
 				if( _evBf.status.isDisable[ "longTap" ] == false ) return false;
+				//h timer 가 따로 실행시키는 거니까.
+//				return ( _evBf.status.touchstart && (!_evBf.status.touchend) && (!_evBf.status.touchmove ) );
 				return true;
 		},
 		addEvent: 
@@ -50,7 +53,7 @@ riff.event.extend({
 				function tFnLongTap( _el ) {
 					var tEvent = td.bufferSingle( _el, tg.bfName );
 
-					if( ! ( tEvent && tEvent.evFnEnd && tEvent.evFnEnd[ tEventName ] ) ) {
+					if( ! ( tEvent && tEvent.evFnEtc && tEvent.evFnEtc[tEventName] ) ) {
 						if( !tEvent ) tEvent = te.getEventBuffer( _el, tEvent );
 						te.addPrimaryEvent( _el, tEvent, tg.touchstartOrMouseDown, te.primaryTouchStart );
 						te.addPrimaryEvent( _el, tEvent, tg.touchmoveOrMouseMove, te.primaryTouchMove );

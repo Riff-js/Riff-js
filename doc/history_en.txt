@@ -1,46 +1,45 @@
 ================================================================
-New Riff 
+Riff Core
 Copyright 2011, Licensed under the MIT license.
 http://innovator.samsungmobile.com/
-
 ================================================================
 
-v0.2.3
+v3.2
 
-- Core APIs : bug fix. new function in manipulation. 
-- bug fix : remove(), appendNode(s)(), prependNode(s)() ( interface changed. ), riff.extend(), children(), deleteBufferSingle() ( bug fix ).
-- new feature : multilanguage.
+Updated riff.event.js file.
 
-----------------------------------------------------------------
-
-v0.2.2
-
-- Core APIs : bug fix. add the theme, new function in manipulation. 
-- bug fix : touch event bug fix( event propagation prevention ). manipulation.css() ( get values by style() -> getComputedStyle() )
-- new function : appendNode(), appendNodes() , prependNode(), prependNodes(), index() 
+	1. Added event : swipe()
+	2. The touch event code has been changed for better performance in mobile browsers.
+	   Modified : clientX,Y -> pageX,Y
+	   Added : preventDefault()
 
 ----------------------------------------------------------------
 
-v0.2.1
+v3.1
 
-- Core APIs : Updates event and ajax.
-- Added more event( touchStart, touchMove, touchEnd ).
-- Change event model to plug-in structure(can extend new events).
-- Add tap event as the "extension" function( "riff.event.tap.js" ).
-- XML-parser-function in the ajax.
+Included files:
 
-----------------------------------------------------------------
-
-v0.2.0
-
-
-- Core APIs : Seperate the namespace and files.
-- Improvement of the selector and ajax module.
-- No use the chain method.
-
+	riff.event.longTap.js
+	riff.event.doubleTap.js
+	riff.event.dragDrop.js
+	riff.event.flick.js
 
 ----------------------------------------------------------------
 
-v0.1.0 (Unstable Version)
+v3.0
+
+Included files:
+
+	riff.js
+	riff.ajax.js
+	riff.data.js
+	riff.event.js
+	riff.event.tap.js
+	riff.language.js
+	riff.manipulation.js
+	riff.string.js
+	riff.traversal.js
+	riff.util.js
+	riff.widget.extend.js
 
 ----------------------------------------------------------------

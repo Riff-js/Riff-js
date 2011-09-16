@@ -22,6 +22,8 @@ riff.extend(
 			directionU : "up",
 			directionD : "down",
 			
+			//d Refactiring
+			//d 각 함수 안으로 삽입한다.
 			touchStart : "touchStart",
 			touchMove : "touchMove",
 			touchEnd : "touchEnd"
@@ -104,7 +106,7 @@ riff.extend(
 
 				if( ! ( tEvent && tEvent.evFnRunFirst && tEvent.evFnRunFirst[ tg.touchMove ] ) ) {
 					if( !tEvent ) tEvent = te.getEventBuffer( _el, tEvent );
-					te.addPrimaryEvent( _el, tEvent, tg.touchMoveOrMouseDown, te.primaryTouchMove );
+					te.addPrimaryEvent( _el, tEvent, tg.touchmoveOrMouseMove, te.primaryTouchMove );
 					tEvent.evFnRunFirst[ tg.touchMove ] = [];
 					tEvent.evFnRunFirst[ tg.touchMove ][riff.event.constString.judgement] = te.checkTouchMoveEnable;
 				}
@@ -127,7 +129,7 @@ riff.extend(
 
 				if( ! ( tEvent && tEvent.evFnRunFirst && tEvent.evFnRunFirst[ tg.touchEnd ] ) ) {
 					if( !tEvent ) tEvent = te.getEventBuffer( _el, tEvent );
-					te.addPrimaryEvent( _el, tEvent, tg.touchEndOrMouseDown, te.primaryTouchEnd );
+					te.addPrimaryEvent( _el, tEvent, tg.touchendOrMouseUp, te.primaryTouchEnd );
 					tEvent.evFnRunFirst[ tg.touchEnd ] = [];
 					tEvent.evFnRunFirst[ tg.touchEnd ][riff.event.constString.judgement] = te.checkTouchEndEnable;
 				}
@@ -150,7 +152,9 @@ riff.extend(
 			_evBf.evFnMove = [];					//n touchMove
 			_evBf.evFnEnd = [];					//n touchEnd
 			_evBf.status = {};
+//d			_evBf.toggle = [];
 			_evBf.status.isDisable = [];
+//d			_evBf.destroy = riff.event.eventMemoryFree;
 
 			_evBf.evEtc = [];
 			_evBf.evFnEtc = [];
@@ -193,7 +197,7 @@ riff.extend(
 				};
 			}
 			delete _evBf.status;
-			delete _evBf.toggle;
+//d			delete _evBf.toggle;
 			delete _evBf.destroy;
 		},
 
@@ -232,17 +236,18 @@ riff.extend(
 		{
 			if( _ev.touches && _ev.touches.length ) 
 			{
-				_evBf.status.curX = _ev.touches[0].clientX;
-				_evBf.status.curY = _ev.touches[0].clientY;
+				_evBf.status.curX = _ev.touches[0].pageX;
+				_evBf.status.curY = _ev.touches[0].pageY;
 			} else {
-				_evBf.status.curX = _ev.clientX;
-				_evBf.status.curY = _ev.clientY;
+				_evBf.status.curX = _ev.pageX;
+				_evBf.status.curY = _ev.pageY;
 			}
 		},
 
 		//n internal function
 		//n touchstart function for primary "touchstart" ( or mousedown etc ) function.
 		primaryTouchStart : function( _ev ) {
+			_ev.preventDefault();
 			_ev.stopPropagation();
 			var tg = riff.event.constString, tEvent = riff.data.bufferSingle( this, tg.bfName );
 			tEvent.status.startTime = ( new Date() ).getTime();
@@ -252,12 +257,13 @@ riff.extend(
 			riff.event.getXYByDevice( tEvent, _ev );
 			tEvent.status.prevX = tEvent.status.curX;
 			tEvent.status.prevY = tEvent.status.curY;
-			if( tEvent.evFnRunFirst[ tg.touchStart ] && tEvent.evFnRunFirst[ tg.touchStart ][riff.event.constString.judgement]( tEvent, _ev ) ) tEvent.evFnRunFirst[ tg.touchStart ][riff.event.constString.execution].call( this, _ev, tEvent.status );
+			if( tEvent.evFnRunFirst[ tg.touchStart ] && tEvent.evFnRunFirst[ tg.touchStart ][riff.event.constString.judgement]( tEvent, _ev ) ) tEvent.evFnRunFirst[ tg.touchStart ][riff.event.constString.execution].call( this, _ev, tEvent );
 			var tEvFn = tEvent.evFnStart;
 
 			for( var k in tEvFn )
 			{
-				if( tEvFn[ k ] && tEvFn[ k ][riff.event.constString.judgement] && tEvFn[ k ][riff.event.constString.execution] && tEvFn[ k ][riff.event.constString.judgement].call( this, tEvent, _ev  ) ) tEvFn[ k ][riff.event.constString.execution].call( this, _ev, tEvent.status, tEvent );
+//				if( tEvFn[ k ] && tEvFn[ k ][riff.event.constString.judgement]( tEvent, _ev  ) ) tEvFn[ k ][riff.event.constString.execution].call( this, _ev, tEvent );
+				if( tEvFn[ k ] && tEvFn[ k ][riff.event.constString.judgement] && tEvFn[ k ][riff.event.constString.execution] && tEvFn[ k ][riff.event.constString.judgement].call( this, tEvent, _ev  ) ) tEvFn[ k ][riff.event.constString.execution].call( this, _ev, tEvent );
 			}
 			tg = tEvFn = tEvent = null;
 			return true;
@@ -265,6 +271,7 @@ riff.extend(
 		//n internal function
 		//n touchstart function for primary "touchmove" ( or mousemove etc ) function.
 		primaryTouchMove : function( _ev ) {
+			_ev.preventDefault();
 			_ev.stopPropagation();
 			var tg = riff.event.constString, tEvent = riff.data.bufferSingle( this, tg.bfName );
 			tEvent.status.moveTime = ( new Date() ).getTime();
@@ -272,12 +279,13 @@ riff.extend(
 			tEvent.status.prevX = tEvent.status.curX;
 			tEvent.status.prevY = tEvent.status.curY;
 			riff.event.getXYByDevice( tEvent, _ev );
-			if( tEvent.evFnRunFirst[ tg.touchMove ] && tEvent.evFnRunFirst[ tg.touchMove ][riff.event.constString.judgement]( tEvent, _ev ) ) tEvent.evFnRunFirst[ tg.touchMove ][riff.event.constString.execution].call( this, _ev, tEvent.status, tEvent );
+			if( tEvent.evFnRunFirst[ tg.touchMove ] && tEvent.evFnRunFirst[ tg.touchMove ][riff.event.constString.judgement]( tEvent, _ev ) ) tEvent.evFnRunFirst[ tg.touchMove ][riff.event.constString.execution].call( this, _ev, tEvent );
 			var tEvFn = tEvent.evFnMove;
 
 			for( var k in tEvFn )
 			{
-				if( tEvFn[ k ] && tEvFn[ k ][riff.event.constString.judgement] && tEvFn[ k ][riff.event.constString.execution] && tEvFn[ k ][riff.event.constString.judgement].call( this, tEvent, _ev  ) ) tEvFn[ k ][riff.event.constString.execution].call( this, _ev, tEvent.status, tEvent );
+//				if( tEvFn[ k ] && tEvFn[ k ][riff.event.constString.judgement]( tEvent, _ev  ) ) tEvFn[ k ][riff.event.constString.execution].call( this, _ev, tEvent );
+				if( tEvFn[ k ] && tEvFn[ k ][riff.event.constString.judgement] && tEvFn[ k ][riff.event.constString.execution] && tEvFn[ k ][riff.event.constString.judgement].call( this, tEvent, _ev  ) ) tEvFn[ k ][riff.event.constString.execution].call( this, _ev, tEvent );
 			}
 			tg = tEvFn = tEvent = null;
 			return true;
@@ -285,6 +293,7 @@ riff.extend(
 		//n internal function
 		//n touchstart function for primary "touchup" ( or mouseup etc ) function.
 		primaryTouchEnd : function( _ev ) {
+			_ev.preventDefault();
 			_ev.stopPropagation();
 			var tg = riff.event.constString, tEvent = riff.data.bufferSingle( this, tg.bfName );
 			tEvent.status.endTime = ( new Date() ).getTime();
@@ -292,11 +301,12 @@ riff.extend(
 			tEvent.status.prevX = tEvent.status.curX;
 			tEvent.status.prevY = tEvent.status.curY;
 			riff.event.getXYByDevice( tEvent, _ev );
-			if( tEvent.evFnRunFirst[ tg.touchEnd ] && tEvent.evFnRunFirst[ tg.touchEnd ][riff.event.constString.judgement]( tEvent, _ev ) ) tEvent.evFnRunFirst[ tg.touchEnd ][riff.event.constString.execution].call( this, _ev, tEvent.status, tEvent );
+			if( tEvent.evFnRunFirst[ tg.touchEnd ] && tEvent.evFnRunFirst[ tg.touchEnd ][riff.event.constString.judgement]( tEvent, _ev ) ) tEvent.evFnRunFirst[ tg.touchEnd ][riff.event.constString.execution].call( this, _ev, tEvent );
 			var tEvFn = tEvent.evFnEnd;
 			for( var k in tEvFn )
 			{
-				if( tEvFn[ k ] && tEvFn[ k ][riff.event.constString.judgement] && tEvFn[ k ][riff.event.constString.execution] && tEvFn[ k ][riff.event.constString.judgement].call( this, tEvent, _ev  ) ) tEvFn[ k ][riff.event.constString.execution].call( this, _ev, tEvent.status, tEvent );
+//				if( tEvFn[ k ] && tEvFn[ k ][riff.event.constString.judgement]( tEvent, _ev ) ) tEvFn[ k ][riff.event.constString.execution].call( this, _ev, tEvent );
+				if( tEvFn[ k ] && tEvFn[ k ][riff.event.constString.judgement] && tEvFn[ k ][riff.event.constString.execution] && tEvFn[ k ][riff.event.constString.judgement].call( this, tEvent, _ev  ) ) tEvFn[ k ][riff.event.constString.execution].call( this, _ev, tEvent );
 			}
 
 			if (tEvent && tEvent.status) {

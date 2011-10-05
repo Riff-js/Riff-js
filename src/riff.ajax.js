@@ -1,4 +1,3 @@
-
 riff.extend({
 	ajax : {
 		getAjaxArgsObjInternal : function( _ajaxData ) {
@@ -67,7 +66,7 @@ riff.extend({
 				, tOpenData = ajaxData.openOption
 				, tSendOption = ajaxData.sendOption
 				, tHeaderData = tSendOption && tSendOption.headerData
-				, tSendData = tSendOption && tSendOption.tSendData;
+				, tSendData = tSendOption && tSendOption.sendData;
 			txhr.open( tOpenData.type, tOpenData.url, tOpenData.isAsync );
 			txhr.setRequestHeader( "Content-type", "application/x-www-form-urlencoded" );
 			for ( var k in tHeaderData ) {
